@@ -57,6 +57,14 @@ function MoveEngine.new(fighter: any, moveSet: { any }, loadout: { any }, player
 		health = 1,
 		physFrames = 0, -- ticks since the ragdoll started (PhysicsFrameNumber)
 		comX = 0, comY = 0, prevComX = 0, prevComY = 0,
+		-- fight (Fight.lua sets these): modifiers, ammo, children (projectiles, summons), parent
+		fight = nil :: any,
+		parent = nil :: any,
+		children = {},
+		mods = {},
+		bullets = {},
+		name = "",
+		roundResult = nil :: any,
 	}, MoveEngine)
 	-- _1/_2 node pairs (ModelObject builds the same list from node names) for leg/arm mirroring, in
 	-- animation slot space: the skeleton's slots, then the weapon slots (nunchaku sticks, ...)
@@ -100,21 +108,41 @@ function MoveEngine.nodePos(self: MoveEngine, slot: number): (number, number)
 	return f.px[slot] or 0, f.py[slot] or 0
 end
 
--- DistancePoint: Player Me/Enemy, Object Nodes/Pivot/Wall/Floor/MapCenter/COM/Animation
+-- The model a DistancePoint / condition names: Me, Enemy, Parent, Child (first child), EnemyChild
+function MoveEngine.who(self: MoveEngine, player: string?): any
+	if player == nil or player == "Me" or player == "" then return self end
+	if player == "Enemy" then return self.enemy end
+	if player == "Parent" then return self.parent end
+	if player == "Child" then return self.children and self.children[1] end
+	if player == "EnemyChild" then
+		local e = self.enemy
+		return e and e.children and e.children[1]
+	end
+	return nil
+end
+
+-- Arena walls (location Width/Wall, set by Fight); a lone engine uses the old fixed arena
+function MoveEngine.walls(self: MoveEngine): (number, number)
+	local fight = self.fight
+	if fight then return fight.wallMin, fight.wallMax end
+	return -ARENA_HALF, ARENA_HALF
+end
+
+-- DistancePoint: Player Me/Enemy/Parent/Child, Object Nodes/Pivot/Wall/Floor/MapCenter/COM/Animation
 function MoveEngine.anchor(self: MoveEngine, a: any): (number, number)
 	if not a then
 		return self:nodePos(self.pivotSlot)
 	end
-	local who = self
-	if a.player == "Enemy" then
-		who = self.enemy or self
-	end
+	local who = self:who(a.player) or self
 	local x, y = 0, 0
 	local obj = a.object
 	if obj == "Nodes" then
 		local s = who.slots[a.part or "NPivot"] or who.slots.NPivot
 		x, y = who:nodePos(s)
-	elseif obj == "Pivot" or obj == "Animation" then
+	elseif obj == "Animation" then
+		-- the origin of who's current animation (its Align offset): children start in their parent's frame
+		x, y = who.offsetX, who.offsetY
+	elseif obj == "Pivot" then
 		x, y = who:nodePos(who.pivotSlot)
 	elseif obj == "COM" then
 		if a.previous then
@@ -124,9 +152,11 @@ function MoveEngine.anchor(self: MoveEngine, a: any): (number, number)
 		end
 	elseif obj == "Wall" then
 		local front = (a.part == "Front")
-		x = ((front and who.facing or -who.facing) > 0) and ARENA_HALF or -ARENA_HALF
+		local lo, hi = self:walls()
+		x = ((front and who.facing or -who.facing) > 0) and hi or lo
+		y = select(2, who:nodePos(who.slots.NPivot or who.pivotSlot))
 	elseif obj == "Floor" then
-		x, y = who:nodePos(who.slots.NPivot); y = 0
+		x, y = who:nodePos(who.slots.NPivot or who.pivotSlot); y = 0
 	elseif obj == "MapCenter" then
 		x, y = 0, 0
 	end
@@ -196,17 +226,17 @@ function MoveEngine.check(self: MoveEngine, c: any, candidate: any): boolean
 	elseif t == "keys" then
 		v = self.keys:matches(c.taps, c.holds, self:facingFor(candidate))
 	elseif t == "anim" then
-		local who = (c.player == "Enemy") and self.enemy or self
+		local who = self:who(c.player)
 		v = who ~= nil and who:isAnimation(c.name, candidate)
 	elseif t == "interval" then
-		local who = (c.player == "Enemy") and self.enemy or self
+		local who = self:who(c.player)
 		v = who ~= nil and who:inInterval(c.name)
 	elseif t == "stage" then
-		v = (c.name == self.stage)
+		v = (c.name == self:roundStage())
 	elseif t == "mod" then
-		v = false -- no modifiers active yet (perks, stuns: Phase 4)
+		v = self.mods[c.name] ~= nil -- ModExists: modifiers from rules, perks and stuns (Fight.addMod)
 	elseif t == "item" then
-		local who = (c.player == "Enemy") and self.enemy or self
+		local who = self:who(c.player)
 		v = who ~= nil and itemMatches(who.loadout, c)
 	elseif t == "dist" then
 		local fx, fy = self:anchor(c.from)
@@ -225,14 +255,118 @@ function MoveEngine.check(self: MoveEngine, c: any, candidate: any): boolean
 		v = h ~= nil and (c.name == "" or c.name == h.name)
 			and (c.type == "" or (c.type == "Critical" and h.critical) or (c.type == "Shock" and h.shock))
 	elseif t == "bullets" then
-		v = 0 >= c.min
+		v = (self:root().bullets.MagicBullet or 0) >= c.min
+	elseif t == "name" then
+		v = (self.name == c.value)
+	elseif t == "x" then
+		v = self:checkRaw(c.tag, c.el)
 	else
-		v = false -- name / unknown (Hit, RoundResult, Health, ...: later phases)
+		v = false
 	end
 	if c.nt then
 		return not v
 	end
 	return v
+end
+
+-- The fighter a child (projectile, summon) belongs to; a fighter is its own root
+function MoveEngine.root(self: MoveEngine): any
+	local r = self
+	while r.parent do r = r.parent end
+	return r
+end
+
+-- RoundStage of the fight (StartStance, Fight, EndStance); a lone engine is always in Fight
+function MoveEngine.roundStage(self: MoveEngine): string
+	local fight = self.fight
+	return fight and fight.stage or self.stage
+end
+
+local function rawAttr(el: any, k: string): string?
+	return el and el.a and el.a[k]
+end
+
+-- Conditions kept as raw elements by compile_moves (RoundResult, Direction, BattleType, Perk, Birth,
+-- BossAbilityState, Screen, ...)
+function MoveEngine.checkRaw(self: MoveEngine, tag: string, el: any): boolean
+	local who = self:who(rawAttr(el, "Player")) or self
+	if tag == "RoundResult" then
+		local r = who:root().roundResult
+		if not r then return false end
+		local name, typ = rawAttr(el, "Name"), rawAttr(el, "Type")
+		return (name == nil or name == r.name) and (typ == nil or typ == r.type)
+	elseif tag == "Perk" then
+		local perks = who:root().perks
+		return perks ~= nil and perks[rawAttr(el, "Name") or ""] ~= nil
+	elseif tag == "BattleType" then
+		local fight = self.fight
+		return fight ~= nil and fight.battleType == rawAttr(el, "Value")
+	elseif tag == "BossAbilityState" then
+		return tostring(who:root().bossAbility or 0) == (rawAttr(el, "Value") or "1")
+	elseif tag == "Birth" then
+		return self.justBorn == true
+	elseif tag == "Direction" then
+		-- facing towards the other model
+		local o = who == self and self.enemy or who
+		if not o then return false end
+		local mx = self:nodePos(self.slots.NPivot or self.pivotSlot)
+		local ox = o:nodePos(o.slots.NPivot or o.pivotSlot)
+		return (ox - mx) * self.facing > 0
+	elseif tag == "Screen" then
+		return rawAttr(el, "Name") == "Fight"
+	end
+	return false
+end
+
+-- Conditions inside an action (<Conditions><Item .../></Conditions>, raw elements)
+local function rawConditionsPass(self: any, cond: any): boolean
+	if not cond or not cond.c then return true end
+	local function test(e: any): boolean
+		local nt = rawAttr(e, "Not") == "1"
+		local v: boolean
+		if e.t == "Item" then
+			local who = self:who(rawAttr(e, "Player")) or self
+			v = itemMatches(who.loadout, { type = rawAttr(e, "Type") or "", sub = rawAttr(e, "SubType") or "", name = rawAttr(e, "Name") or "" })
+		elseif e.t == "Operator" then
+			local all = string.lower(rawAttr(e, "Type") or "or") == "and"
+			v = all
+			for _, k in e.c or {} do
+				if test(k) ~= all then v = not all; break end
+			end
+		else
+			v = self:checkRaw(e.t, e)
+		end
+		return v ~= nt
+	end
+	for _, e in cond.c do
+		if not test(e) then return false end
+	end
+	return true
+end
+
+-- Run this move's actions for a keyframe (frame) or an event (Strike, Hit, AnimationStart, AnimationEnd).
+-- Fight.action does the work (sounds, effects, children, camera, ...).
+function MoveEngine.runActions(self: MoveEngine, frame: number?, event: string?, upTo: boolean?)
+	local m = self.move
+	local fight = self.fight
+	if not m or not m.actions or not fight then return end
+	for _, a in m.actions do
+		local at = a.a or {}
+		local ok
+		if event then
+			ok = at.Event == event
+		else
+			local f = tonumber(at.Frame)
+			ok = at.Event == nil and f ~= nil and (f == frame or (upTo and f < (frame :: number)))
+		end
+		if ok then
+			local cond
+			for _, k in a.c or {} do if k.t == "Conditions" then cond = k end end
+			if rawConditionsPass(self, cond) then
+				fight:action(self, a, event)
+			end
+		end
+	end
 end
 
 function MoveEngine.conditionsPass(self: MoveEngine, m: any): boolean
@@ -248,6 +382,9 @@ end
 
 function MoveEngine.fire(self: MoveEngine, eventType: string, name: string?)
 	table.insert(self.events, { eventType, name or "" })
+	if eventType == "Strike" or eventType == "Hit" then
+		self:runActions(nil, eventType)
+	end
 end
 
 -- Returns the move to start for one event, or nil.
@@ -331,12 +468,21 @@ function MoveEngine.start(self: MoveEngine, m: any)
 
 	-- Align: new move's pivot node (at its first frame) goes onto the anchor position
 	local pivotPart = (m.align and m.align.pivotPart) or "NPivot"
-	local pivotSlot = self.slots[pivotPart] or self.slots.NPivot
+	local pivotSlot = self.slots[pivotPart] or self.slots.NPivot or 1
 	-- "Me Pivot" is where the NEW move's pivot node is right now (not the old move's pivot node:
 	-- StepBack pivots on NHeel_1 and the idle on NHeel_2, so mixing them jumps by a heel's width)
 	self.pivotSlot = pivotSlot
 	local tx, ty = self:anchor(m.align and m.align.position or nil)
 	local ax, ay = clip:getPosition(first, (remap and remap[pivotSlot]) or pivotSlot)
+	if m.align and m.align.pivotObject == "Animation" then
+		-- the animation's own origin goes onto the anchor (children start in their parent's frame)
+		ax, ay = 0, 0
+		local pos = m.align.position
+		if pos and pos.object == "Animation" then
+			local who = self:who(pos.player)
+			if who then ty = who.offsetY end
+		end
+	end
 	local axis = (m.align and m.align.axis) or "X|Z"
 	self.offsetX = tx - self.facing * ax
 	self.offsetY = string.find(axis, "Y", 1, true) and (ty - ay) or 0
@@ -367,6 +513,9 @@ function MoveEngine.start(self: MoveEngine, m: any)
 	for _, iv in m.intervals do
 		if iv.start == first then self:fire("IntervalStart", iv.name) end
 	end
+	self.justBorn = false
+	self:runActions(first, nil, true)
+	self:runActions(nil, "AnimationStart")
 end
 
 -- Physics="1" moves (PhysicalFall, PhysicalGroundHit, PhysicalLying): no animation, the whole body is
@@ -389,6 +538,8 @@ function MoveEngine.startPhysics(self: MoveEngine, m: any)
 	self.ended = false
 	self.blend = nil
 	self.remap = nil
+	self:runActions(0, nil, true)
+	self:runActions(nil, "AnimationStart")
 	table.insert(self.log, m.name)
 	if #self.log > 6 then table.remove(self.log, 1) end
 end
@@ -430,6 +581,7 @@ function MoveEngine.advance(self: MoveEngine)
 				if iv.stop >= self.c and iv.stop < 100000 then self:fire("IntervalEnd", iv.name) end
 			end
 			self:fire("AnimationEnd", self.move.name)
+			self:runActions(nil, "AnimationEnd")
 		end
 		return
 	end
@@ -441,6 +593,7 @@ function MoveEngine.advance(self: MoveEngine)
 		if iv.stop == prev then self:fire("IntervalEnd", iv.name) end
 		if iv.start == self.c then self:fire("IntervalStart", iv.name) end
 	end
+	self:runActions(self.c)
 end
 
 -- Place the fighter at x (SF2 units) facing +1/-1, starting in the idle stance. A weapon with its own
@@ -468,7 +621,7 @@ function MoveEngine.spawn(self: MoveEngine, x: number, facing: number)
 		end
 	end
 	for _ = 1, 90 do f:simulate() end
-	self:fire("Birth"); self:fire("RoundStageStart", self.stage)
+	self:fire("Birth"); self:fire("RoundStageStart", self:roundStage())
 end
 
 -- One 1/60 s tick for this fighter. Input presses must already be in self.keys.
@@ -480,10 +633,22 @@ function MoveEngine.tick(self: MoveEngine)
 	end
 	self:fire("EveryFrame")
 	if not self:processEvents() and self.ended then
-		-- nothing took over at the end of the move: back to the idle stance
-		self:start(self.byName.StanceIdle)
+		-- nothing took over at the end of the move: back to the idle stance (a child with nothing to
+		-- play next is finished and the fight removes it)
+		local idle = self.byName.StanceIdle
+		if idle and not self.parent then
+			self:start(idle)
+		else
+			self.finished = true
+		end
 	end
 	self.keys:tick()
+	local vel = self.move and self.move.velocity
+	if vel and self.clip then
+		-- <Velocity X Y>: the animation's origin moves each tick (missiles fly, dashes slide)
+		self.offsetX += self.facing * vel.x
+		self.offsetY += vel.y
+	end
 	if self.clip then
 		self:writePose()
 	else

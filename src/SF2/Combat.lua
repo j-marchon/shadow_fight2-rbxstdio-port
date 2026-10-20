@@ -17,9 +17,12 @@
 --  * the attacker gets a Strike event
 --  * Critical (ConditionHit "Critical" -> HitFall moves): unblocked hits roll the attacker's crit chance,
 --    0.0001 x CriticalChance (internalSettings <CriticalHit><Probability Base="0.0001" .../>)
---  * damage (Model.NACPMGNAODH): interval Damage x crit factor 2^(0.0001 x CriticalDamage) x block factor
---    2^(0.0001 x BlockDamageFactor). The attack-vs-defense curve from items/levels (GameUtils.NADKBDJLFIL)
---    is taken as 1 (two evenly matched fighters) until equipment/progression is ported.
+--  * damage (Model.NACPMGNAODH): interval Damage x attack curve x 2^(0.0001 x DamageFactor) x crit factor
+--    2^(0.0001 x CriticalDamage) x block factor 2^(0.0001 x BlockDamageFactor).
+--    Attack curve (GameUtils.NADKBDJLFIL -> CGOAEEIACCA): for each <Damage Type Shift> of the interval,
+--    x = attacker[Type] + Shift - target[defense]; the best x counts; factor 2^(x / DamageDoublingRange 10).
+--    defense = the interval's <Defense Type>, else HeadDefense on a head hit, else BodyDefense (internalSettings
+--    <BlockDefense Attribute="BodyDefense"/>). Port gap: the enchantment-aspect blend of CGOAEEIACCA is left out.
 --  * Shock (Model.LMGIFKHIHJD, ConditionHit Type="Shock" -> HitFall moves), with r = damage / DamageConverter
 --    (the attacker's, 1 outside raids):
 --      - a head hit (target edge BodyPart "Head", EHead/ENeck) that is not blocked: 0.0001 x ShockHeadHitChance x r
@@ -37,6 +40,21 @@ Combat.ATTRIBUTES = {
 	ShockCriticalHitChance = 0, ShockHeadHitChance = 2500,
 }
 local ATTRIBUTE_BASE = 0.0001
+local DAMAGE_DOUBLING = 10 -- internalSettings <DamageDoublingRange Value="10"/>
+
+-- The attack curve for interval iv from attacker attributes attr onto target attributes tattr
+function Combat.attackFactor(iv: any, attr: any, tattr: any, head: boolean): number
+	local types = iv.damageTypes
+	if not types or #types == 0 then return 1 end
+	local best = -math.huge
+	for _, d in types do
+		local v = (attr[d[1]] or 0) + d[2]
+		if v > best then best = v end
+	end
+	local defense = (iv.defenseTypes and iv.defenseTypes[1]) or (head and "HeadDefense" or "BodyDefense")
+	best -= (tattr[defense] or 0)
+	return 2 ^ (best / DAMAGE_DOUBLING)
+end
 Combat.random = Random.new()
 
 local function edgeTables(rig: any)
@@ -150,13 +168,14 @@ function Combat.strike(att: any, tgt: any, suppressed: boolean?): any
 					local blocked = (not iv.ignoresBlock) and tgt:inInterval("Block")
 					local attr = att.attributes or Combat.ATTRIBUTES
 					local tattr = tgt.attributes or Combat.ATTRIBUTES
-					local critical = not blocked
+					local head = tf.rig.edgeInfo[ti].part == "Head"
+					local critical = not blocked and not iv.noCritical
 						and Combat.random:NextNumber() < ATTRIBUTE_BASE * (attr.CriticalChance or 0)
-					local damage = iv.damage
+					local damage = iv.damage * Combat.attackFactor(iv, attr, tattr, head)
+						* 2 ^ (ATTRIBUTE_BASE * (attr.DamageFactor or 0))
 					if critical then damage *= 2 ^ (ATTRIBUTE_BASE * (attr.CriticalDamage or 0)) end
 					if blocked then damage *= 2 ^ (ATTRIBUTE_BASE * (tattr.BlockDamageFactor or 0)) end
-					tgt.health = math.max(0, tgt.health - damage)
-					local head = tf.rig.edgeInfo[ti].part == "Head"
+					if not tgt.immortal then tgt.health = math.max(0, tgt.health - damage) end
 					local r = damage / (att.damageConverter or 1)
 					local shock = (critical
 							and Combat.random:NextNumber() < ATTRIBUTE_BASE * (attr.ShockCriticalHitChance or 0) * r)
@@ -183,6 +202,13 @@ function Combat.strike(att: any, tgt: any, suppressed: boolean?): any
 						edge = tf.rig.edgeInfo[ti].name,
 						part = tf.rig.edgeInfo[ti].part,
 						attacker = att,
+						interval = iv,
+						weapon = (function()
+							for _, d in iv.damageTypes or {} do
+								if d[1] == "WeaponDamage" then return true end
+							end
+							return false
+						end)(),
 						x = hx, y = hy,
 					}
 					tgt.lastHit = hit

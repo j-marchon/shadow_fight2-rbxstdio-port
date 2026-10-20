@@ -81,6 +81,16 @@ def anchor(el):
 
 unknown_tags = {}
 
+def gx(el):
+    """Any element as {t=tag,a={...},c={...}} (the SF2.Xml shape), for actions and other rarely used parts."""
+    parts = [f't={s(el.tag)}']
+    if el.attrib:
+        parts.append('a={' + ','.join(f'[{s(k)}]={s(v)}' for k, v in el.attrib.items()) + '}')
+    kids = list(el)
+    if kids:
+        parts.append('c={' + ','.join(gx(c) for c in kids) + '}')
+    return '{' + ','.join(parts) + '}'
+
 def cond(el):
     tag, nt = el.tag, b(el, 'Not')
     if tag == 'Operator':
@@ -118,7 +128,8 @@ def cond(el):
     if tag == 'Bullets':
         return f"{{t=\"bullets\",nt={nt},min={num(el.get('Min'), 0)}}}"
     unknown_tags[tag] = unknown_tags.get(tag, 0) + 1
-    return f"{{t=\"unknown\",nt={nt},tag={s(tag)}}}"
+    # evaluated by MoveEngine.check from the raw element (Direction, BattleType, Perk, RoundResult, ...)
+    return f"{{t=\"x\",nt={nt},tag={s(tag)},el={gx(el)}}}"
 
 def conds(parent):
     if parent is None:
@@ -181,9 +192,14 @@ def compile_move(m, fn, with_locks=False):
                      f"damage={num(dmg.get('Value') if dmg is not None else 0)},"
                      f"impulse={{{num(imp.get('X') if imp is not None else 0)},{num(imp.get('Y') if imp is not None else 0)}}},"
                      f"ignoresBlock={'true' if i.find('IgnoresBlock') is not None else 'false'},"
-                     f"ignoresInvulnerable={'true' if i.find('IgnoresInvulnerable') is not None else 'false'}")
-        iv.append(f"{{name={s(i.get('Name') or i.get('Type') or '')},type={s(i.get('Type') or '')},"
-                  f"start={num(i.get('Start'), 0)},stop={num(i.get('End'), 100000)}{extra}}}")
+                     f"ignoresInvulnerable={'true' if i.find('IgnoresInvulnerable') is not None else 'false'},"
+                     f"noCritical={b(dmg, 'NoCritical') if dmg is not None else 'false'},"
+                     f"bodyPart={s(dmg.get('BodyPart') or '') if dmg is not None else 'nil'},"
+                     f"damageTypes={{{','.join('{' + s(d.get('Type') or '') + ',' + num(d.get('Shift'), 0) + '}' for d in (dmg.findall('Damage') if dmg is not None else []))}}},"
+                     f"defenseTypes={{{','.join(s(d.get('Type') or '') for d in (dmg.findall('Defense') if dmg is not None else []))}}},"
+                     f"hitWindows={{{','.join('{' + s(h.get('Name') or '') + ',' + num(h.get('Start'), -1) + ',' + num(h.get('End'), -1) + '}' for h in i.findall('Hit') if h.get('Start') is not None)}}}")
+        iv.append(f"{{name={s(i.get('Name') or i.get('Type') or '')},type={s(i.get('Type') or '')},id={s(i.get('ID') or '')},"
+                  f"noEffect={b(i, 'NoEffect')},start={num(i.get('Start'), 0)},stop={num(i.get('End'), 100000)}{extra}}}")
     al = m.find('Align')
     align = 'nil'
     if al is not None:
@@ -206,6 +222,22 @@ def compile_move(m, fn, with_locks=False):
         val = num(t.get('FrameShift') if shift else t.get('FirstFrame'), 0)
         tr.append(f"{{shift={'true' if shift else 'false'},value={val},conditions={conds(t.find('Conditions'))}}}")
     labels = [l for l in (m.get('Template') or '').split('|') if l]
+    acts = m.find('Actions')
+    actions = '{' + ','.join(gx(a) for a in acts) + '}' if acts is not None else '{}'
+    vel = m.find('Velocity')
+    velocity = (f"{{x={num(vel.get('X'), 0)},y={num(vel.get('Y'), 0)},ax={num(vel.get('Ax'), 0)}}}"
+                if vel is not None else 'nil')
+    rot = m.find('Rotation')
+    rotation = gx(rot) if rot is not None else 'nil'
+    tac = m.find('Tactics')
+    tactics = conds(tac.find('Conditions')) if tac is not None and tac.find('Conditions') is not None else 'nil'
+    shift_node = al.get('ShiftModelNode') if al is not None else None
+    extra = (f",actions={actions},velocity={velocity},rotation={rotation},tactics={tactics},"
+             f"endsStage={b(m, 'EndsStage')},noMagicRecharge={b(m, 'NoMagicRecharge')},noWallRepulsion={b(m, 'NoWallRepulsion')},"
+             f"styleFactor={num(m.get('StyleFactor'), 1)},tacticWeapon={s(m.get('TacticWeapon') or '')},"
+             f"tacticEquivalent={s(m.get('TacticEquivalent') or '')},tacticWallShift={num(m.get('TacticWallShift'), 0)},"
+             f"cameraCOM={b(m, 'CameraCOMAlignStage')},looped={b(m, 'Looped')},noAnimation={b(m, 'NoAnimation')},"
+             f"alignOnParentWall={b(m, 'AlignOnParentWallCollision')},shiftModelNode={s(shift_node) if shift_node else 'nil'}")
     locks = ''
     if with_locks and m.find('Locks') is not None:
         locks = f",locks={{{','.join(lock_tree(c) for c in m.find('Locks'))}}}"
@@ -214,7 +246,7 @@ def compile_move(m, fn, with_locks=False):
         f"first={num(m.get('FirstFrame'), 0)},mid={num(m.get('MidFrames'), 0)},endFrame={num(m.get('EndFrame'), -1)},"
         f"noInterp={b(m, 'NoInterpolationFrames')},labels={{{','.join(map(s, labels))}}},"
         f"events={{{','.join(ev)}}},conditions={conds(m.find('Conditions'))},intervals={{{','.join(iv)}}},"
-        f"align={align},setDirection={setdir},mirror={s(m.get('MirrorNode') or '')},transitions={{{','.join(tr)}}}{locks}}},")
+        f"align={align},setDirection={setdir},mirror={s(m.get('MirrorNode') or '')},transitions={{{','.join(tr)}}}{extra}{locks}}},")
 
 if __name__ == '__main__':
     main()
