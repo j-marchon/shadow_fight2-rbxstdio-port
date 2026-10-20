@@ -4,7 +4,7 @@ ModuleScript	ReplicatedStorage/SF2/AnimClip	src/SF2/AnimClip.lua	f040c0871efdeec
 ModuleScript	ReplicatedStorage/SF2/Arsenal	src/SF2/Arsenal.lua	e11effab233efb73
 ModuleScript	ReplicatedStorage/SF2/Base64	src/SF2/Base64.lua	85a7c1517dd45aff
 ModuleScript	ReplicatedStorage/SF2/Combat	src/SF2/Combat.lua	c2e9e7f0764b4145
-ModuleScript	ReplicatedStorage/SF2/Fight	src/SF2/Fight.lua	48c200c2f33e5254
+ModuleScript	ReplicatedStorage/SF2/Fight	src/SF2/Fight.lua	b372c582e3fc0eb6
 ModuleScript	ReplicatedStorage/SF2/Fighter	src/SF2/Fighter.lua	831f87a043512a46
 ModuleScript	ReplicatedStorage/SF2/Items	src/SF2/Items.lua	06d2659bf3cd2b5a
 ModuleScript	ReplicatedStorage/SF2/KeyBuffer	src/SF2/KeyBuffer.lua	218a8611d8870d94
@@ -13,9 +13,11 @@ ModuleScript	ReplicatedStorage/SF2/Moves	src/SF2/Moves.lua	d3016667bd9887ae
 ModuleScript	ReplicatedStorage/SF2/Pack	src/SF2/Pack.lua	af5e2db5af52a24a
 ModuleScript	ReplicatedStorage/SF2/Renderer	src/SF2/Renderer.lua	941591e0c08899e8
 ModuleScript	ReplicatedStorage/SF2/Rigs	src/SF2/Rigs.lua	78d3c6ec9fb375a8
+ModuleScript	ReplicatedStorage/SF2/Sound	src/SF2/Sound.lua	513323501020f647
 ModuleScript	ReplicatedStorage/SF2/Warrior	src/SF2/Warrior.lua	0893ad512061dc5b
 ModuleScript	ReplicatedStorage/SF2/Xml	src/SF2/Xml.lua	cc2f7e69f1284e52
 ModuleScript	ReplicatedStorage/SF2/Data/Arsenal	out/Arsenal.lua	89255332766728af
+ModuleScript	ReplicatedStorage/SF2/Data/AudioMap	out/AudioMap.lua	b9494eec179e0241
 ModuleScript	ReplicatedStorage/SF2/Data/Triggers	out/Triggers.lua	31c4b9751eeaa46b
 ModuleScript	ReplicatedStorage/SF2/Data/Anims/ability_fly_forward_150	out/Anims/ability_fly_forward_150.lua	090cc63e1bebd78e
 ModuleScript	ReplicatedStorage/SF2/Data/Anims/ability_fly_forward_200	out/Anims/ability_fly_forward_200.lua	ab53651f8c1bed4a

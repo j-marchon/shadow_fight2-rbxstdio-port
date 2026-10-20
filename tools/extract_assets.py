@@ -34,7 +34,7 @@ def work(job):
     pack, path = job
     import UnityPy
     UnityPy.config.FALLBACK_UNITY_VERSION = '2022.3.62f2'
-    res = dict(pack=pack, sprites={}, textures={}, audio={}, fonts=[], errors=[])
+    res = dict(pack=pack, sprites={}, atlas={}, textures={}, audio={}, fonts=[], errors=[])
     try:
         if os.path.isdir(path):
             # load the files, not the directory: external .resS/.resource streams resolve next to them
@@ -68,10 +68,10 @@ def work(job):
                 d = obj.read()
                 dst_dir = os.path.join(OUT, 'audio', pack)
                 os.makedirs(dst_dir, exist_ok=True)
-                samples = d.samples
-                for sname, wav in samples.items():
-                    n = os.path.splitext(sname)[0]
-                    open(os.path.join(dst_dir, n + '.wav'), 'wb').write(wav)
+                if not os.path.exists(os.path.join(dst_dir, d.m_Name + '.wav')):
+                    for sname, wav in d.samples.items():
+                        n = os.path.splitext(sname)[0]
+                        open(os.path.join(dst_dir, n + '.wav'), 'wb').write(wav)
                 res['audio'][d.m_Name] = [pack, d.m_Channels, d.m_Frequency, round(d.m_Length, 3)]
             elif t == 'Font':
                 d = obj.read()
@@ -98,8 +98,9 @@ def work(job):
             r = rd.textureRect
             th = tex.m_Height
             piv = d.m_Pivot
-            res['sprites'][d.m_Name] = [pack, tname, round(r.x), round(th - r.y - r.height), round(r.width),
-                                        round(r.height), round(piv.x, 4), round(piv.y, 4)]
+            rect = [round(r.x), round(th - r.y - r.height), round(r.width), round(r.height), round(piv.x, 4), round(piv.y, 4)]
+            res['sprites'][d.m_Name] = [pack, tname] + rect
+            res['atlas'].setdefault(f'{pack}/{tname}', {})[d.m_Name] = rect
         except Exception as e:
             res['errors'].append(f'Sprite {obj.path_id}: {e}')
     return res
@@ -110,12 +111,12 @@ def main():
     if only:
         jobs = [j for j in jobs if j[0] in only]
     os.makedirs(OUT, exist_ok=True)
-    sprites, textures, audio, fonts, errors = {}, {}, {}, [], {}
+    sprites, textures, audio, fonts, errors, atlas = {}, {}, {}, [], {}, {}
     if only:  # partial run: merge into the existing index
         def old(n):
             p = os.path.join(OUT, n + '.json')
             return json.load(open(p)) if os.path.exists(p) else {}
-        sprites, textures, audio, errors = old('sprites'), old('textures'), old('audio'), old('errors')
+        sprites, textures, audio, errors, atlas = old('sprites'), old('textures'), old('audio'), old('errors'), old('atlas')
         for o in (sprites, audio):
             for k in [k for k, v in o.items() if v[0] in only]:
                 del o[k]
@@ -126,13 +127,14 @@ def main():
             for k, v in res['sprites'].items():
                 sprites.setdefault(k, v)
             textures.update(res['textures'])
+            atlas.update(res['atlas'])
             for k, v in res['audio'].items():
                 audio.setdefault(k, v)
             fonts += res['fonts']
             if res['errors']:
                 errors[res['pack']] = res['errors'][:20] + ([f'... {len(res["errors"])} total'] if len(res['errors']) > 20 else [])
             print(res['pack'], len(res['sprites']), len(res['textures']), len(res['audio']), len(res['errors']), flush=True)
-    for name, obj in (('sprites', sprites), ('textures', textures), ('audio', audio), ('errors', errors)):
+    for name, obj in (('sprites', sprites), ('textures', textures), ('audio', audio), ('errors', errors), ('atlas', atlas)):
         json.dump(obj, open(os.path.join(OUT, name + '.json'), 'w'), indent=0, sort_keys=True)
     print('sprites', len(sprites), 'textures', len(textures), 'audio', len(audio), 'fonts', fonts)
 
