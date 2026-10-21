@@ -59,12 +59,19 @@ Outside this folder, kept in place on purpose, since moving them breaks absolute
   - the AI engagement floor and the interpreter itself are committed (`342acc8`), and the interpreter is now wired into the fight — see the README's "Perks" section for the event table and the hit stages
   - the engagement floor is a deliberate **non-faithful** tweak (`{engage = false}` turns it off), written up in the README's "Approximated / guessed" list
 
-**Written but not verified in Studio (nothing has been installed since the move):**
-- the perks wiring: `Fight.new` builds `fight.perks`, `Combat.strike` runs the three hit stages, `MoveEngine` fires the animation events, `Fight` fires stages/tick/MagicCharged. No perk has been seen to fire yet.
-- perk upgrade levels still default to 1 (the player's own levels are not read from the profile).
-- **wall repulsion** (`MoveEngine.repulseWall`): an animated fighter is pushed back into the arena by however far its pivot passed a wall, unless the move has `NoWallRepulsion`. This is what was missing for wall hits — `WallHit` / `WallHitFall` are data-driven moves that only needed a fighter who actually stops at the wall. A deviation in how it pushes (pivot only); see the README.
-- **condition targets fixed**: `ModExists`, `Player` and `Name` carry `Player="Enemy"` in the data and were all being asked about *me*. `compile_moves.cond()` now emits `player=` and `MoveEngine.check` resolves it, so `out\MoveLib` was rebuilt with `tools\build_arsenal.py` (36 enemy `ModExists` plus the throws' 12 conditions). It matters more now that perk mods share that table.
+**Installed and verified in Studio on 2026-10-21** (install: 3042 entries, 0 failed):
+- `tools\tests\ai_test.luau`: **0 errors**, 0.445 ms/tick, 2-0 by knockout over 6000 ticks.
+- `tools\tests\all_fights.luau`: **761 fights, 0 errors, nan=0**, 575 decided, and 127 of them had perks attached. It used to fail 104 fights: an Eclipse battle's fights have no warriors of their own and the harness did not fall back to `Stages.baseFight` the way `Game.fightAt` does. Fixed in the harness, so those fights are now actually covered.
+- **perks fire**: `PERK_BEGINNER` driven end to end (event filter → `?PlayerParameter[Enemy].Health` condition → `SetHit Block="0"`, which applied only with the player at 0.30 health, not at 1.00), a `ModAttributes` mod applied and expired on its frame count, and `EndStance` cleared a mod through the `EndStanceClear` template. Details in the README's Perks section.
+- **wall repulsion and wall hits**: pivots stayed inside the arena, and `WallHit` played once two fighters traded unblocked hits at a wall. Note an idle fighter blocks (idle is a Block interval) and block reactions have no `CanWallHit`, so a victim standing still never wall-hits.
+- One fix came out of this: the first wiring applied the health change **before** `PostHit` and consumed no `SetHit` edits from it, which silently disabled `PERK_ENLIGHTENMENT` (survive a lethal hit) and `PERK_ANTI_SHOCK` (149 uses, the most common perk). All three hit stages now run before the health comes off.
+
+**Written but still not verified:**
+- perk upgrade levels default to 1 (the player's own levels are not read from the profile).
 - **throws** were audited against the engine and look complete without new code (the thrower's `PlayAnimation Player="Enemy"` starts the victim's `ThrowForwardV`); nothing has been thrown in Studio.
+- `WallHitFall` has not been seen; its window is only 6–8 frames.
+- The perk value expressions `?CurrentFight`, `?CoordX/Y`, `?PlayerAttribute`, `?Aspect`, `?MovesVariable` and `?Abs` read 0, so a perk that positions something in the arena does nothing. The list is in the `Perks.lua` header.
+- **condition targets fixed** (not separately verified beyond the sweep): `ModExists`, `Player` and `Name` carry `Player="Enemy"` in the data and were all being asked about *me*. `compile_moves.cond()` now emits `player=` and `MoveEngine.check` resolves it, so `out\MoveLib` was rebuilt with `tools\build_arsenal.py`.
 
 **Not verified by the user yet:**
 - The 2026-10-20 standup-delay and head-hit fixes, plus jab height (HighPunch hits chest, never head; check against the phone).
@@ -79,17 +86,17 @@ Outside this folder, kept in place on purpose, since moving them breaks absolute
 - `sf2-roblox\PORT_STATUS.md` is **stale**: it predates most of the commits above. Ignore it.
 
 ## 4. Next steps (in order)
-1. Verify the perks wiring in Studio. **The user has to open the SF2 place first — no Studio instance is connected, so nothing can be installed or tested.** Then:
-   - start the 8765 server (section 5), install (`out\install.txt` is regenerated and lists `SF2/Perks`)
-   - run `tools\tests\ai_test.luau` and `all_fights.luau`: every fight now builds a perk set, so a fight that errors on `require(script.Parent.Perks)` means the install missed the new module
-   - check a perk actually fires in a stage that grants one (the bosses' perks are the easiest to see), and that a `ModFlag` gates the moves it should
-   - check wall repulsion and wall hits: knock a fighter into a wall and watch for `WallHit` (and `WallHitFall` out of a HitFall), and that nobody leaves the arena or sticks to a wall
-   - try a throw as the player: Punch tapped with Forward held, close in, right after the enemy's hit reaction
-2. Ask the user to playtest a full fight flow (menu → map → fight → rewards) and the open combat checks above. Fix what they report.
+1. Ask the user to playtest with the current install (it is up to date, and the place has **not been saved** — Ctrl+S in Studio to keep it). What to look at, since the headless tests cannot:
+   - a full flow: menu → map → fight → rewards, and the open combat checks below
+   - a throw: Punch tapped with Forward held, close in, right after the enemy's hit reaction
+   - a wall hit against a *moving* enemy (an idle one blocks and never wall-hits)
+   - whether perk icons and effects show in the HUD at all (perk visuals are not ported)
+2. Fix whatever the playtest reports.
 3. Then work through the known gaps: projectiles, boss abilities, the shock state. For anything left from `docs\FULL_GAME_PLAN.md` steps 9–12 (economy and forge, all modes, story coverage, polish), compare it against the commits first.
 4. Ask the user to save the place to Roblox (Ctrl+S in Studio).
 
-Note: no local servers are running now (the old ones were stopped for the move). Start the 8765 server (section 5) before any install.
+Note on the 8765 server: it is running again as of 2026-10-21 (section 5), but not as a service — it dies with the session. Start it before any install.
+Note on the headless tests: `all_fights.luau` blocks Studio's main thread for minutes and the MCP plugin disconnects while it runs. It writes to `ServerStorage.TestResult`, so poll that in a separate call once Studio answers again, rather than waiting inside the call.
 
 ## 5. How to work
 
@@ -133,3 +140,4 @@ Note: no local servers are running now (the old ones were stopped for the move).
 - 2026-10-21 (overnight): full-game port. Data pipeline, audio, images, UI, fight loop and screen, menus, profile, quests, rules, Eclipse, AI. Stopped at the usage limit with AI tweak + Perks uncommitted.
 - 2026-10-21: reorganized everything into `D:\SF2-Port`, fixed hardcoded paths, wrote this file, moved the port folder after stopping the old servers. No code changed.
 - 2026-10-21: wired the perks interpreter into the fight (hit stages in `Combat.strike`, animation events in `MoveEngine`, stage/tick/MagicCharged in `Fight`), regenerated `out\install.txt`, documented Perks and the AI engagement floor in the port README. Nothing installed or run: no Studio instance was connected. Then wall repulsion (so `WallHit`/`WallHitFall` can fire), the `Player="Enemy"` fix for the ModExists/Player/Name conditions with `out\MoveLib` rebuilt, and a static audit of throws. Still nothing run in Studio.
+- 2026-10-21 (Studio session): installed into the SF2 place and verified for the first time. ai_test 0 errors; all_fights 761 fights / 0 errors (the 104 Eclipse failures were a harness gap, now fixed and covered); perks shown to fire, gate on conditions and expire; wall repulsion and WallHit confirmed. Fixed the hit-stage order so all three perk stages run before the health comes off, which the first wiring had broken for PERK_ENLIGHTENMENT and PERK_ANTI_SHOCK.
