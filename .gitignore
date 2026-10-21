@@ -5,3 +5,6 @@ sf2-assets/
 sf2-il2cpp/
 _archive/
 tmp/
+
+# Separate local copy (Antigravity), not part of this repo
+sf2-standalone/
