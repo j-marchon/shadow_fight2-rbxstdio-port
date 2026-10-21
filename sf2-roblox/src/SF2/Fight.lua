@@ -22,6 +22,7 @@ local Combat = require(script.Parent.Combat)
 local Rigs = require(script.Parent.Rigs)
 local Moves = require(script.Parent.Moves)
 local Items = require(script.Parent.Items)
+local Perks = require(script.Parent.Perks)
 local Xml = require(script.Parent.Xml)
 
 local Fight = {}
@@ -87,7 +88,8 @@ function Fight.new(opts: any)
 		local e = MoveEngine.new(f, b.moves, b.loadout, i)
 		e.fight = self
 		e.build = b
-		e.attributes = b.attributes
+		-- cloned: perk mods (ModAttributes) add to this table in place, and children share it
+		e.attributes = table.clone(b.attributes)
 		e.voice = b.voice
 		e.name = b.name or ""
 		e.perks = {}
@@ -103,6 +105,7 @@ function Fight.new(opts: any)
 		self.engines[i] = e
 	end
 	self.engines[1].enemy, self.engines[2].enemy = self.engines[2], self.engines[1]
+	self.perks = Perks.new(self)
 	return self
 end
 
@@ -160,6 +163,7 @@ function Fight.setStage(self: any, stage: string)
 	for _, e in self.engines do
 		e:fire("RoundStageStart", stage)
 	end
+	if self.perks then self.perks:stage(stage) end
 	self:hook("stage", stage)
 end
 
@@ -417,7 +421,10 @@ function Fight.onHit(self: any, att: any, tgt: any, hit: any)
 	end
 	t.magicCharge = math.min(1, t.magicCharge + hit.damage * 2 ^ (BASE * (t.attributes.MagicPainRecharge or 0)))
 	for _, x in { a, t } do
-		if x.magicCharge >= 1 and (x.bullets.MagicBullet or 0) < 1 then x.bullets.MagicBullet = 1 end
+		if x.magicCharge >= 1 and (x.bullets.MagicBullet or 0) < 1 then
+			x.bullets.MagicBullet = 1
+			if self.perks then self.perks:magicCharged(x) end
+		end
 		self:hook("magic", x.player, x.magicCharge)
 	end
 	-- default hit picture and shakes (Fight: Critical / HeadHit / Shock)
@@ -453,6 +460,7 @@ function Fight.tick(self: any)
 	for _, c in table.clone(self.children) do
 		if not c.removed then c:tick() end
 	end
+	if self.perks then self.perks:tick() end
 	-- strikes
 	if self.stage == "Fight" then
 		local a, b = self.engines[1], self.engines[2]

@@ -366,7 +366,7 @@ end
 -- A hit at a stage (HitPreCrit / HitPostCrit / PostHit): Player is the side being hit
 function Perks.onHit(self: any, stage: string, att: any, tgt: any, hit: any)
 	self.hit = hit
-	local attRoot, tgtRoot = att:root(), tgt
+	local attRoot, tgtRoot = att:root(), tgt:root()
 	self:fire(stage, function(inst, k, v)
 		if k == "Player" then
 			return (v == "Me" and inst.owner == tgtRoot) or (v == "Enemy" and inst.owner == attRoot)
@@ -391,6 +391,25 @@ end
 
 function Perks.stage(self: any, stage: string)
 	self:fire("RoundStageStart", function(_, k, v) return k ~= "Name" or v == stage end)
+end
+
+-- AnimationStart / AnimationEnd on one engine: Name matches the move's name or one of its labels
+function Perks.animation(self: any, event: string, e: any, move: any)
+	if not move then return end
+	local root = e.root and e:root() or e
+	self:fire(event, function(inst, k, v)
+		if k == "Name" then return move.name == v or (move.labelSet and move.labelSet[v]) == true end
+		if k == "Player" then return (v == "Enemy") == (inst.owner ~= root) end
+		return true
+	end)
+end
+
+-- The magic bar filled up (Fight.onHit / AddMagicCharge)
+function Perks.magicCharged(self: any, e: any)
+	self:fire("MagicCharged", function(inst, k, v)
+		if k == "Player" then return (v == "Enemy") == (inst.owner ~= e) end
+		return true
+	end)
 end
 
 -- Once per tick: mod timers (ModExpires), EveryFrame triggers

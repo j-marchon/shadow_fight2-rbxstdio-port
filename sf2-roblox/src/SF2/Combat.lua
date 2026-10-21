@@ -29,6 +29,9 @@
 --        (starting attribute 2500, so a 0.12 kick has a 3% chance)
 --      - a critical hit: 0.0001 x ShockCriticalHitChance x r (starting attribute 0)
 --      - damage accumulated past <Shock><Treshold Value="999"/>: perks only, not ported
+--  * perks (SF2.Perks) see each hit at three stages: HitPreCrit (before the crit roll, so SetHit Block
+--    still changes the block factor), HitPostCrit (damage known: SetHit Critical / Shock / Damage and
+--    ChangeImpulse apply), PostHit (after the health is taken off)
 --  * Critical and Shock are separate flags on the hit (ConditionHit checks each on its own)
 --  * the hit edge and contact fraction are kept for the ragdoll impulse (Fighter.applyImpulse)
 
@@ -69,6 +72,13 @@ function Combat.attackFactor(iv: any, attr: any, tattr: any, head: boolean): num
 	return 2 ^ (best / DAMAGE_DOUBLING)
 end
 Combat.random = Random.new()
+
+-- The fight's perk set (SF2.Perks), if this engine belongs to a fight. A child (projectile, summon)
+-- reaches it through its root; a lone engine in a test has neither a fight nor perks.
+local function perksOf(e: any): any
+	local fight = e.fight or (e.root and e:root().fight)
+	return fight and fight.perks
+end
 
 local function edgeTables(rig: any)
 	if rig._combat then return rig._combat end
@@ -178,22 +188,13 @@ function Combat.strike(att: any, tgt: any, suppressed: boolean?): any
 				if touch then
 					att.landed[iv] = true
 					if suppressed then return "suppressed" end
-					local blocked = (not iv.ignoresBlock) and tgt:inInterval("Block")
 					local attr = att.attributes or Combat.ATTRIBUTES
 					local tattr = tgt.attributes or Combat.ATTRIBUTES
 					local head = tf.rig.edgeInfo[ti].part == "Head"
-					local critical = not blocked and not iv.noCritical
-						and Combat.random:NextNumber() < ATTRIBUTE_BASE * (attr.CriticalChance or 0)
-					local damage = iv.damage * Combat.attackFactor(iv, attr, tattr, head)
-						* 2 ^ (ATTRIBUTE_BASE * (attr.DamageFactor or 0)) * Combat.labelFactor(att)
-					if critical then damage *= 2 ^ (ATTRIBUTE_BASE * (attr.CriticalDamage or 0)) end
-					if blocked then damage *= 2 ^ (ATTRIBUTE_BASE * (tattr.BlockDamageFactor or 0)) end
-					if not tgt.immortal then tgt.health = math.max(0, tgt.health - damage) end
-					local r = damage / (att.damageConverter or 1)
-					local shock = (critical
-							and Combat.random:NextNumber() < ATTRIBUTE_BASE * (attr.ShockCriticalHitChance or 0) * r)
-						or (head and not blocked
-							and Combat.random:NextNumber() < ATTRIBUTE_BASE * (attr.ShockHeadHitChance or 0) * r)
+					local weapon = false
+					for _, d in iv.damageTypes or {} do
+						if d[1] == "WeaponDamage" then weapon = true end
+					end
 					-- impulse lever (CPGONFFGAHM.HKFEABKNICO): distance from the edge's first node to the
 					-- contact point over the edge length, capped at 1
 					hy = -hy
@@ -202,12 +203,17 @@ function Combat.strike(att: any, tgt: any, suppressed: boolean?): any
 					local elen = math.sqrt((tf.px[te[2]] - n1x) ^ 2 + (tf.py[te[2]] - n1y) ^ 2)
 					local cd = math.sqrt((hx - n1x) ^ 2 + (hy - n1y) ^ 2)
 					local et = (elen > 1e-9 and cd <= elen) and cd / elen or 1
-					local hit = {
+					-- The hit record is filled in as the perk stages (SF2.Perks) run over it: HitPreCrit
+					-- before the crit roll, HitPostCrit once the damage is known, PostHit after it lands.
+					-- A perk's SetHit leaves blocked / forceCritical / forceShock / setDamage on the record
+					-- and ChangeImpulse leaves impulseMulX / impulseMulY; each is consumed here.
+					local perks = perksOf(att)
+					local hit: any = {
 						name = iv.hits[1] or "Middle",
-						type = (critical and "Critical" or "") .. ((critical and shock) and " " or "") .. (shock and "Shock" or ""),
-						critical = critical, shock = shock, head = head,
-						blocked = blocked,
-						damage = damage,
+						type = "",
+						critical = false, shock = false, head = head,
+						blocked = (not iv.ignoresBlock) and tgt:inInterval("Block"),
+						damage = 0, baseDamage = 0,
 						-- file Y points down; this port uses Y up
 						impulseX = iv.impulse[1] * att.facing,
 						impulseY = -iv.impulse[2],
@@ -216,15 +222,39 @@ function Combat.strike(att: any, tgt: any, suppressed: boolean?): any
 						part = tf.rig.edgeInfo[ti].part,
 						attacker = att,
 						interval = iv,
-						weapon = (function()
-							for _, d in iv.damageTypes or {} do
-								if d[1] == "WeaponDamage" then return true end
-							end
-							return false
-						end)(),
+						weapon = weapon,
 						x = hx, y = hy,
 					}
+					if perks then perks:onHit("HitPreCrit", att, tgt, hit) end
+					local blocked = hit.blocked
+					local damage = iv.damage * Combat.attackFactor(iv, attr, tattr, head)
+						* 2 ^ (ATTRIBUTE_BASE * (attr.DamageFactor or 0)) * Combat.labelFactor(att)
+					hit.baseDamage = damage
+					local critical = not blocked and not iv.noCritical
+						and Combat.random:NextNumber() < ATTRIBUTE_BASE * (attr.CriticalChance or 0)
+					if hit.forceCritical ~= nil then critical, hit.forceCritical = hit.forceCritical, nil end
+					if critical then damage *= 2 ^ (ATTRIBUTE_BASE * (attr.CriticalDamage or 0)) end
+					if blocked then damage *= 2 ^ (ATTRIBUTE_BASE * (tattr.BlockDamageFactor or 0)) end
+					if hit.setDamage then damage, hit.setDamage = hit.setDamage, nil end
+					local r = damage / (att.damageConverter or 1)
+					local shock = (critical
+							and Combat.random:NextNumber() < ATTRIBUTE_BASE * (attr.ShockCriticalHitChance or 0) * r)
+						or (head and not blocked
+							and Combat.random:NextNumber() < ATTRIBUTE_BASE * (attr.ShockHeadHitChance or 0) * r)
+					hit.critical, hit.shock, hit.damage = critical, shock, damage
+					if perks then
+						perks:onHit("HitPostCrit", att, tgt, hit)
+						if hit.setDamage then hit.damage, hit.setDamage = hit.setDamage, nil end
+						if hit.forceCritical ~= nil then hit.critical, hit.forceCritical = hit.forceCritical, nil end
+						if hit.forceShock ~= nil then hit.shock, hit.forceShock = hit.forceShock, nil end
+						critical, shock = hit.critical, hit.shock
+					end
+					hit.type = (critical and "Critical" or "") .. ((critical and shock) and " " or "") .. (shock and "Shock" or "")
+					hit.impulseX *= hit.impulseMulX or 1
+					hit.impulseY *= hit.impulseMulY or 1
+					if not tgt.immortal then tgt.health = math.max(0, tgt.health - hit.damage) end
 					tgt.lastHit = hit
+					if perks then perks:onHit("PostHit", att, tgt, hit) end
 					tgt:fire("Hit", hit.name)
 					att:fire("Strike", "")
 					return hit
