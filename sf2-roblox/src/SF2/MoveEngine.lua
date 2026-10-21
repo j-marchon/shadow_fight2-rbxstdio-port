@@ -149,11 +149,19 @@ function MoveEngine.repulseWall(self: MoveEngine)
 end
 
 -- DistancePoint: Player Me/Enemy/Parent/Child, Object Nodes/Pivot/Wall/Floor/MapCenter/COM/Animation
-function MoveEngine.anchor(self: MoveEngine, a: any): (number, number)
+-- `candidate` is the move a condition is being tested for. It matters because which wall is "Back" and
+-- which way a ShiftX points depend on the facing, and a move with a SetDirection takes a new facing the
+-- moment it starts. Testing the condition with the old facing and then aligning with the new one let a
+-- wall jump pass next to one wall and land against the other, teleporting the fighter across the arena
+-- (WallJump_* turn to face the enemy and align onto Object="Wall" Part="Back"). Conditions therefore ask
+-- with the facing the candidate would have, which is what Align then uses.
+function MoveEngine.anchor(self: MoveEngine, a: any, candidate: any?): (number, number)
 	if not a then
 		return self:nodePos(self.pivotSlot)
 	end
 	local who = self:who(a.player) or self
+	local facing = who.facing
+	if candidate and who == self then facing = self:facingFor(candidate) end
 	local x, y = 0, 0
 	local obj = a.object
 	if obj == "Nodes" then
@@ -173,14 +181,14 @@ function MoveEngine.anchor(self: MoveEngine, a: any): (number, number)
 	elseif obj == "Wall" then
 		local front = (a.part == "Front")
 		local lo, hi = self:walls()
-		x = ((front and who.facing or -who.facing) > 0) and hi or lo
+		x = ((front and facing or -facing) > 0) and hi or lo
 		y = select(2, who:nodePos(who.slots.NPivot or who.pivotSlot))
 	elseif obj == "Floor" then
 		x, y = who:nodePos(who.slots.NPivot or who.pivotSlot); y = 0
 	elseif obj == "MapCenter" then
 		x, y = 0, 0
 	end
-	return x + (a.shiftX or 0) * who.facing, y + (a.shiftY or 0)
+	return x + (a.shiftX or 0) * facing, y + (a.shiftY or 0)
 end
 
 -- The facing a candidate move would start with (its SetDirection, else the current facing);
@@ -264,8 +272,8 @@ function MoveEngine.check(self: MoveEngine, c: any, candidate: any): boolean
 		local who = self:who(c.player)
 		v = who ~= nil and itemMatches(who.loadout, c)
 	elseif t == "dist" then
-		local fx, fy = self:anchor(c.from)
-		local tx, ty = self:anchor(c.to)
+		local fx, fy = self:anchor(c.from, candidate)
+		local tx, ty = self:anchor(c.to, candidate)
 		local d = (c.axis == "Y") and math.abs(ty - fy) or math.abs(tx - fx)
 		v = d >= c.min and d <= c.max
 	elseif t == "player" then

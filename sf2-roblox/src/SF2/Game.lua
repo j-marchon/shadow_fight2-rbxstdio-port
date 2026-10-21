@@ -49,7 +49,13 @@ local function flatLighting()
 	L.GlobalShadows = false
 end
 
-local CHAIN = { TOURNAMENT = true, CHALLENGE = true, SURVIVAL = true }
+-- Battle types whose <Fight> entries are played back to back in one visit, instead of one per entry.
+-- A tournament is not one of them: stages.xml gives it 8 to 24 <Fight> entries with a single <Warrior>
+-- each, which is the ladder of separate opponents you come back to the map between, and chaining them
+-- turned a tournament into one long wave. The same goes for a challenge. Survival does chain, but
+-- through the several enemies inside its single <Fight> (Stages.enemies draws them from the groups and
+-- nextEnemy carries the health over), not through this table.
+local CHAIN: { [string]: boolean } = {}
 
 -- Play one fight; done(result, playerHealth)
 local function playOne(zone: string, battle: any, fight: any, enemy: any, startHealth: number?, done: (any) -> ())
