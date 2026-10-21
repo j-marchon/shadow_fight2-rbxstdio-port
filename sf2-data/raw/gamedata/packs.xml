@@ -1,0 +1,5 @@
+<Packs>
+  <Pack Name="ANIMATIONS" Url="https://assets.nekki.com/shadowfight/unity_packs/SF2_free/animations_19-59-43_18_09_2026_7a2da5a269d40489b3a99573fc43f7b0_3580520704_android" Version="2.46.0" Attach="1" Hash="550EDCCB34072EBDFA547A4D142394E5" Priority="0" />
+  <Pack Name="VERSIONAL_CONFIGS" Url="https://assets.nekki.com/shadowfight/unity_packs/SF2_free/versional_configs_11-13-33_19_10_2026_39faaf5df59b3f7a45fe3d6af24e25ed_3885747667_android" Version="2.46.0" Attach="1" Hash="7C8C379D0B12B7E93EACD0DFB164C794" Priority="0" />
+  <Pack Name="ZONE_1" Url="https://assets.nekki.com/shadowfight/unity_packs/SF2_free/zone_1_16-37-26_06_06_2025_46e02e552ef30c0406537fdda39d8008_1654772078_android" Version="2.46.0" Attach="1" Hash="DA0CF9F86426D10EA0CB084E108582BC" Priority="0" />
+</Packs>

@@ -1,0 +1,533 @@
+Movesxml  [1]
+Movesxml/Moves  [1]
+Movesxml/Moves/Move  [1104]
+    attrs: Name(1104), Priority(1104), FileName(1086), MidFrames(1085), FirstFrame(1085), Template(1069), PackName(936), MirrorNode(798), Type(415), TacticWeapon(365), NoInterpolationFrames(340), EndsStage(270), NoMagicRecharge(258), StyleFactor(196), NoWallRepulsion(188), Labels(114), CameraCOMAlignStage(70), EndFrame(55), TacticEquivalent(54), Icon(19), Physics(14), TacticWalNode(10), TacticWallShift(10), Show(10), Rank(10), AlignOnParentWallCollision(4), NoAnimation(4), Looped(2), DebugConditions(2)
+      Type: ATTACK(370), MOVE(45)
+      MidFrames: 2(1021), 3(31), 1(11), 4(9), 5(8), 20(4), 6(1)
+      FirstFrame: 2(458), 1(285), 3(189), 4(65), 7(18), 5(16), 6(13), 20(9), 17(7), 8(3), 10(3), 15(2), 38(2), 30(2), 39(2), 24(2), (2), 21(1), 23(1), 36(1), 22(1), 0(1), 26(1), 9(1)
+      MirrorNode: NHeel_1(796), Magic-Node-Side_1(2)
+      PackName: ANIMATIONS(532), ZONE_RAID(193), ZONE_1(140), ZONE_7_3(41), _UNUSED_(19), CLANS(8), AZTEC_24(2), VOLCANO_SET(1)
+      NoWallRepulsion: 1(184), 0(4)
+      NoInterpolationFrames: 1(336), 0(4)
+      TacticEquivalent: StanceIdle(29), StepForward(12), StepBack(12), RangedBlasterPlayer(1)
+      TacticWallShift: -50(3), -125(3), -200(2), -250(2)
+      Icon: Skills01.low_kick(4), Skills01.wall_jump(2), Trick8.throw_forward(2), Skills01.step_forward(1), Skills01.step_back(1), Skills01.back_roll(1), Skills01.forward_roll(1), Skills01.front_flip(1), Skills01.back_flip(1), Skills01.jump(1), Skills01.duck(1), Skills01.high_knee_up(1), Skills01.short_jump_kick(1), Skills01.short_upward_elbow_strike(1)
+      Show: 0(8), 1(2)
+      Rank: 313(4), 101(2), 403(2), 301(1), 307(1)
+      StyleFactor: 1.1(86), 0.7(42), 0.8(32), 0.9(14), 1.2(8), 0(7), 0.6(5), 0.5(1), 1.3(1)
+      DebugConditions: 0(1), 1(1)
+Movesxml/Moves/Move/Actions  [951]
+Movesxml/Moves/Move/Actions/AddBullets  [40]
+    attrs: Type(40), Frame(40), Value(40)
+      Type: MagicBullet(37), RaidChargeBullet(3)
+Movesxml/Moves/Move/Actions/CameraWeight  [16]
+    attrs: MeWeight(16), EnemyWeight(16), Frame(16), Time(16), Delay(16)
+      MeWeight: 0(8), 0.5(8)
+      EnemyWeight: 1(8), 0.5(8)
+      Delay: 0(8), 2.5(8)
+Movesxml/Moves/Move/Actions/CreatePlayer  [169]
+    attrs: Frame(169), Name(152), StartAnimation(41), CacheName(4)
+      CacheName: AssistantLongKatanaPlayer(1), AssistantBigNaginataPlayer(1), AssistantBigMagariYariPlayer(1), AssistantUniqGlaivePlayer(1)
+Movesxml/Moves/Move/Actions/CreatePlayer/Item  [346]
+    attrs: Type(343), Name(245), CopyParentType(101), CopyParentSubtype(4)
+      Type: Skeleton(166), Weapon(163), Armor(7), Helm(7)
+      CopyParentType: Magic(70), Ranged(25), RaidConsumable(4), Weapon(2)
+Movesxml/Moves/Move/Actions/Delete  [238]
+    attrs: Player(237), Event(200), Frame(38)
+      Event: Strike(111), AnimationEnd(88), Hit(1)
+Movesxml/Moves/Move/Actions/Effect  [581]
+    attrs: Name(581), Sequence(581), PackName(580), Scale(556), Looped(531), TimeScale(453), Frame(410), Event(196), OnBackground(59), ScaleX(37), ScaleY(21), StartRotation(20)
+      Looped: 0(424), 1(107)
+      OnBackground: 1(42), 0(17)
+      StartRotation: 180(8), -15(3), 15(3), 37(2), 45(1), 42(1), 90(1), 5(1)
+      Event: Strike(93), AnimationEnd(83), AnimationStart(20)
+      ScaleX: -1.0(6), 0.07(6), 0.35(5), 0.30(3), 1(3), 0.10(2), 0.3(2), -1.5(2), 0.6(2), -0.5(1), -0.8(1), 1.0(1), 0.5(1), -2(1), -1.2(1)
+      ScaleY: 0.07(8), 0.33(3), 0.4(2), 2.7(2), 1.0(1), -0.5(1), 1.2(1), -0.6(1), 0.6(1), 1(1)
+Movesxml/Moves/Move/Actions/Effect/Attach  [8]
+    attrs: Player(8), RootPoint(8), AttachPoint(8), OffsetVector(8), StartRotAngle(7)
+      Player: Me(6), Parent(2)
+      RootPoint: Ranged-Node2_1(3), NStomach(2), MacroBodyGatekeeper-Node975(1), Weapon-Node1_1(1), Weapon-Node1_2(1)
+      AttachPoint: Ranged-Node3_1(3), NChest(2), MacroBodyGatekeeper-Node445(1), Weapon-Node2_1(1), Weapon-Node2_2(1)
+      OffsetVector: 15;-15(2), -20;0(2), -54;-12(1), 30;10(1), 30;20(1), 30;0(1)
+      StartRotAngle: 0(3), 180(2), -78(1), 330(1)
+Movesxml/Moves/Move/Actions/Effect/Conditions  [233]
+Movesxml/Moves/Move/Actions/Effect/Conditions/Item  [230]
+    attrs: Type(230), SubType(222), Name(8)
+      Type: Weapon(206), Magic(24)
+Movesxml/Moves/Move/Actions/Effect/Conditions/Operator  [3]
+    attrs: Type(3)
+Movesxml/Moves/Move/Actions/Effect/Conditions/Operator/Item  [6]
+    attrs: Type(6), SubType(6)
+      SubType: MagicDarkWave(3), MagicDeathDarkWave(3)
+Movesxml/Moves/Move/Actions/Effect/Position  [573]
+    attrs: Player(573), Object(573), Part(573), ShiftY(573), Follow(572), ShiftX(571)
+      Player: Me(532), Parent(32), Enemy(9)
+      Object: Nodes(563), Wall(10)
+      Follow: 0(370), 1(202)
+Movesxml/Moves/Move/Actions/EnableBossAbility  [4]
+    attrs: Value(4)
+      Value: 1(2), 0(2)
+Movesxml/Moves/Move/Actions/PlayAnimation  [7]
+    attrs: Player(7), Animation(7), Frame(7), ChildName(3)
+      Player: Enemy(4), Child(3)
+      Animation: ThrowForwardV(1), ThrowThroughTheBackV(1), ThrowSuplexV(1), TitanThrowForwardV(1), SaturnBlasterModelHide(1), SaturnBlasterModelStrike(1), BlacknessGraspAbilityHandMove(1)
+      ChildName: SaturnBlaster(2), BlackHand(1)
+Movesxml/Moves/Move/Actions/RandomSound  [533]
+    attrs: Event(500), Frame(33)
+      Event: Strike(496), AnimationStart(2), AnimationEnd(2)
+Movesxml/Moves/Move/Actions/RandomSound/Sound  [2932]
+    attrs: Name(2932), PackName(18), Frame(4)
+Movesxml/Moves/Move/Actions/SetCooldown  [23]
+    attrs: Frame(23), Duration(23), Button(23)
+      Duration: 300(11), 120(4), 60(3), 500(3), 1100(1), 1000(1)
+      Button: Super(20), RaidCharge(3)
+Movesxml/Moves/Move/Actions/SetEndStage  [1]
+    attrs: Frame(1)
+Movesxml/Moves/Move/Actions/ShakeScreen  [27]
+    attrs: PauseTime(27), EffectTime(27), AmplitudeX(27), FrequencyX(27), AmplitudeY(27), FrequencyY(27), Frame(27)
+      PauseTime: 0(26), 30(1)
+      EffectTime: 60(18), 30(7), 20(1), 90(1)
+      AmplitudeX: 7(24), 6(1), 5(1), 8(1)
+      FrequencyX: 1(24), 1.0(2), 1.1(1)
+      AmplitudeY: 18(18), 9(3), 15(2), 20(2), 7(1), 8(1)
+      FrequencyY: 0.5(18), 1.0(5), 0.3(3), 1.5(1)
+Movesxml/Moves/Move/Actions/Sound  [3322]
+    attrs: Name(3322), Frame(3265), Voice(1750), PackName(1034), Event(57), Volume(37), Looped(4)
+      Event: Strike(51), AnimationStart(3), AnimationEnd(3)
+      PackName: CLANS(693), ZONE_RAID(207), ZONE_7_3(40), ZONE_2(37), ZONE_3(18), OFFERS/WEEKLY_OFFER_20_FUTURIST_MAGIC(10), ZONE_1(6), VOLCANO_SET(6), ZONE_7_2(4), NEW_YEAR_25(3), OFFERS/WEEKLY_OFFER_38_SPARKS_OF_PROMETHEUS_25(3), ZONE_7(3), FOREST_DEMON_25(3), _UNUSED_(1)
+      Voice: Male(593), MaleLow(584), Female(573)
+      Volume: 0.5(9), 0.85(7), 0.7(6), 0.9(5), 0.35(4), 0.75(3), 0.6(2), 1(1)
+Movesxml/Moves/Move/Actions/Sound/Conditions  [86]
+Movesxml/Moves/Move/Actions/Sound/Conditions/Item  [62]
+    attrs: Type(62), SubType(61), Name(1)
+      Type: Weapon(49), Magic(12), Ranged(1)
+      SubType: EnergyBall(9), VodooMagic(8), GiantsWrath(6), IceBall(6), PinkBall(6), Windball(6), Staccato(5), MagicSnowCloud(3), MagicRevenantAura(3), LotusMine(3), MagicAcidCloud(2), MagicGentleStorm(2), Mine(2)
+Movesxml/Moves/Move/Actions/Sound/Conditions/Operator  [24]
+    attrs: Type(24)
+Movesxml/Moves/Move/Actions/Sound/Conditions/Operator/Item  [55]
+    attrs: Type(55), SubType(55)
+      Type: Weapon(37), Magic(14), Ranged(4)
+      SubType: Snowball(8), MagicWave(6), MagicWindWave(6), MagicDarkWave(6), MagicFireAura(6), MagicColdAura(6), FireBall(6), MagicDeathDarkWave(3), Shuriken(2), Skull(2), PinkBall(2), MagicAcidCloud(1), MagicGentleStorm(1)
+Movesxml/Moves/Move/Actions/Sound/Conditions/Screen  [1]
+    attrs: Name(1), Not(1)
+Movesxml/Moves/Move/Actions/StopEffect  [80]
+    attrs: Name(75), Event(37), Frame(34), Player(5)
+      Event: AnimationEnd(16), Hit(15), Strike(6)
+Movesxml/Moves/Move/Actions/StopEffect/Conditions  [9]
+Movesxml/Moves/Move/Actions/StopEffect/Conditions/Item  [9]
+    attrs: Type(9), SubType(9)
+      SubType: GiantsWrath(3), LotusMine(3), EnergyBall(1), PinkBall(1), Mine(1)
+Movesxml/Moves/Move/Actions/StopFollowEffect  [23]
+    attrs: Name(23), Event(23)
+Movesxml/Moves/Move/Actions/StopSound  [16]
+    attrs: Name(16), Event(14), Frame(2)
+      Event: Hit(9), Strike(3), AnimationEnd(2)
+Movesxml/Moves/Move/Actions/TryOnEnd  [75]
+    attrs: Event(75)
+Movesxml/Moves/Move/Actions/ZoomEffect  [1]
+    attrs: EffectTime(1), ZoomScale(1), Frame(1)
+Movesxml/Moves/Move/Align  [1080]
+    attrs: Axis(1080), ShiftModelNode(45)
+      Axis: X|Z(975), X|Y|Z(99), X|Z|Y(5), X(1)
+      ShiftModelNode: Ranged-Node2_1(18), NPivot(17), Magic-Node2_1(10)
+Movesxml/Moves/Move/Align/Pivot  [1080]
+    attrs: Object(1080), Part(940), Player(1)
+      Object: Nodes(940), Animation(138), Pivot(2)
+      Part: NHeel_2(526), NHeel_1(211), Magic-Node2_1(110), NPivot(30), Ranged-Node2_1(23), MassBomb-MacroNode1(16), NNeck(13), Magic-Node3_1(4), NToeS_1(2), Ranged-Node3_1(2), Magic-Node-Top(2), NKnee_2(1)
+Movesxml/Moves/Move/Align/Position  [1080]
+    attrs: Player(1080), Object(1080), ShiftX(189), Part(173), ShiftY(41)
+      Player: Me(901), Parent(124), Enemy(55)
+      Object: Pivot(793), Nodes(150), Animation(114), Wall(23)
+      ShiftY: 20(5), 100(5), 0(4), 45(3), 50(3), -120(2), -5(2), 10(2), -20(2), -160(1), -140(1), 5(1), 30(1), -520(1), 60(1), -105(1), -95(1), -40(1), 35(1), 120(1), 80(1), 130(1)
+      Part: Magic-Node2_1(58), NPivot(43), Back(23), Ranged-Node2_1(18), MassBomb-MacroNode1(16), NStomach(7), Weapon-Node2_1(3), NNeck(3), NWrist_2(1), NToeS_1(1)
+Movesxml/Moves/Move/Conditions  [970]
+Movesxml/Moves/Move/Conditions/BattleType  [22]
+    attrs: Value(22), Not(10)
+Movesxml/Moves/Move/Conditions/Birth  [11]
+    attrs: Name(11)
+Movesxml/Moves/Move/Conditions/BossAbilityState  [9]
+    attrs: Value(9)
+      Value: 1(7), 0(2)
+Movesxml/Moves/Move/Conditions/Bullets  [40]
+    attrs: Type(40), Min(40)
+      Type: MagicBullet(37), RaidChargeBullet(3)
+Movesxml/Moves/Move/Conditions/CurrentAnimation  [808]
+    attrs: Name(808), Not(663), Player(92)
+      Player: Parent(86), Me(4), Enemy(2)
+Movesxml/Moves/Move/Conditions/CurrentInterval  [660]
+    attrs: Name(649), Not(643), Type(11), Player(4)
+Movesxml/Moves/Move/Conditions/Direction  [6]
+    attrs: Player(6)
+Movesxml/Moves/Move/Conditions/Direction/From  [6]
+    attrs: Player(6), Object(6), Part(6)
+      Player: Enemy(5), Me(1)
+Movesxml/Moves/Move/Conditions/Direction/To  [6]
+    attrs: Player(6), Object(6), Part(6)
+      Player: Me(5), Enemy(1)
+Movesxml/Moves/Move/Conditions/Distance  [84]
+    attrs: Axis(84), Max(70), Min(41), Not(7)
+      Axis: X(81), Y(3)
+Movesxml/Moves/Move/Conditions/Distance/From  [84]
+    attrs: Object(84), Part(61), Player(58), Frame(1)
+      Player: Me(46), Parent(8), Enemy(4)
+      Object: Nodes(34), Wall(27), Pivot(22), COM(1)
+      Part: Back(27), Magic-Node2_1(22), NPivot(6), NHeel_1(4), Ranged-Node2_1(2)
+Movesxml/Moves/Move/Conditions/Distance/To  [84]
+    attrs: Object(84), Part(83), Player(58)
+      Player: Me(32), Enemy(26)
+      Object: Nodes(55), Wall(28), COM(1)
+      Part: NHeel_1(24), Front(24), NPivot(22), NNeck(7), Back(4), NHeel_2(2)
+Movesxml/Moves/Move/Conditions/Health  [3]
+    attrs: Max(3), Not(2)
+Movesxml/Moves/Move/Conditions/Keys  [379]
+Movesxml/Moves/Move/Conditions/Keys/Key  [685]
+    attrs: Type(685), PressType(685)
+      Type: Punch(346), Forward(97), Super(42), Back(39), Up(39), Down(38), Magic(36), Kick(23), Ranged(10), Down-Back(3), Down-Forward(3), Up-Back(3), RaidCharge(3), Up-Forward(2), Ability(1)
+      PressType: Tap(476), Hold(209)
+Movesxml/Moves/Move/Conditions/ModExists  [331]
+    attrs: Name(331), Not(322), Player(25)
+      Player: Enemy(24), Parent(1)
+Movesxml/Moves/Move/Conditions/Name  [207]
+    attrs: Value(207), Not(3)
+Movesxml/Moves/Move/Conditions/Operator  [1390]
+    attrs: Type(1390), Not(450)
+      Type: Or(858), And(526), AND(6)
+Movesxml/Moves/Move/Conditions/Operator/CurrentAnimation  [1655]
+    attrs: Name(1655), Not(129), Player(68)
+      Player: Parent(58), Enemy(10)
+Movesxml/Moves/Move/Conditions/Operator/CurrentInterval  [1052]
+    attrs: Name(1051), Not(605), Type(1)
+Movesxml/Moves/Move/Conditions/Operator/Direction  [1]
+    attrs: Player(1), Not(1)
+Movesxml/Moves/Move/Conditions/Operator/Direction/From  [1]
+    attrs: Player(1), Object(1), Part(1)
+Movesxml/Moves/Move/Conditions/Operator/Direction/To  [1]
+    attrs: Player(1), Object(1), Part(1)
+Movesxml/Moves/Move/Conditions/Operator/Distance  [36]
+    attrs: Axis(36), Max(22), Min(18), Not(6)
+      Axis: X(34), Y(2)
+Movesxml/Moves/Move/Conditions/Operator/Distance/From  [36]
+    attrs: Object(36), Player(30), Part(23), Frame(4)
+      Object: Wall(12), Nodes(11), Pivot(7), COM(4), Floor(2)
+      Part: Back(12), NHeel_2(6), NHeel_1(5)
+      Player: Me(17), Enemy(13)
+Movesxml/Moves/Move/Conditions/Operator/Distance/To  [36]
+    attrs: Object(36), Part(30), Player(30)
+      Object: Nodes(19), Wall(11), COM(6)
+      Part: NHeel_2(10), Front(10), NPivot(3), NHeel_1(2), NNeck(1), NTop(1), NKnee_1(1), NKnee_2(1), Back(1)
+      Player: Enemy(20), Me(10)
+Movesxml/Moves/Move/Conditions/Operator/Health  [1]
+    attrs: Max(1)
+Movesxml/Moves/Move/Conditions/Operator/Hit  [58]
+    attrs: Name(56), Type(48)
+      Type: Critical(24), Shock(24)
+Movesxml/Moves/Move/Conditions/Operator/Keys  [82]
+Movesxml/Moves/Move/Conditions/Operator/Keys/Key  [102]
+    attrs: Type(102), PressType(102)
+      Type: Back(50), Forward(32), Up-Back(10), Punch(10)
+      PressType: Tap(66), Hold(36)
+Movesxml/Moves/Move/Conditions/Operator/ModExists  [12]
+    attrs: Name(12), Not(6), Player(3)
+Movesxml/Moves/Move/Conditions/Operator/Name  [23]
+    attrs: Value(23), Player(8)
+      Value: Assistant(8), StaccatoSphere1(3), StaccatoSphere2(3), StaccatoSphere3(3), MagicHeavyJumpWave1(2), MagicHeavyJumpWave2(2), BlasterEffect(1), BlasterRedEffect(1)
+      Player: Enemy(4), EnemyChild(4)
+Movesxml/Moves/Move/Conditions/Operator/PhysicsFrameNumber  [6]
+    attrs: Min(6)
+Movesxml/Moves/Move/Conditions/Operator/Player  [7]
+    attrs: Number(7), Player(4)
+Movesxml/Moves/Move/Conditions/Operator/RoundResult  [4]
+    attrs: Name(2), Not(2), Type(2)
+Movesxml/Moves/Move/Conditions/Operator/RoundStage  [1]
+    attrs: Name(1)
+Movesxml/Moves/Move/Conditions/Perk  [11]
+    attrs: Player(11), Name(11), Not(4)
+Movesxml/Moves/Move/Conditions/PhysicsFrameNumber  [1]
+    attrs: Min(1)
+Movesxml/Moves/Move/Conditions/Player  [71]
+    attrs: Number(71)
+      Number: 1(37), 2(34)
+Movesxml/Moves/Move/Conditions/RoundResult  [47]
+    attrs: Name(43), Not(5), Type(4)
+Movesxml/Moves/Move/Conditions/RoundStage  [485]
+    attrs: Name(485)
+Movesxml/Moves/Move/Events  [1059]
+Movesxml/Moves/Move/Events/AnimationEnd  [638]
+    attrs: Name(20), Player(4)
+Movesxml/Moves/Move/Events/AnimationStart  [2]
+    attrs: Player(2), Name(2)
+Movesxml/Moves/Move/Events/Birth  [125]
+Movesxml/Moves/Move/Events/EveryFrame  [45]
+    attrs: Step(1)
+Movesxml/Moves/Move/Events/Hit  [159]
+    attrs: Name(153)
+Movesxml/Moves/Move/Events/IntervalEnd  [461]
+    attrs: Name(461)
+Movesxml/Moves/Move/Events/KeyPressed  [418]
+Movesxml/Moves/Move/Events/ModExpires  [2]
+    attrs: Player(2), Name(2)
+Movesxml/Moves/Move/Events/RoundStageStart  [311]
+    attrs: Name(311)
+Movesxml/Moves/Move/Intervals  [983]
+Movesxml/Moves/Move/Intervals/IgnoresBlock  [1]
+Movesxml/Moves/Move/Intervals/Interval  [3060]
+    attrs: Name(1712), Start(1570), Type(1406), End(1344), ID(640), NoEffect(140)
+      Type: Block(697), Attack(640), Invulnerable(64), Throwable(4), Invisible(1)
+Movesxml/Moves/Move/Intervals/Interval/AttackingParts  [629]
+Movesxml/Moves/Move/Intervals/Interval/AttackingParts/Edge  [2489]
+    attrs: Name(2489)
+Movesxml/Moves/Move/Intervals/Interval/Damage  [640]
+    attrs: Value(640), NoCritical(132), BodyPart(130)
+      NoCritical: 1(130), 0(2)
+      BodyPart: Body(129), Head(1)
+Movesxml/Moves/Move/Intervals/Interval/Damage/Damage  [1228]
+    attrs: Type(1228), Shift(597)
+      Type: UnarmedDamage(629), WeaponDamage(455), MagicDamage(112), RangedDamage(26), RaidChargeDamage(6)
+      Shift: -10(479), -25(118)
+Movesxml/Moves/Move/Intervals/Interval/Damage/Defense  [137]
+    attrs: Type(137)
+      Type: BodyDefense(136), HeadDefense(1)
+Movesxml/Moves/Move/Intervals/Interval/Hit  [630]
+    attrs: Name(630), End(3), Start(3)
+Movesxml/Moves/Move/Intervals/Interval/IgnoresBlock  [181]
+Movesxml/Moves/Move/Intervals/Interval/IgnoresInvulnerable  [176]
+    attrs: Name(162)
+Movesxml/Moves/Move/Intervals/Interval/Impulse  [627]
+    attrs: X(627), Y(626), Z(616)
+      Z: 0(396), -350(147), 245(31), -650(12), 350(5), -690(5), -675(5), -250(4), 100(4), -245(2), 300(1), 525(1), -50(1), 550(1), 250(1)
+Movesxml/Moves/Move/Locks  [1083]
+Movesxml/Moves/Move/Locks/Item  [1640]
+    attrs: Type(1626), SubType(1533), Name(100), Not(3), Player(1)
+      Type: Skeleton(1063), Weapon(482), Magic(57), Ranged(20), Armor(4)
+Movesxml/Moves/Move/Locks/Operator  [405]
+    attrs: Type(405)
+Movesxml/Moves/Move/Locks/Operator/Item  [923]
+    attrs: Type(920), SubType(856), Name(67), Not(61)
+      Type: Weapon(754), Magic(82), Armor(61), Ranged(23)
+Movesxml/Moves/Move/Locks/Operator/Perk  [14]
+    attrs: Name(14)
+Movesxml/Moves/Move/Locks/Operator/Screen  [109]
+    attrs: Name(109)
+Movesxml/Moves/Move/Locks/Perk  [74]
+    attrs: Name(74), Not(1)
+Movesxml/Moves/Move/Locks/Screen  [124]
+    attrs: Name(124)
+Movesxml/Moves/Move/Profile  [269]
+    attrs: Show(269), Icon(269), Rank(268), KeysDescription(4)
+      KeysDescription: Throw_Keys(2), Block_Keys(1), Throw_Keys_Suplex(1)
+Movesxml/Moves/Move/Rotation  [11]
+    attrs: Angle(11)
+      Angle: -5(3), 5(3), -15(2), 15(2), -90(1)
+Movesxml/Moves/Move/Rotation/Position  [11]
+    attrs: Player(11), Object(11), Part(11)
+      Part: Ranged-Node2_1(5), Magic-Node2_1(5), Magic-Node3_1(1)
+Movesxml/Moves/Move/SetDirection  [840]
+Movesxml/Moves/Move/SetDirection/From  [796]
+    attrs: Player(796), Object(796), Part(796)
+      Player: Me(680), Parent(101), Enemy(15)
+      Object: Nodes(681), Wall(115)
+      Part: NPivot(678), Back(100), Front(15), NNeck(3)
+Movesxml/Moves/Move/SetDirection/Impulse  [44]
+    attrs: Reverse(44)
+Movesxml/Moves/Move/SetDirection/To  [796]
+    attrs: Player(796), Object(796), Part(796)
+      Player: Enemy(693), Parent(98), Me(5)
+      Object: Nodes(681), Wall(115)
+      Part: NPivot(681), Front(100), Back(15)
+Movesxml/Moves/Move/Tactics  [370]
+Movesxml/Moves/Move/Tactics/Conditions  [370]
+Movesxml/Moves/Move/Tactics/Conditions/CurrentAnimation  [5]
+    attrs: Name(5), Player(5), Not(5)
+Movesxml/Moves/Move/Tactics/Conditions/Distance  [370]
+    attrs: Axis(370), Min(339), Max(305), Not(1)
+Movesxml/Moves/Move/Tactics/Conditions/Distance/From  [370]
+    attrs: Player(370), Object(370), Part(20)
+      Player: Me(363), Enemy(7)
+      Object: Pivot(350), Wall(12), Nodes(8)
+      Part: Front(6), Back(6), NPivot(6), NHeel_1(2)
+Movesxml/Moves/Move/Tactics/Conditions/Distance/To  [370]
+    attrs: Player(370), Object(370), Part(369)
+      Player: Enemy(361), Me(9)
+      Object: Nodes(365), Wall(4), Pivot(1)
+      Part: NPivot(350), NHeel_1(11), NToe_2(4), Front(4)
+Movesxml/Moves/Move/Tactics/Conditions/Operator  [36]
+    attrs: Type(36)
+      Type: Or(27), And(9)
+Movesxml/Moves/Move/Tactics/Conditions/Operator/CurrentAnimation  [33]
+    attrs: Name(33), Player(33), Not(2)
+Movesxml/Moves/Move/Tactics/Conditions/Operator/Distance  [29]
+    attrs: Axis(29), Min(28), Max(2)
+Movesxml/Moves/Move/Tactics/Conditions/Operator/Distance/From  [29]
+    attrs: Player(29), Object(29), Part(2)
+      Object: Pivot(27), Wall(2)
+Movesxml/Moves/Move/Tactics/Conditions/Operator/Distance/To  [29]
+    attrs: Player(29), Object(29), Part(29)
+      Player: Enemy(27), Me(2)
+Movesxml/Moves/Move/Transitions  [162]
+Movesxml/Moves/Move/Transitions/Transition  [187]
+    attrs: FrameShift(187)
+      FrameShift: 0(110), -1(50), 1(14), 2(10), -2(2), 3(1)
+Movesxml/Moves/Move/Transitions/Transition/Conditions  [187]
+Movesxml/Moves/Move/Transitions/Transition/Conditions/CurrentAnimation  [186]
+    attrs: Name(186)
+Movesxml/Moves/Move/Transitions/Transition/Conditions/CurrentInterval  [187]
+    attrs: Name(187)
+Movesxml/Moves/Move/Transitions/Transition/Conditions/Operator  [1]
+    attrs: Type(1)
+Movesxml/Moves/Move/Transitions/Transition/Conditions/Operator/CurrentAnimation  [4]
+    attrs: Name(4)
+Movesxml/Moves/Move/Velocity  [79]
+    attrs: X(77), Y(14), Ax(1)
+      X: 30(33), 8(12), 25(7), 20(6), 0(4), 10(4), 15(3), 40(2), 45(2), 1(2), -30(1), 2.05(1)
+      Y: 0(3), 1.66(3), -1.66(2), 24(1), 21(1), 18(1), 5.5(1), -1.67(1), -20(1)
+Movesxml/Templates  [1]
+Movesxml/Templates/Template  [147]
+    attrs: Name(147)
+Movesxml/Triggers  [1]
+Movesxml/Triggers/Trigger  [114]
+    attrs: Name(114), DebugConditions(3)
+      DebugConditions: 1(2), 0(1)
+Movesxml/Triggers/Trigger/Actions  [114]
+Movesxml/Triggers/Trigger/Actions/CreatePlayer  [13]
+    attrs: Name(13), Player(1), StartAnimation(1)
+Movesxml/Triggers/Trigger/Actions/CreatePlayer/Item  [30]
+    attrs: Type(30), Name(30)
+      Type: Skeleton(13), Weapon(11), Armor(2), Helm(2), Magic(1), RaidConsumable(1)
+Movesxml/Triggers/Trigger/Actions/Delete  [5]
+    attrs: Player(5), Frame(3)
+      Player: Me(4), EnemyChild(1)
+Movesxml/Triggers/Trigger/Actions/Effect  [57]
+    attrs: Name(57), Sequence(57), PackName(57), Looped(55), TimeScale(54), Scale(52), OnBackground(39), Frame(29), Priority(8), ScaleX(5), ScaleY(5), FirstFrame(5), Follow(1), Event(1)
+      Scale: 1.5(9), 1(8), 0.6(7), 1.1(5), 0.4(4), 1.3(3), 0.7(3), 2.1(2), 1.8(2), 2.5(2), 1.0(2), 0.75(2), 2.0(1), 1.6(1), 0.48(1)
+      TimeScale: 2(16), 2.0(13), 3.0(9), 4.0(7), 1.5(2), 5.0(2), 2.7(1), 4(1), 3.5(1), 2.5(1), 1.0(1)
+      Looped: 1(34), 0(21)
+      PackName: ZONE_RAID(18), CLANS(12), EVENTS/MA_FEST_26(8), _UNUSED_(5), SETS/KARCER_SET(5), EVENTS/VAISAKHI_25(4), FUNGUS_SET(3), ZONE_7_3(1), FOREST_DEMON_25(1)
+      OnBackground: 0(25), 1(14)
+      ScaleX: 0.5(3), 0.6(1), 1(1)
+      ScaleY: -0.5(3), 0.4(1), 1(1)
+      Priority: -100(3), 10(3), 20(2)
+      FirstFrame: 1(4), 10(1)
+Movesxml/Triggers/Trigger/Actions/Effect/Attach  [9]
+    attrs: RootPoint(9), AttachPoint(9), OffsetVector(9), StartRotAngle(9), Player(8)
+      Player: Me(5), Enemy(3)
+      RootPoint: NTop(4), NChest(3), NStomach(2)
+      AttachPoint: NHead(4), NNeck(3), NPivot(1), NChest(1)
+      OffsetVector: -100;0(4), 0;32(3), 100;0(1), 0;0(1)
+      StartRotAngle: 0(4), -90(4), 90(1)
+Movesxml/Triggers/Trigger/Actions/Effect/Position  [48]
+    attrs: Player(48), Object(48), Follow(45), Part(31), ShiftX(30), ShiftY(30)
+      Player: Me(44), Enemy(4)
+      Object: Nodes(31), Floor(14), MapCenter(3)
+      Follow: 1(33), 0(12)
+      ShiftX: 0(14), OrbCoordX(3), RakshasCurseX(2), 250(1), 500(1), 750(1), 1000(1), 1250(1), 1500(1), 1750(1), -50(1), 3(1), RakshasCurseX1(1), RakshasCurseX2(1)
+      ShiftY: 0(7), 15(5), 100(3), 75(3), 50(3), 250(3), 20(2), 150(2), 95(1), 40(1)
+      Part: NStomach(16), NChest(5), NPivot(4), Ranged-Node2_1(1), NFingertipsS_2(1), NFingertipsS_1(1), MacroopulnceChui-Node1(1), NStomachS_1(1), NShoulder_1(1)
+Movesxml/Triggers/Trigger/Actions/HitEffect  [9]
+    attrs: FileName(9), ChangeHitEffectScale(3), AtlasPath(1), StartingRotation(1)
+      ChangeHitEffectScale: 0.5(2), 0.7(1)
+Movesxml/Triggers/Trigger/Actions/PlayAnimation  [2]
+    attrs: Player(2), ChildName(2), Animation(2), ForcePlay(2)
+      Animation: MushroomAttack(1), MushroomEnd(1)
+      ForcePlay: 0(1), 1(1)
+Movesxml/Triggers/Trigger/Actions/ShakeScreen  [10]
+    attrs: PauseTime(10), EffectTime(10), AmplitudeX(10), FrequencyX(10), AmplitudeY(10), FrequencyY(10), Frame(4)
+      PauseTime: 0(5), 60(4), 1(1)
+      EffectTime: 90(5), 60(4), 180(1)
+      AmplitudeX: 5(5), 14(4), 7(1)
+      FrequencyX: 1(5), 1.1(5)
+      AmplitudeY: 15(5), 21(4), 20(1)
+      FrequencyY: 0.5(5), 1(5)
+Movesxml/Triggers/Trigger/Actions/Sound  [45]
+    attrs: Name(45), PackName(44), Frame(29), Looped(13), Volume(6)
+      PackName: CLANS(22), ZONE_1(9), ZONE_RAID(8), ZONE_2(2), VOLCANO_SET(1), FOREST_DEMON_25(1), SETS/KARCER_SET(1)
+      Volume: 0.6(2), 0.8(2), 0.3(1), 1(1)
+Movesxml/Triggers/Trigger/Actions/StopEffect  [55]
+    attrs: Name(52), Frame(23), Player(5)
+      Player: Me(4), EnemyChild(1)
+Movesxml/Triggers/Trigger/Actions/StopSound  [24]
+    attrs: Name(24)
+Movesxml/Triggers/Trigger/Actions/TryOnEnd  [2]
+    attrs: Frame(2)
+Movesxml/Triggers/Trigger/Conditions  [30]
+Movesxml/Triggers/Trigger/Conditions/CurrentAnimation  [4]
+    attrs: Name(4), Player(2), Not(1)
+      Player: Enemy(1), EnemyChild(1)
+Movesxml/Triggers/Trigger/Conditions/CurrentInterval  [2]
+    attrs: Type(2), Not(1)
+Movesxml/Triggers/Trigger/Conditions/Distance  [3]
+    attrs: Max(3), Axis(2)
+Movesxml/Triggers/Trigger/Conditions/Distance/From  [3]
+    attrs: Object(3), Player(2), Part(2), ChildSkeletSybType(1)
+      Object: Nodes(2), Pivot(1)
+      Player: EnemyChild(1), Me(1)
+Movesxml/Triggers/Trigger/Conditions/Distance/To  [3]
+    attrs: Object(3), Part(3), Player(2)
+      Object: Nodes(2), Wall(1)
+      Part: NPivot(2), Front(1)
+      Player: Me(1), Enemy(1)
+Movesxml/Triggers/Trigger/Conditions/Health  [16]
+    attrs: Player(16), Max(16), Not(16)
+      Player: Enemy(8), Me(8)
+Movesxml/Triggers/Trigger/Conditions/Hit  [6]
+    attrs: Name(4), Not(4), Type(2)
+Movesxml/Triggers/Trigger/Conditions/ModExists  [16]
+    attrs: Name(16), Player(12), Not(5)
+      Player: Enemy(9), Me(3)
+Movesxml/Triggers/Trigger/Conditions/Name  [3]
+    attrs: Value(3)
+      Value: TitansHarpoonMissile(1), RootPotion(1), RootPotionTrigger(1)
+Movesxml/Triggers/Trigger/Conditions/Operator  [9]
+    attrs: Type(9)
+      Type: And(6), Or(3)
+Movesxml/Triggers/Trigger/Conditions/Operator/CurrentAnimation  [10]
+    attrs: Name(10), Player(6), Not(2)
+      Player: Parent(3), Me(2), Enemy(1)
+Movesxml/Triggers/Trigger/Conditions/Operator/CurrentInterval  [1]
+    attrs: Type(1), Not(1)
+Movesxml/Triggers/Trigger/Conditions/Operator/Distance  [1]
+    attrs: Max(1), Axis(1)
+Movesxml/Triggers/Trigger/Conditions/Operator/Distance/From  [1]
+    attrs: Object(1), Part(1)
+Movesxml/Triggers/Trigger/Conditions/Operator/Distance/To  [1]
+    attrs: Object(1), Part(1)
+Movesxml/Triggers/Trigger/Conditions/Operator/Name  [2]
+    attrs: Value(2), Not(2)
+      Value: FlowerRootStun(1), RootStun(1)
+Movesxml/Triggers/Trigger/Conditions/Operator/RoundStage  [1]
+    attrs: Name(1)
+Movesxml/Triggers/Trigger/Conditions/RoundResult  [1]
+    attrs: Name(1)
+Movesxml/Triggers/Trigger/Conditions/RoundStage  [2]
+    attrs: Name(2)
+Movesxml/Triggers/Trigger/Events  [114]
+Movesxml/Triggers/Trigger/Events/AnimationStart  [12]
+    attrs: Name(12), Player(11)
+      Player: Enemy(7), Me(4)
+Movesxml/Triggers/Trigger/Events/EveryFrame  [4]
+Movesxml/Triggers/Trigger/Events/Hit  [11]
+Movesxml/Triggers/Trigger/Events/IntervalStart  [1]
+    attrs: Name(1), Player(1)
+Movesxml/Triggers/Trigger/Events/ModExpires  [88]
+    attrs: Name(88), Player(83)
+      Player: Me(77), Enemy(6)
+Movesxml/Triggers/Trigger/Events/RoundStageStart  [4]
+    attrs: Name(4)
+Movesxml/Triggers/Trigger/Events/Strike  [1]
+Movesxml/Triggers/Trigger/Locks  [109]
+Movesxml/Triggers/Trigger/Locks/Item  [16]
+    attrs: Type(16), SubType(8), Name(8)
+      Type: Skeleton(6), Armor(5), Magic(3), Weapon(2)
+      SubType: Skeleton(3), SkeletonMissile(2), Mushroom(2), MagicThorns(1)
+Movesxml/Triggers/Trigger/Locks/Operator  [18]
+    attrs: Type(18)
+Movesxml/Triggers/Trigger/Locks/Operator/Item  [3]
+    attrs: Type(3), SubType(3)
+      Type: Skeleton(2), Magic(1)
+      SubType: SkeletonMagic(1), SkeletonMissile(1), Staccato(1)
+Movesxml/Triggers/Trigger/Locks/Operator/Perk  [19]
+    attrs: Name(19), Player(7)
+Movesxml/Triggers/Trigger/Locks/Perk  [83]
+    attrs: Name(83), Player(16)
+      Player: Me(10), Enemy(6)
+Movesxml/Triggers/Trigger/Locks/Screen  [11]
+    attrs: Name(11), Not(11)
