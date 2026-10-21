@@ -287,6 +287,9 @@ function AI.new(fight: any, index: number, tactic: string?, opts: any?)
 		debug = opts and opts.debug,
 	}, AI)
 	self.strikes = (t.memory and t.memory.strikes) or 3
+	if not (opts and opts.engage == false) then
+		self.engage = (opts and type(opts.engage) == "table" and opts.engage) or AI.ENGAGE
+	end
 	-- set sizes from settings
 	local function set(list: any): { [string]: boolean }
 		local out = {}
@@ -376,6 +379,7 @@ end
 
 -- Press a move's keys (holds first, then taps); the engine starts it on this tick's KeyPressed
 function AI.perform(self: any, m: any, kind: string)
+	self.waitPassed = false
 	local r = self.recipes[m]
 	local facing = self.me:facingFor(m)
 	self:releaseAll()
@@ -471,6 +475,10 @@ function AI.observe(self: any)
 		self.enemyDelay = minMax(self.rng, self.tactic.enemyResponseDelay, ctx)
 	end
 	self.enemyFrame = frame
+	if me.move ~= self.myMove then
+		self.myMove = me.move
+		if me.move and me.move.type == "ATTACK" then self.lastAttack = self.fight.ticks end
+	end
 	-- the enemy committed to this animation (its Uninterrupt interval began): one more use of it
 	if en.move and self.countedInst ~= self.inst and en:inInterval("Uninterrupt") then
 		self.countedInst = self.inst
@@ -695,6 +703,7 @@ function AI.choose(self: any, cands: { any }, kind: string): boolean
 			-- StanceIdle: stand (the idle stance blocks) until the value runs out
 			self:releaseAll()
 			self.wait = math.clamp(c.value or 10, 3, 30)
+			self.waitPassed = false
 			self.stats.byKind[kind .. ":idle"] = (self.stats.byKind[kind .. ":idle"] or 0) + 1
 			return true
 		end
@@ -742,6 +751,20 @@ end
 
 local function roll(self: any, f: any, r: number): boolean
 	return f ~= nil and r < evalF(f, self.ctx)
+end
+
+-- Engagement floor: NOT from the decompile. In the game the TableAttack/UseSafeAttack chances start at Base 0 and
+-- grow with the enemy's frames and with ModelStatistics counters that a human opponent's constant attacking fills
+-- up; two table AIs facing each other barely raise them. So the port lets a table attack/safe-attack candidate
+-- through with probability rising from 0 to `max` between `delay` and `delay + ramp` ticks after this fighter's
+-- last attack. AI.new(..., {engage = false}) turns it off (pure tactic data).
+AI.ENGAGE = { delay = 20, ramp = 60, max = 1 }
+
+function AI.engageFloor(self: any): number
+	local e = self.engage
+	if not e then return 0 end
+	local since = self.fight.ticks - (self.lastAttack or 0)
+	return math.clamp((since - e.delay) / e.ramp, 0, 1) * e.max
 end
 
 -- counters of where decisions end (debug / tests)
@@ -876,16 +899,20 @@ function AI.decide(self: any)
 
 	-- ExpectedWait (Tactic.DAMEJECEIOA): act with probability 1 / wait (an evade is never delayed)
 	local we = self.waitOf[me.move] or entryFor(t.expectedWait, nil)
-	if we and not evade then
+	-- JNNIDCGMNPD: once the wait has passed it stays passed until a decision is made
+	if we and not evade and not self.waitPassed then
 		local w = math.max(evalF(we.f, ctx), 1)
 		if self.rng:NextNumber() <= 1 - 1 / w then self:flow("expectedWait") return end
+		self.waitPassed = true
 	end
 
 	if tabular and self:hasTablesFor(en.move) then
-		if roll(self, t.safeAttack, self.rolls.safe) then
+		-- engagement floor (port bias, see AI.ENGAGE): the longer since my last attack, the surer a table hit is taken
+		local floor = self:engageFloor()
+		if roll(self, t.safeAttack, self.rolls.safe) or self.rolls.safe < floor then
 			for _, c in self:fromTables("movement", en) do table.insert(cands, c) end
 		end
-		if roll(self, t.tableAttack, self.rolls.table) then
+		if roll(self, t.tableAttack, self.rolls.table) or self.rolls.table < floor then
 			local limit = aiFrame(en) + (self.enemyDelay or 30)
 			for _, c in self:fromTables("attack", en, function(_, v) return v <= limit end) do table.insert(cands, c) end
 		end
@@ -929,6 +956,7 @@ function AI.tick(self: any)
 		if next(self.pressed) then self:releaseAll() end
 		self.pending, self.wait, self.block = nil, 0, 0
 		self.enemyMove = nil
+		self.lastAttack = fight.ticks
 		return
 	end
 	self:observe()
