@@ -1,0 +1,309 @@
+{
+ "source": "b2a10e27e35a4bc4fb5e1706efc4f1aa",
+ "pathID": 7,
+ "root": {
+  "name": "ProfitView",
+  "active": true,
+  "layer": 0,
+  "rect": {
+   "anchorMin": [
+    0.5,
+    0.5
+   ],
+   "anchorMax": [
+    0.5,
+    0.5
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    100.0,
+    100.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "ProfitViewer",
+    "namespace": "",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_profitImage": {
+      "type": "ResolutionImageAvatar",
+      "path": "ProfitView/ProfitImage"
+     },
+     "_profitMask": {
+      "type": "Mask",
+      "path": "ProfitView/ProfitShineMask"
+     },
+     "_profitMaskImage": {
+      "type": "ResolutionImageAvatar",
+      "path": "ProfitView/ProfitShineMask"
+     },
+     "_profitShine": {
+      "type": "CocosAnimation",
+      "path": "ProfitView/ProfitShineMask/ProfitShine"
+     }
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "ProfitImage",
+    "active": true,
+    "layer": 0,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      100.0,
+      100.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImageAvatar",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": false,
+       "sprite": null,
+       "texture": null,
+       "spriteSource": null,
+       "spriteInfo": null,
+       "type": "simple",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "",
+       "_SpriteName": ""
+      }
+     }
+    ]
+   },
+   {
+    "name": "ProfitShineMask",
+    "active": true,
+    "layer": 0,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      100.0,
+      100.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "Mask",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "showMaskGraphic": true
+      },
+      "fields": {
+       "m_ShowMaskGraphic": 1
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImageAvatar",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": false,
+       "sprite": null,
+       "texture": null,
+       "spriteSource": null,
+       "spriteInfo": null,
+       "type": "simple",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "",
+       "_SpriteName": ""
+      }
+     }
+    ],
+    "children": [
+     {
+      "name": "ProfitShine",
+      "active": true,
+      "layer": 0,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        -5.0,
+        0.0
+       ],
+       "sizeDelta": [
+        100.0,
+        100.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "CocosAnimation",
+        "namespace": "",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "OnAnimationComplete": {
+          "m_PersistentCalls": {
+           "m_Calls": []
+          }
+         },
+         "_autoSize": 1
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

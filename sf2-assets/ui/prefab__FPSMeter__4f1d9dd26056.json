@@ -1,0 +1,156 @@
+{
+ "source": "4f1d9dd26056846b8a06927494606494",
+ "pathID": 4,
+ "root": {
+  "name": "FPSMeter",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.0,
+    0.0
+   ],
+   "anchorMax": [
+    1.0,
+    1.0
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    0.0,
+    0.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "FPSMeter",
+    "namespace": "Nekki.SF2.GUI.DebugModules",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_Order": 0,
+     "_UpdateInterval": 0.2,
+     "_StartTimeGap": 2.0,
+     "_Label": {
+      "type": "Text",
+      "path": "FPSMeter/Text"
+     }
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "Text",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      0.0,
+      0.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      480.0,
+      120.0
+     ],
+     "pivot": [
+      0.0,
+      0.0
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "Text",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "color": [
+        1.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "raycastTarget": false,
+       "text": "FPS: 48.9 Avg: 48.9\nMin: 48.9 Max: 48.9",
+       "font": "LegacyRuntime",
+       "fontSize": 50,
+       "fontStyle": "Normal",
+       "alignment": "MiddleLeft",
+       "bestFit": false,
+       "minSize": 0,
+       "maxSize": 250,
+       "richText": true,
+       "horizontalOverflow": "Wrap",
+       "verticalOverflow": "Truncate",
+       "lineSpacing": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_FontData": {
+        "m_Font": {
+         "type": "Font",
+         "name": "LegacyRuntime",
+         "file": "unity default resources"
+        },
+        "m_FontSize": 50,
+        "m_FontStyle": 0,
+        "m_BestFit": 0,
+        "m_MinSize": 0,
+        "m_MaxSize": 250,
+        "m_Alignment": 3,
+        "m_AlignByGeometry": 0,
+        "m_RichText": 1,
+        "m_HorizontalOverflow": 0,
+        "m_VerticalOverflow": 0,
+        "m_LineSpacing": 1.0
+       },
+       "m_Text": "FPS: 48.9 Avg: 48.9\nMin: 48.9 Max: 48.9"
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,270 @@
+{
+ "source": "4d87d06d9d669344888a8c73960dbe0c",
+ "pathID": 3,
+ "root": {
+  "name": "CloseButton",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.5,
+    1.0
+   ],
+   "anchorMax": [
+    0.5,
+    1.0
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    256.0,
+    434.0
+   ],
+   "pivot": [
+    0.5,
+    1.0
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "ResolutionImage",
+    "namespace": "Nekki.SF2.GUI",
+    "assembly": "Root",
+    "enabled": true,
+    "ui": {
+     "kind": "Image",
+     "color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "raycastTarget": true,
+     "runtimeSprites": {
+      "SpriteName": {
+       "name": "CommonButtons.ButtonQuit",
+       "texture": "CommonButtons",
+       "resourcesPath": "UI/Atlases/",
+       "resolved": true
+      }
+     },
+     "sprite": "CommonButtons.ButtonQuit",
+     "texture": "CommonButtons",
+     "spriteSource": "runtime:_SpriteName",
+     "spriteInfo": {
+      "type": "Sprite",
+      "name": "CommonButtons.ButtonQuit",
+      "file": "c38a3bb941bda4c2fba419692e1b5071",
+      "texture": "CommonButtons",
+      "textureSize": [
+       512,
+       1024
+      ],
+      "png": "tex/APK/CommonButtons.png",
+      "textureRect": [
+       205.0,
+       243.0,
+       256.0,
+       434.0
+      ],
+      "rect": [
+       205.0,
+       243.0,
+       256.0,
+       434.0
+      ],
+      "pivot": [
+       0.5,
+       0.5
+      ],
+      "ppu": 100.0
+     },
+     "type": "simple",
+     "preserveAspect": false,
+     "fillCenter": true,
+     "pixelsPerUnitMultiplier": 1.0
+    },
+    "fields": {
+     "m_Material": null,
+     "m_Color": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 1.0,
+      "a": 1.0
+     },
+     "m_RaycastTarget": 1,
+     "m_RaycastPadding": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "w": 0.0
+     },
+     "m_Maskable": 1,
+     "m_Sprite": null,
+     "m_Type": 0,
+     "m_PreserveAspect": 0,
+     "m_FillCenter": 1,
+     "m_FillMethod": 4,
+     "m_FillAmount": 1.0,
+     "m_FillClockwise": 1,
+     "m_FillOrigin": 0,
+     "m_UseSpriteMesh": 0,
+     "m_PixelsPerUnitMultiplier": 1.0,
+     "_TexturePath": "UI/Atlases/",
+     "_SpriteName": "CommonButtons.ButtonQuit"
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "CloseButton",
+    "namespace": "",
+    "assembly": "Root",
+    "enabled": true,
+    "ui": {
+     "kind": "Button",
+     "runtimeSprites": {
+      "normalSpriteName": {
+       "name": "CommonButtons.ButtonQuit",
+       "texture": "CommonButtons",
+       "resourcesPath": "UI/Atlases/",
+       "resolved": true
+      }
+     },
+     "interactable": true,
+     "transition": "ColorTint",
+     "targetGraphic": {
+      "type": "ResolutionImage",
+      "path": "CloseButton"
+     },
+     "colors": {
+      "m_NormalColor": [
+       1.0,
+       1.0,
+       1.0,
+       1.0
+      ],
+      "m_HighlightedColor": [
+       0.9608,
+       0.9608,
+       0.9608,
+       1.0
+      ],
+      "m_PressedColor": [
+       0.7843,
+       0.7843,
+       0.7843,
+       1.0
+      ],
+      "m_SelectedColor": [
+       0.9608,
+       0.9608,
+       0.9608,
+       1.0
+      ],
+      "m_DisabledColor": [
+       0.7843,
+       0.7843,
+       0.7843,
+       0.502
+      ],
+      "m_ColorMultiplier": 1.0,
+      "m_FadeDuration": 0.1
+     },
+     "onClick": []
+    },
+    "fields": {
+     "m_Navigation": {
+      "m_Mode": 0,
+      "m_WrapAround": 0,
+      "m_SelectOnUp": null,
+      "m_SelectOnDown": null,
+      "m_SelectOnLeft": null,
+      "m_SelectOnRight": null
+     },
+     "m_Transition": 1,
+     "m_Colors": {
+      "m_NormalColor": {
+       "r": 1.0,
+       "g": 1.0,
+       "b": 1.0,
+       "a": 1.0
+      },
+      "m_HighlightedColor": {
+       "r": 0.9608,
+       "g": 0.9608,
+       "b": 0.9608,
+       "a": 1.0
+      },
+      "m_PressedColor": {
+       "r": 0.7843,
+       "g": 0.7843,
+       "b": 0.7843,
+       "a": 1.0
+      },
+      "m_SelectedColor": {
+       "r": 0.9608,
+       "g": 0.9608,
+       "b": 0.9608,
+       "a": 1.0
+      },
+      "m_DisabledColor": {
+       "r": 0.7843,
+       "g": 0.7843,
+       "b": 0.7843,
+       "a": 0.502
+      },
+      "m_ColorMultiplier": 1.0,
+      "m_FadeDuration": 0.1
+     },
+     "m_SpriteState": {
+      "m_HighlightedSprite": null,
+      "m_PressedSprite": null,
+      "m_SelectedSprite": null,
+      "m_DisabledSprite": null
+     },
+     "m_AnimationTriggers": {
+      "m_NormalTrigger": "Normal",
+      "m_HighlightedTrigger": "Highlighted",
+      "m_PressedTrigger": "Pressed",
+      "m_SelectedTrigger": "Highlighted",
+      "m_DisabledTrigger": "Disabled"
+     },
+     "m_Interactable": 1,
+     "m_TargetGraphic": {
+      "type": "ResolutionImage",
+      "path": "CloseButton"
+     },
+     "m_OnClick": {
+      "m_PersistentCalls": {
+       "m_Calls": []
+      }
+     },
+     "FlashingImage": null,
+     "_EnableClickAnimation": 0,
+     "_glowSprite": null,
+     "_WaitBeforeClick": 1,
+     "IsOneShot": 0,
+     "_glowTime": 0.0,
+     "ButtonId": -1,
+     "_normalTexturePath": "UI/Atlases/",
+     "_normalSpriteName": "CommonButtons.ButtonQuit",
+     "_disabledTexturePath": "",
+     "_disabledSpriteName": "",
+     "_highlightedTexturePath": "",
+     "_highlightedSpriteName": "",
+     "_pressedTexturePath": "",
+     "_pressedSpriteName": ""
+    }
+   }
+  ]
+ }
+}

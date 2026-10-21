@@ -1,0 +1,701 @@
+{
+ "source": "30ee16491bbe9444bbb87a4aae454aaa",
+ "pathID": 13,
+ "root": {
+  "name": "MenuAdvertisingButton",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.5,
+    0.5
+   ],
+   "anchorMax": [
+    0.5,
+    0.5
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    250.0,
+    240.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "MenuAdvertisingButton",
+    "namespace": "Nekki.SF2.GUI.Menu",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_advAnimationTime": 0.03,
+     "_waitStartShowPergament": 1.0,
+     "_waitStartHidePergament": 3.0,
+     "_advButton": {
+      "type": "ResolutionButton",
+      "path": "MenuAdvertisingButton/Content/AdvButton"
+     },
+     "_buttonIcon": {
+      "type": "ResolutionImage",
+      "path": "MenuAdvertisingButton/Content/AdvButton/BtnIcon"
+     },
+     "_shineBorder": {
+      "type": "ResolutionImage",
+      "path": "MenuAdvertisingButton/Content/ShineBorder"
+     },
+     "_pergamentEffect": {
+      "type": "CocosAnimation",
+      "path": "MenuAdvertisingButton/Content/PergamentAnimation"
+     }
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "Content",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "children": [
+     {
+      "name": "PergamentAnimation",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        1.0,
+        0.5
+       ],
+       "anchorMax": [
+        1.0,
+        0.5
+       ],
+       "anchoredPosition": [
+        -145.0,
+        0.0
+       ],
+       "sizeDelta": [
+        222.0,
+        354.0
+       ],
+       "pivot": [
+        1.0,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "CocosAnimation",
+        "namespace": "",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "OnAnimationComplete": {
+          "m_PersistentCalls": {
+           "m_Calls": []
+          }
+         },
+         "_autoSize": 1
+        }
+       }
+      ]
+     },
+     {
+      "name": "ShineBorder",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        320.0,
+        320.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImage",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": false,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "SF3AdvButton.Charge_Highlight",
+           "texture": "SF3AdvButton",
+           "resourcesPath": "UI/Textures/SF3/",
+           "resolved": true
+          }
+         },
+         "sprite": "SF3AdvButton.Charge_Highlight",
+         "texture": "SF3AdvButton",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "SF3AdvButton.Charge_Highlight",
+          "file": "1a102c4ef75736848bed7c463d1afb22",
+          "texture": "SF3AdvButton",
+          "textureSize": [
+           1024,
+           1024
+          ],
+          "png": "tex/APK/SF3AdvButton.png",
+          "textureRect": [
+           2.0,
+           457.0,
+           284.0,
+           284.0
+          ],
+          "rect": [
+           2.0,
+           457.0,
+           284.0,
+           284.0
+          ],
+          "pivot": [
+           0.5,
+           0.5
+          ],
+          "ppu": 100.0
+         },
+         "type": "simple",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "UI/Textures/SF3/",
+         "_SpriteName": "SF3AdvButton.Charge_Highlight"
+        }
+       }
+      ]
+     },
+     {
+      "name": "AdvButton",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        278.0,
+        278.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImage",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": false,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "SF3AdvButton.btn_SF3",
+           "texture": "SF3AdvButton",
+           "resourcesPath": "UI/Textures/SF3/",
+           "resolved": true
+          }
+         },
+         "sprite": "SF3AdvButton.btn_SF3",
+         "texture": "SF3AdvButton",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "SF3AdvButton.btn_SF3",
+          "file": "1a102c4ef75736848bed7c463d1afb22",
+          "texture": "SF3AdvButton",
+          "textureSize": [
+           1024,
+           1024
+          ],
+          "png": "tex/APK/SF3AdvButton.png",
+          "textureRect": [
+           283.0,
+           744.0,
+           278.0,
+           278.0
+          ],
+          "rect": [
+           283.0,
+           744.0,
+           278.0,
+           278.0
+          ],
+          "pivot": [
+           0.5,
+           0.5
+          ],
+          "ppu": 100.0
+         },
+         "type": "simple",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "UI/Textures/SF3/",
+         "_SpriteName": "SF3AdvButton.btn_SF3"
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionButton",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Button",
+         "runtimeSprites": {
+          "normalSpriteName": {
+           "name": "SF3AdvButton.btn_SF3",
+           "texture": "SF3AdvButton",
+           "resourcesPath": "UI/Textures/SF3/",
+           "resolved": true
+          }
+         },
+         "interactable": true,
+         "transition": "SpriteSwap",
+         "targetGraphic": {
+          "type": "ResolutionImage",
+          "path": "MenuAdvertisingButton/Content/AdvButton"
+         },
+         "spriteState": {
+          "m_HighlightedSprite": null,
+          "m_PressedSprite": null,
+          "m_SelectedSprite": null,
+          "m_DisabledSprite": null
+         },
+         "onClick": []
+        },
+        "fields": {
+         "m_Navigation": {
+          "m_Mode": 0,
+          "m_WrapAround": 0,
+          "m_SelectOnUp": null,
+          "m_SelectOnDown": null,
+          "m_SelectOnLeft": null,
+          "m_SelectOnRight": null
+         },
+         "m_Transition": 2,
+         "m_Colors": {
+          "m_NormalColor": {
+           "r": 1.0,
+           "g": 1.0,
+           "b": 1.0,
+           "a": 1.0
+          },
+          "m_HighlightedColor": {
+           "r": 0.9608,
+           "g": 0.9608,
+           "b": 0.9608,
+           "a": 1.0
+          },
+          "m_PressedColor": {
+           "r": 0.7843,
+           "g": 0.7843,
+           "b": 0.7843,
+           "a": 1.0
+          },
+          "m_SelectedColor": {
+           "r": 0.9608,
+           "g": 0.9608,
+           "b": 0.9608,
+           "a": 1.0
+          },
+          "m_DisabledColor": {
+           "r": 0.7843,
+           "g": 0.7843,
+           "b": 0.7843,
+           "a": 0.502
+          },
+          "m_ColorMultiplier": 1.0,
+          "m_FadeDuration": 0.1
+         },
+         "m_SpriteState": {
+          "m_HighlightedSprite": null,
+          "m_PressedSprite": null,
+          "m_SelectedSprite": null,
+          "m_DisabledSprite": null
+         },
+         "m_AnimationTriggers": {
+          "m_NormalTrigger": "Normal",
+          "m_HighlightedTrigger": "Highlighted",
+          "m_PressedTrigger": "Pressed",
+          "m_SelectedTrigger": "Highlighted",
+          "m_DisabledTrigger": "Disabled"
+         },
+         "m_Interactable": 1,
+         "m_TargetGraphic": {
+          "type": "ResolutionImage",
+          "path": "MenuAdvertisingButton/Content/AdvButton"
+         },
+         "m_OnClick": {
+          "m_PersistentCalls": {
+           "m_Calls": []
+          }
+         },
+         "FlashingImage": null,
+         "_EnableClickAnimation": 0,
+         "_glowSprite": null,
+         "_WaitBeforeClick": 1,
+         "IsOneShot": 0,
+         "_glowTime": 0.0,
+         "ButtonId": -1,
+         "_normalTexturePath": "UI/Textures/SF3/",
+         "_normalSpriteName": "SF3AdvButton.btn_SF3",
+         "_disabledTexturePath": "",
+         "_disabledSpriteName": "",
+         "_highlightedTexturePath": "",
+         "_highlightedSpriteName": "",
+         "_pressedTexturePath": "",
+         "_pressedSpriteName": ""
+        }
+       }
+      ],
+      "children": [
+       {
+        "name": "BtnIcon",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.5,
+          0.5
+         ],
+         "anchorMax": [
+          0.5,
+          0.5
+         ],
+         "anchoredPosition": [
+          0.0,
+          0.0
+         ],
+         "sizeDelta": [
+          278.0,
+          278.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionImage",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Image",
+           "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+           ],
+           "raycastTarget": false,
+           "runtimeSprites": {
+            "SpriteName": {
+             "name": "SF3AdvButton.btn_icon_SF3",
+             "texture": "SF3AdvButton",
+             "resourcesPath": "UI/Textures/SF3/",
+             "resolved": true
+            }
+           },
+           "sprite": "SF3AdvButton.btn_icon_SF3",
+           "texture": "SF3AdvButton",
+           "spriteSource": "runtime:_SpriteName",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "SF3AdvButton.btn_icon_SF3",
+            "file": "1a102c4ef75736848bed7c463d1afb22",
+            "texture": "SF3AdvButton",
+            "textureSize": [
+             1024,
+             1024
+            ],
+            "png": "tex/APK/SF3AdvButton.png",
+            "textureRect": [
+             2.0,
+             744.0,
+             278.0,
+             278.0
+            ],
+            "rect": [
+             2.0,
+             744.0,
+             278.0,
+             278.0
+            ],
+            "pivot": [
+             0.5,
+             0.5
+            ],
+            "ppu": 100.0
+           },
+           "type": "simple",
+           "preserveAspect": true,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 0,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": null,
+           "m_Type": 0,
+           "m_PreserveAspect": 1,
+           "m_FillCenter": 1,
+           "m_FillMethod": 4,
+           "m_FillAmount": 1.0,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0,
+           "_TexturePath": "UI/Textures/SF3/",
+           "_SpriteName": "SF3AdvButton.btn_icon_SF3"
+          }
+         }
+        ]
+       },
+       {
+        "name": "ClickObj",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.5,
+          0.5
+         ],
+         "anchorMax": [
+          0.5,
+          0.5
+         ],
+         "anchoredPosition": [
+          0.0,
+          0.0
+         ],
+         "sizeDelta": [
+          278.0,
+          240.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "NonDrawingGraphic",
+          "namespace": "",
+          "assembly": "Root",
+          "enabled": true,
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 1,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

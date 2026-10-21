@@ -1,0 +1,139 @@
+{
+ "source": "42357e43372942d45a72150ad482292f",
+ "pathID": 3,
+ "root": {
+  "name": "RewardPanel",
+  "active": true,
+  "layer": 0,
+  "rect": {
+   "anchorMin": [
+    0.0,
+    0.5
+   ],
+   "anchorMax": [
+    1.0,
+    0.5
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    0.0,
+    500.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "RewardPanel",
+    "namespace": "Nekki.SF2.GUI.Fight",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_Panel": {
+      "type": "RectTransform",
+      "path": "RewardPanel/Panel"
+     },
+     "_PanelLayout": {
+      "type": "HorizontalLayoutGroup",
+      "path": "RewardPanel/Panel"
+     },
+     "_RewardPanelItemPrefab": {
+      "type": "RewardPanelItem",
+      "path": "RewardPanelItem"
+     }
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "Panel",
+    "active": true,
+    "layer": 0,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.5
+     ],
+     "anchorMax": [
+      1.0,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      500.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "HorizontalLayoutGroup",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "layout": "HorizontalLayoutGroup",
+       "padding": {
+        "left": 0,
+        "right": 75,
+        "top": 0,
+        "bottom": 250
+       },
+       "childAlignment": "MiddleCenter",
+       "spacing": 75.0,
+       "childControlWidth": 1,
+       "childControlHeight": 0,
+       "childForceExpandWidth": 0,
+       "childForceExpandHeight": 0,
+       "childScaleWidth": 0,
+       "childScaleHeight": 0,
+       "reverseArrangement": 0
+      },
+      "fields": {
+       "m_Padding": {
+        "m_Left": 0,
+        "m_Right": 75,
+        "m_Top": 0,
+        "m_Bottom": 250
+       },
+       "m_ChildAlignment": 4,
+       "m_Spacing": 75.0,
+       "m_ChildForceExpandWidth": 0,
+       "m_ChildForceExpandHeight": 0,
+       "m_ChildControlWidth": 1,
+       "m_ChildControlHeight": 0,
+       "m_ChildScaleWidth": 0,
+       "m_ChildScaleHeight": 0,
+       "m_ReverseArrangement": 0
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,1244 @@
+{
+ "source": "0e869ed0334505f438357995f441be51",
+ "pathID": 17,
+ "root": {
+  "name": "InfoPanelContent",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.5,
+    0.0
+   ],
+   "anchorMax": [
+    0.5,
+    1.0
+   ],
+   "anchoredPosition": [
+    20.0,
+    20.0
+   ],
+   "sizeDelta": [
+    480.0,
+    -48.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "InfoPanelContent",
+    "namespace": "Nekki.SF2.GUI.Shop",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_header": {
+      "type": "LabelAlias",
+      "path": "InfoPanelContent/Header"
+     },
+     "_headerLayout": {
+      "type": "LayoutElement",
+      "path": "InfoPanelContent/Header"
+     },
+     "_image": {
+      "type": "ResolutionImage",
+      "path": "InfoPanelContent/Image"
+     },
+     "_description": {
+      "type": "LabelAlias",
+      "path": "InfoPanelContent/Description"
+     },
+     "_descriptionDonate": {
+      "type": "LabelAlias",
+      "path": "InfoPanelContent/DescriptionDonate"
+     },
+     "_parametersPanel": {
+      "type": "ParametersPanel",
+      "path": "InfoPanelContent/ParametersPanel"
+     },
+     "_buttonPanel": {
+      "type": "GameObject",
+      "path": "InfoPanelContent/ButtonPanel"
+     },
+     "_buttonPrefab": {
+      "type": "GameObject",
+      "path": "IconLabelButton"
+     },
+     "_timerAlias": {
+      "type": "LabelAlias",
+      "path": "InfoPanelContent/TimerLabel"
+     }
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "VerticalLayoutGroup",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI",
+    "enabled": true,
+    "ui": {
+     "layout": "VerticalLayoutGroup",
+     "padding": {
+      "left": 0,
+      "right": 0,
+      "top": 0,
+      "bottom": 20
+     },
+     "childAlignment": "MiddleCenter",
+     "spacing": -20.0,
+     "childControlWidth": 1,
+     "childControlHeight": 1,
+     "childForceExpandWidth": 1,
+     "childForceExpandHeight": 1,
+     "childScaleWidth": 0,
+     "childScaleHeight": 0,
+     "reverseArrangement": 0
+    },
+    "fields": {
+     "m_Padding": {
+      "m_Left": 0,
+      "m_Right": 0,
+      "m_Top": 0,
+      "m_Bottom": 20
+     },
+     "m_ChildAlignment": 4,
+     "m_Spacing": -20.0,
+     "m_ChildForceExpandWidth": 1,
+     "m_ChildForceExpandHeight": 1,
+     "m_ChildControlWidth": 1,
+     "m_ChildControlHeight": 1,
+     "m_ChildScaleWidth": 0,
+     "m_ChildScaleHeight": 0,
+     "m_ReverseArrangement": 0
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "Header",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      0.0,
+      0.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "LayoutElement",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "IgnoreLayout": 0,
+       "MinWidth": -1.0,
+       "MinHeight": 200.0,
+       "PreferredWidth": -1.0,
+       "PreferredHeight": 200.0,
+       "FlexibleWidth": -1.0,
+       "FlexibleHeight": -1.0
+      },
+      "fields": {
+       "m_IgnoreLayout": 0,
+       "m_MinWidth": -1.0,
+       "m_MinHeight": 200.0,
+       "m_PreferredWidth": -1.0,
+       "m_PreferredHeight": 200.0,
+       "m_FlexibleWidth": -1.0,
+       "m_FlexibleHeight": -1.0,
+       "m_LayoutPriority": 1
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "LabelAlias",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Text",
+       "color": [
+        0.1843,
+        0.1451,
+        0.1059,
+        1.0
+       ],
+       "raycastTarget": false,
+       "text": "HEADER",
+       "font": null,
+       "fontSize": 104,
+       "fontStyle": "Normal",
+       "alignment": "MiddleCenter",
+       "bestFit": true,
+       "minSize": 0,
+       "maxSize": 104,
+       "richText": true,
+       "horizontalOverflow": "Wrap",
+       "verticalOverflow": "Truncate",
+       "lineSpacing": 0.6,
+       "locKey": null,
+       "toUpperCase": false,
+       "useLocalizationFont": true,
+       "fontType": 0,
+       "labelFontSize": 104,
+       "labelLineSpacing": 0.6
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 0.1843,
+        "g": 0.1451,
+        "b": 0.1059,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_FontData": {
+        "m_Font": null,
+        "m_FontSize": 104,
+        "m_FontStyle": 0,
+        "m_BestFit": 1,
+        "m_MinSize": 0,
+        "m_MaxSize": 104,
+        "m_Alignment": 4,
+        "m_AlignByGeometry": 0,
+        "m_RichText": 1,
+        "m_HorizontalOverflow": 0,
+        "m_VerticalOverflow": 0,
+        "m_LineSpacing": 0.6
+       },
+       "m_Text": "HEADER",
+       "GlyphPrefabs": [],
+       "ForceUseAlignedBestFit": 0,
+       "ForbiddenUseAlignedBestFit": 0,
+       "FitImageLineHeightParam": {
+        "ScaleMaxLineHeightFactor": 1.0,
+        "ApplyToSingleLine": 0,
+        "Enabled": 0
+       },
+       "_useLocalizationFont": 1,
+       "_fontType": 0,
+       "_useLabelFontSize": 1,
+       "_labelFontSize": 104,
+       "_useLabelLineSpacing": 1,
+       "_labelLineSpacing": 0.6,
+       "_Alias": "",
+       "_ToUpperCase": 0
+      }
+     }
+    ]
+   },
+   {
+    "name": "Image",
+    "active": false,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      1.0
+     ],
+     "anchorMax": [
+      0.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      240.0,
+      -506.5
+     ],
+     "sizeDelta": [
+      480.0,
+      456.3333
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImage",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": false,
+       "runtimeSprites": {
+        "SpriteName": {
+         "name": "Chest_HW16",
+         "texture": null,
+         "resourcesPath": "UI/Items/",
+         "resolved": false
+        }
+       },
+       "sprite": "Chest_HW16",
+       "texture": null,
+       "spriteSource": "runtime:_SpriteName",
+       "spriteInfo": {
+        "type": "Sprite",
+        "name": "Chest_HW16",
+        "unresolved": true
+       },
+       "type": "simple",
+       "preserveAspect": true,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 1,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "UI/Items/",
+       "_SpriteName": "Chest_HW16"
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "LayoutElement",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "IgnoreLayout": 0,
+       "MinWidth": -1.0,
+       "MinHeight": 358.0,
+       "PreferredWidth": -1.0,
+       "PreferredHeight": -1.0,
+       "FlexibleWidth": -1.0,
+       "FlexibleHeight": -1.0
+      },
+      "fields": {
+       "m_IgnoreLayout": 0,
+       "m_MinWidth": -1.0,
+       "m_MinHeight": 358.0,
+       "m_PreferredWidth": -1.0,
+       "m_PreferredHeight": -1.0,
+       "m_FlexibleWidth": -1.0,
+       "m_FlexibleHeight": -1.0,
+       "m_LayoutPriority": 1
+      }
+     }
+    ]
+   },
+   {
+    "name": "ParametersPanel",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      0.0,
+      0.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ParametersPanel",
+      "namespace": "Nekki.SF2.GUI.Shop",
+      "assembly": "Root",
+      "enabled": true,
+      "fields": {
+       "_LayoutGroup": {
+        "type": "VerticalLayoutGroup",
+        "path": "InfoPanelContent/ParametersPanel/ScrollContent"
+       },
+       "_LayoutElement": {
+        "type": "LayoutElement",
+        "path": "InfoPanelContent/ParametersPanel"
+       },
+       "_ScrollContent": {
+        "type": "RectTransform",
+        "path": "InfoPanelContent/ParametersPanel/ScrollContent"
+       },
+       "_ItemPrefab": {
+        "type": "GameObject",
+        "path": "ItemParameterScrollItem"
+       }
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "Image",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": true,
+       "sprite": null,
+       "texture": null,
+       "spriteSource": null,
+       "spriteInfo": null,
+       "type": "simple",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "Mask",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "showMaskGraphic": false
+      },
+      "fields": {
+       "m_ShowMaskGraphic": 0
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "ItemsScroll",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "fields": {
+       "m_Content": {
+        "type": "RectTransform",
+        "path": "InfoPanelContent/ParametersPanel/ScrollContent"
+       },
+       "m_Horizontal": 0,
+       "m_Vertical": 1,
+       "m_MovementType": 2,
+       "m_Elasticity": 0.1,
+       "m_Inertia": 0,
+       "m_DecelerationRate": 0.135,
+       "m_ScrollSensitivity": 1.0,
+       "m_Viewport": null,
+       "m_HorizontalScrollbar": null,
+       "m_VerticalScrollbar": null,
+       "m_HorizontalScrollbarVisibility": 0,
+       "m_VerticalScrollbarVisibility": 0,
+       "m_HorizontalScrollbarSpacing": 0.0,
+       "m_VerticalScrollbarSpacing": 0.0,
+       "m_OnValueChanged": {
+        "m_PersistentCalls": {
+         "m_Calls": []
+        }
+       },
+       "m_ScrollFactor": 1.0,
+       "onScrollEnd": {
+        "m_PersistentCalls": {
+         "m_Calls": []
+        }
+       },
+       "onDragBegin": {
+        "m_PersistentCalls": {
+         "m_Calls": []
+        }
+       },
+       "_MinScrollVelocity": 0.0,
+       "_AutoscrollDuration": 1.0,
+       "AutoscrollIsOn": 1,
+       "_Scrolling": 0,
+       "scrollContent": {
+        "type": "BaseScrollContent",
+        "path": "InfoPanelContent/ParametersPanel/ScrollContent"
+       }
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "LayoutElement",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "IgnoreLayout": 0,
+       "MinWidth": -1.0,
+       "MinHeight": 100.0,
+       "PreferredWidth": -1.0,
+       "PreferredHeight": -1.0,
+       "FlexibleWidth": -1.0,
+       "FlexibleHeight": -1.0
+      },
+      "fields": {
+       "m_IgnoreLayout": 0,
+       "m_MinWidth": -1.0,
+       "m_MinHeight": 100.0,
+       "m_PreferredWidth": -1.0,
+       "m_PreferredHeight": -1.0,
+       "m_FlexibleWidth": -1.0,
+       "m_FlexibleHeight": -1.0,
+       "m_LayoutPriority": 1
+      }
+     }
+    ],
+    "children": [
+     {
+      "name": "ScrollContent",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        1.0
+       ],
+       "anchorMax": [
+        0.5,
+        1.0
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        515.0,
+        141.8
+       ],
+       "pivot": [
+        0.5,
+        1.0
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "BaseScrollContent",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "onSelectItem": {
+          "m_PersistentCalls": {
+           "m_Calls": []
+          }
+         },
+         "onClickItem": {
+          "m_PersistentCalls": {
+           "m_Calls": []
+          }
+         },
+         "_layout": {
+          "type": "VerticalLayoutGroup",
+          "path": "InfoPanelContent/ParametersPanel/ScrollContent"
+         },
+         "Spacing": 20.0,
+         "_centering": 0
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "VerticalLayoutGroup",
+        "namespace": "UnityEngine.UI",
+        "assembly": "UnityEngine.UI",
+        "enabled": true,
+        "ui": {
+         "layout": "VerticalLayoutGroup",
+         "padding": {
+          "left": 0,
+          "right": 0,
+          "top": 50,
+          "bottom": 0
+         },
+         "childAlignment": "MiddleCenter",
+         "spacing": 20.0,
+         "childControlWidth": 1,
+         "childControlHeight": 1,
+         "childForceExpandWidth": 1,
+         "childForceExpandHeight": 0,
+         "childScaleWidth": 0,
+         "childScaleHeight": 0,
+         "reverseArrangement": 0
+        },
+        "fields": {
+         "m_Padding": {
+          "m_Left": 0,
+          "m_Right": 0,
+          "m_Top": 50,
+          "m_Bottom": 0
+         },
+         "m_ChildAlignment": 4,
+         "m_Spacing": 20.0,
+         "m_ChildForceExpandWidth": 1,
+         "m_ChildForceExpandHeight": 0,
+         "m_ChildControlWidth": 1,
+         "m_ChildControlHeight": 1,
+         "m_ChildScaleWidth": 0,
+         "m_ChildScaleHeight": 0,
+         "m_ReverseArrangement": 0
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Description",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      0.0,
+      0.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "LayoutElement",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "IgnoreLayout": 0,
+       "MinWidth": -1.0,
+       "MinHeight": 100.0,
+       "PreferredWidth": -1.0,
+       "PreferredHeight": 100.0,
+       "FlexibleWidth": -1.0,
+       "FlexibleHeight": -1.0
+      },
+      "fields": {
+       "m_IgnoreLayout": 0,
+       "m_MinWidth": -1.0,
+       "m_MinHeight": 100.0,
+       "m_PreferredWidth": -1.0,
+       "m_PreferredHeight": 100.0,
+       "m_FlexibleWidth": -1.0,
+       "m_FlexibleHeight": -1.0,
+       "m_LayoutPriority": 1
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "LabelAlias",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Text",
+       "color": [
+        0.1843,
+        0.1451,
+        0.1059,
+        1.0
+       ],
+       "raycastTarget": false,
+       "text": "Description",
+       "font": "AGOpusBold",
+       "fontSize": 85,
+       "fontStyle": "Normal",
+       "alignment": "MiddleCenter",
+       "bestFit": true,
+       "minSize": 0,
+       "maxSize": 85,
+       "richText": true,
+       "horizontalOverflow": "Wrap",
+       "verticalOverflow": "Truncate",
+       "lineSpacing": 0.7,
+       "locKey": null,
+       "toUpperCase": false,
+       "useLocalizationFont": true,
+       "fontType": 0,
+       "labelFontSize": 85
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 0.1843,
+        "g": 0.1451,
+        "b": 0.1059,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_FontData": {
+        "m_Font": {
+         "type": "Font",
+         "name": "AGOpusBold",
+         "file": "sharedassets0.assets"
+        },
+        "m_FontSize": 85,
+        "m_FontStyle": 0,
+        "m_BestFit": 1,
+        "m_MinSize": 0,
+        "m_MaxSize": 85,
+        "m_Alignment": 4,
+        "m_AlignByGeometry": 0,
+        "m_RichText": 1,
+        "m_HorizontalOverflow": 0,
+        "m_VerticalOverflow": 0,
+        "m_LineSpacing": 0.7
+       },
+       "m_Text": "Description",
+       "GlyphPrefabs": [],
+       "ForceUseAlignedBestFit": 0,
+       "ForbiddenUseAlignedBestFit": 0,
+       "FitImageLineHeightParam": {
+        "ScaleMaxLineHeightFactor": 1.1,
+        "ApplyToSingleLine": 0,
+        "Enabled": 1
+       },
+       "_useLocalizationFont": 1,
+       "_fontType": 0,
+       "_useLabelFontSize": 1,
+       "_labelFontSize": 85,
+       "_useLabelLineSpacing": 0,
+       "_labelLineSpacing": 0.0,
+       "_Alias": "",
+       "_ToUpperCase": 0
+      }
+     }
+    ]
+   },
+   {
+    "name": "DescriptionDonate",
+    "active": false,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      1.0
+     ],
+     "anchorMax": [
+      0.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      257.5,
+      -700.0
+     ],
+     "sizeDelta": [
+      515.0,
+      500.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "LayoutElement",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "IgnoreLayout": 0,
+       "MinWidth": -1.0,
+       "MinHeight": 350.0,
+       "PreferredWidth": -1.0,
+       "PreferredHeight": 350.0,
+       "FlexibleWidth": -1.0,
+       "FlexibleHeight": -1.0
+      },
+      "fields": {
+       "m_IgnoreLayout": 0,
+       "m_MinWidth": -1.0,
+       "m_MinHeight": 350.0,
+       "m_PreferredWidth": -1.0,
+       "m_PreferredHeight": 350.0,
+       "m_FlexibleWidth": -1.0,
+       "m_FlexibleHeight": -1.0,
+       "m_LayoutPriority": 1
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "LabelAlias",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Text",
+       "color": [
+        0.1843,
+        0.1451,
+        0.1059,
+        1.0
+       ],
+       "raycastTarget": true,
+       "text": "Description",
+       "font": "majallab",
+       "fontSize": 90,
+       "fontStyle": "Normal",
+       "alignment": "MiddleCenter",
+       "bestFit": true,
+       "minSize": 1,
+       "maxSize": 90,
+       "richText": true,
+       "horizontalOverflow": "Wrap",
+       "verticalOverflow": "Truncate",
+       "lineSpacing": 0.6,
+       "locKey": null,
+       "toUpperCase": false,
+       "useLocalizationFont": true,
+       "fontType": 0,
+       "labelFontSize": 90
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 0.1843,
+        "g": 0.1451,
+        "b": 0.1059,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_FontData": {
+        "m_Font": {
+         "type": "Font",
+         "name": "majallab",
+         "file": "sharedassets0.assets"
+        },
+        "m_FontSize": 90,
+        "m_FontStyle": 0,
+        "m_BestFit": 1,
+        "m_MinSize": 1,
+        "m_MaxSize": 90,
+        "m_Alignment": 4,
+        "m_AlignByGeometry": 1,
+        "m_RichText": 1,
+        "m_HorizontalOverflow": 0,
+        "m_VerticalOverflow": 0,
+        "m_LineSpacing": 0.6
+       },
+       "m_Text": "Description",
+       "GlyphPrefabs": [],
+       "ForceUseAlignedBestFit": 0,
+       "ForbiddenUseAlignedBestFit": 0,
+       "FitImageLineHeightParam": {
+        "ScaleMaxLineHeightFactor": 1.0,
+        "ApplyToSingleLine": 0,
+        "Enabled": 0
+       },
+       "_useLocalizationFont": 1,
+       "_fontType": 0,
+       "_useLabelFontSize": 1,
+       "_labelFontSize": 90,
+       "_useLabelLineSpacing": 0,
+       "_labelLineSpacing": 0.0,
+       "_Alias": "",
+       "_ToUpperCase": 0
+      }
+     }
+    ]
+   },
+   {
+    "name": "TimerLabel",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      0.0,
+      0.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "LayoutElement",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "IgnoreLayout": 0,
+       "MinWidth": -1.0,
+       "MinHeight": 100.0,
+       "PreferredWidth": -1.0,
+       "PreferredHeight": 100.0,
+       "FlexibleWidth": -1.0,
+       "FlexibleHeight": -1.0
+      },
+      "fields": {
+       "m_IgnoreLayout": 0,
+       "m_MinWidth": -1.0,
+       "m_MinHeight": 100.0,
+       "m_PreferredWidth": -1.0,
+       "m_PreferredHeight": 100.0,
+       "m_FlexibleWidth": -1.0,
+       "m_FlexibleHeight": -1.0,
+       "m_LayoutPriority": 1
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "LabelAlias",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Text",
+       "color": [
+        0.1843,
+        0.1451,
+        0.1059,
+        1.0
+       ],
+       "raycastTarget": false,
+       "text": "Description",
+       "font": null,
+       "fontSize": 85,
+       "fontStyle": "Normal",
+       "alignment": "UpperCenter",
+       "bestFit": true,
+       "minSize": 0,
+       "maxSize": 85,
+       "richText": true,
+       "horizontalOverflow": "Wrap",
+       "verticalOverflow": "Truncate",
+       "lineSpacing": 0.7,
+       "locKey": null,
+       "toUpperCase": false,
+       "useLocalizationFont": true,
+       "fontType": 0,
+       "labelFontSize": 85
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 0.1843,
+        "g": 0.1451,
+        "b": 0.1059,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_FontData": {
+        "m_Font": null,
+        "m_FontSize": 85,
+        "m_FontStyle": 0,
+        "m_BestFit": 1,
+        "m_MinSize": 0,
+        "m_MaxSize": 85,
+        "m_Alignment": 1,
+        "m_AlignByGeometry": 0,
+        "m_RichText": 1,
+        "m_HorizontalOverflow": 0,
+        "m_VerticalOverflow": 0,
+        "m_LineSpacing": 0.7
+       },
+       "m_Text": "Description",
+       "GlyphPrefabs": [],
+       "ForceUseAlignedBestFit": 0,
+       "ForbiddenUseAlignedBestFit": 0,
+       "FitImageLineHeightParam": {
+        "ScaleMaxLineHeightFactor": 1.0,
+        "ApplyToSingleLine": 0,
+        "Enabled": 0
+       },
+       "_useLocalizationFont": 1,
+       "_fontType": 0,
+       "_useLabelFontSize": 1,
+       "_labelFontSize": 85,
+       "_useLabelLineSpacing": 0,
+       "_labelLineSpacing": 0.0,
+       "_Alias": "",
+       "_ToUpperCase": 0
+      }
+     }
+    ]
+   },
+   {
+    "name": "ButtonPanel",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      0.0,
+      0.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "VerticalLayoutGroup",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "layout": "VerticalLayoutGroup",
+       "padding": {
+        "left": 0,
+        "right": 0,
+        "top": 20,
+        "bottom": 0
+       },
+       "childAlignment": "MiddleCenter",
+       "spacing": 20.0,
+       "childControlWidth": 1,
+       "childControlHeight": 1,
+       "childForceExpandWidth": 0,
+       "childForceExpandHeight": 0,
+       "childScaleWidth": 0,
+       "childScaleHeight": 0,
+       "reverseArrangement": 0
+      },
+      "fields": {
+       "m_Padding": {
+        "m_Left": 0,
+        "m_Right": 0,
+        "m_Top": 20,
+        "m_Bottom": 0
+       },
+       "m_ChildAlignment": 4,
+       "m_Spacing": 20.0,
+       "m_ChildForceExpandWidth": 0,
+       "m_ChildForceExpandHeight": 0,
+       "m_ChildControlWidth": 1,
+       "m_ChildControlHeight": 1,
+       "m_ChildScaleWidth": 0,
+       "m_ChildScaleHeight": 0,
+       "m_ReverseArrangement": 0
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "LayoutElement",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "IgnoreLayout": 0,
+       "MinWidth": -1.0,
+       "MinHeight": 120.0,
+       "PreferredWidth": -1.0,
+       "PreferredHeight": -1.0,
+       "FlexibleWidth": -1.0,
+       "FlexibleHeight": 1.0
+      },
+      "fields": {
+       "m_IgnoreLayout": 0,
+       "m_MinWidth": -1.0,
+       "m_MinHeight": 120.0,
+       "m_PreferredWidth": -1.0,
+       "m_PreferredHeight": -1.0,
+       "m_FlexibleWidth": -1.0,
+       "m_FlexibleHeight": 1.0,
+       "m_LayoutPriority": 1
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

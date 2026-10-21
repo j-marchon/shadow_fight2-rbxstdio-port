@@ -1,0 +1,390 @@
+{
+ "source": "19577770dbb41a74f99d89a7eb404d15",
+ "pathID": 10,
+ "root": {
+  "name": "ActivePerkItem",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.5,
+    0.5
+   ],
+   "anchorMax": [
+    0.5,
+    0.5
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    100.0,
+    100.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "ActivePerkItem",
+    "namespace": "Nekki.SF2.GUI.Fight",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_icon": {
+      "type": "ResolutionImage",
+      "path": "ActivePerkItem/Icon"
+     },
+     "_expiration": {
+      "type": "ResolutionImage",
+      "path": "ActivePerkItem/Expiration"
+     },
+     "_stackCount": {
+      "type": "LabelAlias",
+      "path": "ActivePerkItem/StackCount"
+     }
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "Icon",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      100.0,
+      100.0
+     ],
+     "pivot": [
+      0.5,
+      1.0
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImage",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": true,
+       "sprite": null,
+       "texture": null,
+       "spriteSource": null,
+       "spriteInfo": null,
+       "type": "simple",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "",
+       "_SpriteName": ""
+      }
+     }
+    ]
+   },
+   {
+    "name": "Expiration",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      -0.9,
+      2.2
+     ],
+     "sizeDelta": [
+      194.0,
+      194.0
+     ],
+     "pivot": [
+      0.5,
+      1.0
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImage",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": true,
+       "runtimeSprites": {
+        "SpriteName": {
+         "name": "Icons01.IconExpiration",
+         "texture": "Icons01",
+         "resourcesPath": "UI/Skills/",
+         "resolved": true
+        }
+       },
+       "sprite": "Icons01.IconExpiration",
+       "texture": "Icons01",
+       "spriteSource": "runtime:_SpriteName",
+       "spriteInfo": {
+        "type": "Sprite",
+        "name": "Icons01.IconExpiration",
+        "texture": "Icons01",
+        "pack": "ZONE_1",
+        "png": "tex/ZONE_1/Icons01.png",
+        "textureRectTopLeft": [
+         195,
+         2,
+         190,
+         190
+        ],
+        "pivot": [
+         0.5,
+         0.5
+        ],
+        "source": "sprites.json (bundle)"
+       },
+       "type": "filled",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0,
+       "fillMethod": "radial360",
+       "fillAmount": 0.0,
+       "fillOrigin": 2,
+       "fillClockwise": true
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 3,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 0.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 2,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "UI/Skills/",
+       "_SpriteName": "Icons01.IconExpiration"
+      }
+     }
+    ]
+   },
+   {
+    "name": "StackCount",
+    "active": true,
+    "layer": 0,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      -8.0,
+      0.0
+     ],
+     "sizeDelta": [
+      180.0,
+      180.0
+     ],
+     "pivot": [
+      0.5,
+      1.0
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "LabelAlias",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Text",
+       "color": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "raycastTarget": false,
+       "text": "10",
+       "font": "LegacyRuntime",
+       "fontSize": 100,
+       "fontStyle": "Normal",
+       "alignment": "LowerRight",
+       "bestFit": false,
+       "minSize": 1,
+       "maxSize": 100,
+       "richText": true,
+       "horizontalOverflow": "Wrap",
+       "verticalOverflow": "Truncate",
+       "lineSpacing": 1.0,
+       "locKey": null,
+       "toUpperCase": false,
+       "useLocalizationFont": true,
+       "fontType": 0,
+       "labelFontSize": 100
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_FontData": {
+        "m_Font": {
+         "type": "Font",
+         "name": "LegacyRuntime",
+         "file": "unity default resources"
+        },
+        "m_FontSize": 100,
+        "m_FontStyle": 0,
+        "m_BestFit": 0,
+        "m_MinSize": 1,
+        "m_MaxSize": 100,
+        "m_Alignment": 8,
+        "m_AlignByGeometry": 0,
+        "m_RichText": 1,
+        "m_HorizontalOverflow": 0,
+        "m_VerticalOverflow": 0,
+        "m_LineSpacing": 1.0
+       },
+       "m_Text": "10",
+       "GlyphPrefabs": [],
+       "ForceUseAlignedBestFit": 0,
+       "ForbiddenUseAlignedBestFit": 0,
+       "FitImageLineHeightParam": {
+        "ScaleMaxLineHeightFactor": 1.0,
+        "ApplyToSingleLine": 0,
+        "Enabled": 0
+       },
+       "_useLocalizationFont": 1,
+       "_fontType": 0,
+       "_useLabelFontSize": 1,
+       "_labelFontSize": 100,
+       "_useLabelLineSpacing": 0,
+       "_labelLineSpacing": 0.0,
+       "_Alias": "",
+       "_ToUpperCase": 0
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,277 @@
+{
+ "source": "c0cf261daa6a32f45aac6e0eec261b20",
+ "pathID": 5,
+ "root": {
+  "name": "ParametersPanelContent",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.5,
+    0.0
+   ],
+   "anchorMax": [
+    0.5,
+    1.0
+   ],
+   "anchoredPosition": [
+    20.0,
+    0.0
+   ],
+   "sizeDelta": [
+    515.0,
+    -48.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 180.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "ParametersPanelContent",
+    "namespace": "Nekki.SF2.GUI.Shop",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_baseScrollContent": {
+      "type": "BaseScrollContent",
+      "path": "ParametersPanelContent/RenderRoot/ScrollContent"
+     },
+     "_itemsScroll": {
+      "type": "ItemsScroll",
+      "path": "ParametersPanelContent/RenderRoot"
+     },
+     "_scrollItemPrefab": {
+      "type": "GameObject",
+      "path": "ParameterScrollItem"
+     },
+     "_ScrollAnimationDelay": 0.25,
+     "_ScrollAnimationDuration": 6.0,
+     "_renderRoot": {
+      "type": "GameObject",
+      "path": "ParametersPanelContent/RenderRoot"
+     }
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "RenderRoot",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "RectMask2D",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "fields": {
+       "m_Padding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Softness": {
+        "x": 0,
+        "y": 0
+       }
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "ItemsScroll",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "fields": {
+       "m_Content": {
+        "type": "RectTransform",
+        "path": "ParametersPanelContent/RenderRoot/ScrollContent"
+       },
+       "m_Horizontal": 0,
+       "m_Vertical": 1,
+       "m_MovementType": 2,
+       "m_Elasticity": 0.1,
+       "m_Inertia": 0,
+       "m_DecelerationRate": 0.135,
+       "m_ScrollSensitivity": 1.0,
+       "m_Viewport": null,
+       "m_HorizontalScrollbar": null,
+       "m_VerticalScrollbar": null,
+       "m_HorizontalScrollbarVisibility": 0,
+       "m_VerticalScrollbarVisibility": 0,
+       "m_HorizontalScrollbarSpacing": 0.0,
+       "m_VerticalScrollbarSpacing": 0.0,
+       "m_OnValueChanged": {
+        "m_PersistentCalls": {
+         "m_Calls": []
+        }
+       },
+       "m_ScrollFactor": 1.0,
+       "onScrollEnd": {
+        "m_PersistentCalls": {
+         "m_Calls": []
+        }
+       },
+       "onDragBegin": {
+        "m_PersistentCalls": {
+         "m_Calls": []
+        }
+       },
+       "_MinScrollVelocity": 0.0,
+       "_AutoscrollDuration": 1.0,
+       "AutoscrollIsOn": 1,
+       "_Scrolling": 0,
+       "scrollContent": {
+        "type": "BaseScrollContent",
+        "path": "ParametersPanelContent/RenderRoot/ScrollContent"
+       }
+      }
+     }
+    ],
+    "children": [
+     {
+      "name": "ScrollContent",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        -27.0,
+        -127.0
+       ],
+       "sizeDelta": [
+        516.0,
+        820.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "BaseScrollContent",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "onSelectItem": {
+          "m_PersistentCalls": {
+           "m_Calls": []
+          }
+         },
+         "onClickItem": {
+          "m_PersistentCalls": {
+           "m_Calls": []
+          }
+         },
+         "_layout": {
+          "type": "VerticalLayoutGroup",
+          "path": "ParametersPanelContent/RenderRoot/ScrollContent"
+         },
+         "Spacing": -35.0,
+         "_centering": 0
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "VerticalLayoutGroup",
+        "namespace": "UnityEngine.UI",
+        "assembly": "UnityEngine.UI",
+        "enabled": true,
+        "ui": {
+         "layout": "VerticalLayoutGroup",
+         "padding": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+         },
+         "childAlignment": "MiddleCenter",
+         "spacing": -35.0,
+         "childControlWidth": 1,
+         "childControlHeight": 1,
+         "childForceExpandWidth": 1,
+         "childForceExpandHeight": 0,
+         "childScaleWidth": 0,
+         "childScaleHeight": 0,
+         "reverseArrangement": 0
+        },
+        "fields": {
+         "m_Padding": {
+          "m_Left": 0,
+          "m_Right": 0,
+          "m_Top": 0,
+          "m_Bottom": 0
+         },
+         "m_ChildAlignment": 4,
+         "m_Spacing": -35.0,
+         "m_ChildForceExpandWidth": 1,
+         "m_ChildForceExpandHeight": 0,
+         "m_ChildControlWidth": 1,
+         "m_ChildControlHeight": 1,
+         "m_ChildScaleWidth": 0,
+         "m_ChildScaleHeight": 0,
+         "m_ReverseArrangement": 0
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

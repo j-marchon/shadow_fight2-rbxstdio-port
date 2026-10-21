@@ -1,0 +1,4129 @@
+{
+ "source": "b11ce08164ff9cc48bb528b55f14a4fa",
+ "pathID": 93,
+ "root": {
+  "name": "ViewerFight",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.0,
+    0.0
+   ],
+   "anchorMax": [
+    1.0,
+    1.0
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    0.0,
+    0.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "ViewerFight",
+    "namespace": "Nekki.SF2.GUI.Fight",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_pointsTablePrefab": {
+      "type": "GameObject",
+      "path": "PointsTable"
+     },
+     "btnPause": {
+      "type": "Button",
+      "path": "ViewerFight/PauseButton"
+     },
+     "roundTimer": {
+      "type": "LabelAlias",
+      "path": "ViewerFight/RoundTimer"
+     },
+     "_damageLabel": {
+      "type": "LabelAlias",
+      "path": "ViewerFight/DamageLabel"
+     },
+     "damageLabelStartY": 100.0,
+     "damageLabelEndY": 450.0,
+     "damageLabelMoveDuration": 3.0,
+     "leftModel": {
+      "type": "ScreenModel",
+      "path": "ViewerFight"
+     },
+     "rightModel": {
+      "type": "ScreenModel",
+      "path": "ViewerFight"
+     }
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "ScreenModel",
+    "namespace": "Nekki.SF2.GUI.Fight",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_Type": 0,
+     "_Avatar": {
+      "type": "ResolutionImageAvatar",
+      "path": "ViewerFight/Models/Avatar_left"
+     },
+     "_lifeBar": {
+      "type": "PlayerLifeBar",
+      "path": "ViewerFight/Models/PlayerLifeBar_left"
+     },
+     "_lifeBarLvlCount": null,
+     "_stylePanel": {
+      "type": "StylePanel",
+      "path": "ViewerFight/Models/StylePanel_left"
+     },
+     "_styleName": {
+      "type": "ResolutionImage",
+      "path": "ViewerFight/Models/StyleName_left"
+     },
+     "_roundsPanel": {
+      "type": "RoundsPanel",
+      "path": "ViewerFight/Models/RoundsPanel_left"
+     },
+     "_name": {
+      "type": "LabelAlias",
+      "path": "ViewerFight/Models/Name_left"
+     },
+     "_comboModel": {
+      "type": "ComboModel",
+      "path": "ViewerFight/Models/ComboModel_left"
+     },
+     "_activePerkModel": {
+      "type": "ActivePerkModel",
+      "path": "ViewerFight/Models/ActivePerkModel_left"
+     },
+     "_WinBtn": {
+      "type": "GameObject",
+      "path": "ViewerFight/Models/WinFightButton_left"
+     },
+     "_PlayerColorCircle": {
+      "type": "GameObject",
+      "path": "ViewerFight/Models/PlayerColor_left"
+     },
+     "_PlayerPvpColor": {
+      "r": 0.0,
+      "g": 0.149,
+      "b": 1.0,
+      "a": 1.0
+     }
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "ScreenModel",
+    "namespace": "Nekki.SF2.GUI.Fight",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_Type": 1,
+     "_Avatar": {
+      "type": "ResolutionImageAvatar",
+      "path": "ViewerFight/Models/Avatar_right"
+     },
+     "_lifeBar": {
+      "type": "PlayerLifeBar",
+      "path": "ViewerFight/Models/PlayerLifeBar_right"
+     },
+     "_lifeBarLvlCount": {
+      "type": "LabelAlias",
+      "path": "ViewerFight/Models/PlayerLifeLevel_right"
+     },
+     "_stylePanel": {
+      "type": "StylePanel",
+      "path": "ViewerFight/Models/StylePanel_right"
+     },
+     "_styleName": {
+      "type": "ResolutionImage",
+      "path": "ViewerFight/Models/StyleName_right"
+     },
+     "_roundsPanel": {
+      "type": "RoundsPanel",
+      "path": "ViewerFight/Models/RoundsPanel_right"
+     },
+     "_name": {
+      "type": "LabelAlias",
+      "path": "ViewerFight/Models/Name_right"
+     },
+     "_comboModel": {
+      "type": "ComboModel",
+      "path": "ViewerFight/Models/ComboModel_right"
+     },
+     "_activePerkModel": {
+      "type": "ActivePerkModel",
+      "path": "ViewerFight/Models/ActivePerkModel_right"
+     },
+     "_WinBtn": {
+      "type": "GameObject",
+      "path": "ViewerFight/Models/WinFightButton_right"
+     },
+     "_PlayerColorCircle": {
+      "type": "GameObject",
+      "path": "ViewerFight/Models/PlayerColor_right"
+     },
+     "_PlayerPvpColor": {
+      "r": 1.0,
+      "g": 0.4235,
+      "b": 0.2471,
+      "a": 1.0
+     }
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "PauseButton",
+    "active": true,
+    "layer": 0,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      520.0
+     ],
+     "sizeDelta": [
+      166.0,
+      166.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImage",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": true,
+       "runtimeSprites": {
+        "SpriteName": {
+         "name": "FightButtons.FightPause",
+         "texture": "FightButtons",
+         "resourcesPath": "UI/Atlases/",
+         "resolved": true
+        }
+       },
+       "sprite": "FightButtons.FightPause",
+       "texture": "FightButtons",
+       "spriteSource": "runtime:_SpriteName",
+       "spriteInfo": {
+        "type": "Sprite",
+        "name": "FightButtons.FightPause",
+        "file": "c4578b4d60ce946eaaab24476db40827",
+        "texture": "FightButtons",
+        "textureSize": [
+         1024,
+         2048
+        ],
+        "png": "tex/APK/FightButtons.png",
+        "textureRect": [
+         674.0,
+         200.0,
+         166.0,
+         166.0
+        ],
+        "rect": [
+         674.0,
+         200.0,
+         166.0,
+         166.0
+        ],
+        "pivot": [
+         0.494,
+         0.5181
+        ],
+        "ppu": 100.0
+       },
+       "type": "simple",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "UI/Atlases/",
+       "_SpriteName": "FightButtons.FightPause"
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "Button",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "interactable": false,
+       "transition": "ColorTint",
+       "targetGraphic": {
+        "type": "ResolutionImage",
+        "path": "ViewerFight/PauseButton"
+       },
+       "colors": {
+        "m_NormalColor": [
+         1.0,
+         1.0,
+         1.0,
+         1.0
+        ],
+        "m_HighlightedColor": [
+         0.9608,
+         0.9608,
+         0.9608,
+         1.0
+        ],
+        "m_PressedColor": [
+         0.2667,
+         0.451,
+         0.4784,
+         1.0
+        ],
+        "m_SelectedColor": [
+         0.9608,
+         0.9608,
+         0.9608,
+         1.0
+        ],
+        "m_DisabledColor": [
+         1.0,
+         1.0,
+         1.0,
+         1.0
+        ],
+        "m_ColorMultiplier": 1.0,
+        "m_FadeDuration": 0.1
+       },
+       "onClick": [
+        {
+         "target": {
+          "type": "ViewerFight",
+          "path": "ViewerFight"
+         },
+         "method": "PausePress",
+         "arg": null
+        }
+       ]
+      },
+      "fields": {
+       "m_Navigation": {
+        "m_Mode": 3,
+        "m_WrapAround": 0,
+        "m_SelectOnUp": null,
+        "m_SelectOnDown": null,
+        "m_SelectOnLeft": null,
+        "m_SelectOnRight": null
+       },
+       "m_Transition": 1,
+       "m_Colors": {
+        "m_NormalColor": {
+         "r": 1.0,
+         "g": 1.0,
+         "b": 1.0,
+         "a": 1.0
+        },
+        "m_HighlightedColor": {
+         "r": 0.9608,
+         "g": 0.9608,
+         "b": 0.9608,
+         "a": 1.0
+        },
+        "m_PressedColor": {
+         "r": 0.2667,
+         "g": 0.451,
+         "b": 0.4784,
+         "a": 1.0
+        },
+        "m_SelectedColor": {
+         "r": 0.9608,
+         "g": 0.9608,
+         "b": 0.9608,
+         "a": 1.0
+        },
+        "m_DisabledColor": {
+         "r": 1.0,
+         "g": 1.0,
+         "b": 1.0,
+         "a": 1.0
+        },
+        "m_ColorMultiplier": 1.0,
+        "m_FadeDuration": 0.1
+       },
+       "m_SpriteState": {
+        "m_HighlightedSprite": null,
+        "m_PressedSprite": null,
+        "m_SelectedSprite": null,
+        "m_DisabledSprite": null
+       },
+       "m_AnimationTriggers": {
+        "m_NormalTrigger": "Normal",
+        "m_HighlightedTrigger": "Highlighted",
+        "m_PressedTrigger": "Pressed",
+        "m_SelectedTrigger": "Highlighted",
+        "m_DisabledTrigger": "Disabled"
+       },
+       "m_Interactable": 0,
+       "m_TargetGraphic": {
+        "type": "ResolutionImage",
+        "path": "ViewerFight/PauseButton"
+       },
+       "m_OnClick": {
+        "m_PersistentCalls": {
+         "m_Calls": [
+          {
+           "m_Target": {
+            "type": "ViewerFight",
+            "path": "ViewerFight"
+           },
+           "m_TargetAssemblyTypeName": "",
+           "m_MethodName": "PausePress",
+           "m_Mode": 1,
+           "m_Arguments": {
+            "m_ObjectArgument": null,
+            "m_ObjectArgumentAssemblyTypeName": "UnityEngine.Object, UnityEngine",
+            "m_IntArgument": 0,
+            "m_FloatArgument": 0.0,
+            "m_StringArgument": "",
+            "m_BoolArgument": 0
+           },
+           "m_CallState": 2
+          }
+         ]
+        }
+       }
+      }
+     }
+    ],
+    "children": [
+     {
+      "name": "Additional TouchZone",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        250.0,
+        250.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        0.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "NonDrawingGraphic",
+        "namespace": "",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 1,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Models",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "children": [
+     {
+      "name": "PlayerColor_left",
+      "active": false,
+      "layer": 0,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        -829.9999,
+        549.9999
+       ],
+       "sizeDelta": [
+        333.0,
+        333.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.22,
+        1.22,
+        0.0
+       ],
+       "rotationZ": -180.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "UICircle",
+        "namespace": "UIFigures",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 0.0,
+          "g": 0.149,
+          "b": 1.0,
+          "a": 0.7843
+         },
+         "m_RaycastTarget": 1,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "_Sprite": null,
+         "_Segments": 32
+        }
+       }
+      ]
+     },
+     {
+      "name": "PlayerColor_right",
+      "active": false,
+      "layer": 0,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        829.9921,
+        549.9999
+       ],
+       "sizeDelta": [
+        333.0,
+        333.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.22,
+        1.22,
+        0.0
+       ],
+       "rotationZ": 0.0,
+       "localZ": 1.4444
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "UICircle",
+        "namespace": "UIFigures",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 0.4235,
+          "b": 0.2471,
+          "a": 0.7843
+         },
+         "m_RaycastTarget": 1,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "_Sprite": null,
+         "_Segments": 32
+        }
+       }
+      ]
+     },
+     {
+      "name": "PlayerLifeBar_left",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        -670.0,
+        585.0
+       ],
+       "sizeDelta": [
+        564.0,
+        43.0
+       ],
+       "pivot": [
+        0.0,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "PlayerLifeBar",
+        "namespace": "Nekki.SF2.GUI.Fight",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "runtimeSprites": {
+          "healthBarSpriteName": {
+           "name": "FightUI.HealthBar_Full",
+           "texture": "FightUI",
+           "resourcesPath": null,
+           "resolved": true
+          },
+          "raidHealthBarSpriteName": {
+           "name": "FightUI.Raid_HealthBar_Full",
+           "texture": "FightUI",
+           "resourcesPath": null,
+           "resolved": true
+          },
+          "pvpFirst_HealthBarSpriteName": {
+           "name": "FightUI.HealthBarBlue_Full",
+           "texture": "FightUI",
+           "resourcesPath": null,
+           "resolved": true
+          },
+          "pvpFirst_HitBarSpriteName": {
+           "name": "FightUI.HealthBarBlue_Hit",
+           "texture": "FightUI",
+           "resourcesPath": null,
+           "resolved": true
+          }
+         }
+        },
+        "fields": {
+         "_background": {
+          "type": "ResolutionImageSkew",
+          "path": "ViewerFight/Models/PlayerLifeBar_left/Background"
+         },
+         "_healthBar": {
+          "type": "ResolutionImageSkew",
+          "path": "ViewerFight/Models/PlayerLifeBar_left/BarPanel/HealthBar"
+         },
+         "_hitBar": {
+          "type": "ResolutionImageSkew",
+          "path": "ViewerFight/Models/PlayerLifeBar_left/BarPanel/HitBar"
+         },
+         "_barPanel": {
+          "type": "RectTransform",
+          "path": "ViewerFight/Models/PlayerLifeBar_left/BarPanel"
+         },
+         "_nextLevelColor": {
+          "r": 0.7059,
+          "g": 0.7059,
+          "b": 0.7059,
+          "a": 1.0
+         },
+         "_healthBarSpriteName": "FightUI.HealthBar_Full",
+         "_raidHealthBarSpriteName": "FightUI.Raid_HealthBar_Full",
+         "_pvpFirst_HealthBarSpriteName": "FightUI.HealthBarBlue_Full",
+         "_pvpFirst_HitBarSpriteName": "FightUI.HealthBarBlue_Hit",
+         "LockLifeUpdate": 0
+        }
+       }
+      ],
+      "children": [
+       {
+        "name": "Background",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.0,
+          0.5
+         ],
+         "anchorMax": [
+          1.0,
+          0.5
+         ],
+         "anchoredPosition": [
+          0.0,
+          0.0
+         ],
+         "sizeDelta": [
+          0.0,
+          43.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionImageSkew",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Image",
+           "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+           ],
+           "raycastTarget": false,
+           "runtimeSprites": {
+            "SpriteName": {
+             "name": "FightUI.HealthBar_Empty",
+             "texture": "FightUI",
+             "resourcesPath": "UI/Atlases/",
+             "resolved": true
+            }
+           },
+           "sprite": "FightUI.HealthBar_Empty",
+           "texture": "FightUI",
+           "spriteSource": "runtime:_SpriteName",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "FightUI.HealthBar_Empty",
+            "file": "dcb2e1eee7245544cb45281e1f5188b6",
+            "texture": "FightUI",
+            "textureSize": [
+             2048,
+             2048
+            ],
+            "png": "tex/APK/FightUI.png",
+            "textureRect": [
+             149.0,
+             2003.0,
+             1.0,
+             43.0
+            ],
+            "rect": [
+             149.0,
+             2003.0,
+             1.0,
+             43.0
+            ],
+            "pivot": [
+             0.5,
+             0.5
+            ],
+            "ppu": 100.0
+           },
+           "type": "simple",
+           "preserveAspect": false,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 0,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": null,
+           "m_Type": 0,
+           "m_PreserveAspect": 0,
+           "m_FillCenter": 1,
+           "m_FillMethod": 4,
+           "m_FillAmount": 1.0,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0,
+           "_TexturePath": "UI/Atlases/",
+           "_SpriteName": "FightUI.HealthBar_Empty",
+           "_SkewAngle": 25.0
+          }
+         }
+        ]
+       },
+       {
+        "name": "BarPanel",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.0,
+          0.5
+         ],
+         "anchorMax": [
+          1.0,
+          0.5
+         ],
+         "anchoredPosition": [
+          0.0,
+          0.0
+         ],
+         "sizeDelta": [
+          0.0,
+          100.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "Canvas",
+          "renderMode": "WorldSpace",
+          "enabled": true,
+          "sortingOrder": 0,
+          "overrideSorting": false,
+          "pixelPerfect": false,
+          "planeDistance": 100.0,
+          "sortingLayerID": 0,
+          "camera": null
+         }
+        ],
+        "children": [
+         {
+          "name": "HitBar",
+          "active": true,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.0,
+            0.5
+           ],
+           "anchorMax": [
+            1.0,
+            0.5
+           ],
+           "anchoredPosition": [
+            0.0,
+            0.0
+           ],
+           "sizeDelta": [
+            0.0,
+            43.0
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "localScale": [
+            1.0,
+            1.0,
+            1.0
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "ResolutionImageSkew",
+            "namespace": "Nekki.SF2.GUI",
+            "assembly": "Root",
+            "enabled": true,
+            "ui": {
+             "kind": "Image",
+             "color": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+             ],
+             "raycastTarget": false,
+             "runtimeSprites": {
+              "SpriteName": {
+               "name": "FightUI.HealthBar_Hit",
+               "texture": "FightUI",
+               "resourcesPath": "UI/Atlases/",
+               "resolved": true
+              }
+             },
+             "sprite": "FightUI.HealthBar_Hit",
+             "texture": "FightUI",
+             "spriteSource": "runtime:_SpriteName",
+             "spriteInfo": {
+              "type": "Sprite",
+              "name": "FightUI.HealthBar_Hit",
+              "file": "dcb2e1eee7245544cb45281e1f5188b6",
+              "texture": "FightUI",
+              "textureSize": [
+               2048,
+               2048
+              ],
+              "png": "tex/APK/FightUI.png",
+              "textureRect": [
+               153.0,
+               2003.0,
+               1.0,
+               43.0
+              ],
+              "rect": [
+               153.0,
+               2003.0,
+               1.0,
+               43.0
+              ],
+              "pivot": [
+               0.5,
+               0.5
+              ],
+              "ppu": 100.0
+             },
+             "type": "filled",
+             "preserveAspect": false,
+             "fillCenter": true,
+             "pixelsPerUnitMultiplier": 1.0,
+             "fillMethod": "horizontal",
+             "fillAmount": 1.0,
+             "fillOrigin": 1,
+             "fillClockwise": true
+            },
+            "fields": {
+             "m_Material": null,
+             "m_Color": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+             },
+             "m_RaycastTarget": 0,
+             "m_RaycastPadding": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 0.0
+             },
+             "m_Maskable": 1,
+             "m_Sprite": null,
+             "m_Type": 3,
+             "m_PreserveAspect": 0,
+             "m_FillCenter": 1,
+             "m_FillMethod": 0,
+             "m_FillAmount": 1.0,
+             "m_FillClockwise": 1,
+             "m_FillOrigin": 1,
+             "m_UseSpriteMesh": 0,
+             "m_PixelsPerUnitMultiplier": 1.0,
+             "_TexturePath": "UI/Atlases/",
+             "_SpriteName": "FightUI.HealthBar_Hit",
+             "_SkewAngle": 25.0
+            }
+           }
+          ]
+         },
+         {
+          "name": "HealthBar",
+          "active": true,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.0,
+            0.5
+           ],
+           "anchorMax": [
+            1.0,
+            0.5
+           ],
+           "anchoredPosition": [
+            0.0,
+            0.0
+           ],
+           "sizeDelta": [
+            0.0,
+            43.0
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "localScale": [
+            1.0,
+            1.0,
+            1.0
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "ResolutionImageSkew",
+            "namespace": "Nekki.SF2.GUI",
+            "assembly": "Root",
+            "enabled": true,
+            "ui": {
+             "kind": "Image",
+             "color": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+             ],
+             "raycastTarget": false,
+             "runtimeSprites": {
+              "SpriteName": {
+               "name": "FightUI.HealthBar_Full",
+               "texture": "FightUI",
+               "resourcesPath": "UI/Atlases/",
+               "resolved": true
+              }
+             },
+             "sprite": "FightUI.HealthBar_Full",
+             "texture": "FightUI",
+             "spriteSource": "runtime:_SpriteName",
+             "spriteInfo": {
+              "type": "Sprite",
+              "name": "FightUI.HealthBar_Full",
+              "file": "dcb2e1eee7245544cb45281e1f5188b6",
+              "texture": "FightUI",
+              "textureSize": [
+               2048,
+               2048
+              ],
+              "png": "tex/APK/FightUI.png",
+              "textureRect": [
+               165.0,
+               2003.0,
+               1.0,
+               43.0
+              ],
+              "rect": [
+               165.0,
+               2003.0,
+               1.0,
+               43.0
+              ],
+              "pivot": [
+               0.5,
+               0.5
+              ],
+              "ppu": 100.0
+             },
+             "type": "filled",
+             "preserveAspect": false,
+             "fillCenter": true,
+             "pixelsPerUnitMultiplier": 1.0,
+             "fillMethod": "horizontal",
+             "fillAmount": 1.0,
+             "fillOrigin": 1,
+             "fillClockwise": true
+            },
+            "fields": {
+             "m_Material": null,
+             "m_Color": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+             },
+             "m_RaycastTarget": 0,
+             "m_RaycastPadding": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 0.0
+             },
+             "m_Maskable": 1,
+             "m_Sprite": null,
+             "m_Type": 3,
+             "m_PreserveAspect": 0,
+             "m_FillCenter": 1,
+             "m_FillMethod": 0,
+             "m_FillAmount": 1.0,
+             "m_FillClockwise": 1,
+             "m_FillOrigin": 1,
+             "m_UseSpriteMesh": 0,
+             "m_PixelsPerUnitMultiplier": 1.0,
+             "_TexturePath": "UI/Atlases/",
+             "_SpriteName": "FightUI.HealthBar_Full",
+             "_SkewAngle": 25.0
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "name": "PlayerLifeBar_right",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        670.0018,
+        585.0
+       ],
+       "sizeDelta": [
+        564.0,
+        43.0
+       ],
+       "pivot": [
+        0.0,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": -180.0,
+       "localZ": -0.3333
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "PlayerLifeBar",
+        "namespace": "Nekki.SF2.GUI.Fight",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "runtimeSprites": {
+          "healthBarSpriteName": {
+           "name": "FightUI.HealthBar_Full",
+           "texture": "FightUI",
+           "resourcesPath": null,
+           "resolved": true
+          },
+          "raidHealthBarSpriteName": {
+           "name": "FightUI.Raid_HealthBar_Full",
+           "texture": "FightUI",
+           "resourcesPath": null,
+           "resolved": true
+          },
+          "pvpFirst_HealthBarSpriteName": {
+           "name": "FightUI.HealthBar_Full",
+           "texture": "FightUI",
+           "resourcesPath": null,
+           "resolved": true
+          },
+          "pvpFirst_HitBarSpriteName": {
+           "name": "FightUI.HealthBar_Hit",
+           "texture": "FightUI",
+           "resourcesPath": null,
+           "resolved": true
+          }
+         }
+        },
+        "fields": {
+         "_background": {
+          "type": "ResolutionImageSkew",
+          "path": "ViewerFight/Models/PlayerLifeBar_right/Background"
+         },
+         "_healthBar": {
+          "type": "ResolutionImageSkew",
+          "path": "ViewerFight/Models/PlayerLifeBar_right/BarPanel/HealthBar"
+         },
+         "_hitBar": {
+          "type": "ResolutionImageSkew",
+          "path": "ViewerFight/Models/PlayerLifeBar_right/BarPanel/HitBar"
+         },
+         "_barPanel": {
+          "type": "RectTransform",
+          "path": "ViewerFight/Models/PlayerLifeBar_right/BarPanel"
+         },
+         "_nextLevelColor": {
+          "r": 0.7059,
+          "g": 0.7059,
+          "b": 0.7059,
+          "a": 1.0
+         },
+         "_healthBarSpriteName": "FightUI.HealthBar_Full",
+         "_raidHealthBarSpriteName": "FightUI.Raid_HealthBar_Full",
+         "_pvpFirst_HealthBarSpriteName": "FightUI.HealthBar_Full",
+         "_pvpFirst_HitBarSpriteName": "FightUI.HealthBar_Hit",
+         "LockLifeUpdate": 0
+        }
+       }
+      ],
+      "children": [
+       {
+        "name": "Background",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.0,
+          0.5
+         ],
+         "anchorMax": [
+          1.0,
+          0.5
+         ],
+         "anchoredPosition": [
+          0.0,
+          0.0
+         ],
+         "sizeDelta": [
+          0.0,
+          43.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionImageSkew",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Image",
+           "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+           ],
+           "raycastTarget": false,
+           "runtimeSprites": {
+            "SpriteName": {
+             "name": "FightUI.HealthBar_Empty",
+             "texture": "FightUI",
+             "resourcesPath": "UI/Atlases/",
+             "resolved": true
+            }
+           },
+           "sprite": "FightUI.HealthBar_Empty",
+           "texture": "FightUI",
+           "spriteSource": "runtime:_SpriteName",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "FightUI.HealthBar_Empty",
+            "file": "dcb2e1eee7245544cb45281e1f5188b6",
+            "texture": "FightUI",
+            "textureSize": [
+             2048,
+             2048
+            ],
+            "png": "tex/APK/FightUI.png",
+            "textureRect": [
+             149.0,
+             2003.0,
+             1.0,
+             43.0
+            ],
+            "rect": [
+             149.0,
+             2003.0,
+             1.0,
+             43.0
+            ],
+            "pivot": [
+             0.5,
+             0.5
+            ],
+            "ppu": 100.0
+           },
+           "type": "simple",
+           "preserveAspect": false,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 0,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": null,
+           "m_Type": 0,
+           "m_PreserveAspect": 0,
+           "m_FillCenter": 1,
+           "m_FillMethod": 4,
+           "m_FillAmount": 1.0,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0,
+           "_TexturePath": "UI/Atlases/",
+           "_SpriteName": "FightUI.HealthBar_Empty",
+           "_SkewAngle": 25.0
+          }
+         }
+        ]
+       },
+       {
+        "name": "BarPanel",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.0,
+          0.5
+         ],
+         "anchorMax": [
+          1.0,
+          0.5
+         ],
+         "anchoredPosition": [
+          0.0,
+          0.0
+         ],
+         "sizeDelta": [
+          0.0,
+          100.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "Canvas",
+          "renderMode": "WorldSpace",
+          "enabled": true,
+          "sortingOrder": 0,
+          "overrideSorting": false,
+          "pixelPerfect": false,
+          "planeDistance": 100.0,
+          "sortingLayerID": 0,
+          "camera": null
+         }
+        ],
+        "children": [
+         {
+          "name": "HitBar",
+          "active": true,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.0,
+            0.5
+           ],
+           "anchorMax": [
+            1.0,
+            0.5
+           ],
+           "anchoredPosition": [
+            0.0,
+            0.0
+           ],
+           "sizeDelta": [
+            0.0,
+            43.0
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "localScale": [
+            1.0,
+            1.0,
+            1.0
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "ResolutionImageSkew",
+            "namespace": "Nekki.SF2.GUI",
+            "assembly": "Root",
+            "enabled": true,
+            "ui": {
+             "kind": "Image",
+             "color": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+             ],
+             "raycastTarget": false,
+             "runtimeSprites": {
+              "SpriteName": {
+               "name": "FightUI.HealthBar_Hit",
+               "texture": "FightUI",
+               "resourcesPath": "UI/Atlases/",
+               "resolved": true
+              }
+             },
+             "sprite": "FightUI.HealthBar_Hit",
+             "texture": "FightUI",
+             "spriteSource": "runtime:_SpriteName",
+             "spriteInfo": {
+              "type": "Sprite",
+              "name": "FightUI.HealthBar_Hit",
+              "file": "dcb2e1eee7245544cb45281e1f5188b6",
+              "texture": "FightUI",
+              "textureSize": [
+               2048,
+               2048
+              ],
+              "png": "tex/APK/FightUI.png",
+              "textureRect": [
+               153.0,
+               2003.0,
+               1.0,
+               43.0
+              ],
+              "rect": [
+               153.0,
+               2003.0,
+               1.0,
+               43.0
+              ],
+              "pivot": [
+               0.5,
+               0.5
+              ],
+              "ppu": 100.0
+             },
+             "type": "filled",
+             "preserveAspect": false,
+             "fillCenter": true,
+             "pixelsPerUnitMultiplier": 1.0,
+             "fillMethod": "horizontal",
+             "fillAmount": 1.0,
+             "fillOrigin": 1,
+             "fillClockwise": true
+            },
+            "fields": {
+             "m_Material": null,
+             "m_Color": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+             },
+             "m_RaycastTarget": 0,
+             "m_RaycastPadding": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 0.0
+             },
+             "m_Maskable": 1,
+             "m_Sprite": null,
+             "m_Type": 3,
+             "m_PreserveAspect": 0,
+             "m_FillCenter": 1,
+             "m_FillMethod": 0,
+             "m_FillAmount": 1.0,
+             "m_FillClockwise": 1,
+             "m_FillOrigin": 1,
+             "m_UseSpriteMesh": 0,
+             "m_PixelsPerUnitMultiplier": 1.0,
+             "_TexturePath": "UI/Atlases/",
+             "_SpriteName": "FightUI.HealthBar_Hit",
+             "_SkewAngle": 25.0
+            }
+           }
+          ]
+         },
+         {
+          "name": "HealthBar",
+          "active": true,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.0,
+            0.5
+           ],
+           "anchorMax": [
+            1.0,
+            0.5
+           ],
+           "anchoredPosition": [
+            0.0,
+            0.0
+           ],
+           "sizeDelta": [
+            0.0,
+            43.0
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "localScale": [
+            1.0,
+            1.0,
+            1.0
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "ResolutionImageSkew",
+            "namespace": "Nekki.SF2.GUI",
+            "assembly": "Root",
+            "enabled": true,
+            "ui": {
+             "kind": "Image",
+             "color": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+             ],
+             "raycastTarget": false,
+             "runtimeSprites": {
+              "SpriteName": {
+               "name": "FightUI.HealthBar_Full",
+               "texture": "FightUI",
+               "resourcesPath": "UI/Atlases/",
+               "resolved": true
+              }
+             },
+             "sprite": "FightUI.HealthBar_Full",
+             "texture": "FightUI",
+             "spriteSource": "runtime:_SpriteName",
+             "spriteInfo": {
+              "type": "Sprite",
+              "name": "FightUI.HealthBar_Full",
+              "file": "dcb2e1eee7245544cb45281e1f5188b6",
+              "texture": "FightUI",
+              "textureSize": [
+               2048,
+               2048
+              ],
+              "png": "tex/APK/FightUI.png",
+              "textureRect": [
+               165.0,
+               2003.0,
+               1.0,
+               43.0
+              ],
+              "rect": [
+               165.0,
+               2003.0,
+               1.0,
+               43.0
+              ],
+              "pivot": [
+               0.5,
+               0.5
+              ],
+              "ppu": 100.0
+             },
+             "type": "filled",
+             "preserveAspect": false,
+             "fillCenter": true,
+             "pixelsPerUnitMultiplier": 1.0,
+             "fillMethod": "horizontal",
+             "fillAmount": 1.0,
+             "fillOrigin": 1,
+             "fillClockwise": true
+            },
+            "fields": {
+             "m_Material": null,
+             "m_Color": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+             },
+             "m_RaycastTarget": 0,
+             "m_RaycastPadding": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 0.0
+             },
+             "m_Maskable": 1,
+             "m_Sprite": null,
+             "m_Type": 3,
+             "m_PreserveAspect": 0,
+             "m_FillCenter": 1,
+             "m_FillMethod": 0,
+             "m_FillAmount": 1.0,
+             "m_FillClockwise": 1,
+             "m_FillOrigin": 1,
+             "m_UseSpriteMesh": 0,
+             "m_PixelsPerUnitMultiplier": 1.0,
+             "_TexturePath": "UI/Atlases/",
+             "_SpriteName": "FightUI.HealthBar_Full",
+             "_SkewAngle": 25.0
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "name": "PlayerLifeLevel_right",
+      "active": false,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        225.0,
+        455.0
+       ],
+       "sizeDelta": [
+        200.0,
+        200.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "LabelAlias",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Text",
+         "color": [
+          1.0,
+          0.851,
+          0.6275,
+          1.0
+         ],
+         "raycastTarget": false,
+         "text": "",
+         "font": "majallab",
+         "fontSize": 70,
+         "fontStyle": "Normal",
+         "alignment": "UpperLeft",
+         "bestFit": true,
+         "minSize": 7,
+         "maxSize": 70,
+         "richText": true,
+         "horizontalOverflow": "Wrap",
+         "verticalOverflow": "Truncate",
+         "lineSpacing": 0.7,
+         "locKey": null,
+         "toUpperCase": false,
+         "useLocalizationFont": true,
+         "fontType": 0,
+         "labelFontSize": 70
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 0.851,
+          "b": 0.6275,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_FontData": {
+          "m_Font": {
+           "type": "Font",
+           "name": "majallab",
+           "file": "sharedassets0.assets"
+          },
+          "m_FontSize": 70,
+          "m_FontStyle": 0,
+          "m_BestFit": 1,
+          "m_MinSize": 7,
+          "m_MaxSize": 70,
+          "m_Alignment": 0,
+          "m_AlignByGeometry": 1,
+          "m_RichText": 1,
+          "m_HorizontalOverflow": 0,
+          "m_VerticalOverflow": 0,
+          "m_LineSpacing": 0.7
+         },
+         "m_Text": "",
+         "GlyphPrefabs": [],
+         "ForceUseAlignedBestFit": 1,
+         "ForbiddenUseAlignedBestFit": 0,
+         "FitImageLineHeightParam": {
+          "ScaleMaxLineHeightFactor": 1.0,
+          "ApplyToSingleLine": 0,
+          "Enabled": 0
+         },
+         "_useLocalizationFont": 1,
+         "_fontType": 0,
+         "_useLabelFontSize": 1,
+         "_labelFontSize": 70,
+         "_useLabelLineSpacing": 0,
+         "_labelLineSpacing": 0.0,
+         "_Alias": "",
+         "_ToUpperCase": 0
+        }
+       }
+      ]
+     },
+     {
+      "name": "StylePanel_left",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        -670.0,
+        540.0
+       ],
+       "sizeDelta": [
+        358.0,
+        100.0
+       ],
+       "pivot": [
+        0.0,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "StylePanel",
+        "namespace": "Nekki.SF2.GUI.Fight",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "_styleBar": {
+          "type": "StyleBar",
+          "path": "ViewerFight/Models/StylePanel_left/StyleBar"
+         }
+        }
+       },
+       {
+        "type": "Canvas",
+        "renderMode": "WorldSpace",
+        "enabled": true,
+        "sortingOrder": 0,
+        "overrideSorting": false,
+        "pixelPerfect": false,
+        "planeDistance": 100.0,
+        "sortingLayerID": 0,
+        "camera": null
+       }
+      ],
+      "children": [
+       {
+        "name": "StyleBar",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.5,
+          0.5
+         ],
+         "anchorMax": [
+          0.5,
+          0.5
+         ],
+         "anchoredPosition": [
+          0.0,
+          0.0
+         ],
+         "sizeDelta": [
+          358.0,
+          43.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "StyleBar",
+          "namespace": "Nekki.SF2.GUI.Fight",
+          "assembly": "Root",
+          "enabled": true,
+          "fields": {
+           "background": {
+            "type": "ResolutionImageSkew",
+            "path": "ViewerFight/Models/StylePanel_left/StyleBar"
+           }
+          }
+         },
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionImageSkew",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Image",
+           "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+           ],
+           "raycastTarget": true,
+           "runtimeSprites": {
+            "SpriteName": {
+             "name": "FightUI.HealthBar_Empty",
+             "texture": "FightUI",
+             "resourcesPath": "UI/Atlases/",
+             "resolved": true
+            }
+           },
+           "sprite": "FightUI.HealthBar_Empty",
+           "texture": "FightUI",
+           "spriteSource": "runtime:_SpriteName",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "FightUI.HealthBar_Empty",
+            "file": "dcb2e1eee7245544cb45281e1f5188b6",
+            "texture": "FightUI",
+            "textureSize": [
+             2048,
+             2048
+            ],
+            "png": "tex/APK/FightUI.png",
+            "textureRect": [
+             149.0,
+             2003.0,
+             1.0,
+             43.0
+            ],
+            "rect": [
+             149.0,
+             2003.0,
+             1.0,
+             43.0
+            ],
+            "pivot": [
+             0.5,
+             0.5
+            ],
+            "ppu": 100.0
+           },
+           "type": "simple",
+           "preserveAspect": false,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 1,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": null,
+           "m_Type": 0,
+           "m_PreserveAspect": 0,
+           "m_FillCenter": 1,
+           "m_FillMethod": 4,
+           "m_FillAmount": 1.0,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0,
+           "_TexturePath": "UI/Atlases/",
+           "_SpriteName": "FightUI.HealthBar_Empty",
+           "_SkewAngle": 25.0
+          }
+         },
+         {
+          "type": "MonoBehaviour",
+          "class": "LayoutElement",
+          "namespace": "UnityEngine.UI",
+          "assembly": "UnityEngine.UI",
+          "enabled": true,
+          "ui": {
+           "IgnoreLayout": 0,
+           "MinWidth": 358.0,
+           "MinHeight": 43.0,
+           "PreferredWidth": -1.0,
+           "PreferredHeight": -1.0,
+           "FlexibleWidth": -1.0,
+           "FlexibleHeight": -1.0
+          },
+          "fields": {
+           "m_IgnoreLayout": 0,
+           "m_MinWidth": 358.0,
+           "m_MinHeight": 43.0,
+           "m_PreferredWidth": -1.0,
+           "m_PreferredHeight": -1.0,
+           "m_FlexibleWidth": -1.0,
+           "m_FlexibleHeight": -1.0,
+           "m_LayoutPriority": 1
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "name": "StylePanel_right",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        670.0018,
+        540.0
+       ],
+       "sizeDelta": [
+        358.0,
+        100.0
+       ],
+       "pivot": [
+        0.0,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": -180.0,
+       "localZ": -0.3333
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "StylePanel",
+        "namespace": "Nekki.SF2.GUI.Fight",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "_styleBar": {
+          "type": "StyleBar",
+          "path": "ViewerFight/Models/StylePanel_right/StyleBar"
+         }
+        }
+       },
+       {
+        "type": "Canvas",
+        "renderMode": "WorldSpace",
+        "enabled": true,
+        "sortingOrder": 0,
+        "overrideSorting": false,
+        "pixelPerfect": false,
+        "planeDistance": 100.0,
+        "sortingLayerID": 0,
+        "camera": null
+       }
+      ],
+      "children": [
+       {
+        "name": "StyleBar",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.5,
+          0.5
+         ],
+         "anchorMax": [
+          0.5,
+          0.5
+         ],
+         "anchoredPosition": [
+          0.0,
+          0.0
+         ],
+         "sizeDelta": [
+          358.0,
+          43.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "StyleBar",
+          "namespace": "Nekki.SF2.GUI.Fight",
+          "assembly": "Root",
+          "enabled": true,
+          "fields": {
+           "background": {
+            "type": "ResolutionImageSkew",
+            "path": "ViewerFight/Models/StylePanel_right/StyleBar"
+           }
+          }
+         },
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionImageSkew",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Image",
+           "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+           ],
+           "raycastTarget": true,
+           "runtimeSprites": {
+            "SpriteName": {
+             "name": "FightUI.HealthBar_Empty",
+             "texture": "FightUI",
+             "resourcesPath": "UI/Atlases/",
+             "resolved": true
+            }
+           },
+           "sprite": "FightUI.HealthBar_Empty",
+           "texture": "FightUI",
+           "spriteSource": "runtime:_SpriteName",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "FightUI.HealthBar_Empty",
+            "file": "dcb2e1eee7245544cb45281e1f5188b6",
+            "texture": "FightUI",
+            "textureSize": [
+             2048,
+             2048
+            ],
+            "png": "tex/APK/FightUI.png",
+            "textureRect": [
+             149.0,
+             2003.0,
+             1.0,
+             43.0
+            ],
+            "rect": [
+             149.0,
+             2003.0,
+             1.0,
+             43.0
+            ],
+            "pivot": [
+             0.5,
+             0.5
+            ],
+            "ppu": 100.0
+           },
+           "type": "simple",
+           "preserveAspect": false,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 1,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": null,
+           "m_Type": 0,
+           "m_PreserveAspect": 0,
+           "m_FillCenter": 1,
+           "m_FillMethod": 4,
+           "m_FillAmount": 1.0,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0,
+           "_TexturePath": "UI/Atlases/",
+           "_SpriteName": "FightUI.HealthBar_Empty",
+           "_SkewAngle": 25.0
+          }
+         },
+         {
+          "type": "MonoBehaviour",
+          "class": "LayoutElement",
+          "namespace": "UnityEngine.UI",
+          "assembly": "UnityEngine.UI",
+          "enabled": true,
+          "ui": {
+           "IgnoreLayout": 0,
+           "MinWidth": 358.0,
+           "MinHeight": 43.0,
+           "PreferredWidth": -1.0,
+           "PreferredHeight": -1.0,
+           "FlexibleWidth": -1.0,
+           "FlexibleHeight": -1.0
+          },
+          "fields": {
+           "m_IgnoreLayout": 0,
+           "m_MinWidth": 358.0,
+           "m_MinHeight": 43.0,
+           "m_PreferredWidth": -1.0,
+           "m_PreferredHeight": -1.0,
+           "m_FlexibleWidth": -1.0,
+           "m_FlexibleHeight": -1.0,
+           "m_LayoutPriority": 1
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "name": "RoundsPanel_left",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        -125.0,
+        540.0
+       ],
+       "sizeDelta": [
+        132.0,
+        48.0
+       ],
+       "pivot": [
+        1.0,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "RoundsPanel",
+        "namespace": "Nekki.SF2.GUI.Fight",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "runtimeSprites": {
+          "storyRoundDone": {
+           "name": "FightUI.Round_Done",
+           "texture": "FightUI",
+           "resourcesPath": null,
+           "resolved": true
+          },
+          "pvpRoundDone": {
+           "name": "FightUI.RoundBlue_Done",
+           "texture": "FightUI",
+           "resourcesPath": null,
+           "resolved": true
+          },
+          "roundUndone": {
+           "name": "FightUI.Round_Undone",
+           "texture": "FightUI",
+           "resourcesPath": null,
+           "resolved": true
+          }
+         }
+        },
+        "fields": {
+         "_storyRoundDone": "FightUI.Round_Done",
+         "_pvpRoundDone": "FightUI.RoundBlue_Done",
+         "_roundUndone": "FightUI.Round_Undone"
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "HorizontalLayoutGroup",
+        "namespace": "UnityEngine.UI",
+        "assembly": "UnityEngine.UI",
+        "enabled": true,
+        "ui": {
+         "layout": "HorizontalLayoutGroup",
+         "padding": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+         },
+         "childAlignment": "UpperLeft",
+         "spacing": 0.0,
+         "childControlWidth": 1,
+         "childControlHeight": 1,
+         "childForceExpandWidth": 1,
+         "childForceExpandHeight": 1,
+         "childScaleWidth": 0,
+         "childScaleHeight": 0,
+         "reverseArrangement": 0
+        },
+        "fields": {
+         "m_Padding": {
+          "m_Left": 0,
+          "m_Right": 0,
+          "m_Top": 0,
+          "m_Bottom": 0
+         },
+         "m_ChildAlignment": 0,
+         "m_Spacing": 0.0,
+         "m_ChildForceExpandWidth": 1,
+         "m_ChildForceExpandHeight": 1,
+         "m_ChildControlWidth": 1,
+         "m_ChildControlHeight": 1,
+         "m_ChildScaleWidth": 0,
+         "m_ChildScaleHeight": 0,
+         "m_ReverseArrangement": 0
+        }
+       }
+      ]
+     },
+     {
+      "name": "RoundsPanel_right",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        125.0355,
+        540.0
+       ],
+       "sizeDelta": [
+        132.0,
+        48.0
+       ],
+       "pivot": [
+        1.0,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": -180.0,
+       "localZ": -6.3887
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "RoundsPanel",
+        "namespace": "Nekki.SF2.GUI.Fight",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "runtimeSprites": {
+          "storyRoundDone": {
+           "name": "FightUI.Round_Done",
+           "texture": "FightUI",
+           "resourcesPath": null,
+           "resolved": true
+          },
+          "pvpRoundDone": {
+           "name": "FightUI.Round_Done",
+           "texture": "FightUI",
+           "resourcesPath": null,
+           "resolved": true
+          },
+          "roundUndone": {
+           "name": "FightUI.Round_Undone",
+           "texture": "FightUI",
+           "resourcesPath": null,
+           "resolved": true
+          }
+         }
+        },
+        "fields": {
+         "_storyRoundDone": "FightUI.Round_Done",
+         "_pvpRoundDone": "FightUI.Round_Done",
+         "_roundUndone": "FightUI.Round_Undone"
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "HorizontalLayoutGroup",
+        "namespace": "UnityEngine.UI",
+        "assembly": "UnityEngine.UI",
+        "enabled": true,
+        "ui": {
+         "layout": "HorizontalLayoutGroup",
+         "padding": {
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": 0
+         },
+         "childAlignment": "UpperLeft",
+         "spacing": 0.0,
+         "childControlWidth": 1,
+         "childControlHeight": 1,
+         "childForceExpandWidth": 1,
+         "childForceExpandHeight": 1,
+         "childScaleWidth": 0,
+         "childScaleHeight": 0,
+         "reverseArrangement": 0
+        },
+        "fields": {
+         "m_Padding": {
+          "m_Left": 0,
+          "m_Right": 0,
+          "m_Top": 0,
+          "m_Bottom": 0
+         },
+         "m_ChildAlignment": 0,
+         "m_Spacing": 0.0,
+         "m_ChildForceExpandWidth": 1,
+         "m_ChildForceExpandHeight": 1,
+         "m_ChildControlWidth": 1,
+         "m_ChildControlHeight": 1,
+         "m_ChildScaleWidth": 0,
+         "m_ChildScaleHeight": 0,
+         "m_ReverseArrangement": 0
+        }
+       }
+      ]
+     },
+     {
+      "name": "Avatar_left",
+      "active": true,
+      "layer": 0,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        -830.0,
+        549.9999
+       ],
+       "sizeDelta": [
+        512.0,
+        512.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.22,
+        1.22,
+        0.0
+       ],
+       "rotationZ": -180.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImageAvatar",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": false,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "avatar_hero",
+           "texture": "avatar_hero",
+           "resourcesPath": "UI/Users/",
+           "resolved": true
+          }
+         },
+         "sprite": "avatar_hero",
+         "texture": "avatar_hero",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "avatar_hero",
+          "file": "49a5fdca67e5021408a9a2b250ed68ae",
+          "texture": "avatar_hero",
+          "textureSize": [
+           512,
+           512
+          ],
+          "png": "tex/APK/avatar_hero.png",
+          "textureRect": [
+           99.0761,
+           103.0761,
+           310.8478,
+           336.8478
+          ],
+          "rect": [
+           0.0,
+           0.0,
+           512.0,
+           512.0
+          ],
+          "pivot": [
+           0.5,
+           0.5
+          ],
+          "ppu": 100.0
+         },
+         "type": "simple",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "UI/Users/",
+         "_SpriteName": "avatar_hero"
+        }
+       }
+      ]
+     },
+     {
+      "name": "Avatar_right",
+      "active": true,
+      "layer": 0,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        829.992,
+        549.9999
+       ],
+       "sizeDelta": [
+        512.0,
+        512.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.22,
+        1.22,
+        0.0
+       ],
+       "rotationZ": 0.0,
+       "localZ": 1.4444
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImageAvatar",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": false,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "man_kungfu",
+           "texture": "man_kungfu",
+           "resourcesPath": "UI/Users/",
+           "resolved": true
+          }
+         },
+         "sprite": "man_kungfu",
+         "texture": "man_kungfu",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "man_kungfu",
+          "file": "0078287f0c558a24cafb2ff9d15ac232",
+          "texture": "man_kungfu",
+          "textureSize": [
+           512,
+           512
+          ],
+          "png": "tex/APK/man_kungfu.png",
+          "textureRect": [
+           66.0399,
+           63.0268,
+           344.884,
+           373.9603
+          ],
+          "rect": [
+           0.0,
+           0.0,
+           512.0,
+           512.0
+          ],
+          "pivot": [
+           0.5,
+           0.5
+          ],
+          "ppu": 100.0
+         },
+         "type": "simple",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "UI/Users/",
+         "_SpriteName": "man_kungfu"
+        }
+       }
+      ]
+     },
+     {
+      "name": "StyleName_left",
+      "active": false,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        -637.9999,
+        478.0
+       ],
+       "sizeDelta": [
+        100.0,
+        100.0
+       ],
+       "pivot": [
+        0.0,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImage",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": true,
+         "sprite": null,
+         "texture": null,
+         "spriteSource": null,
+         "spriteInfo": null,
+         "type": "simple",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 1,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "",
+         "_SpriteName": ""
+        }
+       }
+      ]
+     },
+     {
+      "name": "StyleName_right",
+      "active": false,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        638.0039,
+        478.0
+       ],
+       "sizeDelta": [
+        100.0,
+        100.0
+       ],
+       "pivot": [
+        1.0,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0,
+       "localZ": -0.6889
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImage",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": true,
+         "sprite": null,
+         "texture": null,
+         "spriteSource": null,
+         "spriteInfo": null,
+         "type": "simple",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 1,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "",
+         "_SpriteName": ""
+        }
+       }
+      ]
+     },
+     {
+      "name": "ActivePerkModel_left",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        -604.9999,
+        420.0
+       ],
+       "sizeDelta": [
+        100.0,
+        100.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ActivePerkModel",
+        "namespace": "Nekki.SF2.GUI.Fight",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "_align": 0,
+         "_activePerkItemPrefab": {
+          "type": "GameObject",
+          "path": "ActivePerkItem"
+         },
+         "_activePerkItemContainerPrefab": {
+          "type": "GameObject",
+          "path": "ActivePerkItemContainer"
+         }
+        }
+       }
+      ]
+     },
+     {
+      "name": "ActivePerkModel_right",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        605.006,
+        420.0
+       ],
+       "sizeDelta": [
+        100.0,
+        100.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": -180.0,
+       "localZ": -1.0555
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ActivePerkModel",
+        "namespace": "Nekki.SF2.GUI.Fight",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "_align": 1,
+         "_activePerkItemPrefab": {
+          "type": "GameObject",
+          "path": "ActivePerkItem"
+         },
+         "_activePerkItemContainerPrefab": {
+          "type": "GameObject",
+          "path": "ActivePerkItemContainer"
+         }
+        }
+       }
+      ]
+     },
+     {
+      "name": "WinFightButton_left",
+      "active": true,
+      "layer": 0,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        -830.0,
+        549.9999
+       ],
+       "sizeDelta": [
+        256.0,
+        256.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.2779,
+        1.2779,
+        0.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "Image",
+        "namespace": "UnityEngine.UI",
+        "assembly": "UnityEngine.UI",
+        "enabled": true,
+        "ui": {
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          0.0
+         ],
+         "raycastTarget": true,
+         "sprite": null,
+         "texture": null,
+         "spriteSource": null,
+         "spriteInfo": null,
+         "type": "simple",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 0.0
+         },
+         "m_RaycastTarget": 1,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "Button",
+        "namespace": "UnityEngine.UI",
+        "assembly": "UnityEngine.UI",
+        "enabled": true,
+        "ui": {
+         "interactable": true,
+         "transition": "None",
+         "targetGraphic": {
+          "type": "Image",
+          "path": "ViewerFight/Models/WinFightButton_left"
+         },
+         "onClick": []
+        },
+        "fields": {
+         "m_Navigation": {
+          "m_Mode": 3,
+          "m_WrapAround": 0,
+          "m_SelectOnUp": null,
+          "m_SelectOnDown": null,
+          "m_SelectOnLeft": null,
+          "m_SelectOnRight": null
+         },
+         "m_Transition": 0,
+         "m_Colors": {
+          "m_NormalColor": {
+           "r": 1.0,
+           "g": 1.0,
+           "b": 1.0,
+           "a": 1.0
+          },
+          "m_HighlightedColor": {
+           "r": 0.9608,
+           "g": 0.9608,
+           "b": 0.9608,
+           "a": 1.0
+          },
+          "m_PressedColor": {
+           "r": 0.7843,
+           "g": 0.7843,
+           "b": 0.7843,
+           "a": 1.0
+          },
+          "m_SelectedColor": {
+           "r": 0.9608,
+           "g": 0.9608,
+           "b": 0.9608,
+           "a": 1.0
+          },
+          "m_DisabledColor": {
+           "r": 0.7843,
+           "g": 0.7843,
+           "b": 0.7843,
+           "a": 0.502
+          },
+          "m_ColorMultiplier": 1.0,
+          "m_FadeDuration": 0.1
+         },
+         "m_SpriteState": {
+          "m_HighlightedSprite": null,
+          "m_PressedSprite": null,
+          "m_SelectedSprite": null,
+          "m_DisabledSprite": null
+         },
+         "m_AnimationTriggers": {
+          "m_NormalTrigger": "Normal",
+          "m_HighlightedTrigger": "Highlighted",
+          "m_PressedTrigger": "Pressed",
+          "m_SelectedTrigger": "Highlighted",
+          "m_DisabledTrigger": "Disabled"
+         },
+         "m_Interactable": 1,
+         "m_TargetGraphic": {
+          "type": "Image",
+          "path": "ViewerFight/Models/WinFightButton_left"
+         },
+         "m_OnClick": {
+          "m_PersistentCalls": {
+           "m_Calls": []
+          }
+         }
+        }
+       }
+      ]
+     },
+     {
+      "name": "WinFightButton_right",
+      "active": true,
+      "layer": 0,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        829.992,
+        549.9999
+       ],
+       "sizeDelta": [
+        256.0,
+        256.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.2779,
+        1.2779,
+        0.0
+       ],
+       "rotationZ": 0.0,
+       "localZ": 1.4444
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "Image",
+        "namespace": "UnityEngine.UI",
+        "assembly": "UnityEngine.UI",
+        "enabled": true,
+        "ui": {
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          0.0
+         ],
+         "raycastTarget": true,
+         "sprite": null,
+         "texture": null,
+         "spriteSource": null,
+         "spriteInfo": null,
+         "type": "simple",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 0.0
+         },
+         "m_RaycastTarget": 1,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "Button",
+        "namespace": "UnityEngine.UI",
+        "assembly": "UnityEngine.UI",
+        "enabled": true,
+        "ui": {
+         "interactable": true,
+         "transition": "None",
+         "targetGraphic": {
+          "type": "Image",
+          "path": "ViewerFight/Models/WinFightButton_right"
+         },
+         "onClick": []
+        },
+        "fields": {
+         "m_Navigation": {
+          "m_Mode": 3,
+          "m_WrapAround": 0,
+          "m_SelectOnUp": null,
+          "m_SelectOnDown": null,
+          "m_SelectOnLeft": null,
+          "m_SelectOnRight": null
+         },
+         "m_Transition": 0,
+         "m_Colors": {
+          "m_NormalColor": {
+           "r": 1.0,
+           "g": 1.0,
+           "b": 1.0,
+           "a": 1.0
+          },
+          "m_HighlightedColor": {
+           "r": 0.9608,
+           "g": 0.9608,
+           "b": 0.9608,
+           "a": 1.0
+          },
+          "m_PressedColor": {
+           "r": 0.7843,
+           "g": 0.7843,
+           "b": 0.7843,
+           "a": 1.0
+          },
+          "m_SelectedColor": {
+           "r": 0.9608,
+           "g": 0.9608,
+           "b": 0.9608,
+           "a": 1.0
+          },
+          "m_DisabledColor": {
+           "r": 0.7843,
+           "g": 0.7843,
+           "b": 0.7843,
+           "a": 0.502
+          },
+          "m_ColorMultiplier": 1.0,
+          "m_FadeDuration": 0.1
+         },
+         "m_SpriteState": {
+          "m_HighlightedSprite": null,
+          "m_PressedSprite": null,
+          "m_SelectedSprite": null,
+          "m_DisabledSprite": null
+         },
+         "m_AnimationTriggers": {
+          "m_NormalTrigger": "Normal",
+          "m_HighlightedTrigger": "Highlighted",
+          "m_PressedTrigger": "Pressed",
+          "m_SelectedTrigger": "Highlighted",
+          "m_DisabledTrigger": "Disabled"
+         },
+         "m_Interactable": 1,
+         "m_TargetGraphic": {
+          "type": "Image",
+          "path": "ViewerFight/Models/WinFightButton_right"
+         },
+         "m_OnClick": {
+          "m_PersistentCalls": {
+           "m_Calls": []
+          }
+         }
+        }
+       }
+      ]
+     },
+     {
+      "name": "Name_left",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        -630.0001,
+        610.0
+       ],
+       "sizeDelta": [
+        540.0,
+        150.0
+       ],
+       "pivot": [
+        0.0,
+        0.0
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "LabelAlias",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Text",
+         "color": [
+          1.0,
+          0.851,
+          0.6275,
+          1.0
+         ],
+         "raycastTarget": false,
+         "text": "SHADOW",
+         "font": "majallab",
+         "fontSize": 105,
+         "fontStyle": "Normal",
+         "alignment": "LowerLeft",
+         "bestFit": true,
+         "minSize": 0,
+         "maxSize": 105,
+         "richText": false,
+         "horizontalOverflow": "Wrap",
+         "verticalOverflow": "Truncate",
+         "lineSpacing": 0.7,
+         "locKey": "NAME_SHADOW",
+         "toUpperCase": false,
+         "useLocalizationFont": true,
+         "fontType": 0,
+         "labelFontSize": 105
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 0.851,
+          "b": 0.6275,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_FontData": {
+          "m_Font": {
+           "type": "Font",
+           "name": "majallab",
+           "file": "sharedassets0.assets"
+          },
+          "m_FontSize": 105,
+          "m_FontStyle": 0,
+          "m_BestFit": 1,
+          "m_MinSize": 0,
+          "m_MaxSize": 105,
+          "m_Alignment": 6,
+          "m_AlignByGeometry": 1,
+          "m_RichText": 0,
+          "m_HorizontalOverflow": 0,
+          "m_VerticalOverflow": 0,
+          "m_LineSpacing": 0.7
+         },
+         "m_Text": "SHADOW",
+         "GlyphPrefabs": [],
+         "ForceUseAlignedBestFit": 1,
+         "ForbiddenUseAlignedBestFit": 0,
+         "FitImageLineHeightParam": {
+          "ScaleMaxLineHeightFactor": 1.0,
+          "ApplyToSingleLine": 0,
+          "Enabled": 0
+         },
+         "_useLocalizationFont": 1,
+         "_fontType": 0,
+         "_useLabelFontSize": 1,
+         "_labelFontSize": 105,
+         "_useLabelLineSpacing": 0,
+         "_labelLineSpacing": 0.0,
+         "_Alias": "NAME_SHADOW",
+         "_ToUpperCase": 0
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "Shadow",
+        "namespace": "UnityEngine.UI",
+        "assembly": "UnityEngine.UI",
+        "enabled": true,
+        "ui": {
+         "effectColor": [
+          0.0,
+          0.0,
+          0.0,
+          0.5
+         ],
+         "effectDistance": [
+          2.0,
+          -3.0
+         ]
+        },
+        "fields": {
+         "m_EffectColor": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.5
+         },
+         "m_EffectDistance": {
+          "x": 2.0,
+          "y": -3.0
+         },
+         "m_UseGraphicAlpha": 1
+        }
+       }
+      ]
+     },
+     {
+      "name": "Name_right",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        630.0043,
+        610.0
+       ],
+       "sizeDelta": [
+        540.0,
+        150.0
+       ],
+       "pivot": [
+        1.0,
+        0.0
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0,
+       "localZ": -0.7778
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "LabelAlias",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Text",
+         "color": [
+          1.0,
+          0.851,
+          0.6275,
+          1.0
+         ],
+         "raycastTarget": false,
+         "text": "KENJI",
+         "font": "majallab",
+         "fontSize": 105,
+         "fontStyle": "Normal",
+         "alignment": "LowerRight",
+         "bestFit": true,
+         "minSize": 0,
+         "maxSize": 105,
+         "richText": false,
+         "horizontalOverflow": "Wrap",
+         "verticalOverflow": "Truncate",
+         "lineSpacing": 0.7,
+         "locKey": "NAME_KENJI",
+         "toUpperCase": false,
+         "useLocalizationFont": true,
+         "fontType": 0,
+         "labelFontSize": 105
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 0.851,
+          "b": 0.6275,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_FontData": {
+          "m_Font": {
+           "type": "Font",
+           "name": "majallab",
+           "file": "sharedassets0.assets"
+          },
+          "m_FontSize": 105,
+          "m_FontStyle": 0,
+          "m_BestFit": 1,
+          "m_MinSize": 0,
+          "m_MaxSize": 105,
+          "m_Alignment": 8,
+          "m_AlignByGeometry": 1,
+          "m_RichText": 0,
+          "m_HorizontalOverflow": 0,
+          "m_VerticalOverflow": 0,
+          "m_LineSpacing": 0.7
+         },
+         "m_Text": "KENJI",
+         "GlyphPrefabs": [],
+         "ForceUseAlignedBestFit": 1,
+         "ForbiddenUseAlignedBestFit": 0,
+         "FitImageLineHeightParam": {
+          "ScaleMaxLineHeightFactor": 1.0,
+          "ApplyToSingleLine": 0,
+          "Enabled": 0
+         },
+         "_useLocalizationFont": 1,
+         "_fontType": 0,
+         "_useLabelFontSize": 1,
+         "_labelFontSize": 105,
+         "_useLabelLineSpacing": 0,
+         "_labelLineSpacing": 0.0,
+         "_Alias": "NAME_KENJI",
+         "_ToUpperCase": 0
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "Shadow",
+        "namespace": "UnityEngine.UI",
+        "assembly": "UnityEngine.UI",
+        "enabled": true,
+        "ui": {
+         "effectColor": [
+          0.0,
+          0.0,
+          0.0,
+          0.5
+         ],
+         "effectDistance": [
+          2.0,
+          -3.0
+         ]
+        },
+        "fields": {
+         "m_EffectColor": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.5
+         },
+         "m_EffectDistance": {
+          "x": 2.0,
+          "y": -3.0
+         },
+         "m_UseGraphicAlpha": 1
+        }
+       }
+      ]
+     },
+     {
+      "name": "ComboModel_left",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.0,
+        0.5
+       ],
+       "anchorMax": [
+        0.0,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        300.0
+       ],
+       "sizeDelta": [
+        0.0,
+        100.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ComboModel",
+        "namespace": "Nekki.SF2.GUI.Fight",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "_comboItemPrefab": {
+          "type": "GameObject",
+          "path": "ComboItem"
+         }
+        }
+       }
+      ]
+     },
+     {
+      "name": "ComboModel_right",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        1.0,
+        0.5
+       ],
+       "anchorMax": [
+        1.0,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        300.0
+       ],
+       "sizeDelta": [
+        0.0,
+        100.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ComboModel",
+        "namespace": "Nekki.SF2.GUI.Fight",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "_comboItemPrefab": {
+          "type": "GameObject",
+          "path": "ComboItem"
+         }
+        }
+       }
+      ]
+     },
+     {
+      "name": "LeftModel",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        100.0,
+        100.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      }
+     }
+    ]
+   },
+   {
+    "name": "RoundTimer",
+    "active": true,
+    "layer": 0,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      1.0
+     ],
+     "anchorMax": [
+      0.5,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      -110.0
+     ],
+     "sizeDelta": [
+      200.0,
+      300.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "LabelAlias",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Text",
+       "color": [
+        1.0,
+        0.851,
+        0.6275,
+        1.0
+       ],
+       "raycastTarget": false,
+       "text": "99",
+       "font": "majallab",
+       "fontSize": 200,
+       "fontStyle": "Normal",
+       "alignment": "MiddleCenter",
+       "bestFit": true,
+       "minSize": 1,
+       "maxSize": 200,
+       "richText": true,
+       "horizontalOverflow": "Wrap",
+       "verticalOverflow": "Truncate",
+       "lineSpacing": 0.7,
+       "locKey": null,
+       "toUpperCase": false,
+       "useLocalizationFont": true,
+       "fontType": 0,
+       "labelFontSize": 200
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 0.851,
+        "b": 0.6275,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_FontData": {
+        "m_Font": {
+         "type": "Font",
+         "name": "majallab",
+         "file": "sharedassets0.assets"
+        },
+        "m_FontSize": 200,
+        "m_FontStyle": 0,
+        "m_BestFit": 1,
+        "m_MinSize": 1,
+        "m_MaxSize": 200,
+        "m_Alignment": 4,
+        "m_AlignByGeometry": 1,
+        "m_RichText": 1,
+        "m_HorizontalOverflow": 0,
+        "m_VerticalOverflow": 0,
+        "m_LineSpacing": 0.7
+       },
+       "m_Text": "99",
+       "GlyphPrefabs": [],
+       "ForceUseAlignedBestFit": 1,
+       "ForbiddenUseAlignedBestFit": 0,
+       "FitImageLineHeightParam": {
+        "ScaleMaxLineHeightFactor": 1.0,
+        "ApplyToSingleLine": 0,
+        "Enabled": 0
+       },
+       "_useLocalizationFont": 1,
+       "_fontType": 0,
+       "_useLabelFontSize": 1,
+       "_labelFontSize": 200,
+       "_useLabelLineSpacing": 0,
+       "_labelLineSpacing": 0.0,
+       "_Alias": "",
+       "_ToUpperCase": 0
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "Shadow",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "effectColor": [
+        0.0,
+        0.0,
+        0.0,
+        0.5
+       ],
+       "effectDistance": [
+        2.0,
+        -3.0
+       ]
+      },
+      "fields": {
+       "m_EffectColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.5
+       },
+       "m_EffectDistance": {
+        "x": 2.0,
+        "y": -3.0
+       },
+       "m_UseGraphicAlpha": 1
+      }
+     }
+    ]
+   },
+   {
+    "name": "DamageLabel",
+    "active": false,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      1000.0,
+      200.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "LabelAlias",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Text",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": false,
+       "text": "",
+       "font": "LegacyRuntime",
+       "fontSize": 80,
+       "fontStyle": "Normal",
+       "alignment": "MiddleCenter",
+       "bestFit": false,
+       "minSize": 1,
+       "maxSize": 80,
+       "richText": true,
+       "horizontalOverflow": "Wrap",
+       "verticalOverflow": "Truncate",
+       "lineSpacing": 1.0,
+       "locKey": null,
+       "toUpperCase": false,
+       "useLocalizationFont": true,
+       "fontType": 0,
+       "labelFontSize": 80
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_FontData": {
+        "m_Font": {
+         "type": "Font",
+         "name": "LegacyRuntime",
+         "file": "unity default resources"
+        },
+        "m_FontSize": 80,
+        "m_FontStyle": 0,
+        "m_BestFit": 0,
+        "m_MinSize": 1,
+        "m_MaxSize": 80,
+        "m_Alignment": 4,
+        "m_AlignByGeometry": 0,
+        "m_RichText": 1,
+        "m_HorizontalOverflow": 0,
+        "m_VerticalOverflow": 0,
+        "m_LineSpacing": 1.0
+       },
+       "m_Text": "",
+       "GlyphPrefabs": [],
+       "ForceUseAlignedBestFit": 0,
+       "ForbiddenUseAlignedBestFit": 0,
+       "FitImageLineHeightParam": {
+        "ScaleMaxLineHeightFactor": 1.0,
+        "ApplyToSingleLine": 0,
+        "Enabled": 0
+       },
+       "_useLocalizationFont": 1,
+       "_fontType": 0,
+       "_useLabelFontSize": 1,
+       "_labelFontSize": 80,
+       "_useLabelLineSpacing": 0,
+       "_labelLineSpacing": 0.0,
+       "_Alias": "",
+       "_ToUpperCase": 0
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

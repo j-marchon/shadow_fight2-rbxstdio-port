@@ -1,0 +1,147 @@
+{
+ "source": "3526f8f302fa9ca4fafb5c95666753dd",
+ "pathID": 5,
+ "root": {
+  "name": "MapButtonsPanel",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.0,
+    0.0
+   ],
+   "anchorMax": [
+    1.0,
+    1.0
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    0.0,
+    0.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "MapButtonsPanel",
+    "namespace": "Nekki.SF2.GUI.Map",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_Order": 3,
+     "_ActionsPanel": {
+      "type": "RectTransform",
+      "path": "MapButtonsPanel/ActionsPanel"
+     },
+     "_MapButtonPrefab": {
+      "type": "GameObject",
+      "path": "MapButton"
+     },
+     "_MaxImageSize": 320.0
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "TutorialNode",
+    "namespace": "Nekki.SF2.GUI.Tutorial",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_ID": "MapButtons"
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "ActionsPanel",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      0.0,
+      0.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      230.0,
+      230.0
+     ],
+     "pivot": [
+      0.0,
+      0.0
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "HorizontalLayoutGroup",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "layout": "HorizontalLayoutGroup",
+       "padding": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+       },
+       "childAlignment": "MiddleCenter",
+       "spacing": -30.0,
+       "childControlWidth": 0,
+       "childControlHeight": 0,
+       "childForceExpandWidth": 1,
+       "childForceExpandHeight": 1,
+       "childScaleWidth": 0,
+       "childScaleHeight": 0,
+       "reverseArrangement": 0
+      },
+      "fields": {
+       "m_Padding": {
+        "m_Left": 0,
+        "m_Right": 0,
+        "m_Top": 0,
+        "m_Bottom": 0
+       },
+       "m_ChildAlignment": 4,
+       "m_Spacing": -30.0,
+       "m_ChildForceExpandWidth": 1,
+       "m_ChildForceExpandHeight": 1,
+       "m_ChildControlWidth": 0,
+       "m_ChildControlHeight": 0,
+       "m_ChildScaleWidth": 0,
+       "m_ChildScaleHeight": 0,
+       "m_ReverseArrangement": 0
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,168 @@
+{
+ "source": "5fe4af496f1637b4cb7362a961d1984d",
+ "pathID": 3,
+ "root": {
+  "name": "StyleBar",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.5,
+    0.5
+   ],
+   "anchorMax": [
+    0.5,
+    0.5
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    358.0,
+    43.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "StyleBar",
+    "namespace": "Nekki.SF2.GUI.Fight",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "background": {
+      "type": "ResolutionImageSkew",
+      "path": "StyleBar"
+     }
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "ResolutionImageSkew",
+    "namespace": "Nekki.SF2.GUI",
+    "assembly": "Root",
+    "enabled": true,
+    "ui": {
+     "kind": "Image",
+     "color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "raycastTarget": true,
+     "runtimeSprites": {
+      "SpriteName": {
+       "name": "FightUI.HealthBar_Empty",
+       "texture": "FightUI",
+       "resourcesPath": "UI/Atlases/",
+       "resolved": true
+      }
+     },
+     "sprite": "FightUI.HealthBar_Empty",
+     "texture": "FightUI",
+     "spriteSource": "runtime:_SpriteName",
+     "spriteInfo": {
+      "type": "Sprite",
+      "name": "FightUI.HealthBar_Empty",
+      "file": "dcb2e1eee7245544cb45281e1f5188b6",
+      "texture": "FightUI",
+      "textureSize": [
+       2048,
+       2048
+      ],
+      "png": "tex/APK/FightUI.png",
+      "textureRect": [
+       149.0,
+       2003.0,
+       1.0,
+       43.0
+      ],
+      "rect": [
+       149.0,
+       2003.0,
+       1.0,
+       43.0
+      ],
+      "pivot": [
+       0.5,
+       0.5
+      ],
+      "ppu": 100.0
+     },
+     "type": "simple",
+     "preserveAspect": false,
+     "fillCenter": true,
+     "pixelsPerUnitMultiplier": 1.0
+    },
+    "fields": {
+     "m_Material": null,
+     "m_Color": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 1.0,
+      "a": 1.0
+     },
+     "m_RaycastTarget": 1,
+     "m_RaycastPadding": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "w": 0.0
+     },
+     "m_Maskable": 1,
+     "m_Sprite": null,
+     "m_Type": 0,
+     "m_PreserveAspect": 0,
+     "m_FillCenter": 1,
+     "m_FillMethod": 4,
+     "m_FillAmount": 1.0,
+     "m_FillClockwise": 1,
+     "m_FillOrigin": 0,
+     "m_UseSpriteMesh": 0,
+     "m_PixelsPerUnitMultiplier": 1.0,
+     "_TexturePath": "UI/Atlases/",
+     "_SpriteName": "FightUI.HealthBar_Empty",
+     "_SkewAngle": 25.0
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "LayoutElement",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI",
+    "enabled": true,
+    "ui": {
+     "IgnoreLayout": 0,
+     "MinWidth": 358.0,
+     "MinHeight": 43.0,
+     "PreferredWidth": -1.0,
+     "PreferredHeight": -1.0,
+     "FlexibleWidth": -1.0,
+     "FlexibleHeight": -1.0
+    },
+    "fields": {
+     "m_IgnoreLayout": 0,
+     "m_MinWidth": 358.0,
+     "m_MinHeight": 43.0,
+     "m_PreferredWidth": -1.0,
+     "m_PreferredHeight": -1.0,
+     "m_FlexibleWidth": -1.0,
+     "m_FlexibleHeight": -1.0,
+     "m_LayoutPriority": 1
+    }
+   }
+  ]
+ }
+}

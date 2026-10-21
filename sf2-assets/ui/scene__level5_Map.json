@@ -1,0 +1,445 @@
+{
+ "source": "level5",
+ "scene": "Map",
+ "roots": [
+  {
+   "name": "[Map]",
+   "active": true,
+   "layer": 5,
+   "rect": {
+    "anchorMin": [
+     0.0,
+     0.0
+    ],
+    "anchorMax": [
+     0.0,
+     0.0
+    ],
+    "anchoredPosition": [
+     0.0,
+     0.0
+    ],
+    "sizeDelta": [
+     0.0,
+     0.0
+    ],
+    "pivot": [
+     0.0,
+     0.0
+    ],
+    "localScale": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rotationZ": 0.0
+   },
+   "components": [
+    {
+     "type": "MonoBehaviour",
+     "class": "MapScene",
+     "namespace": "Nekki.SF2.GUI.Map",
+     "assembly": "Root",
+     "enabled": true,
+     "fields": {
+      "_MountOnStart": [
+       {
+        "type": "MainMenu",
+        "path": "MainMenu"
+       },
+       {
+        "type": "StoryMapContainer",
+        "path": "StoryMapContainer"
+       },
+       {
+        "type": "InfoBattle",
+        "path": "InfoBattle"
+       },
+       {
+        "type": "MapButtonsPanel",
+        "path": "MapButtonsPanel"
+       },
+       {
+        "type": "RaidMapUIModule",
+        "path": "RaidMapUIModule"
+       },
+       {
+        "type": "PaymentUI",
+        "path": "PaymentUI"
+       }
+      ],
+      "_MountOnStart_Mobiles": [],
+      "_MountOnStart_Steam": [
+       null,
+       null,
+       null,
+       null
+      ],
+      "_MountOnStart_Switch": [
+       null,
+       null,
+       null,
+       null
+      ],
+      "_MountOnLater": [],
+      "_MountOnLater_Mobiles": [],
+      "_MountOnLater_Steam": [],
+      "_MountOnLater_Switch": [],
+      "_WideScreenController": {
+       "type": "WideScreenController",
+       "path": "[Map]/WideScreenController"
+      },
+      "_DebugCanvasPrefab": {
+       "type": "DebugUI",
+       "path": "DebugCanvas"
+      },
+      "_raidMapContainerPrefab": {
+       "type": "GameObject",
+       "path": "RaidMapContainer"
+      },
+      "_raidDailyButtonHideLogic": 1
+     }
+    },
+    {
+     "type": "Canvas",
+     "renderMode": "ScreenSpaceOverlay",
+     "enabled": true,
+     "sortingOrder": 0,
+     "overrideSorting": false,
+     "pixelPerfect": false,
+     "planeDistance": 100.0,
+     "sortingLayerID": 0,
+     "camera": null
+    },
+    {
+     "type": "MonoBehaviour",
+     "class": "CanvasScaler",
+     "namespace": "UnityEngine.UI",
+     "assembly": "UnityEngine.UI",
+     "enabled": true,
+     "ui": {
+      "uiScaleMode": "ScaleWithScreenSize",
+      "referenceResolution": [
+       800.0,
+       1536.0
+      ],
+      "screenMatchMode": "MatchWidthOrHeight",
+      "matchWidthOrHeight": 1.0,
+      "scaleFactor": 1.0,
+      "referencePixelsPerUnit": 100.0
+     },
+     "fields": {
+      "m_UiScaleMode": 1,
+      "m_ReferencePixelsPerUnit": 100.0,
+      "m_ScaleFactor": 1.0,
+      "m_ReferenceResolution": {
+       "x": 800.0,
+       "y": 1536.0
+      },
+      "m_ScreenMatchMode": 0,
+      "m_MatchWidthOrHeight": 1.0,
+      "m_PhysicalUnit": 3,
+      "m_FallbackScreenDPI": 96.0,
+      "m_DefaultSpriteDPI": 96.0,
+      "m_DynamicPixelsPerUnit": 1.0,
+      "m_PresetInfoIsWorld": 0
+     }
+    },
+    {
+     "type": "MonoBehaviour",
+     "class": "GraphicRaycaster",
+     "namespace": "UnityEngine.UI",
+     "assembly": "UnityEngine.UI",
+     "enabled": true,
+     "fields": {
+      "m_IgnoreReversedGraphics": 1,
+      "m_BlockingObjects": 0,
+      "m_BlockingMask": {
+       "m_Bits": 4294967295
+      }
+     }
+    },
+    {
+     "type": "MonoBehaviour",
+     "class": "Image",
+     "namespace": "UnityEngine.UI",
+     "assembly": "UnityEngine.UI",
+     "enabled": true,
+     "ui": {
+      "color": [
+       0.0627,
+       0.0275,
+       0.0118,
+       1.0
+      ],
+      "raycastTarget": true,
+      "sprite": null,
+      "texture": null,
+      "spriteSource": null,
+      "spriteInfo": null,
+      "type": "simple",
+      "preserveAspect": false,
+      "fillCenter": true,
+      "pixelsPerUnitMultiplier": 1.0
+     },
+     "fields": {
+      "m_Material": null,
+      "m_Color": {
+       "r": 0.0627,
+       "g": 0.0275,
+       "b": 0.0118,
+       "a": 1.0
+      },
+      "m_RaycastTarget": 1,
+      "m_RaycastPadding": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0,
+       "w": 0.0
+      },
+      "m_Maskable": 1,
+      "m_Sprite": null,
+      "m_Type": 0,
+      "m_PreserveAspect": 0,
+      "m_FillCenter": 1,
+      "m_FillMethod": 4,
+      "m_FillAmount": 1.0,
+      "m_FillClockwise": 1,
+      "m_FillOrigin": 0,
+      "m_UseSpriteMesh": 0,
+      "m_PixelsPerUnitMultiplier": 1.0
+     }
+    }
+   ],
+   "children": [
+    {
+     "name": "WideScreenController",
+     "active": true,
+     "layer": 5,
+     "rect": {
+      "anchorMin": [
+       0.0,
+       0.0
+      ],
+      "anchorMax": [
+       1.0,
+       1.0
+      ],
+      "anchoredPosition": [
+       0.0,
+       0.0
+      ],
+      "sizeDelta": [
+       0.0,
+       0.0
+      ],
+      "pivot": [
+       0.5,
+       0.5
+      ],
+      "localScale": [
+       1.0,
+       1.0,
+       1.0
+      ],
+      "rotationZ": 0.0
+     },
+     "components": [
+      {
+       "type": "MonoBehaviour",
+       "class": "WideScreenController",
+       "namespace": "",
+       "assembly": "Root",
+       "enabled": true,
+       "fields": {
+        "_LeftBorder": {
+         "type": "GameObject",
+         "path": "[Map]/WideScreenController/BorderLeft"
+        },
+        "_RightBorder": {
+         "type": "GameObject",
+         "path": "[Map]/WideScreenController/BorderRight"
+        },
+        "_Flag": 0
+       }
+      }
+     ],
+     "children": [
+      {
+       "name": "BorderLeft",
+       "active": true,
+       "layer": 5,
+       "rect": {
+        "anchorMin": [
+         0.5,
+         0.0
+        ],
+        "anchorMax": [
+         0.5,
+         1.0
+        ],
+        "anchoredPosition": [
+         -1377.0,
+         0.0
+        ],
+        "sizeDelta": [
+         500.0,
+         0.0
+        ],
+        "pivot": [
+         1.0,
+         0.5
+        ],
+        "localScale": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "rotationZ": 0.0
+       },
+       "components": [
+        {
+         "type": "MonoBehaviour",
+         "class": "Image",
+         "namespace": "UnityEngine.UI",
+         "assembly": "UnityEngine.UI",
+         "enabled": true,
+         "ui": {
+          "color": [
+           0.0,
+           0.0,
+           0.0,
+           1.0
+          ],
+          "raycastTarget": true,
+          "sprite": null,
+          "texture": null,
+          "spriteSource": null,
+          "spriteInfo": null,
+          "type": "simple",
+          "preserveAspect": false,
+          "fillCenter": true,
+          "pixelsPerUnitMultiplier": 1.0
+         },
+         "fields": {
+          "m_Material": null,
+          "m_Color": {
+           "r": 0.0,
+           "g": 0.0,
+           "b": 0.0,
+           "a": 1.0
+          },
+          "m_RaycastTarget": 1,
+          "m_RaycastPadding": {
+           "x": 0.0,
+           "y": 0.0,
+           "z": 0.0,
+           "w": 0.0
+          },
+          "m_Maskable": 1,
+          "m_Sprite": null,
+          "m_Type": 0,
+          "m_PreserveAspect": 0,
+          "m_FillCenter": 1,
+          "m_FillMethod": 4,
+          "m_FillAmount": 1.0,
+          "m_FillClockwise": 1,
+          "m_FillOrigin": 0,
+          "m_UseSpriteMesh": 0,
+          "m_PixelsPerUnitMultiplier": 1.0
+         }
+        }
+       ]
+      },
+      {
+       "name": "BorderRight",
+       "active": true,
+       "layer": 5,
+       "rect": {
+        "anchorMin": [
+         0.5,
+         0.0
+        ],
+        "anchorMax": [
+         0.5,
+         1.0
+        ],
+        "anchoredPosition": [
+         1377.0,
+         0.0
+        ],
+        "sizeDelta": [
+         500.0,
+         0.0
+        ],
+        "pivot": [
+         0.0,
+         0.5
+        ],
+        "localScale": [
+         1.0,
+         1.0,
+         1.0
+        ],
+        "rotationZ": 0.0
+       },
+       "components": [
+        {
+         "type": "MonoBehaviour",
+         "class": "Image",
+         "namespace": "UnityEngine.UI",
+         "assembly": "UnityEngine.UI",
+         "enabled": true,
+         "ui": {
+          "color": [
+           0.0,
+           0.0,
+           0.0,
+           1.0
+          ],
+          "raycastTarget": true,
+          "sprite": null,
+          "texture": null,
+          "spriteSource": null,
+          "spriteInfo": null,
+          "type": "simple",
+          "preserveAspect": false,
+          "fillCenter": true,
+          "pixelsPerUnitMultiplier": 1.0
+         },
+         "fields": {
+          "m_Material": null,
+          "m_Color": {
+           "r": 0.0,
+           "g": 0.0,
+           "b": 0.0,
+           "a": 1.0
+          },
+          "m_RaycastTarget": 1,
+          "m_RaycastPadding": {
+           "x": 0.0,
+           "y": 0.0,
+           "z": 0.0,
+           "w": 0.0
+          },
+          "m_Maskable": 1,
+          "m_Sprite": null,
+          "m_Type": 0,
+          "m_PreserveAspect": 0,
+          "m_FillCenter": 1,
+          "m_FillMethod": 4,
+          "m_FillAmount": 1.0,
+          "m_FillClockwise": 1,
+          "m_FillOrigin": 0,
+          "m_UseSpriteMesh": 0,
+          "m_PixelsPerUnitMultiplier": 1.0
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

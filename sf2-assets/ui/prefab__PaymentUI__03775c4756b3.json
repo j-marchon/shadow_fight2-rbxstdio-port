@@ -1,0 +1,54 @@
+{
+ "source": "03775c4756b364818bc91de3d11e3651",
+ "pathID": 2,
+ "root": {
+  "name": "PaymentUI",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.0,
+    0.0
+   ],
+   "anchorMax": [
+    1.0,
+    1.0
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    0.0,
+    0.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "PaymentUI",
+    "namespace": "Nekki.SF2.GUI.Common",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_Order": 10000000,
+     "_OnProductsUpdateEvent": {
+      "m_PersistentCalls": {
+       "m_Calls": []
+      }
+     }
+    }
+   }
+  ]
+ }
+}

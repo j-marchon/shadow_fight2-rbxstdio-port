@@ -1,0 +1,403 @@
+{
+ "source": "57a404821e996024a8ace0c0bf679ca2",
+ "pathID": 10,
+ "root": {
+  "name": "EndRaidFinalFightScreen",
+  "active": true,
+  "layer": 0,
+  "rect": {
+   "anchorMin": [
+    0.0,
+    0.0
+   ],
+   "anchorMax": [
+    1.0,
+    1.0
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    0.0,
+    0.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "EndRaidFinalFightScreen",
+    "namespace": "Nekki.SF2.GUI.Fight",
+    "assembly": "Root",
+    "enabled": true,
+    "ui": {
+     "runtimeSprites": {
+      "WinSpriteName": {
+       "name": "FightUI.Label_Win",
+       "texture": "FightUI",
+       "resourcesPath": null,
+       "resolved": true
+      },
+      "LoseSpriteName": {
+       "name": "FightUI.Label_Lose",
+       "texture": "FightUI",
+       "resourcesPath": null,
+       "resolved": true
+      },
+      "TimesUpSpriteName": {
+       "name": "FightUI.Label_Timesup",
+       "texture": "FightUI",
+       "resourcesPath": null,
+       "resolved": true
+      }
+     }
+    },
+    "fields": {
+     "_WinSpriteName": "FightUI.Label_Win",
+     "_LoseSpriteName": "FightUI.Label_Lose",
+     "_TimesUpSpriteName": "FightUI.Label_Timesup",
+     "_screenCanvasGroup": {
+      "type": "CanvasGroup",
+      "path": "EndRaidFinalFightScreen"
+     },
+     "_background": {
+      "type": "ResolutionImage",
+      "path": "EndRaidFinalFightScreen/Background"
+     },
+     "_Content": {
+      "type": "RectTransform",
+      "path": "EndRaidFinalFightScreen/Content"
+     },
+     "_ResultHeader": {
+      "type": "ResolutionImage",
+      "path": "EndRaidFinalFightScreen/ResultHeader"
+     },
+     "_RaidFinalFightRatingContentPrefab": {
+      "type": "RaidFinalFightRatingContent",
+      "path": "RaidFinalFightRatingContent"
+     },
+     "_RaidFinalFightChestContentPrefab": {
+      "type": "RaidFinalFightChestContent",
+      "path": "RaidFinalFightChestContent"
+     },
+     "_RaidFinalFightCurrencyContentPrefab": {
+      "type": "RaidFinalFightCurrencyContent",
+      "path": "RaidFinalFightCurrencyContent"
+     },
+     "_RaidQuestsRewardsContentPrefab": {
+      "type": "RaidQuestsRewardsContent",
+      "path": "RaidQuestsRewardsContent"
+     },
+     "_RaidFightTextContentPrefab": {
+      "type": "RaidFightTextContent",
+      "path": "RaidFightTextContent"
+     },
+     "_RaidFightTimeoutContentPrefab": {
+      "type": "RaidFightTimeoutContent",
+      "path": "RaidFightTimeoutContent"
+     }
+    }
+   },
+   {
+    "type": "CanvasGroup",
+    "alpha": 1.0,
+    "interactable": true,
+    "blocksRaycasts": true,
+    "ignoreParentGroups": false
+   }
+  ],
+  "children": [
+   {
+    "name": "Background",
+    "active": true,
+    "layer": 0,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.0
+     ],
+     "anchorMax": [
+      0.5,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      2816.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImage",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+       ],
+       "raycastTarget": true,
+       "runtimeSprites": {
+        "SpriteName": {
+         "name": "FightUI.Background_Shadow",
+         "texture": "FightUI",
+         "resourcesPath": "UI/Atlases/",
+         "resolved": true
+        }
+       },
+       "sprite": "FightUI.Background_Shadow",
+       "texture": "FightUI",
+       "spriteSource": "runtime:_SpriteName",
+       "spriteInfo": {
+        "type": "Sprite",
+        "name": "FightUI.Background_Shadow",
+        "file": "dcb2e1eee7245544cb45281e1f5188b6",
+        "texture": "FightUI",
+        "textureSize": [
+         2048,
+         2048
+        ],
+        "png": "tex/APK/FightUI.png",
+        "textureRect": [
+         2.0,
+         2045.0,
+         128.0,
+         1.0
+        ],
+        "rect": [
+         2.0,
+         2045.0,
+         128.0,
+         1.0
+        ],
+        "pivot": [
+         0.5,
+         0.5
+        ],
+        "ppu": 100.0
+       },
+       "type": "simple",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 0.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "UI/Atlases/",
+       "_SpriteName": "FightUI.Background_Shadow"
+      }
+     }
+    ]
+   },
+   {
+    "name": "ResultHeader",
+    "active": true,
+    "layer": 0,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      560.0
+     ],
+     "sizeDelta": [
+      794.0,
+      270.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImage",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": true,
+       "runtimeSprites": {
+        "SpriteName": {
+         "name": "FightUI.Label_Win",
+         "texture": "FightUI",
+         "resourcesPath": "UI/Atlases/",
+         "resolved": true
+        }
+       },
+       "sprite": "FightUI.Label_Win",
+       "texture": "FightUI",
+       "spriteSource": "runtime:_SpriteName",
+       "spriteInfo": {
+        "type": "Sprite",
+        "name": "FightUI.Label_Win",
+        "file": "dcb2e1eee7245544cb45281e1f5188b6",
+        "texture": "FightUI",
+        "textureSize": [
+         2048,
+         2048
+        ],
+        "png": "tex/APK/FightUI.png",
+        "textureRect": [
+         2.0,
+         522.0,
+         794.0,
+         270.0
+        ],
+        "rect": [
+         2.0,
+         522.0,
+         794.0,
+         270.0
+        ],
+        "pivot": [
+         0.5,
+         0.5
+        ],
+        "ppu": 100.0
+       },
+       "type": "simple",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "UI/Atlases/",
+       "_SpriteName": "FightUI.Label_Win"
+      }
+     }
+    ]
+   },
+   {
+    "name": "Content",
+    "active": true,
+    "layer": 0,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.5
+     ],
+     "anchorMax": [
+      1.0,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      -130.0
+     ],
+     "sizeDelta": [
+      0.0,
+      1200.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    }
+   }
+  ]
+ }
+}

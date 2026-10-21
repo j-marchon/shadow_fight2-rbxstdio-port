@@ -1,0 +1,1008 @@
+{
+ "source": "d9a9e54c16fc9364daad8b70fa9c6680",
+ "pathID": 22,
+ "root": {
+  "name": "RaidKey",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.0,
+    0.0
+   ],
+   "anchorMax": [
+    0.0,
+    0.0
+   ],
+   "anchoredPosition": [
+    356.0,
+    713.0
+   ],
+   "sizeDelta": [
+    200.0,
+    140.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "RaidKey",
+    "namespace": "Nekki.SF2.GUI.Map",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_contentLayout": {
+      "type": "HorizontalLayoutGroup",
+      "path": "RaidKey/Content"
+     },
+     "_image": {
+      "type": "ResolutionImage",
+      "path": "RaidKey/Content/Image"
+     },
+     "_alias": {
+      "type": "LabelAlias",
+      "path": "RaidKey/Content/Text"
+     },
+     "_button": {
+      "type": "Button",
+      "path": "RaidKey/HintButton"
+     },
+     "_hint": {
+      "type": "GameObject",
+      "path": "RaidKey/HintRoot"
+     },
+     "_hintAlias": {
+      "type": "LabelAlias",
+      "path": "RaidKey/HintRoot/HintText"
+     }
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "LayoutElement",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI",
+    "enabled": true,
+    "ui": {
+     "IgnoreLayout": 0,
+     "MinWidth": 100.0,
+     "MinHeight": 120.0,
+     "PreferredWidth": -1.0,
+     "PreferredHeight": -1.0,
+     "FlexibleWidth": -1.0,
+     "FlexibleHeight": -1.0
+    },
+    "fields": {
+     "m_IgnoreLayout": 0,
+     "m_MinWidth": 100.0,
+     "m_MinHeight": 120.0,
+     "m_PreferredWidth": -1.0,
+     "m_PreferredHeight": -1.0,
+     "m_FlexibleWidth": -1.0,
+     "m_FlexibleHeight": -1.0,
+     "m_LayoutPriority": 1
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "HintButton",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      200.0,
+      150.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "Button",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "interactable": true,
+       "transition": "None",
+       "targetGraphic": {
+        "type": "NonDrawingGraphic",
+        "path": "RaidKey/HintButton"
+       },
+       "onClick": []
+      },
+      "fields": {
+       "m_Navigation": {
+        "m_Mode": 3,
+        "m_WrapAround": 0,
+        "m_SelectOnUp": null,
+        "m_SelectOnDown": null,
+        "m_SelectOnLeft": null,
+        "m_SelectOnRight": null
+       },
+       "m_Transition": 0,
+       "m_Colors": {
+        "m_NormalColor": {
+         "r": 1.0,
+         "g": 1.0,
+         "b": 1.0,
+         "a": 1.0
+        },
+        "m_HighlightedColor": {
+         "r": 0.9608,
+         "g": 0.9608,
+         "b": 0.9608,
+         "a": 1.0
+        },
+        "m_PressedColor": {
+         "r": 0.7843,
+         "g": 0.7843,
+         "b": 0.7843,
+         "a": 1.0
+        },
+        "m_SelectedColor": {
+         "r": 0.9608,
+         "g": 0.9608,
+         "b": 0.9608,
+         "a": 1.0
+        },
+        "m_DisabledColor": {
+         "r": 0.7843,
+         "g": 0.7843,
+         "b": 0.7843,
+         "a": 0.502
+        },
+        "m_ColorMultiplier": 1.0,
+        "m_FadeDuration": 0.1
+       },
+       "m_SpriteState": {
+        "m_HighlightedSprite": null,
+        "m_PressedSprite": null,
+        "m_SelectedSprite": null,
+        "m_DisabledSprite": null
+       },
+       "m_AnimationTriggers": {
+        "m_NormalTrigger": "Normal",
+        "m_HighlightedTrigger": "Highlighted",
+        "m_PressedTrigger": "Pressed",
+        "m_SelectedTrigger": "Highlighted",
+        "m_DisabledTrigger": "Disabled"
+       },
+       "m_Interactable": 1,
+       "m_TargetGraphic": {
+        "type": "NonDrawingGraphic",
+        "path": "RaidKey/HintButton"
+       },
+       "m_OnClick": {
+        "m_PersistentCalls": {
+         "m_Calls": []
+        }
+       }
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "NonDrawingGraphic",
+      "namespace": "",
+      "assembly": "Root",
+      "enabled": true,
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1
+      }
+     }
+    ]
+   },
+   {
+    "name": "Content",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      400.0,
+      120.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "HorizontalLayoutGroup",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "layout": "HorizontalLayoutGroup",
+       "padding": {
+        "left": 30,
+        "right": 30,
+        "top": 0,
+        "bottom": 0
+       },
+       "childAlignment": "MiddleCenter",
+       "spacing": 0.0,
+       "childControlWidth": 1,
+       "childControlHeight": 1,
+       "childForceExpandWidth": 0,
+       "childForceExpandHeight": 0,
+       "childScaleWidth": 0,
+       "childScaleHeight": 0,
+       "reverseArrangement": 0
+      },
+      "fields": {
+       "m_Padding": {
+        "m_Left": 30,
+        "m_Right": 30,
+        "m_Top": 0,
+        "m_Bottom": 0
+       },
+       "m_ChildAlignment": 4,
+       "m_Spacing": 0.0,
+       "m_ChildForceExpandWidth": 0,
+       "m_ChildForceExpandHeight": 0,
+       "m_ChildControlWidth": 1,
+       "m_ChildControlHeight": 1,
+       "m_ChildScaleWidth": 0,
+       "m_ChildScaleHeight": 0,
+       "m_ReverseArrangement": 0
+      }
+     }
+    ],
+    "children": [
+     {
+      "name": "Image",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.0,
+        1.0
+       ],
+       "anchorMax": [
+        0.0,
+        1.0
+       ],
+       "anchoredPosition": [
+        200.0,
+        -60.0
+       ],
+       "sizeDelta": [
+        103.0,
+        103.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImage",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": false,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "RaidKeys.Key0",
+           "texture": null,
+           "resourcesPath": "UI/Atlases/",
+           "resolved": false
+          }
+         },
+         "sprite": "RaidKeys.Key0",
+         "texture": null,
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "RaidKeys.Key0",
+          "unresolved": true
+         },
+         "type": "simple",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "UI/Atlases/",
+         "_SpriteName": "RaidKeys.Key0"
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "LayoutElement",
+        "namespace": "UnityEngine.UI",
+        "assembly": "UnityEngine.UI",
+        "enabled": true,
+        "ui": {
+         "IgnoreLayout": 0,
+         "MinWidth": 100.0,
+         "MinHeight": 100.0,
+         "PreferredWidth": -1.0,
+         "PreferredHeight": -1.0,
+         "FlexibleWidth": -1.0,
+         "FlexibleHeight": -1.0
+        },
+        "fields": {
+         "m_IgnoreLayout": 0,
+         "m_MinWidth": 100.0,
+         "m_MinHeight": 100.0,
+         "m_PreferredWidth": -1.0,
+         "m_PreferredHeight": -1.0,
+         "m_FlexibleWidth": -1.0,
+         "m_FlexibleHeight": -1.0,
+         "m_LayoutPriority": 1
+        }
+       }
+      ]
+     },
+     {
+      "name": "Text",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.0,
+        1.0
+       ],
+       "anchorMax": [
+        0.0,
+        1.0
+       ],
+       "anchoredPosition": [
+        251.5,
+        -60.0
+       ],
+       "sizeDelta": [
+        0.0,
+        120.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "LabelAlias",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Text",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": false,
+         "text": "",
+         "font": "majallab",
+         "fontSize": 120,
+         "fontStyle": "Normal",
+         "alignment": "MiddleCenter",
+         "bestFit": true,
+         "minSize": 1,
+         "maxSize": 120,
+         "richText": true,
+         "horizontalOverflow": "Wrap",
+         "verticalOverflow": "Truncate",
+         "lineSpacing": 0.7,
+         "locKey": null,
+         "toUpperCase": false,
+         "useLocalizationFont": true,
+         "fontType": 0,
+         "labelFontSize": 120
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_FontData": {
+          "m_Font": {
+           "type": "Font",
+           "name": "majallab",
+           "file": "sharedassets0.assets"
+          },
+          "m_FontSize": 120,
+          "m_FontStyle": 0,
+          "m_BestFit": 1,
+          "m_MinSize": 1,
+          "m_MaxSize": 120,
+          "m_Alignment": 4,
+          "m_AlignByGeometry": 1,
+          "m_RichText": 1,
+          "m_HorizontalOverflow": 0,
+          "m_VerticalOverflow": 0,
+          "m_LineSpacing": 0.7
+         },
+         "m_Text": "",
+         "GlyphPrefabs": [],
+         "ForceUseAlignedBestFit": 0,
+         "ForbiddenUseAlignedBestFit": 0,
+         "FitImageLineHeightParam": {
+          "ScaleMaxLineHeightFactor": 1.0,
+          "ApplyToSingleLine": 0,
+          "Enabled": 0
+         },
+         "_useLocalizationFont": 1,
+         "_fontType": 0,
+         "_useLabelFontSize": 1,
+         "_labelFontSize": 120,
+         "_useLabelLineSpacing": 0,
+         "_labelLineSpacing": 0.0,
+         "_Alias": "",
+         "_ToUpperCase": 0
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "LayoutElement",
+        "namespace": "UnityEngine.UI",
+        "assembly": "UnityEngine.UI",
+        "enabled": true,
+        "ui": {
+         "IgnoreLayout": 0,
+         "MinWidth": -1.0,
+         "MinHeight": 120.0,
+         "PreferredWidth": -1.0,
+         "PreferredHeight": -1.0,
+         "FlexibleWidth": -1.0,
+         "FlexibleHeight": -1.0
+        },
+        "fields": {
+         "m_IgnoreLayout": 0,
+         "m_MinWidth": -1.0,
+         "m_MinHeight": 120.0,
+         "m_PreferredWidth": -1.0,
+         "m_PreferredHeight": -1.0,
+         "m_FlexibleWidth": -1.0,
+         "m_FlexibleHeight": -1.0,
+         "m_LayoutPriority": 1
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "HintRoot",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      1.0
+     ],
+     "anchorMax": [
+      0.5,
+      1.0
+     ],
+     "anchoredPosition": [
+      45.0,
+      15.0
+     ],
+     "sizeDelta": [
+      653.0,
+      100.0
+     ],
+     "pivot": [
+      0.0,
+      0.0
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "children": [
+     {
+      "name": "HintBody",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.0
+       ],
+       "anchorMax": [
+        0.5,
+        0.0
+       ],
+       "anchoredPosition": [
+        0.0,
+        43.0
+       ],
+       "sizeDelta": [
+        1800.0,
+        180.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        0.5,
+        0.5,
+        0.5
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImage",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": false,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "Hints.Base",
+           "texture": "Hints",
+           "resourcesPath": "UI/Atlases/",
+           "resolved": true
+          }
+         },
+         "sprite": "Hints.Base",
+         "texture": "Hints",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "Hints.Base",
+          "file": "9b45a8d22d41a9744be62c0ff21f54ea",
+          "texture": "Hints",
+          "textureSize": [
+           128,
+           256
+          ],
+          "png": "tex/APK/Hints.png",
+          "textureRect": [
+           1.0,
+           115.0,
+           71.0,
+           71.0
+          ],
+          "rect": [
+           1.0,
+           115.0,
+           71.0,
+           71.0
+          ],
+          "border": [
+           35.0,
+           35.0,
+           35.0,
+           35.0
+          ],
+          "pivot": [
+           0.0,
+           0.0
+          ],
+          "ppu": 100.0
+         },
+         "type": "sliced",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 1,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "UI/Atlases/",
+         "_SpriteName": "Hints.Base"
+        }
+       }
+      ],
+      "children": [
+       {
+        "name": "HintArrow",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.0,
+          0.0
+         ],
+         "anchorMax": [
+          0.0,
+          0.0
+         ],
+         "anchoredPosition": [
+          116.0,
+          -11.0
+         ],
+         "sizeDelta": [
+          115.0,
+          67.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          -1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionImage",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Image",
+           "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+           ],
+           "raycastTarget": false,
+           "runtimeSprites": {
+            "SpriteName": {
+             "name": "Hints.Arrow",
+             "texture": "Hints",
+             "resourcesPath": "UI/Atlases/",
+             "resolved": true
+            }
+           },
+           "sprite": "Hints.Arrow",
+           "texture": "Hints",
+           "spriteSource": "runtime:_SpriteName",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "Hints.Arrow",
+            "file": "9b45a8d22d41a9744be62c0ff21f54ea",
+            "texture": "Hints",
+            "textureSize": [
+             128,
+             256
+            ],
+            "png": "tex/APK/Hints.png",
+            "textureRect": [
+             1.0,
+             188.0,
+             115.0,
+             67.0
+            ],
+            "rect": [
+             1.0,
+             188.0,
+             115.0,
+             67.0
+            ],
+            "pivot": [
+             0.0,
+             0.0
+            ],
+            "ppu": 100.0
+           },
+           "type": "simple",
+           "preserveAspect": false,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 0,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": null,
+           "m_Type": 0,
+           "m_PreserveAspect": 0,
+           "m_FillCenter": 1,
+           "m_FillMethod": 4,
+           "m_FillAmount": 1.0,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0,
+           "_TexturePath": "UI/Atlases/",
+           "_SpriteName": "Hints.Arrow"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "name": "HintText",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        800.0,
+        100.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "LabelAlias",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Text",
+         "color": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+         ],
+         "raycastTarget": false,
+         "text": "SSSSSSSSSSSSSSS",
+         "font": "LegacyRuntime",
+         "fontSize": 51,
+         "fontStyle": "Normal",
+         "alignment": "MiddleCenter",
+         "bestFit": true,
+         "minSize": 30,
+         "maxSize": 100,
+         "richText": true,
+         "horizontalOverflow": "Wrap",
+         "verticalOverflow": "Truncate",
+         "lineSpacing": 1.0,
+         "locKey": null,
+         "toUpperCase": false,
+         "useLocalizationFont": true,
+         "fontType": 0,
+         "labelFontSize": 70
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_FontData": {
+          "m_Font": {
+           "type": "Font",
+           "name": "LegacyRuntime",
+           "file": "unity default resources"
+          },
+          "m_FontSize": 51,
+          "m_FontStyle": 0,
+          "m_BestFit": 1,
+          "m_MinSize": 30,
+          "m_MaxSize": 100,
+          "m_Alignment": 4,
+          "m_AlignByGeometry": 1,
+          "m_RichText": 1,
+          "m_HorizontalOverflow": 0,
+          "m_VerticalOverflow": 0,
+          "m_LineSpacing": 1.0
+         },
+         "m_Text": "SSSSSSSSSSSSSSS",
+         "GlyphPrefabs": [],
+         "ForceUseAlignedBestFit": 0,
+         "ForbiddenUseAlignedBestFit": 0,
+         "FitImageLineHeightParam": {
+          "ScaleMaxLineHeightFactor": 1.0,
+          "ApplyToSingleLine": 0,
+          "Enabled": 0
+         },
+         "_useLocalizationFont": 1,
+         "_fontType": 0,
+         "_useLabelFontSize": 1,
+         "_labelFontSize": 70,
+         "_useLabelLineSpacing": 0,
+         "_labelLineSpacing": 0.0,
+         "_Alias": "",
+         "_ToUpperCase": 0
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

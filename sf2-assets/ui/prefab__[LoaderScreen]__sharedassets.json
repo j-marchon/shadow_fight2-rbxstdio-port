@@ -1,0 +1,1898 @@
+{
+ "source": "sharedassets0.assets",
+ "pathID": 113,
+ "root": {
+  "name": "[LoaderScreen]",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.0,
+    0.0
+   ],
+   "anchorMax": [
+    0.0,
+    0.0
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    0.0,
+    0.0
+   ],
+   "pivot": [
+    0.0,
+    0.0
+   ],
+   "localScale": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "Canvas",
+    "renderMode": "ScreenSpaceOverlay",
+    "enabled": true,
+    "sortingOrder": 10,
+    "overrideSorting": false,
+    "pixelPerfect": false,
+    "planeDistance": 100.0,
+    "sortingLayerID": 0,
+    "camera": null
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "CanvasScaler",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI",
+    "enabled": true,
+    "ui": {
+     "uiScaleMode": "ScaleWithScreenSize",
+     "referenceResolution": [
+      800.0,
+      1536.0
+     ],
+     "screenMatchMode": "MatchWidthOrHeight",
+     "matchWidthOrHeight": 1.0,
+     "scaleFactor": 1.0,
+     "referencePixelsPerUnit": 100.0
+    },
+    "fields": {
+     "m_UiScaleMode": 1,
+     "m_ReferencePixelsPerUnit": 100.0,
+     "m_ScaleFactor": 1.0,
+     "m_ReferenceResolution": {
+      "x": 800.0,
+      "y": 1536.0
+     },
+     "m_ScreenMatchMode": 0,
+     "m_MatchWidthOrHeight": 1.0,
+     "m_PhysicalUnit": 3,
+     "m_FallbackScreenDPI": 96.0,
+     "m_DefaultSpriteDPI": 96.0,
+     "m_DynamicPixelsPerUnit": 1.0,
+     "m_PresetInfoIsWorld": 0
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "GraphicRaycaster",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI",
+    "enabled": true,
+    "fields": {
+     "m_IgnoreReversedGraphics": 1,
+     "m_BlockingObjects": 0,
+     "m_BlockingMask": {
+      "m_Bits": 4294967295
+     }
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "LoaderScreen",
+    "namespace": "Nekki.SF2.GUI.Scenes",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_LoaderType1": {
+      "type": "GameObject",
+      "path": "[LoaderScreen]/Type1"
+     },
+     "_LoaderType2": {
+      "type": "GameObject",
+      "path": "[LoaderScreen]/Type2"
+     },
+     "_EnemiesScreenPrefab": {
+      "type": "EnemiesScreen",
+      "path": "EnemiesScreen"
+     },
+     "_VsScreenPrefab": {
+      "type": "VsScreen",
+      "path": "VsScreen"
+     },
+     "_PvpVsScreenPrefab": null,
+     "_LoaderHint": {
+      "type": "LabelAlias",
+      "path": "[LoaderScreen]/TipLabel"
+     },
+     "_LoaderHintNext": {
+      "type": "LabelAlias",
+      "path": "[LoaderScreen]/TipLabelNext"
+     },
+     "_MountRoot": {
+      "type": "RectTransform",
+      "path": "[LoaderScreen]/MountRoot"
+     },
+     "_MountMaskRoot": {
+      "type": "RectMask2D",
+      "path": "[LoaderScreen]/MountRoot"
+     }
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "Type1",
+    "active": true,
+    "layer": 0,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "WideController",
+      "namespace": "",
+      "assembly": "Root",
+      "enabled": true,
+      "fields": {
+       "_Wide": {
+        "type": "GameObject",
+        "path": "[LoaderScreen]/Type1/Wide"
+       },
+       "_NotWide": {
+        "type": "GameObject",
+        "path": "[LoaderScreen]/Type1/NotWide"
+       },
+       "_userIds": [
+        {
+         "type": "Text",
+         "path": "[LoaderScreen]/Type1/Wide/userId W"
+        },
+        {
+         "type": "Text",
+         "path": "[LoaderScreen]/Type1/NotWide/userId NW"
+        }
+       ]
+      }
+     }
+    ],
+    "children": [
+     {
+      "name": "Wide",
+      "active": false,
+      "layer": 0,
+      "rect": {
+       "anchorMin": [
+        0.0,
+        0.0
+       ],
+       "anchorMax": [
+        1.0,
+        1.0
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        0.0,
+        0.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "LoaderScreenSelector",
+        "namespace": "Nekki.SF2.GUI.Common",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "_loaderScreenType": 0,
+         "_fullSprite": {
+          "type": "ResolutionImage",
+          "path": "[LoaderScreen]/Type1/Full"
+         },
+         "_leftSprite": {
+          "type": "ResolutionImage",
+          "path": "[LoaderScreen]/Type1/Wide/Left"
+         },
+         "_rightSprite": {
+          "type": "ResolutionImage",
+          "path": "[LoaderScreen]/Type1/Wide/Right"
+         }
+        }
+       }
+      ],
+      "children": [
+       {
+        "name": "Left",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.0,
+          0.5
+         ],
+         "anchorMax": [
+          0.5,
+          0.5
+         ],
+         "anchoredPosition": [
+          1.0,
+          0.0
+         ],
+         "sizeDelta": [
+          1.0,
+          2000.0
+         ],
+         "pivot": [
+          1.0,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionImage",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Image",
+           "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+           ],
+           "raycastTarget": false,
+           "runtimeSprites": {
+            "SpriteName": {
+             "name": "startLoadingPaid_left.img",
+             "texture": null,
+             "resourcesPath": "UI/Fullscreen/",
+             "resolved": false
+            }
+           },
+           "sprite": "startLoadingPaid_left.img",
+           "texture": null,
+           "spriteSource": "runtime:_SpriteName",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "startLoadingPaid_left.img",
+            "unresolved": true
+           },
+           "type": "simple",
+           "preserveAspect": true,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 0,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": null,
+           "m_Type": 0,
+           "m_PreserveAspect": 1,
+           "m_FillCenter": 1,
+           "m_FillMethod": 4,
+           "m_FillAmount": 1.0,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0,
+           "_TexturePath": "UI/Fullscreen/",
+           "_SpriteName": "startLoadingPaid_left.img"
+          }
+         }
+        ]
+       },
+       {
+        "name": "Right",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.5,
+          0.5
+         ],
+         "anchorMax": [
+          1.0,
+          0.5
+         ],
+         "anchoredPosition": [
+          -1.0,
+          0.0
+         ],
+         "sizeDelta": [
+          1.0,
+          2000.0
+         ],
+         "pivot": [
+          0.0,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionImage",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Image",
+           "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+           ],
+           "raycastTarget": false,
+           "runtimeSprites": {
+            "SpriteName": {
+             "name": "startLoadingPaid_right.img",
+             "texture": null,
+             "resourcesPath": "UI/Fullscreen/",
+             "resolved": false
+            }
+           },
+           "sprite": "startLoadingPaid_right.img",
+           "texture": null,
+           "spriteSource": "runtime:_SpriteName",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "startLoadingPaid_right.img",
+            "unresolved": true
+           },
+           "type": "simple",
+           "preserveAspect": true,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 0,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": null,
+           "m_Type": 0,
+           "m_PreserveAspect": 1,
+           "m_FillCenter": 1,
+           "m_FillMethod": 4,
+           "m_FillAmount": 1.0,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0,
+           "_TexturePath": "UI/Fullscreen/",
+           "_SpriteName": "startLoadingPaid_right.img"
+          }
+         }
+        ]
+       },
+       {
+        "name": "userId W",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.5,
+          0.0
+         ],
+         "anchorMax": [
+          0.5,
+          0.0
+         ],
+         "anchoredPosition": [
+          980.0,
+          80.0
+         ],
+         "sizeDelta": [
+          950.0,
+          120.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "Text",
+          "namespace": "UnityEngine.UI",
+          "assembly": "UnityEngine.UI",
+          "enabled": true,
+          "ui": {
+           "color": [
+            0.1843,
+            0.1451,
+            0.1059,
+            1.0
+           ],
+           "raycastTarget": false,
+           "text": "",
+           "font": "AGOpusBold",
+           "fontSize": 30,
+           "fontStyle": "Normal",
+           "alignment": "MiddleCenter",
+           "bestFit": true,
+           "minSize": 2,
+           "maxSize": 60,
+           "richText": false,
+           "horizontalOverflow": "Wrap",
+           "verticalOverflow": "Truncate",
+           "lineSpacing": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 0.1843,
+            "g": 0.1451,
+            "b": 0.1059,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 0,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_FontData": {
+            "m_Font": {
+             "type": "Font",
+             "name": "AGOpusBold",
+             "file": "sharedassets0.assets"
+            },
+            "m_FontSize": 30,
+            "m_FontStyle": 0,
+            "m_BestFit": 1,
+            "m_MinSize": 2,
+            "m_MaxSize": 60,
+            "m_Alignment": 4,
+            "m_AlignByGeometry": 0,
+            "m_RichText": 0,
+            "m_HorizontalOverflow": 0,
+            "m_VerticalOverflow": 0,
+            "m_LineSpacing": 1.0
+           },
+           "m_Text": ""
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "name": "NotWide",
+      "active": false,
+      "layer": 0,
+      "rect": {
+       "anchorMin": [
+        0.0,
+        0.0
+       ],
+       "anchorMax": [
+        1.0,
+        1.0
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        0.0,
+        0.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "LoaderScreenSelector",
+        "namespace": "Nekki.SF2.GUI.Common",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "_loaderScreenType": 0,
+         "_fullSprite": {
+          "type": "ResolutionImage",
+          "path": "[LoaderScreen]/Type1/Full"
+         },
+         "_leftSprite": {
+          "type": "ResolutionImage",
+          "path": "[LoaderScreen]/Type1/NotWide/Left"
+         },
+         "_rightSprite": {
+          "type": "ResolutionImage",
+          "path": "[LoaderScreen]/Type1/NotWide/Right"
+         }
+        }
+       }
+      ],
+      "children": [
+       {
+        "name": "Left",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.5,
+          0.0
+         ],
+         "anchorMax": [
+          0.5,
+          1.0
+         ],
+         "anchoredPosition": [
+          1.0,
+          0.0
+         ],
+         "sizeDelta": [
+          2000.0,
+          0.0
+         ],
+         "pivot": [
+          1.0,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionImage",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Image",
+           "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+           ],
+           "raycastTarget": false,
+           "runtimeSprites": {
+            "SpriteName": {
+             "name": "startLoadingPaid_left.img",
+             "texture": null,
+             "resourcesPath": "UI/Fullscreen/",
+             "resolved": false
+            }
+           },
+           "sprite": "startLoadingPaid_left.img",
+           "texture": null,
+           "spriteSource": "runtime:_SpriteName",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "startLoadingPaid_left.img",
+            "unresolved": true
+           },
+           "type": "simple",
+           "preserveAspect": true,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 0,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": null,
+           "m_Type": 0,
+           "m_PreserveAspect": 1,
+           "m_FillCenter": 1,
+           "m_FillMethod": 4,
+           "m_FillAmount": 1.0,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0,
+           "_TexturePath": "UI/Fullscreen/",
+           "_SpriteName": "startLoadingPaid_left.img"
+          }
+         }
+        ]
+       },
+       {
+        "name": "Right",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.5,
+          0.0
+         ],
+         "anchorMax": [
+          0.5,
+          1.0
+         ],
+         "anchoredPosition": [
+          -1.0,
+          0.0
+         ],
+         "sizeDelta": [
+          2000.0,
+          0.0
+         ],
+         "pivot": [
+          0.0,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionImage",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Image",
+           "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+           ],
+           "raycastTarget": false,
+           "runtimeSprites": {
+            "SpriteName": {
+             "name": "startLoadingPaid_right.img",
+             "texture": null,
+             "resourcesPath": "UI/Fullscreen/",
+             "resolved": false
+            }
+           },
+           "sprite": "startLoadingPaid_right.img",
+           "texture": null,
+           "spriteSource": "runtime:_SpriteName",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "startLoadingPaid_right.img",
+            "unresolved": true
+           },
+           "type": "simple",
+           "preserveAspect": true,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 0,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": null,
+           "m_Type": 0,
+           "m_PreserveAspect": 1,
+           "m_FillCenter": 1,
+           "m_FillMethod": 4,
+           "m_FillAmount": 1.0,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0,
+           "_TexturePath": "UI/Fullscreen/",
+           "_SpriteName": "startLoadingPaid_right.img"
+          }
+         }
+        ]
+       },
+       {
+        "name": "userId NW",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.5,
+          0.0
+         ],
+         "anchorMax": [
+          0.5,
+          0.0
+         ],
+         "anchoredPosition": [
+          950.0,
+          80.0
+         ],
+         "sizeDelta": [
+          950.0,
+          120.0
+         ],
+         "pivot": [
+          1.0,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "Text",
+          "namespace": "UnityEngine.UI",
+          "assembly": "UnityEngine.UI",
+          "enabled": true,
+          "ui": {
+           "color": [
+            0.1843,
+            0.1451,
+            0.1059,
+            1.0
+           ],
+           "raycastTarget": false,
+           "text": "",
+           "font": "AGOpusBold",
+           "fontSize": 30,
+           "fontStyle": "Normal",
+           "alignment": "MiddleRight",
+           "bestFit": true,
+           "minSize": 2,
+           "maxSize": 60,
+           "richText": false,
+           "horizontalOverflow": "Wrap",
+           "verticalOverflow": "Truncate",
+           "lineSpacing": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 0.1843,
+            "g": 0.1451,
+            "b": 0.1059,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 0,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_FontData": {
+            "m_Font": {
+             "type": "Font",
+             "name": "AGOpusBold",
+             "file": "sharedassets0.assets"
+            },
+            "m_FontSize": 30,
+            "m_FontStyle": 0,
+            "m_BestFit": 1,
+            "m_MinSize": 2,
+            "m_MaxSize": 60,
+            "m_Alignment": 5,
+            "m_AlignByGeometry": 0,
+            "m_RichText": 0,
+            "m_HorizontalOverflow": 0,
+            "m_VerticalOverflow": 0,
+            "m_LineSpacing": 1.0
+           },
+           "m_Text": ""
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Full",
+      "active": true,
+      "layer": 0,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.0
+       ],
+       "anchorMax": [
+        0.5,
+        1.0
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        3332.0,
+        464.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImage",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": false,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "Preloader.img",
+           "texture": "Preloader",
+           "resourcesPath": "UI/Fullscreen/",
+           "resolved": true
+          }
+         },
+         "sprite": "Preloader.img",
+         "texture": "Preloader",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "Preloader.img",
+          "file": "ca242bba55876499f8fcda41795bc7b3",
+          "texture": "Preloader",
+          "textureSize": [
+           2048,
+           1024
+          ],
+          "png": "tex/APK/Preloader.png",
+          "textureRect": [
+           0.0,
+           0.0,
+           1820.0,
+           1024.0
+          ],
+          "rect": [
+           0.0,
+           0.0,
+           1820.0,
+           1024.0
+          ],
+          "pivot": [
+           0.5,
+           0.5
+          ],
+          "ppu": 100.0
+         },
+         "type": "simple",
+         "preserveAspect": true,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 1,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "UI/Fullscreen/",
+         "_SpriteName": "Preloader.img"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Type2",
+    "active": false,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      100.0,
+      100.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "LoaderScreenSelector",
+      "namespace": "Nekki.SF2.GUI.Common",
+      "assembly": "Root",
+      "enabled": true,
+      "fields": {
+       "_loaderScreenType": 1,
+       "_fullSprite": null,
+       "_leftSprite": {
+        "type": "ResolutionImage",
+        "path": "[LoaderScreen]/Type2/LogoLeft"
+       },
+       "_rightSprite": {
+        "type": "ResolutionImage",
+        "path": "[LoaderScreen]/Type2/LogoRight"
+       }
+      }
+     }
+    ],
+    "children": [
+     {
+      "name": "Left",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.0
+       ],
+       "anchorMax": [
+        0.5,
+        1.0
+       ],
+       "anchoredPosition": [
+        1.0,
+        0.0
+       ],
+       "sizeDelta": [
+        1600.0,
+        1436.0
+       ],
+       "pivot": [
+        1.0,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImage",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": false,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "loading_left.img",
+           "texture": "loading_left",
+           "resourcesPath": "UI/Fullscreen/",
+           "resolved": true
+          }
+         },
+         "sprite": "loading_left.img",
+         "texture": "loading_left",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "loading_left.img",
+          "file": "39cb487a384ede44c925f04940d63f04",
+          "texture": "loading_left",
+          "textureSize": [
+           1024,
+           1024
+          ],
+          "png": "tex/APK/loading_left.png",
+          "textureRect": [
+           0.0,
+           0.0,
+           910.0,
+           1024.0
+          ],
+          "rect": [
+           0.0,
+           0.0,
+           910.0,
+           1024.0
+          ],
+          "pivot": [
+           0.5,
+           0.5
+          ],
+          "ppu": 100.0
+         },
+         "type": "simple",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "UI/Fullscreen/",
+         "_SpriteName": "loading_left.img"
+        }
+       }
+      ]
+     },
+     {
+      "name": "Right",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.0
+       ],
+       "anchorMax": [
+        0.5,
+        1.0
+       ],
+       "anchoredPosition": [
+        -1.0,
+        -0.0001
+       ],
+       "sizeDelta": [
+        1600.0,
+        1436.0
+       ],
+       "pivot": [
+        0.0,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImage",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": false,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "loading_right.img",
+           "texture": "loading_right",
+           "resourcesPath": "UI/Fullscreen/",
+           "resolved": true
+          }
+         },
+         "sprite": "loading_right.img",
+         "texture": "loading_right",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "loading_right.img",
+          "file": "a7d6c69bb6aab9c41a2730f03582ebab",
+          "texture": "loading_right",
+          "textureSize": [
+           1024,
+           1024
+          ],
+          "png": "tex/APK/loading_right.png",
+          "textureRect": [
+           0.0,
+           0.0,
+           910.0,
+           1024.0
+          ],
+          "rect": [
+           0.0,
+           0.0,
+           910.0,
+           1024.0
+          ],
+          "pivot": [
+           0.5,
+           0.5
+          ],
+          "ppu": 100.0
+         },
+         "type": "simple",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "UI/Fullscreen/",
+         "_SpriteName": "loading_right.img"
+        }
+       }
+      ]
+     },
+     {
+      "name": "LogoLeft",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        1685.0,
+        494.0
+       ],
+       "pivot": [
+        1.0,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImage",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": false,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "Logo.left",
+           "texture": "Logo",
+           "resourcesPath": "Textures/Logos/",
+           "resolved": true
+          }
+         },
+         "sprite": "Logo.left",
+         "texture": "Logo",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "Logo.left",
+          "file": "e15280f10398b487eb497632f288aa35",
+          "texture": "Logo",
+          "textureSize": [
+           1024,
+           1024
+          ],
+          "png": "tex/APK/Logo.png",
+          "textureRect": [
+           2.0,
+           528.0,
+           843.0,
+           494.0
+          ],
+          "rect": [
+           2.0,
+           528.0,
+           843.0,
+           494.0
+          ],
+          "pivot": [
+           0.5,
+           0.5
+          ],
+          "ppu": 100.0
+         },
+         "type": "simple",
+         "preserveAspect": true,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 1,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "Textures/Logos/",
+         "_SpriteName": "Logo.left"
+        }
+       }
+      ]
+     },
+     {
+      "name": "LogoRight",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        1685.0,
+        494.0
+       ],
+       "pivot": [
+        0.0,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImage",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": false,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "Logo.right",
+           "texture": "Logo",
+           "resourcesPath": "Textures/Logos/",
+           "resolved": true
+          }
+         },
+         "sprite": "Logo.right",
+         "texture": "Logo",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "Logo.right",
+          "file": "e15280f10398b487eb497632f288aa35",
+          "texture": "Logo",
+          "textureSize": [
+           1024,
+           1024
+          ],
+          "png": "tex/APK/Logo.png",
+          "textureRect": [
+           2.0,
+           31.0,
+           843.0,
+           494.0
+          ],
+          "rect": [
+           2.0,
+           31.0,
+           843.0,
+           494.0
+          ],
+          "pivot": [
+           0.5,
+           0.5
+          ],
+          "ppu": 100.0
+         },
+         "type": "simple",
+         "preserveAspect": true,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 1,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "Textures/Logos/",
+         "_SpriteName": "Logo.right"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "TipLabel",
+    "active": false,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      -456.0
+     ],
+     "sizeDelta": [
+      1701.0,
+      301.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "LabelAlias",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Text",
+       "color": [
+        0.9853,
+        0.8961,
+        0.6955,
+        1.0
+       ],
+       "raycastTarget": false,
+       "text": "Double sweep {0} {1} {2} {3} can knock an opponent off",
+       "font": "majallab",
+       "fontSize": 96,
+       "fontStyle": "Normal",
+       "alignment": "MiddleCenter",
+       "bestFit": true,
+       "minSize": 10,
+       "maxSize": 137,
+       "richText": true,
+       "horizontalOverflow": "Wrap",
+       "verticalOverflow": "Truncate",
+       "lineSpacing": 1.0,
+       "locKey": "LoadingScreenHint1",
+       "toUpperCase": false,
+       "useLocalizationFont": true,
+       "fontType": 0,
+       "labelFontSize": 96
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 0.9853,
+        "g": 0.8961,
+        "b": 0.6955,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_FontData": {
+        "m_Font": {
+         "type": "Font",
+         "name": "majallab",
+         "file": "sharedassets0.assets"
+        },
+        "m_FontSize": 96,
+        "m_FontStyle": 0,
+        "m_BestFit": 1,
+        "m_MinSize": 10,
+        "m_MaxSize": 137,
+        "m_Alignment": 4,
+        "m_AlignByGeometry": 0,
+        "m_RichText": 1,
+        "m_HorizontalOverflow": 0,
+        "m_VerticalOverflow": 0,
+        "m_LineSpacing": 1.0
+       },
+       "m_Text": "Double sweep {0} {1} {2} {3} can knock an opponent off",
+       "GlyphPrefabs": [],
+       "ForceUseAlignedBestFit": 0,
+       "ForbiddenUseAlignedBestFit": 0,
+       "FitImageLineHeightParam": {
+        "ScaleMaxLineHeightFactor": 1.0,
+        "ApplyToSingleLine": 0,
+        "Enabled": 0
+       },
+       "_useLocalizationFont": 1,
+       "_fontType": 0,
+       "_useLabelFontSize": 1,
+       "_labelFontSize": 96,
+       "_useLabelLineSpacing": 0,
+       "_labelLineSpacing": 0.0,
+       "_Alias": "LoadingScreenHint1",
+       "_ToUpperCase": 0
+      }
+     }
+    ]
+   },
+   {
+    "name": "TipLabelNext",
+    "active": false,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      -9999.0
+     ],
+     "sizeDelta": [
+      1701.0,
+      301.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "LabelAlias",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Text",
+       "color": [
+        0.9853,
+        0.8961,
+        0.6955,
+        1.0
+       ],
+       "raycastTarget": false,
+       "text": "Double sweep {0} {1} {2} {3} can knock an opponent off",
+       "font": "majallab",
+       "fontSize": 96,
+       "fontStyle": "Normal",
+       "alignment": "MiddleCenter",
+       "bestFit": true,
+       "minSize": 10,
+       "maxSize": 137,
+       "richText": true,
+       "horizontalOverflow": "Wrap",
+       "verticalOverflow": "Truncate",
+       "lineSpacing": 1.0,
+       "locKey": "LoadingScreenHint1",
+       "toUpperCase": false,
+       "useLocalizationFont": true,
+       "fontType": 0,
+       "labelFontSize": 96
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 0.9853,
+        "g": 0.8961,
+        "b": 0.6955,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_FontData": {
+        "m_Font": {
+         "type": "Font",
+         "name": "majallab",
+         "file": "sharedassets0.assets"
+        },
+        "m_FontSize": 96,
+        "m_FontStyle": 0,
+        "m_BestFit": 1,
+        "m_MinSize": 10,
+        "m_MaxSize": 137,
+        "m_Alignment": 4,
+        "m_AlignByGeometry": 0,
+        "m_RichText": 1,
+        "m_HorizontalOverflow": 0,
+        "m_VerticalOverflow": 0,
+        "m_LineSpacing": 1.0
+       },
+       "m_Text": "Double sweep {0} {1} {2} {3} can knock an opponent off",
+       "GlyphPrefabs": [],
+       "ForceUseAlignedBestFit": 0,
+       "ForbiddenUseAlignedBestFit": 0,
+       "FitImageLineHeightParam": {
+        "ScaleMaxLineHeightFactor": 1.0,
+        "ApplyToSingleLine": 0,
+        "Enabled": 0
+       },
+       "_useLocalizationFont": 1,
+       "_fontType": 0,
+       "_useLabelFontSize": 1,
+       "_labelFontSize": 96,
+       "_useLabelLineSpacing": 0,
+       "_labelLineSpacing": 0.0,
+       "_Alias": "LoadingScreenHint1",
+       "_ToUpperCase": 0
+      }
+     }
+    ]
+   },
+   {
+    "name": "MountRoot",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "RectMask2D",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "fields": {
+       "m_Padding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Softness": {
+        "x": 0,
+        "y": 0
+       }
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

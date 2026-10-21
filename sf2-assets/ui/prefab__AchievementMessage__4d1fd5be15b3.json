@@ -1,0 +1,580 @@
+{
+ "source": "4d1fd5be15b33024cb31d642043f7e60",
+ "pathID": 10,
+ "root": {
+  "name": "AchievementMessage",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.5,
+    0.5
+   ],
+   "anchorMax": [
+    0.5,
+    0.5
+   ],
+   "anchoredPosition": [
+    0.0,
+    307.0
+   ],
+   "sizeDelta": [
+    744.0,
+    214.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "CanvasGroup",
+    "alpha": 1.0,
+    "interactable": true,
+    "blocksRaycasts": true,
+    "ignoreParentGroups": false
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "AchievementMessage",
+    "namespace": "Nekki.SF2.GUI.Common.Achievements",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "icon": {
+      "type": "ResolutionImage",
+      "path": "AchievementMessage/IconAndTextPanel/Icon"
+     },
+     "text": {
+      "type": "LabelAliasLE",
+      "path": "AchievementMessage/IconAndTextPanel/Text"
+     },
+     "canvasGroup": {
+      "type": "CanvasGroup",
+      "path": "AchievementMessage"
+     },
+     "showTime": 0.5,
+     "hideTime": 1.0,
+     "waitTime": 1.5,
+     "maxAlpha": 1.0,
+     "minAlpha": 0.0,
+     "OnHide": {
+      "m_PersistentCalls": {
+       "m_Calls": []
+      }
+     }
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "Background",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      744.0,
+      214.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImage",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": true,
+       "runtimeSprites": {
+        "SpriteName": {
+         "name": "FightUI.achievement_panel",
+         "texture": "FightUI",
+         "resourcesPath": "UI/Atlases/",
+         "resolved": true
+        }
+       },
+       "sprite": "FightUI.achievement_panel",
+       "texture": "FightUI",
+       "spriteSource": "runtime:_SpriteName",
+       "spriteInfo": {
+        "type": "Sprite",
+        "name": "FightUI.achievement_panel",
+        "file": "dcb2e1eee7245544cb45281e1f5188b6",
+        "texture": "FightUI",
+        "textureSize": [
+         2048,
+         2048
+        ],
+        "png": "tex/APK/FightUI.png",
+        "textureRect": [
+         835.0,
+         1068.0,
+         744.0,
+         214.0
+        ],
+        "rect": [
+         835.0,
+         1068.0,
+         744.0,
+         214.0
+        ],
+        "pivot": [
+         0.5,
+         0.5
+        ],
+        "ppu": 100.0
+       },
+       "type": "simple",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "UI/Atlases/",
+       "_SpriteName": "FightUI.achievement_panel"
+      }
+     }
+    ]
+   },
+   {
+    "name": "IconAndTextPanel",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      5.0,
+      0.0
+     ],
+     "sizeDelta": [
+      -110.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "HorizontalLayoutGroup",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "layout": "HorizontalLayoutGroup",
+       "padding": {
+        "left": 20,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+       },
+       "childAlignment": "MiddleCenter",
+       "spacing": 20.0,
+       "childControlWidth": 1,
+       "childControlHeight": 1,
+       "childForceExpandWidth": 0,
+       "childForceExpandHeight": 0,
+       "childScaleWidth": 0,
+       "childScaleHeight": 0,
+       "reverseArrangement": 0
+      },
+      "fields": {
+       "m_Padding": {
+        "m_Left": 20,
+        "m_Right": 0,
+        "m_Top": 0,
+        "m_Bottom": 0
+       },
+       "m_ChildAlignment": 4,
+       "m_Spacing": 20.0,
+       "m_ChildForceExpandWidth": 0,
+       "m_ChildForceExpandHeight": 0,
+       "m_ChildControlWidth": 1,
+       "m_ChildControlHeight": 1,
+       "m_ChildScaleWidth": 0,
+       "m_ChildScaleHeight": 0,
+       "m_ReverseArrangement": 0
+      }
+     }
+    ],
+    "children": [
+     {
+      "name": "Icon",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.0,
+        0.0
+       ],
+       "anchorMax": [
+        0.0,
+        0.0
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        0.0,
+        0.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImage",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": true,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "Achievements01.ach_block_bronze",
+           "texture": "Achievements01",
+           "resourcesPath": "UI/Achievements/",
+           "resolved": true
+          }
+         },
+         "sprite": "Achievements01.ach_block_bronze",
+         "texture": "Achievements01",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "Achievements01.ach_block_bronze",
+          "file": "6249c2ba3e2ef6146b329de0de39bef5",
+          "texture": "Achievements01",
+          "textureSize": [
+           2048,
+           2048
+          ],
+          "png": "tex/APK/Achievements01.png",
+          "textureRect": [
+           195.0,
+           1856.0,
+           190.0,
+           190.0
+          ],
+          "rect": [
+           195.0,
+           1856.0,
+           190.0,
+           190.0
+          ],
+          "pivot": [
+           0.5,
+           0.5
+          ],
+          "ppu": 100.0
+         },
+         "type": "simple",
+         "preserveAspect": true,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 1,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 1,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "UI/Achievements/",
+         "_SpriteName": "Achievements01.ach_block_bronze"
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "LayoutElement",
+        "namespace": "UnityEngine.UI",
+        "assembly": "UnityEngine.UI",
+        "enabled": true,
+        "ui": {
+         "IgnoreLayout": 0,
+         "MinWidth": 130.0,
+         "MinHeight": 130.0,
+         "PreferredWidth": 130.0,
+         "PreferredHeight": 130.0,
+         "FlexibleWidth": -1.0,
+         "FlexibleHeight": -1.0
+        },
+        "fields": {
+         "m_IgnoreLayout": 0,
+         "m_MinWidth": 130.0,
+         "m_MinHeight": 130.0,
+         "m_PreferredWidth": 130.0,
+         "m_PreferredHeight": 130.0,
+         "m_FlexibleWidth": -1.0,
+         "m_FlexibleHeight": -1.0,
+         "m_LayoutPriority": 1
+        }
+       }
+      ]
+     },
+     {
+      "name": "Text",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.0,
+        0.0
+       ],
+       "anchorMax": [
+        0.0,
+        0.0
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        0.0,
+        0.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "LayoutElement",
+        "namespace": "UnityEngine.UI",
+        "assembly": "UnityEngine.UI",
+        "enabled": true,
+        "ui": {
+         "IgnoreLayout": 0,
+         "MinWidth": -1.0,
+         "MinHeight": 200.0,
+         "PreferredWidth": -1.0,
+         "PreferredHeight": -1.0,
+         "FlexibleWidth": -1.0,
+         "FlexibleHeight": -1.0
+        },
+        "fields": {
+         "m_IgnoreLayout": 0,
+         "m_MinWidth": -1.0,
+         "m_MinHeight": 200.0,
+         "m_PreferredWidth": -1.0,
+         "m_PreferredHeight": -1.0,
+         "m_FlexibleWidth": -1.0,
+         "m_FlexibleHeight": -1.0,
+         "m_LayoutPriority": 1
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "LabelAliasLE",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Text",
+         "color": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+         ],
+         "raycastTarget": false,
+         "text": "Text about",
+         "font": null,
+         "fontSize": 98,
+         "fontStyle": "Normal",
+         "alignment": "MiddleCenter",
+         "bestFit": true,
+         "minSize": 0,
+         "maxSize": 98,
+         "richText": true,
+         "horizontalOverflow": "Wrap",
+         "verticalOverflow": "Truncate",
+         "lineSpacing": 0.55,
+         "locKey": null,
+         "toUpperCase": false,
+         "useLocalizationFont": true,
+         "fontType": 0,
+         "labelFontSize": 98,
+         "labelLineSpacing": 0.55
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_FontData": {
+          "m_Font": null,
+          "m_FontSize": 98,
+          "m_FontStyle": 0,
+          "m_BestFit": 1,
+          "m_MinSize": 0,
+          "m_MaxSize": 98,
+          "m_Alignment": 4,
+          "m_AlignByGeometry": 0,
+          "m_RichText": 1,
+          "m_HorizontalOverflow": 0,
+          "m_VerticalOverflow": 0,
+          "m_LineSpacing": 0.55
+         },
+         "m_Text": "Text about",
+         "GlyphPrefabs": [],
+         "ForceUseAlignedBestFit": 0,
+         "ForbiddenUseAlignedBestFit": 0,
+         "FitImageLineHeightParam": {
+          "ScaleMaxLineHeightFactor": 1.0,
+          "ApplyToSingleLine": 0,
+          "Enabled": 0
+         },
+         "_useLocalizationFont": 1,
+         "_fontType": 0,
+         "_useLabelFontSize": 1,
+         "_labelFontSize": 98,
+         "_useLabelLineSpacing": 1,
+         "_labelLineSpacing": 0.55,
+         "_Alias": "",
+         "_ToUpperCase": 0,
+         "_LayoutElement": {
+          "type": "LayoutElement",
+          "path": "AchievementMessage/IconAndTextPanel/Text"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

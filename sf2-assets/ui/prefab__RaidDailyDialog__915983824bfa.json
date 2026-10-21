@@ -1,0 +1,1217 @@
+{
+ "source": "915983824bfab7648b12a82794f33a7b",
+ "pathID": 24,
+ "root": {
+  "name": "RaidDailyDialog",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.0,
+    0.0
+   ],
+   "anchorMax": [
+    1.0,
+    1.0
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    0.0,
+    0.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "RaidDailyDialog",
+    "namespace": "Nekki.SF2.GUI.Dialogs.Raids",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_topStripe": null,
+     "_bottomStripe": null,
+     "_content": {
+      "type": "GameObject",
+      "path": "RaidDailyDialog/Content"
+     },
+     "_header": {
+      "type": "LabelAlias",
+      "path": "RaidDailyDialog/Title"
+     },
+     "_btnCancel": {
+      "type": "LabelButton",
+      "path": "RaidDailyDialog/CancelButton"
+     },
+     "_btnOK": {
+      "type": "LabelButton",
+      "path": "RaidDailyDialog/OkButton"
+     },
+     "_hideDialogCanvasBackgnd": 1,
+     "IsIgnoreBack": 0,
+     "IsQuestDialog": 0,
+     "IsPausing": 1,
+     "_raidDailyTaskCellPrefab": {
+      "type": "GameObject",
+      "path": "RaidDailyTaskCell"
+     },
+     "_cellsPos": [
+      {
+       "type": "GameObject",
+       "path": "RaidDailyDialog/Content/_cell1"
+      },
+      {
+       "type": "GameObject",
+       "path": "RaidDailyDialog/Content/_cell2"
+      },
+      {
+       "type": "GameObject",
+       "path": "RaidDailyDialog/Content/_cell3"
+      }
+     ]
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "Background",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      2765.0,
+      1538.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "Image",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "color": [
+        0.0,
+        0.0,
+        0.0,
+        0.591
+       ],
+       "raycastTarget": true,
+       "sprite": null,
+       "texture": null,
+       "spriteSource": null,
+       "spriteInfo": null,
+       "type": "simple",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.591
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0
+      }
+     }
+    ]
+   },
+   {
+    "name": "TitleBackground",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      692.0
+     ],
+     "sizeDelta": [
+      2765.0,
+      155.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "Image",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "color": [
+        0.0902,
+        0.0667,
+        0.0471,
+        1.0
+       ],
+       "raycastTarget": true,
+       "sprite": null,
+       "texture": null,
+       "spriteSource": null,
+       "spriteInfo": null,
+       "type": "simple",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 0.0902,
+        "g": 0.0667,
+        "b": 0.0471,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0
+      }
+     }
+    ]
+   },
+   {
+    "name": "Title",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      678.8
+     ],
+     "sizeDelta": [
+      2765.0,
+      160.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "LabelAlias",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Text",
+       "color": [
+        0.7333,
+        0.5843,
+        0.4118,
+        1.0
+       ],
+       "raycastTarget": false,
+       "text": "DailyDialogue",
+       "font": "majallab",
+       "fontSize": 198,
+       "fontStyle": "Normal",
+       "alignment": "MiddleCenter",
+       "bestFit": true,
+       "minSize": 1,
+       "maxSize": 300,
+       "richText": true,
+       "horizontalOverflow": "Wrap",
+       "verticalOverflow": "Truncate",
+       "lineSpacing": 1.0,
+       "locKey": null,
+       "toUpperCase": false,
+       "useLocalizationFont": true,
+       "fontType": 0,
+       "labelFontSize": 170
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 0.7333,
+        "g": 0.5843,
+        "b": 0.4118,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_FontData": {
+        "m_Font": {
+         "type": "Font",
+         "name": "majallab",
+         "file": "sharedassets0.assets"
+        },
+        "m_FontSize": 198,
+        "m_FontStyle": 0,
+        "m_BestFit": 1,
+        "m_MinSize": 1,
+        "m_MaxSize": 300,
+        "m_Alignment": 4,
+        "m_AlignByGeometry": 0,
+        "m_RichText": 1,
+        "m_HorizontalOverflow": 0,
+        "m_VerticalOverflow": 0,
+        "m_LineSpacing": 1.0
+       },
+       "m_Text": "DailyDialogue",
+       "GlyphPrefabs": [],
+       "ForceUseAlignedBestFit": 0,
+       "ForbiddenUseAlignedBestFit": 0,
+       "FitImageLineHeightParam": {
+        "ScaleMaxLineHeightFactor": 1.0,
+        "ApplyToSingleLine": 0,
+        "Enabled": 0
+       },
+       "_useLocalizationFont": 1,
+       "_fontType": 0,
+       "_useLabelFontSize": 1,
+       "_labelFontSize": 170,
+       "_useLabelLineSpacing": 0,
+       "_labelLineSpacing": 0.0,
+       "_Alias": "",
+       "_ToUpperCase": 0
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "ObservableDestroyTrigger",
+      "namespace": "UniRx.Triggers",
+      "assembly": "UniRx",
+      "enabled": true,
+      "fields": {}
+     }
+    ]
+   },
+   {
+    "name": "OkButton",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      -660.0
+     ],
+     "sizeDelta": [
+      450.0,
+      100.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImage",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": true,
+       "runtimeSprites": {
+        "SpriteName": {
+         "name": "CommonButtons.BtnWhite",
+         "texture": "CommonButtons",
+         "resourcesPath": "UI/Atlases/",
+         "resolved": true
+        }
+       },
+       "sprite": "CommonButtons.BtnWhite",
+       "texture": "CommonButtons",
+       "spriteSource": "runtime:_SpriteName",
+       "spriteInfo": {
+        "type": "Sprite",
+        "name": "CommonButtons.BtnWhite",
+        "file": "c38a3bb941bda4c2fba419692e1b5071",
+        "texture": "CommonButtons",
+        "textureSize": [
+         512,
+         1024
+        ],
+        "png": "tex/APK/CommonButtons.png",
+        "textureRect": [
+         205.0,
+         680.0,
+         200.0,
+         112.0
+        ],
+        "rect": [
+         205.0,
+         680.0,
+         200.0,
+         112.0
+        ],
+        "border": [
+         99.0,
+         0.0,
+         99.0,
+         0.0
+        ],
+        "pivot": [
+         0.5,
+         0.5
+        ],
+        "ppu": 100.0
+       },
+       "type": "sliced",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 1,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "UI/Atlases/",
+       "_SpriteName": "CommonButtons.BtnWhite"
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "LabelButton",
+      "namespace": "",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Button",
+       "runtimeSprites": {
+        "normalSpriteName": {
+         "name": "CommonButtons.BtnWhite",
+         "texture": "CommonButtons",
+         "resourcesPath": "UI/Atlases/",
+         "resolved": true
+        }
+       },
+       "interactable": true,
+       "transition": "ColorTint",
+       "targetGraphic": {
+        "type": "ResolutionImage",
+        "path": "RaidDailyDialog/OkButton"
+       },
+       "colors": {
+        "m_NormalColor": [
+         1.0,
+         1.0,
+         1.0,
+         1.0
+        ],
+        "m_HighlightedColor": [
+         0.9608,
+         0.9608,
+         0.9608,
+         1.0
+        ],
+        "m_PressedColor": [
+         0.7843,
+         0.7843,
+         0.7843,
+         1.0
+        ],
+        "m_SelectedColor": [
+         0.9608,
+         0.9608,
+         0.9608,
+         1.0
+        ],
+        "m_DisabledColor": [
+         0.7843,
+         0.7843,
+         0.7843,
+         0.502
+        ],
+        "m_ColorMultiplier": 1.0,
+        "m_FadeDuration": 0.1
+       },
+       "onClick": []
+      },
+      "fields": {
+       "m_Navigation": {
+        "m_Mode": 3,
+        "m_WrapAround": 0,
+        "m_SelectOnUp": null,
+        "m_SelectOnDown": null,
+        "m_SelectOnLeft": null,
+        "m_SelectOnRight": null
+       },
+       "m_Transition": 1,
+       "m_Colors": {
+        "m_NormalColor": {
+         "r": 1.0,
+         "g": 1.0,
+         "b": 1.0,
+         "a": 1.0
+        },
+        "m_HighlightedColor": {
+         "r": 0.9608,
+         "g": 0.9608,
+         "b": 0.9608,
+         "a": 1.0
+        },
+        "m_PressedColor": {
+         "r": 0.7843,
+         "g": 0.7843,
+         "b": 0.7843,
+         "a": 1.0
+        },
+        "m_SelectedColor": {
+         "r": 0.9608,
+         "g": 0.9608,
+         "b": 0.9608,
+         "a": 1.0
+        },
+        "m_DisabledColor": {
+         "r": 0.7843,
+         "g": 0.7843,
+         "b": 0.7843,
+         "a": 0.502
+        },
+        "m_ColorMultiplier": 1.0,
+        "m_FadeDuration": 0.1
+       },
+       "m_SpriteState": {
+        "m_HighlightedSprite": null,
+        "m_PressedSprite": null,
+        "m_SelectedSprite": null,
+        "m_DisabledSprite": null
+       },
+       "m_AnimationTriggers": {
+        "m_NormalTrigger": "Normal",
+        "m_HighlightedTrigger": "Highlighted",
+        "m_PressedTrigger": "Pressed",
+        "m_SelectedTrigger": "Highlighted",
+        "m_DisabledTrigger": "Disabled"
+       },
+       "m_Interactable": 1,
+       "m_TargetGraphic": {
+        "type": "ResolutionImage",
+        "path": "RaidDailyDialog/OkButton"
+       },
+       "m_OnClick": {
+        "m_PersistentCalls": {
+         "m_Calls": []
+        }
+       },
+       "FlashingImage": null,
+       "_EnableClickAnimation": 1,
+       "_glowSprite": null,
+       "_WaitBeforeClick": 1,
+       "IsOneShot": 0,
+       "_glowTime": 0.0,
+       "ButtonId": -1,
+       "_normalTexturePath": "UI/Atlases/",
+       "_normalSpriteName": "CommonButtons.BtnWhite",
+       "_disabledTexturePath": "",
+       "_disabledSpriteName": "",
+       "_highlightedTexturePath": "",
+       "_highlightedSpriteName": "",
+       "_pressedTexturePath": "",
+       "_pressedSpriteName": "",
+       "_textInvolvedTintTransaction": 0,
+       "Label": {
+        "type": "LabelAlias",
+        "path": "RaidDailyDialog/OkButton/Label"
+       },
+       "_Control": -1,
+       "_ControlPriority": 0,
+       "_TrackingDeviceID": -1,
+       "_Layout": null,
+       "_Hint": null
+      }
+     }
+    ],
+    "children": [
+     {
+      "name": "Label",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        -5.0
+       ],
+       "sizeDelta": [
+        370.0,
+        100.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "LabelAlias",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Text",
+         "color": [
+          0.1843,
+          0.1451,
+          0.1059,
+          1.0
+         ],
+         "raycastTarget": false,
+         "text": "ofCouse",
+         "font": "majallab",
+         "fontSize": 100,
+         "fontStyle": "Normal",
+         "alignment": "MiddleCenter",
+         "bestFit": true,
+         "minSize": 1,
+         "maxSize": 100,
+         "richText": true,
+         "horizontalOverflow": "Wrap",
+         "verticalOverflow": "Truncate",
+         "lineSpacing": 1.0,
+         "locKey": "OK",
+         "toUpperCase": false,
+         "useLocalizationFont": true,
+         "fontType": 0,
+         "labelFontSize": 100
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 0.1843,
+          "g": 0.1451,
+          "b": 0.1059,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_FontData": {
+          "m_Font": {
+           "type": "Font",
+           "name": "majallab",
+           "file": "sharedassets0.assets"
+          },
+          "m_FontSize": 100,
+          "m_FontStyle": 0,
+          "m_BestFit": 1,
+          "m_MinSize": 1,
+          "m_MaxSize": 100,
+          "m_Alignment": 4,
+          "m_AlignByGeometry": 1,
+          "m_RichText": 1,
+          "m_HorizontalOverflow": 0,
+          "m_VerticalOverflow": 0,
+          "m_LineSpacing": 1.0
+         },
+         "m_Text": "ofCouse",
+         "GlyphPrefabs": [],
+         "ForceUseAlignedBestFit": 0,
+         "ForbiddenUseAlignedBestFit": 0,
+         "FitImageLineHeightParam": {
+          "ScaleMaxLineHeightFactor": 1.0,
+          "ApplyToSingleLine": 0,
+          "Enabled": 0
+         },
+         "_useLocalizationFont": 1,
+         "_fontType": 0,
+         "_useLabelFontSize": 1,
+         "_labelFontSize": 100,
+         "_useLabelLineSpacing": 0,
+         "_labelLineSpacing": 0.0,
+         "_Alias": "OK",
+         "_ToUpperCase": 0
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "ObservableDestroyTrigger",
+        "namespace": "UniRx.Triggers",
+        "assembly": "UniRx",
+        "enabled": true,
+        "fields": {}
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "CancelButton",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      -531.17,
+      -680.0
+     ],
+     "sizeDelta": [
+      450.0,
+      100.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImage",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": true,
+       "runtimeSprites": {
+        "SpriteName": {
+         "name": "CommonButtons.BtnWhite",
+         "texture": "CommonButtons",
+         "resourcesPath": "UI/Atlases/",
+         "resolved": true
+        }
+       },
+       "sprite": "CommonButtons.BtnWhite",
+       "texture": "CommonButtons",
+       "spriteSource": "runtime:_SpriteName",
+       "spriteInfo": {
+        "type": "Sprite",
+        "name": "CommonButtons.BtnWhite",
+        "file": "c38a3bb941bda4c2fba419692e1b5071",
+        "texture": "CommonButtons",
+        "textureSize": [
+         512,
+         1024
+        ],
+        "png": "tex/APK/CommonButtons.png",
+        "textureRect": [
+         205.0,
+         680.0,
+         200.0,
+         112.0
+        ],
+        "rect": [
+         205.0,
+         680.0,
+         200.0,
+         112.0
+        ],
+        "border": [
+         99.0,
+         0.0,
+         99.0,
+         0.0
+        ],
+        "pivot": [
+         0.5,
+         0.5
+        ],
+        "ppu": 100.0
+       },
+       "type": "sliced",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 1,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "UI/Atlases/",
+       "_SpriteName": "CommonButtons.BtnWhite"
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "LabelButton",
+      "namespace": "",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Button",
+       "runtimeSprites": {
+        "normalSpriteName": {
+         "name": "CommonButtons.BtnWhite",
+         "texture": "CommonButtons",
+         "resourcesPath": "UI/Atlases/",
+         "resolved": true
+        }
+       },
+       "interactable": true,
+       "transition": "ColorTint",
+       "targetGraphic": {
+        "type": "ResolutionImage",
+        "path": "RaidDailyDialog/CancelButton"
+       },
+       "colors": {
+        "m_NormalColor": [
+         1.0,
+         1.0,
+         1.0,
+         1.0
+        ],
+        "m_HighlightedColor": [
+         0.9608,
+         0.9608,
+         0.9608,
+         1.0
+        ],
+        "m_PressedColor": [
+         0.7843,
+         0.7843,
+         0.7843,
+         1.0
+        ],
+        "m_SelectedColor": [
+         0.9608,
+         0.9608,
+         0.9608,
+         1.0
+        ],
+        "m_DisabledColor": [
+         0.7843,
+         0.7843,
+         0.7843,
+         0.502
+        ],
+        "m_ColorMultiplier": 1.0,
+        "m_FadeDuration": 0.1
+       },
+       "onClick": []
+      },
+      "fields": {
+       "m_Navigation": {
+        "m_Mode": 3,
+        "m_WrapAround": 0,
+        "m_SelectOnUp": null,
+        "m_SelectOnDown": null,
+        "m_SelectOnLeft": null,
+        "m_SelectOnRight": null
+       },
+       "m_Transition": 1,
+       "m_Colors": {
+        "m_NormalColor": {
+         "r": 1.0,
+         "g": 1.0,
+         "b": 1.0,
+         "a": 1.0
+        },
+        "m_HighlightedColor": {
+         "r": 0.9608,
+         "g": 0.9608,
+         "b": 0.9608,
+         "a": 1.0
+        },
+        "m_PressedColor": {
+         "r": 0.7843,
+         "g": 0.7843,
+         "b": 0.7843,
+         "a": 1.0
+        },
+        "m_SelectedColor": {
+         "r": 0.9608,
+         "g": 0.9608,
+         "b": 0.9608,
+         "a": 1.0
+        },
+        "m_DisabledColor": {
+         "r": 0.7843,
+         "g": 0.7843,
+         "b": 0.7843,
+         "a": 0.502
+        },
+        "m_ColorMultiplier": 1.0,
+        "m_FadeDuration": 0.1
+       },
+       "m_SpriteState": {
+        "m_HighlightedSprite": null,
+        "m_PressedSprite": null,
+        "m_SelectedSprite": null,
+        "m_DisabledSprite": null
+       },
+       "m_AnimationTriggers": {
+        "m_NormalTrigger": "Normal",
+        "m_HighlightedTrigger": "Highlighted",
+        "m_PressedTrigger": "Pressed",
+        "m_SelectedTrigger": "Highlighted",
+        "m_DisabledTrigger": "Disabled"
+       },
+       "m_Interactable": 1,
+       "m_TargetGraphic": {
+        "type": "ResolutionImage",
+        "path": "RaidDailyDialog/CancelButton"
+       },
+       "m_OnClick": {
+        "m_PersistentCalls": {
+         "m_Calls": []
+        }
+       },
+       "FlashingImage": null,
+       "_EnableClickAnimation": 1,
+       "_glowSprite": null,
+       "_WaitBeforeClick": 1,
+       "IsOneShot": 0,
+       "_glowTime": 0.0,
+       "ButtonId": -1,
+       "_normalTexturePath": "UI/Atlases/",
+       "_normalSpriteName": "CommonButtons.BtnWhite",
+       "_disabledTexturePath": "",
+       "_disabledSpriteName": "",
+       "_highlightedTexturePath": "",
+       "_highlightedSpriteName": "",
+       "_pressedTexturePath": "",
+       "_pressedSpriteName": "",
+       "_textInvolvedTintTransaction": 0,
+       "Label": null,
+       "_Control": -1,
+       "_ControlPriority": 0,
+       "_TrackingDeviceID": -1,
+       "_Layout": null,
+       "_Hint": null
+      }
+     }
+    ]
+   },
+   {
+    "name": "Content",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "children": [
+     {
+      "name": "_cell1",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        -675.0,
+        30.0
+       ],
+       "sizeDelta": [
+        630.0,
+        1134.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      }
+     },
+     {
+      "name": "_cell2",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        30.0
+       ],
+       "sizeDelta": [
+        630.0,
+        1134.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      }
+     },
+     {
+      "name": "_cell3",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        675.0,
+        30.0
+       ],
+       "sizeDelta": [
+        630.0,
+        1134.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

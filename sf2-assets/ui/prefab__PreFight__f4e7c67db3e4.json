@@ -1,0 +1,78 @@
+{
+ "source": "f4e7c67db3e479543b3d2409dd5829af",
+ "pathID": 2,
+ "root": {
+  "name": "PreFight",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.0,
+    0.0
+   ],
+   "anchorMax": [
+    1.0,
+    1.0
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    0.0,
+    0.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "PreFight",
+    "namespace": "Nekki.SF2.GUI.Fight",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_Order": 2,
+     "viewerFightPrefab": {
+      "type": "GameObject",
+      "path": "ViewerFight"
+     },
+     "screenFightPrefab": {
+      "type": "GameObject",
+      "path": "ScreenFight"
+     },
+     "pauseScreenPrefab": {
+      "type": "GameObject",
+      "path": "PauseScreen"
+     },
+     "endFightScreenPrefab": {
+      "type": "GameObject",
+      "path": "EndFightScreen"
+     },
+     "endPvpFightScreenPrefab": null,
+     "endRaidRoundFightScreenPrefab": {
+      "type": "GameObject",
+      "path": "EndRaidRoundFightScreen"
+     },
+     "endRaidFinalFightScreenPrefab": {
+      "type": "GameObject",
+      "path": "EndRaidFinalFightScreen"
+     },
+     "achievementMessagePrefab": {
+      "type": "GameObject",
+      "path": "AchievementMessage"
+     }
+    }
+   }
+  ]
+ }
+}

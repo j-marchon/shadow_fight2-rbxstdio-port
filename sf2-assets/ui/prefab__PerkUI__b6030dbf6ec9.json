@@ -1,0 +1,312 @@
+{
+ "source": "b6030dbf6ec9f4c2fb16b9283ef44369",
+ "pathID": 6,
+ "root": {
+  "name": "PerkUI",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.5,
+    0.5
+   ],
+   "anchorMax": [
+    0.5,
+    0.5
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    120.0,
+    120.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "PerkUI",
+    "namespace": "Nekki.SF2.GUI.Common",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_Icon": {
+      "type": "ResolutionImage",
+      "path": "PerkUI"
+     },
+     "_Button": {
+      "type": "TouchHandler",
+      "path": "PerkUI"
+     }
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "ResolutionImage",
+    "namespace": "Nekki.SF2.GUI",
+    "assembly": "Root",
+    "enabled": true,
+    "ui": {
+     "kind": "Image",
+     "color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "raycastTarget": true,
+     "runtimeSprites": {
+      "SpriteName": {
+       "name": "Enchantments.EnchantmentBleeding",
+       "texture": "Enchantments",
+       "resourcesPath": "UI/Atlases/",
+       "resolved": true
+      }
+     },
+     "sprite": "Enchantments.EnchantmentBleeding",
+     "texture": "Enchantments",
+     "spriteSource": "runtime:_SpriteName",
+     "spriteInfo": {
+      "type": "Sprite",
+      "name": "Enchantments.EnchantmentBleeding",
+      "texture": "Enchantments",
+      "pack": "ZONE_1",
+      "png": "tex/ZONE_1/Enchantments.png",
+      "textureRectTopLeft": [
+       125,
+       2,
+       120,
+       120
+      ],
+      "pivot": [
+       0.5,
+       0.5
+      ],
+      "source": "sprites.json (bundle)"
+     },
+     "type": "simple",
+     "preserveAspect": false,
+     "fillCenter": true,
+     "pixelsPerUnitMultiplier": 1.0
+    },
+    "fields": {
+     "m_Material": null,
+     "m_Color": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 1.0,
+      "a": 1.0
+     },
+     "m_RaycastTarget": 1,
+     "m_RaycastPadding": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "w": 0.0
+     },
+     "m_Maskable": 1,
+     "m_Sprite": null,
+     "m_Type": 0,
+     "m_PreserveAspect": 0,
+     "m_FillCenter": 1,
+     "m_FillMethod": 4,
+     "m_FillAmount": 1.0,
+     "m_FillClockwise": 1,
+     "m_FillOrigin": 0,
+     "m_UseSpriteMesh": 0,
+     "m_PixelsPerUnitMultiplier": 1.0,
+     "_TexturePath": "UI/Atlases/",
+     "_SpriteName": "Enchantments.EnchantmentBleeding"
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "TouchHandler",
+    "namespace": "Nekki.SF2.GUI.Common",
+    "assembly": "Root",
+    "enabled": true,
+    "ui": {
+     "kind": "Button",
+     "interactable": true,
+     "transition": "None",
+     "targetGraphic": {
+      "type": "ResolutionImage",
+      "path": "PerkUI"
+     },
+     "onClick": null
+    },
+    "fields": {
+     "m_Navigation": {
+      "m_Mode": 3,
+      "m_WrapAround": 0,
+      "m_SelectOnUp": null,
+      "m_SelectOnDown": null,
+      "m_SelectOnLeft": null,
+      "m_SelectOnRight": null
+     },
+     "m_Transition": 0,
+     "m_Colors": {
+      "m_NormalColor": {
+       "r": 1.0,
+       "g": 1.0,
+       "b": 1.0,
+       "a": 1.0
+      },
+      "m_HighlightedColor": {
+       "r": 0.9608,
+       "g": 0.9608,
+       "b": 0.9608,
+       "a": 1.0
+      },
+      "m_PressedColor": {
+       "r": 0.7843,
+       "g": 0.7843,
+       "b": 0.7843,
+       "a": 1.0
+      },
+      "m_SelectedColor": {
+       "r": 0.9608,
+       "g": 0.9608,
+       "b": 0.9608,
+       "a": 1.0
+      },
+      "m_DisabledColor": {
+       "r": 0.7843,
+       "g": 0.7843,
+       "b": 0.7843,
+       "a": 0.502
+      },
+      "m_ColorMultiplier": 1.0,
+      "m_FadeDuration": 0.1
+     },
+     "m_SpriteState": {
+      "m_HighlightedSprite": null,
+      "m_PressedSprite": null,
+      "m_SelectedSprite": null,
+      "m_DisabledSprite": null
+     },
+     "m_AnimationTriggers": {
+      "m_NormalTrigger": "Normal",
+      "m_HighlightedTrigger": "Highlighted",
+      "m_PressedTrigger": "Pressed",
+      "m_SelectedTrigger": "Highlighted",
+      "m_DisabledTrigger": "Disabled"
+     },
+     "m_Interactable": 1,
+     "m_TargetGraphic": {
+      "type": "ResolutionImage",
+      "path": "PerkUI"
+     }
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "LayoutElement",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI",
+    "enabled": true,
+    "ui": {
+     "IgnoreLayout": 0,
+     "MinWidth": 120.0,
+     "MinHeight": 120.0,
+     "PreferredWidth": 120.0,
+     "PreferredHeight": 120.0,
+     "FlexibleWidth": -1.0,
+     "FlexibleHeight": -1.0
+    },
+    "fields": {
+     "m_IgnoreLayout": 0,
+     "m_MinWidth": 120.0,
+     "m_MinHeight": 120.0,
+     "m_PreferredWidth": 120.0,
+     "m_PreferredHeight": 120.0,
+     "m_FlexibleWidth": -1.0,
+     "m_FlexibleHeight": -1.0,
+     "m_LayoutPriority": 1
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "TutorialNode",
+    "namespace": "Nekki.SF2.GUI.Tutorial",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_ID": "Perk"
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "Additional TouchZone",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      200.0,
+      200.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "NonDrawingGraphic",
+      "namespace": "",
+      "assembly": "Root",
+      "enabled": true,
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

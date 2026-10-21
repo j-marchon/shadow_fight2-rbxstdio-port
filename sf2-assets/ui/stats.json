@@ -1,0 +1,27 @@
+{
+ "monoBehavioursAll": {
+  "total": 4405,
+  "generated": 4405,
+  "readable_script_resolved": 4401,
+  "readable": 4401,
+  "readable_generated": 4401
+ },
+ "failedByClass": {
+  ".LevelPlayMediationNetworkSettings": 1,
+  "GoogleMobileAds.Editor.GoogleMobileAdsSettings": 1,
+  "Facebook.Unity.Settings.FacebookSettings": 1,
+  "UnityEngine.GUISkin": 1
+ },
+ "failMessages": {
+  ".LevelPlayMediationNetworkSettings": "failed to dump nodes raw",
+  "GoogleMobileAds.Editor.GoogleMobileAdsSettings": "failed to dump nodes raw",
+  "Facebook.Unity.Settings.FacebookSettings": "read_str out of bounds",
+  "UnityEngine.GUISkin": "failed to dump nodes raw"
+ },
+ "monoBehavioursInUI": {
+  "total": 4368,
+  "ok": 4368
+ },
+ "roots": 229,
+ "files": 227
+}

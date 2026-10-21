@@ -1,0 +1,168 @@
+{
+ "source": "56a918f6429804a3b9d627d881cb5116",
+ "pathID": 5,
+ "root": {
+  "name": "KeyIcon",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.5,
+    0.5
+   ],
+   "anchorMax": [
+    0.5,
+    0.5
+   ],
+   "anchoredPosition": [
+    -284.0,
+    0.0
+   ],
+   "sizeDelta": [
+    110.0,
+    110.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "KeyIcon",
+    "namespace": "Nekki.SF2.GUI.Profile",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_Icon": {
+      "type": "ResolutionImage",
+      "path": "KeyIcon/Icon"
+     }
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "Icon",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImage",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": false,
+       "runtimeSprites": {
+        "SpriteName": {
+         "name": "ComboButtons.icon_kick",
+         "texture": "ComboButtons",
+         "resourcesPath": "UI/Atlases/",
+         "resolved": true
+        }
+       },
+       "sprite": "ComboButtons.icon_kick",
+       "texture": "ComboButtons",
+       "spriteSource": "runtime:_SpriteName",
+       "spriteInfo": {
+        "type": "Sprite",
+        "name": "ComboButtons.icon_kick",
+        "texture": "ComboButtons",
+        "pack": "ZONE_1",
+        "png": "tex/ZONE_1/ComboButtons.png",
+        "textureRectTopLeft": [
+         1,
+         113,
+         110,
+         110
+        ],
+        "pivot": [
+         0.0,
+         0.0
+        ],
+        "source": "sprites.json (bundle)"
+       },
+       "type": "simple",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "UI/Atlases/",
+       "_SpriteName": "ComboButtons.icon_kick"
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

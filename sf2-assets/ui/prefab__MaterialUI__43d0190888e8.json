@@ -1,0 +1,317 @@
+{
+ "source": "43d0190888e854037a79c097d4b42114",
+ "pathID": 6,
+ "root": {
+  "name": "MaterialUI",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.0,
+    0.0
+   ],
+   "anchorMax": [
+    0.0,
+    0.0
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    0.0,
+    0.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "MaterialPriceUI",
+    "namespace": "Nekki.SF2.GUI.Shop.Forge",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_Icon": {
+      "type": "ResolutionImage",
+      "path": "MaterialUI/Icon"
+     },
+     "_Price": {
+      "type": "Text",
+      "path": "MaterialUI/Price"
+     }
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "LayoutElement",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI",
+    "enabled": true,
+    "ui": {
+     "IgnoreLayout": 0,
+     "MinWidth": -1.0,
+     "MinHeight": -1.0,
+     "PreferredWidth": 164.0,
+     "PreferredHeight": 170.0,
+     "FlexibleWidth": -1.0,
+     "FlexibleHeight": -1.0
+    },
+    "fields": {
+     "m_IgnoreLayout": 0,
+     "m_MinWidth": -1.0,
+     "m_MinHeight": -1.0,
+     "m_PreferredWidth": 164.0,
+     "m_PreferredHeight": 170.0,
+     "m_FlexibleWidth": -1.0,
+     "m_FlexibleHeight": -1.0,
+     "m_LayoutPriority": 1
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "TutorialNode",
+    "namespace": "Nekki.SF2.GUI.Tutorial",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_ID": "RecipePrice"
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "Icon",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      1.0
+     ],
+     "anchorMax": [
+      1.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      -2.5,
+      -58.0
+     ],
+     "sizeDelta": [
+      -70.0,
+      94.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImage",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": true,
+       "runtimeSprites": {
+        "SpriteName": {
+         "name": "MiscSprites.forge_green",
+         "texture": "MiscSprites",
+         "resourcesPath": "UI/Atlases/",
+         "resolved": true
+        }
+       },
+       "sprite": "MiscSprites.forge_green",
+       "texture": "MiscSprites",
+       "spriteSource": "runtime:_SpriteName",
+       "spriteInfo": {
+        "type": "Sprite",
+        "name": "MiscSprites.forge_green",
+        "file": "f007128341a8a4c1b8295fc9b88eea07",
+        "texture": "MiscSprites",
+        "textureSize": [
+         1024,
+         2048
+        ],
+        "png": "tex/APK/MiscSprites.png",
+        "textureRect": [
+         307.0,
+         1748.0,
+         100.0,
+         100.0
+        ],
+        "rect": [
+         307.0,
+         1748.0,
+         100.0,
+         100.0
+        ],
+        "pivot": [
+         0.5,
+         0.5
+        ],
+        "ppu": 100.0
+       },
+       "type": "simple",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "UI/Atlases/",
+       "_SpriteName": "MiscSprites.forge_green"
+      }
+     }
+    ]
+   },
+   {
+    "name": "Price",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      0.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      39.4
+     ],
+     "sizeDelta": [
+      0.0,
+      78.8
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "Text",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "color": [
+        0.1843,
+        0.1451,
+        0.1059,
+        1.0
+       ],
+       "raycastTarget": true,
+       "text": "134",
+       "font": "AGOpusBold",
+       "fontSize": 56,
+       "fontStyle": "Normal",
+       "alignment": "MiddleCenter",
+       "bestFit": true,
+       "minSize": 1,
+       "maxSize": 56,
+       "richText": true,
+       "horizontalOverflow": "Wrap",
+       "verticalOverflow": "Truncate",
+       "lineSpacing": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 0.1843,
+        "g": 0.1451,
+        "b": 0.1059,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_FontData": {
+        "m_Font": {
+         "type": "Font",
+         "name": "AGOpusBold",
+         "file": "sharedassets0.assets"
+        },
+        "m_FontSize": 56,
+        "m_FontStyle": 0,
+        "m_BestFit": 1,
+        "m_MinSize": 1,
+        "m_MaxSize": 56,
+        "m_Alignment": 4,
+        "m_AlignByGeometry": 0,
+        "m_RichText": 1,
+        "m_HorizontalOverflow": 0,
+        "m_VerticalOverflow": 0,
+        "m_LineSpacing": 1.0
+       },
+       "m_Text": "134"
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

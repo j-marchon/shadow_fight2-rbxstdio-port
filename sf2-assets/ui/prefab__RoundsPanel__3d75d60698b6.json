@@ -1,0 +1,115 @@
+{
+ "source": "3d75d60698b60f3458e145f87395bcbd",
+ "pathID": 3,
+ "root": {
+  "name": "RoundsPanel",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.5,
+    0.5
+   ],
+   "anchorMax": [
+    0.5,
+    0.5
+   ],
+   "anchoredPosition": [
+    575.0,
+    -40.0
+   ],
+   "sizeDelta": [
+    0.0,
+    0.0
+   ],
+   "pivot": [
+    1.0,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "RoundsPanel",
+    "namespace": "Nekki.SF2.GUI.Fight",
+    "assembly": "Root",
+    "enabled": true,
+    "ui": {
+     "runtimeSprites": {
+      "storyRoundDone": {
+       "name": "FightUI.Round_Done",
+       "texture": "FightUI",
+       "resourcesPath": null,
+       "resolved": true
+      },
+      "pvpRoundDone": {
+       "name": "FightUI.Round_Done",
+       "texture": "FightUI",
+       "resourcesPath": null,
+       "resolved": true
+      },
+      "roundUndone": {
+       "name": "FightUI.Round_Undone",
+       "texture": "FightUI",
+       "resourcesPath": null,
+       "resolved": true
+      }
+     }
+    },
+    "fields": {
+     "_storyRoundDone": "FightUI.Round_Done",
+     "_pvpRoundDone": "FightUI.Round_Done",
+     "_roundUndone": "FightUI.Round_Undone"
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "HorizontalLayoutGroup",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI",
+    "enabled": true,
+    "ui": {
+     "layout": "HorizontalLayoutGroup",
+     "padding": {
+      "left": 0,
+      "right": 0,
+      "top": 0,
+      "bottom": 0
+     },
+     "childAlignment": "UpperLeft",
+     "spacing": 0.0,
+     "childControlWidth": 1,
+     "childControlHeight": 1,
+     "childForceExpandWidth": 1,
+     "childForceExpandHeight": 1,
+     "childScaleWidth": 0,
+     "childScaleHeight": 0,
+     "reverseArrangement": 0
+    },
+    "fields": {
+     "m_Padding": {
+      "m_Left": 0,
+      "m_Right": 0,
+      "m_Top": 0,
+      "m_Bottom": 0
+     },
+     "m_ChildAlignment": 0,
+     "m_Spacing": 0.0,
+     "m_ChildForceExpandWidth": 1,
+     "m_ChildForceExpandHeight": 1,
+     "m_ChildControlWidth": 1,
+     "m_ChildControlHeight": 1,
+     "m_ChildScaleWidth": 0,
+     "m_ChildScaleHeight": 0,
+     "m_ReverseArrangement": 0
+    }
+   }
+  ]
+ }
+}

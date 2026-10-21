@@ -1,0 +1,121 @@
+{
+ "source": "8ae56b5ab62654d81b40f308b3482f67",
+ "pathID": 3,
+ "root": {
+  "name": "HintCanvas",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.0,
+    0.0
+   ],
+   "anchorMax": [
+    0.0,
+    0.0
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    0.0,
+    0.0
+   ],
+   "pivot": [
+    0.0,
+    0.0
+   ],
+   "localScale": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "Canvas",
+    "renderMode": "ScreenSpaceOverlay",
+    "enabled": true,
+    "sortingOrder": 10,
+    "overrideSorting": false,
+    "pixelPerfect": false,
+    "planeDistance": 100.0,
+    "sortingLayerID": 0,
+    "camera": null
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "HintCanvas",
+    "namespace": "Nekki.SF2.GUI.Common",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_hintBoxWidth": 700.0,
+     "_hintBoxHeight": 200.0,
+     "_timeToHide": 10.0,
+     "_hintBoxPrefab": {
+      "type": "GameObject",
+      "path": "HintBox"
+     }
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "GraphicRaycaster",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI",
+    "enabled": true,
+    "fields": {
+     "m_IgnoreReversedGraphics": 1,
+     "m_BlockingObjects": 0,
+     "m_BlockingMask": {
+      "m_Bits": 4294967295
+     }
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "CanvasScaler",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI",
+    "enabled": true,
+    "ui": {
+     "uiScaleMode": "ScaleWithScreenSize",
+     "referenceResolution": [
+      800.0,
+      1536.0
+     ],
+     "screenMatchMode": "MatchWidthOrHeight",
+     "matchWidthOrHeight": 1.0,
+     "scaleFactor": 1.0,
+     "referencePixelsPerUnit": 100.0
+    },
+    "fields": {
+     "m_UiScaleMode": 1,
+     "m_ReferencePixelsPerUnit": 100.0,
+     "m_ScaleFactor": 1.0,
+     "m_ReferenceResolution": {
+      "x": 800.0,
+      "y": 1536.0
+     },
+     "m_ScreenMatchMode": 0,
+     "m_MatchWidthOrHeight": 1.0,
+     "m_PhysicalUnit": 3,
+     "m_FallbackScreenDPI": 96.0,
+     "m_DefaultSpriteDPI": 96.0,
+     "m_DynamicPixelsPerUnit": 1.0,
+     "m_PresetInfoIsWorld": 0
+    }
+   },
+   {
+    "type": "CanvasGroup",
+    "alpha": 1.0,
+    "interactable": true,
+    "blocksRaycasts": true,
+    "ignoreParentGroups": false
+   }
+  ]
+ }
+}

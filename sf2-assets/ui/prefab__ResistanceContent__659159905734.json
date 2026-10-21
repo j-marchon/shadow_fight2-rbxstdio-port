@@ -1,0 +1,1187 @@
+{
+ "source": "659159905734b497da6f6099671accaa",
+ "pathID": 18,
+ "root": {
+  "name": "ResistanceContent",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.0,
+    0.0
+   ],
+   "anchorMax": [
+    0.0,
+    0.0
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    0.0,
+    0.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "VerticalLayoutGroup",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI",
+    "enabled": true,
+    "ui": {
+     "layout": "VerticalLayoutGroup",
+     "padding": {
+      "left": 0,
+      "right": 0,
+      "top": 0,
+      "bottom": 0
+     },
+     "childAlignment": "MiddleCenter",
+     "spacing": 0.0,
+     "childControlWidth": 0,
+     "childControlHeight": 1,
+     "childForceExpandWidth": 0,
+     "childForceExpandHeight": 0,
+     "childScaleWidth": 0,
+     "childScaleHeight": 0,
+     "reverseArrangement": 0
+    },
+    "fields": {
+     "m_Padding": {
+      "m_Left": 0,
+      "m_Right": 0,
+      "m_Top": 0,
+      "m_Bottom": 0
+     },
+     "m_ChildAlignment": 4,
+     "m_Spacing": 0.0,
+     "m_ChildForceExpandWidth": 0,
+     "m_ChildForceExpandHeight": 0,
+     "m_ChildControlWidth": 0,
+     "m_ChildControlHeight": 1,
+     "m_ChildScaleWidth": 0,
+     "m_ChildScaleHeight": 0,
+     "m_ReverseArrangement": 0
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "ResistanceContent",
+    "namespace": "Nekki.SF2.GUI.Fight",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_buttonOk": {
+      "type": "LabelButton",
+      "path": "ResistanceContent/ButtonGroup/LabelButton"
+     },
+     "ProgressBar": {
+      "type": "ResistanceProgressBar",
+      "path": "ResistanceContent/ResistanceGroup/Progress"
+     },
+     "CloseEvent": {
+      "m_PersistentCalls": {
+       "m_Calls": []
+      }
+     }
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "ResistanceGroup",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      1.0
+     ],
+     "anchorMax": [
+      0.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      -400.0
+     ],
+     "sizeDelta": [
+      680.0,
+      800.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "LayoutElement",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "IgnoreLayout": 0,
+       "MinWidth": 680.0,
+       "MinHeight": 800.0,
+       "PreferredWidth": -1.0,
+       "PreferredHeight": -1.0,
+       "FlexibleWidth": -1.0,
+       "FlexibleHeight": -1.0
+      },
+      "fields": {
+       "m_IgnoreLayout": 0,
+       "m_MinWidth": 680.0,
+       "m_MinHeight": 800.0,
+       "m_PreferredWidth": -1.0,
+       "m_PreferredHeight": -1.0,
+       "m_FlexibleWidth": -1.0,
+       "m_FlexibleHeight": -1.0,
+       "m_LayoutPriority": 1
+      }
+     }
+    ],
+    "children": [
+     {
+      "name": "Progress",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        680.0,
+        36.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResistanceProgressBar",
+        "namespace": "",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "Background": {
+          "type": "ResolutionImage",
+          "path": "ResistanceContent/ResistanceGroup/Progress/Background"
+         },
+         "Stripe": {
+          "type": "ResolutionImage",
+          "path": "ResistanceContent/ResistanceGroup/Progress/BarYellow"
+         },
+         "StripeAhead": {
+          "type": "ResolutionImage",
+          "path": "ResistanceContent/ResistanceGroup/Progress/BarWhite"
+         }
+        }
+       }
+      ],
+      "children": [
+       {
+        "name": "Background",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.0,
+          0.0
+         ],
+         "anchorMax": [
+          1.0,
+          1.0
+         ],
+         "anchoredPosition": [
+          0.0,
+          0.0
+         ],
+         "sizeDelta": [
+          0.0,
+          0.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionImage",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Image",
+           "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+           ],
+           "raycastTarget": true,
+           "runtimeSprites": {
+            "SpriteName": {
+             "name": "ImmunityBars.black",
+             "texture": "ImmunityBars",
+             "resourcesPath": "UI/Atlases/",
+             "resolved": true
+            }
+           },
+           "sprite": "ImmunityBars.black",
+           "texture": "ImmunityBars",
+           "spriteSource": "runtime:_SpriteName",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "ImmunityBars.black",
+            "texture": "ImmunityBars",
+            "pack": "ZONE_1",
+            "png": "tex/ZONE_1/ImmunityBars.png",
+            "textureRectTopLeft": [
+             1,
+             1,
+             680,
+             36
+            ],
+            "pivot": [
+             0.0,
+             0.0
+            ],
+            "source": "sprites.json (bundle)"
+           },
+           "type": "simple",
+           "preserveAspect": false,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 1,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": null,
+           "m_Type": 0,
+           "m_PreserveAspect": 0,
+           "m_FillCenter": 1,
+           "m_FillMethod": 4,
+           "m_FillAmount": 1.0,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0,
+           "_TexturePath": "UI/Atlases/",
+           "_SpriteName": "ImmunityBars.black"
+          }
+         }
+        ]
+       },
+       {
+        "name": "BarWhite",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.0,
+          0.0
+         ],
+         "anchorMax": [
+          1.0,
+          1.0
+         ],
+         "anchoredPosition": [
+          0.0,
+          0.0001
+         ],
+         "sizeDelta": [
+          0.0,
+          0.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionImage",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Image",
+           "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+           ],
+           "raycastTarget": true,
+           "runtimeSprites": {
+            "SpriteName": {
+             "name": "ImmunityBars.white",
+             "texture": "ImmunityBars",
+             "resourcesPath": "UI/Atlases/",
+             "resolved": true
+            }
+           },
+           "sprite": "ImmunityBars.white",
+           "texture": "ImmunityBars",
+           "spriteSource": "runtime:_SpriteName",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "ImmunityBars.white",
+            "texture": "ImmunityBars",
+            "pack": "ZONE_1",
+            "png": "tex/ZONE_1/ImmunityBars.png",
+            "textureRectTopLeft": [
+             683,
+             39,
+             680,
+             36
+            ],
+            "pivot": [
+             0.0,
+             0.0
+            ],
+            "source": "sprites.json (bundle)"
+           },
+           "type": "filled",
+           "preserveAspect": false,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0,
+           "fillMethod": "horizontal",
+           "fillAmount": 0.5,
+           "fillOrigin": 0,
+           "fillClockwise": true
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 1,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": null,
+           "m_Type": 3,
+           "m_PreserveAspect": 0,
+           "m_FillCenter": 1,
+           "m_FillMethod": 0,
+           "m_FillAmount": 0.5,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0,
+           "_TexturePath": "UI/Atlases/",
+           "_SpriteName": "ImmunityBars.white"
+          }
+         }
+        ]
+       },
+       {
+        "name": "BarYellow",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.0,
+          0.0
+         ],
+         "anchorMax": [
+          1.0,
+          1.0
+         ],
+         "anchoredPosition": [
+          0.0,
+          0.0
+         ],
+         "sizeDelta": [
+          0.0,
+          0.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionImage",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Image",
+           "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+           ],
+           "raycastTarget": true,
+           "runtimeSprites": {
+            "SpriteName": {
+             "name": "ImmunityBars.yellow",
+             "texture": "ImmunityBars",
+             "resourcesPath": "UI/Atlases/",
+             "resolved": true
+            }
+           },
+           "sprite": "ImmunityBars.yellow",
+           "texture": "ImmunityBars",
+           "spriteSource": "runtime:_SpriteName",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "ImmunityBars.yellow",
+            "texture": "ImmunityBars",
+            "pack": "ZONE_1",
+            "png": "tex/ZONE_1/ImmunityBars.png",
+            "textureRectTopLeft": [
+             1365,
+             39,
+             680,
+             36
+            ],
+            "pivot": [
+             0.0,
+             0.0
+            ],
+            "source": "sprites.json (bundle)"
+           },
+           "type": "filled",
+           "preserveAspect": false,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0,
+           "fillMethod": "horizontal",
+           "fillAmount": 0.45,
+           "fillOrigin": 0,
+           "fillClockwise": true
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 1,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": null,
+           "m_Type": 3,
+           "m_PreserveAspect": 0,
+           "m_FillCenter": 1,
+           "m_FillMethod": 0,
+           "m_FillAmount": 0.45,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0,
+           "_TexturePath": "UI/Atlases/",
+           "_SpriteName": "ImmunityBars.yellow"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Label",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        -80.0
+       ],
+       "sizeDelta": [
+        800.0,
+        100.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "LabelAlias",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Text",
+         "color": [
+          1.0,
+          0.9412,
+          0.7294,
+          1.0
+         ],
+         "raycastTarget": false,
+         "text": "Иммунитет",
+         "font": "AGOpusBold",
+         "fontSize": 55,
+         "fontStyle": "Normal",
+         "alignment": "MiddleCenter",
+         "bestFit": true,
+         "minSize": 0,
+         "maxSize": 55,
+         "richText": true,
+         "horizontalOverflow": "Wrap",
+         "verticalOverflow": "Overflow",
+         "lineSpacing": 1.15,
+         "locKey": "challenge_immunity",
+         "toUpperCase": false,
+         "useLocalizationFont": true,
+         "fontType": 0,
+         "labelFontSize": 80
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 0.9412,
+          "b": 0.7294,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_FontData": {
+          "m_Font": {
+           "type": "Font",
+           "name": "AGOpusBold",
+           "file": "sharedassets0.assets"
+          },
+          "m_FontSize": 55,
+          "m_FontStyle": 0,
+          "m_BestFit": 1,
+          "m_MinSize": 0,
+          "m_MaxSize": 55,
+          "m_Alignment": 4,
+          "m_AlignByGeometry": 1,
+          "m_RichText": 1,
+          "m_HorizontalOverflow": 0,
+          "m_VerticalOverflow": 1,
+          "m_LineSpacing": 1.15
+         },
+         "m_Text": "Иммунитет",
+         "GlyphPrefabs": [],
+         "ForceUseAlignedBestFit": 0,
+         "ForbiddenUseAlignedBestFit": 0,
+         "FitImageLineHeightParam": {
+          "ScaleMaxLineHeightFactor": 1.0,
+          "ApplyToSingleLine": 0,
+          "Enabled": 0
+         },
+         "_useLocalizationFont": 1,
+         "_fontType": 0,
+         "_useLabelFontSize": 1,
+         "_labelFontSize": 80,
+         "_useLabelLineSpacing": 0,
+         "_labelLineSpacing": 0.0,
+         "_Alias": "challenge_immunity",
+         "_ToUpperCase": 0
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "ButtonGroup",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      1.0
+     ],
+     "anchorMax": [
+      0.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      -900.0
+     ],
+     "sizeDelta": [
+      486.0,
+      200.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "LayoutElement",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "IgnoreLayout": 0,
+       "MinWidth": 486.0,
+       "MinHeight": 200.0,
+       "PreferredWidth": -1.0,
+       "PreferredHeight": -1.0,
+       "FlexibleWidth": -1.0,
+       "FlexibleHeight": -1.0
+      },
+      "fields": {
+       "m_IgnoreLayout": 0,
+       "m_MinWidth": 486.0,
+       "m_MinHeight": 200.0,
+       "m_PreferredWidth": -1.0,
+       "m_PreferredHeight": -1.0,
+       "m_FlexibleWidth": -1.0,
+       "m_FlexibleHeight": -1.0,
+       "m_LayoutPriority": 1
+      }
+     }
+    ],
+    "children": [
+     {
+      "name": "LabelButton",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        486.0,
+        112.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImage",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": true,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "CommonButtons.BtnWhite",
+           "texture": "CommonButtons",
+           "resourcesPath": "UI/Atlases/",
+           "resolved": true
+          }
+         },
+         "sprite": "CommonButtons.BtnWhite",
+         "texture": "CommonButtons",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "CommonButtons.BtnWhite",
+          "file": "c38a3bb941bda4c2fba419692e1b5071",
+          "texture": "CommonButtons",
+          "textureSize": [
+           512,
+           1024
+          ],
+          "png": "tex/APK/CommonButtons.png",
+          "textureRect": [
+           205.0,
+           680.0,
+           200.0,
+           112.0
+          ],
+          "rect": [
+           205.0,
+           680.0,
+           200.0,
+           112.0
+          ],
+          "border": [
+           99.0,
+           0.0,
+           99.0,
+           0.0
+          ],
+          "pivot": [
+           0.5,
+           0.5
+          ],
+          "ppu": 100.0
+         },
+         "type": "sliced",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 1,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 1,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "UI/Atlases/",
+         "_SpriteName": "CommonButtons.BtnWhite"
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "LabelButton",
+        "namespace": "",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Button",
+         "runtimeSprites": {
+          "normalSpriteName": {
+           "name": "CommonButtons.BtnWhite",
+           "texture": "CommonButtons",
+           "resourcesPath": "UI/Atlases/",
+           "resolved": true
+          }
+         },
+         "interactable": true,
+         "transition": "ColorTint",
+         "targetGraphic": {
+          "type": "ResolutionImage",
+          "path": "ResistanceContent/ButtonGroup/LabelButton"
+         },
+         "colors": {
+          "m_NormalColor": [
+           1.0,
+           1.0,
+           1.0,
+           1.0
+          ],
+          "m_HighlightedColor": [
+           0.9608,
+           0.9608,
+           0.9608,
+           1.0
+          ],
+          "m_PressedColor": [
+           0.7843,
+           0.7843,
+           0.7843,
+           1.0
+          ],
+          "m_SelectedColor": [
+           0.9608,
+           0.9608,
+           0.9608,
+           1.0
+          ],
+          "m_DisabledColor": [
+           0.7843,
+           0.7843,
+           0.7843,
+           0.502
+          ],
+          "m_ColorMultiplier": 1.0,
+          "m_FadeDuration": 0.1
+         },
+         "onClick": [
+          {
+           "target": null,
+           "method": "OnTryItemButtonClick",
+           "arg": null
+          }
+         ]
+        },
+        "fields": {
+         "m_Navigation": {
+          "m_Mode": 3,
+          "m_WrapAround": 0,
+          "m_SelectOnUp": null,
+          "m_SelectOnDown": null,
+          "m_SelectOnLeft": null,
+          "m_SelectOnRight": null
+         },
+         "m_Transition": 1,
+         "m_Colors": {
+          "m_NormalColor": {
+           "r": 1.0,
+           "g": 1.0,
+           "b": 1.0,
+           "a": 1.0
+          },
+          "m_HighlightedColor": {
+           "r": 0.9608,
+           "g": 0.9608,
+           "b": 0.9608,
+           "a": 1.0
+          },
+          "m_PressedColor": {
+           "r": 0.7843,
+           "g": 0.7843,
+           "b": 0.7843,
+           "a": 1.0
+          },
+          "m_SelectedColor": {
+           "r": 0.9608,
+           "g": 0.9608,
+           "b": 0.9608,
+           "a": 1.0
+          },
+          "m_DisabledColor": {
+           "r": 0.7843,
+           "g": 0.7843,
+           "b": 0.7843,
+           "a": 0.502
+          },
+          "m_ColorMultiplier": 1.0,
+          "m_FadeDuration": 0.1
+         },
+         "m_SpriteState": {
+          "m_HighlightedSprite": null,
+          "m_PressedSprite": null,
+          "m_SelectedSprite": null,
+          "m_DisabledSprite": null
+         },
+         "m_AnimationTriggers": {
+          "m_NormalTrigger": "Normal",
+          "m_HighlightedTrigger": "Highlighted",
+          "m_PressedTrigger": "Pressed",
+          "m_SelectedTrigger": "Highlighted",
+          "m_DisabledTrigger": "Disabled"
+         },
+         "m_Interactable": 1,
+         "m_TargetGraphic": {
+          "type": "ResolutionImage",
+          "path": "ResistanceContent/ButtonGroup/LabelButton"
+         },
+         "m_OnClick": {
+          "m_PersistentCalls": {
+           "m_Calls": [
+            {
+             "m_Target": null,
+             "m_TargetAssemblyTypeName": "",
+             "m_MethodName": "OnTryItemButtonClick",
+             "m_Mode": 1,
+             "m_Arguments": {
+              "m_ObjectArgument": null,
+              "m_ObjectArgumentAssemblyTypeName": "UnityEngine.Object, UnityEngine",
+              "m_IntArgument": 0,
+              "m_FloatArgument": 0.0,
+              "m_StringArgument": "",
+              "m_BoolArgument": 0
+             },
+             "m_CallState": 2
+            }
+           ]
+          }
+         },
+         "FlashingImage": null,
+         "_EnableClickAnimation": 1,
+         "_glowSprite": null,
+         "_WaitBeforeClick": 1,
+         "IsOneShot": 0,
+         "_glowTime": 0.0,
+         "ButtonId": -1,
+         "_normalTexturePath": "UI/Atlases/",
+         "_normalSpriteName": "CommonButtons.BtnWhite",
+         "_disabledTexturePath": "",
+         "_disabledSpriteName": "",
+         "_highlightedTexturePath": "",
+         "_highlightedSpriteName": "",
+         "_pressedTexturePath": "",
+         "_pressedSpriteName": "",
+         "_textInvolvedTintTransaction": 0,
+         "Label": {
+          "type": "LabelAlias",
+          "path": "ResistanceContent/ButtonGroup/LabelButton/Text"
+         },
+         "_Control": -1,
+         "_ControlPriority": 0,
+         "_TrackingDeviceID": -1,
+         "_Layout": null,
+         "_Hint": null
+        }
+       }
+      ],
+      "children": [
+       {
+        "name": "Text",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.0,
+          0.0
+         ],
+         "anchorMax": [
+          1.0,
+          1.0
+         ],
+         "anchoredPosition": [
+          0.0,
+          -3.0
+         ],
+         "sizeDelta": [
+          -110.0,
+          -6.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "LabelAlias",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Text",
+           "color": [
+            0.1843,
+            0.1451,
+            0.1059,
+            1.0
+           ],
+           "raycastTarget": false,
+           "text": "ОК",
+           "font": "AGOpusBold",
+           "fontSize": 75,
+           "fontStyle": "Normal",
+           "alignment": "MiddleCenter",
+           "bestFit": true,
+           "minSize": 0,
+           "maxSize": 75,
+           "richText": true,
+           "horizontalOverflow": "Wrap",
+           "verticalOverflow": "Overflow",
+           "lineSpacing": 1.15,
+           "locKey": "OK",
+           "toUpperCase": false,
+           "useLocalizationFont": true,
+           "fontType": 0,
+           "labelFontSize": 110
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 0.1843,
+            "g": 0.1451,
+            "b": 0.1059,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 0,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_FontData": {
+            "m_Font": {
+             "type": "Font",
+             "name": "AGOpusBold",
+             "file": "sharedassets0.assets"
+            },
+            "m_FontSize": 75,
+            "m_FontStyle": 0,
+            "m_BestFit": 1,
+            "m_MinSize": 0,
+            "m_MaxSize": 75,
+            "m_Alignment": 4,
+            "m_AlignByGeometry": 0,
+            "m_RichText": 1,
+            "m_HorizontalOverflow": 0,
+            "m_VerticalOverflow": 1,
+            "m_LineSpacing": 1.15
+           },
+           "m_Text": "ОК",
+           "GlyphPrefabs": [],
+           "ForceUseAlignedBestFit": 0,
+           "ForbiddenUseAlignedBestFit": 0,
+           "FitImageLineHeightParam": {
+            "ScaleMaxLineHeightFactor": 1.0,
+            "ApplyToSingleLine": 0,
+            "Enabled": 0
+           },
+           "_useLocalizationFont": 1,
+           "_fontType": 0,
+           "_useLabelFontSize": 1,
+           "_labelFontSize": 110,
+           "_useLabelLineSpacing": 0,
+           "_labelLineSpacing": 0.0,
+           "_Alias": "OK",
+           "_ToUpperCase": 0
+          }
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,3656 @@
+[
+ {
+  "name": "AchievementCell",
+  "source": "5c78a412a30c74386aa515b4ad5ce9eb",
+  "pathID": 25,
+  "nodes": 11,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.Profile.AchievementCell",
+   "Nekki.SF2.GUI.Profile.AchievementSubItem",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "ProgressBar"
+  ],
+  "json": "prefab__AchievementCell__5c78a412a30c.json"
+ },
+ {
+  "name": "AchievementMessage",
+  "source": "4d1fd5be15b33024cb31d642043f7e60",
+  "pathID": 10,
+  "nodes": 5,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Common.Achievements.AchievementMessage",
+   "Nekki.SF2.GUI.LabelAliasLE",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__AchievementMessage__4d1fd5be15b3.json"
+ },
+ {
+  "name": "AchievementMessagesManager",
+  "source": "b8acc814e386342f9a0325a9796a14bf",
+  "pathID": 3,
+  "nodes": 1,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Common.Achievements.AchievementMessagesManager",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster"
+  ],
+  "json": "prefab__AchievementMessagesManager__b8acc814e386.json"
+ },
+ {
+  "name": "AchievmentISubtem",
+  "source": "376aa5f3438774efeabbf3f981d58d3e",
+  "pathID": 26,
+  "nodes": 10,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.Profile.AchievementSubItem",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "ProgressBar"
+  ],
+  "json": "prefab__AchievmentISubtem__376aa5f34387.json"
+ },
+ {
+  "name": "ActivePerkItemContainer",
+  "source": "109717f14952b124fbabf7d4821923b1",
+  "pathID": 3,
+  "nodes": 1,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.ActivePerkItemContainer"
+  ],
+  "json": "prefab__ActivePerkItemContainer__109717f14952.json"
+ },
+ {
+  "name": "ActivePerkItem",
+  "source": "19577770dbb41a74f99d89a7eb404d15",
+  "pathID": 10,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.ActivePerkItem",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__ActivePerkItem__19577770dbb4.json"
+ },
+ {
+  "name": "ActivePerkModel",
+  "source": "27767763782dca148a67face01b44c29",
+  "pathID": 3,
+  "nodes": 1,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.ActivePerkModel"
+  ],
+  "json": "prefab__ActivePerkModel__27767763782d.json"
+ },
+ {
+  "name": "ArrowCanvas",
+  "source": "a15f0c8d69b724b63b1e89369adef1d1",
+  "pathID": 8,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Tutorial.Arrow",
+   "Nekki.SF2.GUI.Tutorial.ArrowCanvas",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster"
+  ],
+  "json": "prefab__ArrowCanvas__a15f0c8d69b7.json"
+ },
+ {
+  "name": "BattleButton",
+  "source": "502c9c4c4dbda4df2aba00ae9cae86b8",
+  "pathID": 6,
+  "nodes": 2,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.Map.BattleButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Tutorial.TutorialNode"
+  ],
+  "json": "prefab__BattleButton__502c9c4c4dbd.json"
+ },
+ {
+  "name": "BattlePassRewardCell",
+  "source": "b582471f5457a084dbcd812327db1eab",
+  "pathID": 24,
+  "nodes": 11,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.Profile.BattlePassRewardCell",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.TextDebugger",
+   "NonDrawingGraphic",
+   "SFButton",
+   "UnityEngine.UI.HorizontalLayoutGroup"
+  ],
+  "json": "prefab__BattlePassRewardCell__b582471f5457.json"
+ },
+ {
+  "name": "BattlePrizeElement",
+  "source": "afb5bea72e366493683094bf0cc365b1",
+  "pathID": 7,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.Map.BattlePrizeElement",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.ContentSizeFitter",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__BattlePrizeElement__afb5bea72e36.json"
+ },
+ {
+  "name": "BattleRaidCell",
+  "source": "fb9ff246f8aee5b4982542f5eb8e17bc",
+  "pathID": 12,
+  "nodes": 6,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.BattleRaidCell",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic"
+  ],
+  "json": "prefab__BattleRaidCell__fb9ff246f8ae.json"
+ },
+ {
+  "name": "BuildInfoUI",
+  "source": "4a57386d902244b88aed5ed275599625",
+  "pathID": 4,
+  "nodes": 2,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.DebugModules.BuildInfoUI",
+   "UnityEngine.UI.Text"
+  ],
+  "json": "prefab__BuildInfoUI__4a57386d9022.json"
+ },
+ {
+  "name": "BuyConsContainerCell",
+  "source": "7d25300329c4fed48a987aa9d816f056",
+  "pathID": 22,
+  "nodes": 10,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.BuyConsContainerCell",
+   "Nekki.SF2.GUI.InfoButton",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic"
+  ],
+  "json": "prefab__BuyConsContainerCell__7d25300329c4.json"
+ },
+ {
+  "name": "BuyConsContainer",
+  "source": "5fd95e880159c914ca07ff6b0c094ec5",
+  "pathID": 73,
+  "nodes": 27,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.BuyConsContainer",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.SimpleScroll",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "Nekki.SF2.GUI.Tutorial.TutorialNode",
+   "NonDrawingGraphic",
+   "SFButton",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__BuyConsContainer__5fd95e880159.json"
+ },
+ {
+  "name": "ChatMessageView",
+  "source": "9ed4d06f4c2423b41956413cbc136e8d",
+  "pathID": 9,
+  "nodes": 8,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.ChatMessageView",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Scripts.EditBox",
+   "Nekki.SF2.GUI.SimpleScroll",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.Text",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__ChatMessageView__9ed4d06f4c24.json"
+ },
+ {
+  "name": "CheatsPanel",
+  "source": "1ee031e25d14c35428caf151d6f348b6",
+  "pathID": 42,
+  "nodes": 17,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Shop.CheatsPanel",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__CheatsPanel__1ee031e25d14.json"
+ },
+ {
+  "name": "CheckTicketsDialog",
+  "source": "6bca4dbc6173f49fd8356345d591a3c5",
+  "pathID": 63,
+  "nodes": 34,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Dialogs.CheckTicketsDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.ResolutionImageAvatar",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.Text"
+  ],
+  "json": "prefab__CheckTicketsDialog__6bca4dbc6173.json"
+ },
+ {
+  "name": "ChooseBuyItemDialog",
+  "source": "a630258a3c2526c47924ef39ac42dd29",
+  "pathID": 76,
+  "nodes": 32,
+  "monoBehaviours": [
+   "CloseButton",
+   "Nekki.SF2.GUI.BaseScrollContent",
+   "Nekki.SF2.GUI.Dialogs.ChooseBuyItemDialog",
+   "Nekki.SF2.GUI.ItemsScroll",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Shop.InfoPanelContent",
+   "Nekki.SF2.GUI.Shop.ParametersPanel",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.Mask",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__ChooseBuyItemDialog__a630258a3c25.json"
+ },
+ {
+  "name": "ClanEditDialog",
+  "source": "9a45d3d8c0cbae845946aa2381eab129",
+  "pathID": 30,
+  "nodes": 13,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.ClanEditDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__ClanEditDialog__9a45d3d8c0cb.json"
+ },
+ {
+  "name": "ClanJoinInfoView",
+  "source": "6e3957a1e81e64644929cad16eba975c",
+  "pathID": 9,
+  "nodes": 8,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.ClanJoinInfoView",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__ClanJoinInfoView__6e3957a1e81e.json"
+ },
+ {
+  "name": "ClanLevelInfoCell",
+  "source": "27fdc640b432b974386705d6f45461c7",
+  "pathID": 13,
+  "nodes": 6,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.ClanLevelInfoCell",
+   "Nekki.SF2.GUI.LabelAlias",
+   "UnityEngine.UI.Image"
+  ],
+  "json": "prefab__ClanLevelInfoCell__27fdc640b432.json"
+ },
+ {
+  "name": "ClanLogoColorCell",
+  "source": "a767d193223f4a947b1144da0f0bf81b",
+  "pathID": 12,
+  "nodes": 5,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.ClanLogoAttributeColorCell",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic"
+  ],
+  "json": "prefab__ClanLogoColorCell__a767d193223f.json"
+ },
+ {
+  "name": "ClanLogoImageCell",
+  "source": "8439e0a96cd898142987bf83193c344b",
+  "pathID": 7,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.ClanLogoAttributeImageCell",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic"
+  ],
+  "json": "prefab__ClanLogoImageCell__8439e0a96cd8.json"
+ },
+ {
+  "name": "ClanLogoImage",
+  "source": "bdb957d5677d0cc429c4e8164063e15a",
+  "pathID": 15,
+  "nodes": 7,
+  "monoBehaviours": [
+   "ClanLogoImage",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__ClanLogoImage__bdb957d5677d.json"
+ },
+ {
+  "name": "ClanProfileWidget",
+  "source": "762e5d8cefd6fa849b355803aaa4e23f",
+  "pathID": 100,
+  "nodes": 57,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.ClanLogoAttributeContainer",
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.ClanLogoMakerWidget",
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.ClanProfileWidget",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Scripts.CheckBox",
+   "Nekki.SF2.GUI.Scripts.EditBox",
+   "Nekki.SF2.GUI.SimpleScroll",
+   "NonDrawingGraphic",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.Text"
+  ],
+  "json": "prefab__ClanProfileWidget__762e5d8cefd6.json"
+ },
+ {
+  "name": "ClanQuickRaidAccessView",
+  "source": "03753a7d5ec34974fa284c4330a84731",
+  "pathID": 5,
+  "nodes": 4,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.ClanQuickRaidAccessView",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__ClanQuickRaidAccessView__03753a7d5ec3.json"
+ },
+ {
+  "name": "ClanRaidPartyDialog",
+  "source": "d39f3b39b34ce794db9a026d93421c9b",
+  "pathID": 65,
+  "nodes": 30,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.ClanRaidPartyDialog",
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.ClanRaidPartyTable",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.SimpleScroll",
+   "NonDrawingGraphic",
+   "ProgressBar",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__ClanRaidPartyDialog__d39f3b39b34c.json"
+ },
+ {
+  "name": "ClanRaidPartyPlayerCell",
+  "source": "c35cb6e8343ef1e4b936a228c8c588ea",
+  "pathID": 23,
+  "nodes": 9,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.ClanRaidPartyPlayerCell",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "SFButton"
+  ],
+  "json": "prefab__ClanRaidPartyPlayerCell__c35cb6e8343e.json"
+ },
+ {
+  "name": "CloseButton",
+  "source": "4d87d06d9d669344888a8c73960dbe0c",
+  "pathID": 3,
+  "nodes": 1,
+  "monoBehaviours": [
+   "CloseButton",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__CloseButton__4d87d06d9d66.json"
+ },
+ {
+  "name": "ComboItem",
+  "source": "e834d1c7452cdd44ca2058ee3605e4f1",
+  "pathID": 8,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.ComboItem",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.Outline"
+  ],
+  "json": "prefab__ComboItem__e834d1c7452c.json"
+ },
+ {
+  "name": "ComboModel",
+  "source": "2d2dfabb27f08734c8682bb8cb53ac0c",
+  "pathID": 3,
+  "nodes": 1,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.ComboModel"
+  ],
+  "json": "prefab__ComboModel__2d2dfabb27f0.json"
+ },
+ {
+  "name": "ConsoleUITextEntry",
+  "source": "3bc7db0244aa24a4da356674d6b7458e",
+  "pathID": 4,
+  "nodes": 1,
+  "monoBehaviours": [
+   "UnityEngine.UI.Text"
+  ],
+  "json": "prefab__ConsoleUITextEntry__3bc7db0244aa.json"
+ },
+ {
+  "name": "ConsoleUI",
+  "source": "57e931935e79242b48f454c7b86c5485",
+  "pathID": 117,
+  "nodes": 57,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.DebugModules.ConsoleUI",
+   "Nekki.SF2.GUI.Scripts.PlatformDependentElements",
+   "UnityEngine.EventSystems.EventTrigger",
+   "UnityEngine.UI.Button",
+   "UnityEngine.UI.ContentSizeFitter",
+   "UnityEngine.UI.GridLayoutGroup",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.InputField",
+   "UnityEngine.UI.Mask",
+   "UnityEngine.UI.ScrollRect",
+   "UnityEngine.UI.Scrollbar",
+   "UnityEngine.UI.Text",
+   "UnityEngine.UI.Toggle",
+   "UnityEngine.UI.ToggleGroup",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__ConsoleUI__57e931935e79.json"
+ },
+ {
+  "name": "CreateClanDialog",
+  "source": "65ebd66d525905a4ea2d792391f7eeb3",
+  "pathID": 22,
+  "nodes": 13,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.CreateClanDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__CreateClanDialog__65ebd66d5259.json"
+ },
+ {
+  "name": "CreateClanRaidDialog",
+  "source": "ccabf219ffd787843b212f662e3abbf1",
+  "pathID": 81,
+  "nodes": 44,
+  "monoBehaviours": [
+   "EZCameraShake.CameraShaker",
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.BattleRaidSlider",
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.CreateClanRaidDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Scripts.CheckBox",
+   "Nekki.SF2.GUI.SimpleScroll",
+   "NonDrawingGraphic",
+   "SFButton",
+   "UnityEngine.UI.ContentSizeFitter",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.RectMask2D"
+  ],
+  "json": "prefab__CreateClanRaidDialog__ccabf219ffd7.json"
+ },
+ {
+  "name": "CreateRaidHintBox",
+  "source": "ed55de291175a0440bcf14a62308a52d",
+  "pathID": 11,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.HintBoxAutoKilled",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__CreateRaidHintBox__ed55de291175.json"
+ },
+ {
+  "name": "CreditsScreenElement",
+  "source": "c0455f718e2e84c41971e1f770732ccc",
+  "pathID": 6,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Common.Credits.CreditsScreenElement",
+   "Nekki.SF2.GUI.LabelAlias",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__CreditsScreenElement__c0455f718e2e.json"
+ },
+ {
+  "name": "CreditsScreen",
+  "source": "5a8d836fa34886d428e86053baf5b09d",
+  "pathID": 20,
+  "nodes": 11,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Common.Credits.CreditsScreen",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.ContentSizeFitter",
+   "UnityEngine.UI.GraphicRaycaster",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.ScrollRect",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__CreditsScreen__5a8d836fa348.json"
+ },
+ {
+  "name": "CriticalErrorDialog",
+  "source": "e8f87a9f3648a364e9430d109e42e658",
+  "pathID": 21,
+  "nodes": 9,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.CriticalErrorDialog",
+   "UnityEngine.UI.Button",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.Mask",
+   "UnityEngine.UI.RawImage",
+   "UnityEngine.UI.ScrollRect",
+   "UnityEngine.UI.Text"
+  ],
+  "json": "prefab__CriticalErrorDialog__e8f87a9f3648.json"
+ },
+ {
+  "name": "CurrencyReward",
+  "source": "08a38552dbde146529f30fe14ca9564e",
+  "pathID": 7,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.CurrencyReward",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__CurrencyReward__08a38552dbde.json"
+ },
+ {
+  "name": "DIalogTMPTest",
+  "source": "f5bd69bb14ed8dc47b6dd2f1acef96de",
+  "pathID": 108,
+  "nodes": 58,
+  "monoBehaviours": [
+   "ButtonWithIcon",
+   "CloseButton",
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Dialogs.DialogTMPTest",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.ResolutionImageAvatar",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "ProgressBar",
+   "SFToggle",
+   "UIFigures.UICircle",
+   "UniRx.Triggers.ObservableDestroyTrigger",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__DIalogTMPTest__f5bd69bb14ed.json"
+ },
+ {
+  "name": "DebugCanvas",
+  "source": "2a3708ab103ea4f8bb6fd83db784145a",
+  "pathID": 3,
+  "nodes": 1,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.DebugUI",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster"
+  ],
+  "json": "prefab__DebugCanvas__2a3708ab103e.json"
+ },
+ {
+  "name": "DialogBtn",
+  "source": "703fadf8c3d55384fb8a0b6056bec8d2",
+  "pathID": 20,
+  "nodes": 7,
+  "monoBehaviours": [
+   "ButtonWithIcon",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "UniRx.Triggers.ObservableDestroyTrigger",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__DialogBtn__703fadf8c3d5.json"
+ },
+ {
+  "name": "DialogCanvas",
+  "source": "d03a5b8f7d9e54f8faca4d11e54a851f",
+  "pathID": 10,
+  "nodes": 6,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.DialogCanvasController",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster"
+  ],
+  "json": "prefab__DialogCanvas__d03a5b8f7d9e.json"
+ },
+ {
+  "name": "DisplayModel",
+  "source": "sharedassets0.assets",
+  "pathID": 89,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.DisplayModel",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.ResolutionImageAvatar",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__DisplayModel__sharedassets.json"
+ },
+ {
+  "name": "DownloadingScreen",
+  "source": "2d1e6637379534a46b2861abc90aeb71",
+  "pathID": 54,
+  "nodes": 21,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.DownloadingScreen",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Shop.Scroll",
+   "NonDrawingGraphic",
+   "ProgressBar",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__DownloadingScreen__2d1e66373795.json"
+ },
+ {
+  "name": "EnchantDialog",
+  "source": "c698e021f0b1a4e8cbb174e74833957a",
+  "pathID": 59,
+  "nodes": 25,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Dialogs.EnchantDialog",
+   "Nekki.SF2.GUI.Glyphs.ImageGlyph",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "UniRx.Triggers.ObservableDestroyTrigger",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__EnchantDialog__c698e021f0b1.json"
+ },
+ {
+  "name": "EndFightContent",
+  "source": "a82abf361f4a455468dbb50d570449d6",
+  "pathID": 58,
+  "nodes": 31,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Fight.EndFightContent",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.TextDebugger",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__EndFightContent__a82abf361f4a.json"
+ },
+ {
+  "name": "EndFightScreen",
+  "source": "cd0e2303bbd1b5b41bc9537dae670b2c",
+  "pathID": 12,
+  "nodes": 5,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.EndFightScreen",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.ResolutionImageLE",
+   "UnityEngine.UI.Button",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__EndFightScreen__cd0e2303bbd1.json"
+ },
+ {
+  "name": "EndRaidFinalFightScreen",
+  "source": "57a404821e996024a8ace0c0bf679ca2",
+  "pathID": 10,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.EndRaidFinalFightScreen",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__EndRaidFinalFightScreen__57a404821e99.json"
+ },
+ {
+  "name": "EndRaidRoundFightScreen",
+  "source": "9c6e1c1717f55e0458faaabb0d63d3bc",
+  "pathID": 9,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.EndRaidRoundFightScreen",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__EndRaidRoundFightScreen__9c6e1c1717f5.json"
+ },
+ {
+  "name": "EnemiesScreen",
+  "source": "sharedassets0.assets",
+  "pathID": 95,
+  "nodes": 6,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.EnemiesScreen",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.HorizontalLayoutGroup"
+  ],
+  "json": "prefab__EnemiesScreen__sharedassets.json"
+ },
+ {
+  "name": "EnterScreen",
+  "source": "840a5ffc4473cf743867e3f6ba7e3ceb",
+  "pathID": 13,
+  "nodes": 5,
+  "monoBehaviours": [
+   "EnterScreen",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.Image"
+  ],
+  "json": "prefab__EnterScreen__840a5ffc4473.json"
+ },
+ {
+  "name": "EventDialog",
+  "source": "f25a14a126ed204439a509e3878e85d2",
+  "pathID": 39,
+  "nodes": 19,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.EventDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__EventDialog__f25a14a126ed.json"
+ },
+ {
+  "name": "ExitDialog",
+  "source": "a08c0822d8a184a5197926160021f6cd",
+  "pathID": 40,
+  "nodes": 22,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Dialogs.ExitDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__ExitDialog__a08c0822d8a1.json"
+ },
+ {
+  "name": "ExpAndMoneyLine",
+  "source": "7442f8b7ebe8fc043b85a7e977ce02c4",
+  "pathID": 18,
+  "nodes": 8,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.ExpAndMoneyLine",
+   "Nekki.SF2.GUI.Fight.IconAndText",
+   "Nekki.SF2.GUI.LabelAliasLE",
+   "Nekki.SF2.GUI.ResolutionImageLE",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__ExpAndMoneyLine__7442f8b7ebe8.json"
+ },
+ {
+  "name": "FPSMeter",
+  "source": "4f1d9dd26056846b8a06927494606494",
+  "pathID": 4,
+  "nodes": 2,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.DebugModules.FPSMeter",
+   "UnityEngine.UI.Text"
+  ],
+  "json": "prefab__FPSMeter__4f1d9dd26056.json"
+ },
+ {
+  "name": "FindClanCell",
+  "source": "91a01d6f99a8e084a92fff35ca2f7b12",
+  "pathID": 26,
+  "nodes": 14,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.FindClanCell",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "SFButton",
+   "UnityEngine.UI.Image"
+  ],
+  "json": "prefab__FindClanCell__91a01d6f99a8.json"
+ },
+ {
+  "name": "FindClanDialog",
+  "source": "8fb9c30b92f3b064a844ee3f32d70ed1",
+  "pathID": 51,
+  "nodes": 19,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.FindClanDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "ProgressBarMask",
+   "ProgressLabelButton",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.RectMask2D"
+  ],
+  "json": "prefab__FindClanDialog__8fb9c30b92f3.json"
+ },
+ {
+  "name": "FindClanWidget",
+  "source": "86b418d0180f43a4498d4e507a46fc6d",
+  "pathID": 63,
+  "nodes": 26,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.FindClanTable",
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.FindClanWidget",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Scripts.EditBox",
+   "Nekki.SF2.GUI.SimpleScroll",
+   "NonDrawingGraphic",
+   "ProgressBarMask",
+   "ProgressLabelButton",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.Text",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__FindClanWidget__86b418d0180f.json"
+ },
+ {
+  "name": "ForgeMaterialsContent",
+  "source": "97fc119ec7902d14a95291c3227a3060",
+  "pathID": 17,
+  "nodes": 9,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Fight.ForgeMaterialsContent",
+   "Nekki.SF2.GUI.Fight.RewardPanel",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__ForgeMaterialsContent__97fc119ec790.json"
+ },
+ {
+  "name": "GameController",
+  "source": "417ae4247a7074cffa8214cf1165bb6b",
+  "pathID": 56,
+  "nodes": 23,
+  "monoBehaviours": [
+   "Nekki.SF2.Core.Fights.Controls.ActionButtons",
+   "Nekki.SF2.Core.Fights.Controls.GameController",
+   "Nekki.SF2.Core.Fights.Controls.Stick",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ProgressButton",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__GameController__417ae4247a70.json"
+ },
+ {
+  "name": "GeneralPlayerInfoCell",
+  "source": "96e5e262048ae9845b8304fc5e5d5ad4",
+  "pathID": 16,
+  "nodes": 7,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.GeneralPlayerInfoCell",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "SFButton"
+  ],
+  "json": "prefab__GeneralPlayerInfoCell__96e5e262048a.json"
+ },
+ {
+  "name": "HintBox",
+  "source": "1ac2aec6cace5764299bee675ea4f146",
+  "pathID": 13,
+  "nodes": 5,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.HintBox",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__HintBox__1ac2aec6cace.json"
+ },
+ {
+  "name": "HintCanvas",
+  "source": "8ae56b5ab62654d81b40f308b3482f67",
+  "pathID": 3,
+  "nodes": 1,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Common.HintCanvas",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster"
+  ],
+  "json": "prefab__HintCanvas__8ae56b5ab626.json"
+ },
+ {
+  "name": "HintMemberRole",
+  "source": "44ca341e261ffa94d89334f8aea443bf",
+  "pathID": 11,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.HintBoxAutoKilled",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__HintMemberRole__44ca341e261f.json"
+ },
+ {
+  "name": "IconAndText",
+  "source": "75db7bd33be4e784289b45f1a0c53ebf",
+  "pathID": 8,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.IconAndText",
+   "Nekki.SF2.GUI.LabelAliasLE",
+   "Nekki.SF2.GUI.ResolutionImageLE",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__IconAndText__75db7bd33be4.json"
+ },
+ {
+  "name": "IconLabelButton",
+  "source": "7a4a41743706d2f4b87f7b0b5722279e",
+  "pathID": 15,
+  "nodes": 8,
+  "monoBehaviours": [
+   "IconLabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__IconLabelButton__7a4a41743706.json"
+ },
+ {
+  "name": "IndicatorFight",
+  "source": "437ac6d576de54cfe8dfd96d927084fc",
+  "pathID": 3,
+  "nodes": 1,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Map.IndicatorFight",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__IndicatorFight__437ac6d576de.json"
+ },
+ {
+  "name": "Indicator",
+  "source": "16f27255d29a44c3ba7ea2d67610fa54",
+  "pathID": 9,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Common.Indicator",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.Text"
+  ],
+  "json": "prefab__Indicator__16f27255d29a.json"
+ },
+ {
+  "name": "InfoBattle",
+  "source": "614278cdf9004411fba78d5f194dfa73",
+  "pathID": 331,
+  "nodes": 180,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Common.Hints.HintUI",
+   "Nekki.SF2.GUI.Common.SFButtonControlEventHandler",
+   "Nekki.SF2.GUI.Glyphs.ImageGlyph",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.Map.BattlePrize",
+   "Nekki.SF2.GUI.Map.ContentAscension",
+   "Nekki.SF2.GUI.Map.ContentBossesFinal",
+   "Nekki.SF2.GUI.Map.ContentClosed",
+   "Nekki.SF2.GUI.Map.ContentCompleteOrLocked",
+   "Nekki.SF2.GUI.Map.ContentDuel",
+   "Nekki.SF2.GUI.Map.ContentRaid",
+   "Nekki.SF2.GUI.Map.ContentSurvival",
+   "Nekki.SF2.GUI.Map.ContentTourChallBoss",
+   "Nekki.SF2.GUI.Map.DifficultyPanel",
+   "Nekki.SF2.GUI.Map.ImmunityPanel",
+   "Nekki.SF2.GUI.Map.IndicatorFight",
+   "Nekki.SF2.GUI.Map.InfoBattle",
+   "Nekki.SF2.GUI.Map.PrizePanel",
+   "Nekki.SF2.GUI.Map.ProgressBricksPanel",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.ResolutionImageAvatar",
+   "Nekki.SF2.GUI.ResolutionImageSkew",
+   "Nekki.SF2.GUI.Scripts.VersionDependentElements",
+   "Nekki.SF2.GUI.Shop.Scroll",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "Nekki.SF2.GUI.Tutorial.TutorialNode",
+   "NonDrawingGraphic",
+   "ProgressBar",
+   "RaidInfo",
+   "RaidInfoBattlePassRewards",
+   "RaidInfoPrize",
+   "RaidInfoTimeLeft",
+   "SFButton",
+   "UniRx.Triggers.ObservableDestroyTrigger",
+   "UnityEngine.UI.Button",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.Text",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__InfoBattle__614278cdf900.json"
+ },
+ {
+  "name": "InfoButton",
+  "source": "fb7691c2a9b6b15408c3aecee6e8bda7",
+  "pathID": 10,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.InfoButton",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__InfoButton__fb7691c2a9b6.json"
+ },
+ {
+  "name": "InfoPanelContent",
+  "source": "0e869ed0334505f438357995f441be51",
+  "pathID": 17,
+  "nodes": 9,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.BaseScrollContent",
+   "Nekki.SF2.GUI.ItemsScroll",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Shop.InfoPanelContent",
+   "Nekki.SF2.GUI.Shop.ParametersPanel",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.Mask",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__InfoPanelContent__0e869ed03345.json"
+ },
+ {
+  "name": "InputDialog",
+  "source": "73c6df5015f98ee4f9d1e19b3a27eb6b",
+  "pathID": 66,
+  "nodes": 25,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.InputDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Scripts.EditBox",
+   "Nekki.SF2.GUI.Shop.Scroll",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.Text",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__InputDialog__73c6df5015f9.json"
+ },
+ {
+  "name": "ItemParameterScrollItem",
+  "source": "f7cc7b2a7b626104e815038171fde3d4",
+  "pathID": 28,
+  "nodes": 12,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Shop.ParameterProgressBar",
+   "Nekki.SF2.GUI.Shop.ParameterScrollItem",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__ItemParameterScrollItem__f7cc7b2a7b62.json"
+ },
+ {
+  "name": "ItemRewardHardmode",
+  "source": "07d605c34eb66484da712af93a443159",
+  "pathID": 3,
+  "nodes": 1,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.ItemRewardHardmode",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__ItemRewardHardmode__07d605c34eb6.json"
+ },
+ {
+  "name": "ItemSetDialog",
+  "source": "6aa5ca7a7e9f048438aa8d18a3fbd0f4",
+  "pathID": 57,
+  "nodes": 29,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Dialogs.ItemSetDialog",
+   "Nekki.SF2.GUI.HintBox",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "UnityEngine.UI.Button",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__ItemSetDialog__6aa5ca7a7e9f.json"
+ },
+ {
+  "name": "KeyIcon",
+  "source": "56a918f6429804a3b9d627d881cb5116",
+  "pathID": 5,
+  "nodes": 2,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Profile.KeyIcon",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__KeyIcon__56a918f64298.json"
+ },
+ {
+  "name": "LabelButton",
+  "source": "ccc2f830a479c4493a2d0089dfc63815",
+  "pathID": 12,
+  "nodes": 6,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__LabelButton__ccc2f830a479.json"
+ },
+ {
+  "name": "LampButton",
+  "source": "3743d389affb84d25bb3584edd9479d1",
+  "pathID": 5,
+  "nodes": 2,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "SFButton"
+  ],
+  "json": "prefab__LampButton__3743d389affb.json"
+ },
+ {
+  "name": "LampIndicator",
+  "source": "5b8b209c8d9e3496fb620060ad6e5634",
+  "pathID": 3,
+  "nodes": 1,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__LampIndicator__5b8b209c8d9e.json"
+ },
+ {
+  "name": "Lamps",
+  "source": "09647293d7b7d46f49918ab4d88329df",
+  "pathID": 10,
+  "nodes": 5,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.Map.LampsPanel",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__Lamps__09647293d7b7.json"
+ },
+ {
+  "name": "LeaveClanDialog",
+  "source": "a04656408463cd24fa8ba0749e13b198",
+  "pathID": 55,
+  "nodes": 27,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.LeaveClanDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Shop.Scroll",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__LeaveClanDialog__a04656408463.json"
+ },
+ {
+  "name": "LinkAccountDialog",
+  "source": "6fe5e4bc7948dea499b452c28a43d6c6",
+  "pathID": 63,
+  "nodes": 27,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.LinkAccountDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Scripts.EditBox",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.Text"
+  ],
+  "json": "prefab__LinkAccountDialog__6fe5e4bc7948.json"
+ },
+ {
+  "name": "LocalDailyDialog",
+  "source": "403b66fba22e65c46b6d799006b572c3",
+  "pathID": 24,
+  "nodes": 11,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.LocalDailyDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UniRx.Triggers.ObservableDestroyTrigger",
+   "UnityEngine.UI.Image"
+  ],
+  "json": "prefab__LocalDailyDialog__403b66fba22e.json"
+ },
+ {
+  "name": "LocalDailyProgressDialog",
+  "source": "95555ebd091843e4497717add1674f09",
+  "pathID": 52,
+  "nodes": 25,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.LocalDailyProgressDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "ProgressBar",
+   "SFButton",
+   "UniRx.Triggers.ObservableDestroyTrigger",
+   "UnityEngine.UI.Image"
+  ],
+  "json": "prefab__LocalDailyProgressDialog__95555ebd0918.json"
+ },
+ {
+  "name": "LocalDailyTaskCell",
+  "source": "0c7d08c3c714c3d4499e51ce96f9e2e2",
+  "pathID": 41,
+  "nodes": 20,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.LocalDailyTaskCell",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "ProgressBar",
+   "UniRx.Triggers.ObservableDestroyTrigger"
+  ],
+  "json": "prefab__LocalDailyTaskCell__0c7d08c3c714.json"
+ },
+ {
+  "name": "LootCell",
+  "source": "ffa1b3a225e5f4b01affaa6219785f9b",
+  "pathID": 9,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.ShowLoot.LootCell",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__LootCell__ffa1b3a225e5.json"
+ },
+ {
+  "name": "LotteryDialogCell",
+  "source": "c8121a05c0f7b40258dda9c0a00d85bc",
+  "pathID": 8,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.LotteryDialogCell",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.HorizontalLayoutGroup"
+  ],
+  "json": "prefab__LotteryDialogCell__c8121a05c0f7.json"
+ },
+ {
+  "name": "LotteryDialog",
+  "source": "2b3497048f4f7449180f1c1e1f7c4a9a",
+  "pathID": 78,
+  "nodes": 36,
+  "monoBehaviours": [
+   "CloseButton",
+   "CocosAnimation",
+   "EZCameraShake.CameraShaker",
+   "EnhancedUI.EnhancedScroller.EnhancedScroller",
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Dialogs.LotteryDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "UniRx.Triggers.ObservableDestroyTrigger",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.ScrollRect"
+  ],
+  "json": "prefab__LotteryDialog__2b3497048f4f.json"
+ },
+ {
+  "name": "MainClanDialog",
+  "source": "9e1df93ef7d7b7247b70c7307c5e6da1",
+  "pathID": 50,
+  "nodes": 23,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.MainClanDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionButton",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__MainClanDialog__9e1df93ef7d7.json"
+ },
+ {
+  "name": "MainMenu",
+  "source": "ce025dc403a264824958785cdd7f8955",
+  "pathID": 234,
+  "nodes": 115,
+  "monoBehaviours": [
+   "CocosAnimation",
+   "MainMenuRaidRatingPanel",
+   "Nekki.SF2.GUI.Common.Hints.HintUI",
+   "Nekki.SF2.GUI.Common.SceneSwitchControls",
+   "Nekki.SF2.GUI.Common.SectionButton",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.Menu.MainMenu",
+   "Nekki.SF2.GUI.Menu.MenuEnergyPanel",
+   "Nekki.SF2.GUI.Menu.MenuExpPanel",
+   "Nekki.SF2.GUI.Menu.MenuMaterialsPanel",
+   "Nekki.SF2.GUI.Menu.MenuMoneyPanel",
+   "Nekki.SF2.GUI.Menu.MenuScroll",
+   "Nekki.SF2.GUI.MultiImageButton",
+   "Nekki.SF2.GUI.ResolutionButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Scripts.VersionDependentElements",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "Nekki.SF2.GUI.Tutorial.TutorialNode",
+   "NonDrawingGraphic",
+   "ProgressBar",
+   "SFButton",
+   "StepBar",
+   "UnityEngine.UI.Button",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.Mask",
+   "UnityEngine.UI.Text",
+   "UnityEngine.UI.Toggle",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__MainMenu__ce025dc403a2.json"
+ },
+ {
+  "name": "MapButton",
+  "source": "7a3884a1a069fad4a8e30773672d4a94",
+  "pathID": 18,
+  "nodes": 9,
+  "monoBehaviours": [
+   "CocosAnimation",
+   "Nekki.SF2.GUI.Common.Indicator",
+   "Nekki.SF2.GUI.CompositeImage",
+   "Nekki.SF2.GUI.Map.MapButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.ResolutionImageLE",
+   "Nekki.SF2.GUI.TimerLabel",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "Nekki.SF2.GUI.Tutorial.TutorialNode",
+   "NonDrawingGraphic",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.Text"
+  ],
+  "json": "prefab__MapButton__7a3884a1a069.json"
+ },
+ {
+  "name": "MapButtonsPanel",
+  "source": "3526f8f302fa9ca4fafb5c95666753dd",
+  "pathID": 5,
+  "nodes": 2,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Map.MapButtonsPanel",
+   "Nekki.SF2.GUI.Tutorial.TutorialNode",
+   "UnityEngine.UI.HorizontalLayoutGroup"
+  ],
+  "json": "prefab__MapButtonsPanel__3526f8f302fa.json"
+ },
+ {
+  "name": "MatchingDialog",
+  "source": "119a006323bf018488ddb2dc5d91bdd7",
+  "pathID": 44,
+  "nodes": 24,
+  "monoBehaviours": [
+   "CocosAnimation",
+   "LabelButton",
+   "MatchingDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Shop.Scroll",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__MatchingDialog__119a006323bf.json"
+ },
+ {
+  "name": "MaterialUI",
+  "source": "43d0190888e854037a79c097d4b42114",
+  "pathID": 6,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Shop.Forge.MaterialPriceUI",
+   "Nekki.SF2.GUI.Tutorial.TutorialNode",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.Text"
+  ],
+  "json": "prefab__MaterialUI__43d0190888e8.json"
+ },
+ {
+  "name": "MedalsPlayerInfoCell",
+  "source": "ba1c0fd770e333d448f62ecfa4fb7714",
+  "pathID": 33,
+  "nodes": 14,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.MedalsScrollItem",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic"
+  ],
+  "json": "prefab__MedalsPlayerInfoCell__ba1c0fd770e3.json"
+ },
+ {
+  "name": "MemberMessageItemContent",
+  "source": "42c02163b21245e4487840dfe770b264",
+  "pathID": 11,
+  "nodes": 5,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.MemberMessageItemContent",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.TextButton"
+  ],
+  "json": "prefab__MemberMessageItemContent__42c02163b212.json"
+ },
+ {
+  "name": "MembersClanCellMember",
+  "source": "843550fd5faa2f44bb249db894207ae1",
+  "pathID": 51,
+  "nodes": 27,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.MembersClanCellMember",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "SFButton",
+   "UnityEngine.UI.Image"
+  ],
+  "json": "prefab__MembersClanCellMember__843550fd5faa.json"
+ },
+ {
+  "name": "MembersClanCellSeparator",
+  "source": "8c9c8a09176b8d949b438a69ab45946a",
+  "pathID": 9,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.MembersClanCellSeparator",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__MembersClanCellSeparator__8c9c8a09176b.json"
+ },
+ {
+  "name": "MemoryMonitor",
+  "source": "9d7f141296cf2438d80ad46c7bbb397a",
+  "pathID": 7,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.DebugModules.MemoryMonitor",
+   "UnityEngine.UI.Text"
+  ],
+  "json": "prefab__MemoryMonitor__9d7f141296cf.json"
+ },
+ {
+  "name": "MenuAdvertisingButton",
+  "source": "30ee16491bbe9444bbb87a4aae454aaa",
+  "pathID": 13,
+  "nodes": 7,
+  "monoBehaviours": [
+   "CocosAnimation",
+   "Nekki.SF2.GUI.Menu.MenuAdvertisingButton",
+   "Nekki.SF2.GUI.ResolutionButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic"
+  ],
+  "json": "prefab__MenuAdvertisingButton__30ee16491bbe.json"
+ },
+ {
+  "name": "MenuMaterialUI",
+  "source": "83980015722994f01bd560b8b77c31ca",
+  "pathID": 6,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.Menu.MenuMaterialUI",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__MenuMaterialUI__839800157229.json"
+ },
+ {
+  "name": "MessageItem",
+  "source": "f14e6c815aaa65544896ac428a0a91a5",
+  "pathID": 12,
+  "nodes": 5,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.MessageItem",
+   "Nekki.SF2.GUI.LabelAlias",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.Text"
+  ],
+  "json": "prefab__MessageItem__f14e6c815aaa.json"
+ },
+ {
+  "name": "MissingConnectionView",
+  "source": "e546e8b1ba6c7354994ecd78e74d2d7c",
+  "pathID": 5,
+  "nodes": 4,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.MissingConnectionView",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__MissingConnectionView__e546e8b1ba6c.json"
+ },
+ {
+  "name": "ModelDebugUI",
+  "source": "8ac00bcdc49854fdcb5e4ebeb93c0fc9",
+  "pathID": 6,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.DebugModules.ModelDebugUI",
+   "UnityEngine.UI.Text"
+  ],
+  "json": "prefab__ModelDebugUI__8ac00bcdc498.json"
+ },
+ {
+  "name": "MoveableChatSF",
+  "source": "2a04bc9b80275254e9a10e987c09b6c0",
+  "pathID": 73,
+  "nodes": 31,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.ChatContent",
+   "Nekki.SF2.GUI.Dialogs.Raids.ChatHandleButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.ChatSFTabButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.ClanChatViewController",
+   "Nekki.SF2.GUI.Dialogs.Raids.MoveableChatSF",
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidBattleChatViewController",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Shop.SidePanel",
+   "Nekki.SF2.GUI.SidePanelScroll",
+   "NonDrawingGraphic",
+   "UnityEngine.UI.Image"
+  ],
+  "json": "prefab__MoveableChatSF__2a04bc9b8027.json"
+ },
+ {
+  "name": "MultiLineScrollDialog",
+  "source": "34298a75bed688643b6f247d0d0afd76",
+  "pathID": 71,
+  "nodes": 31,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.MultiLineScrollDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Scripts.CheckBox",
+   "NonDrawingGraphic",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.ScrollRect",
+   "UnityEngine.UI.Slider",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__MultiLineScrollDialog__34298a75bed6.json"
+ },
+ {
+  "name": "NewsDialog",
+  "source": "16ee8005473a6414795243b14000d24a",
+  "pathID": 52,
+  "nodes": 27,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Dialogs.NewsDialog",
+   "Nekki.SF2.GUI.InfoButton",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "SFButton",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__NewsDialog__16ee8005473a.json"
+ },
+ {
+  "name": "NotificationGame",
+  "source": "5158a714d39ba442482537cc1329174c",
+  "pathID": 55,
+  "nodes": 24,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Dialogs.NotificationsGame",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.Menu.MenuScroll",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.ResolutionImageAvatar",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "NonDrawingGraphic",
+   "UnityEngine.UI.Button",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__NotificationGame__5158a714d39b.json"
+ },
+ {
+  "name": "ParameterScrollItem",
+  "source": "fdd1a4462092ee54db1fff27f3b4cba7",
+  "pathID": 29,
+  "nodes": 12,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Shop.ParameterProgressBar",
+   "Nekki.SF2.GUI.Shop.ParameterScrollItem",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__ParameterScrollItem__fdd1a4462092.json"
+ },
+ {
+  "name": "ParametersPanelContent",
+  "source": "c0cf261daa6a32f45aac6e0eec261b20",
+  "pathID": 5,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.BaseScrollContent",
+   "Nekki.SF2.GUI.ItemsScroll",
+   "Nekki.SF2.GUI.Shop.ParametersPanelContent",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__ParametersPanelContent__c0cf261daa6a.json"
+ },
+ {
+  "name": "PauseScreen",
+  "source": "1fce321945040ab4a90dc0291cd331f9",
+  "pathID": 63,
+  "nodes": 27,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.PauseScreen",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.PressButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__PauseScreen__1fce32194504.json"
+ },
+ {
+  "name": "PaymentUI",
+  "source": "03775c4756b364818bc91de3d11e3651",
+  "pathID": 2,
+  "nodes": 1,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Common.PaymentUI"
+  ],
+  "json": "prefab__PaymentUI__03775c4756b3.json"
+ },
+ {
+  "name": "PerkCell",
+  "source": "ba2a56e92b442434f83c3d3f6109c394",
+  "pathID": 62,
+  "nodes": 23,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Profile.PerkCell",
+   "Nekki.SF2.GUI.Profile.PerkSubItem",
+   "Nekki.SF2.GUI.Profile.PerkTreeLines",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__PerkCell__ba2a56e92b44.json"
+ },
+ {
+  "name": "PerkSubItem",
+  "source": "a2f5e4efb60a54eeeb7a8b346bee28ce",
+  "pathID": 18,
+  "nodes": 7,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Profile.PerkSubItem",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__PerkSubItem__a2f5e4efb60a.json"
+ },
+ {
+  "name": "PerkUI",
+  "source": "b6030dbf6ec9f4c2fb16b9283ef44369",
+  "pathID": 6,
+  "nodes": 2,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Common.PerkUI",
+   "Nekki.SF2.GUI.Common.TouchHandler",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Tutorial.TutorialNode",
+   "NonDrawingGraphic",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__PerkUI__b6030dbf6ec9.json"
+ },
+ {
+  "name": "PlayerInfoHintBox_Big",
+  "source": "e58c88ed8e5406b4a8460c4f6441391e",
+  "pathID": 11,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.HintBoxAutoKilled",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__PlayerInfoHintBox_Big__e58c88ed8e54.json"
+ },
+ {
+  "name": "PlayerInfoHintBox_InDev",
+  "source": "06ab7df044478bc458781e681193ebfb",
+  "pathID": 13,
+  "nodes": 5,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.HintBoxAutoKilled",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__PlayerInfoHintBox_InDev__06ab7df04447.json"
+ },
+ {
+  "name": "PlayerInfoHintBox_Small",
+  "source": "6d25e1c53bd6563489fab11b743cfbf3",
+  "pathID": 11,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.HintBoxAutoKilled",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__PlayerInfoHintBox_Small__6d25e1c53bd6.json"
+ },
+ {
+  "name": "PlayerLifeBar",
+  "source": "00d9c3e711e933d42a10e32a11eae4d4",
+  "pathID": 11,
+  "nodes": 5,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.PlayerLifeBar",
+   "Nekki.SF2.GUI.ResolutionImageSkew"
+  ],
+  "json": "prefab__PlayerLifeBar__00d9c3e711e9.json"
+ },
+ {
+  "name": "PointsTable",
+  "source": "881e0c683630e5c4d817e74b7434f7a2",
+  "pathID": 10,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.PointsTable",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.TextGradient"
+  ],
+  "json": "prefab__PointsTable__881e0c683630.json"
+ },
+ {
+  "name": "PreFight",
+  "source": "f4e7c67db3e479543b3d2409dd5829af",
+  "pathID": 2,
+  "nodes": 1,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.PreFight"
+  ],
+  "json": "prefab__PreFight__f4e7c67db3e4.json"
+ },
+ {
+  "name": "PressButton",
+  "source": "1e9333da0c8345146b1023df53b63cf9",
+  "pathID": 9,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.PressButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__PressButton__1e9333da0c83.json"
+ },
+ {
+  "name": "ProbabilityDialogItem",
+  "source": "5e2faff2c994f46968624d7182e6a91a",
+  "pathID": 7,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.ProbabilityDialogItem",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "UniRx.Triggers.ObservableDestroyTrigger",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__ProbabilityDialogItem__5e2faff2c994.json"
+ },
+ {
+  "name": "ProbabilityDialog",
+  "source": "825b98cd0db7946ce84c8edc69f37edb",
+  "pathID": 54,
+  "nodes": 24,
+  "monoBehaviours": [
+   "CloseButton",
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.ProbabilityContent",
+   "Nekki.SF2.GUI.Dialogs.Raids.ProbabilityDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "UnityEngine.UI.ContentSizeFitter",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.ScrollRect",
+   "UnityEngine.UI.Scrollbar",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__ProbabilityDialog__825b98cd0db7.json"
+ },
+ {
+  "name": "ProfileBottomPanel",
+  "source": "b77f831bfca9c4153a923f548f66e467",
+  "pathID": 49,
+  "nodes": 27,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Common.Indicator",
+   "Nekki.SF2.GUI.Common.SectionButton",
+   "Nekki.SF2.GUI.Profile.ProfileBottomPanel",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.Text"
+  ],
+  "json": "prefab__ProfileBottomPanel__b77f831bfca9.json"
+ },
+ {
+  "name": "ProfitView",
+  "source": "b2a10e27e35a4bc4fb5e1706efc4f1aa",
+  "pathID": 7,
+  "nodes": 4,
+  "monoBehaviours": [
+   "CocosAnimation",
+   "Nekki.SF2.GUI.ResolutionImageAvatar",
+   "ProfitViewer",
+   "UnityEngine.UI.Mask"
+  ],
+  "json": "prefab__ProfitView__b2a10e27e35a.json"
+ },
+ {
+  "name": "ProgressBarDojoBattlePass",
+  "source": "dea8a713b2dbc194da9fac7d6f46caf1",
+  "pathID": 40,
+  "nodes": 19,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.Menu.ProgressBarDojoBattlePass",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.ResolutionImageSkew",
+   "Nekki.SF2.GUI.TextDebugger",
+   "NonDrawingGraphic",
+   "ProgressBar",
+   "SFButton",
+   "UnityEngine.UI.Shadow"
+  ],
+  "json": "prefab__ProgressBarDojoBattlePass__dea8a713b2db.json"
+ },
+ {
+  "name": "ProgressBarDojoPanel",
+  "source": "fcbab058eef4c4345b456fb40ac18622",
+  "pathID": 34,
+  "nodes": 16,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.Menu.ProgressBarDojoPanel",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.ResolutionImageSkew",
+   "Nekki.SF2.GUI.TextDebugger",
+   "NonDrawingGraphic",
+   "ProgressBar",
+   "SFButton",
+   "UniRx.Triggers.ObservableDestroyTrigger"
+  ],
+  "json": "prefab__ProgressBarDojoPanel__fcbab058eef4.json"
+ },
+ {
+  "name": "ProgressLabelButton",
+  "source": "b70f4b6727bb92c40b9f03bc3324cf21",
+  "pathID": 19,
+  "nodes": 8,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "ProgressBarMask",
+   "ProgressLabelButton",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.RectMask2D"
+  ],
+  "json": "prefab__ProgressLabelButton__b70f4b6727bb.json"
+ },
+ {
+  "name": "PropertiesPanelContent",
+  "source": "fe41db34f8e003c47889c70756134c6c",
+  "pathID": 60,
+  "nodes": 32,
+  "monoBehaviours": [
+   "IconLabelButton",
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Indicator",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Shop.PropertiesPanelContent",
+   "Nekki.SF2.GUI.Shop.PropertiesPerksPanel",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.Text",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__PropertiesPanelContent__fe41db34f8e0.json"
+ },
+ {
+  "name": "RaidBetaLogger",
+  "source": "5898067f873dc0643a39b61490fbaf7d",
+  "pathID": 10,
+  "nodes": 9,
+  "monoBehaviours": [
+   "Nekki.Utils.RaidBetaLogger",
+   "UnityEngine.UI.Button",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.Outline",
+   "UnityEngine.UI.Text"
+  ],
+  "json": "prefab__RaidBetaLogger__5898067f873d.json"
+ },
+ {
+  "name": "RaidBuyConsumablesDialog",
+  "source": "402a9b84c0122da418303c2a5d9f11d0",
+  "pathID": 101,
+  "nodes": 43,
+  "monoBehaviours": [
+   "CloseButton",
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidBuyConsumablesDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "Nekki.SF2.GUI.Tutorial.TutorialNode",
+   "ProgressBarMask",
+   "ProgressLabelButton",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.RectMask2D"
+  ],
+  "json": "prefab__RaidBuyConsumablesDialog__402a9b84c012.json"
+ },
+ {
+  "name": "RaidConnectionScreen",
+  "source": "b0f13550cdc931643a9147b248e2b827",
+  "pathID": 9,
+  "nodes": 4,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidConnectionScreen",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster"
+  ],
+  "json": "prefab__RaidConnectionScreen__b0f13550cdc9.json"
+ },
+ {
+  "name": "RaidDailyDialog",
+  "source": "915983824bfab7648b12a82794f33a7b",
+  "pathID": 24,
+  "nodes": 11,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidDailyDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UniRx.Triggers.ObservableDestroyTrigger",
+   "UnityEngine.UI.Image"
+  ],
+  "json": "prefab__RaidDailyDialog__915983824bfa.json"
+ },
+ {
+  "name": "RaidDailyTaskCell",
+  "source": "09c377b8872923d408eb9c604468ca0b",
+  "pathID": 55,
+  "nodes": 27,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidDailyTaskCell",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "ProgressBar"
+  ],
+  "json": "prefab__RaidDailyTaskCell__09c377b88729.json"
+ },
+ {
+  "name": "RaidDamageResultContent",
+  "source": "f456f6ff76dcaee4294258ed0d42729e",
+  "pathID": 27,
+  "nodes": 15,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Fight.RaidDamageResultContent",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__RaidDamageResultContent__f456f6ff76dc.json"
+ },
+ {
+  "name": "RaidFightTextContent",
+  "source": "c7846ec3eb6054243b36337d8f824476",
+  "pathID": 11,
+  "nodes": 4,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Fight.RaidFightTextContent",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__RaidFightTextContent__c7846ec3eb60.json"
+ },
+ {
+  "name": "RaidFightTimeoutContent",
+  "source": "2618b26e65f46224084d96fec77af89b",
+  "pathID": 8,
+  "nodes": 4,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Fight.RaidFightTimeoutContent",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__RaidFightTimeoutContent__2618b26e65f4.json"
+ },
+ {
+  "name": "RaidFinalFightChestContent",
+  "source": "f1431ef19d3d3094f972f98eb1a785c4",
+  "pathID": 12,
+  "nodes": 6,
+  "monoBehaviours": [
+   "CocosAnimation",
+   "Nekki.SF2.GUI.Fight.RaidFinalFightChestContent",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.Button",
+   "UnityEngine.UI.Image"
+  ],
+  "json": "prefab__RaidFinalFightChestContent__f1431ef19d3d.json"
+ },
+ {
+  "name": "RaidFinalFightCurrencyContent",
+  "source": "0564c7a3454bfdd46bba2f8d202e82f1",
+  "pathID": 9,
+  "nodes": 5,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Fight.RaidFinalFightCurrencyContent",
+   "Nekki.SF2.GUI.Fight.RewardPanel",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.HorizontalLayoutGroup"
+  ],
+  "json": "prefab__RaidFinalFightCurrencyContent__0564c7a3454b.json"
+ },
+ {
+  "name": "RaidFinalFightRatingContent",
+  "source": "9f5b1555ac6272a43bd0faf306e6f30a",
+  "pathID": 8,
+  "nodes": 4,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Fight.RaidFinalFightRatingContent",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__RaidFinalFightRatingContent__9f5b1555ac62.json"
+ },
+ {
+  "name": "RaidInvitationMessageItemContent",
+  "source": "254c89a77a1934445af5b68ae89ed4b0",
+  "pathID": 38,
+  "nodes": 20,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidInvitationMessageItemContent",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.TextButton",
+   "NonDrawingGraphic",
+   "ProgressBar",
+   "UnityEngine.UI.Button"
+  ],
+  "json": "prefab__RaidInvitationMessageItemContent__254c89a77a19.json"
+ },
+ {
+  "name": "RaidKey",
+  "source": "d9a9e54c16fc9364daad8b70fa9c6680",
+  "pathID": 22,
+  "nodes": 9,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.Map.RaidKey",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "UnityEngine.UI.Button",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__RaidKey__d9a9e54c16fc.json"
+ },
+ {
+  "name": "RaidLeagueCell",
+  "source": "e9bb77216699f554394bc985a341ca60",
+  "pathID": 74,
+  "nodes": 28,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidLeaguesCell",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "SFButton"
+  ],
+  "json": "prefab__RaidLeagueCell__e9bb77216699.json"
+ },
+ {
+  "name": "RaidLeaguesDialog",
+  "source": "d43d84c678e89614c88f220bdbee63e8",
+  "pathID": 109,
+  "nodes": 43,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidLeaguesDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Scripts.LoadingCircle",
+   "Nekki.SF2.GUI.SimpleScroll",
+   "NonDrawingGraphic",
+   "ProgressBarMask",
+   "ProgressLabelButton",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__RaidLeaguesDialog__d43d84c678e8.json"
+ },
+ {
+  "name": "RaidLeaguesHintBox",
+  "source": "9b8c015dd73c6c645873509ef85eac24",
+  "pathID": 11,
+  "nodes": 5,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.HintBoxAutoKilled",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__RaidLeaguesHintBox__9b8c015dd73c.json"
+ },
+ {
+  "name": "RaidLeaguesPosHintBox",
+  "source": "4ac070a9a2527a1499f1de95697bb027",
+  "pathID": 11,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.HintBoxAutoKilled",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__RaidLeaguesPosHintBox__4ac070a9a252.json"
+ },
+ {
+  "name": "RaidMapContainer",
+  "source": "2809f02fd1b73814ab5f910fa6e3792f",
+  "pathID": 19,
+  "nodes": 10,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.ItemsScroll",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.Map.LampsPanel",
+   "Nekki.SF2.GUI.Map.MapPanel",
+   "Nekki.SF2.GUI.Map.MoveableMapPanel",
+   "Nekki.SF2.GUI.Map.RaidMapContainer",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Shop.Scroll",
+   "Nekki.SF2.GUI.Tutorial.TutorialNode"
+  ],
+  "json": "prefab__RaidMapContainer__2809f02fd1b7.json"
+ },
+ {
+  "name": "RaidMapScrollContent",
+  "source": "3cf9d34e45c2f094d8607c814879ac09",
+  "pathID": 2,
+  "nodes": 1,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.BaseScrollContent",
+   "UnityEngine.UI.HorizontalLayoutGroup"
+  ],
+  "json": "prefab__RaidMapScrollContent__3cf9d34e45c2.json"
+ },
+ {
+  "name": "RaidMapUIModuleHint",
+  "source": "a12667b933d7aa54cbd171648718eb14",
+  "pathID": 8,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.HintBoxAutoKilled",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__RaidMapUIModuleHint__a12667b933d7.json"
+ },
+ {
+  "name": "RaidMapUIModule",
+  "source": "ceb8598d75f708448b96acfa56043065",
+  "pathID": 69,
+  "nodes": 32,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.Map.MapCurrencyPanel",
+   "Nekki.SF2.GUI.Map.RaidKeysButtonView",
+   "Nekki.SF2.GUI.Map.RaidToggleButton",
+   "Nekki.SF2.GUI.Map.ShardsButtonView",
+   "Nekki.SF2.GUI.RaidMapUIModule",
+   "Nekki.SF2.GUI.ResolutionButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "Nekki.SF2.GUI.Tutorial.TutorialNode",
+   "NonDrawingGraphic",
+   "RaidSwitchButtonsRoot",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.Image"
+  ],
+  "json": "prefab__RaidMapUIModule__ceb8598d75f7.json"
+ },
+ {
+  "name": "RaidPlayerInfo-Root",
+  "source": "9ed2eda0e2018e34e80cfbdc348285e4",
+  "pathID": 132,
+  "nodes": 130,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.Core.Scripts.InvertCamera",
+   "Nekki.SF2.GUI.Dialogs.Raids.GeneralPlayerInfoView",
+   "Nekki.SF2.GUI.Dialogs.Raids.PlayerInfoHeaderView",
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidPlayerEquipmentView",
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidPlayerScreen",
+   "Nekki.SF2.GUI.Dialogs.Raids.TopMedalsInfoView",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Scenes.RaidPlayerInfoRoot",
+   "Nekki.SF2.GUI.Shop.PerksPanel",
+   "Nekki.SF2.GUI.SimpleScroll",
+   "Nekki.SF2.GUI.SpriteRendererQuality",
+   "Nekki.SF2.GUI.TextDebugger",
+   "NonDrawingGraphic",
+   "RaidPlayerEquipmentImage",
+   "SFButton",
+   "UniRx.Triggers.ObservableDestroyTrigger",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.VerticalLayoutGroup",
+   "WideScreenController"
+  ],
+  "json": "prefab__RaidPlayerInfo-Root__9ed2eda0e201.json"
+ },
+ {
+  "name": "RaidPlayerItemImage",
+  "source": "b05328836fe2f8340a6bd6a94ac8422a",
+  "pathID": 10,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Shop.PerksPanel",
+   "NonDrawingGraphic",
+   "RaidPlayerEquipmentImage",
+   "SFButton",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__RaidPlayerItemImage__b05328836fe2.json"
+ },
+ {
+  "name": "RaidQuestsButton",
+  "source": "e9f495ed64c53df418db6590437283fc",
+  "pathID": 12,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.Map.RaidQuestsButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic"
+  ],
+  "json": "prefab__RaidQuestsButton__e9f495ed64c5.json"
+ },
+ {
+  "name": "RaidQuestsRewardsContent",
+  "source": "9a847f00778204745a88cff66d76dce8",
+  "pathID": 17,
+  "nodes": 8,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Fight.RaidQuestsRewardsContent",
+   "Nekki.SF2.GUI.Fight.RewardPanel",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.TextDebugger",
+   "UnityEngine.UI.HorizontalLayoutGroup"
+  ],
+  "json": "prefab__RaidQuestsRewardsContent__9a847f007782.json"
+ },
+ {
+  "name": "RaidSeasonFinishDialog",
+  "source": "1556a85fe2d987646baa9761236737ab",
+  "pathID": 133,
+  "nodes": 60,
+  "monoBehaviours": [
+   "CocosAnimation",
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidLeaderboardView",
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidSeasonFinishDialog",
+   "Nekki.SF2.GUI.Dialogs.Raids.SeasFinChestContent",
+   "Nekki.SF2.GUI.Dialogs.Raids.SeasFinMessageContent",
+   "Nekki.SF2.GUI.Dialogs.Raids.SeasFinNewDanContent",
+   "Nekki.SF2.GUI.Dialogs.Raids.SeasFinOldLeaderBoard",
+   "Nekki.SF2.GUI.Dialogs.Raids.SeasFinRewardContent",
+   "Nekki.SF2.GUI.Dialogs.Raids.SeasFinTop100Message",
+   "Nekki.SF2.GUI.Fight.RewardPanel",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Scripts.LoadingCircle",
+   "Nekki.SF2.GUI.SimpleScroll",
+   "NonDrawingGraphic",
+   "SFButton",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.Text",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__RaidSeasonFinishDialog__1556a85fe2d9.json"
+ },
+ {
+  "name": "RaidShowLootDialog",
+  "source": "36b1ad5025ef1f0488aab4141348a432",
+  "pathID": 27,
+  "nodes": 14,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidShowLootDialog",
+   "Nekki.SF2.GUI.Fight.RewardPanel",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.TextDebugger",
+   "UnityEngine.UI.HorizontalLayoutGroup"
+  ],
+  "json": "prefab__RaidShowLootDialog__36b1ad5025ef.json"
+ },
+ {
+  "name": "RaidSimpleDialog",
+  "source": "6e89d5644452d1a438264986b9ea8bda",
+  "pathID": 38,
+  "nodes": 18,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidSimpleDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.Toggle"
+  ],
+  "json": "prefab__RaidSimpleDialog__6e89d5644452.json"
+ },
+ {
+  "name": "RaidTopClanCell",
+  "source": "fa5140c5f56688744854148883c2b4e0",
+  "pathID": 37,
+  "nodes": 14,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidTopClanCell",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "SFButton"
+  ],
+  "json": "prefab__RaidTopClanCell__fa5140c5f566.json"
+ },
+ {
+  "name": "RaidTopHundredDialog",
+  "source": "894efcb4bcb530946bf074d1c1aed530",
+  "pathID": 108,
+  "nodes": 54,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidTopHundredDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Scripts.LoadingCircle",
+   "Nekki.SF2.GUI.SimpleScroll",
+   "NonDrawingGraphic",
+   "ProgressBarMask",
+   "ProgressLabelButton",
+   "SFButton",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__RaidTopHundredDialog__894efcb4bcb5.json"
+ },
+ {
+  "name": "RaidTopPlayerCell",
+  "source": "46d9ba343ae751c4e8f43195a2ecf649",
+  "pathID": 37,
+  "nodes": 14,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidTopPlayerCell",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "SFButton"
+  ],
+  "json": "prefab__RaidTopPlayerCell__46d9ba343ae7.json"
+ },
+ {
+  "name": "RaidViewCellHintBox",
+  "source": "6ed23ac085f769e4cb4bf3d3e519c23a",
+  "pathID": 9,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.HintBoxAutoKilled",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__RaidViewCellHintBox__6ed23ac085f7.json"
+ },
+ {
+  "name": "RaidViewCell",
+  "source": "06ebb0effb194e6439172c13ca96f74a",
+  "pathID": 47,
+  "nodes": 23,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidViewCell",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.TextDebugger",
+   "NonDrawingGraphic",
+   "SFButton"
+  ],
+  "json": "prefab__RaidViewCell__06ebb0effb19.json"
+ },
+ {
+  "name": "RaidViewContainer",
+  "source": "448232070bf13c44c8980a50f06aac4c",
+  "pathID": 146,
+  "nodes": 62,
+  "monoBehaviours": [
+   "CocosAnimation",
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidInfoSprite",
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidPlayersRoll",
+   "Nekki.SF2.GUI.Dialogs.Raids.RaidViewContainer",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.ResolutionImageAvatar",
+   "Nekki.SF2.GUI.ResolutionImageSkew",
+   "Nekki.SF2.GUI.SimpleScroll",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "Nekki.SF2.GUI.Tutorial.TutorialNode",
+   "ProgressBar",
+   "ProgressBarMask",
+   "ProgressLabelButton",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__RaidViewContainer__448232070bf1.json"
+ },
+ {
+  "name": "RaidWaitResultContent",
+  "source": "e99aeec90cb1468449ec2f87092c306e",
+  "pathID": 6,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.RaidWaitResultContent",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.HorizontalLayoutGroup"
+  ],
+  "json": "prefab__RaidWaitResultContent__e99aeec90cb1.json"
+ },
+ {
+  "name": "RaidZoneScrollItem",
+  "source": "a639e9021fc68f94283db142f7a3f522",
+  "pathID": 5,
+  "nodes": 2,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Map.ZoneScrollItem",
+   "Nekki.SF2.GUI.ResolutionImageMap",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.ToggleGroup"
+  ],
+  "json": "prefab__RaidZoneScrollItem__a639e9021fc6.json"
+ },
+ {
+  "name": "RaitingStringFinal",
+  "source": "43b2800a35bc0f8409e31a9d6147dffc",
+  "pathID": 8,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.RaitingString",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__RaitingStringFinal__43b2800a35bc.json"
+ },
+ {
+  "name": "RaitingString",
+  "source": "b5506447873d73847a961af82b448fba",
+  "pathID": 9,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.RaitingString",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__RaitingString__b5506447873d.json"
+ },
+ {
+  "name": "RecipePropertyUI",
+  "source": "a4eb825de3c474a7bbd3656dd064318a",
+  "pathID": 16,
+  "nodes": 8,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Shop.Forge.RecipePropertyUI",
+   "Nekki.SF2.GUI.Shop.PerkProgressBar",
+   "Nekki.SF2.GUI.Tutorial.TutorialNode",
+   "NonDrawingGraphic",
+   "UniRx.Triggers.ObservableDestroyTrigger",
+   "UnityEngine.UI.Button",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__RecipePropertyUI__a4eb825de3c4.json"
+ },
+ {
+  "name": "RecipeUI",
+  "source": "294d0c4855af9499bad7c67b135d91e3",
+  "pathID": 22,
+  "nodes": 11,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Shop.Forge.RecipePriceUI",
+   "Nekki.SF2.GUI.Shop.Forge.RecipePropertiesUI",
+   "Nekki.SF2.GUI.Shop.Forge.RecipeUI",
+   "Nekki.SF2.GUI.Tutorial.TutorialNode",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__RecipeUI__294d0c4855af.json"
+ },
+ {
+  "name": "ResistanceContent",
+  "source": "659159905734b497da6f6099671accaa",
+  "pathID": 18,
+  "nodes": 10,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Fight.ResistanceContent",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "ResistanceProgressBar",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__ResistanceContent__659159905734.json"
+ },
+ {
+  "name": "ResolutionToggle",
+  "source": "bdba173f694ca4a1cae15a51c3258719",
+  "pathID": 7,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.Toggle"
+  ],
+  "json": "prefab__ResolutionToggle__bdba173f694c.json"
+ },
+ {
+  "name": "RewardPanelItem",
+  "source": "d5ce72217c826d444b2b9696887f46b2",
+  "pathID": 6,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.RewardPanelItem",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.Text"
+  ],
+  "json": "prefab__RewardPanelItem__d5ce72217c82.json"
+ },
+ {
+  "name": "RewardPanel",
+  "source": "42357e43372942d45a72150ad482292f",
+  "pathID": 3,
+  "nodes": 2,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.RewardPanel",
+   "UnityEngine.UI.HorizontalLayoutGroup"
+  ],
+  "json": "prefab__RewardPanel__42357e433729.json"
+ },
+ {
+  "name": "RoundsPanel",
+  "source": "3d75d60698b60f3458e145f87395bcbd",
+  "pathID": 3,
+  "nodes": 1,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.RoundsPanel",
+   "UnityEngine.UI.HorizontalLayoutGroup"
+  ],
+  "json": "prefab__RoundsPanel__3d75d60698b6.json"
+ },
+ {
+  "name": "ScreenDebug",
+  "source": "0a6ad61a488fb7e4b9a0b86a833eeb75",
+  "pathID": 29,
+  "nodes": 12,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.DebugModules.ScreenDebug",
+   "UnityEngine.UI.ContentSizeFitter",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.Text",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__ScreenDebug__0a6ad61a488f.json"
+ },
+ {
+  "name": "ScreenFight",
+  "source": "7face4393a9ff8549b623e3cb44295e4",
+  "pathID": 15,
+  "nodes": 6,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.ScreenFight",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImageLE",
+   "Nekki.SF2.GUI.TextGradient",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.Outline"
+  ],
+  "json": "prefab__ScreenFight__7face4393a9f.json"
+ },
+ {
+  "name": "ScreenModel",
+  "source": "b89f7699a248e684b8c193187068b337",
+  "pathID": 7,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.ScreenModel",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.Shadow"
+  ],
+  "json": "prefab__ScreenModel__b89f7699a248.json"
+ },
+ {
+  "name": "ScrollDialogButton",
+  "source": "e8a51b32bb2f82c45835a35bc098e254",
+  "pathID": 3,
+  "nodes": 1,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.ScrollDialogButton",
+   "Nekki.SF2.GUI.LabelAlias",
+   "UnityEngine.UI.Button"
+  ],
+  "json": "prefab__ScrollDialogButton__e8a51b32bb2f.json"
+ },
+ {
+  "name": "ScrollDialogLine",
+  "source": "a8b1da5928ac01d4786d92a3f9bc799d",
+  "pathID": 3,
+  "nodes": 1,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.ScrollDialogLine",
+   "Nekki.SF2.GUI.LabelAlias"
+  ],
+  "json": "prefab__ScrollDialogLine__a8b1da5928ac.json"
+ },
+ {
+  "name": "ScrollDialog",
+  "source": "d29abc80b9c1b1d459fb8b67b9eb2900",
+  "pathID": 77,
+  "nodes": 31,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.ScrollDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "UniRx.Triggers.ObservableDestroyTrigger",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.ScrollRect",
+   "UnityEngine.UI.Slider",
+   "UnityEngine.UI.Toggle"
+  ],
+  "json": "prefab__ScrollDialog__d29abc80b9c1.json"
+ },
+ {
+  "name": "SealsTableViewCell",
+  "source": "20656cdda1dc23e4aa9c0f6d27b17ce2",
+  "pathID": 6,
+  "nodes": 2,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Profile.SealsTableViewCell",
+   "Nekki.SF2.GUI.ResolutionImageAvatar",
+   "NonDrawingGraphic"
+  ],
+  "json": "prefab__SealsTableViewCell__20656cdda1dc.json"
+ },
+ {
+  "name": "SettingsAdvancedDialog",
+  "source": "a1b7f3a587bf8410ea26da5194046202",
+  "pathID": 202,
+  "nodes": 109,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.SettingsAdvancedDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "UniRx.Triggers.ObservableDestroyTrigger",
+   "UnityEngine.EventSystems.EventTrigger",
+   "UnityEngine.UI.ContentSizeFitter",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.ScrollRect",
+   "UnityEngine.UI.Scrollbar",
+   "UnityEngine.UI.Slider",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__SettingsAdvancedDialog__a1b7f3a587bf.json"
+ },
+ {
+  "name": "SettingsCloudDialog",
+  "source": "b86ebdf52d9ce463c8907a38fe48fed9",
+  "pathID": 33,
+  "nodes": 17,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.SettingsCloudDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.HorizontalLayoutGroup"
+  ],
+  "json": "prefab__SettingsCloudDialog__b86ebdf52d9c.json"
+ },
+ {
+  "name": "SettingsDialog",
+  "source": "07851c4b523724daeac4af964d0b84df",
+  "pathID": 107,
+  "nodes": 41,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.SettingsDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "UnityEngine.UI.HorizontalLayoutGroup"
+  ],
+  "json": "prefab__SettingsDialog__07851c4b5237.json"
+ },
+ {
+  "name": "ShopBackground",
+  "source": "4c175f7d815d80a4490cee2200708d9d",
+  "pathID": 3,
+  "nodes": 2,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.SpriteRendererQuality"
+  ],
+  "json": "prefab__ShopBackground__4c175f7d815d.json"
+ },
+ {
+  "name": "ShopBottomPanelCell",
+  "source": "8767e7d39691f0d4eb45e83fd6698ad9",
+  "pathID": 5,
+  "nodes": 2,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Common.BottomPanelScrollCell",
+   "NonDrawingGraphic"
+  ],
+  "json": "prefab__ShopBottomPanelCell__8767e7d39691.json"
+ },
+ {
+  "name": "ShopBottomPanel",
+  "source": "90663fbf9fbb4ac428a716c16b8364d9",
+  "pathID": 88,
+  "nodes": 49,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Common.Indicator",
+   "Nekki.SF2.GUI.Common.SectionButton",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Shop.ShopBottomPanel",
+   "Nekki.SF2.GUI.SimpleScroll",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.Text"
+  ],
+  "json": "prefab__ShopBottomPanel__90663fbf9fbb.json"
+ },
+ {
+  "name": "ShopTableViewCell",
+  "source": "c22211b9cbb2f4a33ac081fe52a48d9a",
+  "pathID": 49,
+  "nodes": 20,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.CompositeImage",
+   "Nekki.SF2.GUI.Glyphs.ImageGlyph",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Shop.PerksPanel",
+   "Nekki.SF2.GUI.Shop.ShopTableViewCell",
+   "Nekki.SF2.GUI.TextDebugger",
+   "Nekki.SF2.GUI.Tutorial.TutorialNode",
+   "UniRx.Triggers.ObservableDestroyTrigger",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__ShopTableViewCell__c22211b9cbb2.json"
+ },
+ {
+  "name": "ShowLootDialog",
+  "source": "692912cc5215044a38f9d2617ff571e8",
+  "pathID": 51,
+  "nodes": 22,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.ShowLoot.ShowLootDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic",
+   "UnityEngine.UI.ContentSizeFitter",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.ScrollRect",
+   "UnityEngine.UI.Scrollbar",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__ShowLootDialog__692912cc5215.json"
+ },
+ {
+  "name": "SidePanel",
+  "source": "0e1148614745ef44ab037f8576058b42",
+  "pathID": 14,
+  "nodes": 6,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Shop.SidePanel",
+   "Nekki.SF2.GUI.SidePanelScroll",
+   "UnityEngine.UI.Button",
+   "UnityEngine.UI.Image"
+  ],
+  "json": "prefab__SidePanel__0e1148614745.json"
+ },
+ {
+  "name": "SimpleDialog",
+  "source": "8b906f282d64345fb96c4146962e79ef",
+  "pathID": 59,
+  "nodes": 28,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Dialogs.SimpleDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "SFToggle",
+   "UIFigures.UICircle",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__SimpleDialog__8b906f282d64.json"
+ },
+ {
+  "name": "StoryDialog",
+  "source": "64ab7593412b94e329211810c6164001",
+  "pathID": 56,
+  "nodes": 27,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Dialogs.StoryDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.ResolutionImageAvatar",
+   "Nekki.SF2.GUI.TimerLabel",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__StoryDialog__64ab7593412b.json"
+ },
+ {
+  "name": "StoryMapContainer",
+  "source": "39f2e81dd1adc4a9bbb684ffac9f5e86",
+  "pathID": 20,
+  "nodes": 10,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.ItemsScroll",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.Map.LampsPanel",
+   "Nekki.SF2.GUI.Map.MapPanel",
+   "Nekki.SF2.GUI.Map.MoveableMapPanel",
+   "Nekki.SF2.GUI.Map.StoryMapContainer",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Scripts.VersionDependentElements",
+   "Nekki.SF2.GUI.Shop.Scroll",
+   "Nekki.SF2.GUI.Tutorial.TutorialNode",
+   "UnityEngine.UI.RectMask2D"
+  ],
+  "json": "prefab__StoryMapContainer__39f2e81dd1ad.json"
+ },
+ {
+  "name": "StoryMapScrollContent",
+  "source": "c028f26d6b48a4fef90c73e1090d9c12",
+  "pathID": 2,
+  "nodes": 1,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.BaseScrollContent",
+   "UnityEngine.UI.HorizontalLayoutGroup"
+  ],
+  "json": "prefab__StoryMapScrollContent__c028f26d6b48.json"
+ },
+ {
+  "name": "StoryZoneScrollItem",
+  "source": "0155e3bb23d6243d1b45892a25ab2ceb",
+  "pathID": 5,
+  "nodes": 2,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Map.ZoneScrollItem",
+   "Nekki.SF2.GUI.ResolutionImageMap",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.ToggleGroup"
+  ],
+  "json": "prefab__StoryZoneScrollItem__0155e3bb23d6.json"
+ },
+ {
+  "name": "StrangerBigDialog",
+  "source": "56b0d3b778f44134896c57f478f534cf",
+  "pathID": 108,
+  "nodes": 58,
+  "monoBehaviours": [
+   "ButtonWithIcon",
+   "CloseButton",
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Dialogs.StrangerBigDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.ResolutionImageAvatar",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "ProgressBar",
+   "SFToggle",
+   "UIFigures.UICircle",
+   "UniRx.Triggers.ObservableDestroyTrigger",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__StrangerBigDialog__56b0d3b778f4.json"
+ },
+ {
+  "name": "StrangerDialog",
+  "source": "62995f607bf6e4fb594f8e9dfa546acd",
+  "pathID": 109,
+  "nodes": 59,
+  "monoBehaviours": [
+   "ButtonWithIcon",
+   "CloseButton",
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.CompositeImage",
+   "Nekki.SF2.GUI.Dialogs.StrangerDialog",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.ResolutionImageAvatar",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "ProgressBar",
+   "SFToggle",
+   "UIFigures.UICircle",
+   "UniRx.Triggers.ObservableDestroyTrigger",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__StrangerDialog__62995f607bf6.json"
+ },
+ {
+  "name": "StyleBar",
+  "source": "5fe4af496f1637b4cb7362a961d1984d",
+  "pathID": 3,
+  "nodes": 1,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.StyleBar",
+   "Nekki.SF2.GUI.ResolutionImageSkew",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__StyleBar__5fe4af496f16.json"
+ },
+ {
+  "name": "StylePanel",
+  "source": "40f31cd6cb4d9584185621b1e65a6d55",
+  "pathID": 3,
+  "nodes": 1,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.StylePanel"
+  ],
+  "json": "prefab__StylePanel__40f31cd6cb4d.json"
+ },
+ {
+  "name": "SystemMessageItemContent",
+  "source": "3a1f4514f2fe60c4b9437c3c0256778b",
+  "pathID": 4,
+  "nodes": 2,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Dialogs.Raids.SystemMessageItemContent",
+   "Nekki.SF2.GUI.LabelAlias"
+  ],
+  "json": "prefab__SystemMessageItemContent__3a1f4514f2fe.json"
+ },
+ {
+  "name": "TextAndMoneyLine",
+  "source": "2766fe4654a9d004791e6a2279b6bd6c",
+  "pathID": 20,
+  "nodes": 9,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.IconAndText",
+   "Nekki.SF2.GUI.Fight.TextAndMoneyLine",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.LabelAliasLE",
+   "Nekki.SF2.GUI.ResolutionImageLE",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__TextAndMoneyLine__2766fe4654a9.json"
+ },
+ {
+  "name": "TextLine",
+  "source": "d2209e3cfced525449a86734137d6914",
+  "pathID": 9,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.TextLine",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.LabelAliasLE",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__TextLine__d2209e3cfced.json"
+ },
+ {
+  "name": "Toggle",
+  "source": "6f44117d3a899406b91d7f5aefddc39e",
+  "pathID": 11,
+  "nodes": 5,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "SFToggle",
+   "UIFigures.UICircle"
+  ],
+  "json": "prefab__Toggle__6f44117d3a89.json"
+ },
+ {
+  "name": "TradeDialog",
+  "source": "431673b2ec866461a8c1f1fa5fd13a76",
+  "pathID": 65,
+  "nodes": 30,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Dialogs.TradeDialog",
+   "Nekki.SF2.GUI.Glyphs.ImageGlyph",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Scripts.CheckBox",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "NonDrawingGraphic",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__TradeDialog__431673b2ec86.json"
+ },
+ {
+  "name": "TrickCell",
+  "source": "6ffbd68fb3c5842fca3e69be2783e54f",
+  "pathID": 27,
+  "nodes": 11,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.Profile.TrickCell",
+   "Nekki.SF2.GUI.Profile.TrickSubItem",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.TextDebugger",
+   "NonDrawingGraphic",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__TrickCell__6ffbd68fb3c5.json"
+ },
+ {
+  "name": "TrickISubtem",
+  "source": "ece6940d50e8943c98ec13f881254cfb",
+  "pathID": 23,
+  "nodes": 9,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.Profile.TrickSubItem",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__TrickISubtem__ece6940d50e8.json"
+ },
+ {
+  "name": "TutorialCanvas",
+  "source": "9db9519b454144616a79ffc878d455f8",
+  "pathID": 5,
+  "nodes": 2,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Tutorial.TutorialCanvas",
+   "NonDrawingGraphic",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster"
+  ],
+  "json": "prefab__TutorialCanvas__9db9519b4541.json"
+ },
+ {
+  "name": "ValueLine",
+  "source": "3638953de43e9f145b72d3f96140d474",
+  "pathID": 7,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.IconAndText",
+   "Nekki.SF2.GUI.Fight.ValueLine",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.LabelAliasLE",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.LayoutElement"
+  ],
+  "json": "prefab__ValueLine__3638953de43e.json"
+ },
+ {
+  "name": "ViewClanInfo",
+  "source": "dec7331d20e6bf04687d75762c5be7fb",
+  "pathID": 109,
+  "nodes": 43,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.ClanInfoView",
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.ClanLevelsInfoTable",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.SimpleScroll",
+   "NonDrawingGraphic",
+   "UniRx.Triggers.ObservableDestroyTrigger",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__ViewClanInfo__dec7331d20e6.json"
+ },
+ {
+  "name": "ViewFindClan",
+  "source": "7936294fc2870d147b837df9a2fef4b1",
+  "pathID": 10,
+  "nodes": 5,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.FindClanView",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage"
+  ],
+  "json": "prefab__ViewFindClan__7936294fc287.json"
+ },
+ {
+  "name": "ViewMembersClan",
+  "source": "bc2d08fb81796c74aba9d2aa021a44c0",
+  "pathID": 34,
+  "nodes": 19,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.MembersClanTable",
+   "Nekki.SF2.GUI.Dialogs.Raids.Clans.MembersClanView",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.SimpleScroll",
+   "NonDrawingGraphic",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.VerticalLayoutGroup"
+  ],
+  "json": "prefab__ViewMembersClan__bc2d08fb8179.json"
+ },
+ {
+  "name": "ViewerFight",
+  "source": "b11ce08164ff9cc48bb528b55f14a4fa",
+  "pathID": 93,
+  "nodes": 38,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.ActivePerkModel",
+   "Nekki.SF2.GUI.Fight.ComboModel",
+   "Nekki.SF2.GUI.Fight.PlayerLifeBar",
+   "Nekki.SF2.GUI.Fight.RoundsPanel",
+   "Nekki.SF2.GUI.Fight.ScreenModel",
+   "Nekki.SF2.GUI.Fight.StyleBar",
+   "Nekki.SF2.GUI.Fight.StylePanel",
+   "Nekki.SF2.GUI.Fight.ViewerFight",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.ResolutionImageAvatar",
+   "Nekki.SF2.GUI.ResolutionImageSkew",
+   "NonDrawingGraphic",
+   "UIFigures.UICircle",
+   "UnityEngine.UI.Button",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.Shadow"
+  ],
+  "json": "prefab__ViewerFight__b11ce08164ff.json"
+ },
+ {
+  "name": "VsScreen",
+  "source": "sharedassets0.assets",
+  "pathID": 86,
+  "nodes": 12,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.VsScreen",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.ResolutionImageAvatar",
+   "UnityEngine.UI.Shadow"
+  ],
+  "json": "prefab__VsScreen__sharedassets.json"
+ },
+ {
+  "name": "WebViewDialog",
+  "source": "248837a4d1c6642b09ea07be108c3405",
+  "pathID": 7,
+  "nodes": 3,
+  "monoBehaviours": [
+   "CloseButton",
+   "Nekki.SF2.GUI.Dialogs.WebViewDialog",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "NonDrawingGraphic"
+  ],
+  "json": "prefab__WebViewDialog__248837a4d1c6.json"
+ },
+ {
+  "name": "[LoaderScreen]",
+  "source": "sharedassets0.assets",
+  "pathID": 113,
+  "nodes": 19,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Common.LoaderScreenSelector",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Scenes.LoaderScreen",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.Text",
+   "WideController"
+  ],
+  "json": "prefab__[LoaderScreen]__sharedassets.json"
+ },
+ {
+  "name": "[LockScreen]",
+  "source": "sharedassets0.assets",
+  "pathID": 120,
+  "nodes": 3,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.LockScreen",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster",
+   "UnityEngine.UI.Image"
+  ],
+  "json": "prefab__[LockScreen]__sharedassets.json"
+ },
+ {
+  "name": "[GameLoader]",
+  "source": "level0",
+  "pathID": 62,
+  "nodes": 19,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Common.LoaderScreenSelector",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Scenes.GameLoaderScene",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.Text",
+   "WideController"
+  ],
+  "json": "scene__level0_GameLoader.json",
+  "scene": "GameLoader"
+ },
+ {
+  "name": "[LoaderScene]",
+  "source": "level2",
+  "pathID": 11,
+  "nodes": 1,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Scenes.LoaderScene",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster"
+  ],
+  "json": "scene__level2_Loader.json",
+  "scene": "Loader"
+ },
+ {
+  "name": "[DojoScene]",
+  "source": "level3",
+  "pathID": 21,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Scenes.DojoScene",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster",
+   "UnityEngine.UI.Image",
+   "WideScreenController"
+  ],
+  "json": "scene__level3_Dojo.json",
+  "scene": "Dojo"
+ },
+ {
+  "name": "ShopBackground",
+  "source": "level4",
+  "pathID": 95,
+  "nodes": 2,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.SpriteRendererQuality"
+  ],
+  "json": "scene__level4_Shop.json",
+  "scene": "Shop"
+ },
+ {
+  "name": "[Shop]",
+  "source": "level4",
+  "pathID": 233,
+  "nodes": 87,
+  "monoBehaviours": [
+   "LabelButton",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Common.Indicator",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Scripts.VersionDependentElements",
+   "Nekki.SF2.GUI.Shop.Forge.ForgePanel",
+   "Nekki.SF2.GUI.Shop.ItemsPanel",
+   "Nekki.SF2.GUI.Shop.ShopScene",
+   "Nekki.SF2.GUI.Shop.SidePanel",
+   "Nekki.SF2.GUI.SidePanelScroll",
+   "Nekki.SF2.GUI.TableView",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialScrollTouch",
+   "Nekki.SF2.GUI.Tutorial.TutorialNode",
+   "NonDrawingGraphic",
+   "UniRx.Triggers.ObservableDestroyTrigger",
+   "UnityEngine.UI.Button",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.Slider",
+   "UnityEngine.UI.Text",
+   "UnityEngine.UI.VerticalLayoutGroup",
+   "WideScreenController"
+  ],
+  "json": "scene__level4_Shop.json",
+  "scene": "Shop"
+ },
+ {
+  "name": "[Map]",
+  "source": "level5",
+  "pathID": 19,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Map.MapScene",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster",
+   "UnityEngine.UI.Image",
+   "WideScreenController"
+  ],
+  "json": "scene__level5_Map.json",
+  "scene": "Map"
+ },
+ {
+  "name": "[Fight]",
+  "source": "level6",
+  "pathID": 20,
+  "nodes": 4,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.Fight.FightScene",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster",
+   "UnityEngine.UI.Image",
+   "WideScreenController"
+  ],
+  "json": "scene__level6_Fight.json",
+  "scene": "Fight"
+ },
+ {
+  "name": "ShopBackground",
+  "source": "level7",
+  "pathID": 121,
+  "nodes": 2,
+  "monoBehaviours": [
+   "Nekki.SF2.GUI.SpriteRendererQuality"
+  ],
+  "json": "scene__level7_Profile.json",
+  "scene": "Profile"
+ },
+ {
+  "name": "[Profile]",
+  "source": "level7",
+  "pathID": 294,
+  "nodes": 113,
+  "monoBehaviours": [
+   "CocosAnimation",
+   "EnhancedUI.EnhancedScroller.EnhancedScroller",
+   "LabelButton",
+   "Nekki.SF2.GUI.BaseScrollContent",
+   "Nekki.SF2.GUI.Common.Hints.ButtonHintUI",
+   "Nekki.SF2.GUI.Common.Hints.HintUI",
+   "Nekki.SF2.GUI.Common.SFButtonControlEventHandler",
+   "Nekki.SF2.GUI.ItemsScroll",
+   "Nekki.SF2.GUI.LabelAlias",
+   "Nekki.SF2.GUI.Profile.AchievementContent",
+   "Nekki.SF2.GUI.Profile.AchievementsController",
+   "Nekki.SF2.GUI.Profile.BattlePassPanel",
+   "Nekki.SF2.GUI.Profile.InfoPanel",
+   "Nekki.SF2.GUI.Profile.ItemsSelectionManager",
+   "Nekki.SF2.GUI.Profile.PerkContent",
+   "Nekki.SF2.GUI.Profile.PerksController",
+   "Nekki.SF2.GUI.Profile.ProfileScene",
+   "Nekki.SF2.GUI.Profile.ProgressBarBattlePass",
+   "Nekki.SF2.GUI.Profile.SealsContent",
+   "Nekki.SF2.GUI.Profile.SealsController",
+   "Nekki.SF2.GUI.Profile.TrickContent",
+   "Nekki.SF2.GUI.Profile.TricksController",
+   "Nekki.SF2.GUI.Profile.UserPerksPanel",
+   "Nekki.SF2.GUI.ResolutionImage",
+   "Nekki.SF2.GUI.Shop.Scroll",
+   "Nekki.SF2.GUI.TableView",
+   "Nekki.SF2.GUI.TextDebugger",
+   "Nekki.SF2.GUI.Tutorial.Controls.TutorialButtonTouch",
+   "ProgressBar",
+   "SFButton",
+   "SoftMasking.SoftMask",
+   "SoftMasking.SoftMaskable",
+   "UniRx.Triggers.ObservableDestroyTrigger",
+   "UnityEngine.UI.CanvasScaler",
+   "UnityEngine.UI.GraphicRaycaster",
+   "UnityEngine.UI.HorizontalLayoutGroup",
+   "UnityEngine.UI.Image",
+   "UnityEngine.UI.LayoutElement",
+   "UnityEngine.UI.Mask",
+   "UnityEngine.UI.RectMask2D",
+   "UnityEngine.UI.ScrollRect",
+   "UnityEngine.UI.VerticalLayoutGroup",
+   "WideScreenController"
+  ],
+  "json": "scene__level7_Profile.json",
+  "scene": "Profile"
+ }
+]

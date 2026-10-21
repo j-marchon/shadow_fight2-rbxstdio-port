@@ -1,0 +1,594 @@
+{
+ "source": "9b8c015dd73c6c645873509ef85eac24",
+ "pathID": 11,
+ "root": {
+  "name": "RaidLeaguesHintBox",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.5,
+    0.5
+   ],
+   "anchorMax": [
+    0.5,
+    0.5
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    750.0,
+    350.0
+   ],
+   "pivot": [
+    0.5,
+    1.0
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "HintBoxAutoKilled",
+    "namespace": "Nekki.SF2.GUI",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_RectTransform": {
+      "type": "RectTransform",
+      "path": "RaidLeaguesHintBox"
+     },
+     "_Arrow": {
+      "type": "ResolutionImage",
+      "path": "RaidLeaguesHintBox/Background/Arrow"
+     },
+     "_Title": null,
+     "_Description": {
+      "type": "LabelAlias",
+      "path": "RaidLeaguesHintBox/Description"
+     },
+     "_BGTransform": {
+      "type": "RectTransform",
+      "path": "RaidLeaguesHintBox/Background"
+     },
+     "_BGLayout": null,
+     "_AsianLanguagesLineSpacingMultipler": 1.0
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "Background",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      -14.0
+     ],
+     "sizeDelta": [
+      750.0,
+      322.0
+     ],
+     "pivot": [
+      0.5,
+      1.0
+     ],
+     "localScale": [
+      0.5,
+      0.5,
+      0.5
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImage",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": true,
+       "runtimeSprites": {
+        "SpriteName": {
+         "name": "Hints.Base",
+         "texture": "Hints",
+         "resourcesPath": "UI/Atlases/",
+         "resolved": true
+        }
+       },
+       "sprite": "Hints.Base",
+       "texture": "Hints",
+       "spriteSource": "runtime:_SpriteName",
+       "spriteInfo": {
+        "type": "Sprite",
+        "name": "Hints.Base",
+        "file": "9b45a8d22d41a9744be62c0ff21f54ea",
+        "texture": "Hints",
+        "textureSize": [
+         128,
+         256
+        ],
+        "png": "tex/APK/Hints.png",
+        "textureRect": [
+         1.0,
+         115.0,
+         71.0,
+         71.0
+        ],
+        "rect": [
+         1.0,
+         115.0,
+         71.0,
+         71.0
+        ],
+        "border": [
+         35.0,
+         35.0,
+         35.0,
+         35.0
+        ],
+        "pivot": [
+         0.0,
+         0.0
+        ],
+        "ppu": 100.0
+       },
+       "type": "sliced",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 1,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "UI/Atlases/",
+       "_SpriteName": "Hints.Base"
+      }
+     }
+    ],
+    "children": [
+     {
+      "name": "Arrow",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        1.0
+       ],
+       "anchorMax": [
+        0.5,
+        1.0
+       ],
+       "anchoredPosition": [
+        0.0,
+        -20.0
+       ],
+       "sizeDelta": [
+        180.0,
+        104.0
+       ],
+       "pivot": [
+        0.5,
+        0.0
+       ],
+       "localScale": [
+        0.5,
+        0.5,
+        0.5
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImage",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": true,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "Hints.Arrow",
+           "texture": "Hints",
+           "resourcesPath": "UI/Atlases/",
+           "resolved": true
+          }
+         },
+         "sprite": "Hints.Arrow",
+         "texture": "Hints",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "Hints.Arrow",
+          "file": "9b45a8d22d41a9744be62c0ff21f54ea",
+          "texture": "Hints",
+          "textureSize": [
+           128,
+           256
+          ],
+          "png": "tex/APK/Hints.png",
+          "textureRect": [
+           1.0,
+           188.0,
+           115.0,
+           67.0
+          ],
+          "rect": [
+           1.0,
+           188.0,
+           115.0,
+           67.0
+          ],
+          "pivot": [
+           0.0,
+           0.0
+          ],
+          "ppu": 100.0
+         },
+         "type": "simple",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 1,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "UI/Atlases/",
+         "_SpriteName": "Hints.Arrow"
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "LayoutElement",
+        "namespace": "UnityEngine.UI",
+        "assembly": "UnityEngine.UI",
+        "enabled": true,
+        "ui": {
+         "IgnoreLayout": 1,
+         "MinWidth": -1.0,
+         "MinHeight": -1.0,
+         "PreferredWidth": -1.0,
+         "PreferredHeight": -1.0,
+         "FlexibleWidth": -1.0,
+         "FlexibleHeight": -1.0
+        },
+        "fields": {
+         "m_IgnoreLayout": 1,
+         "m_MinWidth": -1.0,
+         "m_MinHeight": -1.0,
+         "m_PreferredWidth": -1.0,
+         "m_PreferredHeight": -1.0,
+         "m_FlexibleWidth": -1.0,
+         "m_FlexibleHeight": -1.0,
+         "m_LayoutPriority": 1
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Title",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      1.0
+     ],
+     "anchorMax": [
+      0.5,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      -90.0
+     ],
+     "sizeDelta": [
+      700.0,
+      85.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "LabelAlias",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Text",
+       "color": [
+        0.1961,
+        0.1961,
+        0.1961,
+        1.0
+       ],
+       "raycastTarget": false,
+       "text": "ChestHintReward",
+       "font": "majallab",
+       "fontSize": 80,
+       "fontStyle": "Normal",
+       "alignment": "UpperCenter",
+       "bestFit": true,
+       "minSize": 8,
+       "maxSize": 80,
+       "richText": true,
+       "horizontalOverflow": "Wrap",
+       "verticalOverflow": "Overflow",
+       "lineSpacing": 1.0,
+       "locKey": "ChestHintReward",
+       "toUpperCase": false,
+       "useLocalizationFont": true,
+       "fontType": 0,
+       "labelFontSize": 80,
+       "labelLineSpacing": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 0.1961,
+        "g": 0.1961,
+        "b": 0.1961,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_FontData": {
+        "m_Font": {
+         "type": "Font",
+         "name": "majallab",
+         "file": "sharedassets0.assets"
+        },
+        "m_FontSize": 80,
+        "m_FontStyle": 0,
+        "m_BestFit": 1,
+        "m_MinSize": 8,
+        "m_MaxSize": 80,
+        "m_Alignment": 1,
+        "m_AlignByGeometry": 0,
+        "m_RichText": 1,
+        "m_HorizontalOverflow": 0,
+        "m_VerticalOverflow": 1,
+        "m_LineSpacing": 1.0
+       },
+       "m_Text": "ChestHintReward",
+       "GlyphPrefabs": [],
+       "ForceUseAlignedBestFit": 0,
+       "ForbiddenUseAlignedBestFit": 0,
+       "FitImageLineHeightParam": {
+        "ScaleMaxLineHeightFactor": 1.0,
+        "ApplyToSingleLine": 0,
+        "Enabled": 0
+       },
+       "_useLocalizationFont": 1,
+       "_fontType": 0,
+       "_useLabelFontSize": 1,
+       "_labelFontSize": 80,
+       "_useLabelLineSpacing": 1,
+       "_labelLineSpacing": 1.0,
+       "_Alias": "ChestHintReward",
+       "_ToUpperCase": 0
+      }
+     }
+    ]
+   },
+   {
+    "name": "Description",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      -58.0
+     ],
+     "sizeDelta": [
+      700.0,
+      197.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "LabelAlias",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Text",
+       "color": [
+        0.1961,
+        0.1961,
+        0.1961,
+        1.0
+       ],
+       "raycastTarget": false,
+       "text": "Hint text 123456-7890 PLYAER",
+       "font": "majallab",
+       "fontSize": 60,
+       "fontStyle": "Normal",
+       "alignment": "UpperCenter",
+       "bestFit": true,
+       "minSize": 6,
+       "maxSize": 60,
+       "richText": true,
+       "horizontalOverflow": "Wrap",
+       "verticalOverflow": "Truncate",
+       "lineSpacing": 1.0,
+       "locKey": null,
+       "toUpperCase": false,
+       "useLocalizationFont": true,
+       "fontType": 0,
+       "labelFontSize": 60
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 0.1961,
+        "g": 0.1961,
+        "b": 0.1961,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_FontData": {
+        "m_Font": {
+         "type": "Font",
+         "name": "majallab",
+         "file": "sharedassets0.assets"
+        },
+        "m_FontSize": 60,
+        "m_FontStyle": 0,
+        "m_BestFit": 1,
+        "m_MinSize": 6,
+        "m_MaxSize": 60,
+        "m_Alignment": 1,
+        "m_AlignByGeometry": 0,
+        "m_RichText": 1,
+        "m_HorizontalOverflow": 0,
+        "m_VerticalOverflow": 0,
+        "m_LineSpacing": 1.0
+       },
+       "m_Text": "Hint text 123456-7890 PLYAER",
+       "GlyphPrefabs": [],
+       "ForceUseAlignedBestFit": 0,
+       "ForbiddenUseAlignedBestFit": 0,
+       "FitImageLineHeightParam": {
+        "ScaleMaxLineHeightFactor": 1.0,
+        "ApplyToSingleLine": 0,
+        "Enabled": 0
+       },
+       "_useLocalizationFont": 1,
+       "_fontType": 0,
+       "_useLabelFontSize": 1,
+       "_labelFontSize": 60,
+       "_useLabelLineSpacing": 0,
+       "_labelLineSpacing": 0.0,
+       "_Alias": "",
+       "_ToUpperCase": 0
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

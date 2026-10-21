@@ -1,0 +1,57 @@
+{
+ "source": "27767763782dca148a67face01b44c29",
+ "pathID": 3,
+ "root": {
+  "name": "ActivePerkModel",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.5,
+    0.5
+   ],
+   "anchorMax": [
+    0.5,
+    0.5
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    100.0,
+    100.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "ActivePerkModel",
+    "namespace": "Nekki.SF2.GUI.Fight",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_align": 0,
+     "_activePerkItemPrefab": {
+      "type": "GameObject",
+      "path": "ActivePerkItem"
+     },
+     "_activePerkItemContainerPrefab": {
+      "type": "GameObject",
+      "path": "ActivePerkItemContainer"
+     }
+    }
+   }
+  ]
+ }
+}

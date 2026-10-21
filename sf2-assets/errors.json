@@ -1,0 +1,12 @@
+{
+"APK": [
+"Texture2D 2: [Errno 13] Permission denied: 'D:/Tools/work/sf2-data/apk_assets/assets/bin/Data'",
+"Texture2D 2: [Errno 13] Permission denied: 'D:/Tools/work/sf2-data/apk_assets/assets/bin/Data'",
+"Texture2D 4: [Errno 13] Permission denied: 'D:/Tools/work/sf2-data/apk_assets/assets/bin/Data'",
+"Texture2D 5: [Errno 13] Permission denied: 'D:/Tools/work/sf2-data/apk_assets/assets/bin/Data'",
+"Texture2D 10103: [Errno 13] Permission denied: 'D:/Tools/work/sf2-data/apk_assets/assets/bin/Data'"
+],
+"Asian": [
+"Texture2D -7096712404901697684: [Errno 13] Permission denied: 'D:/Tools/work/sf2-data/cdn'"
+]
+}

@@ -1,0 +1,49 @@
+{
+ "source": "40f31cd6cb4d9584185621b1e65a6d55",
+ "pathID": 3,
+ "root": {
+  "name": "StylePanel",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.5,
+    0.5
+   ],
+   "anchorMax": [
+    0.5,
+    0.5
+   ],
+   "anchoredPosition": [
+    30.0,
+    -40.0
+   ],
+   "sizeDelta": [
+    358.0,
+    100.0
+   ],
+   "pivot": [
+    0.0,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "StylePanel",
+    "namespace": "Nekki.SF2.GUI.Fight",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_styleBar": null
+    }
+   }
+  ]
+ }
+}

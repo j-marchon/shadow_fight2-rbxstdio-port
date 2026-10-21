@@ -1,0 +1,131 @@
+{
+ "source": "07d605c34eb66484da712af93a443159",
+ "pathID": 3,
+ "root": {
+  "name": "ItemRewardHardmode",
+  "active": true,
+  "layer": 0,
+  "rect": {
+   "anchorMin": [
+    0.5,
+    0.5
+   ],
+   "anchorMax": [
+    0.5,
+    0.5
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    778.0,
+    302.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "ResolutionImage",
+    "namespace": "Nekki.SF2.GUI",
+    "assembly": "Root",
+    "enabled": true,
+    "ui": {
+     "kind": "Image",
+     "color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "raycastTarget": true,
+     "runtimeSprites": {
+      "SpriteName": {
+       "name": "Weapon14.img_weapon_shocker_claws",
+       "texture": "Weapon14",
+       "resourcesPath": "UI/Items/",
+       "resolved": true
+      }
+     },
+     "sprite": "Weapon14.img_weapon_shocker_claws",
+     "texture": "Weapon14",
+     "spriteSource": "runtime:_SpriteName",
+     "spriteInfo": {
+      "type": "Sprite",
+      "name": "Weapon14.img_weapon_shocker_claws",
+      "texture": "Weapon14",
+      "pack": "ZONE_7",
+      "png": "tex/ZONE_7/Weapon14.png",
+      "textureRectTopLeft": [
+       2,
+       446,
+       628,
+       282
+      ],
+      "pivot": [
+       0.4936,
+       0.5248
+      ],
+      "source": "sprites.json (bundle)"
+     },
+     "type": "simple",
+     "preserveAspect": true,
+     "fillCenter": true,
+     "pixelsPerUnitMultiplier": 1.0
+    },
+    "fields": {
+     "m_Material": null,
+     "m_Color": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 1.0,
+      "a": 1.0
+     },
+     "m_RaycastTarget": 1,
+     "m_RaycastPadding": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "w": 0.0
+     },
+     "m_Maskable": 1,
+     "m_Sprite": null,
+     "m_Type": 0,
+     "m_PreserveAspect": 1,
+     "m_FillCenter": 1,
+     "m_FillMethod": 4,
+     "m_FillAmount": 1.0,
+     "m_FillClockwise": 1,
+     "m_FillOrigin": 0,
+     "m_UseSpriteMesh": 0,
+     "m_PixelsPerUnitMultiplier": 1.0,
+     "_TexturePath": "UI/Items/",
+     "_SpriteName": "Weapon14.img_weapon_shocker_claws"
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "ItemRewardHardmode",
+    "namespace": "Nekki.SF2.GUI.Fight",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "icon": {
+      "type": "ResolutionImage",
+      "path": "ItemRewardHardmode"
+     }
+    }
+   }
+  ]
+ }
+}

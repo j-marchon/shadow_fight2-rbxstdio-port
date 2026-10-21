@@ -1,0 +1,753 @@
+{
+ "source": "96e5e262048ae9845b8304fc5e5d5ad4",
+ "pathID": 16,
+ "root": {
+  "name": "GeneralPlayerInfoCell",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.0,
+    0.0
+   ],
+   "anchorMax": [
+    0.0,
+    0.0
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    1250.0,
+    120.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "NonDrawingGraphic",
+    "namespace": "",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "m_Material": null,
+     "m_Color": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 1.0,
+      "a": 1.0
+     },
+     "m_RaycastTarget": 1,
+     "m_RaycastPadding": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "w": 0.0
+     },
+     "m_Maskable": 1
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "GeneralPlayerInfoCell",
+    "namespace": "Nekki.SF2.GUI.Dialogs.Raids",
+    "assembly": "Root",
+    "enabled": true,
+    "ui": {
+     "kind": "Button",
+     "interactable": true,
+     "transition": "None",
+     "targetGraphic": {
+      "type": "NonDrawingGraphic",
+      "path": "GeneralPlayerInfoCell"
+     },
+     "onClick": []
+    },
+    "fields": {
+     "m_Navigation": {
+      "m_Mode": 3,
+      "m_WrapAround": 0,
+      "m_SelectOnUp": null,
+      "m_SelectOnDown": null,
+      "m_SelectOnLeft": null,
+      "m_SelectOnRight": null
+     },
+     "m_Transition": 0,
+     "m_Colors": {
+      "m_NormalColor": {
+       "r": 1.0,
+       "g": 1.0,
+       "b": 1.0,
+       "a": 1.0
+      },
+      "m_HighlightedColor": {
+       "r": 0.9608,
+       "g": 0.9608,
+       "b": 0.9608,
+       "a": 1.0
+      },
+      "m_PressedColor": {
+       "r": 0.7843,
+       "g": 0.7843,
+       "b": 0.7843,
+       "a": 1.0
+      },
+      "m_SelectedColor": {
+       "r": 0.9608,
+       "g": 0.9608,
+       "b": 0.9608,
+       "a": 1.0
+      },
+      "m_DisabledColor": {
+       "r": 0.7843,
+       "g": 0.7843,
+       "b": 0.7843,
+       "a": 0.502
+      },
+      "m_ColorMultiplier": 1.0,
+      "m_FadeDuration": 0.1
+     },
+     "m_SpriteState": {
+      "m_HighlightedSprite": null,
+      "m_PressedSprite": null,
+      "m_SelectedSprite": null,
+      "m_DisabledSprite": null
+     },
+     "m_AnimationTriggers": {
+      "m_NormalTrigger": "Normal",
+      "m_HighlightedTrigger": "Highlighted",
+      "m_PressedTrigger": "Pressed",
+      "m_SelectedTrigger": "Highlighted",
+      "m_DisabledTrigger": "Disabled"
+     },
+     "m_Interactable": 1,
+     "m_TargetGraphic": {
+      "type": "NonDrawingGraphic",
+      "path": "GeneralPlayerInfoCell"
+     },
+     "m_OnClick": {
+      "m_PersistentCalls": {
+       "m_Calls": []
+      }
+     },
+     "_visibilityRoot": {
+      "type": "RectTransform",
+      "path": "GeneralPlayerInfoCell/VisiblityRoot"
+     },
+     "_image": {
+      "type": "ResolutionImage",
+      "path": "GeneralPlayerInfoCell/VisiblityRoot/Image"
+     },
+     "_label": {
+      "type": "LabelAlias",
+      "path": "GeneralPlayerInfoCell/VisiblityRoot/Label"
+     },
+     "_value": {
+      "type": "LabelAlias",
+      "path": "GeneralPlayerInfoCell/VisiblityRoot/Value"
+     },
+     "_hintButton": {
+      "type": "SFButton",
+      "path": "GeneralPlayerInfoCell/VisiblityRoot/HintButton"
+     },
+     "_hintButtonMount": {
+      "type": "RectTransform",
+      "path": "GeneralPlayerInfoCell/VisiblityRoot/HintMount"
+     },
+     "_hintPrefab": {
+      "type": "GameObject",
+      "path": "PlayerInfoHintBox_Big"
+     }
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "VisiblityRoot",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "children": [
+     {
+      "name": "Image",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.0,
+        0.5
+       ],
+       "anchorMax": [
+        0.0,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        130.0,
+        130.0
+       ],
+       "pivot": [
+        0.0,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImage",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": false,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "RaidInfoIcons.raid_best_rating",
+           "texture": "RaidInfoIcons",
+           "resourcesPath": "UI/Atlases/",
+           "resolved": true
+          }
+         },
+         "sprite": "RaidInfoIcons.raid_best_rating",
+         "texture": "RaidInfoIcons",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "RaidInfoIcons.raid_best_rating",
+          "texture": "RaidInfoIcons",
+          "pack": "ZONE_RAID",
+          "png": "tex/ZONE_RAID/RaidInfoIcons.png",
+          "textureRectTopLeft": [
+           2,
+           567,
+           154,
+           154
+          ],
+          "pivot": [
+           0.5,
+           0.5
+          ],
+          "source": "sprites.json (bundle)"
+         },
+         "type": "simple",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "UI/Atlases/",
+         "_SpriteName": "RaidInfoIcons.raid_best_rating"
+        }
+       }
+      ]
+     },
+     {
+      "name": "Label",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.0,
+        0.5
+       ],
+       "anchorMax": [
+        0.0,
+        0.5
+       ],
+       "anchoredPosition": [
+        140.0,
+        0.0
+       ],
+       "sizeDelta": [
+        700.0,
+        80.0
+       ],
+       "pivot": [
+        0.0,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "LabelAlias",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Text",
+         "color": [
+          0.1843,
+          0.1451,
+          0.1059,
+          1.0
+         ],
+         "raycastTarget": false,
+         "text": "Name Name",
+         "font": "AGOpusBold",
+         "fontSize": 53,
+         "fontStyle": "Normal",
+         "alignment": "MiddleLeft",
+         "bestFit": true,
+         "minSize": 10,
+         "maxSize": 100,
+         "richText": true,
+         "horizontalOverflow": "Wrap",
+         "verticalOverflow": "Truncate",
+         "lineSpacing": 1.0,
+         "locKey": null,
+         "toUpperCase": false,
+         "useLocalizationFont": true,
+         "fontType": 0,
+         "labelFontSize": 70
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 0.1843,
+          "g": 0.1451,
+          "b": 0.1059,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_FontData": {
+          "m_Font": {
+           "type": "Font",
+           "name": "AGOpusBold",
+           "file": "sharedassets0.assets"
+          },
+          "m_FontSize": 53,
+          "m_FontStyle": 0,
+          "m_BestFit": 1,
+          "m_MinSize": 10,
+          "m_MaxSize": 100,
+          "m_Alignment": 3,
+          "m_AlignByGeometry": 0,
+          "m_RichText": 1,
+          "m_HorizontalOverflow": 0,
+          "m_VerticalOverflow": 0,
+          "m_LineSpacing": 1.0
+         },
+         "m_Text": "Name Name",
+         "GlyphPrefabs": [],
+         "ForceUseAlignedBestFit": 0,
+         "ForbiddenUseAlignedBestFit": 0,
+         "FitImageLineHeightParam": {
+          "ScaleMaxLineHeightFactor": 1.0,
+          "ApplyToSingleLine": 0,
+          "Enabled": 0
+         },
+         "_useLocalizationFont": 1,
+         "_fontType": 0,
+         "_useLabelFontSize": 1,
+         "_labelFontSize": 70,
+         "_useLabelLineSpacing": 0,
+         "_labelLineSpacing": 0.0,
+         "_Alias": "",
+         "_ToUpperCase": 0
+        }
+       }
+      ]
+     },
+     {
+      "name": "Value",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        1.0,
+        0.5
+       ],
+       "anchorMax": [
+        1.0,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        3.0
+       ],
+       "sizeDelta": [
+        650.0,
+        100.0
+       ],
+       "pivot": [
+        1.0,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "LabelAlias",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Text",
+         "color": [
+          0.1843,
+          0.1451,
+          0.1059,
+          1.0
+         ],
+         "raycastTarget": false,
+         "text": "Name Name",
+         "font": "AGOpusBold",
+         "fontSize": 53,
+         "fontStyle": "Normal",
+         "alignment": "MiddleRight",
+         "bestFit": true,
+         "minSize": 10,
+         "maxSize": 100,
+         "richText": true,
+         "horizontalOverflow": "Wrap",
+         "verticalOverflow": "Truncate",
+         "lineSpacing": 1.0,
+         "locKey": null,
+         "toUpperCase": false,
+         "useLocalizationFont": true,
+         "fontType": 0,
+         "labelFontSize": 90
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 0.1843,
+          "g": 0.1451,
+          "b": 0.1059,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_FontData": {
+          "m_Font": {
+           "type": "Font",
+           "name": "AGOpusBold",
+           "file": "sharedassets0.assets"
+          },
+          "m_FontSize": 53,
+          "m_FontStyle": 0,
+          "m_BestFit": 1,
+          "m_MinSize": 10,
+          "m_MaxSize": 100,
+          "m_Alignment": 5,
+          "m_AlignByGeometry": 0,
+          "m_RichText": 1,
+          "m_HorizontalOverflow": 0,
+          "m_VerticalOverflow": 0,
+          "m_LineSpacing": 1.0
+         },
+         "m_Text": "Name Name",
+         "GlyphPrefabs": [],
+         "ForceUseAlignedBestFit": 0,
+         "ForbiddenUseAlignedBestFit": 0,
+         "FitImageLineHeightParam": {
+          "ScaleMaxLineHeightFactor": 1.0,
+          "ApplyToSingleLine": 0,
+          "Enabled": 0
+         },
+         "_useLocalizationFont": 1,
+         "_fontType": 0,
+         "_useLabelFontSize": 1,
+         "_labelFontSize": 90,
+         "_useLabelLineSpacing": 0,
+         "_labelLineSpacing": 0.0,
+         "_Alias": "",
+         "_ToUpperCase": 0
+        }
+       }
+      ]
+     },
+     {
+      "name": "HintButton",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.0,
+        0.0
+       ],
+       "anchorMax": [
+        1.0,
+        1.0
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        0.0,
+        0.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "SFButton",
+        "namespace": "",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Button",
+         "interactable": true,
+         "transition": "None",
+         "targetGraphic": {
+          "type": "NonDrawingGraphic",
+          "path": "GeneralPlayerInfoCell/VisiblityRoot/HintButton"
+         },
+         "onClick": []
+        },
+        "fields": {
+         "m_Navigation": {
+          "m_Mode": 3,
+          "m_WrapAround": 0,
+          "m_SelectOnUp": null,
+          "m_SelectOnDown": null,
+          "m_SelectOnLeft": null,
+          "m_SelectOnRight": null
+         },
+         "m_Transition": 0,
+         "m_Colors": {
+          "m_NormalColor": {
+           "r": 1.0,
+           "g": 1.0,
+           "b": 1.0,
+           "a": 1.0
+          },
+          "m_HighlightedColor": {
+           "r": 0.9608,
+           "g": 0.9608,
+           "b": 0.9608,
+           "a": 1.0
+          },
+          "m_PressedColor": {
+           "r": 0.7843,
+           "g": 0.7843,
+           "b": 0.7843,
+           "a": 1.0
+          },
+          "m_SelectedColor": {
+           "r": 0.9608,
+           "g": 0.9608,
+           "b": 0.9608,
+           "a": 1.0
+          },
+          "m_DisabledColor": {
+           "r": 0.7843,
+           "g": 0.7843,
+           "b": 0.7843,
+           "a": 0.502
+          },
+          "m_ColorMultiplier": 1.0,
+          "m_FadeDuration": 0.1
+         },
+         "m_SpriteState": {
+          "m_HighlightedSprite": null,
+          "m_PressedSprite": null,
+          "m_SelectedSprite": null,
+          "m_DisabledSprite": null
+         },
+         "m_AnimationTriggers": {
+          "m_NormalTrigger": "Normal",
+          "m_HighlightedTrigger": "Highlighted",
+          "m_PressedTrigger": "Pressed",
+          "m_SelectedTrigger": "Highlighted",
+          "m_DisabledTrigger": "Disabled"
+         },
+         "m_Interactable": 1,
+         "m_TargetGraphic": {
+          "type": "NonDrawingGraphic",
+          "path": "GeneralPlayerInfoCell/VisiblityRoot/HintButton"
+         },
+         "m_OnClick": {
+          "m_PersistentCalls": {
+           "m_Calls": []
+          }
+         },
+         "FlashingImage": null,
+         "_EnableClickAnimation": 1,
+         "_glowSprite": null,
+         "_WaitBeforeClick": 1,
+         "IsOneShot": 0,
+         "_glowTime": 0.0,
+         "ButtonId": -1
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "NonDrawingGraphic",
+        "namespace": "",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 1,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1
+        }
+       }
+      ]
+     },
+     {
+      "name": "HintMount",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        -560.1,
+        -60.2
+       ],
+       "sizeDelta": [
+        100.0,
+        100.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,128 @@
+{
+ "source": "5b8b209c8d9e3496fb620060ad6e5634",
+ "pathID": 3,
+ "root": {
+  "name": "LampIndicator",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.5,
+    0.5
+   ],
+   "anchorMax": [
+    0.5,
+    0.5
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    68.0,
+    68.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "ResolutionImage",
+    "namespace": "Nekki.SF2.GUI",
+    "assembly": "Root",
+    "enabled": true,
+    "ui": {
+     "kind": "Image",
+     "color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "raycastTarget": true,
+     "runtimeSprites": {
+      "SpriteName": {
+       "name": "MiscSprites.red_bulb",
+       "texture": "MiscSprites",
+       "resourcesPath": "UI/Atlases/",
+       "resolved": true
+      }
+     },
+     "sprite": "MiscSprites.red_bulb",
+     "texture": "MiscSprites",
+     "spriteSource": "runtime:_SpriteName",
+     "spriteInfo": {
+      "type": "Sprite",
+      "name": "MiscSprites.red_bulb",
+      "file": "f007128341a8a4c1b8295fc9b88eea07",
+      "texture": "MiscSprites",
+      "textureSize": [
+       1024,
+       2048
+      ],
+      "png": "tex/APK/MiscSprites.png",
+      "textureRect": [
+       306.0,
+       1978.0,
+       68.0,
+       68.0
+      ],
+      "rect": [
+       306.0,
+       1978.0,
+       68.0,
+       68.0
+      ],
+      "pivot": [
+       0.5,
+       0.5
+      ],
+      "ppu": 100.0
+     },
+     "type": "simple",
+     "preserveAspect": false,
+     "fillCenter": true,
+     "pixelsPerUnitMultiplier": 1.0
+    },
+    "fields": {
+     "m_Material": null,
+     "m_Color": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 1.0,
+      "a": 1.0
+     },
+     "m_RaycastTarget": 1,
+     "m_RaycastPadding": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "w": 0.0
+     },
+     "m_Maskable": 1,
+     "m_Sprite": null,
+     "m_Type": 0,
+     "m_PreserveAspect": 0,
+     "m_FillCenter": 1,
+     "m_FillMethod": 4,
+     "m_FillAmount": 1.0,
+     "m_FillClockwise": 1,
+     "m_FillOrigin": 0,
+     "m_UseSpriteMesh": 0,
+     "m_PixelsPerUnitMultiplier": 1.0,
+     "_TexturePath": "UI/Atlases/",
+     "_SpriteName": "MiscSprites.red_bulb"
+    }
+   }
+  ]
+ }
+}

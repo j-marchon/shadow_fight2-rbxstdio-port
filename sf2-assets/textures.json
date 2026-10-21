@@ -1,0 +1,6386 @@
+{
+"APK/Achievements01": [
+2048,
+2048
+],
+"APK/Achievements02": [
+1024,
+1024
+],
+"APK/Achievements03": [
+512,
+1024
+],
+"APK/Attributes": [
+128,
+1024
+],
+"APK/BG": [
+2048,
+2048
+],
+"APK/Background": [
+32,
+32
+],
+"APK/Background_left": [
+219,
+1536
+],
+"APK/BattleBtnStartActive": [
+512,
+1024
+],
+"APK/BattleBtnStartBase": [
+512,
+1024
+],
+"APK/BattleBtnStartLock": [
+512,
+1024
+],
+"APK/BattleBtnStartLockActive": [
+512,
+1024
+],
+"APK/BattleBtnStartPressed": [
+512,
+1024
+],
+"APK/CommonButtons": [
+512,
+1024
+],
+"APK/CommonScrolls": [
+2048,
+2048
+],
+"APK/DialogScroll": [
+1024,
+1024
+],
+"APK/DialogStripes": [
+1024,
+64
+],
+"APK/DifficultyBars": [
+512,
+256
+],
+"APK/EscToExit_Text": [
+267,
+20
+],
+"APK/EscToExit_back": [
+74,
+71
+],
+"APK/FightButtons": [
+1024,
+2048
+],
+"APK/FightPause": [
+1024,
+1024
+],
+"APK/FightUI": [
+2048,
+2048
+],
+"APK/Hints": [
+128,
+256
+],
+"APK/InputFieldBackground": [
+32,
+32
+],
+"APK/Logo": [
+1024,
+1024
+],
+"APK/LotteryX5Chest": [
+640,
+480
+],
+"APK/Map0": [
+2048,
+1024
+],
+"APK/MenuButtons": [
+1024,
+2048
+],
+"APK/MiscSprites": [
+1024,
+2048
+],
+"APK/ParametersBar": [
+512,
+256
+],
+"APK/Preloader": [
+2048,
+1024
+],
+"APK/PreloaderChina": [
+2048,
+1024
+],
+"APK/PreloaderJapan": [
+2048,
+1024
+],
+"APK/PreloaderKorea": [
+2048,
+1024
+],
+"APK/ProfilePieces": [
+1024,
+256
+],
+"APK/RaidChat": [
+1024,
+512
+],
+"APK/RaidMap": [
+512,
+1024
+],
+"APK/Roll_Shadow": [
+800,
+948
+],
+"APK/SF3AdvButton": [
+1024,
+1024
+],
+"APK/SaleBtn": [
+512,
+1024
+],
+"APK/SaleTimerRibbon": [
+252,
+252
+],
+"APK/SaleTimerRibbon_Low": [
+123,
+123
+],
+"APK/ShopButtons1": [
+1024,
+1024
+],
+"APK/ShopButtons2": [
+1024,
+1024
+],
+"APK/ShopPieces": [
+1024,
+2048
+],
+"APK/SlidersSettings": [
+1024,
+256
+],
+"APK/Soft": [
+128,
+128
+],
+"APK/Stripe": [
+1024,
+1024
+],
+"APK/SurpriseBoxBtn": [
+252,
+252
+],
+"APK/SurpriseBoxBtn_Low": [
+123,
+123
+],
+"APK/TopPanel": [
+1024,
+512
+],
+"APK/UIMask": [
+32,
+32
+],
+"APK/UISprite": [
+32,
+32
+],
+"APK/UnitySplash-HolographicTrackingLoss": [
+32,
+32
+],
+"APK/UnityWatermark-beta": [
+127,
+17
+],
+"APK/UnityWatermark-dev": [
+115,
+17
+],
+"APK/UnityWatermark-edu": [
+148,
+17
+],
+"APK/UnityWatermark-proto": [
+87,
+13
+],
+"APK/UnityWatermark-small": [
+128,
+58
+],
+"APK/UnityWatermark-trial": [
+76,
+14
+],
+"APK/UnityWatermark-trial-big": [
+512,
+94
+],
+"APK/UnityWatermarkPlugin-beta": [
+66,
+17
+],
+"APK/UnknownItems": [
+2048,
+2048
+],
+"APK/VSScreen": [
+1024,
+1024
+],
+"APK/VS_Fon": [
+2048,
+1024
+],
+"APK/VS_Fon_left": [
+1024,
+1024
+],
+"APK/VS_Fon_right": [
+1024,
+1024
+],
+"APK/WarningSign": [
+64,
+64
+],
+"APK/Weapon1": [
+1024,
+1024
+],
+"APK/arrow": [
+240,
+38
+],
+"APK/arrowDark": [
+738,
+130
+],
+"APK/ash": [
+40,
+40
+],
+"APK/ash2": [
+40,
+40
+],
+"APK/avatar_hero": [
+512,
+512
+],
+"APK/bamboo_grove_atlas_layer1": [
+512,
+512
+],
+"APK/bamboo_grove_atlas_layer2": [
+512,
+512
+],
+"APK/bamboo_grove_atlas_layer3": [
+512,
+2048
+],
+"APK/bamboo_grove_bg": [
+512,
+512
+],
+"APK/bird_black": [
+256,
+1024
+],
+"APK/block": [
+256,
+512
+],
+"APK/board": [
+634,
+151
+],
+"APK/boss_lynx": [
+512,
+512
+],
+"APK/box": [
+12,
+12
+],
+"APK/button": [
+12,
+12
+],
+"APK/button active": [
+12,
+12
+],
+"APK/button hover": [
+12,
+12
+],
+"APK/button on": [
+12,
+12
+],
+"APK/button on hover": [
+12,
+12
+],
+"APK/character_may_1": [
+512,
+512
+],
+"APK/character_may_1_small": [
+512,
+512
+],
+"APK/character_may_4": [
+512,
+512
+],
+"APK/character_sensei": [
+512,
+512
+],
+"APK/character_sensei_small": [
+512,
+512
+],
+"APK/critical": [
+2048,
+256
+],
+"APK/dojo_atlas_layer1": [
+512,
+1024
+],
+"APK/dojo_atlas_layer2": [
+2048,
+512
+],
+"APK/dojo_atlas_layer3": [
+1024,
+1024
+],
+"APK/dojo_bg": [
+1024,
+512
+],
+"APK/dojo_india24_decorations": [
+2048,
+2048
+],
+"APK/dojo_india24_main_layers": [
+2048,
+2048
+],
+"APK/drop3": [
+64,
+64
+],
+"APK/drop_blood": [
+26,
+26
+],
+"APK/events_map": [
+459,
+310
+],
+"APK/fire": [
+32,
+32
+],
+"APK/garbage_foliage": [
+40,
+40
+],
+"APK/garbage_garbage": [
+40,
+40
+],
+"APK/girl_sai": [
+512,
+512
+],
+"APK/hit": [
+1024,
+1024
+],
+"APK/hit_blade": [
+2048,
+256
+],
+"APK/horizontal scrollbar": [
+18,
+15
+],
+"APK/horizontal scrollbar thumb": [
+12,
+12
+],
+"APK/horizontalslider": [
+8,
+7
+],
+"APK/img_get_free": [
+670,
+500
+],
+"APK/img_video": [
+670,
+500
+],
+"APK/leafs_on": [
+64,
+64
+],
+"APK/leafs_orange": [
+64,
+64
+],
+"APK/leafs_red": [
+64,
+64
+],
+"APK/leafs_s": [
+64,
+64
+],
+"APK/loading_circle": [
+64,
+64
+],
+"APK/loading_left": [
+1024,
+1024
+],
+"APK/loading_right": [
+1024,
+1024
+],
+"APK/man_batons": [
+512,
+512
+],
+"APK/man_kunai": [
+512,
+512
+],
+"APK/man_kungfu": [
+512,
+512
+],
+"APK/man_night": [
+512,
+512
+],
+"APK/man_swords": [
+512,
+512
+],
+"APK/moon_atlas_layer1": [
+1024,
+512
+],
+"APK/moon_atlas_layer2": [
+1024,
+512
+],
+"APK/moon_atlas_layer3": [
+1024,
+256
+],
+"APK/moon_atlas_layer4": [
+512,
+2048
+],
+"APK/moon_bg": [
+1024,
+512
+],
+"APK/moon_clouds": [
+512,
+1024
+],
+"APK/preview_start": [
+512,
+1024
+],
+"APK/slider thumb": [
+8,
+12
+],
+"APK/slider thumb active": [
+8,
+12
+],
+"APK/slidert humb hover": [
+8,
+12
+],
+"APK/snow": [
+32,
+32
+],
+"APK/spot": [
+30,
+30
+],
+"APK/stone_dragon_ash1": [
+32,
+32
+],
+"APK/stone_dragon_ash2": [
+64,
+64
+],
+"APK/textfield": [
+12,
+12
+],
+"APK/textfield hover": [
+12,
+12
+],
+"APK/textfield on": [
+12,
+12
+],
+"APK/toggle": [
+14,
+14
+],
+"APK/toggle active": [
+14,
+14
+],
+"APK/toggle hover": [
+14,
+14
+],
+"APK/toggle on": [
+14,
+14
+],
+"APK/toggle on active": [
+14,
+14
+],
+"APK/toggle on hover": [
+14,
+14
+],
+"APK/vertical scrollbar": [
+15,
+18
+],
+"APK/vertical scrollbar thumb": [
+12,
+12
+],
+"APK/verticalslider": [
+7,
+8
+],
+"APK/video_ad_map": [
+272,
+247
+],
+"APK/water_sparkles": [
+50,
+16
+],
+"APK/window": [
+17,
+27
+],
+"APK/window on": [
+17,
+27
+],
+"ASCENSION/BattleBtnAscensionActive": [
+512,
+512
+],
+"ASCENSION/BattleBtnAscensionBase": [
+512,
+512
+],
+"ASCENSION/BattleBtnAscensionPressed": [
+512,
+512
+],
+"ASCENSION/PuppeteerTheatre": [
+2048,
+2048
+],
+"ASCENSION/RaidCurrency_Ascension": [
+2048,
+2048
+],
+"ASCENSION/RaidKeys_Ascension": [
+256,
+512
+],
+"ASCENSION/ascension2_ninja_girl_swords": [
+512,
+512
+],
+"ASCENSION/ascension2_ninja_man_crescent_knives": [
+512,
+512
+],
+"ASCENSION/ascension2_ninja_man_keris": [
+512,
+512
+],
+"ASCENSION/ascension2_ninja_man_nunchaku": [
+512,
+512
+],
+"ASCENSION/ascension2_ninja_man_tonfa": [
+512,
+512
+],
+"ASCENSION/statue_atlas_layer1": [
+2048,
+512
+],
+"ASCENSION/statue_atlas_layer2": [
+2048,
+512
+],
+"ASCENSION/statue_atlas_layer3": [
+512,
+512
+],
+"ASCENSION/statue_atlas_layer4": [
+2048,
+512
+],
+"ASCENSION/statue_atlas_layer5": [
+1024,
+1024
+],
+"ASCENSION/statue_bg": [
+2048,
+512
+],
+"AZTEC_24/Aztec24": [
+2048,
+2048
+],
+"AZTEC_24/mgc_water_wave_end": [
+1024,
+1024
+],
+"AZTEC_24/mgc_water_wave_hit": [
+1024,
+1024
+],
+"AZTEC_24/mgc_water_wave_loop": [
+512,
+1024
+],
+"AZTEC_24/mgc_water_wave_start": [
+1024,
+2048
+],
+"Asian/LogoChina": [
+1024,
+1024
+],
+"Asian/LogoJapan": [
+1024,
+1024
+],
+"Asian/LogoKorea": [
+1024,
+1024
+],
+"CLANS/8March24": [
+1024,
+2048
+],
+"CLANS/Armor27": [
+2048,
+2048
+],
+"CLANS/Armor29": [
+512,
+2048
+],
+"CLANS/Armor30": [
+2048,
+1024
+],
+"CLANS/Armor33": [
+1024,
+2048
+],
+"CLANS/BattleBtnActive_raid": [
+1024,
+2048
+],
+"CLANS/BattleBtnBase_raid": [
+1024,
+2048
+],
+"CLANS/BattleBtnLockActive_raid": [
+1024,
+2048
+],
+"CLANS/BattleBtnLock_raid": [
+1024,
+2048
+],
+"CLANS/BattleBtnPressed_raid": [
+1024,
+2048
+],
+"CLANS/CNY21_22": [
+2048,
+2048
+],
+"CLANS/CNY24": [
+1024,
+2048
+],
+"CLANS/ClanLogo": [
+2048,
+2048
+],
+"CLANS/ClanLogoBS": [
+1024,
+2048
+],
+"CLANS/DailyOffer_Sales_sale": [
+365,
+247
+],
+"CLANS/FungusStaffOffer": [
+495,
+500
+],
+"CLANS/HW21": [
+2048,
+2048
+],
+"CLANS/Halloween19": [
+2048,
+2048
+],
+"CLANS/Halloween20": [
+1024,
+2048
+],
+"CLANS/Halloween22": [
+2048,
+2048
+],
+"CLANS/Helm27": [
+1024,
+2048
+],
+"CLANS/Helm29": [
+1024,
+1024
+],
+"CLANS/Helm31": [
+1024,
+2048
+],
+"CLANS/Helm32": [
+1024,
+2048
+],
+"CLANS/Helm35": [
+1024,
+2048
+],
+"CLANS/Helm36": [
+1024,
+2048
+],
+"CLANS/IE21EventPack_Sales_sale": [
+500,
+247
+],
+"CLANS/IndependenceDay": [
+2048,
+2048
+],
+"CLANS/IndependenceDay22": [
+2048,
+2048
+],
+"CLANS/India24_1_Offer": [
+495,
+500
+],
+"CLANS/India24_1_Offer_Sales_sale": [
+365,
+247
+],
+"CLANS/India24_2_Offer": [
+495,
+500
+],
+"CLANS/India24_2_Offer_Sales_sale": [
+365,
+247
+],
+"CLANS/India24_3_Offer": [
+495,
+500
+],
+"CLANS/India24_3_Offer_Sales_sale": [
+365,
+247
+],
+"CLANS/IndiaItems22": [
+1024,
+2048
+],
+"CLANS/IndianItems21": [
+2048,
+2048
+],
+"CLANS/IndianItems24": [
+1024,
+2048
+],
+"CLANS/Magic8": [
+1024,
+2048
+],
+"CLANS/MiniEvent22": [
+1024,
+1024
+],
+"CLANS/NY20_1": [
+2048,
+2048
+],
+"CLANS/NY20_2": [
+2048,
+2048
+],
+"CLANS/NY20_3": [
+2048,
+2048
+],
+"CLANS/NewYear2021": [
+2048,
+2048
+],
+"CLANS/NewYear2022": [
+2048,
+2048
+],
+"CLANS/NewYear2023": [
+2048,
+2048
+],
+"CLANS/NewYear2024": [
+1024,
+2048
+],
+"CLANS/Raid2": [
+2048,
+1024
+],
+"CLANS/RaidClanPack": [
+2048,
+2048
+],
+"CLANS/RaidCurrency2_Base": [
+1024,
+1024
+],
+"CLANS/RaidHardmodeUI": [
+1024,
+2048
+],
+"CLANS/RaidItems4": [
+1024,
+2048
+],
+"CLANS/RaidZone4_Offer_Sales_sale": [
+365,
+247
+],
+"CLANS/RaidZone4_Offer_big": [
+1024,
+1024
+],
+"CLANS/RaidZone4_Offer_small": [
+1024,
+1024
+],
+"CLANS/Raid_HardBosses": [
+256,
+512
+],
+"CLANS/Ranged11": [
+1024,
+2048
+],
+"CLANS/Ranged12": [
+1024,
+2048
+],
+"CLANS/Ranged9": [
+1024,
+1024
+],
+"CLANS/SummerEvent21": [
+2048,
+2048
+],
+"CLANS/Weapon16": [
+2048,
+1024
+],
+"CLANS/Weapon18": [
+1024,
+1024
+],
+"CLANS/Weapon20": [
+1024,
+1024
+],
+"CLANS/Weapon21": [
+1024,
+2048
+],
+"CLANS/Weapon24": [
+1024,
+2048
+],
+"CLANS/Zone4CyberDragonOffer_Sales_sale": [
+365,
+247
+],
+"CLANS/arrow_simple_highlight": [
+72,
+103
+],
+"CLANS/boss_arkhos_hardmode": [
+512,
+512
+],
+"CLANS/boss_blackness": [
+512,
+512
+],
+"CLANS/boss_crystal_hardmode": [
+512,
+512
+],
+"CLANS/boss_fatum_hardmode": [
+512,
+512
+],
+"CLANS/boss_fire_hardmode": [
+512,
+512
+],
+"CLANS/boss_gatekeeper": [
+512,
+512
+],
+"CLANS/boss_hoaxen_hardmode": [
+512,
+512
+],
+"CLANS/boss_hunger": [
+512,
+512
+],
+"CLANS/boss_hunger_hardmode": [
+512,
+512
+],
+"CLANS/boss_lamb_fungus_hard": [
+512,
+512
+],
+"CLANS/boss_mushroom_hardmode": [
+512,
+512
+],
+"CLANS/boss_saturn": [
+512,
+512
+],
+"CLANS/boss_saturn_hard": [
+512,
+512
+],
+"CLANS/boss_tenebris": [
+512,
+512
+],
+"CLANS/boss_tenebris_hardmode": [
+512,
+512
+],
+"CLANS/boss_vortex_hardmode": [
+512,
+512
+],
+"CLANS/boss_war": [
+512,
+512
+],
+"CLANS/boss_war_hardmode": [
+512,
+512
+],
+"CLANS/character_puppeteer": [
+512,
+512
+],
+"CLANS/character_simon_raid": [
+512,
+512
+],
+"CLANS/effect_bullet_fly": [
+256,
+512
+],
+"CLANS/effect_bullet_hit": [
+1024,
+2048
+],
+"CLANS/effect_electricity": [
+2048,
+2048
+],
+"CLANS/freeze_raid_layer0": [
+512,
+1024
+],
+"CLANS/gatekeeper_raid_bg_1": [
+1024,
+1024
+],
+"CLANS/gatekeeper_raid_mid": [
+2048,
+1024
+],
+"CLANS/img_magic_xmas16_iceball": [
+778,
+682
+],
+"CLANS/img_surpriseBox_junior_Sales_sale": [
+365,
+247
+],
+"CLANS/magic_snowball_end": [
+1024,
+512
+],
+"CLANS/magic_snowball_middle": [
+512,
+2048
+],
+"CLANS/magic_snowball_start": [
+1024,
+2048
+],
+"CLANS/magic_vodoo1_end": [
+1024,
+2048
+],
+"CLANS/magic_vodoo2_end": [
+1024,
+1024
+],
+"CLANS/magic_vodoo_middle": [
+1024,
+256
+],
+"CLANS/magic_vodoo_start": [
+512,
+1024
+],
+"CLANS/magic_windball_end": [
+1024,
+1024
+],
+"CLANS/magic_windball_middle": [
+1024,
+1024
+],
+"CLANS/magic_windball_start": [
+1024,
+2048
+],
+"CLANS/mgc_arcane_ball": [
+1024,
+1024
+],
+"CLANS/mgc_effect_arcane_martial_art_stack1": [
+512,
+1024
+],
+"CLANS/mgc_effect_arcane_martial_art_stack2": [
+512,
+1024
+],
+"CLANS/mgc_effect_arcane_martial_art_stack3": [
+512,
+1024
+],
+"CLANS/mgc_effect_arcane_martial_art_stack4": [
+512,
+1024
+],
+"CLANS/mgc_effect_black_hand": [
+2048,
+1024
+],
+"CLANS/mgc_effect_blizzard_shield": [
+1024,
+2048
+],
+"CLANS/mgc_effect_blizzard_shield_boom": [
+1024,
+2048
+],
+"CLANS/mgc_effect_cold_aura": [
+1024,
+2048
+],
+"CLANS/mgc_effect_fire_aura": [
+1024,
+1024
+],
+"CLANS/mgc_effect_gust_up": [
+1024,
+1024
+],
+"CLANS/mgc_effect_levitation_middle": [
+1024,
+1024
+],
+"CLANS/mgc_effect_lightning_end": [
+512,
+2048
+],
+"CLANS/mgc_effect_yin_yang_damage": [
+512,
+1024
+],
+"CLANS/mgc_effect_yin_yang_heal": [
+512,
+1024
+],
+"CLANS/mgc_effect_yin_yang_loop": [
+1024,
+1024
+],
+"CLANS/mgc_magic_arcane_martial_art": [
+1024,
+2048
+],
+"CLANS/mgc_magic_blood_curse_full": [
+2048,
+2048
+],
+"CLANS/mgc_magic_blood_curse_middle": [
+2048,
+2048
+],
+"CLANS/mgc_magic_blood_curse_start": [
+2048,
+2048
+],
+"CLANS/mgc_magic_bomb_end": [
+2048,
+512
+],
+"CLANS/mgc_magic_bomb_middle": [
+256,
+256
+],
+"CLANS/mgc_magic_bomb_start": [
+256,
+512
+],
+"CLANS/mgc_magic_fire_splash_end": [
+1024,
+2048
+],
+"CLANS/mgc_magic_fire_splash_middle": [
+512,
+512
+],
+"CLANS/mgc_magic_fire_splash_start": [
+512,
+2048
+],
+"CLANS/mgc_magic_fireball_end": [
+1024,
+1024
+],
+"CLANS/mgc_magic_flower_stun_end_1_vfx": [
+1024,
+1024
+],
+"CLANS/mgc_magic_flower_stun_end_2_vfx": [
+1024,
+1024
+],
+"CLANS/mgc_magic_flower_stun_middle_1_vfx": [
+256,
+256
+],
+"CLANS/mgc_magic_flower_stun_middle_2_vfx": [
+256,
+256
+],
+"CLANS/mgc_magic_flower_stun_start_1_vfx": [
+1024,
+1024
+],
+"CLANS/mgc_magic_flower_stun_start_2_vfx": [
+1024,
+1024
+],
+"CLANS/mgc_magic_ice_ball_end": [
+1024,
+1024
+],
+"CLANS/mgc_magic_ice_ball_middle": [
+1024,
+1024
+],
+"CLANS/mgc_magic_ice_ball_start": [
+512,
+1024
+],
+"CLANS/mgc_magic_lightning_arrow_start": [
+1024,
+1024
+],
+"CLANS/mgc_magic_nrtyu_scythe": [
+2048,
+2048
+],
+"CLANS/mgc_magic_snow_cloud": [
+1024,
+1024
+],
+"CLANS/mgc_magic_spirit_pillar_end": [
+1024,
+2048
+],
+"CLANS/mgc_magic_spirit_pillar_start": [
+2048,
+2048
+],
+"CLANS/mgc_magic_sun_end": [
+256,
+2048
+],
+"CLANS/mgc_magic_sun_loop": [
+512,
+1024
+],
+"CLANS/mgc_magic_sun_start": [
+1024,
+2048
+],
+"CLANS/mgc_magic_tiger_ball_end": [
+2048,
+2048
+],
+"CLANS/mgc_magic_tiger_ball_middle": [
+256,
+256
+],
+"CLANS/mgc_magic_tiger_ball_start": [
+2048,
+2048
+],
+"CLANS/mgc_magic_wind_wave_end": [
+1024,
+2048
+],
+"CLANS/mgc_magic_wind_wave_middle": [
+512,
+128
+],
+"CLANS/mgc_magic_wind_wave_start": [
+1024,
+2048
+],
+"CLANS/mgc_poison_cloud_end_vfx": [
+1024,
+1024
+],
+"CLANS/mgc_poison_smoke_start_vfx": [
+1024,
+2048
+],
+"CLANS/mgc_saturn_blade_hold": [
+512,
+128
+],
+"CLANS/mgc_saturn_smear": [
+2048,
+2048
+],
+"CLANS/mgc_violet_flash_back_end_vfx": [
+1024,
+1024
+],
+"CLANS/mgc_violet_flash_back_middle_vfx": [
+256,
+256
+],
+"CLANS/mgc_violet_flash_back_start_vfx": [
+1024,
+1024
+],
+"CLANS/saturn_raid_decorations": [
+2048,
+2048
+],
+"CLANS/saturn_raid_main": [
+2048,
+2048
+],
+"EVENTS__AMERICAN_25/American25Coin": [
+1024,
+1024
+],
+"EVENTS__AMERICAN_25/American25Key": [
+1024,
+1024
+],
+"EVENTS__AMERICAN_25/AmericanChest": [
+670,
+500
+],
+"EVENTS__AMERICAN_25/AmericanChestDojo": [
+512,
+1024
+],
+"EVENTS__AMERICAN_25/BG": [
+2048,
+2048
+],
+"EVENTS__AMERICAN_25/BattleBtnAmerican25Active": [
+512,
+512
+],
+"EVENTS__AMERICAN_25/BattleBtnAmerican25Base": [
+512,
+512
+],
+"EVENTS__AMERICAN_25/BattleBtnAmerican25Pressed": [
+512,
+512
+],
+"EVENTS__AMERICAN_25/boss_bison_25": [
+512,
+512
+],
+"EVENTS__AMERICAN_25/boss_bison_25_hard": [
+512,
+512
+],
+"EVENTS__AMERICAN_25/dojo_american_event": [
+2048,
+2048
+],
+"EVENTS__AMERICAN_25/preview_american25": [
+512,
+512
+],
+"EVENTS__AMERICAN_26/BG": [
+2048,
+2048
+],
+"EVENTS__AMERICAN_26/boss_bison": [
+512,
+512
+],
+"EVENTS__AMERICAN_26/boss_bison_hard": [
+512,
+512
+],
+"EVENTS__AMERICAN_26/dojo_american_26_bg": [
+2048,
+1024
+],
+"EVENTS__AMERICAN_26/dojo_american_26_interior": [
+2048,
+1024
+],
+"EVENTS__AMERICAN_26/preview_american26": [
+512,
+512
+],
+"EVENTS__BERSTUUK/BG": [
+2048,
+2048
+],
+"EVENTS__BERSTUUK/BattleBtnBerstuukActive": [
+512,
+512
+],
+"EVENTS__BERSTUUK/BattleBtnBerstuukBase": [
+512,
+512
+],
+"EVENTS__BERSTUUK/BattleBtnBerstuukPressed": [
+512,
+512
+],
+"EVENTS__BERSTUUK/BerstuukCoin": [
+1024,
+1024
+],
+"EVENTS__BERSTUUK/BerstuukKey": [
+1024,
+1024
+],
+"EVENTS__BERSTUUK/ChestFall_24": [
+670,
+500
+],
+"EVENTS__BERSTUUK/FallEvent24Dojo": [
+512,
+1024
+],
+"EVENTS__BERSTUUK/boss_berstuuk": [
+512,
+512
+],
+"EVENTS__BERSTUUK/dojo_fall_event_24_main": [
+2048,
+2048
+],
+"EVENTS__BERSTUUK/fall_event_24_back_layer": [
+2048,
+2048
+],
+"EVENTS__BERSTUUK/fall_event_24_forward_layer": [
+2048,
+1024
+],
+"EVENTS__BERSTUUK/preview_berstuuk": [
+512,
+512
+],
+"EVENTS__CNY25/BG": [
+2048,
+1024
+],
+"EVENTS__CNY25/CNY24Chest": [
+670,
+500
+],
+"EVENTS__CNY25/CNY24ChestDojo": [
+512,
+1024
+],
+"EVENTS__CNY25/CNY25Active": [
+512,
+512
+],
+"EVENTS__CNY25/CNY25Base": [
+512,
+512
+],
+"EVENTS__CNY25/CNY25Currency": [
+1024,
+1024
+],
+"EVENTS__CNY25/CNY25Key": [
+1024,
+1024
+],
+"EVENTS__CNY25/CNY25Pressed": [
+512,
+512
+],
+"EVENTS__CNY25/boss_son_of_the_sun": [
+512,
+512
+],
+"EVENTS__CNY25/chinese_new_year_1": [
+2048,
+2048
+],
+"EVENTS__CNY25/chinese_new_year_2": [
+2048,
+2048
+],
+"EVENTS__CNY25/new_year_china_dojo_atlas_layer2": [
+2048,
+1024
+],
+"EVENTS__CNY25/new_year_china_dojo_atlas_layer3": [
+512,
+1024
+],
+"EVENTS__CNY25/preview_raid_events_CNY25": [
+512,
+512
+],
+"EVENTS__CNY26/AnnounceCNY21": [
+495,
+500
+],
+"EVENTS__CNY26/BattleBtnCHNY26Active": [
+512,
+512
+],
+"EVENTS__CNY26/BattleBtnCHNY26Base": [
+512,
+512
+],
+"EVENTS__CNY26/BattleBtnCHNY26Pressed": [
+512,
+512
+],
+"EVENTS__CNY26/CHNY26Chest": [
+670,
+500
+],
+"EVENTS__CNY26/CHNY26ChestDojo": [
+512,
+1024
+],
+"EVENTS__CNY26/ChineseNewYear26Coin": [
+1024,
+1024
+],
+"EVENTS__CNY26/ChineseNewYear26Key": [
+1024,
+1024
+],
+"EVENTS__CNY26/new_man_shuang_gou": [
+512,
+512
+],
+"EVENTS__CNY26/new_man_shuang_gou_hardmode": [
+512,
+512
+],
+"EVENTS__CNY26/preview_ChineseNewYear26": [
+512,
+512
+],
+"EVENTS__EVENTS_COMMON/gift_box_red_n_gold": [
+670,
+453
+],
+"EVENTS__HALLOWEEN_25/BG": [
+2048,
+2048
+],
+"EVENTS__HALLOWEEN_25/BattleBtnHalloween25WhisperActive": [
+512,
+512
+],
+"EVENTS__HALLOWEEN_25/BattleBtnHalloween25WhisperBase": [
+512,
+512
+],
+"EVENTS__HALLOWEEN_25/BattleBtnHalloween25WhisperPressed": [
+512,
+512
+],
+"EVENTS__HALLOWEEN_25/HW24Chest": [
+604,
+512
+],
+"EVENTS__HALLOWEEN_25/HW24Dojo": [
+512,
+1024
+],
+"EVENTS__HALLOWEEN_25/HW24_Act3_Dojo_Night_BG": [
+2048,
+2048
+],
+"EVENTS__HALLOWEEN_25/HW24_Act3_Dojo_Night_FG": [
+2048,
+2048
+],
+"EVENTS__HALLOWEEN_25/HW24_Ancient_Temple_Voodoo_BG": [
+2048,
+2048
+],
+"EVENTS__HALLOWEEN_25/HW24_Ancient_Temple_Voodoo_FG": [
+2048,
+2048
+],
+"EVENTS__HALLOWEEN_25/HW24_Halloween24_Dojo_BG": [
+2048,
+2048
+],
+"EVENTS__HALLOWEEN_25/HW24_Halloween24_Dojo_FG": [
+2048,
+2048
+],
+"EVENTS__HALLOWEEN_25/HW24_Halloween24_Dojo_Mid": [
+2048,
+1024
+],
+"EVENTS__HALLOWEEN_25/HW24_Secret_Waterfall_Night_BG": [
+2048,
+2048
+],
+"EVENTS__HALLOWEEN_25/HW24_Secret_Waterfall_Night_FG": [
+2048,
+2048
+],
+"EVENTS__HALLOWEEN_25/HW24_Secret_Waterfall_Night_Mid": [
+2048,
+2048
+],
+"EVENTS__HALLOWEEN_25/Halloween25Coin": [
+1024,
+1024
+],
+"EVENTS__HALLOWEEN_25/Halloween25Key": [
+1024,
+1024
+],
+"EVENTS__HALLOWEEN_25/boss_whisper_24": [
+512,
+512
+],
+"EVENTS__HALLOWEEN_25/character_nova": [
+512,
+512
+],
+"EVENTS__HALLOWEEN_25/character_nzambi": [
+512,
+512
+],
+"EVENTS__HALLOWEEN_25/character_whirlwind": [
+1024,
+1024
+],
+"EVENTS__HALLOWEEN_25/character_whisper_dialog": [
+512,
+512
+],
+"EVENTS__HALLOWEEN_25/effect_temple_smoke_single_1": [
+1024,
+1024
+],
+"EVENTS__HALLOWEEN_25/halloween25preview": [
+512,
+512
+],
+"EVENTS__HALLOWEEN_25/whisper_raid_layer1": [
+2048,
+2048
+],
+"EVENTS__MA_FEST_26/AutumnFest26BattlePass": [
+2048,
+2048
+],
+"EVENTS__MA_FEST_26/BattleBtnMidAutumn26Active": [
+512,
+1024
+],
+"EVENTS__MA_FEST_26/BattleBtnMidAutumn26Base": [
+512,
+1024
+],
+"EVENTS__MA_FEST_26/BattleBtnMidAutumn26Pressed": [
+512,
+1024
+],
+"EVENTS__MA_FEST_26/MidAutumn26Coin": [
+1024,
+2048
+],
+"EVENTS__MA_FEST_26/MidAutumn26Key": [
+1024,
+1024
+],
+"EVENTS__MA_FEST_26/MidAutumnFest26Chest": [
+670,
+500
+],
+"EVENTS__MA_FEST_26/MidAutumnFest26_Chest_Dojo": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/boss_Brother_Death": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/boss_Brother_Death_hard": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/boss_Brother_Opulence": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/boss_Brother_Opulence_Hard": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/boss_brother_death_1": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/boss_brother_death_2": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/boss_brother_death_3": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/boss_brother_death_4": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/boss_brother_death_hard_1": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/boss_brother_death_hard_2": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/boss_brother_death_hard_3": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/boss_brother_death_hard_4": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/boss_brother_opulence_1": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/boss_brother_opulence_2": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/boss_brother_opulence_3": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/boss_brother_opulence_4": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/boss_brother_opulence_hard_1": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/boss_brother_opulence_hard_2": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/boss_brother_opulence_hard_3": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/boss_brother_opulence_hard_4": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/character_may_mafest26": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/effect_fire_fists_orange_hit": [
+2048,
+2048
+],
+"EVENTS__MA_FEST_26/girl_cloak": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/girl_nunchaku_2": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/girl_sword": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/man_axes_2": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/man_sword_2": [
+512,
+512
+],
+"EVENTS__MA_FEST_26/mgc_death_aura_end": [
+1024,
+2048
+],
+"EVENTS__MA_FEST_26/mgc_death_aura_explosion": [
+1024,
+2048
+],
+"EVENTS__MA_FEST_26/mgc_death_aura_fire": [
+256,
+512
+],
+"EVENTS__MA_FEST_26/mgc_death_aura_fire_2": [
+256,
+512
+],
+"EVENTS__MA_FEST_26/mgc_death_aura_idle": [
+1024,
+2048
+],
+"EVENTS__MA_FEST_26/mgc_death_aura_start": [
+1024,
+2048
+],
+"EVENTS__MA_FEST_26/mgc_effect_hitting_the_ground_end": [
+2048,
+2048
+],
+"EVENTS__MA_FEST_26/mgc_effect_hitting_the_ground_loop": [
+1024,
+2048
+],
+"EVENTS__MA_FEST_26/mgc_magic_mind_throw_middle_orange": [
+2048,
+512
+],
+"EVENTS__MA_FEST_26/mgc_ra_death_icon": [
+256,
+256
+],
+"EVENTS__MA_FEST_26/mgc_ra_debuff_icon": [
+256,
+256
+],
+"EVENTS__MA_FEST_26/mgc_ra_debuff_orange_icon": [
+256,
+256
+],
+"EVENTS__MA_FEST_26/mgc_zone_death": [
+1024,
+1024
+],
+"EVENTS__MA_FEST_26/mgc_zone_orange": [
+1024,
+1024
+],
+"EVENTS__MA_FEST_26/preview_autumnFest26": [
+1024,
+2048
+],
+"EVENTS__MA_FEST_26/two_faced_city_1": [
+2048,
+2048
+],
+"EVENTS__MA_FEST_26/two_faced_city_2": [
+2048,
+2048
+],
+"EVENTS__MA_FEST_26/two_faced_city_death_1": [
+2048,
+2048
+],
+"EVENTS__MA_FEST_26/two_faced_city_opulence_1": [
+2048,
+2048
+],
+"EVENTS__NEW_YEAR_26/BG": [
+2048,
+2048
+],
+"EVENTS__NEW_YEAR_26/BattleBtnNY26Active": [
+512,
+512
+],
+"EVENTS__NEW_YEAR_26/BattleBtnNY26Base": [
+512,
+512
+],
+"EVENTS__NEW_YEAR_26/BattleBtnNY26Pressed": [
+512,
+512
+],
+"EVENTS__NEW_YEAR_26/NY26ChestDojo": [
+1024,
+1024
+],
+"EVENTS__NEW_YEAR_26/NewYear26Coin": [
+1024,
+1024
+],
+"EVENTS__NEW_YEAR_26/NewYear26Key": [
+1024,
+1024
+],
+"EVENTS__NEW_YEAR_26/ThiefTreasureBag": [
+670,
+500
+],
+"EVENTS__NEW_YEAR_26/boss_freeze": [
+512,
+512
+],
+"EVENTS__NEW_YEAR_26/boss_freeze_junior_new_year_2023": [
+512,
+512
+],
+"EVENTS__NEW_YEAR_26/new_year_dojo_atlas_layer2": [
+2048,
+512
+],
+"EVENTS__NEW_YEAR_26/new_year_dojo_atlas_layer3": [
+512,
+1024
+],
+"EVENTS__NEW_YEAR_26/new_year_dojo_bg": [
+1024,
+512
+],
+"EVENTS__NEW_YEAR_26/prediction_cookie": [
+512,
+512
+],
+"EVENTS__NEW_YEAR_26/preview_NewYear26": [
+512,
+512
+],
+"EVENTS__RITUAL/RitualBattleChest_0622": [
+670,
+500
+],
+"EVENTS__RITUAL/RitualBattleChest_0622Dojo": [
+512,
+1024
+],
+"EVENTS__RITUAL_FUNGUS/BattleBtnRitualFungusActive": [
+512,
+512
+],
+"EVENTS__RITUAL_FUNGUS/BattleBtnRitualFungusBase": [
+512,
+512
+],
+"EVENTS__RITUAL_FUNGUS/BattleBtnRitualFungusPressed": [
+512,
+512
+],
+"EVENTS__RITUAL_FUNGUS/RitualBattle22_Fungus": [
+512,
+512
+],
+"EVENTS__RITUAL_FUNGUS/RitualFungusCoin": [
+1024,
+1024
+],
+"EVENTS__RITUAL_FUNGUS/RitualFungusKey": [
+1024,
+1024
+],
+"EVENTS__RITUAL_FUNGUS/boss_lamb_fungus": [
+512,
+512
+],
+"EVENTS__RITUAL_FUNGUS/character_pristess_fungus": [
+512,
+512
+],
+"EVENTS__RITUAL_FUNGUS/preview_raid_ritual_fungus": [
+512,
+512
+],
+"EVENTS__RITUAL_HUNGER/BattleBtnRitualHungerActive": [
+512,
+512
+],
+"EVENTS__RITUAL_HUNGER/BattleBtnRitualHungerBase": [
+512,
+512
+],
+"EVENTS__RITUAL_HUNGER/BattleBtnRitualHungerPressed": [
+512,
+512
+],
+"EVENTS__RITUAL_HUNGER/RitualBattle22_Hunger": [
+256,
+512
+],
+"EVENTS__RITUAL_HUNGER/RitualFightsOffer_Hunger": [
+495,
+500
+],
+"EVENTS__RITUAL_HUNGER/RitualFightsOffer_Hunger_Sales_sale": [
+365,
+247
+],
+"EVENTS__RITUAL_HUNGER/RitualHungerCoin": [
+1024,
+1024
+],
+"EVENTS__RITUAL_HUNGER/RitualHungerKey": [
+1024,
+1024
+],
+"EVENTS__RITUAL_HUNGER/boss_lamb_hunger": [
+512,
+512
+],
+"EVENTS__RITUAL_HUNGER/boss_lamb_hunger_hard": [
+512,
+512
+],
+"EVENTS__RITUAL_HUNGER/character_pristess_hunger": [
+512,
+512
+],
+"EVENTS__RITUAL_HUNGER/preview_raid_ritual_hunger": [
+512,
+512
+],
+"EVENTS__RITUAL_VULCAN/BattleBtnRitualVulcanActive": [
+512,
+512
+],
+"EVENTS__RITUAL_VULCAN/BattleBtnRitualVulcanBase": [
+512,
+512
+],
+"EVENTS__RITUAL_VULCAN/BattleBtnRitualVulcanPressed": [
+512,
+512
+],
+"EVENTS__RITUAL_VULCAN/RitualVulcanCoin": [
+1024,
+1024
+],
+"EVENTS__RITUAL_VULCAN/RitualVulcanKey": [
+1024,
+1024
+],
+"EVENTS__RITUAL_VULCAN/boss_lamb_vulcan": [
+512,
+512
+],
+"EVENTS__RITUAL_VULCAN/character_pristess_vulcan": [
+512,
+512
+],
+"EVENTS__RITUAL_VULCAN/preview_raid_ritual_vulcan": [
+512,
+512
+],
+"EVENTS__RITUAL_VULCAN/ritual_vulcan_raid": [
+256,
+512
+],
+"EVENTS__SUMMER_FEST_25/BG": [
+1820,
+1024
+],
+"EVENTS__SUMMER_FEST_25/BattleBtnSummerFest25ArchActive": [
+512,
+512
+],
+"EVENTS__SUMMER_FEST_25/BattleBtnSummerFest25ArchBase": [
+512,
+512
+],
+"EVENTS__SUMMER_FEST_25/BattleBtnSummerFest25ArchPressed": [
+512,
+512
+],
+"EVENTS__SUMMER_FEST_25/BattleBtnSummerFest25StoatActive": [
+512,
+512
+],
+"EVENTS__SUMMER_FEST_25/BattleBtnSummerFest25StoatBase": [
+512,
+512
+],
+"EVENTS__SUMMER_FEST_25/BattleBtnSummerFest25StoatPressed": [
+512,
+512
+],
+"EVENTS__SUMMER_FEST_25/Boss_Ermin": [
+512,
+512
+],
+"EVENTS__SUMMER_FEST_25/SummerFest25BPCoin": [
+1024,
+1024
+],
+"EVENTS__SUMMER_FEST_25/SummerFest25BattlePass": [
+2048,
+2048
+],
+"EVENTS__SUMMER_FEST_25/SummerFest25Coin": [
+1024,
+1024
+],
+"EVENTS__SUMMER_FEST_25/SummerFest25Key": [
+2048,
+2048
+],
+"EVENTS__SUMMER_FEST_25/boss_architect": [
+512,
+512
+],
+"EVENTS__SUMMER_FEST_25/boss_architect_hummer": [
+512,
+512
+],
+"EVENTS__SUMMER_FEST_25/boss_architect_hummer_small": [
+512,
+512
+],
+"EVENTS__SUMMER_FEST_25/boss_pristess": [
+512,
+512
+],
+"EVENTS__SUMMER_FEST_25/dock_1": [
+2048,
+2048
+],
+"EVENTS__SUMMER_FEST_25/dock_2": [
+2048,
+2048
+],
+"EVENTS__SUMMER_FEST_25/dojo_summer_25_1": [
+2048,
+2048
+],
+"EVENTS__SUMMER_FEST_25/preview_summerFest25": [
+512,
+1024
+],
+"EVENTS__SUMMER_FEST_26/SummerFest26Key": [
+1024,
+1024
+],
+"EVENTS__SUMMER_FEST_26/boss_architect_hummer_hard": [
+512,
+512
+],
+"EVENTS__SUMMER_FEST_26/preview_summerFest26": [
+512,
+1024
+],
+"EVENTS__SUMMER_FEST_CHEST/SummerFest25_Chest_1": [
+670,
+500
+],
+"EVENTS__SUMMER_FEST_CHEST/SummerFest25_Chest_1_Dojo": [
+2048,
+512
+],
+"EVENTS__SUMMER_FEST_CHEST/SummerFest25_Chest_2": [
+670,
+500
+],
+"EVENTS__SUMMER_FEST_CHEST/SummerFest25_Chest_2_Dojo": [
+2048,
+512
+],
+"EVENTS__SUMMER_FEST_CHEST/SummerFest25_Chest_3": [
+670,
+500
+],
+"EVENTS__SUMMER_FEST_CHEST/SummerFest25_Chest_3_Dojo": [
+2048,
+512
+],
+"EVENTS__VAISAKHI_25/BG": [
+2048,
+2048
+],
+"EVENTS__VAISAKHI_25/BattleBtnVaisakhiActive": [
+512,
+512
+],
+"EVENTS__VAISAKHI_25/BattleBtnVaisakhiBase": [
+512,
+512
+],
+"EVENTS__VAISAKHI_25/BattleBtnVaisakhiPressed": [
+512,
+512
+],
+"EVENTS__VAISAKHI_25/Vaisakhi25Chest": [
+1024,
+512
+],
+"EVENTS__VAISAKHI_25/Vaisakhi25ChestDojo": [
+2048,
+512
+],
+"EVENTS__VAISAKHI_25/Vaisakhi25Coin": [
+1024,
+1024
+],
+"EVENTS__VAISAKHI_25/Vaisakhi25Key": [
+1024,
+1024
+],
+"EVENTS__VAISAKHI_25/boss_rakshasa": [
+512,
+512
+],
+"EVENTS__VAISAKHI_25/boss_rakshasa_hardmode": [
+512,
+512
+],
+"EVENTS__VAISAKHI_25/character_sitaram_01": [
+512,
+512
+],
+"EVENTS__VAISAKHI_25/character_sitaram_02": [
+512,
+512
+],
+"EVENTS__VAISAKHI_25/character_sitaram_03": [
+512,
+512
+],
+"EVENTS__VAISAKHI_25/dojo_india25_1": [
+2048,
+2048
+],
+"EVENTS__VAISAKHI_25/mgc_effect_electric_discharge_red": [
+2048,
+512
+],
+"EVENTS__VAISAKHI_25/mgc_effect_electricity_red": [
+1024,
+1024
+],
+"EVENTS__VAISAKHI_25/mgc_electricity_impact_1_vfx_red": [
+2048,
+2048
+],
+"EVENTS__VAISAKHI_25/mgc_electricity_impact_4_vfx_red": [
+2048,
+2048
+],
+"EVENTS__VAISAKHI_25/preview_vaisakhi": [
+512,
+512
+],
+"EVENT_FALL_24/FallEvent24": [
+1024,
+2048
+],
+"EVENT_HW_24/HW24": [
+1024,
+1024
+],
+"EVENT_HW_24/mgc_hw24_cards_end_2_vfx": [
+1024,
+1024
+],
+"EVENT_HW_24/mgc_hw24_cards_pentacles_vfx": [
+256,
+128
+],
+"EVENT_HW_24/mgc_hw24_cards_start_vfx": [
+1024,
+2048
+],
+"EVENT_HW_24/mgc_hw24_cards_tower_vfx": [
+256,
+128
+],
+"EVENT_HW_24/mgc_hw24_cards_wheel_vfx": [
+256,
+128
+],
+"FOREST_DEMON_25/ForestDemon25": [
+1024,
+2048
+],
+"FOREST_DEMON_25/mgc_forest_magic_background_vfx": [
+2048,
+2048
+],
+"FOREST_DEMON_25/mgc_forest_magic_end_vfx": [
+1024,
+2048
+],
+"FOREST_DEMON_25/mgc_forest_magic_loop_vfx": [
+512,
+512
+],
+"FOREST_DEMON_25/mgc_forest_magic_start_vfx": [
+2048,
+2048
+],
+"FUNGUS_SET/FungusSet": [
+2048,
+2048
+],
+"FUNGUS_SET/mgc_mushroom_end": [
+2048,
+2048
+],
+"FUNGUS_SET/mgc_mushroom_loop_static": [
+1024,
+2048
+],
+"FUNGUS_SET/mgc_mushroom_start": [
+2048,
+2048
+],
+"FUNGUS_SET/mgc_small_mushroom_end": [
+1024,
+1024
+],
+"FUNGUS_SET/mgc_small_mushroom_loop": [
+1024,
+1024
+],
+"FUNGUS_SET/mgc_small_mushroom_start": [
+1024,
+1024
+],
+"FUNGUS_SET/mgc_smoke_end": [
+1024,
+1024
+],
+"FUNGUS_SET/mgc_smoke_loop": [
+2048,
+2048
+],
+"FUNGUS_SET/mgc_smoke_start": [
+1024,
+1024
+],
+"NEW_YEAR_25/NewYear25": [
+1024,
+2048
+],
+"NEW_YEAR_25/mgc_effect_green_aura": [
+2048,
+2048
+],
+"OFFERS__AGNISSEAL_OFFER/AgnisSeal": [
+1024,
+1024
+],
+"OFFERS__EVENT_FALL_24/FallEvent24": [
+1024,
+2048
+],
+"OFFERS__EVENT_FALL_26/FallEvent26": [
+1024,
+2048
+],
+"OFFERS__GIFT_12_YEARS_SF2_NAGINATA/BirthdayGift12": [
+1024,
+1024
+],
+"OFFERS__MA_FEST_26_ITEMS/MidAutumn26": [
+2048,
+2048
+],
+"OFFERS__MA_FEST_26_ITEMS/mgc_green_dragon_hit": [
+2048,
+2048
+],
+"OFFERS__MA_FEST_26_ITEMS/mgc_green_dragon_ray_1": [
+1024,
+2048
+],
+"OFFERS__MA_FEST_26_ITEMS/mgc_green_dragon_ray_2": [
+1024,
+2048
+],
+"OFFERS__MA_FEST_26_ITEMS/mgc_green_dragon_ray_5": [
+1024,
+2048
+],
+"OFFERS__MA_FEST_26_ITEMS/mgc_green_dragon_ray_6": [
+1024,
+1024
+],
+"OFFERS__MA_FEST_26_ITEMS/mgc_green_dragon_start": [
+1024,
+2048
+],
+"OFFERS__MA_FEST_26_ITEMS/mgc_lotus_explosion": [
+2048,
+2048
+],
+"OFFERS__MA_FEST_26_ITEMS/mgc_lotus_idle": [
+1024,
+2048
+],
+"OFFERS__MA_FEST_26_ITEMS/mgc_lotus_seed": [
+512,
+512
+],
+"OFFERS__MA_FEST_26_ITEMS/mgc_lotus_start": [
+1024,
+2048
+],
+"OFFERS__SUMMER_FEST_25/SummerFestEquipment": [
+1024,
+2048
+],
+"OFFERS__SUMMER_FEST_26/SummerFest26Equipment": [
+1024,
+1024
+],
+"OFFERS__WEEKLYOFFER12/WeeklyOffer12": [
+512,
+512
+],
+"OFFERS__WEEKLY_OFFER_13/WeeklyOffer13": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_14/WeeklyOffer14": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_15/WeeklyOffer15": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_16/WeeklyOffer16": [
+1024,
+2048
+],
+"OFFERS__WEEKLY_OFFER_17/WeeklyOffer17": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_18/WeeklyOffer18": [
+512,
+1024
+],
+"OFFERS__WEEKLY_OFFER_19/WeeklyOffer19": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_20_FUTURIST_MAGIC/WeeklyOffer20": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_20_FUTURIST_MAGIC/mgc_ray_end": [
+2048,
+2048
+],
+"OFFERS__WEEKLY_OFFER_20_FUTURIST_MAGIC/mgc_ray_loop": [
+2048,
+2048
+],
+"OFFERS__WEEKLY_OFFER_20_FUTURIST_MAGIC/mgc_ray_start": [
+2048,
+2048
+],
+"OFFERS__WEEKLY_OFFER_21/WeeklyOffer21": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_22_GLAIVE_GOD_EATER/WeeklyOffer22": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_23_PINK_ENERGYBALL_MAGIC/WeeklyOffer23": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_23_PINK_ENERGYBALL_MAGIC/mgc_effect_fireball_Kanade_explosion": [
+1024,
+2048
+],
+"OFFERS__WEEKLY_OFFER_23_PINK_ENERGYBALL_MAGIC/mgc_effect_fireball_Kanade_loop": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_23_PINK_ENERGYBALL_MAGIC/mgc_effect_fireball_Kanade_start": [
+2048,
+2048
+],
+"OFFERS__WEEKLY_OFFER_23_PINK_ENERGYBALL_MAGIC/mgc_effect_fireball_Kanade_throw_aura": [
+1024,
+2048
+],
+"OFFERS__WEEKLY_OFFER_24_EGYPT_ARMOR/WeeklyOffer24": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_25_RITUAL_KATANA_WEAPON/WeeklyOffer25": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_26_RANGED_ROGUESFORTUNE/WeeklyOffer26": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_26_RANGED_ROGUESFORTUNE/mgc_blaster_end": [
+1024,
+2048
+],
+"OFFERS__WEEKLY_OFFER_26_RANGED_ROGUESFORTUNE/mgc_blaster_shot_idle": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_26_RANGED_ROGUESFORTUNE/mgc_blaster_start": [
+512,
+1024
+],
+"OFFERS__WEEKLY_OFFER_27_NUNCHAKU_DANCEOFSTATIC/WeeklyOffer27": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_28_MAGIC_GAZEOFTHEVOID/WeeklyOffer28": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_28_MAGIC_GAZEOFTHEVOID/mgc_Helios_magic_beam": [
+2048,
+2048
+],
+"OFFERS__WEEKLY_OFFER_29_RANGED_NEEDLES_NEMESIS_STINGER/WeeklyOffer29": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_30_WEAPON_KUSARIGAMA_SILENT_MOON/WeeklyOffer30": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_31_MAGIC_BOMB_SEED_OF_CREATION/WeeklyOffer31": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_31_MAGIC_BOMB_SEED_OF_CREATION/mgc_cosmic_bomb": [
+2048,
+2048
+],
+"OFFERS__WEEKLY_OFFER_31_MAGIC_BOMB_SEED_OF_CREATION/mgc_cosmic_bomb_2": [
+2048,
+2048
+],
+"OFFERS__WEEKLY_OFFER_31_MAGIC_BOMB_SEED_OF_CREATION/mgc_cosmic_bomb_fist": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_31_MAGIC_BOMB_SEED_OF_CREATION/mgc_cosmic_bomb_hit": [
+2048,
+2048
+],
+"OFFERS__WEEKLY_OFFER_32_WEAPON_ORDERS_OATH_25/WeeklyOffer32": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_33_HELM_VEIL_OF_DAWN_25/WeeklyOffer33": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_34_RANGED_WINDS_HARMONY_25/WeeklyOffer34": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_35_WEAPON_SEERS_STAFF_25/WeeklyOffer35": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_36_MAGIC_SONG_OF_THE_TIDE_25/WeeklyOffer36": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_36_MAGIC_SONG_OF_THE_TIDE_25/mgc_magic_songofthetide_hit": [
+1024,
+2048
+],
+"OFFERS__WEEKLY_OFFER_36_MAGIC_SONG_OF_THE_TIDE_25/mgc_magic_songofthetide_idle": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_36_MAGIC_SONG_OF_THE_TIDE_25/mgc_magic_songofthetide_start": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_37_RANGED_PATH_OF_HERESY_25/WeeklyOffer37": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_38_SPARKS_OF_PROMETHEUS_25/WeeklyOffer38": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_38_SPARKS_OF_PROMETHEUS_25/mgc_pneumofist_electrical_energy": [
+512,
+1024
+],
+"OFFERS__WEEKLY_OFFER_38_SPARKS_OF_PROMETHEUS_25/mgc_pneumofist_electrical_sparks": [
+1024,
+2048
+],
+"OFFERS__WEEKLY_OFFER_39_SHADOW_LORD_25/WeeklyOffer39": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_40_OLD_KING_25/WeeklyOffer40": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_41_FLAVOR_OF_DEMISE_25/WeeklyOffer41": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_42_CLAW_OF_WISDOM_26/WeeklyOffer42": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_43_GENTLE_STORM_26/WeeklyOffer43": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_43_GENTLE_STORM_26/mgc_gentle_storm_activation": [
+2048,
+2048
+],
+"OFFERS__WEEKLY_OFFER_43_GENTLE_STORM_26/mgc_gentle_storm_end_extended": [
+2048,
+2048
+],
+"OFFERS__WEEKLY_OFFER_43_GENTLE_STORM_26/mgc_gentle_storm_loop": [
+2048,
+2048
+],
+"OFFERS__WEEKLY_OFFER_43_GENTLE_STORM_26/mgc_gentle_storm_start": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_44_BLADES_OF_FAITH_26/WeeklyOffer44": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_45_CROWN_OF_DESPAIR_26/WeeklyOffer45": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_46_DEPTH_OF_HOLINESS_26/WeeklyOffer46": [
+512,
+1024
+],
+"OFFERS__WEEKLY_OFFER_47_HEART_OF_LILY_26/WeeklyOffer47": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_48_DIESEL_SCREAM_26/WeeklyOffer48": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_49_JASPER_SUNSET_26/WeeklyOffer49": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_50_DRAGONS_GIFT_26/WeeklyOffer50": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_51_BARRIER_REEF_26/WeeklyOffer51": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_52_VALOR_AND_DISCIPLINE_26/WeeklyOffer52": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_53_GIANTS_WRATH_26/WeeklyOffer53": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_53_GIANTS_WRATH_26/mgc_giants_wrath_end_fist": [
+512,
+1024
+],
+"OFFERS__WEEKLY_OFFER_53_GIANTS_WRATH_26/mgc_giants_wrath_end_hit": [
+512,
+512
+],
+"OFFERS__WEEKLY_OFFER_53_GIANTS_WRATH_26/mgc_giants_wrath_loop": [
+512,
+256
+],
+"OFFERS__WEEKLY_OFFER_53_GIANTS_WRATH_26/mgc_giants_wrath_start": [
+1024,
+2048
+],
+"OFFERS__WEEKLY_OFFER_54_SONG_OF_INEVITABILITY_26/WeeklyOffer54": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_54_SONG_OF_INEVITABILITY_26/mgc_song_of_inevitability_back": [
+2048,
+2048
+],
+"OFFERS__WEEKLY_OFFER_54_SONG_OF_INEVITABILITY_26/mgc_song_of_inevitability_back_right": [
+2048,
+2048
+],
+"OFFERS__WEEKLY_OFFER_54_SONG_OF_INEVITABILITY_26/mgc_song_of_inevitability_up": [
+1024,
+2048
+],
+"OFFERS__WEEKLY_OFFER_54_SONG_OF_INEVITABILITY_26/weekly_offer_song_of_inevitability_back": [
+302,
+330
+],
+"OFFERS__WEEKLY_OFFER_55_SHADOW_DJ_26/WeeklyOffer55": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_56_DANCE_OF_DRAGONS_26/WeeklyOffer56": [
+1024,
+512
+],
+"OFFERS__WEEKLY_OFFER_57_DARK_FUGUE_26/WeeklyOffer57": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_58_STACCATO_26/WeeklyOffer58": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_58_STACCATO_26/mgc_staccato_hit": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_58_STACCATO_26/mgc_staccato_orb_active": [
+2048,
+2048
+],
+"OFFERS__WEEKLY_OFFER_58_STACCATO_26/mgc_staccato_orb_flight": [
+512,
+512
+],
+"OFFERS__WEEKLY_OFFER_58_STACCATO_26/mgc_staccato_orb_idle": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_58_STACCATO_26/mgc_staccato_orb_pop": [
+1024,
+2048
+],
+"OFFERS__WEEKLY_OFFER_58_STACCATO_26/mgc_staccato_orb_start": [
+1024,
+1024
+],
+"OFFERS__WEEKLY_OFFER_58_STACCATO_26/mgc_staccato_portal_cycle": [
+4096,
+1024
+],
+"OFFERS__WEEKLY_OFFER_58_STACCATO_26/mgc_staccato_portal_end": [
+2048,
+2048
+],
+"OFFERS__WEEKLY_OFFER_58_STACCATO_26/mgc_staccato_portal_loop": [
+2048,
+2048
+],
+"OFFERS__WEEKLY_OFFER_58_STACCATO_26/mgc_staccato_portal_start": [
+2048,
+2048
+],
+"SETS__KARCER_SET/KarcerSet": [
+2048,
+2048
+],
+"SETS__KARCER_SET/mgc_hunger_fist_2_vfx": [
+512,
+512
+],
+"SETS__KARCER_SET/mgc_hunger_fist_4_vfx": [
+512,
+1024
+],
+"SETS__KARCER_SET/mgc_karcer_hunger_black_end_vfx": [
+1024,
+2048
+],
+"SETS__KARCER_SET/mgc_karcer_hunger_black_start_vfx": [
+2048,
+1024
+],
+"SETS__KARCER_SET/mgc_karcer_hunger_black_vfx": [
+1024,
+2048
+],
+"SETS__KARCER_SET/mgc_karcer_hunger_red_vfx": [
+2048,
+2048
+],
+"SETS__KARCER_SET/mgc_orb_of_power_end_vfx": [
+1024,
+2048
+],
+"SETS__KARCER_SET/mgc_orb_of_power_loop_vfx": [
+1024,
+1024
+],
+"SETS__KARCER_SET/mgc_orb_of_power_start_vfx": [
+1024,
+2048
+],
+"VERSIONAL_ASSETS/BG": [
+2048,
+1024
+],
+"VERSIONAL_ASSETS/CNY24Chest": [
+670,
+500
+],
+"VERSIONAL_ASSETS/CNY24ChestDojo": [
+512,
+1024
+],
+"VERSIONAL_ASSETS/CNY25Active": [
+512,
+512
+],
+"VERSIONAL_ASSETS/CNY25Base": [
+512,
+512
+],
+"VERSIONAL_ASSETS/CNY25Currency": [
+1024,
+1024
+],
+"VERSIONAL_ASSETS/CNY25Key": [
+1024,
+1024
+],
+"VERSIONAL_ASSETS/CNY25Pressed": [
+512,
+512
+],
+"VERSIONAL_ASSETS/RaidOffersChest": [
+670,
+500
+],
+"VERSIONAL_ASSETS/boss_son_of_the_sun": [
+512,
+512
+],
+"VERSIONAL_ASSETS/chinese_new_year_1": [
+2048,
+2048
+],
+"VERSIONAL_ASSETS/chinese_new_year_2": [
+2048,
+2048
+],
+"VERSIONAL_ASSETS/new_year_china_dojo_atlas_layer2": [
+2048,
+1024
+],
+"VERSIONAL_ASSETS/new_year_china_dojo_atlas_layer3": [
+512,
+1024
+],
+"VERSIONAL_ASSETS/preview_raid_events_CNY25": [
+512,
+512
+],
+"VOLCANO_SET/VolcanoSet": [
+2048,
+2048
+],
+"VOLCANO_SET/mgc_volcano_end_vfx": [
+1024,
+2048
+],
+"VOLCANO_SET/mgc_volcano_explosion_2_vfx": [
+2048,
+2048
+],
+"VOLCANO_SET/mgc_volcano_explosion_red_vfx": [
+1024,
+2048
+],
+"VOLCANO_SET/mgc_volcano_explosion_vfx": [
+1024,
+2048
+],
+"VOLCANO_SET/mgc_volcano_lava_burst_vfx": [
+1024,
+2048
+],
+"VOLCANO_SET/mgc_volcano_magma_end_vfx": [
+1024,
+2048
+],
+"VOLCANO_SET/mgc_volcano_magma_loop_vfx": [
+1024,
+2048
+],
+"VOLCANO_SET/mgc_volcano_magma_start_vfx": [
+1024,
+2048
+],
+"VOLCANO_SET/mgc_volcano_start_vfx": [
+1024,
+2048
+],
+"VOLCANO_SET/mgc_volcano_stone_vfx": [
+1024,
+1024
+],
+"ZONE_1/Armor1": [
+1024,
+1024
+],
+"ZONE_1/Armor2": [
+1024,
+1024
+],
+"ZONE_1/Armor3": [
+1024,
+1024
+],
+"ZONE_1/Bag_Coins_sale": [
+423,
+240
+],
+"ZONE_1/Bag_Gems_sale": [
+365,
+247
+],
+"ZONE_1/BattleBtnActive": [
+2048,
+2048
+],
+"ZONE_1/BattleBtnBase": [
+2048,
+2048
+],
+"ZONE_1/BattleBtnLock": [
+2048,
+2048
+],
+"ZONE_1/BattleBtnLockActive": [
+2048,
+2048
+],
+"ZONE_1/BattleBtnPressed": [
+2048,
+2048
+],
+"ZONE_1/Casket_Gems_sale": [
+365,
+247
+],
+"ZONE_1/Chest_Coins_sale": [
+423,
+240
+],
+"ZONE_1/Chest_Gems_sale": [
+365,
+247
+],
+"ZONE_1/ComboButtons": [
+256,
+512
+],
+"ZONE_1/Enchantments": [
+1024,
+1024
+],
+"ZONE_1/FreeGemsAd": [
+1024,
+2048
+],
+"ZONE_1/Helm1": [
+1024,
+1024
+],
+"ZONE_1/Helm2": [
+1024,
+1024
+],
+"ZONE_1/Helm3": [
+1024,
+1024
+],
+"ZONE_1/Helm34": [
+1024,
+512
+],
+"ZONE_1/Helm38": [
+1024,
+1024
+],
+"ZONE_1/Icons01": [
+1024,
+1024
+],
+"ZONE_1/Icons02": [
+1024,
+1024
+],
+"ZONE_1/ImmunityBars": [
+2048,
+128
+],
+"ZONE_1/Map1": [
+2048,
+2048
+],
+"ZONE_1/Map2": [
+2048,
+2048
+],
+"ZONE_1/MapBtnBG": [
+200,
+200
+],
+"ZONE_1/Offer_Lynx": [
+512,
+512
+],
+"ZONE_1/OffersShineBG": [
+500,
+500
+],
+"ZONE_1/Payment1": [
+1024,
+2048
+],
+"ZONE_1/Payment2": [
+1024,
+2048
+],
+"ZONE_1/Pile_Coins_sale": [
+365,
+247
+],
+"ZONE_1/Pile_Gems_sale": [
+365,
+247
+],
+"ZONE_1/ProfileButtons": [
+1024,
+1024
+],
+"ZONE_1/ProfitShine": [
+1024,
+512
+],
+"ZONE_1/SaleBtn": [
+512,
+1024
+],
+"ZONE_1/SettingsButtons": [
+1024,
+2048
+],
+"ZONE_1/Skills01": [
+1024,
+1024
+],
+"ZONE_1/SkillsEnch01": [
+1024,
+2048
+],
+"ZONE_1/SkillsEnch02": [
+1024,
+2048
+],
+"ZONE_1/Trick1": [
+512,
+512
+],
+"ZONE_1/Trick2": [
+512,
+512
+],
+"ZONE_1/Trick3": [
+512,
+512
+],
+"ZONE_1/Trick4": [
+512,
+512
+],
+"ZONE_1/Trick5": [
+512,
+512
+],
+"ZONE_1/Trick6": [
+512,
+512
+],
+"ZONE_1/Trick7": [
+512,
+512
+],
+"ZONE_1/Trick8": [
+512,
+512
+],
+"ZONE_1/Trick9": [
+256,
+256
+],
+"ZONE_1/VideoAdStripe": [
+368,
+170
+],
+"ZONE_1/Weapon22": [
+1024,
+256
+],
+"ZONE_1/Weapon25": [
+1024,
+1024
+],
+"ZONE_1/arena_atlas_layer1": [
+1024,
+512
+],
+"ZONE_1/arena_atlas_layer2": [
+2048,
+1024
+],
+"ZONE_1/arena_atlas_layer3": [
+512,
+1024
+],
+"ZONE_1/arena_bg": [
+1024,
+512
+],
+"ZONE_1/bag_coins": [
+512,
+512
+],
+"ZONE_1/boss_fire": [
+512,
+512
+],
+"ZONE_1/character_disciple": [
+1024,
+1024
+],
+"ZONE_1/character_may_2": [
+512,
+512
+],
+"ZONE_1/character_may_3": [
+512,
+512
+],
+"ZONE_1/character_may_5": [
+512,
+512
+],
+"ZONE_1/character_may_6": [
+512,
+512
+],
+"ZONE_1/effect_lottery": [
+256,
+512
+],
+"ZONE_1/girl_dirk": [
+512,
+512
+],
+"ZONE_1/girl_knives": [
+512,
+512
+],
+"ZONE_1/girl_sai_2": [
+1024,
+1024
+],
+"ZONE_1/img_bag_coins": [
+670,
+500
+],
+"ZONE_1/img_chest_coins": [
+670,
+500
+],
+"ZONE_1/img_drop_blue_seal": [
+512,
+512
+],
+"ZONE_1/img_unlimited_energy": [
+670,
+500
+],
+"ZONE_1/man_batons_2": [
+1024,
+1024
+],
+"ZONE_1/man_fist": [
+512,
+512
+],
+"ZONE_1/man_fists": [
+512,
+512
+],
+"ZONE_1/man_knives": [
+1024,
+1024
+],
+"ZONE_1/man_machete": [
+1024,
+1024
+],
+"ZONE_1/man_nunchaku": [
+512,
+512
+],
+"ZONE_1/man_staff": [
+512,
+512
+],
+"ZONE_1/man_tatoo": [
+512,
+512
+],
+"ZONE_1/mgc_effect_time_bomb": [
+512,
+1024
+],
+"ZONE_1/mgc_magic_invisible_end": [
+1024,
+2048
+],
+"ZONE_1/mgc_magic_invisible_start": [
+128,
+1024
+],
+"ZONE_1/mountain_atlas_layer1": [
+2048,
+512
+],
+"ZONE_1/mountain_atlas_layer2": [
+1024,
+2048
+],
+"ZONE_1/mountain_atlas_layer3": [
+512,
+1024
+],
+"ZONE_1/mountain_bg": [
+1024,
+512
+],
+"ZONE_1/ninja_girl_sai": [
+1024,
+1024
+],
+"ZONE_1/ninja_man_batons": [
+512,
+512
+],
+"ZONE_1/ninja_man_knives": [
+1024,
+1024
+],
+"ZONE_1/ninja_man_knuckles": [
+1024,
+1024
+],
+"ZONE_1/ninja_man_kunai": [
+512,
+512
+],
+"ZONE_1/ninja_man_kungfu": [
+512,
+512
+],
+"ZONE_1/ninja_man_machete": [
+1024,
+1024
+],
+"ZONE_1/ninja_man_ninja_sword": [
+512,
+512
+],
+"ZONE_1/ninja_man_sai": [
+512,
+512
+],
+"ZONE_1/ninja_man_swords": [
+1024,
+1024
+],
+"ZONE_1/premium_pack_zone1": [
+365,
+247
+],
+"ZONE_1/preview_bosses": [
+1024,
+1024
+],
+"ZONE_1/preview_main": [
+2048,
+2048
+],
+"ZONE_1/profit50": [
+512,
+409
+],
+"ZONE_1/profit50mask": [
+512,
+409
+],
+"ZONE_1/starter_pack": [
+365,
+247
+],
+"ZONE_1/starter_pack2": [
+512,
+512
+],
+"ZONE_2/Armor4": [
+512,
+2048
+],
+"ZONE_2/Armor5": [
+512,
+2048
+],
+"ZONE_2/Armor6": [
+1024,
+1024
+],
+"ZONE_2/EnchantChest_Sales_sale": [
+365,
+247
+],
+"ZONE_2/Helm4": [
+1024,
+2048
+],
+"ZONE_2/Helm5": [
+1024,
+1024
+],
+"ZONE_2/Helm6": [
+1024,
+1024
+],
+"ZONE_2/Magic2": [
+2048,
+1024
+],
+"ZONE_2/Offer_Hermit": [
+512,
+512
+],
+"ZONE_2/Ranged1": [
+1024,
+1024
+],
+"ZONE_2/Weapon17": [
+1024,
+1024
+],
+"ZONE_2/Weapon2": [
+2048,
+1024
+],
+"ZONE_2/Weapon20": [
+1024,
+1024
+],
+"ZONE_2/Weapon3": [
+1024,
+2048
+],
+"ZONE_2/autumn_atlas_layer1": [
+2048,
+512
+],
+"ZONE_2/autumn_atlas_layer2": [
+512,
+2048
+],
+"ZONE_2/autumn_bg": [
+1024,
+512
+],
+"ZONE_2/boss_hermit": [
+512,
+512
+],
+"ZONE_2/character_asian": [
+512,
+512
+],
+"ZONE_2/character_ronin": [
+512,
+512
+],
+"ZONE_2/chess": [
+1024,
+512
+],
+"ZONE_2/chess_yard_atlas_layer1": [
+2048,
+512
+],
+"ZONE_2/chess_yard_atlas_layer2": [
+2048,
+512
+],
+"ZONE_2/chess_yard_atlas_layer3": [
+512,
+2048
+],
+"ZONE_2/chess_yard_bg": [
+2048,
+512
+],
+"ZONE_2/drop_naginata": [
+512,
+512
+],
+"ZONE_2/emerald_forest_atlas_layer1": [
+1024,
+512
+],
+"ZONE_2/emerald_forest_atlas_layer2": [
+2048,
+512
+],
+"ZONE_2/emerald_forest_atlas_layer3": [
+512,
+512
+],
+"ZONE_2/emerald_forest_atlas_layer4": [
+512,
+2048
+],
+"ZONE_2/emerald_forest_bg": [
+512,
+1024
+],
+"ZONE_2/girl_knives_2": [
+1024,
+1024
+],
+"ZONE_2/girl_swords_2": [
+1024,
+1024
+],
+"ZONE_2/img_drop_green_seal": [
+512,
+512
+],
+"ZONE_2/img_starter_pack_dark_chest": [
+512,
+512
+],
+"ZONE_2/man_chinese_sabre": [
+512,
+512
+],
+"ZONE_2/man_clutches": [
+512,
+512
+],
+"ZONE_2/man_crescent": [
+512,
+512
+],
+"ZONE_2/man_crescent_knives": [
+1024,
+1024
+],
+"ZONE_2/man_daggers": [
+512,
+512
+],
+"ZONE_2/man_heronkungfu": [
+512,
+512
+],
+"ZONE_2/man_keris": [
+1024,
+1024
+],
+"ZONE_2/man_ninja_naginata": [
+1024,
+1024
+],
+"ZONE_2/man_staff_3": [
+1024,
+1024
+],
+"ZONE_2/man_tonfa_2": [
+1024,
+1024
+],
+"ZONE_2/mgc_magic_lightning_arrow_end": [
+1024,
+2048
+],
+"ZONE_2/mgc_magic_lightning_arrow_middle": [
+1024,
+64
+],
+"ZONE_2/night_bridge_atlas_layer1": [
+512,
+1024
+],
+"ZONE_2/night_bridge_atlas_layer2": [
+512,
+1024
+],
+"ZONE_2/night_bridge_atlas_layer3": [
+1024,
+512
+],
+"ZONE_2/night_bridge_atlas_layer4": [
+512,
+2048
+],
+"ZONE_2/night_bridge_bg": [
+1024,
+512
+],
+"ZONE_2/ninja_girl_swords": [
+1024,
+1024
+],
+"ZONE_2/ninja_man_crescent_knives": [
+1024,
+1024
+],
+"ZONE_2/ninja_man_keris": [
+512,
+512
+],
+"ZONE_2/ninja_man_nunchaku": [
+1024,
+1024
+],
+"ZONE_2/ninja_man_staff": [
+1024,
+1024
+],
+"ZONE_2/ninja_man_tonfa": [
+1024,
+1024
+],
+"ZONE_2/rain1": [
+256,
+1024
+],
+"ZONE_2/rain2": [
+128,
+1024
+],
+"ZONE_2/sakura_atlas_layer1": [
+2048,
+512
+],
+"ZONE_2/sakura_atlas_layer2": [
+512,
+2048
+],
+"ZONE_2/sakura_atlas_layer3": [
+512,
+1024
+],
+"ZONE_2/sakura_bg": [
+2048,
+512
+],
+"ZONE_2/starter_pack_dark_chest_Sales_sale": [
+365,
+247
+],
+"ZONE_2/stone_dragon_atlas_layer1": [
+2048,
+512
+],
+"ZONE_2/stone_dragon_atlas_layer2": [
+2048,
+512
+],
+"ZONE_2/stone_dragon_atlas_layer3": [
+2048,
+512
+],
+"ZONE_2/stone_dragon_atlas_layer4": [
+512,
+2048
+],
+"ZONE_2/stone_dragon_bg": [
+2048,
+512
+],
+"ZONE_2/tickets": [
+512,
+512
+],
+"ZONE_2/weapon_hermit_swords_Sales_sale": [
+365,
+247
+],
+"ZONE_3/Armor7": [
+1024,
+1024
+],
+"ZONE_3/Armor8": [
+1024,
+1024
+],
+"ZONE_3/Armor9": [
+1024,
+1024
+],
+"ZONE_3/Helm7": [
+1024,
+1024
+],
+"ZONE_3/Helm8": [
+2048,
+1024
+],
+"ZONE_3/Helm9": [
+1024,
+1024
+],
+"ZONE_3/Magic1": [
+1024,
+2048
+],
+"ZONE_3/Offer_Butcher": [
+512,
+512
+],
+"ZONE_3/Ranged2": [
+1024,
+1024
+],
+"ZONE_3/Weapon4": [
+2048,
+1024
+],
+"ZONE_3/Weapon5": [
+1024,
+512
+],
+"ZONE_3/boss_butcher": [
+512,
+512
+],
+"ZONE_3/bridge_reflection": [
+1024,
+1024
+],
+"ZONE_3/castle_and_bridge_atlas_layer1": [
+2048,
+512
+],
+"ZONE_3/castle_and_bridge_atlas_layer2": [
+512,
+1024
+],
+"ZONE_3/castle_and_bridge_atlas_layer3": [
+512,
+2048
+],
+"ZONE_3/castle_and_bridge_atlas_layer4": [
+1024,
+1024
+],
+"ZONE_3/castle_and_bridge_bg": [
+1024,
+512
+],
+"ZONE_3/character_fanatic": [
+512,
+512
+],
+"ZONE_3/character_sadist": [
+512,
+512
+],
+"ZONE_3/cloth1": [
+512,
+1024
+],
+"ZONE_3/cloth2": [
+512,
+1024
+],
+"ZONE_3/cloth3": [
+1024,
+1024
+],
+"ZONE_3/colone_reflection": [
+128,
+1024
+],
+"ZONE_3/drop_katana": [
+512,
+512
+],
+"ZONE_3/girl_katana": [
+1024,
+1024
+],
+"ZONE_3/girl_nunchaku": [
+512,
+512
+],
+"ZONE_3/img_drop_red_seal": [
+512,
+512
+],
+"ZONE_3/lamps_on_water_atlas_layer1": [
+1024,
+256
+],
+"ZONE_3/lamps_on_water_atlas_layer2": [
+1024,
+256
+],
+"ZONE_3/lamps_on_water_atlas_layer3": [
+1024,
+2048
+],
+"ZONE_3/lamps_on_water_atlas_layer4": [
+256,
+512
+],
+"ZONE_3/lamps_on_water_bg": [
+1024,
+512
+],
+"ZONE_3/light1_Reflection": [
+256,
+2048
+],
+"ZONE_3/man_axe": [
+512,
+512
+],
+"ZONE_3/man_batons_3": [
+1024,
+1024
+],
+"ZONE_3/man_chinese_sabre_2": [
+1024,
+1024
+],
+"ZONE_3/man_deerhorn": [
+512,
+512
+],
+"ZONE_3/man_heavy_staff": [
+1024,
+1024
+],
+"ZONE_3/man_scythe": [
+512,
+512
+],
+"ZONE_3/man_steel_claws": [
+1024,
+1024
+],
+"ZONE_3/man_stilettos": [
+512,
+512
+],
+"ZONE_3/man_tonfa": [
+512,
+512
+],
+"ZONE_3/mgc_magic_fireball_middle": [
+512,
+1024
+],
+"ZONE_3/mgc_magic_fireball_start": [
+512,
+2048
+],
+"ZONE_3/mgc_magic_mass_bomb_end": [
+2048,
+1024
+],
+"ZONE_3/mgc_magic_mass_bomb_middle": [
+512,
+2048
+],
+"ZONE_3/mgc_magic_mass_bomb_start": [
+1024,
+1024
+],
+"ZONE_3/ninja_girl_stilettos": [
+512,
+512
+],
+"ZONE_3/ninja_man_axes": [
+1024,
+1024
+],
+"ZONE_3/ninja_man_chinese_sabers": [
+512,
+512
+],
+"ZONE_3/ninja_man_claws": [
+1024,
+1024
+],
+"ZONE_3/ninja_man_heavy_staff": [
+512,
+512
+],
+"ZONE_3/ninja_man_yari": [
+1024,
+1024
+],
+"ZONE_3/pink_lake_atlas_layer1": [
+1024,
+512
+],
+"ZONE_3/pink_lake_atlas_layer2": [
+2048,
+256
+],
+"ZONE_3/pink_lake_atlas_layer3": [
+512,
+2048
+],
+"ZONE_3/pink_lake_atlas_layer4": [
+1024,
+64
+],
+"ZONE_3/pink_lake_bg": [
+1024,
+512
+],
+"ZONE_3/starter_pack_zone3": [
+512,
+512
+],
+"ZONE_3/starter_pack_zone3_Sales_sale": [
+365,
+247
+],
+"ZONE_3/swamp_atlas_layer1": [
+1024,
+1024
+],
+"ZONE_3/swamp_atlas_layer2": [
+512,
+2048
+],
+"ZONE_3/swamp_atlas_layer3": [
+512,
+2048
+],
+"ZONE_3/swamp_bg": [
+2048,
+512
+],
+"ZONE_3/tree_swamp": [
+256,
+1024
+],
+"ZONE_3/village_atlas_layer1": [
+2048,
+512
+],
+"ZONE_3/village_atlas_layer2": [
+2048,
+512
+],
+"ZONE_3/village_atlas_layer3": [
+512,
+2048
+],
+"ZONE_3/village_atlas_layer4": [
+512,
+2048
+],
+"ZONE_3/village_bg": [
+1024,
+512
+],
+"ZONE_3/weapon_butcher_knives_Sales_sale": [
+365,
+247
+],
+"ZONE_3/windows_swamp": [
+512,
+1024
+],
+"ZONE_4/Armor10": [
+512,
+2048
+],
+"ZONE_4/Armor11": [
+2048,
+1024
+],
+"ZONE_4/Armor12": [
+512,
+2048
+],
+"ZONE_4/Helm10": [
+1024,
+1024
+],
+"ZONE_4/Helm11": [
+1024,
+2048
+],
+"ZONE_4/Magic6": [
+1024,
+2048
+],
+"ZONE_4/Ranged3": [
+1024,
+1024
+],
+"ZONE_4/Weapon6": [
+1024,
+2048
+],
+"ZONE_4/bird_white": [
+256,
+1024
+],
+"ZONE_4/boss_huntress": [
+512,
+512
+],
+"ZONE_4/boss_wasp": [
+512,
+512
+],
+"ZONE_4/cave_atlas_layer1": [
+2048,
+512
+],
+"ZONE_4/cave_atlas_layer2": [
+2048,
+512
+],
+"ZONE_4/cave_atlas_layer3": [
+512,
+2048
+],
+"ZONE_4/cave_atlas_layer4": [
+64,
+128
+],
+"ZONE_4/cave_bg": [
+2048,
+512
+],
+"ZONE_4/cave_drop": [
+64,
+512
+],
+"ZONE_4/cavedrop": [
+128,
+2048
+],
+"ZONE_4/character_indean": [
+512,
+512
+],
+"ZONE_4/dark_room_atlas_layer1": [
+2048,
+512
+],
+"ZONE_4/dark_room_atlas_layer2": [
+2048,
+512
+],
+"ZONE_4/dark_room_atlas_layer3": [
+512,
+2048
+],
+"ZONE_4/dark_room_bg": [
+1024,
+512
+],
+"ZONE_4/drop": [
+512,
+1024
+],
+"ZONE_4/drop2": [
+512,
+1024
+],
+"ZONE_4/drop_wanderer_staff": [
+512,
+512
+],
+"ZONE_4/flowers_field_atlas_layer1": [
+2048,
+512
+],
+"ZONE_4/flowers_field_atlas_layer2": [
+2048,
+512
+],
+"ZONE_4/flowers_field_atlas_layer3": [
+1024,
+2048
+],
+"ZONE_4/flowers_field_atlas_layer4": [
+512,
+512
+],
+"ZONE_4/flowers_field_bg": [
+2048,
+512
+],
+"ZONE_4/girl_butterfly_swords": [
+1024,
+1024
+],
+"ZONE_4/girl_golden_katana": [
+1024,
+1024
+],
+"ZONE_4/girl_keris": [
+512,
+512
+],
+"ZONE_4/heaven_atlas_layer1": [
+1024,
+2048
+],
+"ZONE_4/heaven_atlas_layer2": [
+256,
+2048
+],
+"ZONE_4/heaven_bg": [
+1024,
+512
+],
+"ZONE_4/heaven_clouds": [
+512,
+512
+],
+"ZONE_4/img_drop_purple_seal": [
+512,
+512
+],
+"ZONE_4/man_big_sword": [
+512,
+512
+],
+"ZONE_4/man_big_swords": [
+512,
+550
+],
+"ZONE_4/man_cool_staff": [
+1024,
+1024
+],
+"ZONE_4/man_glaive": [
+1024,
+1024
+],
+"ZONE_4/man_glaive_2": [
+512,
+512
+],
+"ZONE_4/man_labrys_axes": [
+512,
+512
+],
+"ZONE_4/man_maces": [
+512,
+512
+],
+"ZONE_4/man_trident": [
+550,
+512
+],
+"ZONE_4/man_trident_1": [
+512,
+512
+],
+"ZONE_4/man_yari": [
+1024,
+1024
+],
+"ZONE_4/ninja_girl_golden_katana": [
+512,
+512
+],
+"ZONE_4/ninja_man_butterfly_swords": [
+1024,
+1024
+],
+"ZONE_4/ninja_man_glaive": [
+512,
+512
+],
+"ZONE_4/ninja_man_kusarigama": [
+512,
+512
+],
+"ZONE_4/ninja_man_labrys_axes": [
+1024,
+1024
+],
+"ZONE_4/ninja_man_maces": [
+1024,
+1024
+],
+"ZONE_4/ships_atlas_layer1": [
+1024,
+512
+],
+"ZONE_4/ships_atlas_layer2": [
+2048,
+512
+],
+"ZONE_4/ships_atlas_layer3": [
+512,
+2048
+],
+"ZONE_4/ships_atlas_layer4": [
+512,
+512
+],
+"ZONE_4/ships_atlas_layer5": [
+1024,
+256
+],
+"ZONE_4/ships_bg": [
+1024,
+512
+],
+"ZONE_4/starter_pack_zone4": [
+512,
+512
+],
+"ZONE_4/starter_pack_zone4_Sales_sale": [
+365,
+247
+],
+"ZONE_5/Armor13": [
+512,
+2048
+],
+"ZONE_5/Armor14": [
+512,
+2048
+],
+"ZONE_5/Armor15": [
+512,
+2048
+],
+"ZONE_5/Helm14": [
+512,
+2048
+],
+"ZONE_5/Helm15": [
+1024,
+2048
+],
+"ZONE_5/Magic3": [
+1024,
+2048
+],
+"ZONE_5/Ranged4": [
+2048,
+1024
+],
+"ZONE_5/Weapon8": [
+2048,
+1024
+],
+"ZONE_5/Weapon9": [
+1024,
+2048
+],
+"ZONE_5/battlefield_atlas_layer1": [
+2048,
+512
+],
+"ZONE_5/battlefield_atlas_layer2": [
+2048,
+512
+],
+"ZONE_5/battlefield_atlas_layer3": [
+2048,
+512
+],
+"ZONE_5/battlefield_atlas_layer4": [
+512,
+2048
+],
+"ZONE_5/battlefield_atlas_layer5": [
+256,
+512
+],
+"ZONE_5/battlefield_bg1": [
+2048,
+512
+],
+"ZONE_5/battlefield_bg2": [
+2048,
+512
+],
+"ZONE_5/character_blind": [
+512,
+512
+],
+"ZONE_5/character_sister": [
+512,
+512
+],
+"ZONE_5/drop_kusarigama": [
+512,
+512
+],
+"ZONE_5/fire_town": [
+512,
+2048
+],
+"ZONE_5/flag_left": [
+256,
+2048
+],
+"ZONE_5/flag_right": [
+256,
+2048
+],
+"ZONE_5/flooded_village_atlas_layer1": [
+2048,
+512
+],
+"ZONE_5/flooded_village_atlas_layer2": [
+2048,
+512
+],
+"ZONE_5/flooded_village_atlas_layer4": [
+512,
+512
+],
+"ZONE_5/flooded_village_atlas_layer5": [
+1024,
+2048
+],
+"ZONE_5/flooded_village_bg": [
+2048,
+512
+],
+"ZONE_5/fuji_atlas_layer1": [
+2048,
+512
+],
+"ZONE_5/fuji_atlas_layer2": [
+2048,
+512
+],
+"ZONE_5/fuji_atlas_layer3": [
+512,
+2048
+],
+"ZONE_5/fuji_atlas_layer4": [
+512,
+2048
+],
+"ZONE_5/fuji_atlas_layer5": [
+512,
+512
+],
+"ZONE_5/fuji_bg": [
+2048,
+512
+],
+"ZONE_5/girl_kusarigama": [
+1024,
+1024
+],
+"ZONE_5/girl_kusarigama_1": [
+512,
+512
+],
+"ZONE_5/girl_kusarigama_2": [
+1024,
+1024
+],
+"ZONE_5/girl_magari_yari": [
+1024,
+1024
+],
+"ZONE_5/img_drop_orange_seal": [
+512,
+512
+],
+"ZONE_5/man_batons_4": [
+1024,
+1024
+],
+"ZONE_5/man_dadao": [
+512,
+512
+],
+"ZONE_5/man_heavy_hammer": [
+512,
+512
+],
+"ZONE_5/man_heavy_kusarigama": [
+512,
+512
+],
+"ZONE_5/man_moon_sabers": [
+512,
+512
+],
+"ZONE_5/man_sickle": [
+512,
+512
+],
+"ZONE_5/man_spear": [
+1024,
+1024
+],
+"ZONE_5/man_swords_2": [
+512,
+512
+],
+"ZONE_5/man_two_handed_mace": [
+512,
+512
+],
+"ZONE_5/ninja_girl_moon_sabers": [
+512,
+512
+],
+"ZONE_5/ninja_girl_sickles": [
+1024,
+1024
+],
+"ZONE_5/ninja_man_dadao": [
+512,
+512
+],
+"ZONE_5/ninja_man_hammers": [
+512,
+512
+],
+"ZONE_5/ninja_man_magari_yari": [
+1024,
+1024
+],
+"ZONE_5/ninja_man_two_handed_mace": [
+512,
+512
+],
+"ZONE_5/ruins_village_atlas_layer1": [
+2048,
+512
+],
+"ZONE_5/ruins_village_atlas_layer2": [
+2048,
+512
+],
+"ZONE_5/ruins_village_atlas_layer3": [
+512,
+2048
+],
+"ZONE_5/ruins_village_atlas_layer4": [
+512,
+512
+],
+"ZONE_5/ruins_village_bg": [
+2048,
+512
+],
+"ZONE_5/snowy_peak_atlas_layer1": [
+2048,
+512
+],
+"ZONE_5/snowy_peak_atlas_layer2": [
+2048,
+1024
+],
+"ZONE_5/snowy_peak_atlas_layer3": [
+512,
+2048
+],
+"ZONE_5/snowy_peak_bg": [
+1024,
+512
+],
+"ZONE_5/starter_pack_zone5": [
+512,
+512
+],
+"ZONE_5/starter_pack_zone5_Sales_sale": [
+365,
+247
+],
+"ZONE_5/volcano_atlas_layer1": [
+2048,
+512
+],
+"ZONE_5/volcano_atlas_layer2": [
+2048,
+512
+],
+"ZONE_5/volcano_atlas_layer3": [
+2048,
+512
+],
+"ZONE_5/volcano_atlas_layer4": [
+512,
+2048
+],
+"ZONE_5/volcano_bg": [
+2048,
+512
+],
+"ZONE_6/Armor16": [
+512,
+2048
+],
+"ZONE_6/Armor17": [
+1024,
+2048
+],
+"ZONE_6/Armor18": [
+512,
+2048
+],
+"ZONE_6/Armor19": [
+1024,
+1024
+],
+"ZONE_6/Armor26": [
+512,
+2048
+],
+"ZONE_6/Helm16": [
+1024,
+2048
+],
+"ZONE_6/Helm18": [
+1024,
+2048
+],
+"ZONE_6/Helm26": [
+1024,
+1024
+],
+"ZONE_6/Magic4": [
+1024,
+1024
+],
+"ZONE_6/Map3": [
+2048,
+2048
+],
+"ZONE_6/Ranged5": [
+2048,
+1024
+],
+"ZONE_6/Weapon10": [
+2048,
+2048
+],
+"ZONE_6/Weapon11": [
+1024,
+2048
+],
+"ZONE_6/Weapon23": [
+2048,
+1024
+],
+"ZONE_6/boss_shogun": [
+512,
+512
+],
+"ZONE_6/burning_town_atlas_layer1": [
+2048,
+512
+],
+"ZONE_6/burning_town_atlas_layer2": [
+1024,
+512
+],
+"ZONE_6/burning_town_atlas_layer3": [
+512,
+2048
+],
+"ZONE_6/burning_town_bg": [
+2048,
+512
+],
+"ZONE_6/character_ancient": [
+512,
+512
+],
+"ZONE_6/character_prince_evil": [
+512,
+512
+],
+"ZONE_6/drop_ring_sword": [
+512,
+512
+],
+"ZONE_6/fire1": [
+2048,
+2048
+],
+"ZONE_6/fire2": [
+1024,
+2048
+],
+"ZONE_6/flying_rocks_atlas_layer1": [
+2048,
+512
+],
+"ZONE_6/flying_rocks_atlas_layer2": [
+2048,
+512
+],
+"ZONE_6/flying_rocks_atlas_layer3": [
+512,
+2048
+],
+"ZONE_6/flying_rocks_atlas_layer4": [
+2048,
+512
+],
+"ZONE_6/flying_rocks_bg": [
+1024,
+512
+],
+"ZONE_6/girl_hammers": [
+512,
+512
+],
+"ZONE_6/girl_shuang_gou": [
+1024,
+1024
+],
+"ZONE_6/girl_spear": [
+1024,
+1024
+],
+"ZONE_6/graveyard_ships_atlas_layer1": [
+2048,
+512
+],
+"ZONE_6/graveyard_ships_atlas_layer2": [
+2048,
+512
+],
+"ZONE_6/graveyard_ships_atlas_layer3": [
+2048,
+512
+],
+"ZONE_6/graveyard_ships_atlas_layer4": [
+512,
+2048
+],
+"ZONE_6/graveyard_ships_atlas_layer5": [
+1024,
+1024
+],
+"ZONE_6/graveyard_ships_bg": [
+1024,
+512
+],
+"ZONE_6/graveyard_ships_flag1": [
+256,
+1024
+],
+"ZONE_6/graveyard_ships_flag3": [
+256,
+1024
+],
+"ZONE_6/ice_cave_atlas_layer1": [
+2048,
+512
+],
+"ZONE_6/ice_cave_atlas_layer2": [
+2048,
+512
+],
+"ZONE_6/ice_cave_atlas_layer3": [
+512,
+2048
+],
+"ZONE_6/ice_cave_bg": [
+1024,
+1024
+],
+"ZONE_6/img_drop_jade_seal": [
+512,
+512
+],
+"ZONE_6/magic_rocks_atlas_layer1": [
+2048,
+512
+],
+"ZONE_6/magic_rocks_atlas_layer2": [
+512,
+1024
+],
+"ZONE_6/magic_rocks_atlas_layer3": [
+2048,
+1024
+],
+"ZONE_6/magic_rocks_atlas_layer4": [
+512,
+2048
+],
+"ZONE_6/magic_rocks_bg": [
+2048,
+512
+],
+"ZONE_6/magic_rocks_fire": [
+1024,
+2048
+],
+"ZONE_6/man_axes_3": [
+1024,
+1024
+],
+"ZONE_6/man_big_hammer": [
+512,
+512
+],
+"ZONE_6/man_claws": [
+1024,
+1024
+],
+"ZONE_6/man_dadao_janissary": [
+1024,
+1024
+],
+"ZONE_6/man_glaive_3": [
+1024,
+1024
+],
+"ZONE_6/man_katar": [
+1024,
+1024
+],
+"ZONE_6/man_knives_2": [
+1024,
+1024
+],
+"ZONE_6/man_long_katana": [
+1024,
+1024
+],
+"ZONE_6/man_magari_yari": [
+1024,
+1024
+],
+"ZONE_6/man_naginata": [
+1024,
+1024
+],
+"ZONE_6/man_nunchaku_2": [
+1024,
+1024
+],
+"ZONE_6/man_sai_2": [
+1024,
+1024
+],
+"ZONE_6/man_tonfa_3": [
+512,
+512
+],
+"ZONE_6/man_tonfa_4": [
+1024,
+1024
+],
+"ZONE_6/man_wakidzashi": [
+1024,
+1024
+],
+"ZONE_6/man_wakidzashi_2": [
+1024,
+1024
+],
+"ZONE_6/mgc_magic_wave_end": [
+1024,
+1024
+],
+"ZONE_6/mgc_magic_wave_middle": [
+256,
+128
+],
+"ZONE_6/mgc_magic_wave_start": [
+1024,
+1024
+],
+"ZONE_6/ninja_girl_katar": [
+512,
+512
+],
+"ZONE_6/ninja_girl_nunchaku": [
+1024,
+1024
+],
+"ZONE_6/ninja_girl_sharp_tonfa": [
+512,
+512
+],
+"ZONE_6/ninja_man_big_hammer": [
+512,
+512
+],
+"ZONE_6/ninja_man_big_mace": [
+1024,
+1024
+],
+"ZONE_6/ninja_man_knives_2": [
+1024,
+1024
+],
+"ZONE_6/ninja_man_shuang_gou": [
+1024,
+1024
+],
+"ZONE_6/ninja_man_spear": [
+1024,
+1024
+],
+"ZONE_6/shadow_gate_atlas_layer1": [
+2048,
+1024
+],
+"ZONE_6/shadow_gate_atlas_layer3": [
+2048,
+512
+],
+"ZONE_6/shadow_gate_atlas_layer4": [
+512,
+2048
+],
+"ZONE_6/shadow_gate_bg": [
+2048,
+512
+],
+"ZONE_6/shadow_gate_lightning2": [
+512,
+2048
+],
+"ZONE_6/shadow_gate_lightning3": [
+512,
+2048
+],
+"ZONE_6/shadow_gate_lightning4": [
+1024,
+1024
+],
+"ZONE_6/starter_pack_zone6": [
+512,
+512
+],
+"ZONE_6/starter_pack_zone6_Sales_sale": [
+365,
+247
+],
+"ZONE_6/waterfall_1": [
+2048,
+2048
+],
+"ZONE_6/waterfall_2": [
+2048,
+2048
+],
+"ZONE_6/waterfall_atlas_layer1": [
+2048,
+512
+],
+"ZONE_6/waterfall_atlas_layer2": [
+1024,
+512
+],
+"ZONE_6/waterfall_atlas_layer3": [
+1024,
+2048
+],
+"ZONE_6/waterfall_bg": [
+1024,
+512
+],
+"ZONE_7/Armor23": [
+512,
+2048
+],
+"ZONE_7/Armor24": [
+512,
+2048
+],
+"ZONE_7/Armor31": [
+1024,
+1024
+],
+"ZONE_7/Armor32": [
+1024,
+1024
+],
+"ZONE_7/Bag_Coins_Zone7_sale": [
+423,
+240
+],
+"ZONE_7/Bag_Gems_Zone7_sale": [
+365,
+247
+],
+"ZONE_7/Casket_Gems_Zone7_sale": [
+365,
+247
+],
+"ZONE_7/Chest_Coins_Zone7_sale": [
+423,
+240
+],
+"ZONE_7/Chest_Gems_Zone7_sale": [
+365,
+247
+],
+"ZONE_7/Helm23": [
+1024,
+1024
+],
+"ZONE_7/Helm24": [
+2048,
+1024
+],
+"ZONE_7/Helm33": [
+1024,
+2048
+],
+"ZONE_7/Payment3": [
+2048,
+512
+],
+"ZONE_7/Pile_Coins_Zone7_sale": [
+423,
+240
+],
+"ZONE_7/Ranged8": [
+1024,
+1024
+],
+"ZONE_7/Weapon14": [
+1024,
+1024
+],
+"ZONE_7/Weapon15": [
+2048,
+512
+],
+"ZONE_7/bag_coins_zone7": [
+512,
+512
+],
+"ZONE_7/capsules_atlas_layer1": [
+2048,
+512
+],
+"ZONE_7/capsules_atlas_layer2": [
+2048,
+512
+],
+"ZONE_7/capsules_atlas_layer3": [
+512,
+1024
+],
+"ZONE_7/capsules_atlas_layer4": [
+1024,
+1024
+],
+"ZONE_7/capsules_atlas_layer5": [
+2048,
+512
+],
+"ZONE_7/capsules_bg": [
+1024,
+512
+],
+"ZONE_7/character_cypher": [
+512,
+512
+],
+"ZONE_7/character_hyperion": [
+512,
+512
+],
+"ZONE_7/character_kali": [
+512,
+512
+],
+"ZONE_7/chest_coins_zone7": [
+512,
+512
+],
+"ZONE_7/factory_atlas_layer0": [
+1024,
+512
+],
+"ZONE_7/factory_atlas_layer1": [
+2048,
+1024
+],
+"ZONE_7/factory_atlas_layer2": [
+2048,
+512
+],
+"ZONE_7/factory_atlas_layer3": [
+512,
+2048
+],
+"ZONE_7/factory_bg": [
+1024,
+512
+],
+"ZONE_7/girl_z7_tournament_glaive": [
+512,
+512
+],
+"ZONE_7/img_bag_coins_zone7": [
+670,
+500
+],
+"ZONE_7/img_bag_gems_zone7": [
+670,
+500
+],
+"ZONE_7/img_casket_gems_zone7": [
+670,
+500
+],
+"ZONE_7/img_chest_coins_zone7": [
+670,
+500
+],
+"ZONE_7/img_chest_gems_zone7": [
+670,
+500
+],
+"ZONE_7/img_credit": [
+194,
+189
+],
+"ZONE_7/img_pile_coins_zone7": [
+670,
+500
+],
+"ZONE_7/looter_girl_scythe": [
+512,
+512
+],
+"ZONE_7/looter_girl_staff": [
+512,
+512
+],
+"ZONE_7/looter_man_glaive": [
+1024,
+1024
+],
+"ZONE_7/looter_man_knives": [
+512,
+512
+],
+"ZONE_7/looter_man_section_scythe": [
+512,
+512
+],
+"ZONE_7/looter_man_staff": [
+512,
+512
+],
+"ZONE_7/man_z7_tournament_daggers": [
+512,
+512
+],
+"ZONE_7/man_z7_tournament_scythes": [
+512,
+512
+],
+"ZONE_7/man_z7_tournament_staff": [
+512,
+512
+],
+"ZONE_7/man_z7_tournament_sword": [
+512,
+512
+],
+"ZONE_7/man_z7_tournament_swords": [
+512,
+512
+],
+"ZONE_7/mgc_effect_mine": [
+256,
+1024
+],
+"ZONE_7/mgc_effect_mine_player": [
+256,
+1024
+],
+"ZONE_7/mgc_effect_shocker": [
+256,
+1024
+],
+"ZONE_7/mgc_tonfa_guns_end": [
+256,
+512
+],
+"ZONE_7/mgc_tonfa_guns_middle": [
+256,
+256
+],
+"ZONE_7/mgc_tonfa_guns_start": [
+512,
+1024
+],
+"ZONE_7/pile_coins_zone7": [
+512,
+512
+],
+"ZONE_7/preview_main_i": [
+1024,
+1024
+],
+"ZONE_7/stranger_z7": [
+512,
+512
+],
+"ZONE_7_2/avatar_masked": [
+512,
+512
+],
+"ZONE_7_2/character_justice": [
+512,
+512
+],
+"ZONE_7_2/character_justice_2": [
+512,
+512
+],
+"ZONE_7_2/eggs_atlas_layer1": [
+2048,
+512
+],
+"ZONE_7_2/eggs_atlas_layer2": [
+2048,
+512
+],
+"ZONE_7_2/eggs_atlas_layer3": [
+2048,
+1024
+],
+"ZONE_7_2/eggs_atlas_layer4": [
+512,
+2048
+],
+"ZONE_7_2/eggs_bg": [
+1024,
+512
+],
+"ZONE_7_2/girl_hero_shocker_claws": [
+512,
+512
+],
+"ZONE_7_2/man_hero_composite_spear": [
+512,
+512
+],
+"ZONE_7_2/man_hero_composite_sword": [
+1024,
+1024
+],
+"ZONE_7_2/man_hero_power_fists": [
+512,
+512
+],
+"ZONE_7_2/man_titans_army_1": [
+512,
+512
+],
+"ZONE_7_2/man_titans_army_2": [
+512,
+512
+],
+"ZONE_7_2/man_titans_army_3": [
+512,
+512
+],
+"ZONE_7_2/man_titans_army_4": [
+512,
+512
+],
+"ZONE_7_2/stone_forest_atlas_layer1": [
+2048,
+512
+],
+"ZONE_7_2/stone_forest_atlas_layer2": [
+2048,
+1024
+],
+"ZONE_7_2/stone_forest_atlas_layer3": [
+1024,
+1024
+],
+"ZONE_7_2/stone_forest_bg": [
+2048,
+512
+],
+"ZONE_7_3/Armor25": [
+512,
+2048
+],
+"ZONE_7_3/Helm25": [
+512,
+2048
+],
+"ZONE_7_3/Magic7": [
+1024,
+1024
+],
+"ZONE_7_3/avatar_human": [
+512,
+512
+],
+"ZONE_7_3/boss_titan": [
+512,
+512
+],
+"ZONE_7_3/character_assasin": [
+512,
+512
+],
+"ZONE_7_3/character_corsair": [
+512,
+512
+],
+"ZONE_7_3/character_emperor": [
+512,
+512
+],
+"ZONE_7_3/character_guru": [
+512,
+512
+],
+"ZONE_7_3/character_master": [
+512,
+512
+],
+"ZONE_7_3/character_may_sad": [
+512,
+512
+],
+"ZONE_7_3/effect_shield_hex_hit": [
+512,
+1024
+],
+"ZONE_7_3/img_drop_titan_sphere": [
+512,
+512
+],
+"ZONE_7_3/man_z7_tournament_firebatons": [
+512,
+512
+],
+"ZONE_7_3/man_z7_tournament_knobsticks": [
+512,
+512
+],
+"ZONE_7_3/mgc_effect_energy_pillar_end": [
+1024,
+1024
+],
+"ZONE_7_3/mgc_effect_energy_pillar_start": [
+2048,
+256
+],
+"ZONE_7_3/mgc_effect_fire_tonfa_blow_1": [
+512,
+512
+],
+"ZONE_7_3/mgc_effect_fire_tonfa_blow_2": [
+1024,
+256
+],
+"ZONE_7_3/mgc_effect_fire_tonfa_flamethrower": [
+256,
+1024
+],
+"ZONE_7_3/mgc_effect_fire_tonfa_shoot_1": [
+512,
+2048
+],
+"ZONE_7_3/mgc_effect_hammer": [
+1024,
+1024
+],
+"ZONE_7_3/mgc_effect_shield_hex": [
+1024,
+2048
+],
+"ZONE_7_3/mgc_magic_mind_throw_end": [
+1024,
+1024
+],
+"ZONE_7_3/mgc_magic_mind_throw_middle": [
+2048,
+512
+],
+"ZONE_7_3/mgc_magic_mind_throw_start": [
+512,
+2048
+],
+"ZONE_7_3/neural_network_atlas_layer1": [
+2048,
+512
+],
+"ZONE_7_3/neural_network_atlas_layer2": [
+2048,
+1024
+],
+"ZONE_7_3/neural_network_atlas_layer2_smoke": [
+1024,
+1024
+],
+"ZONE_7_3/neural_network_atlas_layer3": [
+512,
+2048
+],
+"ZONE_7_3/neural_network_bg": [
+2048,
+512
+],
+"ZONE_7_3/scavenger_1": [
+512,
+512
+],
+"ZONE_7_3/scavenger_2": [
+512,
+512
+],
+"ZONE_7_3/scavenger_3": [
+512,
+512
+],
+"ZONE_7_3/scavenger_4": [
+512,
+512
+],
+"ZONE_7_3/skyport_atlas_layer1": [
+2048,
+512
+],
+"ZONE_7_3/skyport_atlas_layer2": [
+2048,
+512
+],
+"ZONE_7_3/skyport_atlas_layer3": [
+2048,
+512
+],
+"ZONE_7_3/skyport_atlas_layer4": [
+512,
+2048
+],
+"ZONE_7_3/skyport_atlas_layer5": [
+256,
+512
+],
+"ZONE_7_3/skyport_bg": [
+1024,
+512
+],
+"ZONE_7_3/spaceship_atlas_layer1": [
+2048,
+512
+],
+"ZONE_7_3/spaceship_atlas_layer2": [
+2048,
+512
+],
+"ZONE_7_3/spaceship_atlas_layer4": [
+2048,
+1024
+],
+"ZONE_7_3/spaceship_atlas_layer4_smoke": [
+2048,
+256
+],
+"ZONE_7_3/spaceship_bg": [
+2048,
+512
+],
+"ZONE_7_3/spaceship_thorny_wall": [
+512,
+512
+],
+"ZONE_7_3/woman_z7_tournament_scythes": [
+512,
+512
+],
+"ZONE_IM/Armor20": [
+1024,
+2048
+],
+"ZONE_IM/Armor21": [
+512,
+2048
+],
+"ZONE_IM/Armor22": [
+512,
+2048
+],
+"ZONE_IM/Bag_Coins_Platinum_sale": [
+423,
+240
+],
+"ZONE_IM/Helm20": [
+1024,
+2048
+],
+"ZONE_IM/Helm22": [
+1024,
+2048
+],
+"ZONE_IM/Pile_Coins_Platinum_sale": [
+423,
+240
+],
+"ZONE_IM/Ranged6": [
+1024,
+1024
+],
+"ZONE_IM/Weapon12": [
+2048,
+1024
+],
+"ZONE_IM/Weapon13": [
+1024,
+1024
+],
+"ZONE_IM/bag_coins_platinum": [
+512,
+512
+],
+"ZONE_IM/character_shroud": [
+512,
+512
+],
+"ZONE_IM/img_bag_coins_platinum": [
+670,
+500
+],
+"ZONE_IM/img_drop_im_knuckles": [
+512,
+512
+],
+"ZONE_IM/img_pile_coins_platinum": [
+670,
+500
+],
+"ZONE_IM/img_platinum": [
+194,
+189
+],
+"ZONE_IM/man_big_mace_2": [
+1024,
+1024
+],
+"ZONE_IM/pile_coins_platinum": [
+512,
+512
+],
+"ZONE_RAID/AnnounceRaidZone4Offer": [
+500,
+500
+],
+"ZONE_RAID/Armor28": [
+1024,
+1024
+],
+"ZONE_RAID/Helm30": [
+1024,
+2048
+],
+"ZONE_RAID/Helm37": [
+1024,
+2048
+],
+"ZONE_RAID/Lottery": [
+2048,
+2048
+],
+"ZONE_RAID/LotteryX5Chest": [
+640,
+480
+],
+"ZONE_RAID/Lottery_Assistant": [
+512,
+512
+],
+"ZONE_RAID/Magic13": [
+2048,
+2048
+],
+"ZONE_RAID/Magic9": [
+2048,
+2048
+],
+"ZONE_RAID/MonkChestSmall_Sales_sale": [
+365,
+247
+],
+"ZONE_RAID/NeoWandererChestSmall_Sales_sale": [
+365,
+247
+],
+"ZONE_RAID/PotionBomb_Sales_sale": [
+365,
+247
+],
+"ZONE_RAID/PotionLegend_Sales_sale": [
+365,
+247
+],
+"ZONE_RAID/PotionLife_Sales_sale": [
+365,
+247
+],
+"ZONE_RAID/PotionMagic_Sales_sale": [
+365,
+247
+],
+"ZONE_RAID/PotionResistance_Sales_sale": [
+365,
+247
+],
+"ZONE_RAID/PotionRock_Sales_sale": [
+365,
+247
+],
+"ZONE_RAID/PotionSpikes_Sales_sale": [
+365,
+247
+],
+"ZONE_RAID/Raid1": [
+2048,
+2048
+],
+"ZONE_RAID/RaidBars": [
+512,
+128
+],
+"ZONE_RAID/RaidConsumables": [
+1024,
+1024
+],
+"ZONE_RAID/RaidCurrency1_Base": [
+2048,
+2048
+],
+"ZONE_RAID/RaidCurrencyForge": [
+1024,
+2048
+],
+"ZONE_RAID/RaidCurrency_Base": [
+2048,
+2048
+],
+"ZONE_RAID/RaidDailyDialog": [
+1024,
+2048
+],
+"ZONE_RAID/RaidDailyMap": [
+256,
+256
+],
+"ZONE_RAID/RaidEffectNewDanCycle": [
+1024,
+2048
+],
+"ZONE_RAID/RaidEffectNewShowBottom": [
+2048,
+2048
+],
+"ZONE_RAID/RaidEffectNewShowTop": [
+2048,
+2048
+],
+"ZONE_RAID/RaidGiantChests": [
+2048,
+2048
+],
+"ZONE_RAID/RaidHourGlassDrip": [
+2048,
+2048
+],
+"ZONE_RAID/RaidHourGlassRot": [
+2048,
+2048
+],
+"ZONE_RAID/RaidInfo": [
+2048,
+2048
+],
+"ZONE_RAID/RaidInfoIcons": [
+1024,
+2048
+],
+"ZONE_RAID/RaidItems1": [
+1024,
+1024
+],
+"ZONE_RAID/RaidItems2": [
+2048,
+2048
+],
+"ZONE_RAID/RaidItems3": [
+2048,
+1024
+],
+"ZONE_RAID/RaidKeys_Base": [
+256,
+1024
+],
+"ZONE_RAID/RaidLeaderboard": [
+2048,
+2048
+],
+"ZONE_RAID/RaidMisc": [
+1024,
+2048
+],
+"ZONE_RAID/RaidOffersChest": [
+670,
+500
+],
+"ZONE_RAID/RaidPotionsIcons": [
+256,
+256
+],
+"ZONE_RAID/RaidSpheresReward": [
+256,
+256
+],
+"ZONE_RAID/RaidTop100Dialog": [
+2048,
+1024
+],
+"ZONE_RAID/RaidsSuperChestSmall_Sales_sale": [
+365,
+247
+],
+"ZONE_RAID/Ranged10": [
+1024,
+2048
+],
+"ZONE_RAID/SentinelChestSmall_Sales_sale": [
+365,
+247
+],
+"ZONE_RAID/Sphere1Pack_Name_Sales_sale": [
+365,
+247
+],
+"ZONE_RAID/Sphere1_Name_Sales_sale": [
+365,
+247
+],
+"ZONE_RAID/Sphere2Pack_Name_Sales_sale": [
+365,
+247
+],
+"ZONE_RAID/Sphere2_Name_Sales_sale": [
+365,
+247
+],
+"ZONE_RAID/Sphere3Pack_Name_Sales_sale": [
+365,
+247
+],
+"ZONE_RAID/Sphere3_Name_Sales_sale": [
+365,
+247
+],
+"ZONE_RAID/UnknownItems": [
+2048,
+2048
+],
+"ZONE_RAID/Weapon19": [
+1024,
+2048
+],
+"ZONE_RAID/Zone4CyberDragonOffer": [
+500,
+500
+],
+"ZONE_RAID/arkhos_raid_bg": [
+1024,
+512
+],
+"ZONE_RAID/arkhos_raid_layer1": [
+2048,
+1024
+],
+"ZONE_RAID/blackness_raid_bg": [
+2048,
+2048
+],
+"ZONE_RAID/blackness_raid_main": [
+2048,
+2048
+],
+"ZONE_RAID/blackness_raid_mid": [
+2048,
+2048
+],
+"ZONE_RAID/boosterpack": [
+335,
+250
+],
+"ZONE_RAID/boss_arkhos": [
+512,
+512
+],
+"ZONE_RAID/boss_crystal": [
+512,
+512
+],
+"ZONE_RAID/boss_fatum": [
+512,
+512
+],
+"ZONE_RAID/boss_hoaxen": [
+512,
+512
+],
+"ZONE_RAID/boss_hoaxen_halloween": [
+512,
+512
+],
+"ZONE_RAID/boss_mushroom": [
+512,
+512
+],
+"ZONE_RAID/boss_vortex": [
+512,
+512
+],
+"ZONE_RAID/character_lazarus": [
+512,
+512
+],
+"ZONE_RAID/character_pirate": [
+512,
+512
+],
+"ZONE_RAID/character_pristess": [
+512,
+512
+],
+"ZONE_RAID/character_thief": [
+512,
+512
+],
+"ZONE_RAID/character_thief_2": [
+512,
+512
+],
+"ZONE_RAID/character_thief_3": [
+512,
+512
+],
+"ZONE_RAID/character_thief_small": [
+512,
+512
+],
+"ZONE_RAID/effect_chest_bronze_blicks": [
+2048,
+2048
+],
+"ZONE_RAID/effect_chest_gold_blicks": [
+2048,
+2048
+],
+"ZONE_RAID/effect_chest_raid_blicks": [
+2048,
+2048
+],
+"ZONE_RAID/effect_chest_silver_blicks": [
+2048,
+2048
+],
+"ZONE_RAID/effect_tornado_hit": [
+2048,
+512
+],
+"ZONE_RAID/fatum_raid_layers": [
+2048,
+2048
+],
+"ZONE_RAID/fear_bg": [
+2048,
+1024
+],
+"ZONE_RAID/fear_layer1": [
+2048,
+2048
+],
+"ZONE_RAID/fungus_raid_background": [
+1024,
+512
+],
+"ZONE_RAID/fungus_raid_layer1": [
+1024,
+1024
+],
+"ZONE_RAID/fungus_raid_layer2": [
+512,
+1024
+],
+"ZONE_RAID/fungus_raid_layer3": [
+2048,
+1024
+],
+"ZONE_RAID/hoaxen_raid_bg": [
+2048,
+512
+],
+"ZONE_RAID/hoaxen_raid_layer1": [
+1024,
+2048
+],
+"ZONE_RAID/hoaxen_raid_layer2": [
+1024,
+2048
+],
+"ZONE_RAID/hunger_raid_atlas_layer1": [
+512,
+1024
+],
+"ZONE_RAID/hunger_raid_atlas_layer2": [
+2048,
+512
+],
+"ZONE_RAID/hunger_raid_atlas_layer3": [
+2048,
+1024
+],
+"ZONE_RAID/hunger_raid_background": [
+2048,
+512
+],
+"ZONE_RAID/hunter_raid": [
+512,
+512
+],
+"ZONE_RAID/hunter_raid_bg": [
+2048,
+2048
+],
+"ZONE_RAID/hunter_raid_front": [
+2048,
+2048
+],
+"ZONE_RAID/hunter_raid_mid": [
+2048,
+2048
+],
+"ZONE_RAID/img_dragon_chest": [
+670,
+500
+],
+"ZONE_RAID/img_mystery_tickets": [
+670,
+500
+],
+"ZONE_RAID/img_neo_wanderer": [
+670,
+500
+],
+"ZONE_RAID/img_pile_base_keys": [
+670,
+500
+],
+"ZONE_RAID/img_raid_starter_pack": [
+365,
+247
+],
+"ZONE_RAID/img_raid_starterpack": [
+512,
+512
+],
+"ZONE_RAID/img_raid_super_chest": [
+670,
+500
+],
+"ZONE_RAID/img_sphere1": [
+512,
+512
+],
+"ZONE_RAID/img_sphere2": [
+512,
+512
+],
+"ZONE_RAID/img_sphere2Pack": [
+670,
+500
+],
+"ZONE_RAID/img_sphere2Pack_small": [
+512,
+512
+],
+"ZONE_RAID/img_sphere3": [
+512,
+512
+],
+"ZONE_RAID/img_surpriseBox": [
+670,
+500
+],
+"ZONE_RAID/img_surpriseBox_junior": [
+500,
+500
+],
+"ZONE_RAID/img_xmas19_gift": [
+670,
+453
+],
+"ZONE_RAID/man_invisible": [
+1024,
+1024
+],
+"ZONE_RAID/megalith_raid_background": [
+1024,
+512
+],
+"ZONE_RAID/megalith_raid_layer1": [
+2048,
+512
+],
+"ZONE_RAID/megalith_raid_layer2": [
+2048,
+512
+],
+"ZONE_RAID/megalith_raid_layer3": [
+2048,
+1024
+],
+"ZONE_RAID/megalith_raid_layer4": [
+2048,
+512
+],
+"ZONE_RAID/mgc_effect_bell_shield_big": [
+512,
+2048
+],
+"ZONE_RAID/mgc_effect_bell_shield_boom": [
+1024,
+2048
+],
+"ZONE_RAID/mgc_effect_bell_shield_medium": [
+1024,
+1024
+],
+"ZONE_RAID/mgc_effect_bell_shield_small": [
+512,
+2048
+],
+"ZONE_RAID/mgc_effect_energy_ray_1": [
+1024,
+2048
+],
+"ZONE_RAID/mgc_effect_energy_ray_2": [
+1024,
+2048
+],
+"ZONE_RAID/mgc_effect_energy_ray_3": [
+1024,
+2048
+],
+"ZONE_RAID/mgc_effect_energy_ray_4": [
+1024,
+2048
+],
+"ZONE_RAID/mgc_effect_energy_ray_5": [
+1024,
+2048
+],
+"ZONE_RAID/mgc_effect_energy_ray_6": [
+1024,
+1024
+],
+"ZONE_RAID/mgc_effect_fall": [
+2048,
+512
+],
+"ZONE_RAID/mgc_effect_round_knife": [
+128,
+256
+],
+"ZONE_RAID/mgc_effect_round_knife_big": [
+1024,
+2048
+],
+"ZONE_RAID/mgc_effect_tornado_end": [
+2048,
+512
+],
+"ZONE_RAID/mgc_effect_tornado_middle": [
+2048,
+512
+],
+"ZONE_RAID/mgc_effect_tornado_start": [
+2048,
+512
+],
+"ZONE_RAID/mgc_magic_acid_cloud": [
+512,
+1024
+],
+"ZONE_RAID/mgc_magic_asteroid_end_1": [
+512,
+512
+],
+"ZONE_RAID/mgc_magic_asteroid_end_2": [
+1024,
+2048
+],
+"ZONE_RAID/mgc_magic_asteroid_middle": [
+1024,
+2048
+],
+"ZONE_RAID/mgc_magic_big_sphere_end": [
+1024,
+2048
+],
+"ZONE_RAID/mgc_magic_big_sphere_start": [
+512,
+1024
+],
+"ZONE_RAID/mgc_magic_cyber_dragon_ray": [
+2048,
+2048
+],
+"ZONE_RAID/mgc_magic_dark_wave_end": [
+1024,
+1024
+],
+"ZONE_RAID/mgc_magic_dark_wave_middle": [
+256,
+128
+],
+"ZONE_RAID/mgc_magic_dark_wave_start": [
+1024,
+1024
+],
+"ZONE_RAID/mgc_magic_death_ray": [
+2048,
+1024
+],
+"ZONE_RAID/mgc_magic_dragon": [
+2048,
+2048
+],
+"ZONE_RAID/mgc_magic_earth_quake_end": [
+1024,
+256
+],
+"ZONE_RAID/mgc_magic_earth_strike_end": [
+2048,
+1024
+],
+"ZONE_RAID/mgc_magic_earth_strike_start": [
+1024,
+2048
+],
+"ZONE_RAID/mgc_magic_energy_ball1_end": [
+1024,
+512
+],
+"ZONE_RAID/mgc_magic_energy_ball2_end": [
+1024,
+1024
+],
+"ZONE_RAID/mgc_magic_energy_ball_middle": [
+512,
+1024
+],
+"ZONE_RAID/mgc_magic_energy_ball_start": [
+1024,
+1024
+],
+"ZONE_RAID/mgc_magic_fire_pillar_end": [
+512,
+2048
+],
+"ZONE_RAID/mgc_magic_fire_pillar_start": [
+1024,
+1024
+],
+"ZONE_RAID/mgc_magic_ice_pins_end": [
+1024,
+1024
+],
+"ZONE_RAID/mgc_magic_ice_pins_middle_1": [
+512,
+1024
+],
+"ZONE_RAID/mgc_magic_ice_pins_middle_2": [
+2048,
+512
+],
+"ZONE_RAID/mgc_magic_ice_pins_start": [
+1024,
+1024
+],
+"ZONE_RAID/mgc_magic_mid_sphere1_end": [
+1024,
+2048
+],
+"ZONE_RAID/mgc_magic_mid_sphere_middle": [
+1024,
+256
+],
+"ZONE_RAID/mgc_magic_mid_sphere_start": [
+512,
+1024
+],
+"ZONE_RAID/mgc_magic_root_stun_end_1": [
+512,
+128
+],
+"ZONE_RAID/mgc_magic_root_stun_end_2": [
+512,
+128
+],
+"ZONE_RAID/mgc_magic_root_stun_middle": [
+512,
+256
+],
+"ZONE_RAID/mgc_magic_root_stun_middle_1": [
+128,
+128
+],
+"ZONE_RAID/mgc_magic_root_stun_middle_2": [
+128,
+128
+],
+"ZONE_RAID/mgc_magic_root_stun_start_1": [
+256,
+512
+],
+"ZONE_RAID/mgc_magic_root_stun_start_2": [
+512,
+256
+],
+"ZONE_RAID/mgc_magic_shield_middle": [
+2048,
+2048
+],
+"ZONE_RAID/mgc_magic_small_sphere_end": [
+1024,
+512
+],
+"ZONE_RAID/mgc_magic_small_sphere_middle": [
+512,
+1024
+],
+"ZONE_RAID/mgc_magic_small_sphere_start": [
+1024,
+2048
+],
+"ZONE_RAID/mgc_magic_water_ball_end": [
+1024,
+1024
+],
+"ZONE_RAID/mgc_magic_water_ball_middle": [
+512,
+128
+],
+"ZONE_RAID/mgc_magic_water_ball_start": [
+1024,
+2048
+],
+"ZONE_RAID/mgc_perk_hunger_claws_end": [
+2048,
+512
+],
+"ZONE_RAID/mgc_perk_hunger_claws_start": [
+2048,
+1024
+],
+"ZONE_RAID/mgc_rat_wave_end": [
+1024,
+2048
+],
+"ZONE_RAID/mgc_rat_wave_middle": [
+1024,
+512
+],
+"ZONE_RAID/mgc_rat_wave_start": [
+512,
+2048
+],
+"ZONE_RAID/mgc_saturn_blade": [
+512,
+2048
+],
+"ZONE_RAID/mgc_saturn_blade_hide": [
+512,
+1024
+],
+"ZONE_RAID/mgc_saturn_electricity": [
+1024,
+1024
+],
+"ZONE_RAID/mgc_saturn_electricity_burst": [
+1024,
+2048
+],
+"ZONE_RAID/mgc_saturn_gunshot": [
+1024,
+512
+],
+"ZONE_RAID/mgc_saturn_gunshot_2v": [
+1024,
+512
+],
+"ZONE_RAID/mgc_saturn_projectile": [
+2048,
+256
+],
+"ZONE_RAID/mgc_soul_extract": [
+1024,
+512
+],
+"ZONE_RAID/mgc_war_ability_end": [
+2048,
+2048
+],
+"ZONE_RAID/mgc_war_ability_middle": [
+2048,
+2048
+],
+"ZONE_RAID/mgc_war_ability_start": [
+1024,
+2048
+],
+"ZONE_RAID/mgc_wasp_speed_split_wings_end": [
+256,
+512
+],
+"ZONE_RAID/mgc_wasp_speed_split_wings_start": [
+256,
+512
+],
+"ZONE_RAID/mgc_wasp_speed_split_wings_start_2": [
+256,
+512
+],
+"ZONE_RAID/mgc_widow_teleportation_end": [
+512,
+1024
+],
+"ZONE_RAID/mgc_widow_teleportation_start": [
+512,
+1024
+],
+"ZONE_RAID/preview_raid_base": [
+2048,
+2048
+],
+"ZONE_RAID/profit55": [
+512,
+409
+],
+"ZONE_RAID/profit55mask": [
+512,
+409
+],
+"ZONE_RAID/profit60": [
+512,
+409
+],
+"ZONE_RAID/profit60mask": [
+512,
+409
+],
+"ZONE_RAID/profit65": [
+512,
+409
+],
+"ZONE_RAID/profit65mask": [
+512,
+409
+],
+"ZONE_RAID/profit70": [
+512,
+409
+],
+"ZONE_RAID/profit70mask": [
+512,
+409
+],
+"ZONE_RAID/ra_bleed": [
+512,
+512
+],
+"ZONE_RAID/ra_bleed_icon": [
+256,
+256
+],
+"ZONE_RAID/ra_debuff": [
+512,
+512
+],
+"ZONE_RAID/ra_debuff_icon": [
+256,
+256
+],
+"ZONE_RAID/ra_fight": [
+512,
+512
+],
+"ZONE_RAID/ra_fight_icon": [
+256,
+256
+],
+"ZONE_RAID/ra_regen": [
+512,
+512
+],
+"ZONE_RAID/ra_regen_icon": [
+256,
+256
+],
+"ZONE_RAID/ra_special": [
+512,
+512
+],
+"ZONE_RAID/ra_special_icon": [
+256,
+256
+],
+"ZONE_RAID/ringout": [
+1024,
+1024
+],
+"ZONE_RAID/starter_pack_raid_swords_Sales_sale": [
+365,
+247
+],
+"ZONE_RAID/starter_pack_zone_raid": [
+512,
+512
+],
+"ZONE_RAID/temple_fire": [
+512,
+512
+],
+"ZONE_RAID/vortex_raid_background": [
+1024,
+512
+],
+"ZONE_RAID/vortex_raid_floor": [
+1024,
+1024
+],
+"ZONE_RAID/vortex_raid_layer2": [
+2048,
+512
+],
+"ZONE_RAID/vortex_raid_layer3": [
+2048,
+512
+],
+"ZONE_RAID/vulcan_raid_background": [
+1024,
+512
+],
+"ZONE_RAID/vulcan_raid_layer2": [
+1024,
+512
+],
+"ZONE_RAID/vulcan_raid_layer3": [
+2048,
+512
+],
+"ZONE_RAID/vulcan_raid_layer5": [
+2048,
+2048
+],
+"ZONE_RAID/war_raid_background": [
+2048,
+512
+],
+"ZONE_RAID/war_raid_layer1": [
+2048,
+2048
+],
+"ZONE_RAID/weapon_boss_claws_Sales_sale": [
+365,
+247
+]
+}

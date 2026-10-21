@@ -1,0 +1,81 @@
+{
+ "source": "4c175f7d815d80a4490cee2200708d9d",
+ "pathID": 3,
+ "root": {
+  "name": "ShopBackground",
+  "active": true,
+  "layer": 5,
+  "transform": {
+   "localPosition": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "localScale": [
+    0.53,
+    -0.53,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "children": [
+   {
+    "name": "Bg",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      454.75,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.0,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "SpriteRenderer",
+      "sprite": null,
+      "color": [
+       1.0,
+       1.0,
+       1.0,
+       1.0
+      ],
+      "sortingOrder": 0
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "SpriteRendererQuality",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "fields": {
+       "_atlas": "",
+       "_sprite": ""
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

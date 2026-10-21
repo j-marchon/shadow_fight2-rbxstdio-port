@@ -1,0 +1,480 @@
+{
+ "source": "00d9c3e711e933d42a10e32a11eae4d4",
+ "pathID": 11,
+ "root": {
+  "name": "PlayerLifeBar",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.5,
+    0.5
+   ],
+   "anchorMax": [
+    0.5,
+    0.5
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    564.0,
+    43.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "PlayerLifeBar",
+    "namespace": "Nekki.SF2.GUI.Fight",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_background": {
+      "type": "ResolutionImageSkew",
+      "path": "PlayerLifeBar/Background"
+     },
+     "_healthBar": {
+      "type": "ResolutionImageSkew",
+      "path": "PlayerLifeBar/BarPanel/HealthBar"
+     },
+     "_hitBar": {
+      "type": "ResolutionImageSkew",
+      "path": "PlayerLifeBar/BarPanel/HitBar"
+     },
+     "_barPanel": {
+      "type": "Transform",
+      "path": "PlayerLifeBar/BarPanel"
+     },
+     "_nextLevelColor": {
+      "r": 0.7059,
+      "g": 0.7059,
+      "b": 0.7059,
+      "a": 1.0
+     },
+     "_healthBarSpriteName": "",
+     "_raidHealthBarSpriteName": "",
+     "_pvpFirst_HealthBarSpriteName": "",
+     "_pvpFirst_HitBarSpriteName": "",
+     "LockLifeUpdate": 0
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "Background",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.5
+     ],
+     "anchorMax": [
+      1.0,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      43.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImageSkew",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": false,
+       "runtimeSprites": {
+        "SpriteName": {
+         "name": "FightUI.HealthBar_Empty",
+         "texture": "FightUI",
+         "resourcesPath": "UI/Atlases/",
+         "resolved": true
+        }
+       },
+       "sprite": "FightUI.HealthBar_Empty",
+       "texture": "FightUI",
+       "spriteSource": "runtime:_SpriteName",
+       "spriteInfo": {
+        "type": "Sprite",
+        "name": "FightUI.HealthBar_Empty",
+        "file": "dcb2e1eee7245544cb45281e1f5188b6",
+        "texture": "FightUI",
+        "textureSize": [
+         2048,
+         2048
+        ],
+        "png": "tex/APK/FightUI.png",
+        "textureRect": [
+         149.0,
+         2003.0,
+         1.0,
+         43.0
+        ],
+        "rect": [
+         149.0,
+         2003.0,
+         1.0,
+         43.0
+        ],
+        "pivot": [
+         0.5,
+         0.5
+        ],
+        "ppu": 100.0
+       },
+       "type": "simple",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "UI/Atlases/",
+       "_SpriteName": "FightUI.HealthBar_Empty",
+       "_SkewAngle": 25.0
+      }
+     }
+    ]
+   },
+   {
+    "name": "BarPanel",
+    "active": true,
+    "layer": 5,
+    "transform": {
+     "localPosition": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "children": [
+     {
+      "name": "HitBar",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.0,
+        0.5
+       ],
+       "anchorMax": [
+        1.0,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        464.0,
+        43.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImageSkew",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": false,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "FightUI.HealthBar_Hit",
+           "texture": "FightUI",
+           "resourcesPath": "UI/Atlases/",
+           "resolved": true
+          }
+         },
+         "sprite": "FightUI.HealthBar_Hit",
+         "texture": "FightUI",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "FightUI.HealthBar_Hit",
+          "file": "dcb2e1eee7245544cb45281e1f5188b6",
+          "texture": "FightUI",
+          "textureSize": [
+           2048,
+           2048
+          ],
+          "png": "tex/APK/FightUI.png",
+          "textureRect": [
+           153.0,
+           2003.0,
+           1.0,
+           43.0
+          ],
+          "rect": [
+           153.0,
+           2003.0,
+           1.0,
+           43.0
+          ],
+          "pivot": [
+           0.5,
+           0.5
+          ],
+          "ppu": 100.0
+         },
+         "type": "filled",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0,
+         "fillMethod": "horizontal",
+         "fillAmount": 1.0,
+         "fillOrigin": 1,
+         "fillClockwise": true
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 3,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 0,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 1,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "UI/Atlases/",
+         "_SpriteName": "FightUI.HealthBar_Hit",
+         "_SkewAngle": 25.0
+        }
+       }
+      ]
+     },
+     {
+      "name": "HealthBar",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.0,
+        0.5
+       ],
+       "anchorMax": [
+        1.0,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        464.0,
+        43.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImageSkew",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": false,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "FightUI.HealthBar_Full",
+           "texture": "FightUI",
+           "resourcesPath": "UI/Atlases/",
+           "resolved": true
+          }
+         },
+         "sprite": "FightUI.HealthBar_Full",
+         "texture": "FightUI",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "FightUI.HealthBar_Full",
+          "file": "dcb2e1eee7245544cb45281e1f5188b6",
+          "texture": "FightUI",
+          "textureSize": [
+           2048,
+           2048
+          ],
+          "png": "tex/APK/FightUI.png",
+          "textureRect": [
+           165.0,
+           2003.0,
+           1.0,
+           43.0
+          ],
+          "rect": [
+           165.0,
+           2003.0,
+           1.0,
+           43.0
+          ],
+          "pivot": [
+           0.5,
+           0.5
+          ],
+          "ppu": 100.0
+         },
+         "type": "filled",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0,
+         "fillMethod": "horizontal",
+         "fillAmount": 1.0,
+         "fillOrigin": 1,
+         "fillClockwise": true
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 3,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 0,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 1,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "UI/Atlases/",
+         "_SpriteName": "FightUI.HealthBar_Full",
+         "_SkewAngle": 25.0
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

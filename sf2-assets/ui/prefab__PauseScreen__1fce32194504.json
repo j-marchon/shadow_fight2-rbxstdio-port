@@ -1,0 +1,3356 @@
+{
+ "source": "1fce321945040ab4a90dc0291cd331f9",
+ "pathID": 63,
+ "root": {
+  "name": "PauseScreen",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.0,
+    0.0
+   ],
+   "anchorMax": [
+    1.0,
+    1.0
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    0.0,
+    0.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "PauseScreen",
+    "namespace": "Nekki.SF2.GUI.Fight",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_Background": {
+      "type": "Image",
+      "path": "PauseScreen/Background"
+     },
+     "home": {
+      "type": "PressButton",
+      "path": "PauseScreen/Content/Buttons/Panel/Home"
+     },
+     "musicOn": {
+      "type": "PressButton",
+      "path": "PauseScreen/Content/Buttons/Panel/MusicOn"
+     },
+     "musicOff": {
+      "type": "PressButton",
+      "path": "PauseScreen/Content/Buttons/Panel/MusicOff"
+     },
+     "soundOn": {
+      "type": "PressButton",
+      "path": "PauseScreen/Content/Buttons/Panel/SoundOn"
+     },
+     "soundOff": {
+      "type": "PressButton",
+      "path": "PauseScreen/Content/Buttons/Panel/SoundOff"
+     },
+     "play": {
+      "type": "PressButton",
+      "path": "PauseScreen/Content/Buttons/Panel/Play"
+     },
+     "buttonsLayout": {
+      "type": "HorizontalLayoutGroup",
+      "path": "PauseScreen/Content/Buttons/Panel"
+     },
+     "selectorPrefab": null,
+     "RulesLabel": {
+      "type": "LabelAlias",
+      "path": "PauseScreen/Content/RulesLabel"
+     }
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "Background",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "Image",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "color": [
+        0.0,
+        0.0,
+        0.0,
+        0.698
+       ],
+       "raycastTarget": true,
+       "sprite": null,
+       "texture": null,
+       "spriteSource": null,
+       "spriteInfo": null,
+       "type": "simple",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.698
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0
+      }
+     }
+    ]
+   },
+   {
+    "name": "Content",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "VerticalLayoutGroup",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "layout": "VerticalLayoutGroup",
+       "padding": {
+        "left": 0,
+        "right": 0,
+        "top": 100,
+        "bottom": 0
+       },
+       "childAlignment": "MiddleCenter",
+       "spacing": 150.0,
+       "childControlWidth": 0,
+       "childControlHeight": 0,
+       "childForceExpandWidth": 1,
+       "childForceExpandHeight": 0,
+       "childScaleWidth": 0,
+       "childScaleHeight": 0,
+       "reverseArrangement": 0
+      },
+      "fields": {
+       "m_Padding": {
+        "m_Left": 0,
+        "m_Right": 0,
+        "m_Top": 100,
+        "m_Bottom": 0
+       },
+       "m_ChildAlignment": 4,
+       "m_Spacing": 150.0,
+       "m_ChildForceExpandWidth": 1,
+       "m_ChildForceExpandHeight": 0,
+       "m_ChildControlWidth": 0,
+       "m_ChildControlHeight": 0,
+       "m_ChildScaleWidth": 0,
+       "m_ChildScaleHeight": 0,
+       "m_ReverseArrangement": 0
+      }
+     }
+    ],
+    "children": [
+     {
+      "name": "PauseImage",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.0,
+        0.0
+       ],
+       "anchorMax": [
+        0.0,
+        0.0
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        100.0,
+        100.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "children": [
+       {
+        "name": "PauseImageLeft",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.5,
+          0.5
+         ],
+         "anchorMax": [
+          0.5,
+          0.5
+         ],
+         "anchoredPosition": [
+          0.0,
+          0.0
+         ],
+         "sizeDelta": [
+          400.0,
+          192.0
+         ],
+         "pivot": [
+          1.0,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionImage",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Image",
+           "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+           ],
+           "raycastTarget": true,
+           "runtimeSprites": {
+            "SpriteName": {
+             "name": "FightPause.PauseLeft",
+             "texture": "FightPause",
+             "resourcesPath": "UI/Atlases/",
+             "resolved": true
+            }
+           },
+           "sprite": "FightPause.PauseLeft",
+           "texture": "FightPause",
+           "spriteSource": "runtime:_SpriteName",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "FightPause.PauseLeft",
+            "file": "bc52264a5bbd80a429a1c3744d576f0c",
+            "texture": "FightPause",
+            "textureSize": [
+             1024,
+             1024
+            ],
+            "png": "tex/APK/FightPause.png",
+            "textureRect": [
+             578.0,
+             830.0,
+             400.0,
+             192.0
+            ],
+            "rect": [
+             578.0,
+             830.0,
+             400.0,
+             192.0
+            ],
+            "pivot": [
+             0.5,
+             0.5
+            ],
+            "ppu": 100.0
+           },
+           "type": "simple",
+           "preserveAspect": false,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 1,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": null,
+           "m_Type": 0,
+           "m_PreserveAspect": 0,
+           "m_FillCenter": 1,
+           "m_FillMethod": 4,
+           "m_FillAmount": 1.0,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0,
+           "_TexturePath": "UI/Atlases/",
+           "_SpriteName": "FightPause.PauseLeft"
+          }
+         }
+        ]
+       },
+       {
+        "name": "PauseImageRight",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.5,
+          0.5
+         ],
+         "anchorMax": [
+          0.5,
+          0.5
+         ],
+         "anchoredPosition": [
+          0.0,
+          0.0
+         ],
+         "sizeDelta": [
+          400.0,
+          192.0
+         ],
+         "pivot": [
+          0.0,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionImage",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Image",
+           "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+           ],
+           "raycastTarget": true,
+           "runtimeSprites": {
+            "SpriteName": {
+             "name": "FightPause.PauseRight",
+             "texture": "FightPause",
+             "resourcesPath": "UI/Atlases/",
+             "resolved": true
+            }
+           },
+           "sprite": "FightPause.PauseRight",
+           "texture": "FightPause",
+           "spriteSource": "runtime:_SpriteName",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "FightPause.PauseRight",
+            "file": "bc52264a5bbd80a429a1c3744d576f0c",
+            "texture": "FightPause",
+            "textureSize": [
+             1024,
+             1024
+            ],
+            "png": "tex/APK/FightPause.png",
+            "textureRect": [
+             608.0,
+             527.0,
+             400.0,
+             192.0
+            ],
+            "rect": [
+             608.0,
+             527.0,
+             400.0,
+             192.0
+            ],
+            "pivot": [
+             0.5,
+             0.5
+            ],
+            "ppu": 100.0
+           },
+           "type": "simple",
+           "preserveAspect": false,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 1,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": null,
+           "m_Type": 0,
+           "m_PreserveAspect": 0,
+           "m_FillCenter": 1,
+           "m_FillMethod": 4,
+           "m_FillAmount": 1.0,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0,
+           "_TexturePath": "UI/Atlases/",
+           "_SpriteName": "FightPause.PauseRight"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "name": "Buttons",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.0,
+        0.0
+       ],
+       "anchorMax": [
+        0.0,
+        0.0
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        2000.0,
+        300.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "children": [
+       {
+        "name": "Panel",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.0,
+          0.5
+         ],
+         "anchorMax": [
+          1.0,
+          0.5
+         ],
+         "anchoredPosition": [
+          0.0,
+          -50.0
+         ],
+         "sizeDelta": [
+          0.0,
+          300.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "HorizontalLayoutGroup",
+          "namespace": "UnityEngine.UI",
+          "assembly": "UnityEngine.UI",
+          "enabled": true,
+          "ui": {
+           "layout": "HorizontalLayoutGroup",
+           "padding": {
+            "left": 0,
+            "right": 0,
+            "top": 0,
+            "bottom": 0
+           },
+           "childAlignment": "MiddleCenter",
+           "spacing": 100.0,
+           "childControlWidth": 1,
+           "childControlHeight": 1,
+           "childForceExpandWidth": 0,
+           "childForceExpandHeight": 0,
+           "childScaleWidth": 0,
+           "childScaleHeight": 0,
+           "reverseArrangement": 0
+          },
+          "fields": {
+           "m_Padding": {
+            "m_Left": 0,
+            "m_Right": 0,
+            "m_Top": 0,
+            "m_Bottom": 0
+           },
+           "m_ChildAlignment": 4,
+           "m_Spacing": 100.0,
+           "m_ChildForceExpandWidth": 0,
+           "m_ChildForceExpandHeight": 0,
+           "m_ChildControlWidth": 1,
+           "m_ChildControlHeight": 1,
+           "m_ChildScaleWidth": 0,
+           "m_ChildScaleHeight": 0,
+           "m_ReverseArrangement": 0
+          }
+         }
+        ],
+        "children": [
+         {
+          "name": "Home",
+          "active": true,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.0,
+            0.0
+           ],
+           "anchorMax": [
+            0.0,
+            0.0
+           ],
+           "anchoredPosition": [
+            0.0,
+            0.0
+           ],
+           "sizeDelta": [
+            0.0,
+            0.0
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "localScale": [
+            1.0,
+            1.0,
+            1.0
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "PressButton",
+            "namespace": "Nekki.SF2.GUI",
+            "assembly": "Root",
+            "enabled": true,
+            "ui": {
+             "kind": "Button",
+             "interactable": true,
+             "transition": "None",
+             "targetGraphic": null,
+             "onClick": [
+              {
+               "target": {
+                "type": "PauseScreen",
+                "path": "PauseScreen"
+               },
+               "method": "OnHomeClick",
+               "arg": null
+              }
+             ]
+            },
+            "fields": {
+             "m_Navigation": {
+              "m_Mode": 3,
+              "m_WrapAround": 0,
+              "m_SelectOnUp": null,
+              "m_SelectOnDown": null,
+              "m_SelectOnLeft": null,
+              "m_SelectOnRight": null
+             },
+             "m_Transition": 0,
+             "m_Colors": {
+              "m_NormalColor": {
+               "r": 1.0,
+               "g": 1.0,
+               "b": 1.0,
+               "a": 1.0
+              },
+              "m_HighlightedColor": {
+               "r": 0.9608,
+               "g": 0.9608,
+               "b": 0.9608,
+               "a": 1.0
+              },
+              "m_PressedColor": {
+               "r": 0.7843,
+               "g": 0.7843,
+               "b": 0.7843,
+               "a": 1.0
+              },
+              "m_SelectedColor": {
+               "r": 0.9608,
+               "g": 0.9608,
+               "b": 0.9608,
+               "a": 1.0
+              },
+              "m_DisabledColor": {
+               "r": 0.7843,
+               "g": 0.7843,
+               "b": 0.7843,
+               "a": 0.502
+              },
+              "m_ColorMultiplier": 1.0,
+              "m_FadeDuration": 0.1
+             },
+             "m_SpriteState": {
+              "m_HighlightedSprite": null,
+              "m_PressedSprite": null,
+              "m_SelectedSprite": null,
+              "m_DisabledSprite": null
+             },
+             "m_AnimationTriggers": {
+              "m_NormalTrigger": "Normal",
+              "m_HighlightedTrigger": "Highlighted",
+              "m_PressedTrigger": "Pressed",
+              "m_SelectedTrigger": "Highlighted",
+              "m_DisabledTrigger": "Disabled"
+             },
+             "m_Interactable": 1,
+             "m_TargetGraphic": null,
+             "m_OnClick": {
+              "m_PersistentCalls": {
+               "m_Calls": [
+                {
+                 "m_Target": {
+                  "type": "PauseScreen",
+                  "path": "PauseScreen"
+                 },
+                 "m_TargetAssemblyTypeName": "",
+                 "m_MethodName": "OnHomeClick",
+                 "m_Mode": 1,
+                 "m_Arguments": {
+                  "m_ObjectArgument": null,
+                  "m_ObjectArgumentAssemblyTypeName": "UnityEngine.Object, UnityEngine",
+                  "m_IntArgument": 0,
+                  "m_FloatArgument": 0.0,
+                  "m_StringArgument": "",
+                  "m_BoolArgument": 0
+                 },
+                 "m_CallState": 2
+                }
+               ]
+              }
+             },
+             "transitionType": 1,
+             "normalImage": {
+              "type": "ResolutionImage",
+              "path": "PauseScreen/Content/Buttons/Panel/Home/NormalImage"
+             },
+             "pressImage": {
+              "type": "ResolutionImage",
+              "path": "PauseScreen/Content/Buttons/Panel/Home/PressImage"
+             },
+             "layoutElement": {
+              "type": "LayoutElement",
+              "path": "PauseScreen/Content/Buttons/Panel/Home"
+             }
+            }
+           },
+           {
+            "type": "MonoBehaviour",
+            "class": "LayoutElement",
+            "namespace": "UnityEngine.UI",
+            "assembly": "UnityEngine.UI",
+            "enabled": true,
+            "ui": {
+             "IgnoreLayout": 0,
+             "MinWidth": 300.0,
+             "MinHeight": 300.0,
+             "PreferredWidth": -1.0,
+             "PreferredHeight": -1.0,
+             "FlexibleWidth": -1.0,
+             "FlexibleHeight": -1.0
+            },
+            "fields": {
+             "m_IgnoreLayout": 0,
+             "m_MinWidth": 300.0,
+             "m_MinHeight": 300.0,
+             "m_PreferredWidth": -1.0,
+             "m_PreferredHeight": -1.0,
+             "m_FlexibleWidth": -1.0,
+             "m_FlexibleHeight": -1.0,
+             "m_LayoutPriority": 1
+            }
+           }
+          ],
+          "children": [
+           {
+            "name": "NormalImage",
+            "active": true,
+            "layer": 5,
+            "rect": {
+             "anchorMin": [
+              0.5,
+              0.5
+             ],
+             "anchorMax": [
+              0.5,
+              0.5
+             ],
+             "anchoredPosition": [
+              0.0,
+              0.0
+             ],
+             "sizeDelta": [
+              300.0,
+              300.0
+             ],
+             "pivot": [
+              0.5,
+              0.5
+             ],
+             "localScale": [
+              1.0,
+              1.0,
+              1.0
+             ],
+             "rotationZ": 0.0
+            },
+            "components": [
+             {
+              "type": "MonoBehaviour",
+              "class": "ResolutionImage",
+              "namespace": "Nekki.SF2.GUI",
+              "assembly": "Root",
+              "enabled": true,
+              "ui": {
+               "kind": "Image",
+               "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+               ],
+               "raycastTarget": true,
+               "runtimeSprites": {
+                "SpriteName": {
+                 "name": "FightPause.home",
+                 "texture": "FightPause",
+                 "resourcesPath": "UI/Atlases/",
+                 "resolved": true
+                }
+               },
+               "sprite": "FightPause.home",
+               "texture": "FightPause",
+               "spriteSource": "runtime:_SpriteName",
+               "spriteInfo": {
+                "type": "Sprite",
+                "name": "FightPause.home",
+                "file": "bc52264a5bbd80a429a1c3744d576f0c",
+                "texture": "FightPause",
+                "textureSize": [
+                 1024,
+                 1024
+                ],
+                "png": "tex/APK/FightPause.png",
+                "textureRect": [
+                 2.0,
+                 722.0,
+                 300.0,
+                 300.0
+                ],
+                "rect": [
+                 2.0,
+                 722.0,
+                 300.0,
+                 300.0
+                ],
+                "pivot": [
+                 0.5,
+                 0.5
+                ],
+                "ppu": 100.0
+               },
+               "type": "simple",
+               "preserveAspect": false,
+               "fillCenter": true,
+               "pixelsPerUnitMultiplier": 1.0
+              },
+              "fields": {
+               "m_Material": null,
+               "m_Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+               },
+               "m_RaycastTarget": 1,
+               "m_RaycastPadding": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+               },
+               "m_Maskable": 1,
+               "m_Sprite": null,
+               "m_Type": 0,
+               "m_PreserveAspect": 0,
+               "m_FillCenter": 1,
+               "m_FillMethod": 4,
+               "m_FillAmount": 1.0,
+               "m_FillClockwise": 1,
+               "m_FillOrigin": 0,
+               "m_UseSpriteMesh": 0,
+               "m_PixelsPerUnitMultiplier": 1.0,
+               "_TexturePath": "UI/Atlases/",
+               "_SpriteName": "FightPause.home"
+              }
+             }
+            ]
+           },
+           {
+            "name": "PressImage",
+            "active": false,
+            "layer": 5,
+            "rect": {
+             "anchorMin": [
+              0.5,
+              0.5
+             ],
+             "anchorMax": [
+              0.5,
+              0.5
+             ],
+             "anchoredPosition": [
+              0.0,
+              0.0
+             ],
+             "sizeDelta": [
+              270.0,
+              270.0
+             ],
+             "pivot": [
+              0.5,
+              0.5
+             ],
+             "localScale": [
+              1.0,
+              1.0,
+              1.0
+             ],
+             "rotationZ": 0.0
+            },
+            "components": [
+             {
+              "type": "MonoBehaviour",
+              "class": "ResolutionImage",
+              "namespace": "Nekki.SF2.GUI",
+              "assembly": "Root",
+              "enabled": true,
+              "ui": {
+               "kind": "Image",
+               "color": [
+                1.0,
+                1.0,
+                1.0,
+                0.302
+               ],
+               "raycastTarget": true,
+               "runtimeSprites": {
+                "SpriteName": {
+                 "name": "FightPause.Pause_selected",
+                 "texture": "FightPause",
+                 "resourcesPath": "UI/Atlases/",
+                 "resolved": true
+                }
+               },
+               "sprite": "FightPause.Pause_selected",
+               "texture": "FightPause",
+               "spriteSource": "runtime:_SpriteName",
+               "spriteInfo": {
+                "type": "Sprite",
+                "name": "FightPause.Pause_selected",
+                "file": "bc52264a5bbd80a429a1c3744d576f0c",
+                "texture": "FightPause",
+                "textureSize": [
+                 1024,
+                 1024
+                ],
+                "png": "tex/APK/FightPause.png",
+                "textureRect": [
+                 305.0,
+                 752.0,
+                 270.0,
+                 270.0
+                ],
+                "rect": [
+                 305.0,
+                 752.0,
+                 270.0,
+                 270.0
+                ],
+                "pivot": [
+                 0.5,
+                 0.5
+                ],
+                "ppu": 100.0
+               },
+               "type": "simple",
+               "preserveAspect": false,
+               "fillCenter": true,
+               "pixelsPerUnitMultiplier": 1.0
+              },
+              "fields": {
+               "m_Material": null,
+               "m_Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 0.302
+               },
+               "m_RaycastTarget": 1,
+               "m_RaycastPadding": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+               },
+               "m_Maskable": 1,
+               "m_Sprite": null,
+               "m_Type": 0,
+               "m_PreserveAspect": 0,
+               "m_FillCenter": 1,
+               "m_FillMethod": 4,
+               "m_FillAmount": 1.0,
+               "m_FillClockwise": 1,
+               "m_FillOrigin": 0,
+               "m_UseSpriteMesh": 0,
+               "m_PixelsPerUnitMultiplier": 1.0,
+               "_TexturePath": "UI/Atlases/",
+               "_SpriteName": "FightPause.Pause_selected"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "name": "MusicOn",
+          "active": true,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.0,
+            0.0
+           ],
+           "anchorMax": [
+            0.0,
+            0.0
+           ],
+           "anchoredPosition": [
+            0.0,
+            0.0
+           ],
+           "sizeDelta": [
+            0.0,
+            0.0
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "localScale": [
+            1.0,
+            1.0,
+            1.0
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "PressButton",
+            "namespace": "Nekki.SF2.GUI",
+            "assembly": "Root",
+            "enabled": true,
+            "ui": {
+             "kind": "Button",
+             "interactable": true,
+             "transition": "None",
+             "targetGraphic": null,
+             "onClick": [
+              {
+               "target": {
+                "type": "PauseScreen",
+                "path": "PauseScreen"
+               },
+               "method": "OnMusicOnClick",
+               "arg": null
+              }
+             ]
+            },
+            "fields": {
+             "m_Navigation": {
+              "m_Mode": 3,
+              "m_WrapAround": 0,
+              "m_SelectOnUp": null,
+              "m_SelectOnDown": null,
+              "m_SelectOnLeft": null,
+              "m_SelectOnRight": null
+             },
+             "m_Transition": 0,
+             "m_Colors": {
+              "m_NormalColor": {
+               "r": 1.0,
+               "g": 1.0,
+               "b": 1.0,
+               "a": 1.0
+              },
+              "m_HighlightedColor": {
+               "r": 0.9608,
+               "g": 0.9608,
+               "b": 0.9608,
+               "a": 1.0
+              },
+              "m_PressedColor": {
+               "r": 0.7843,
+               "g": 0.7843,
+               "b": 0.7843,
+               "a": 1.0
+              },
+              "m_SelectedColor": {
+               "r": 0.9608,
+               "g": 0.9608,
+               "b": 0.9608,
+               "a": 1.0
+              },
+              "m_DisabledColor": {
+               "r": 0.7843,
+               "g": 0.7843,
+               "b": 0.7843,
+               "a": 0.502
+              },
+              "m_ColorMultiplier": 1.0,
+              "m_FadeDuration": 0.1
+             },
+             "m_SpriteState": {
+              "m_HighlightedSprite": null,
+              "m_PressedSprite": null,
+              "m_SelectedSprite": null,
+              "m_DisabledSprite": null
+             },
+             "m_AnimationTriggers": {
+              "m_NormalTrigger": "Normal",
+              "m_HighlightedTrigger": "Highlighted",
+              "m_PressedTrigger": "Pressed",
+              "m_SelectedTrigger": "Highlighted",
+              "m_DisabledTrigger": "Disabled"
+             },
+             "m_Interactable": 1,
+             "m_TargetGraphic": null,
+             "m_OnClick": {
+              "m_PersistentCalls": {
+               "m_Calls": [
+                {
+                 "m_Target": {
+                  "type": "PauseScreen",
+                  "path": "PauseScreen"
+                 },
+                 "m_TargetAssemblyTypeName": "",
+                 "m_MethodName": "OnMusicOnClick",
+                 "m_Mode": 1,
+                 "m_Arguments": {
+                  "m_ObjectArgument": null,
+                  "m_ObjectArgumentAssemblyTypeName": "UnityEngine.Object, UnityEngine",
+                  "m_IntArgument": 0,
+                  "m_FloatArgument": 0.0,
+                  "m_StringArgument": "",
+                  "m_BoolArgument": 0
+                 },
+                 "m_CallState": 2
+                }
+               ]
+              }
+             },
+             "transitionType": 1,
+             "normalImage": {
+              "type": "ResolutionImage",
+              "path": "PauseScreen/Content/Buttons/Panel/MusicOn/NormalImage"
+             },
+             "pressImage": {
+              "type": "ResolutionImage",
+              "path": "PauseScreen/Content/Buttons/Panel/MusicOn/PressImage"
+             },
+             "layoutElement": {
+              "type": "LayoutElement",
+              "path": "PauseScreen/Content/Buttons/Panel/MusicOn"
+             }
+            }
+           },
+           {
+            "type": "MonoBehaviour",
+            "class": "LayoutElement",
+            "namespace": "UnityEngine.UI",
+            "assembly": "UnityEngine.UI",
+            "enabled": true,
+            "ui": {
+             "IgnoreLayout": 0,
+             "MinWidth": 300.0,
+             "MinHeight": 300.0,
+             "PreferredWidth": -1.0,
+             "PreferredHeight": -1.0,
+             "FlexibleWidth": -1.0,
+             "FlexibleHeight": -1.0
+            },
+            "fields": {
+             "m_IgnoreLayout": 0,
+             "m_MinWidth": 300.0,
+             "m_MinHeight": 300.0,
+             "m_PreferredWidth": -1.0,
+             "m_PreferredHeight": -1.0,
+             "m_FlexibleWidth": -1.0,
+             "m_FlexibleHeight": -1.0,
+             "m_LayoutPriority": 1
+            }
+           }
+          ],
+          "children": [
+           {
+            "name": "NormalImage",
+            "active": true,
+            "layer": 5,
+            "rect": {
+             "anchorMin": [
+              0.5,
+              0.5
+             ],
+             "anchorMax": [
+              0.5,
+              0.5
+             ],
+             "anchoredPosition": [
+              0.0,
+              0.0
+             ],
+             "sizeDelta": [
+              300.0,
+              300.0
+             ],
+             "pivot": [
+              0.5,
+              0.5
+             ],
+             "localScale": [
+              1.0,
+              1.0,
+              1.0
+             ],
+             "rotationZ": 0.0
+            },
+            "components": [
+             {
+              "type": "MonoBehaviour",
+              "class": "ResolutionImage",
+              "namespace": "Nekki.SF2.GUI",
+              "assembly": "Root",
+              "enabled": true,
+              "ui": {
+               "kind": "Image",
+               "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+               ],
+               "raycastTarget": true,
+               "runtimeSprites": {
+                "SpriteName": {
+                 "name": "FightPause.PauseMusic_on",
+                 "texture": "FightPause",
+                 "resourcesPath": "UI/Atlases/",
+                 "resolved": true
+                }
+               },
+               "sprite": "FightPause.PauseMusic_on",
+               "texture": "FightPause",
+               "spriteSource": "runtime:_SpriteName",
+               "spriteInfo": {
+                "type": "Sprite",
+                "name": "FightPause.PauseMusic_on",
+                "file": "bc52264a5bbd80a429a1c3744d576f0c",
+                "texture": "FightPause",
+                "textureSize": [
+                 1024,
+                 1024
+                ],
+                "png": "tex/APK/FightPause.png",
+                "textureRect": [
+                 305.0,
+                 419.0,
+                 300.0,
+                 300.0
+                ],
+                "rect": [
+                 305.0,
+                 419.0,
+                 300.0,
+                 300.0
+                ],
+                "pivot": [
+                 0.5,
+                 0.5
+                ],
+                "ppu": 100.0
+               },
+               "type": "simple",
+               "preserveAspect": false,
+               "fillCenter": true,
+               "pixelsPerUnitMultiplier": 1.0
+              },
+              "fields": {
+               "m_Material": null,
+               "m_Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+               },
+               "m_RaycastTarget": 1,
+               "m_RaycastPadding": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+               },
+               "m_Maskable": 1,
+               "m_Sprite": null,
+               "m_Type": 0,
+               "m_PreserveAspect": 0,
+               "m_FillCenter": 1,
+               "m_FillMethod": 4,
+               "m_FillAmount": 1.0,
+               "m_FillClockwise": 1,
+               "m_FillOrigin": 0,
+               "m_UseSpriteMesh": 0,
+               "m_PixelsPerUnitMultiplier": 1.0,
+               "_TexturePath": "UI/Atlases/",
+               "_SpriteName": "FightPause.PauseMusic_on"
+              }
+             }
+            ]
+           },
+           {
+            "name": "PressImage",
+            "active": false,
+            "layer": 5,
+            "rect": {
+             "anchorMin": [
+              0.5,
+              0.5
+             ],
+             "anchorMax": [
+              0.5,
+              0.5
+             ],
+             "anchoredPosition": [
+              0.0,
+              0.0
+             ],
+             "sizeDelta": [
+              270.0,
+              270.0
+             ],
+             "pivot": [
+              0.5,
+              0.5
+             ],
+             "localScale": [
+              1.0,
+              1.0,
+              1.0
+             ],
+             "rotationZ": 0.0
+            },
+            "components": [
+             {
+              "type": "MonoBehaviour",
+              "class": "ResolutionImage",
+              "namespace": "Nekki.SF2.GUI",
+              "assembly": "Root",
+              "enabled": true,
+              "ui": {
+               "kind": "Image",
+               "color": [
+                1.0,
+                1.0,
+                1.0,
+                0.302
+               ],
+               "raycastTarget": true,
+               "runtimeSprites": {
+                "SpriteName": {
+                 "name": "FightPause.Pause_selected",
+                 "texture": "FightPause",
+                 "resourcesPath": "UI/Atlases/",
+                 "resolved": true
+                }
+               },
+               "sprite": "FightPause.Pause_selected",
+               "texture": "FightPause",
+               "spriteSource": "runtime:_SpriteName",
+               "spriteInfo": {
+                "type": "Sprite",
+                "name": "FightPause.Pause_selected",
+                "file": "bc52264a5bbd80a429a1c3744d576f0c",
+                "texture": "FightPause",
+                "textureSize": [
+                 1024,
+                 1024
+                ],
+                "png": "tex/APK/FightPause.png",
+                "textureRect": [
+                 305.0,
+                 752.0,
+                 270.0,
+                 270.0
+                ],
+                "rect": [
+                 305.0,
+                 752.0,
+                 270.0,
+                 270.0
+                ],
+                "pivot": [
+                 0.5,
+                 0.5
+                ],
+                "ppu": 100.0
+               },
+               "type": "simple",
+               "preserveAspect": false,
+               "fillCenter": true,
+               "pixelsPerUnitMultiplier": 1.0
+              },
+              "fields": {
+               "m_Material": null,
+               "m_Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 0.302
+               },
+               "m_RaycastTarget": 1,
+               "m_RaycastPadding": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+               },
+               "m_Maskable": 1,
+               "m_Sprite": null,
+               "m_Type": 0,
+               "m_PreserveAspect": 0,
+               "m_FillCenter": 1,
+               "m_FillMethod": 4,
+               "m_FillAmount": 1.0,
+               "m_FillClockwise": 1,
+               "m_FillOrigin": 0,
+               "m_UseSpriteMesh": 0,
+               "m_PixelsPerUnitMultiplier": 1.0,
+               "_TexturePath": "UI/Atlases/",
+               "_SpriteName": "FightPause.Pause_selected"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "name": "MusicOff",
+          "active": false,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.0,
+            1.0
+           ],
+           "anchorMax": [
+            0.0,
+            1.0
+           ],
+           "anchoredPosition": [
+            1165.3333,
+            -768.0
+           ],
+           "sizeDelta": [
+            300.0,
+            300.0
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "localScale": [
+            1.0,
+            1.0,
+            1.0
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "PressButton",
+            "namespace": "Nekki.SF2.GUI",
+            "assembly": "Root",
+            "enabled": true,
+            "ui": {
+             "kind": "Button",
+             "interactable": true,
+             "transition": "None",
+             "targetGraphic": null,
+             "onClick": [
+              {
+               "target": {
+                "type": "PauseScreen",
+                "path": "PauseScreen"
+               },
+               "method": "OnMusicOffClick",
+               "arg": null
+              }
+             ]
+            },
+            "fields": {
+             "m_Navigation": {
+              "m_Mode": 3,
+              "m_WrapAround": 0,
+              "m_SelectOnUp": null,
+              "m_SelectOnDown": null,
+              "m_SelectOnLeft": null,
+              "m_SelectOnRight": null
+             },
+             "m_Transition": 0,
+             "m_Colors": {
+              "m_NormalColor": {
+               "r": 1.0,
+               "g": 1.0,
+               "b": 1.0,
+               "a": 1.0
+              },
+              "m_HighlightedColor": {
+               "r": 0.9608,
+               "g": 0.9608,
+               "b": 0.9608,
+               "a": 1.0
+              },
+              "m_PressedColor": {
+               "r": 0.7843,
+               "g": 0.7843,
+               "b": 0.7843,
+               "a": 1.0
+              },
+              "m_SelectedColor": {
+               "r": 0.9608,
+               "g": 0.9608,
+               "b": 0.9608,
+               "a": 1.0
+              },
+              "m_DisabledColor": {
+               "r": 0.7843,
+               "g": 0.7843,
+               "b": 0.7843,
+               "a": 0.502
+              },
+              "m_ColorMultiplier": 1.0,
+              "m_FadeDuration": 0.1
+             },
+             "m_SpriteState": {
+              "m_HighlightedSprite": null,
+              "m_PressedSprite": null,
+              "m_SelectedSprite": null,
+              "m_DisabledSprite": null
+             },
+             "m_AnimationTriggers": {
+              "m_NormalTrigger": "Normal",
+              "m_HighlightedTrigger": "Highlighted",
+              "m_PressedTrigger": "Pressed",
+              "m_SelectedTrigger": "Highlighted",
+              "m_DisabledTrigger": "Disabled"
+             },
+             "m_Interactable": 1,
+             "m_TargetGraphic": null,
+             "m_OnClick": {
+              "m_PersistentCalls": {
+               "m_Calls": [
+                {
+                 "m_Target": {
+                  "type": "PauseScreen",
+                  "path": "PauseScreen"
+                 },
+                 "m_TargetAssemblyTypeName": "",
+                 "m_MethodName": "OnMusicOffClick",
+                 "m_Mode": 1,
+                 "m_Arguments": {
+                  "m_ObjectArgument": null,
+                  "m_ObjectArgumentAssemblyTypeName": "UnityEngine.Object, UnityEngine",
+                  "m_IntArgument": 0,
+                  "m_FloatArgument": 0.0,
+                  "m_StringArgument": "",
+                  "m_BoolArgument": 0
+                 },
+                 "m_CallState": 2
+                }
+               ]
+              }
+             },
+             "transitionType": 1,
+             "normalImage": {
+              "type": "ResolutionImage",
+              "path": "PauseScreen/Content/Buttons/Panel/MusicOff/NormalImage"
+             },
+             "pressImage": {
+              "type": "ResolutionImage",
+              "path": "PauseScreen/Content/Buttons/Panel/MusicOff/PressImage"
+             },
+             "layoutElement": {
+              "type": "LayoutElement",
+              "path": "PauseScreen/Content/Buttons/Panel/MusicOff"
+             }
+            }
+           },
+           {
+            "type": "MonoBehaviour",
+            "class": "LayoutElement",
+            "namespace": "UnityEngine.UI",
+            "assembly": "UnityEngine.UI",
+            "enabled": true,
+            "ui": {
+             "IgnoreLayout": 0,
+             "MinWidth": 300.0,
+             "MinHeight": 300.0,
+             "PreferredWidth": -1.0,
+             "PreferredHeight": -1.0,
+             "FlexibleWidth": -1.0,
+             "FlexibleHeight": -1.0
+            },
+            "fields": {
+             "m_IgnoreLayout": 0,
+             "m_MinWidth": 300.0,
+             "m_MinHeight": 300.0,
+             "m_PreferredWidth": -1.0,
+             "m_PreferredHeight": -1.0,
+             "m_FlexibleWidth": -1.0,
+             "m_FlexibleHeight": -1.0,
+             "m_LayoutPriority": 1
+            }
+           }
+          ],
+          "children": [
+           {
+            "name": "NormalImage",
+            "active": true,
+            "layer": 5,
+            "rect": {
+             "anchorMin": [
+              0.5,
+              0.5
+             ],
+             "anchorMax": [
+              0.5,
+              0.5
+             ],
+             "anchoredPosition": [
+              0.0,
+              0.0
+             ],
+             "sizeDelta": [
+              300.0,
+              300.0
+             ],
+             "pivot": [
+              0.5,
+              0.5
+             ],
+             "localScale": [
+              1.0,
+              1.0,
+              1.0
+             ],
+             "rotationZ": 0.0
+            },
+            "components": [
+             {
+              "type": "MonoBehaviour",
+              "class": "ResolutionImage",
+              "namespace": "Nekki.SF2.GUI",
+              "assembly": "Root",
+              "enabled": true,
+              "ui": {
+               "kind": "Image",
+               "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+               ],
+               "raycastTarget": true,
+               "runtimeSprites": {
+                "SpriteName": {
+                 "name": "FightPause.PauseMusic_off",
+                 "texture": "FightPause",
+                 "resourcesPath": "UI/Atlases/",
+                 "resolved": true
+                }
+               },
+               "sprite": "FightPause.PauseMusic_off",
+               "texture": "FightPause",
+               "spriteSource": "runtime:_SpriteName",
+               "spriteInfo": {
+                "type": "Sprite",
+                "name": "FightPause.PauseMusic_off",
+                "file": "bc52264a5bbd80a429a1c3744d576f0c",
+                "texture": "FightPause",
+                "textureSize": [
+                 1024,
+                 1024
+                ],
+                "png": "tex/APK/FightPause.png",
+                "textureRect": [
+                 2.0,
+                 419.0,
+                 300.0,
+                 300.0
+                ],
+                "rect": [
+                 2.0,
+                 419.0,
+                 300.0,
+                 300.0
+                ],
+                "pivot": [
+                 0.5,
+                 0.5
+                ],
+                "ppu": 100.0
+               },
+               "type": "simple",
+               "preserveAspect": false,
+               "fillCenter": true,
+               "pixelsPerUnitMultiplier": 1.0
+              },
+              "fields": {
+               "m_Material": null,
+               "m_Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+               },
+               "m_RaycastTarget": 1,
+               "m_RaycastPadding": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+               },
+               "m_Maskable": 1,
+               "m_Sprite": null,
+               "m_Type": 0,
+               "m_PreserveAspect": 0,
+               "m_FillCenter": 1,
+               "m_FillMethod": 4,
+               "m_FillAmount": 1.0,
+               "m_FillClockwise": 1,
+               "m_FillOrigin": 0,
+               "m_UseSpriteMesh": 0,
+               "m_PixelsPerUnitMultiplier": 1.0,
+               "_TexturePath": "UI/Atlases/",
+               "_SpriteName": "FightPause.PauseMusic_off"
+              }
+             }
+            ]
+           },
+           {
+            "name": "PressImage",
+            "active": false,
+            "layer": 5,
+            "rect": {
+             "anchorMin": [
+              0.5,
+              0.5
+             ],
+             "anchorMax": [
+              0.5,
+              0.5
+             ],
+             "anchoredPosition": [
+              0.0,
+              0.0
+             ],
+             "sizeDelta": [
+              270.0,
+              270.0
+             ],
+             "pivot": [
+              0.5,
+              0.5
+             ],
+             "localScale": [
+              1.0,
+              1.0,
+              1.0
+             ],
+             "rotationZ": 0.0
+            },
+            "components": [
+             {
+              "type": "MonoBehaviour",
+              "class": "ResolutionImage",
+              "namespace": "Nekki.SF2.GUI",
+              "assembly": "Root",
+              "enabled": true,
+              "ui": {
+               "kind": "Image",
+               "color": [
+                1.0,
+                1.0,
+                1.0,
+                0.302
+               ],
+               "raycastTarget": true,
+               "runtimeSprites": {
+                "SpriteName": {
+                 "name": "FightPause.Pause_selected",
+                 "texture": "FightPause",
+                 "resourcesPath": "UI/Atlases/",
+                 "resolved": true
+                }
+               },
+               "sprite": "FightPause.Pause_selected",
+               "texture": "FightPause",
+               "spriteSource": "runtime:_SpriteName",
+               "spriteInfo": {
+                "type": "Sprite",
+                "name": "FightPause.Pause_selected",
+                "file": "bc52264a5bbd80a429a1c3744d576f0c",
+                "texture": "FightPause",
+                "textureSize": [
+                 1024,
+                 1024
+                ],
+                "png": "tex/APK/FightPause.png",
+                "textureRect": [
+                 305.0,
+                 752.0,
+                 270.0,
+                 270.0
+                ],
+                "rect": [
+                 305.0,
+                 752.0,
+                 270.0,
+                 270.0
+                ],
+                "pivot": [
+                 0.5,
+                 0.5
+                ],
+                "ppu": 100.0
+               },
+               "type": "simple",
+               "preserveAspect": false,
+               "fillCenter": true,
+               "pixelsPerUnitMultiplier": 1.0
+              },
+              "fields": {
+               "m_Material": null,
+               "m_Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 0.302
+               },
+               "m_RaycastTarget": 1,
+               "m_RaycastPadding": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+               },
+               "m_Maskable": 1,
+               "m_Sprite": null,
+               "m_Type": 0,
+               "m_PreserveAspect": 0,
+               "m_FillCenter": 1,
+               "m_FillMethod": 4,
+               "m_FillAmount": 1.0,
+               "m_FillClockwise": 1,
+               "m_FillOrigin": 0,
+               "m_UseSpriteMesh": 0,
+               "m_PixelsPerUnitMultiplier": 1.0,
+               "_TexturePath": "UI/Atlases/",
+               "_SpriteName": "FightPause.Pause_selected"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "name": "SoundOn",
+          "active": true,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.0,
+            0.0
+           ],
+           "anchorMax": [
+            0.0,
+            0.0
+           ],
+           "anchoredPosition": [
+            0.0,
+            0.0
+           ],
+           "sizeDelta": [
+            0.0,
+            0.0
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "localScale": [
+            1.0,
+            1.0,
+            1.0
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "PressButton",
+            "namespace": "Nekki.SF2.GUI",
+            "assembly": "Root",
+            "enabled": true,
+            "ui": {
+             "kind": "Button",
+             "interactable": true,
+             "transition": "None",
+             "targetGraphic": null,
+             "onClick": [
+              {
+               "target": {
+                "type": "PauseScreen",
+                "path": "PauseScreen"
+               },
+               "method": "OnSoundOnClick",
+               "arg": null
+              }
+             ]
+            },
+            "fields": {
+             "m_Navigation": {
+              "m_Mode": 3,
+              "m_WrapAround": 0,
+              "m_SelectOnUp": null,
+              "m_SelectOnDown": null,
+              "m_SelectOnLeft": null,
+              "m_SelectOnRight": null
+             },
+             "m_Transition": 0,
+             "m_Colors": {
+              "m_NormalColor": {
+               "r": 1.0,
+               "g": 1.0,
+               "b": 1.0,
+               "a": 1.0
+              },
+              "m_HighlightedColor": {
+               "r": 0.9608,
+               "g": 0.9608,
+               "b": 0.9608,
+               "a": 1.0
+              },
+              "m_PressedColor": {
+               "r": 0.7843,
+               "g": 0.7843,
+               "b": 0.7843,
+               "a": 1.0
+              },
+              "m_SelectedColor": {
+               "r": 0.9608,
+               "g": 0.9608,
+               "b": 0.9608,
+               "a": 1.0
+              },
+              "m_DisabledColor": {
+               "r": 0.7843,
+               "g": 0.7843,
+               "b": 0.7843,
+               "a": 0.502
+              },
+              "m_ColorMultiplier": 1.0,
+              "m_FadeDuration": 0.1
+             },
+             "m_SpriteState": {
+              "m_HighlightedSprite": null,
+              "m_PressedSprite": null,
+              "m_SelectedSprite": null,
+              "m_DisabledSprite": null
+             },
+             "m_AnimationTriggers": {
+              "m_NormalTrigger": "Normal",
+              "m_HighlightedTrigger": "Highlighted",
+              "m_PressedTrigger": "Pressed",
+              "m_SelectedTrigger": "Highlighted",
+              "m_DisabledTrigger": "Disabled"
+             },
+             "m_Interactable": 1,
+             "m_TargetGraphic": null,
+             "m_OnClick": {
+              "m_PersistentCalls": {
+               "m_Calls": [
+                {
+                 "m_Target": {
+                  "type": "PauseScreen",
+                  "path": "PauseScreen"
+                 },
+                 "m_TargetAssemblyTypeName": "",
+                 "m_MethodName": "OnSoundOnClick",
+                 "m_Mode": 1,
+                 "m_Arguments": {
+                  "m_ObjectArgument": null,
+                  "m_ObjectArgumentAssemblyTypeName": "UnityEngine.Object, UnityEngine",
+                  "m_IntArgument": 0,
+                  "m_FloatArgument": 0.0,
+                  "m_StringArgument": "",
+                  "m_BoolArgument": 0
+                 },
+                 "m_CallState": 2
+                }
+               ]
+              }
+             },
+             "transitionType": 1,
+             "normalImage": {
+              "type": "ResolutionImage",
+              "path": "PauseScreen/Content/Buttons/Panel/SoundOn/NormalImage"
+             },
+             "pressImage": {
+              "type": "ResolutionImage",
+              "path": "PauseScreen/Content/Buttons/Panel/SoundOn/PressImage"
+             },
+             "layoutElement": {
+              "type": "LayoutElement",
+              "path": "PauseScreen/Content/Buttons/Panel/SoundOn"
+             }
+            }
+           },
+           {
+            "type": "MonoBehaviour",
+            "class": "LayoutElement",
+            "namespace": "UnityEngine.UI",
+            "assembly": "UnityEngine.UI",
+            "enabled": true,
+            "ui": {
+             "IgnoreLayout": 0,
+             "MinWidth": 300.0,
+             "MinHeight": 300.0,
+             "PreferredWidth": -1.0,
+             "PreferredHeight": -1.0,
+             "FlexibleWidth": -1.0,
+             "FlexibleHeight": -1.0
+            },
+            "fields": {
+             "m_IgnoreLayout": 0,
+             "m_MinWidth": 300.0,
+             "m_MinHeight": 300.0,
+             "m_PreferredWidth": -1.0,
+             "m_PreferredHeight": -1.0,
+             "m_FlexibleWidth": -1.0,
+             "m_FlexibleHeight": -1.0,
+             "m_LayoutPriority": 1
+            }
+           }
+          ],
+          "children": [
+           {
+            "name": "NormalImage",
+            "active": true,
+            "layer": 5,
+            "rect": {
+             "anchorMin": [
+              0.5,
+              0.5
+             ],
+             "anchorMax": [
+              0.5,
+              0.5
+             ],
+             "anchoredPosition": [
+              0.0,
+              0.0
+             ],
+             "sizeDelta": [
+              300.0,
+              300.0
+             ],
+             "pivot": [
+              0.5,
+              0.5
+             ],
+             "localScale": [
+              1.0,
+              1.0,
+              1.0
+             ],
+             "rotationZ": 0.0
+            },
+            "components": [
+             {
+              "type": "MonoBehaviour",
+              "class": "ResolutionImage",
+              "namespace": "Nekki.SF2.GUI",
+              "assembly": "Root",
+              "enabled": true,
+              "ui": {
+               "kind": "Image",
+               "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+               ],
+               "raycastTarget": true,
+               "runtimeSprites": {
+                "SpriteName": {
+                 "name": "FightPause.PauseSound_on",
+                 "texture": "FightPause",
+                 "resourcesPath": "UI/Atlases/",
+                 "resolved": true
+                }
+               },
+               "sprite": "FightPause.PauseSound_on",
+               "texture": "FightPause",
+               "spriteSource": "runtime:_SpriteName",
+               "spriteInfo": {
+                "type": "Sprite",
+                "name": "FightPause.PauseSound_on",
+                "file": "bc52264a5bbd80a429a1c3744d576f0c",
+                "texture": "FightPause",
+                "textureSize": [
+                 1024,
+                 1024
+                ],
+                "png": "tex/APK/FightPause.png",
+                "textureRect": [
+                 305.0,
+                 116.0,
+                 300.0,
+                 300.0
+                ],
+                "rect": [
+                 305.0,
+                 116.0,
+                 300.0,
+                 300.0
+                ],
+                "pivot": [
+                 0.5,
+                 0.5
+                ],
+                "ppu": 100.0
+               },
+               "type": "simple",
+               "preserveAspect": false,
+               "fillCenter": true,
+               "pixelsPerUnitMultiplier": 1.0
+              },
+              "fields": {
+               "m_Material": null,
+               "m_Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+               },
+               "m_RaycastTarget": 1,
+               "m_RaycastPadding": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+               },
+               "m_Maskable": 1,
+               "m_Sprite": null,
+               "m_Type": 0,
+               "m_PreserveAspect": 0,
+               "m_FillCenter": 1,
+               "m_FillMethod": 4,
+               "m_FillAmount": 1.0,
+               "m_FillClockwise": 1,
+               "m_FillOrigin": 0,
+               "m_UseSpriteMesh": 0,
+               "m_PixelsPerUnitMultiplier": 1.0,
+               "_TexturePath": "UI/Atlases/",
+               "_SpriteName": "FightPause.PauseSound_on"
+              }
+             }
+            ]
+           },
+           {
+            "name": "PressImage",
+            "active": false,
+            "layer": 5,
+            "rect": {
+             "anchorMin": [
+              0.5,
+              0.5
+             ],
+             "anchorMax": [
+              0.5,
+              0.5
+             ],
+             "anchoredPosition": [
+              0.0,
+              0.0
+             ],
+             "sizeDelta": [
+              270.0,
+              270.0
+             ],
+             "pivot": [
+              0.5,
+              0.5
+             ],
+             "localScale": [
+              1.0,
+              1.0,
+              1.0
+             ],
+             "rotationZ": 0.0
+            },
+            "components": [
+             {
+              "type": "MonoBehaviour",
+              "class": "ResolutionImage",
+              "namespace": "Nekki.SF2.GUI",
+              "assembly": "Root",
+              "enabled": true,
+              "ui": {
+               "kind": "Image",
+               "color": [
+                1.0,
+                1.0,
+                1.0,
+                0.302
+               ],
+               "raycastTarget": true,
+               "runtimeSprites": {
+                "SpriteName": {
+                 "name": "FightPause.Pause_selected",
+                 "texture": "FightPause",
+                 "resourcesPath": "UI/Atlases/",
+                 "resolved": true
+                }
+               },
+               "sprite": "FightPause.Pause_selected",
+               "texture": "FightPause",
+               "spriteSource": "runtime:_SpriteName",
+               "spriteInfo": {
+                "type": "Sprite",
+                "name": "FightPause.Pause_selected",
+                "file": "bc52264a5bbd80a429a1c3744d576f0c",
+                "texture": "FightPause",
+                "textureSize": [
+                 1024,
+                 1024
+                ],
+                "png": "tex/APK/FightPause.png",
+                "textureRect": [
+                 305.0,
+                 752.0,
+                 270.0,
+                 270.0
+                ],
+                "rect": [
+                 305.0,
+                 752.0,
+                 270.0,
+                 270.0
+                ],
+                "pivot": [
+                 0.5,
+                 0.5
+                ],
+                "ppu": 100.0
+               },
+               "type": "simple",
+               "preserveAspect": false,
+               "fillCenter": true,
+               "pixelsPerUnitMultiplier": 1.0
+              },
+              "fields": {
+               "m_Material": null,
+               "m_Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 0.302
+               },
+               "m_RaycastTarget": 1,
+               "m_RaycastPadding": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+               },
+               "m_Maskable": 1,
+               "m_Sprite": null,
+               "m_Type": 0,
+               "m_PreserveAspect": 0,
+               "m_FillCenter": 1,
+               "m_FillMethod": 4,
+               "m_FillAmount": 1.0,
+               "m_FillClockwise": 1,
+               "m_FillOrigin": 0,
+               "m_UseSpriteMesh": 0,
+               "m_PixelsPerUnitMultiplier": 1.0,
+               "_TexturePath": "UI/Atlases/",
+               "_SpriteName": "FightPause.Pause_selected"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "name": "SoundOff",
+          "active": false,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.0,
+            1.0
+           ],
+           "anchorMax": [
+            0.0,
+            1.0
+           ],
+           "anchoredPosition": [
+            1765.3333,
+            -768.0
+           ],
+           "sizeDelta": [
+            300.0,
+            300.0
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "localScale": [
+            1.0,
+            1.0,
+            1.0
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "PressButton",
+            "namespace": "Nekki.SF2.GUI",
+            "assembly": "Root",
+            "enabled": true,
+            "ui": {
+             "kind": "Button",
+             "interactable": true,
+             "transition": "None",
+             "targetGraphic": null,
+             "onClick": [
+              {
+               "target": {
+                "type": "PauseScreen",
+                "path": "PauseScreen"
+               },
+               "method": "OnSoundOffClick",
+               "arg": null
+              }
+             ]
+            },
+            "fields": {
+             "m_Navigation": {
+              "m_Mode": 3,
+              "m_WrapAround": 0,
+              "m_SelectOnUp": null,
+              "m_SelectOnDown": null,
+              "m_SelectOnLeft": null,
+              "m_SelectOnRight": null
+             },
+             "m_Transition": 0,
+             "m_Colors": {
+              "m_NormalColor": {
+               "r": 1.0,
+               "g": 1.0,
+               "b": 1.0,
+               "a": 1.0
+              },
+              "m_HighlightedColor": {
+               "r": 0.9608,
+               "g": 0.9608,
+               "b": 0.9608,
+               "a": 1.0
+              },
+              "m_PressedColor": {
+               "r": 0.7843,
+               "g": 0.7843,
+               "b": 0.7843,
+               "a": 1.0
+              },
+              "m_SelectedColor": {
+               "r": 0.9608,
+               "g": 0.9608,
+               "b": 0.9608,
+               "a": 1.0
+              },
+              "m_DisabledColor": {
+               "r": 0.7843,
+               "g": 0.7843,
+               "b": 0.7843,
+               "a": 0.502
+              },
+              "m_ColorMultiplier": 1.0,
+              "m_FadeDuration": 0.1
+             },
+             "m_SpriteState": {
+              "m_HighlightedSprite": null,
+              "m_PressedSprite": null,
+              "m_SelectedSprite": null,
+              "m_DisabledSprite": null
+             },
+             "m_AnimationTriggers": {
+              "m_NormalTrigger": "Normal",
+              "m_HighlightedTrigger": "Highlighted",
+              "m_PressedTrigger": "Pressed",
+              "m_SelectedTrigger": "Highlighted",
+              "m_DisabledTrigger": "Disabled"
+             },
+             "m_Interactable": 1,
+             "m_TargetGraphic": null,
+             "m_OnClick": {
+              "m_PersistentCalls": {
+               "m_Calls": [
+                {
+                 "m_Target": {
+                  "type": "PauseScreen",
+                  "path": "PauseScreen"
+                 },
+                 "m_TargetAssemblyTypeName": "",
+                 "m_MethodName": "OnSoundOffClick",
+                 "m_Mode": 1,
+                 "m_Arguments": {
+                  "m_ObjectArgument": null,
+                  "m_ObjectArgumentAssemblyTypeName": "UnityEngine.Object, UnityEngine",
+                  "m_IntArgument": 0,
+                  "m_FloatArgument": 0.0,
+                  "m_StringArgument": "",
+                  "m_BoolArgument": 0
+                 },
+                 "m_CallState": 2
+                }
+               ]
+              }
+             },
+             "transitionType": 1,
+             "normalImage": {
+              "type": "ResolutionImage",
+              "path": "PauseScreen/Content/Buttons/Panel/SoundOff/NormalImage"
+             },
+             "pressImage": {
+              "type": "ResolutionImage",
+              "path": "PauseScreen/Content/Buttons/Panel/SoundOff/PressImage"
+             },
+             "layoutElement": {
+              "type": "LayoutElement",
+              "path": "PauseScreen/Content/Buttons/Panel/SoundOff"
+             }
+            }
+           },
+           {
+            "type": "MonoBehaviour",
+            "class": "LayoutElement",
+            "namespace": "UnityEngine.UI",
+            "assembly": "UnityEngine.UI",
+            "enabled": true,
+            "ui": {
+             "IgnoreLayout": 0,
+             "MinWidth": 300.0,
+             "MinHeight": 300.0,
+             "PreferredWidth": -1.0,
+             "PreferredHeight": -1.0,
+             "FlexibleWidth": -1.0,
+             "FlexibleHeight": -1.0
+            },
+            "fields": {
+             "m_IgnoreLayout": 0,
+             "m_MinWidth": 300.0,
+             "m_MinHeight": 300.0,
+             "m_PreferredWidth": -1.0,
+             "m_PreferredHeight": -1.0,
+             "m_FlexibleWidth": -1.0,
+             "m_FlexibleHeight": -1.0,
+             "m_LayoutPriority": 1
+            }
+           }
+          ],
+          "children": [
+           {
+            "name": "NormalImage",
+            "active": true,
+            "layer": 5,
+            "rect": {
+             "anchorMin": [
+              0.5,
+              0.5
+             ],
+             "anchorMax": [
+              0.5,
+              0.5
+             ],
+             "anchoredPosition": [
+              0.0,
+              0.0
+             ],
+             "sizeDelta": [
+              300.0,
+              300.0
+             ],
+             "pivot": [
+              0.5,
+              0.5
+             ],
+             "localScale": [
+              1.0,
+              1.0,
+              1.0
+             ],
+             "rotationZ": 0.0
+            },
+            "components": [
+             {
+              "type": "MonoBehaviour",
+              "class": "ResolutionImage",
+              "namespace": "Nekki.SF2.GUI",
+              "assembly": "Root",
+              "enabled": true,
+              "ui": {
+               "kind": "Image",
+               "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+               ],
+               "raycastTarget": true,
+               "runtimeSprites": {
+                "SpriteName": {
+                 "name": "FightPause.PauseSound_off",
+                 "texture": "FightPause",
+                 "resourcesPath": "UI/Atlases/",
+                 "resolved": true
+                }
+               },
+               "sprite": "FightPause.PauseSound_off",
+               "texture": "FightPause",
+               "spriteSource": "runtime:_SpriteName",
+               "spriteInfo": {
+                "type": "Sprite",
+                "name": "FightPause.PauseSound_off",
+                "file": "bc52264a5bbd80a429a1c3744d576f0c",
+                "texture": "FightPause",
+                "textureSize": [
+                 1024,
+                 1024
+                ],
+                "png": "tex/APK/FightPause.png",
+                "textureRect": [
+                 2.0,
+                 116.0,
+                 300.0,
+                 300.0
+                ],
+                "rect": [
+                 2.0,
+                 116.0,
+                 300.0,
+                 300.0
+                ],
+                "pivot": [
+                 0.5,
+                 0.5
+                ],
+                "ppu": 100.0
+               },
+               "type": "simple",
+               "preserveAspect": false,
+               "fillCenter": true,
+               "pixelsPerUnitMultiplier": 1.0
+              },
+              "fields": {
+               "m_Material": null,
+               "m_Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+               },
+               "m_RaycastTarget": 1,
+               "m_RaycastPadding": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+               },
+               "m_Maskable": 1,
+               "m_Sprite": null,
+               "m_Type": 0,
+               "m_PreserveAspect": 0,
+               "m_FillCenter": 1,
+               "m_FillMethod": 4,
+               "m_FillAmount": 1.0,
+               "m_FillClockwise": 1,
+               "m_FillOrigin": 0,
+               "m_UseSpriteMesh": 0,
+               "m_PixelsPerUnitMultiplier": 1.0,
+               "_TexturePath": "UI/Atlases/",
+               "_SpriteName": "FightPause.PauseSound_off"
+              }
+             }
+            ]
+           },
+           {
+            "name": "PressImage",
+            "active": false,
+            "layer": 5,
+            "rect": {
+             "anchorMin": [
+              0.5,
+              0.5
+             ],
+             "anchorMax": [
+              0.5,
+              0.5
+             ],
+             "anchoredPosition": [
+              0.0,
+              0.0
+             ],
+             "sizeDelta": [
+              270.0,
+              270.0
+             ],
+             "pivot": [
+              0.5,
+              0.5
+             ],
+             "localScale": [
+              1.0,
+              1.0,
+              1.0
+             ],
+             "rotationZ": 0.0
+            },
+            "components": [
+             {
+              "type": "MonoBehaviour",
+              "class": "ResolutionImage",
+              "namespace": "Nekki.SF2.GUI",
+              "assembly": "Root",
+              "enabled": true,
+              "ui": {
+               "kind": "Image",
+               "color": [
+                1.0,
+                1.0,
+                1.0,
+                0.302
+               ],
+               "raycastTarget": true,
+               "runtimeSprites": {
+                "SpriteName": {
+                 "name": "FightPause.Pause_selected",
+                 "texture": "FightPause",
+                 "resourcesPath": "UI/Atlases/",
+                 "resolved": true
+                }
+               },
+               "sprite": "FightPause.Pause_selected",
+               "texture": "FightPause",
+               "spriteSource": "runtime:_SpriteName",
+               "spriteInfo": {
+                "type": "Sprite",
+                "name": "FightPause.Pause_selected",
+                "file": "bc52264a5bbd80a429a1c3744d576f0c",
+                "texture": "FightPause",
+                "textureSize": [
+                 1024,
+                 1024
+                ],
+                "png": "tex/APK/FightPause.png",
+                "textureRect": [
+                 305.0,
+                 752.0,
+                 270.0,
+                 270.0
+                ],
+                "rect": [
+                 305.0,
+                 752.0,
+                 270.0,
+                 270.0
+                ],
+                "pivot": [
+                 0.5,
+                 0.5
+                ],
+                "ppu": 100.0
+               },
+               "type": "simple",
+               "preserveAspect": false,
+               "fillCenter": true,
+               "pixelsPerUnitMultiplier": 1.0
+              },
+              "fields": {
+               "m_Material": null,
+               "m_Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 0.302
+               },
+               "m_RaycastTarget": 1,
+               "m_RaycastPadding": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+               },
+               "m_Maskable": 1,
+               "m_Sprite": null,
+               "m_Type": 0,
+               "m_PreserveAspect": 0,
+               "m_FillCenter": 1,
+               "m_FillMethod": 4,
+               "m_FillAmount": 1.0,
+               "m_FillClockwise": 1,
+               "m_FillOrigin": 0,
+               "m_UseSpriteMesh": 0,
+               "m_PixelsPerUnitMultiplier": 1.0,
+               "_TexturePath": "UI/Atlases/",
+               "_SpriteName": "FightPause.Pause_selected"
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "name": "Play",
+          "active": true,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.0,
+            0.0
+           ],
+           "anchorMax": [
+            0.0,
+            0.0
+           ],
+           "anchoredPosition": [
+            0.0,
+            0.0
+           ],
+           "sizeDelta": [
+            0.0,
+            0.0
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "localScale": [
+            1.0,
+            1.0,
+            1.0
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "PressButton",
+            "namespace": "Nekki.SF2.GUI",
+            "assembly": "Root",
+            "enabled": true,
+            "ui": {
+             "kind": "Button",
+             "interactable": true,
+             "transition": "None",
+             "targetGraphic": null,
+             "onClick": [
+              {
+               "target": {
+                "type": "PauseScreen",
+                "path": "PauseScreen"
+               },
+               "method": "OnPlayClick",
+               "arg": null
+              }
+             ]
+            },
+            "fields": {
+             "m_Navigation": {
+              "m_Mode": 3,
+              "m_WrapAround": 0,
+              "m_SelectOnUp": null,
+              "m_SelectOnDown": null,
+              "m_SelectOnLeft": null,
+              "m_SelectOnRight": null
+             },
+             "m_Transition": 0,
+             "m_Colors": {
+              "m_NormalColor": {
+               "r": 1.0,
+               "g": 1.0,
+               "b": 1.0,
+               "a": 1.0
+              },
+              "m_HighlightedColor": {
+               "r": 0.9608,
+               "g": 0.9608,
+               "b": 0.9608,
+               "a": 1.0
+              },
+              "m_PressedColor": {
+               "r": 0.7843,
+               "g": 0.7843,
+               "b": 0.7843,
+               "a": 1.0
+              },
+              "m_SelectedColor": {
+               "r": 0.9608,
+               "g": 0.9608,
+               "b": 0.9608,
+               "a": 1.0
+              },
+              "m_DisabledColor": {
+               "r": 0.7843,
+               "g": 0.7843,
+               "b": 0.7843,
+               "a": 0.502
+              },
+              "m_ColorMultiplier": 1.0,
+              "m_FadeDuration": 0.1
+             },
+             "m_SpriteState": {
+              "m_HighlightedSprite": null,
+              "m_PressedSprite": null,
+              "m_SelectedSprite": null,
+              "m_DisabledSprite": null
+             },
+             "m_AnimationTriggers": {
+              "m_NormalTrigger": "Normal",
+              "m_HighlightedTrigger": "Highlighted",
+              "m_PressedTrigger": "Pressed",
+              "m_SelectedTrigger": "Highlighted",
+              "m_DisabledTrigger": "Disabled"
+             },
+             "m_Interactable": 1,
+             "m_TargetGraphic": null,
+             "m_OnClick": {
+              "m_PersistentCalls": {
+               "m_Calls": [
+                {
+                 "m_Target": {
+                  "type": "PauseScreen",
+                  "path": "PauseScreen"
+                 },
+                 "m_TargetAssemblyTypeName": "",
+                 "m_MethodName": "OnPlayClick",
+                 "m_Mode": 1,
+                 "m_Arguments": {
+                  "m_ObjectArgument": null,
+                  "m_ObjectArgumentAssemblyTypeName": "UnityEngine.Object, UnityEngine",
+                  "m_IntArgument": 0,
+                  "m_FloatArgument": 0.0,
+                  "m_StringArgument": "",
+                  "m_BoolArgument": 0
+                 },
+                 "m_CallState": 2
+                }
+               ]
+              }
+             },
+             "transitionType": 1,
+             "normalImage": {
+              "type": "ResolutionImage",
+              "path": "PauseScreen/Content/Buttons/Panel/Play/NormalImage"
+             },
+             "pressImage": {
+              "type": "ResolutionImage",
+              "path": "PauseScreen/Content/Buttons/Panel/Play/PressImage"
+             },
+             "layoutElement": {
+              "type": "LayoutElement",
+              "path": "PauseScreen/Content/Buttons/Panel/Play"
+             }
+            }
+           },
+           {
+            "type": "MonoBehaviour",
+            "class": "LayoutElement",
+            "namespace": "UnityEngine.UI",
+            "assembly": "UnityEngine.UI",
+            "enabled": true,
+            "ui": {
+             "IgnoreLayout": 0,
+             "MinWidth": 300.0,
+             "MinHeight": 300.0,
+             "PreferredWidth": -1.0,
+             "PreferredHeight": -1.0,
+             "FlexibleWidth": -1.0,
+             "FlexibleHeight": -1.0
+            },
+            "fields": {
+             "m_IgnoreLayout": 0,
+             "m_MinWidth": 300.0,
+             "m_MinHeight": 300.0,
+             "m_PreferredWidth": -1.0,
+             "m_PreferredHeight": -1.0,
+             "m_FlexibleWidth": -1.0,
+             "m_FlexibleHeight": -1.0,
+             "m_LayoutPriority": 1
+            }
+           }
+          ],
+          "children": [
+           {
+            "name": "NormalImage",
+            "active": true,
+            "layer": 5,
+            "rect": {
+             "anchorMin": [
+              0.5,
+              0.5
+             ],
+             "anchorMax": [
+              0.5,
+              0.5
+             ],
+             "anchoredPosition": [
+              0.0,
+              0.0
+             ],
+             "sizeDelta": [
+              300.0,
+              300.0
+             ],
+             "pivot": [
+              0.5,
+              0.5
+             ],
+             "localScale": [
+              1.0,
+              1.0,
+              1.0
+             ],
+             "rotationZ": 0.0
+            },
+            "components": [
+             {
+              "type": "MonoBehaviour",
+              "class": "ResolutionImage",
+              "namespace": "Nekki.SF2.GUI",
+              "assembly": "Root",
+              "enabled": true,
+              "ui": {
+               "kind": "Image",
+               "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+               ],
+               "raycastTarget": true,
+               "runtimeSprites": {
+                "SpriteName": {
+                 "name": "FightPause.play",
+                 "texture": "FightPause",
+                 "resourcesPath": "UI/Atlases/",
+                 "resolved": true
+                }
+               },
+               "sprite": "FightPause.play",
+               "texture": "FightPause",
+               "spriteSource": "runtime:_SpriteName",
+               "spriteInfo": {
+                "type": "Sprite",
+                "name": "FightPause.play",
+                "file": "bc52264a5bbd80a429a1c3744d576f0c",
+                "texture": "FightPause",
+                "textureSize": [
+                 1024,
+                 1024
+                ],
+                "png": "tex/APK/FightPause.png",
+                "textureRect": [
+                 608.0,
+                 116.0,
+                 300.0,
+                 300.0
+                ],
+                "rect": [
+                 608.0,
+                 116.0,
+                 300.0,
+                 300.0
+                ],
+                "pivot": [
+                 0.5,
+                 0.5
+                ],
+                "ppu": 100.0
+               },
+               "type": "simple",
+               "preserveAspect": false,
+               "fillCenter": true,
+               "pixelsPerUnitMultiplier": 1.0
+              },
+              "fields": {
+               "m_Material": null,
+               "m_Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+               },
+               "m_RaycastTarget": 1,
+               "m_RaycastPadding": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+               },
+               "m_Maskable": 1,
+               "m_Sprite": null,
+               "m_Type": 0,
+               "m_PreserveAspect": 0,
+               "m_FillCenter": 1,
+               "m_FillMethod": 4,
+               "m_FillAmount": 1.0,
+               "m_FillClockwise": 1,
+               "m_FillOrigin": 0,
+               "m_UseSpriteMesh": 0,
+               "m_PixelsPerUnitMultiplier": 1.0,
+               "_TexturePath": "UI/Atlases/",
+               "_SpriteName": "FightPause.play"
+              }
+             }
+            ]
+           },
+           {
+            "name": "PressImage",
+            "active": false,
+            "layer": 5,
+            "rect": {
+             "anchorMin": [
+              0.5,
+              0.5
+             ],
+             "anchorMax": [
+              0.5,
+              0.5
+             ],
+             "anchoredPosition": [
+              0.0,
+              0.0
+             ],
+             "sizeDelta": [
+              270.0,
+              270.0
+             ],
+             "pivot": [
+              0.5,
+              0.5
+             ],
+             "localScale": [
+              1.0,
+              1.0,
+              1.0
+             ],
+             "rotationZ": 0.0
+            },
+            "components": [
+             {
+              "type": "MonoBehaviour",
+              "class": "ResolutionImage",
+              "namespace": "Nekki.SF2.GUI",
+              "assembly": "Root",
+              "enabled": true,
+              "ui": {
+               "kind": "Image",
+               "color": [
+                1.0,
+                1.0,
+                1.0,
+                0.302
+               ],
+               "raycastTarget": true,
+               "runtimeSprites": {
+                "SpriteName": {
+                 "name": "FightPause.Pause_selected",
+                 "texture": "FightPause",
+                 "resourcesPath": "UI/Atlases/",
+                 "resolved": true
+                }
+               },
+               "sprite": "FightPause.Pause_selected",
+               "texture": "FightPause",
+               "spriteSource": "runtime:_SpriteName",
+               "spriteInfo": {
+                "type": "Sprite",
+                "name": "FightPause.Pause_selected",
+                "file": "bc52264a5bbd80a429a1c3744d576f0c",
+                "texture": "FightPause",
+                "textureSize": [
+                 1024,
+                 1024
+                ],
+                "png": "tex/APK/FightPause.png",
+                "textureRect": [
+                 305.0,
+                 752.0,
+                 270.0,
+                 270.0
+                ],
+                "rect": [
+                 305.0,
+                 752.0,
+                 270.0,
+                 270.0
+                ],
+                "pivot": [
+                 0.5,
+                 0.5
+                ],
+                "ppu": 100.0
+               },
+               "type": "simple",
+               "preserveAspect": false,
+               "fillCenter": true,
+               "pixelsPerUnitMultiplier": 1.0
+              },
+              "fields": {
+               "m_Material": null,
+               "m_Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 0.302
+               },
+               "m_RaycastTarget": 1,
+               "m_RaycastPadding": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+               },
+               "m_Maskable": 1,
+               "m_Sprite": null,
+               "m_Type": 0,
+               "m_PreserveAspect": 0,
+               "m_FillCenter": 1,
+               "m_FillMethod": 4,
+               "m_FillAmount": 1.0,
+               "m_FillClockwise": 1,
+               "m_FillOrigin": 0,
+               "m_UseSpriteMesh": 0,
+               "m_PixelsPerUnitMultiplier": 1.0,
+               "_TexturePath": "UI/Atlases/",
+               "_SpriteName": "FightPause.Pause_selected"
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "name": "RulesLabel",
+      "active": false,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.0,
+        1.0
+       ],
+       "anchorMax": [
+        0.0,
+        1.0
+       ],
+       "anchoredPosition": [
+        958.464,
+        -1168.0
+       ],
+       "sizeDelta": [
+        2000.0,
+        310.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "LabelAlias",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Text",
+         "color": [
+          0.9922,
+          0.7098,
+          0.2824,
+          1.0
+         ],
+         "raycastTarget": false,
+         "text": "Победа по очкам",
+         "font": "AGOpusBold",
+         "fontSize": 130,
+         "fontStyle": "Normal",
+         "alignment": "MiddleCenter",
+         "bestFit": true,
+         "minSize": 1,
+         "maxSize": 130,
+         "richText": true,
+         "horizontalOverflow": "Wrap",
+         "verticalOverflow": "Truncate",
+         "lineSpacing": 1.0,
+         "locKey": null,
+         "toUpperCase": false,
+         "useLocalizationFont": true,
+         "fontType": 0,
+         "labelFontSize": 180
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 0.9922,
+          "g": 0.7098,
+          "b": 0.2824,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_FontData": {
+          "m_Font": {
+           "type": "Font",
+           "name": "AGOpusBold",
+           "file": "sharedassets0.assets"
+          },
+          "m_FontSize": 130,
+          "m_FontStyle": 0,
+          "m_BestFit": 1,
+          "m_MinSize": 1,
+          "m_MaxSize": 130,
+          "m_Alignment": 4,
+          "m_AlignByGeometry": 0,
+          "m_RichText": 1,
+          "m_HorizontalOverflow": 0,
+          "m_VerticalOverflow": 0,
+          "m_LineSpacing": 1.0
+         },
+         "m_Text": "Победа по очкам",
+         "GlyphPrefabs": [],
+         "ForceUseAlignedBestFit": 0,
+         "ForbiddenUseAlignedBestFit": 0,
+         "FitImageLineHeightParam": {
+          "ScaleMaxLineHeightFactor": 1.0,
+          "ApplyToSingleLine": 0,
+          "Enabled": 0
+         },
+         "_useLocalizationFont": 1,
+         "_fontType": 0,
+         "_useLabelFontSize": 1,
+         "_labelFontSize": 180,
+         "_useLabelLineSpacing": 0,
+         "_labelLineSpacing": 0.0,
+         "_Alias": "",
+         "_ToUpperCase": 0
+        }
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

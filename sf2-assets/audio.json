@@ -1,0 +1,1946 @@
+{
+"SummerFest25_dojo": [
+"EVENTS__SUMMER_FEST_25",
+2,
+48000,
+61.714
+],
+"act": [
+"APK",
+2,
+32000,
+7.027
+],
+"credits": [
+"APK",
+2,
+32000,
+117.107
+],
+"energy_shot_1": [
+"OFFERS__WEEKLY_OFFER_38_SPARKS_OF_PROMETHEUS_25",
+2,
+44100,
+1.5
+],
+"energy_shot_3": [
+"OFFERS__WEEKLY_OFFER_38_SPARKS_OF_PROMETHEUS_25",
+2,
+44100,
+1.5
+],
+"fight10_black_warrior": [
+"APK",
+2,
+32000,
+86.387
+],
+"fight11_ronin": [
+"ZONE_3",
+2,
+32000,
+61.989
+],
+"fight12_deadly_smoke": [
+"ZONE_3",
+2,
+32000,
+54.883
+],
+"fight13_old_sensei": [
+"ZONE_2",
+2,
+32000,
+73.9
+],
+"fight14_ship_battle": [
+"ZONE_4",
+2,
+32000,
+56.033
+],
+"fight15_shadow_lady": [
+"ZONE_5",
+2,
+32000,
+68.598
+],
+"fight16_the_battlefield_flowers": [
+"ZONE_4",
+2,
+44100,
+64.575
+],
+"fight17_cave": [
+"ZONE_4",
+2,
+32000,
+68.18
+],
+"fight18_fuji": [
+"ZONE_5",
+2,
+32000,
+60.891
+],
+"fight19_volcano": [
+"ZONE_5",
+2,
+32000,
+61.126
+],
+"fight1_samurai_spirit": [
+"APK",
+2,
+32000,
+58.671
+],
+"fight21_lesson_in_the_dark_room": [
+"ZONE_4",
+2,
+32000,
+78.263
+],
+"fight22_heavenly_clouds": [
+"ZONE_4",
+2,
+32000,
+94.981
+],
+"fight23_burning_town": [
+"ZONE_6",
+2,
+32000,
+116.036
+],
+"fight24_ruins_village": [
+"ZONE_5",
+2,
+32000,
+68.652
+],
+"fight25_hive": [
+"ZONE_7",
+2,
+32000,
+72.936
+],
+"fight27_factory": [
+"ZONE_7",
+2,
+32000,
+84.132
+],
+"fight28_flying_rocks": [
+"ZONE_6",
+2,
+32000,
+74.736
+],
+"fight2_blade_dance": [
+"ZONE_2",
+2,
+32000,
+72.124
+],
+"fight30_gates_of_shadows": [
+"ZONE_6",
+2,
+32000,
+76.608
+],
+"fight31_graveyard_ships": [
+"ZONE_6",
+2,
+32000,
+81.288
+],
+"fight32_starship": [
+"ZONE_7",
+2,
+32000,
+86.436
+],
+"fight33_stone_forest": [
+"ZONE_7",
+2,
+32000,
+66.852
+],
+"fight34_halls_of_the_dead_heroes": [
+"ASCENSION",
+2,
+32000,
+96.026
+],
+"fight36_stardocks": [
+"ZONE_7_3",
+2,
+44100,
+78.289
+],
+"fight37_Titan_Epic_Fight": [
+"ZONE_7_3",
+2,
+44100,
+82.338
+],
+"fight38_dark_ritual": [
+"EVENTS__RITUAL",
+2,
+44100,
+64.052
+],
+"fight38_sakura_forest": [
+"ZONE_5",
+2,
+44100,
+62.824
+],
+"fight3_vengeance": [
+"ZONE_2",
+2,
+32000,
+56.895
+],
+"fight43_bihu_india": [
+"EVENTS__VAISAKHI_25",
+2,
+44100,
+59.167
+],
+"fight4_forest_of_death": [
+"ZONE_2",
+2,
+32000,
+64.522
+],
+"fight5_ninja_in_the_night": [
+"ZONE_1",
+2,
+32000,
+70.609
+],
+"fight6_sparring": [
+"ZONE_3",
+2,
+44100,
+77.192
+],
+"fight7_fat_boss": [
+"ZONE_6",
+2,
+32000,
+76.852
+],
+"fight8_final_boss": [
+"ZONE_7_3",
+2,
+44100,
+78.263
+],
+"fight9_master_skills": [
+"ZONE_3",
+2,
+32000,
+69.433
+],
+"fight_cursed_brothers_mafest26": [
+"EVENTS__MA_FEST_26",
+2,
+44100,
+61.091
+],
+"fight_halloween2022": [
+"EVENTS__SUMMER_FEST_26",
+2,
+44100,
+64.0
+],
+"fight_independence_day": [
+"EVENTS__AMERICAN_25",
+2,
+44100,
+66.534
+],
+"menu": [
+"APK",
+2,
+32000,
+109.14
+],
+"raid_hw24": [
+"EVENTS__HALLOWEEN_25",
+2,
+48000,
+65.082
+],
+"raids_arkhos": [
+"ZONE_RAID",
+2,
+44100,
+75.468
+],
+"raids_berstuuk": [
+"EVENTS__BERSTUUK",
+2,
+48000,
+59.077
+],
+"raids_blackness": [
+"CLANS",
+2,
+44100,
+59.069
+],
+"raids_crystal": [
+"ZONE_RAID",
+2,
+44100,
+77.584
+],
+"raids_fatum": [
+"ZONE_RAID",
+2,
+44100,
+60.056
+],
+"raids_fear": [
+"ZONE_RAID",
+2,
+44100,
+66.428
+],
+"raids_freeze": [
+"EVENTS__NEW_YEAR_26",
+2,
+44100,
+58.697
+],
+"raids_fungus": [
+"ZONE_RAID",
+2,
+44100,
+57.652
+],
+"raids_gatekeeper": [
+"ZONE_RAID",
+2,
+44100,
+79.282
+],
+"raids_hoaxen": [
+"ZONE_RAID",
+2,
+44100,
+64.052
+],
+"raids_hunger": [
+"ZONE_RAID",
+2,
+44100,
+64.011
+],
+"raids_hunter": [
+"ZONE_RAID",
+2,
+32000,
+60.311
+],
+"raids_matching": [
+"ZONE_RAID",
+2,
+44100,
+31.216
+],
+"raids_megalith": [
+"ZONE_RAID",
+2,
+44100,
+77.584
+],
+"raids_room": [
+"ZONE_RAID",
+2,
+32000,
+54.576
+],
+"raids_saturn": [
+"CLANS",
+2,
+44100,
+58.286
+],
+"raids_vortex": [
+"ZONE_RAID",
+2,
+44100,
+72.072
+],
+"raids_vulcan": [
+"ZONE_RAID",
+2,
+44100,
+66.534
+],
+"raids_war": [
+"ZONE_RAID",
+2,
+44100,
+80.978
+],
+"snd_Roots_end": [
+"CLANS",
+1,
+22050,
+0.778
+],
+"snd_Roots_start": [
+"CLANS",
+1,
+22050,
+1.702
+],
+"snd_arcane_attack": [
+"CLANS",
+2,
+44100,
+1.758
+],
+"snd_arcane_stack_1": [
+"CLANS",
+2,
+44100,
+0.287
+],
+"snd_arcane_stack_2": [
+"CLANS",
+2,
+44100,
+0.357
+],
+"snd_arcane_stack_3": [
+"CLANS",
+2,
+44100,
+0.348
+],
+"snd_arcane_stack_final": [
+"CLANS",
+2,
+44100,
+1.159
+],
+"snd_arcane_stack_loop": [
+"CLANS",
+2,
+44100,
+5.334
+],
+"snd_armor": [
+"APK",
+1,
+22050,
+0.626
+],
+"snd_bigsphere_end": [
+"ZONE_RAID",
+1,
+22050,
+1.891
+],
+"snd_bigsphere_start": [
+"ZONE_RAID",
+1,
+22050,
+1.0
+],
+"snd_blade_fury": [
+"ZONE_RAID",
+2,
+44100,
+5.0
+],
+"snd_blizzard_1": [
+"ZONE_1",
+1,
+22050,
+1.714
+],
+"snd_blizzard_2": [
+"ZONE_1",
+1,
+22050,
+1.713
+],
+"snd_blizzard_3": [
+"ZONE_1",
+1,
+22050,
+1.58
+],
+"snd_blizzard_hit": [
+"ZONE_1",
+1,
+22050,
+0.561
+],
+"snd_bodyfall1": [
+"APK",
+1,
+22050,
+0.418
+],
+"snd_bodyfall3": [
+"APK",
+1,
+22050,
+0.434
+],
+"snd_bone_boss_soul": [
+"ZONE_RAID",
+1,
+22050,
+4.25
+],
+"snd_boss_hit_1": [
+"ZONE_RAID",
+1,
+22050,
+1.031
+],
+"snd_boss_hit_2": [
+"ZONE_RAID",
+1,
+22050,
+1.031
+],
+"snd_boss_hit_3": [
+"ZONE_RAID",
+1,
+22050,
+1.031
+],
+"snd_boss_hit_4": [
+"ZONE_RAID",
+1,
+22050,
+1.031
+],
+"snd_boss_season_ending": [
+"ZONE_RAID",
+1,
+22050,
+2.625
+],
+"snd_bow_fast": [
+"ZONE_7_3",
+1,
+22050,
+0.876
+],
+"snd_bow_long": [
+"ZONE_7_3",
+1,
+22050,
+1.117
+],
+"snd_bucher_jump_new": [
+"ZONE_RAID",
+1,
+22050,
+0.485
+],
+"snd_bucher_touchdown": [
+"ZONE_RAID",
+1,
+22050,
+0.791
+],
+"snd_buy": [
+"APK",
+1,
+22050,
+0.97
+],
+"snd_chest_bronze_sound": [
+"ZONE_RAID",
+1,
+22050,
+2.172
+],
+"snd_chest_gold_sound": [
+"ZONE_RAID",
+1,
+22050,
+2.5
+],
+"snd_chest_raid_sound": [
+"ZONE_RAID",
+1,
+22050,
+2.172
+],
+"snd_chest_silver_sound": [
+"ZONE_RAID",
+1,
+22050,
+2.172
+],
+"snd_clanhardboss": [
+"CLANS",
+1,
+22050,
+1.815
+],
+"snd_cleric_bottle": [
+"CLANS",
+2,
+44100,
+0.647
+],
+"snd_click_1": [
+"APK",
+2,
+22050,
+0.281
+],
+"snd_click_2": [
+"APK",
+2,
+22050,
+0.594
+],
+"snd_coin_hit4": [
+"APK",
+1,
+22050,
+0.13
+],
+"snd_composite_sword_heavy_slash1": [
+"ZONE_RAID",
+1,
+22050,
+0.547
+],
+"snd_composite_sword_heavy_slash2": [
+"ZONE_RAID",
+1,
+22050,
+0.48
+],
+"snd_composite_sword_heavy_slash3": [
+"ZONE_RAID",
+1,
+22050,
+0.72
+],
+"snd_composite_sword_stance": [
+"ZONE_RAID",
+1,
+22050,
+1.38
+],
+"snd_composite_sword_whip": [
+"ZONE_RAID",
+1,
+22050,
+1.292
+],
+"snd_disk": [
+"APK",
+1,
+22050,
+0.767
+],
+"snd_earthquake": [
+"ZONE_2",
+1,
+22050,
+2.916
+],
+"snd_eclipse": [
+"APK",
+2,
+44100,
+5.558
+],
+"snd_electric_hit": [
+"CLANS",
+2,
+44100,
+1.402
+],
+"snd_electric_release": [
+"CLANS",
+2,
+44100,
+1.906
+],
+"snd_energy_boost_mefisto": [
+"SETS__KARCER_SET",
+2,
+44100,
+4.418
+],
+"snd_energy_burst": [
+"CLANS",
+2,
+44100,
+1.667
+],
+"snd_f_cough": [
+"ZONE_RAID",
+1,
+22050,
+0.772
+],
+"snd_f_pl_attack1": [
+"APK",
+1,
+22050,
+0.216
+],
+"snd_f_pl_attack2": [
+"APK",
+1,
+22050,
+0.197
+],
+"snd_f_pl_attack3": [
+"APK",
+1,
+22050,
+0.327
+],
+"snd_f_pl_attack4": [
+"APK",
+1,
+22050,
+0.189
+],
+"snd_f_pl_attack5": [
+"APK",
+1,
+22050,
+0.241
+],
+"snd_f_pl_attack6": [
+"APK",
+1,
+22050,
+0.274
+],
+"snd_f_pl_death": [
+"APK",
+1,
+22050,
+1.496
+],
+"snd_f_pl_jump1": [
+"APK",
+1,
+22050,
+0.167
+],
+"snd_f_pl_jump2": [
+"APK",
+1,
+22050,
+0.143
+],
+"snd_f_pl_jump3": [
+"APK",
+1,
+22050,
+0.199
+],
+"snd_focus_1": [
+"APK",
+2,
+22050,
+0.75
+],
+"snd_gong": [
+"APK",
+1,
+22050,
+4.067
+],
+"snd_guardian_loop": [
+"CLANS",
+2,
+44100,
+3.0
+],
+"snd_gust_whoosh_1": [
+"CLANS",
+2,
+44100,
+1.667
+],
+"snd_gust_whoosh_2": [
+"CLANS",
+2,
+44100,
+1.667
+],
+"snd_gust_whoosh_3": [
+"CLANS",
+2,
+44100,
+1.667
+],
+"snd_harpoon_shoot": [
+"ZONE_7_3",
+1,
+22050,
+1.825
+],
+"snd_hermit_lightning": [
+"ZONE_2",
+1,
+22050,
+0.887
+],
+"snd_hermit_lightning2": [
+"ZONE_2",
+1,
+22050,
+0.887
+],
+"snd_hermit_storm_idle": [
+"ZONE_2",
+1,
+22050,
+0.399
+],
+"snd_hermit_storm_start": [
+"ZONE_2",
+1,
+22050,
+1.834
+],
+"snd_hit1": [
+"APK",
+1,
+22050,
+0.375
+],
+"snd_hit2": [
+"APK",
+1,
+22050,
+0.304
+],
+"snd_hit3": [
+"APK",
+1,
+22050,
+0.295
+],
+"snd_hit4": [
+"APK",
+1,
+22050,
+0.302
+],
+"snd_hit5": [
+"APK",
+1,
+22050,
+0.273
+],
+"snd_hit6": [
+"APK",
+1,
+22050,
+0.295
+],
+"snd_hoaxen_cast": [
+"ZONE_RAID",
+1,
+22050,
+1.938
+],
+"snd_hoaxen_tentacle_hit1": [
+"ZONE_RAID",
+1,
+22050,
+0.328
+],
+"snd_hoaxen_tentacle_hit2": [
+"ZONE_RAID",
+1,
+22050,
+0.328
+],
+"snd_hoaxen_tentacle_hit3": [
+"ZONE_RAID",
+1,
+22050,
+0.328
+],
+"snd_karma_damage": [
+"CLANS",
+2,
+44100,
+2.0
+],
+"snd_karma_effect_loop": [
+"CLANS",
+2,
+44100,
+6.0
+],
+"snd_karma_heal": [
+"CLANS",
+2,
+44100,
+2.5
+],
+"snd_knife": [
+"APK",
+1,
+22050,
+0.373
+],
+"snd_knife_reveal": [
+"CLANS",
+2,
+44100,
+0.661
+],
+"snd_knife_stroke": [
+"CLANS",
+2,
+44100,
+0.893
+],
+"snd_lava_loop": [
+"VOLCANO_SET",
+2,
+44100,
+5.524
+],
+"snd_learn": [
+"APK",
+1,
+22050,
+2.017
+],
+"snd_low_cough": [
+"CLANS",
+1,
+22050,
+0.899
+],
+"snd_low_pl_attack1": [
+"CLANS",
+1,
+22050,
+0.245
+],
+"snd_low_pl_attack2": [
+"CLANS",
+1,
+22050,
+0.32
+],
+"snd_low_pl_attack3": [
+"CLANS",
+1,
+22050,
+0.224
+],
+"snd_low_pl_attack4": [
+"CLANS",
+1,
+22050,
+0.213
+],
+"snd_low_pl_attack5": [
+"CLANS",
+1,
+22050,
+0.245
+],
+"snd_low_pl_attack6": [
+"CLANS",
+1,
+22050,
+0.373
+],
+"snd_low_pl_death": [
+"CLANS",
+1,
+22050,
+1.108
+],
+"snd_low_pl_hit1": [
+"CLANS",
+1,
+22050,
+0.256
+],
+"snd_low_pl_hit2": [
+"CLANS",
+1,
+22050,
+0.384
+],
+"snd_low_pl_hit3": [
+"CLANS",
+1,
+22050,
+0.32
+],
+"snd_low_pl_hit4": [
+"CLANS",
+1,
+22050,
+0.32
+],
+"snd_low_pl_jump1": [
+"CLANS",
+1,
+22050,
+0.256
+],
+"snd_low_pl_jump2": [
+"CLANS",
+1,
+22050,
+0.17
+],
+"snd_low_pl_jump3": [
+"CLANS",
+1,
+22050,
+0.192
+],
+"snd_m_cough": [
+"ZONE_RAID",
+1,
+22050,
+0.99
+],
+"snd_m_pl_attack1": [
+"APK",
+1,
+22050,
+0.22
+],
+"snd_m_pl_attack2": [
+"APK",
+1,
+22050,
+0.243
+],
+"snd_m_pl_attack3": [
+"APK",
+1,
+22050,
+0.327
+],
+"snd_m_pl_attack4": [
+"APK",
+1,
+22050,
+0.275
+],
+"snd_m_pl_attack5": [
+"APK",
+1,
+22050,
+0.186
+],
+"snd_m_pl_attack6": [
+"APK",
+1,
+22050,
+0.234
+],
+"snd_m_pl_hit2": [
+"ZONE_7_3",
+1,
+22050,
+0.438
+],
+"snd_m_pl_jump1": [
+"APK",
+1,
+22050,
+0.257
+],
+"snd_m_pl_jump2": [
+"APK",
+1,
+22050,
+0.248
+],
+"snd_m_pl_jump3": [
+"APK",
+1,
+22050,
+0.209
+],
+"snd_magic_acid_cloud": [
+"ZONE_RAID",
+1,
+22050,
+3.451
+],
+"snd_magic_asteroid": [
+"ZONE_RAID",
+1,
+22050,
+3.057
+],
+"snd_magic_asteroid_end": [
+"ZONE_RAID",
+1,
+22050,
+1.78
+],
+"snd_magic_asteroid_start": [
+"ZONE_RAID",
+1,
+22050,
+1.52
+],
+"snd_magic_bomb_end": [
+"CLANS",
+1,
+22050,
+1.883
+],
+"snd_magic_bomb_middle": [
+"CLANS",
+1,
+22050,
+2.045
+],
+"snd_magic_bomb_start": [
+"CLANS",
+1,
+22050,
+1.333
+],
+"snd_magic_deathray": [
+"CLANS",
+1,
+22050,
+1.446
+],
+"snd_magic_dragon": [
+"ZONE_RAID",
+2,
+44100,
+3.0
+],
+"snd_magic_energyball_end": [
+"ZONE_RAID",
+1,
+22050,
+1.039
+],
+"snd_magic_energyball_middle": [
+"ZONE_RAID",
+1,
+22050,
+1.144
+],
+"snd_magic_energyball_start": [
+"ZONE_RAID",
+1,
+22050,
+1.34
+],
+"snd_magic_fire_splash_end": [
+"CLANS",
+1,
+22050,
+1.175
+],
+"snd_magic_fire_splash_middle1": [
+"CLANS",
+1,
+22050,
+0.392
+],
+"snd_magic_fire_splash_middle2": [
+"CLANS",
+1,
+22050,
+0.392
+],
+"snd_magic_fire_splash_middle3": [
+"CLANS",
+1,
+22050,
+0.415
+],
+"snd_magic_fire_splash_start": [
+"CLANS",
+1,
+22050,
+0.884
+],
+"snd_magic_fireball_end": [
+"ZONE_RAID",
+1,
+22050,
+1.158
+],
+"snd_magic_fireball_middle": [
+"ZONE_RAID",
+1,
+22050,
+1.37
+],
+"snd_magic_fireball_start": [
+"ZONE_RAID",
+1,
+22050,
+1.09
+],
+"snd_magic_firepillar_end": [
+"CLANS",
+1,
+22050,
+1.147
+],
+"snd_magic_firepillar_start": [
+"CLANS",
+1,
+22050,
+0.977
+],
+"snd_magic_ice_ball_end": [
+"ZONE_RAID",
+1,
+22050,
+0.935
+],
+"snd_magic_ice_ball_start": [
+"ZONE_RAID",
+1,
+22050,
+1.189
+],
+"snd_magic_ice_cloud": [
+"CLANS",
+2,
+44100,
+3.859
+],
+"snd_magic_ice_pins_end": [
+"CLANS",
+1,
+22050,
+1.333
+],
+"snd_magic_ice_pins_middle": [
+"CLANS",
+1,
+22050,
+0.491
+],
+"snd_magic_ice_pins_start": [
+"CLANS",
+1,
+22050,
+0.952
+],
+"snd_magic_lightningarrow_end": [
+"ZONE_2",
+1,
+22050,
+0.629
+],
+"snd_magic_lightningarrow_middle": [
+"ZONE_2",
+1,
+22050,
+0.904
+],
+"snd_magic_lightningarrow_start": [
+"CLANS",
+1,
+22050,
+1.556
+],
+"snd_magic_massbomb_end": [
+"CLANS",
+1,
+22050,
+1.556
+],
+"snd_magic_massbomb_middle": [
+"ZONE_1",
+1,
+22050,
+0.317
+],
+"snd_magic_massbomb_middle2": [
+"ZONE_1",
+1,
+22050,
+0.317
+],
+"snd_magic_massbomb_start": [
+"ZONE_1",
+1,
+22050,
+1.165
+],
+"snd_magic_mind_throw_hit": [
+"NEW_YEAR_25",
+1,
+22050,
+1.79
+],
+"snd_magic_mind_throw_start": [
+"CLANS",
+1,
+22050,
+1.719
+],
+"snd_magic_nrtyu_scythe_1": [
+"CLANS",
+2,
+44100,
+1.76
+],
+"snd_magic_saw_long": [
+"ZONE_RAID",
+1,
+22050,
+1.724
+],
+"snd_magic_water_ball_end": [
+"CLANS",
+1,
+22050,
+1.189
+],
+"snd_magic_water_ball_start": [
+"CLANS",
+1,
+22050,
+1.238
+],
+"snd_magic_wave_end": [
+"CLANS",
+1,
+22050,
+0.738
+],
+"snd_magic_wave_start": [
+"CLANS",
+1,
+22050,
+0.741
+],
+"snd_mgc_forest_demon_attack": [
+"FOREST_DEMON_25",
+2,
+44100,
+1.132
+],
+"snd_mgc_forest_demon_end": [
+"FOREST_DEMON_25",
+2,
+44100,
+1.079
+],
+"snd_midsphere_end": [
+"ZONE_RAID",
+1,
+22050,
+1.312
+],
+"snd_midsphere_middle": [
+"ZONE_RAID",
+1,
+22050,
+0.969
+],
+"snd_midsphere_start": [
+"ZONE_RAID",
+1,
+22050,
+1.031
+],
+"snd_musket_shot_1": [
+"ZONE_RAID",
+1,
+22050,
+0.715
+],
+"snd_musket_shot_2": [
+"ZONE_7",
+1,
+22050,
+0.757
+],
+"snd_perk_hunger_claws": [
+"ZONE_RAID",
+2,
+44100,
+2.531
+],
+"snd_plot_twist_hit": [
+"CLANS",
+2,
+44100,
+0.625
+],
+"snd_raid_fight_ready": [
+"ZONE_RAID",
+1,
+22050,
+5.156
+],
+"snd_raid_lose": [
+"ZONE_RAID",
+1,
+22050,
+4.156
+],
+"snd_raid_win": [
+"ZONE_RAID",
+1,
+22050,
+4.156
+],
+"snd_rats_cast": [
+"ZONE_RAID",
+1,
+22050,
+1.078
+],
+"snd_rats_hit": [
+"ZONE_RAID",
+1,
+22050,
+1.891
+],
+"snd_rats_ring": [
+"ZONE_RAID",
+1,
+22050,
+0.781
+],
+"snd_rayshot": [
+"OFFERS__WEEKLY_OFFER_20_FUTURIST_MAGIC",
+2,
+44100,
+3.109
+],
+"snd_rayshot_bones": [
+"OFFERS__WEEKLY_OFFER_20_FUTURIST_MAGIC",
+2,
+44100,
+2.344
+],
+"snd_razor_hit_bleeding": [
+"SETS__KARCER_SET",
+2,
+44100,
+1.072
+],
+"snd_saturn_blaster_shot": [
+"CLANS",
+2,
+44100,
+1.574
+],
+"snd_sawblade_1": [
+"ZONE_3",
+1,
+22050,
+0.772
+],
+"snd_sawblade_2": [
+"ZONE_3",
+1,
+22050,
+0.736
+],
+"snd_sawblade_3": [
+"ZONE_3",
+1,
+22050,
+0.892
+],
+"snd_sawblade_long": [
+"ZONE_3",
+1,
+22050,
+1.544
+],
+"snd_sentinel_set1": [
+"ZONE_RAID",
+2,
+44100,
+1.547
+],
+"snd_sentinel_set2": [
+"ZONE_RAID",
+2,
+44100,
+1.547
+],
+"snd_sentinel_set3": [
+"ZONE_RAID",
+2,
+44100,
+1.547
+],
+"snd_sentinel_set_hit": [
+"ZONE_RAID",
+2,
+44100,
+2.656
+],
+"snd_shadow_grasp": [
+"ZONE_RAID",
+2,
+44100,
+2.351
+],
+"snd_shoker2": [
+"ZONE_7_2",
+1,
+22050,
+1.088
+],
+"snd_shopshuriken": [
+"APK",
+1,
+22050,
+0.595
+],
+"snd_shopshurikencatch": [
+"APK",
+1,
+22050,
+0.296
+],
+"snd_shuriken_fly": [
+"APK",
+1,
+22050,
+0.296
+],
+"snd_smallsphere_end": [
+"ZONE_RAID",
+1,
+22050,
+1.687
+],
+"snd_smallsphere_middle": [
+"ZONE_RAID",
+1,
+22050,
+1.266
+],
+"snd_smallsphere_start": [
+"ZONE_RAID",
+1,
+22050,
+1.094
+],
+"snd_smoke_bomb": [
+"APK",
+1,
+22050,
+1.353
+],
+"snd_song_of_inevitability": [
+"OFFERS__WEEKLY_OFFER_54_SONG_OF_INEVITABILITY_26",
+2,
+44100,
+4.0
+],
+"snd_spin1": [
+"ZONE_2",
+1,
+22050,
+6.955
+],
+"snd_spin2": [
+"ZONE_2",
+1,
+22050,
+7.494
+],
+"snd_staccato_impact_ground_1": [
+"CLANS",
+2,
+44100,
+0.613
+],
+"snd_staccato_impact_ground_2": [
+"CLANS",
+2,
+44100,
+0.632
+],
+"snd_staccato_impact_ground_3": [
+"CLANS",
+2,
+44100,
+0.734
+],
+"snd_staccato_impact_hit_1": [
+"CLANS",
+2,
+44100,
+0.601
+],
+"snd_staccato_impact_hit_2": [
+"CLANS",
+2,
+44100,
+0.64
+],
+"snd_staccato_impact_hit_3": [
+"CLANS",
+2,
+44100,
+0.644
+],
+"snd_staccato_portal": [
+"CLANS",
+2,
+44100,
+2.602
+],
+"snd_staccato_shot_1": [
+"CLANS",
+2,
+44100,
+2.086
+],
+"snd_staccato_shot_2": [
+"CLANS",
+2,
+44100,
+2.122
+],
+"snd_staccato_shot_3": [
+"CLANS",
+2,
+44100,
+2.082
+],
+"snd_super_hit1": [
+"APK",
+1,
+22050,
+0.761
+],
+"snd_super_hit2": [
+"ZONE_7_3",
+1,
+22050,
+0.548
+],
+"snd_super_hit4": [
+"CLANS",
+1,
+22050,
+0.509
+],
+"snd_super_hit5": [
+"CLANS",
+1,
+22050,
+0.524
+],
+"snd_swish1": [
+"APK",
+1,
+22050,
+0.301
+],
+"snd_swish2": [
+"APK",
+1,
+22050,
+0.28
+],
+"snd_swish3": [
+"APK",
+1,
+22050,
+0.276
+],
+"snd_swish4": [
+"APK",
+1,
+22050,
+0.266
+],
+"snd_swish5": [
+"APK",
+1,
+22050,
+0.274
+],
+"snd_swish6": [
+"APK",
+1,
+22050,
+0.213
+],
+"snd_swish7": [
+"APK",
+1,
+22050,
+0.269
+],
+"snd_swish_sword1": [
+"APK",
+1,
+44100,
+0.404
+],
+"snd_swish_sword2": [
+"APK",
+1,
+44100,
+0.32
+],
+"snd_swish_sword3": [
+"APK",
+1,
+44100,
+0.307
+],
+"snd_sword_pierce": [
+"ZONE_7_2",
+1,
+22050,
+1.672
+],
+"snd_throwing": [
+"APK",
+1,
+22050,
+0.398
+],
+"snd_time_shift": [
+"CLANS",
+2,
+44100,
+3.0
+],
+"snd_titan_attack1": [
+"ZONE_7_3",
+1,
+22050,
+0.625
+],
+"snd_titan_attack2": [
+"ZONE_7_3",
+1,
+22050,
+1.062
+],
+"snd_titan_attack3": [
+"ZONE_7_3",
+1,
+22050,
+0.516
+],
+"snd_titan_attack4": [
+"ZONE_7_3",
+1,
+22050,
+0.813
+],
+"snd_titan_death": [
+"ZONE_7_3",
+1,
+22050,
+4.944
+],
+"snd_titan_hit1": [
+"ZONE_7_3",
+1,
+22050,
+0.625
+],
+"snd_titan_hit2": [
+"ZONE_7_3",
+1,
+22050,
+0.406
+],
+"snd_titan_hit3": [
+"ZONE_7_3",
+1,
+22050,
+0.938
+],
+"snd_titan_hit4": [
+"ZONE_7_3",
+1,
+22050,
+0.687
+],
+"snd_titan_laugh": [
+"ZONE_7_3",
+1,
+22050,
+3.456
+],
+"snd_titan_loose": [
+"ZONE_7_3",
+1,
+22050,
+2.018
+],
+"snd_titan_swish1": [
+"ZONE_7_3",
+1,
+22050,
+0.573
+],
+"snd_titan_swish2": [
+"ZONE_7_3",
+1,
+22050,
+0.933
+],
+"snd_titan_swish3": [
+"ZONE_7_3",
+1,
+22050,
+1.001
+],
+"snd_titan_swish4": [
+"ZONE_7_3",
+1,
+22050,
+0.961
+],
+"snd_titan_throw_hit": [
+"ZONE_7_3",
+1,
+22050,
+1.603
+],
+"snd_upgrade": [
+"APK",
+1,
+22050,
+1.538
+],
+"snd_volcano_appear_1": [
+"VOLCANO_SET",
+2,
+44100,
+1.278
+],
+"snd_volcano_appear_2": [
+"VOLCANO_SET",
+2,
+44100,
+1.314
+],
+"snd_volcano_dissappear_1": [
+"VOLCANO_SET",
+2,
+44100,
+1.298
+],
+"snd_volcano_dissappear_2": [
+"VOLCANO_SET",
+2,
+44100,
+1.309
+],
+"snd_volcano_erupt_1": [
+"VOLCANO_SET",
+2,
+44100,
+1.589
+],
+"snd_volcano_erupt_2": [
+"VOLCANO_SET",
+2,
+44100,
+1.962
+],
+"snd_wall3": [
+"APK",
+1,
+22050,
+0.29
+],
+"snd_warlock_set_1": [
+"CLANS",
+2,
+44100,
+14.0
+],
+"snd_warlock_set_2": [
+"CLANS",
+2,
+44100,
+14.0
+],
+"snd_warlock_set_3": [
+"CLANS",
+2,
+44100,
+14.0
+],
+"snd_warlock_set_hit": [
+"CLANS",
+2,
+44100,
+3.75
+],
+"snd_wasp_fly_end": [
+"ZONE_RAID",
+1,
+22050,
+1.039
+],
+"snd_wasp_fly_mid": [
+"ZONE_RAID",
+1,
+22050,
+1.682
+],
+"snd_wasp_fly_start": [
+"ZONE_RAID",
+1,
+22050,
+0.844
+],
+"snd_widow_teleport_end": [
+"ZONE_RAID",
+1,
+22050,
+0.967
+],
+"snd_widow_teleport_start": [
+"ZONE_RAID",
+1,
+22050,
+1.327
+],
+"snd_win": [
+"APK",
+1,
+22050,
+2.778
+]
+}

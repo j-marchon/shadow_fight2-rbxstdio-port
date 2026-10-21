@@ -1,0 +1,546 @@
+{
+ "source": "e9f495ed64c53df418db6590437283fc",
+ "pathID": 12,
+ "root": {
+  "name": "RaidQuestsButton",
+  "active": false,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.5,
+    0.5
+   ],
+   "anchorMax": [
+    0.5,
+    0.5
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    130.0,
+    130.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "RaidQuestsButton",
+    "namespace": "Nekki.SF2.GUI.Map",
+    "assembly": "Root",
+    "enabled": true,
+    "ui": {
+     "kind": "Button",
+     "runtimeSprites": {
+      "normalSpriteName": {
+       "name": "RaidDailyMap.fire_active",
+       "texture": "RaidDailyMap",
+       "resourcesPath": "UI/Atlases/",
+       "resolved": true
+      }
+     },
+     "interactable": true,
+     "transition": "SpriteSwap",
+     "targetGraphic": {
+      "type": "ResolutionImage",
+      "path": "RaidQuestsButton"
+     },
+     "spriteState": {
+      "m_HighlightedSprite": null,
+      "m_PressedSprite": null,
+      "m_SelectedSprite": null,
+      "m_DisabledSprite": null
+     },
+     "onClick": []
+    },
+    "fields": {
+     "m_Navigation": {
+      "m_Mode": 3,
+      "m_WrapAround": 0,
+      "m_SelectOnUp": null,
+      "m_SelectOnDown": null,
+      "m_SelectOnLeft": null,
+      "m_SelectOnRight": null
+     },
+     "m_Transition": 2,
+     "m_Colors": {
+      "m_NormalColor": {
+       "r": 1.0,
+       "g": 1.0,
+       "b": 1.0,
+       "a": 1.0
+      },
+      "m_HighlightedColor": {
+       "r": 0.9608,
+       "g": 0.9608,
+       "b": 0.9608,
+       "a": 1.0
+      },
+      "m_PressedColor": {
+       "r": 0.7843,
+       "g": 0.7843,
+       "b": 0.7843,
+       "a": 1.0
+      },
+      "m_SelectedColor": {
+       "r": 0.9608,
+       "g": 0.9608,
+       "b": 0.9608,
+       "a": 1.0
+      },
+      "m_DisabledColor": {
+       "r": 0.7843,
+       "g": 0.7843,
+       "b": 0.7843,
+       "a": 0.502
+      },
+      "m_ColorMultiplier": 1.0,
+      "m_FadeDuration": 0.1
+     },
+     "m_SpriteState": {
+      "m_HighlightedSprite": null,
+      "m_PressedSprite": null,
+      "m_SelectedSprite": null,
+      "m_DisabledSprite": null
+     },
+     "m_AnimationTriggers": {
+      "m_NormalTrigger": "Normal",
+      "m_HighlightedTrigger": "Highlighted",
+      "m_PressedTrigger": "Pressed",
+      "m_SelectedTrigger": "Highlighted",
+      "m_DisabledTrigger": "Disabled"
+     },
+     "m_Interactable": 1,
+     "m_TargetGraphic": {
+      "type": "ResolutionImage",
+      "path": "RaidQuestsButton"
+     },
+     "m_OnClick": {
+      "m_PersistentCalls": {
+       "m_Calls": []
+      }
+     },
+     "FlashingImage": null,
+     "_EnableClickAnimation": 1,
+     "_glowSprite": null,
+     "_WaitBeforeClick": 1,
+     "IsOneShot": 0,
+     "_glowTime": 0.0,
+     "ButtonId": -1,
+     "_normalTexturePath": "UI/Atlases/",
+     "_normalSpriteName": "RaidDailyMap.fire_active",
+     "_disabledTexturePath": "",
+     "_disabledSpriteName": "",
+     "_highlightedTexturePath": "",
+     "_highlightedSpriteName": "",
+     "_pressedTexturePath": "",
+     "_pressedSpriteName": "",
+     "_image": {
+      "type": "ResolutionImage",
+      "path": "RaidQuestsButton/daily image"
+     },
+     "_label": {
+      "type": "LabelAlias",
+      "path": "RaidQuestsButton/daily label"
+     }
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "ResolutionImage",
+    "namespace": "Nekki.SF2.GUI",
+    "assembly": "Root",
+    "enabled": true,
+    "ui": {
+     "kind": "Image",
+     "color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "raycastTarget": true,
+     "runtimeSprites": {
+      "SpriteName": {
+       "name": "RaidDailyMap.fire_active",
+       "texture": "RaidDailyMap",
+       "resourcesPath": "UI/Atlases/",
+       "resolved": true
+      }
+     },
+     "sprite": "RaidDailyMap.fire_active",
+     "texture": "RaidDailyMap",
+     "spriteSource": "runtime:_SpriteName",
+     "spriteInfo": {
+      "type": "Sprite",
+      "name": "RaidDailyMap.fire_active",
+      "texture": "RaidDailyMap",
+      "pack": "ZONE_RAID",
+      "png": "tex/ZONE_RAID/RaidDailyMap.png",
+      "textureRectTopLeft": [
+       129,
+       2,
+       124,
+       124
+      ],
+      "pivot": [
+       0.5,
+       0.5
+      ],
+      "source": "sprites.json (bundle)"
+     },
+     "type": "simple",
+     "preserveAspect": false,
+     "fillCenter": true,
+     "pixelsPerUnitMultiplier": 1.0
+    },
+    "fields": {
+     "m_Material": null,
+     "m_Color": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 1.0,
+      "a": 1.0
+     },
+     "m_RaycastTarget": 1,
+     "m_RaycastPadding": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "w": 0.0
+     },
+     "m_Maskable": 1,
+     "m_Sprite": null,
+     "m_Type": 0,
+     "m_PreserveAspect": 0,
+     "m_FillCenter": 1,
+     "m_FillMethod": 4,
+     "m_FillAmount": 1.0,
+     "m_FillClockwise": 1,
+     "m_FillOrigin": 0,
+     "m_UseSpriteMesh": 0,
+     "m_PixelsPerUnitMultiplier": 1.0,
+     "_TexturePath": "UI/Atlases/",
+     "_SpriteName": "RaidDailyMap.fire_active"
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "Additional TouchZone",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      200.0,
+      200.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "NonDrawingGraphic",
+      "namespace": "",
+      "assembly": "Root",
+      "enabled": true,
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1
+      }
+     }
+    ]
+   },
+   {
+    "name": "daily image",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      1.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      0.0
+     ],
+     "anchoredPosition": [
+      -20.0,
+      14.0
+     ],
+     "sizeDelta": [
+      76.0,
+      76.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImage",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": true,
+       "runtimeSprites": {
+        "SpriteName": {
+         "name": "MiscSprites.notification_circle",
+         "texture": "MiscSprites",
+         "resourcesPath": "UI/Atlases/",
+         "resolved": true
+        }
+       },
+       "sprite": "MiscSprites.notification_circle",
+       "texture": "MiscSprites",
+       "spriteSource": "runtime:_SpriteName",
+       "spriteInfo": {
+        "type": "Sprite",
+        "name": "MiscSprites.notification_circle",
+        "file": "f007128341a8a4c1b8295fc9b88eea07",
+        "texture": "MiscSprites",
+        "textureSize": [
+         1024,
+         2048
+        ],
+        "png": "tex/APK/MiscSprites.png",
+        "textureRect": [
+         594.0,
+         1970.0,
+         76.0,
+         76.0
+        ],
+        "rect": [
+         594.0,
+         1970.0,
+         76.0,
+         76.0
+        ],
+        "pivot": [
+         0.5,
+         0.5
+        ],
+        "ppu": 100.0
+       },
+       "type": "simple",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "UI/Atlases/",
+       "_SpriteName": "MiscSprites.notification_circle"
+      }
+     }
+    ]
+   },
+   {
+    "name": "daily label",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      1.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      0.0
+     ],
+     "anchoredPosition": [
+      -20.0,
+      14.0
+     ],
+     "sizeDelta": [
+      200.0,
+      200.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "LabelAlias",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Text",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": false,
+       "text": "1",
+       "font": "majallab",
+       "fontSize": 90,
+       "fontStyle": "Normal",
+       "alignment": "MiddleCenter",
+       "bestFit": true,
+       "minSize": 1,
+       "maxSize": 100,
+       "richText": true,
+       "horizontalOverflow": "Wrap",
+       "verticalOverflow": "Truncate",
+       "lineSpacing": 1.0,
+       "locKey": null,
+       "toUpperCase": false,
+       "useLocalizationFont": true,
+       "fontType": 0,
+       "labelFontSize": 100
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_FontData": {
+        "m_Font": {
+         "type": "Font",
+         "name": "majallab",
+         "file": "sharedassets0.assets"
+        },
+        "m_FontSize": 90,
+        "m_FontStyle": 0,
+        "m_BestFit": 1,
+        "m_MinSize": 1,
+        "m_MaxSize": 100,
+        "m_Alignment": 4,
+        "m_AlignByGeometry": 1,
+        "m_RichText": 1,
+        "m_HorizontalOverflow": 0,
+        "m_VerticalOverflow": 0,
+        "m_LineSpacing": 1.0
+       },
+       "m_Text": "1",
+       "GlyphPrefabs": [],
+       "ForceUseAlignedBestFit": 0,
+       "ForbiddenUseAlignedBestFit": 0,
+       "FitImageLineHeightParam": {
+        "ScaleMaxLineHeightFactor": 1.0,
+        "ApplyToSingleLine": 0,
+        "Enabled": 0
+       },
+       "_useLocalizationFont": 1,
+       "_fontType": 0,
+       "_useLabelFontSize": 1,
+       "_labelFontSize": 100,
+       "_useLabelLineSpacing": 0,
+       "_labelLineSpacing": 0.0,
+       "_Alias": "",
+       "_ToUpperCase": 0
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

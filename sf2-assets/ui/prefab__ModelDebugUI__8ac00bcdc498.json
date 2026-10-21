@@ -1,0 +1,257 @@
+{
+ "source": "8ac00bcdc49854fdcb5e4ebeb93c0fc9",
+ "pathID": 6,
+ "root": {
+  "name": "ModelDebugUI",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.0,
+    0.0
+   ],
+   "anchorMax": [
+    1.0,
+    1.0
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    0.0,
+    0.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "ModelDebugUI",
+    "namespace": "Nekki.SF2.GUI.DebugModules",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_Order": 0,
+     "_PlayerAnimName": {
+      "type": "Text",
+      "path": "ModelDebugUI/PlayerAnim"
+     },
+     "_EnemyAnimName": {
+      "type": "Text",
+      "path": "ModelDebugUI/EnemyAnim"
+     }
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "PlayerAnim",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      0.0,
+      0.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      120.0
+     ],
+     "sizeDelta": [
+      1500.0,
+      120.0
+     ],
+     "pivot": [
+      0.0,
+      0.0
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "Text",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "color": [
+        1.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "raycastTarget": false,
+       "text": "New Text",
+       "font": "LegacyRuntime",
+       "fontSize": 50,
+       "fontStyle": "Normal",
+       "alignment": "LowerLeft",
+       "bestFit": false,
+       "minSize": 5,
+       "maxSize": 50,
+       "richText": true,
+       "horizontalOverflow": "Wrap",
+       "verticalOverflow": "Truncate",
+       "lineSpacing": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_FontData": {
+        "m_Font": {
+         "type": "Font",
+         "name": "LegacyRuntime",
+         "file": "unity default resources"
+        },
+        "m_FontSize": 50,
+        "m_FontStyle": 0,
+        "m_BestFit": 0,
+        "m_MinSize": 5,
+        "m_MaxSize": 50,
+        "m_Alignment": 6,
+        "m_AlignByGeometry": 0,
+        "m_RichText": 1,
+        "m_HorizontalOverflow": 0,
+        "m_VerticalOverflow": 0,
+        "m_LineSpacing": 1.0
+       },
+       "m_Text": "New Text"
+      }
+     }
+    ]
+   },
+   {
+    "name": "EnemyAnim",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      1.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      0.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      120.0
+     ],
+     "sizeDelta": [
+      1500.0,
+      120.0
+     ],
+     "pivot": [
+      1.0,
+      0.0
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "Text",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "color": [
+        1.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "raycastTarget": false,
+       "text": "New Text",
+       "font": "LegacyRuntime",
+       "fontSize": 50,
+       "fontStyle": "Normal",
+       "alignment": "LowerRight",
+       "bestFit": false,
+       "minSize": 5,
+       "maxSize": 50,
+       "richText": true,
+       "horizontalOverflow": "Wrap",
+       "verticalOverflow": "Truncate",
+       "lineSpacing": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_FontData": {
+        "m_Font": {
+         "type": "Font",
+         "name": "LegacyRuntime",
+         "file": "unity default resources"
+        },
+        "m_FontSize": 50,
+        "m_FontStyle": 0,
+        "m_BestFit": 0,
+        "m_MinSize": 5,
+        "m_MaxSize": 50,
+        "m_Alignment": 8,
+        "m_AlignByGeometry": 0,
+        "m_RichText": 1,
+        "m_HorizontalOverflow": 0,
+        "m_VerticalOverflow": 0,
+        "m_LineSpacing": 1.0
+       },
+       "m_Text": "New Text"
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,339 @@
+{
+ "source": "d5ce72217c826d444b2b9696887f46b2",
+ "pathID": 6,
+ "root": {
+  "name": "RewardPanelItem",
+  "active": true,
+  "layer": 0,
+  "rect": {
+   "anchorMin": [
+    0.5,
+    0.5
+   ],
+   "anchorMax": [
+    0.5,
+    0.5
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    800.0,
+    400.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "RewardPanelItem",
+    "namespace": "Nekki.SF2.GUI.Fight",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_image": {
+      "type": "ResolutionImage",
+      "path": "RewardPanelItem/Image"
+     },
+     "_text": {
+      "type": "Text",
+      "path": "RewardPanelItem/Text"
+     }
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "HorizontalLayoutGroup",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI",
+    "enabled": true,
+    "ui": {
+     "layout": "HorizontalLayoutGroup",
+     "padding": {
+      "left": 0,
+      "right": 0,
+      "top": 0,
+      "bottom": 0
+     },
+     "childAlignment": "MiddleCenter",
+     "spacing": 0.0,
+     "childControlWidth": 1,
+     "childControlHeight": 0,
+     "childForceExpandWidth": 0,
+     "childForceExpandHeight": 0,
+     "childScaleWidth": 0,
+     "childScaleHeight": 0,
+     "reverseArrangement": 0
+    },
+    "fields": {
+     "m_Padding": {
+      "m_Left": 0,
+      "m_Right": 0,
+      "m_Top": 0,
+      "m_Bottom": 0
+     },
+     "m_ChildAlignment": 4,
+     "m_Spacing": 0.0,
+     "m_ChildForceExpandWidth": 0,
+     "m_ChildForceExpandHeight": 0,
+     "m_ChildControlWidth": 1,
+     "m_ChildControlHeight": 0,
+     "m_ChildScaleWidth": 0,
+     "m_ChildScaleHeight": 0,
+     "m_ReverseArrangement": 0
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "Image",
+    "active": true,
+    "layer": 0,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      0.0,
+      0.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      512.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImage",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": true,
+       "runtimeSprites": {
+        "SpriteName": {
+         "name": "RaidCurrencyForge.forge_green",
+         "texture": "RaidCurrencyForge",
+         "resourcesPath": "UI/Atlases/",
+         "resolved": true
+        }
+       },
+       "sprite": "RaidCurrencyForge.forge_green",
+       "texture": "RaidCurrencyForge",
+       "spriteSource": "runtime:_SpriteName",
+       "spriteInfo": {
+        "type": "Sprite",
+        "name": "RaidCurrencyForge.forge_green",
+        "texture": "RaidCurrencyForge",
+        "pack": "ZONE_RAID",
+        "png": "tex/ZONE_RAID/RaidCurrencyForge.png",
+        "textureRectTopLeft": [
+         2,
+         1032,
+         512,
+         512
+        ],
+        "pivot": [
+         0.5,
+         0.5
+        ],
+        "source": "sprites.json (bundle)"
+       },
+       "type": "simple",
+       "preserveAspect": true,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 1,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "UI/Atlases/",
+       "_SpriteName": "RaidCurrencyForge.forge_green"
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "LayoutElement",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "IgnoreLayout": 0,
+       "MinWidth": -1.0,
+       "MinHeight": -1.0,
+       "PreferredWidth": 512.0,
+       "PreferredHeight": 512.0,
+       "FlexibleWidth": -1.0,
+       "FlexibleHeight": -1.0
+      },
+      "fields": {
+       "m_IgnoreLayout": 0,
+       "m_MinWidth": -1.0,
+       "m_MinHeight": -1.0,
+       "m_PreferredWidth": 512.0,
+       "m_PreferredHeight": 512.0,
+       "m_FlexibleWidth": -1.0,
+       "m_FlexibleHeight": -1.0,
+       "m_LayoutPriority": 1
+      }
+     }
+    ]
+   },
+   {
+    "name": "Text",
+    "active": true,
+    "layer": 0,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      0.0,
+      0.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      175.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "Text",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "color": [
+        0.9961,
+        0.9843,
+        0.7843,
+        1.0
+       ],
+       "raycastTarget": true,
+       "text": "2000000",
+       "font": "majallab",
+       "fontSize": 96,
+       "fontStyle": "Bold",
+       "alignment": "MiddleLeft",
+       "bestFit": true,
+       "minSize": 8,
+       "maxSize": 215,
+       "richText": true,
+       "horizontalOverflow": "Wrap",
+       "verticalOverflow": "Truncate",
+       "lineSpacing": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 0.9961,
+        "g": 0.9843,
+        "b": 0.7843,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_FontData": {
+        "m_Font": {
+         "type": "Font",
+         "name": "majallab",
+         "file": "sharedassets0.assets"
+        },
+        "m_FontSize": 96,
+        "m_FontStyle": 1,
+        "m_BestFit": 1,
+        "m_MinSize": 8,
+        "m_MaxSize": 215,
+        "m_Alignment": 3,
+        "m_AlignByGeometry": 1,
+        "m_RichText": 1,
+        "m_HorizontalOverflow": 0,
+        "m_VerticalOverflow": 0,
+        "m_LineSpacing": 1.0
+       },
+       "m_Text": "2000000"
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

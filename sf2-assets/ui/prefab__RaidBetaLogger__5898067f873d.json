@@ -1,0 +1,1165 @@
+{
+ "source": "5898067f873dc0643a39b61490fbaf7d",
+ "pathID": 10,
+ "root": {
+  "name": "RaidBetaLogger",
+  "active": true,
+  "layer": 5,
+  "transform": {
+   "localPosition": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "RaidBetaLogger",
+    "namespace": "Nekki.Utils",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_userReportButton": {
+      "type": "Button",
+      "path": "RaidBetaLogger/UIRoot/Mover/Button"
+     },
+     "_feedbackRoot": {
+      "type": "GameObject",
+      "path": "RaidBetaLogger/UIRoot/Mover/Feedback"
+     },
+     "_exceptionDetectedRoot": {
+      "type": "GameObject",
+      "path": "RaidBetaLogger/UIRoot/Mover/ExcInfo"
+     },
+     "_feedback": {
+      "type": "Text",
+      "path": "RaidBetaLogger/UIRoot/Mover/Feedback/Text"
+     },
+     "_rootUI": {
+      "type": "GameObject",
+      "path": "RaidBetaLogger/UIRoot"
+     },
+     "_mover": {
+      "type": "RectTransform",
+      "path": "RaidBetaLogger/UIRoot/Mover"
+     },
+     "SendDetailedLogInDebug": 0,
+     "LastSendDumpFileName": ""
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "UIRoot",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      0.0,
+      0.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.0,
+      0.0
+     ],
+     "localScale": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "Canvas",
+      "renderMode": "ScreenSpaceOverlay",
+      "enabled": true,
+      "sortingOrder": 32000,
+      "overrideSorting": false,
+      "pixelPerfect": false,
+      "planeDistance": 100.0,
+      "sortingLayerID": 0,
+      "camera": null
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "CanvasScaler",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "uiScaleMode": "ScaleWithScreenSize",
+       "referenceResolution": [
+        800.0,
+        1536.0
+       ],
+       "screenMatchMode": "MatchWidthOrHeight",
+       "matchWidthOrHeight": 1.0,
+       "scaleFactor": 1.0,
+       "referencePixelsPerUnit": 100.0
+      },
+      "fields": {
+       "m_UiScaleMode": 1,
+       "m_ReferencePixelsPerUnit": 100.0,
+       "m_ScaleFactor": 1.0,
+       "m_ReferenceResolution": {
+        "x": 800.0,
+        "y": 1536.0
+       },
+       "m_ScreenMatchMode": 0,
+       "m_MatchWidthOrHeight": 1.0,
+       "m_PhysicalUnit": 3,
+       "m_FallbackScreenDPI": 96.0,
+       "m_DefaultSpriteDPI": 96.0,
+       "m_DynamicPixelsPerUnit": 1.0,
+       "m_PresetInfoIsWorld": 0
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "GraphicRaycaster",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "fields": {
+       "m_IgnoreReversedGraphics": 1,
+       "m_BlockingObjects": 0,
+       "m_BlockingMask": {
+        "m_Bits": 4294967295
+       }
+      }
+     }
+    ],
+    "children": [
+     {
+      "name": "Mover",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        1.0,
+        0.0
+       ],
+       "anchorMax": [
+        1.0,
+        0.0
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        880.0,
+        150.0
+       ],
+       "pivot": [
+        1.0,
+        0.0
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "children": [
+       {
+        "name": "Button",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.5,
+          0.5
+         ],
+         "anchorMax": [
+          0.5,
+          0.5
+         ],
+         "anchoredPosition": [
+          353.0062,
+          0.0
+         ],
+         "sizeDelta": [
+          150.0,
+          140.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "Button",
+          "namespace": "UnityEngine.UI",
+          "assembly": "UnityEngine.UI",
+          "enabled": true,
+          "ui": {
+           "interactable": true,
+           "transition": "ColorTint",
+           "targetGraphic": {
+            "type": "Image",
+            "path": "RaidBetaLogger/UIRoot/Mover/Button"
+           },
+           "colors": {
+            "m_NormalColor": [
+             1.0,
+             1.0,
+             1.0,
+             1.0
+            ],
+            "m_HighlightedColor": [
+             0.9608,
+             0.9608,
+             0.9608,
+             1.0
+            ],
+            "m_PressedColor": [
+             0.7843,
+             0.7843,
+             0.7843,
+             1.0
+            ],
+            "m_SelectedColor": [
+             0.9608,
+             0.9608,
+             0.9608,
+             1.0
+            ],
+            "m_DisabledColor": [
+             0.7843,
+             0.7843,
+             0.7843,
+             0.502
+            ],
+            "m_ColorMultiplier": 1.0,
+            "m_FadeDuration": 0.1
+           },
+           "onClick": []
+          },
+          "fields": {
+           "m_Navigation": {
+            "m_Mode": 3,
+            "m_WrapAround": 0,
+            "m_SelectOnUp": null,
+            "m_SelectOnDown": null,
+            "m_SelectOnLeft": null,
+            "m_SelectOnRight": null
+           },
+           "m_Transition": 1,
+           "m_Colors": {
+            "m_NormalColor": {
+             "r": 1.0,
+             "g": 1.0,
+             "b": 1.0,
+             "a": 1.0
+            },
+            "m_HighlightedColor": {
+             "r": 0.9608,
+             "g": 0.9608,
+             "b": 0.9608,
+             "a": 1.0
+            },
+            "m_PressedColor": {
+             "r": 0.7843,
+             "g": 0.7843,
+             "b": 0.7843,
+             "a": 1.0
+            },
+            "m_SelectedColor": {
+             "r": 0.9608,
+             "g": 0.9608,
+             "b": 0.9608,
+             "a": 1.0
+            },
+            "m_DisabledColor": {
+             "r": 0.7843,
+             "g": 0.7843,
+             "b": 0.7843,
+             "a": 0.502
+            },
+            "m_ColorMultiplier": 1.0,
+            "m_FadeDuration": 0.1
+           },
+           "m_SpriteState": {
+            "m_HighlightedSprite": null,
+            "m_PressedSprite": null,
+            "m_SelectedSprite": null,
+            "m_DisabledSprite": null
+           },
+           "m_AnimationTriggers": {
+            "m_NormalTrigger": "Normal",
+            "m_HighlightedTrigger": "Highlighted",
+            "m_PressedTrigger": "Pressed",
+            "m_SelectedTrigger": "Highlighted",
+            "m_DisabledTrigger": "Disabled"
+           },
+           "m_Interactable": 1,
+           "m_TargetGraphic": {
+            "type": "Image",
+            "path": "RaidBetaLogger/UIRoot/Mover/Button"
+           },
+           "m_OnClick": {
+            "m_PersistentCalls": {
+             "m_Calls": []
+            }
+           }
+          }
+         },
+         {
+          "type": "MonoBehaviour",
+          "class": "Image",
+          "namespace": "UnityEngine.UI",
+          "assembly": "UnityEngine.UI",
+          "enabled": true,
+          "ui": {
+           "color": [
+            0.0,
+            0.3643,
+            0.6431,
+            1.0
+           ],
+           "raycastTarget": true,
+           "sprite": "UISprite",
+           "texture": "UISprite",
+           "spriteSource": "m_Sprite",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "UISprite",
+            "file": "0000000000000000f000000000000000",
+            "texture": "UISprite",
+            "textureSize": [
+             32,
+             32
+            ],
+            "png": "tex/APK/UISprite.png",
+            "textureRect": [
+             0.0268,
+             0.0513,
+             31.9465,
+             31.8974
+            ],
+            "rect": [
+             0.0,
+             0.0,
+             32.0,
+             32.0
+            ],
+            "border": [
+             10.0,
+             10.0,
+             10.0,
+             10.0
+            ],
+            "pivot": [
+             0.5,
+             0.5
+            ],
+            "ppu": 200.0
+           },
+           "type": "sliced",
+           "preserveAspect": false,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 0.0,
+            "g": 0.3643,
+            "b": 0.6431,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 1,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": {
+            "type": "Sprite",
+            "name": "UISprite",
+            "file": "0000000000000000f000000000000000",
+            "texture": "UISprite",
+            "textureSize": [
+             32,
+             32
+            ],
+            "png": "tex/APK/UISprite.png",
+            "textureRect": [
+             0.0268,
+             0.0513,
+             31.9465,
+             31.8974
+            ],
+            "rect": [
+             0.0,
+             0.0,
+             32.0,
+             32.0
+            ],
+            "border": [
+             10.0,
+             10.0,
+             10.0,
+             10.0
+            ],
+            "pivot": [
+             0.5,
+             0.5
+            ],
+            "ppu": 200.0
+           },
+           "m_Type": 1,
+           "m_PreserveAspect": 0,
+           "m_FillCenter": 1,
+           "m_FillMethod": 4,
+           "m_FillAmount": 1.0,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0
+          }
+         }
+        ],
+        "children": [
+         {
+          "name": "Text",
+          "active": true,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.0,
+            0.0
+           ],
+           "anchorMax": [
+            1.0,
+            1.0
+           ],
+           "anchoredPosition": [
+            0.0,
+            0.0
+           ],
+           "sizeDelta": [
+            -20.0,
+            -20.0
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "localScale": [
+            1.0,
+            1.0,
+            1.0
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "Text",
+            "namespace": "UnityEngine.UI",
+            "assembly": "UnityEngine.UI",
+            "enabled": true,
+            "ui": {
+             "color": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+             ],
+             "raycastTarget": false,
+             "text": "Send Logs",
+             "font": "LegacyRuntime",
+             "fontSize": 200,
+             "fontStyle": "Bold",
+             "alignment": "MiddleCenter",
+             "bestFit": true,
+             "minSize": 2,
+             "maxSize": 300,
+             "richText": false,
+             "horizontalOverflow": "Wrap",
+             "verticalOverflow": "Truncate",
+             "lineSpacing": 1.0
+            },
+            "fields": {
+             "m_Material": null,
+             "m_Color": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+             },
+             "m_RaycastTarget": 0,
+             "m_RaycastPadding": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 0.0
+             },
+             "m_Maskable": 1,
+             "m_FontData": {
+              "m_Font": {
+               "type": "Font",
+               "name": "LegacyRuntime",
+               "file": "unity default resources"
+              },
+              "m_FontSize": 200,
+              "m_FontStyle": 1,
+              "m_BestFit": 1,
+              "m_MinSize": 2,
+              "m_MaxSize": 300,
+              "m_Alignment": 4,
+              "m_AlignByGeometry": 0,
+              "m_RichText": 0,
+              "m_HorizontalOverflow": 0,
+              "m_VerticalOverflow": 0,
+              "m_LineSpacing": 1.0
+             },
+             "m_Text": "Send Logs"
+            }
+           },
+           {
+            "type": "MonoBehaviour",
+            "class": "Outline",
+            "namespace": "UnityEngine.UI",
+            "assembly": "UnityEngine.UI",
+            "enabled": true,
+            "ui": {
+             "effectColor": [
+              0.0,
+              0.0,
+              0.0,
+              0.5
+             ],
+             "effectDistance": [
+              2.0,
+              2.0
+             ]
+            },
+            "fields": {
+             "m_EffectColor": {
+              "r": 0.0,
+              "g": 0.0,
+              "b": 0.0,
+              "a": 0.5
+             },
+             "m_EffectDistance": {
+              "x": 2.0,
+              "y": 2.0
+             },
+             "m_UseGraphicAlpha": 1
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "name": "Feedback",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.5,
+          0.5
+         ],
+         "anchorMax": [
+          0.5,
+          0.5
+         ],
+         "anchoredPosition": [
+          23.0,
+          0.0
+         ],
+         "sizeDelta": [
+          500.0,
+          140.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "Image",
+          "namespace": "UnityEngine.UI",
+          "assembly": "UnityEngine.UI",
+          "enabled": true,
+          "ui": {
+           "color": [
+            0.2358,
+            0.2358,
+            0.2358,
+            0.7608
+           ],
+           "raycastTarget": false,
+           "sprite": "UISprite",
+           "texture": "UISprite",
+           "spriteSource": "m_Sprite",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "UISprite",
+            "file": "0000000000000000f000000000000000",
+            "texture": "UISprite",
+            "textureSize": [
+             32,
+             32
+            ],
+            "png": "tex/APK/UISprite.png",
+            "textureRect": [
+             0.0268,
+             0.0513,
+             31.9465,
+             31.8974
+            ],
+            "rect": [
+             0.0,
+             0.0,
+             32.0,
+             32.0
+            ],
+            "border": [
+             10.0,
+             10.0,
+             10.0,
+             10.0
+            ],
+            "pivot": [
+             0.5,
+             0.5
+            ],
+            "ppu": 200.0
+           },
+           "type": "sliced",
+           "preserveAspect": false,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 0.2358,
+            "g": 0.2358,
+            "b": 0.2358,
+            "a": 0.7608
+           },
+           "m_RaycastTarget": 0,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": {
+            "type": "Sprite",
+            "name": "UISprite",
+            "file": "0000000000000000f000000000000000",
+            "texture": "UISprite",
+            "textureSize": [
+             32,
+             32
+            ],
+            "png": "tex/APK/UISprite.png",
+            "textureRect": [
+             0.0268,
+             0.0513,
+             31.9465,
+             31.8974
+            ],
+            "rect": [
+             0.0,
+             0.0,
+             32.0,
+             32.0
+            ],
+            "border": [
+             10.0,
+             10.0,
+             10.0,
+             10.0
+            ],
+            "pivot": [
+             0.5,
+             0.5
+            ],
+            "ppu": 200.0
+           },
+           "m_Type": 1,
+           "m_PreserveAspect": 0,
+           "m_FillCenter": 1,
+           "m_FillMethod": 4,
+           "m_FillAmount": 1.0,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0
+          }
+         }
+        ],
+        "children": [
+         {
+          "name": "Text",
+          "active": true,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.0,
+            0.0
+           ],
+           "anchorMax": [
+            1.0,
+            1.0
+           ],
+           "anchoredPosition": [
+            0.0,
+            0.0
+           ],
+           "sizeDelta": [
+            -20.0,
+            0.0
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "localScale": [
+            1.0,
+            1.0,
+            1.0
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "Text",
+            "namespace": "UnityEngine.UI",
+            "assembly": "UnityEngine.UI",
+            "enabled": true,
+            "ui": {
+             "color": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+             ],
+             "raycastTarget": false,
+             "text": "Sent log to server key = \nAAAA_bbbb_90909099\n9999999999:9999999999",
+             "font": "LegacyRuntime",
+             "fontSize": 200,
+             "fontStyle": "Bold",
+             "alignment": "MiddleCenter",
+             "bestFit": true,
+             "minSize": 2,
+             "maxSize": 300,
+             "richText": false,
+             "horizontalOverflow": "Wrap",
+             "verticalOverflow": "Truncate",
+             "lineSpacing": 1.0
+            },
+            "fields": {
+             "m_Material": null,
+             "m_Color": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+             },
+             "m_RaycastTarget": 0,
+             "m_RaycastPadding": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 0.0
+             },
+             "m_Maskable": 1,
+             "m_FontData": {
+              "m_Font": {
+               "type": "Font",
+               "name": "LegacyRuntime",
+               "file": "unity default resources"
+              },
+              "m_FontSize": 200,
+              "m_FontStyle": 1,
+              "m_BestFit": 1,
+              "m_MinSize": 2,
+              "m_MaxSize": 300,
+              "m_Alignment": 4,
+              "m_AlignByGeometry": 0,
+              "m_RichText": 0,
+              "m_HorizontalOverflow": 0,
+              "m_VerticalOverflow": 0,
+              "m_LineSpacing": 1.0
+             },
+             "m_Text": "Sent log to server key = \nAAAA_bbbb_90909099\n9999999999:9999999999"
+            }
+           },
+           {
+            "type": "MonoBehaviour",
+            "class": "Outline",
+            "namespace": "UnityEngine.UI",
+            "assembly": "UnityEngine.UI",
+            "enabled": true,
+            "ui": {
+             "effectColor": [
+              0.0,
+              0.0,
+              0.0,
+              0.5
+             ],
+             "effectDistance": [
+              2.0,
+              2.0
+             ]
+            },
+            "fields": {
+             "m_EffectColor": {
+              "r": 0.0,
+              "g": 0.0,
+              "b": 0.0,
+              "a": 0.5
+             },
+             "m_EffectDistance": {
+              "x": 2.0,
+              "y": 2.0
+             },
+             "m_UseGraphicAlpha": 1
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "name": "ExcInfo",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.5,
+          0.5
+         ],
+         "anchorMax": [
+          0.5,
+          0.5
+         ],
+         "anchoredPosition": [
+          -326.9938,
+          0.0
+         ],
+         "sizeDelta": [
+          200.0,
+          140.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "Image",
+          "namespace": "UnityEngine.UI",
+          "assembly": "UnityEngine.UI",
+          "enabled": true,
+          "ui": {
+           "color": [
+            1.0,
+            0.0,
+            0.0,
+            0.3725
+           ],
+           "raycastTarget": false,
+           "sprite": "UISprite",
+           "texture": "UISprite",
+           "spriteSource": "m_Sprite",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "UISprite",
+            "file": "0000000000000000f000000000000000",
+            "texture": "UISprite",
+            "textureSize": [
+             32,
+             32
+            ],
+            "png": "tex/APK/UISprite.png",
+            "textureRect": [
+             0.0268,
+             0.0513,
+             31.9465,
+             31.8974
+            ],
+            "rect": [
+             0.0,
+             0.0,
+             32.0,
+             32.0
+            ],
+            "border": [
+             10.0,
+             10.0,
+             10.0,
+             10.0
+            ],
+            "pivot": [
+             0.5,
+             0.5
+            ],
+            "ppu": 200.0
+           },
+           "type": "sliced",
+           "preserveAspect": false,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.3725
+           },
+           "m_RaycastTarget": 0,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": {
+            "type": "Sprite",
+            "name": "UISprite",
+            "file": "0000000000000000f000000000000000",
+            "texture": "UISprite",
+            "textureSize": [
+             32,
+             32
+            ],
+            "png": "tex/APK/UISprite.png",
+            "textureRect": [
+             0.0268,
+             0.0513,
+             31.9465,
+             31.8974
+            ],
+            "rect": [
+             0.0,
+             0.0,
+             32.0,
+             32.0
+            ],
+            "border": [
+             10.0,
+             10.0,
+             10.0,
+             10.0
+            ],
+            "pivot": [
+             0.5,
+             0.5
+            ],
+            "ppu": 200.0
+           },
+           "m_Type": 1,
+           "m_PreserveAspect": 0,
+           "m_FillCenter": 1,
+           "m_FillMethod": 4,
+           "m_FillAmount": 1.0,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0
+          }
+         }
+        ],
+        "children": [
+         {
+          "name": "Text",
+          "active": true,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.0,
+            0.0
+           ],
+           "anchorMax": [
+            1.0,
+            1.0
+           ],
+           "anchoredPosition": [
+            0.0,
+            0.0
+           ],
+           "sizeDelta": [
+            -20.0,
+            -20.0
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "localScale": [
+            1.0,
+            1.0,
+            1.0
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "Text",
+            "namespace": "UnityEngine.UI",
+            "assembly": "UnityEngine.UI",
+            "enabled": true,
+            "ui": {
+             "color": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+             ],
+             "raycastTarget": false,
+             "text": "Exception raised!\nLog sent",
+             "font": "LegacyRuntime",
+             "fontSize": 200,
+             "fontStyle": "Bold",
+             "alignment": "MiddleCenter",
+             "bestFit": true,
+             "minSize": 2,
+             "maxSize": 300,
+             "richText": false,
+             "horizontalOverflow": "Wrap",
+             "verticalOverflow": "Truncate",
+             "lineSpacing": 1.0
+            },
+            "fields": {
+             "m_Material": null,
+             "m_Color": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+             },
+             "m_RaycastTarget": 0,
+             "m_RaycastPadding": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 0.0
+             },
+             "m_Maskable": 1,
+             "m_FontData": {
+              "m_Font": {
+               "type": "Font",
+               "name": "LegacyRuntime",
+               "file": "unity default resources"
+              },
+              "m_FontSize": 200,
+              "m_FontStyle": 1,
+              "m_BestFit": 1,
+              "m_MinSize": 2,
+              "m_MaxSize": 300,
+              "m_Alignment": 4,
+              "m_AlignByGeometry": 0,
+              "m_RichText": 0,
+              "m_HorizontalOverflow": 0,
+              "m_VerticalOverflow": 0,
+              "m_LineSpacing": 1.0
+             },
+             "m_Text": "Exception raised!\nLog sent"
+            }
+           },
+           {
+            "type": "MonoBehaviour",
+            "class": "Outline",
+            "namespace": "UnityEngine.UI",
+            "assembly": "UnityEngine.UI",
+            "enabled": true,
+            "ui": {
+             "effectColor": [
+              0.0,
+              0.0,
+              0.0,
+              0.5
+             ],
+             "effectDistance": [
+              2.0,
+              2.0
+             ]
+            },
+            "fields": {
+             "m_EffectColor": {
+              "r": 0.0,
+              "g": 0.0,
+              "b": 0.0,
+              "a": 0.5
+             },
+             "m_EffectDistance": {
+              "x": 2.0,
+              "y": 2.0
+             },
+             "m_UseGraphicAlpha": 1
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

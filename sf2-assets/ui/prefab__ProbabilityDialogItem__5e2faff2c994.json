@@ -1,0 +1,327 @@
+{
+ "source": "5e2faff2c994f46968624d7182e6a91a",
+ "pathID": 7,
+ "root": {
+  "name": "ProbabilityDialogItem",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.0,
+    1.0
+   ],
+   "anchorMax": [
+    0.0,
+    1.0
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    798.0,
+    400.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "NonDrawingGraphic",
+    "namespace": "",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "m_Material": null,
+     "m_Color": {
+      "r": 1.0,
+      "g": 1.0,
+      "b": 1.0,
+      "a": 1.0
+     },
+     "m_RaycastTarget": 1,
+     "m_RaycastPadding": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "w": 0.0
+     },
+     "m_Maskable": 1
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "LayoutElement",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI",
+    "enabled": true,
+    "ui": {
+     "IgnoreLayout": 0,
+     "MinWidth": -1.0,
+     "MinHeight": -1.0,
+     "PreferredWidth": -1.0,
+     "PreferredHeight": -1.0,
+     "FlexibleWidth": -1.0,
+     "FlexibleHeight": 1.0
+    },
+    "fields": {
+     "m_IgnoreLayout": 0,
+     "m_MinWidth": -1.0,
+     "m_MinHeight": -1.0,
+     "m_PreferredWidth": -1.0,
+     "m_PreferredHeight": -1.0,
+     "m_FlexibleWidth": -1.0,
+     "m_FlexibleHeight": 1.0,
+     "m_LayoutPriority": 1
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "ProbabilityDialogItem",
+    "namespace": "Nekki.SF2.GUI.Dialogs",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_Icon": {
+      "type": "ResolutionImage",
+      "path": "ProbabilityDialogItem/Icon"
+     },
+     "_Prob": {
+      "type": "LabelAlias",
+      "path": "ProbabilityDialogItem/Prob"
+     }
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "Icon",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      1.0
+     ],
+     "anchorMax": [
+      0.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      210.0,
+      -200.0
+     ],
+     "sizeDelta": [
+      400.0,
+      400.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImage",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": false,
+       "sprite": null,
+       "texture": null,
+       "spriteSource": null,
+       "spriteInfo": null,
+       "type": "simple",
+       "preserveAspect": true,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 1,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "UI/Items/",
+       "_SpriteName": ""
+      }
+     }
+    ]
+   },
+   {
+    "name": "Prob",
+    "active": true,
+    "layer": 0,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.5
+     ],
+     "anchorMax": [
+      0.0,
+      0.5
+     ],
+     "anchoredPosition": [
+      420.0,
+      0.0
+     ],
+     "sizeDelta": [
+      378.0,
+      300.0
+     ],
+     "pivot": [
+      0.0,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "LabelAlias",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Text",
+       "color": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+       ],
+       "raycastTarget": false,
+       "text": "x5 - 150%\nx6 - 155%\nx7 - 160%",
+       "font": "LegacyRuntime",
+       "fontSize": 85,
+       "fontStyle": "Normal",
+       "alignment": "MiddleLeft",
+       "bestFit": true,
+       "minSize": 0,
+       "maxSize": 85,
+       "richText": true,
+       "horizontalOverflow": "Wrap",
+       "verticalOverflow": "Truncate",
+       "lineSpacing": 1.0,
+       "locKey": null,
+       "toUpperCase": false,
+       "useLocalizationFont": true,
+       "fontType": 0,
+       "labelFontSize": 85,
+       "labelLineSpacing": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_FontData": {
+        "m_Font": {
+         "type": "Font",
+         "name": "LegacyRuntime",
+         "file": "unity default resources"
+        },
+        "m_FontSize": 85,
+        "m_FontStyle": 0,
+        "m_BestFit": 1,
+        "m_MinSize": 0,
+        "m_MaxSize": 85,
+        "m_Alignment": 3,
+        "m_AlignByGeometry": 0,
+        "m_RichText": 1,
+        "m_HorizontalOverflow": 0,
+        "m_VerticalOverflow": 0,
+        "m_LineSpacing": 1.0
+       },
+       "m_Text": "x5 - 150%\nx6 - 155%\nx7 - 160%",
+       "GlyphPrefabs": [],
+       "ForceUseAlignedBestFit": 0,
+       "ForbiddenUseAlignedBestFit": 0,
+       "FitImageLineHeightParam": {
+        "ScaleMaxLineHeightFactor": 1.0,
+        "ApplyToSingleLine": 0,
+        "Enabled": 0
+       },
+       "_useLocalizationFont": 1,
+       "_fontType": 0,
+       "_useLabelFontSize": 1,
+       "_labelFontSize": 85,
+       "_useLabelLineSpacing": 1,
+       "_labelLineSpacing": 1.0,
+       "_Alias": "",
+       "_ToUpperCase": 0
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "ObservableDestroyTrigger",
+      "namespace": "UniRx.Triggers",
+      "assembly": "UniRx",
+      "enabled": true,
+      "fields": {}
+     }
+    ]
+   }
+  ]
+ }
+}

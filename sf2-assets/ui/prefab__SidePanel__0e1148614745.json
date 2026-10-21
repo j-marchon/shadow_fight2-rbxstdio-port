@@ -1,0 +1,905 @@
+{
+ "source": "0e1148614745ef44ab037f8576058b42",
+ "pathID": 14,
+ "root": {
+  "name": "SidePanel",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.5,
+    0.5
+   ],
+   "anchorMax": [
+    0.5,
+    0.5
+   ],
+   "anchoredPosition": [
+    -100.0,
+    13.0
+   ],
+   "sizeDelta": [
+    608.0,
+    866.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 180.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "SidePanel",
+    "namespace": "Nekki.SF2.GUI.Shop",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_ScrollRect": {
+      "type": "SidePanelScroll",
+      "path": "SidePanel"
+     },
+     "_OpenedPosition": {
+      "x": 0.0,
+      "y": 0.0
+     },
+     "_ClosedPosition": {
+      "x": 1.0,
+      "y": 0.0
+     },
+     "_ContentParent": {
+      "type": "RectTransform",
+      "path": "SidePanel/Panel/InfoPanel"
+     },
+     "_CanvasGroup": {
+      "type": "CanvasGroup",
+      "path": "SidePanel/Panel/InfoPanel"
+     },
+     "_MoveButton": {
+      "type": "Button",
+      "path": "SidePanel/Panel/MoveButton"
+     },
+     "_OpenButtonPosition": {
+      "x": 570.0,
+      "y": -3.0
+     },
+     "_CloseButtonPosition": {
+      "x": 605.0,
+      "y": -3.0
+     },
+     "_OpenImage": "",
+     "_CloseImage": "",
+     "_EnableScrolling": 1,
+     "_moveTime": 1.0,
+     "_OnDragBegin": {
+      "m_PersistentCalls": {
+       "m_Calls": []
+      }
+     },
+     "_OnDragEnd": {
+      "m_PersistentCalls": {
+       "m_Calls": []
+      }
+     }
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "SidePanelScroll",
+    "namespace": "Nekki.SF2.GUI",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "m_Content": {
+      "type": "RectTransform",
+      "path": "SidePanel/Panel"
+     },
+     "m_Horizontal": 1,
+     "m_Vertical": 0,
+     "m_MovementType": 2,
+     "m_Elasticity": 0.1,
+     "m_Inertia": 0,
+     "m_DecelerationRate": 0.135,
+     "m_ScrollSensitivity": 1.0,
+     "m_Viewport": null,
+     "m_HorizontalScrollbar": null,
+     "m_VerticalScrollbar": null,
+     "m_HorizontalScrollbarVisibility": 0,
+     "m_VerticalScrollbarVisibility": 0,
+     "m_HorizontalScrollbarSpacing": 0.0,
+     "m_VerticalScrollbarSpacing": 0.0,
+     "m_OnValueChanged": {
+      "m_PersistentCalls": {
+       "m_Calls": [
+        {
+         "m_Target": {
+          "type": "SidePanel",
+          "path": "SidePanel"
+         },
+         "m_TargetAssemblyTypeName": "",
+         "m_MethodName": "OnValueChanged",
+         "m_Mode": 0,
+         "m_Arguments": {
+          "m_ObjectArgument": null,
+          "m_ObjectArgumentAssemblyTypeName": "UnityEngine.Object, UnityEngine",
+          "m_IntArgument": 0,
+          "m_FloatArgument": 0.0,
+          "m_StringArgument": "",
+          "m_BoolArgument": 0
+         },
+         "m_CallState": 2
+        }
+       ]
+      }
+     },
+     "IgnoreDragging": 0,
+     "onScrollDragEnd": {
+      "m_PersistentCalls": {
+       "m_Calls": [
+        {
+         "m_Target": {
+          "type": "SidePanel",
+          "path": "SidePanel"
+         },
+         "m_TargetAssemblyTypeName": "",
+         "m_MethodName": "OnScrollDragEnd",
+         "m_Mode": 0,
+         "m_Arguments": {
+          "m_ObjectArgument": null,
+          "m_ObjectArgumentAssemblyTypeName": "UnityEngine.Object, UnityEngine",
+          "m_IntArgument": 0,
+          "m_FloatArgument": 0.0,
+          "m_StringArgument": "",
+          "m_BoolArgument": 0
+         },
+         "m_CallState": 2
+        }
+       ]
+      }
+     },
+     "onScrollDragBegin": {
+      "m_PersistentCalls": {
+       "m_Calls": [
+        {
+         "m_Target": {
+          "type": "SidePanel",
+          "path": "SidePanel"
+         },
+         "m_TargetAssemblyTypeName": "",
+         "m_MethodName": "OnScrollDragBegin",
+         "m_Mode": 0,
+         "m_Arguments": {
+          "m_ObjectArgument": null,
+          "m_ObjectArgumentAssemblyTypeName": "UnityEngine.Object, UnityEngine",
+          "m_IntArgument": 0,
+          "m_FloatArgument": 0.0,
+          "m_StringArgument": "",
+          "m_BoolArgument": 0
+         },
+         "m_CallState": 2
+        }
+       ]
+      }
+     }
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "Panel",
+    "active": true,
+    "layer": 0,
+    "rect": {
+     "anchorMin": [
+      0.5,
+      0.5
+     ],
+     "anchorMax": [
+      0.5,
+      0.5
+     ],
+     "anchoredPosition": [
+      -856.0,
+      0.0
+     ],
+     "sizeDelta": [
+      580.0,
+      433.0
+     ],
+     "pivot": [
+      0.0,
+      0.5
+     ],
+     "localScale": [
+      2.0,
+      2.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "Image",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+       ],
+       "raycastTarget": true,
+       "sprite": null,
+       "texture": null,
+       "spriteSource": null,
+       "spriteInfo": null,
+       "type": "simple",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 0.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0
+      }
+     }
+    ],
+    "children": [
+     {
+      "name": "MoveButton",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        315.0,
+        44.0
+       ],
+       "sizeDelta": [
+        110.0,
+        150.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        0.5,
+        0.5,
+        1.0
+       ],
+       "rotationZ": 180.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImage",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": true,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "ShopPieces.Left_flag_properties_none",
+           "texture": "ShopPieces",
+           "resourcesPath": "UI/Atlases/",
+           "resolved": true
+          }
+         },
+         "sprite": "ShopPieces.Left_flag_properties_none",
+         "texture": "ShopPieces",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "ShopPieces.Left_flag_properties_none",
+          "file": "5d78e91ec3d5f49a3bbb8096208519aa",
+          "texture": "ShopPieces",
+          "textureSize": [
+           1024,
+           2048
+          ],
+          "png": "tex/APK/ShopPieces.png",
+          "textureRect": [
+           297.0,
+           1896.0,
+           110.0,
+           150.0
+          ],
+          "rect": [
+           297.0,
+           1896.0,
+           110.0,
+           150.0
+          ],
+          "pivot": [
+           0.5,
+           0.5
+          ],
+          "ppu": 100.0
+         },
+         "type": "simple",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 1,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "UI/Atlases/",
+         "_SpriteName": "ShopPieces.Left_flag_properties_none"
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "Button",
+        "namespace": "UnityEngine.UI",
+        "assembly": "UnityEngine.UI",
+        "enabled": true,
+        "ui": {
+         "interactable": true,
+         "transition": "SpriteSwap",
+         "targetGraphic": {
+          "type": "ResolutionImage",
+          "path": "SidePanel/Panel/MoveButton"
+         },
+         "spriteState": {
+          "m_HighlightedSprite": null,
+          "m_PressedSprite": null,
+          "m_SelectedSprite": null,
+          "m_DisabledSprite": null
+         },
+         "onClick": [
+          {
+           "target": {
+            "type": "SidePanel",
+            "path": "SidePanel"
+           },
+           "method": "OnClick",
+           "arg": null
+          }
+         ]
+        },
+        "fields": {
+         "m_Navigation": {
+          "m_Mode": 3,
+          "m_WrapAround": 0,
+          "m_SelectOnUp": null,
+          "m_SelectOnDown": null,
+          "m_SelectOnLeft": null,
+          "m_SelectOnRight": null
+         },
+         "m_Transition": 2,
+         "m_Colors": {
+          "m_NormalColor": {
+           "r": 1.0,
+           "g": 1.0,
+           "b": 1.0,
+           "a": 1.0
+          },
+          "m_HighlightedColor": {
+           "r": 0.9608,
+           "g": 0.9608,
+           "b": 0.9608,
+           "a": 1.0
+          },
+          "m_PressedColor": {
+           "r": 0.7843,
+           "g": 0.7843,
+           "b": 0.7843,
+           "a": 1.0
+          },
+          "m_SelectedColor": {
+           "r": 0.9608,
+           "g": 0.9608,
+           "b": 0.9608,
+           "a": 1.0
+          },
+          "m_DisabledColor": {
+           "r": 0.7843,
+           "g": 0.7843,
+           "b": 0.7843,
+           "a": 0.502
+          },
+          "m_ColorMultiplier": 1.0,
+          "m_FadeDuration": 0.1
+         },
+         "m_SpriteState": {
+          "m_HighlightedSprite": null,
+          "m_PressedSprite": null,
+          "m_SelectedSprite": null,
+          "m_DisabledSprite": null
+         },
+         "m_AnimationTriggers": {
+          "m_NormalTrigger": "Normal",
+          "m_HighlightedTrigger": "Highlighted",
+          "m_PressedTrigger": "Pressed",
+          "m_SelectedTrigger": "Highlighted",
+          "m_DisabledTrigger": "Disabled"
+         },
+         "m_Interactable": 1,
+         "m_TargetGraphic": {
+          "type": "ResolutionImage",
+          "path": "SidePanel/Panel/MoveButton"
+         },
+         "m_OnClick": {
+          "m_PersistentCalls": {
+           "m_Calls": [
+            {
+             "m_Target": {
+              "type": "SidePanel",
+              "path": "SidePanel"
+             },
+             "m_TargetAssemblyTypeName": "",
+             "m_MethodName": "OnClick",
+             "m_Mode": 1,
+             "m_Arguments": {
+              "m_ObjectArgument": null,
+              "m_ObjectArgumentAssemblyTypeName": "UnityEngine.Object, UnityEngine",
+              "m_IntArgument": 0,
+              "m_FloatArgument": 0.0,
+              "m_StringArgument": "",
+              "m_BoolArgument": 0
+             },
+             "m_CallState": 2
+            }
+           ]
+          }
+         }
+        }
+       }
+      ]
+     },
+     {
+      "name": "Gradient_Top",
+      "active": true,
+      "layer": 0,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        148.0,
+        -181.0
+       ],
+       "sizeDelta": [
+        255.0,
+        48.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        -1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImage",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": false,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "ShopPieces.alpha-gradient_up",
+           "texture": "ShopPieces",
+           "resourcesPath": "UI/Atlases/",
+           "resolved": true
+          }
+         },
+         "sprite": "ShopPieces.alpha-gradient_up",
+         "texture": "ShopPieces",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "ShopPieces.alpha-gradient_up",
+          "file": "5d78e91ec3d5f49a3bbb8096208519aa",
+          "texture": "ShopPieces",
+          "textureSize": [
+           1024,
+           2048
+          ],
+          "png": "tex/APK/ShopPieces.png",
+          "textureRect": [
+           2.0,
+           1918.0,
+           1.0,
+           128.0
+          ],
+          "rect": [
+           2.0,
+           1918.0,
+           1.0,
+           128.0
+          ],
+          "pivot": [
+           0.5,
+           0.5
+          ],
+          "ppu": 100.0
+         },
+         "type": "simple",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "UI/Atlases/",
+         "_SpriteName": "ShopPieces.alpha-gradient_up"
+        }
+       }
+      ]
+     },
+     {
+      "name": "Gradient_Bottom",
+      "active": true,
+      "layer": 0,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        148.0,
+        181.0
+       ],
+       "sizeDelta": [
+        255.0,
+        48.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImage",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": false,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "ShopPieces.alpha-gradient_up",
+           "texture": "ShopPieces",
+           "resourcesPath": "UI/Atlases/",
+           "resolved": true
+          }
+         },
+         "sprite": "ShopPieces.alpha-gradient_up",
+         "texture": "ShopPieces",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "ShopPieces.alpha-gradient_up",
+          "file": "5d78e91ec3d5f49a3bbb8096208519aa",
+          "texture": "ShopPieces",
+          "textureSize": [
+           1024,
+           2048
+          ],
+          "png": "tex/APK/ShopPieces.png",
+          "textureRect": [
+           2.0,
+           1918.0,
+           1.0,
+           128.0
+          ],
+          "rect": [
+           2.0,
+           1918.0,
+           1.0,
+           128.0
+          ],
+          "pivot": [
+           0.5,
+           0.5
+          ],
+          "ppu": 100.0
+         },
+         "type": "simple",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "UI/Atlases/",
+         "_SpriteName": "ShopPieces.alpha-gradient_up"
+        }
+       }
+      ]
+     },
+     {
+      "name": "InfoPanel",
+      "active": false,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        -14.0,
+        0.0
+       ],
+       "sizeDelta": [
+        608.0,
+        866.0
+       ],
+       "pivot": [
+        0.0,
+        0.5
+       ],
+       "localScale": [
+        0.5,
+        0.5,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImage",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": true,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "ShopPieces.Info_Panel",
+           "texture": "ShopPieces",
+           "resourcesPath": "UI/Atlases/",
+           "resolved": true
+          }
+         },
+         "sprite": "ShopPieces.Info_Panel",
+         "texture": "ShopPieces",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "ShopPieces.Info_Panel",
+          "file": "5d78e91ec3d5f49a3bbb8096208519aa",
+          "texture": "ShopPieces",
+          "textureSize": [
+           1024,
+           2048
+          ],
+          "png": "tex/APK/ShopPieces.png",
+          "textureRect": [
+           2.0,
+           639.0,
+           608.0,
+           866.0
+          ],
+          "rect": [
+           2.0,
+           639.0,
+           608.0,
+           866.0
+          ],
+          "pivot": [
+           0.5,
+           0.5
+          ],
+          "ppu": 100.0
+         },
+         "type": "simple",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 1,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "UI/Atlases/",
+         "_SpriteName": "ShopPieces.Info_Panel"
+        }
+       },
+       {
+        "type": "CanvasGroup",
+        "alpha": 1.0,
+        "interactable": true,
+        "blocksRaycasts": false,
+        "ignoreParentGroups": false
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

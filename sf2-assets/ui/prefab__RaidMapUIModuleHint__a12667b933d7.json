@@ -1,0 +1,472 @@
+{
+ "source": "a12667b933d7aa54cbd171648718eb14",
+ "pathID": 8,
+ "root": {
+  "name": "RaidMapUIModuleHint",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    1.0,
+    0.0
+   ],
+   "anchorMax": [
+    1.0,
+    0.0
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    50.0,
+    50.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "HintBoxAutoKilled",
+    "namespace": "Nekki.SF2.GUI",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_RectTransform": {
+      "type": "RectTransform",
+      "path": "RaidMapUIModuleHint"
+     },
+     "_Arrow": {
+      "type": "ResolutionImage",
+      "path": "RaidMapUIModuleHint/Arrow"
+     },
+     "_Title": null,
+     "_Description": {
+      "type": "LabelAlias",
+      "path": "RaidMapUIModuleHint/Background/Description"
+     },
+     "_BGTransform": {
+      "type": "RectTransform",
+      "path": "RaidMapUIModuleHint/Background"
+     },
+     "_BGLayout": null,
+     "_AsianLanguagesLineSpacingMultipler": 1.0
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "Background",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      -319.0,
+      114.0
+     ],
+     "sizeDelta": [
+      1641.0,
+      312.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      0.5,
+      0.5,
+      0.5
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImage",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": true,
+       "runtimeSprites": {
+        "SpriteName": {
+         "name": "Hints.Base",
+         "texture": "Hints",
+         "resourcesPath": "UI/Atlases/",
+         "resolved": true
+        }
+       },
+       "sprite": "Hints.Base",
+       "texture": "Hints",
+       "spriteSource": "runtime:_SpriteName",
+       "spriteInfo": {
+        "type": "Sprite",
+        "name": "Hints.Base",
+        "file": "9b45a8d22d41a9744be62c0ff21f54ea",
+        "texture": "Hints",
+        "textureSize": [
+         128,
+         256
+        ],
+        "png": "tex/APK/Hints.png",
+        "textureRect": [
+         1.0,
+         115.0,
+         71.0,
+         71.0
+        ],
+        "rect": [
+         1.0,
+         115.0,
+         71.0,
+         71.0
+        ],
+        "border": [
+         35.0,
+         35.0,
+         35.0,
+         35.0
+        ],
+        "pivot": [
+         0.0,
+         0.0
+        ],
+        "ppu": 100.0
+       },
+       "type": "sliced",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 1,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "UI/Atlases/",
+       "_SpriteName": "Hints.Base"
+      }
+     }
+    ],
+    "children": [
+     {
+      "name": "Description",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.0,
+        0.0
+       ],
+       "anchorMax": [
+        1.0,
+        1.0
+       ],
+       "anchoredPosition": [
+        -2.0,
+        -2.0
+       ],
+       "sizeDelta": [
+        -875.0,
+        -212.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        2.0,
+        2.0,
+        2.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "LabelAlias",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Text",
+         "color": [
+          0.1843,
+          0.1451,
+          0.1059,
+          1.0
+         ],
+         "raycastTarget": false,
+         "text": "Победи пятого стража Рыси, чтобы открыть Подземный Мир",
+         "font": "majallab",
+         "fontSize": 70,
+         "fontStyle": "Normal",
+         "alignment": "MiddleCenter",
+         "bestFit": true,
+         "minSize": 7,
+         "maxSize": 70,
+         "richText": true,
+         "horizontalOverflow": "Wrap",
+         "verticalOverflow": "Truncate",
+         "lineSpacing": 0.7,
+         "locKey": "hintZoneRaidLocked",
+         "toUpperCase": false,
+         "useLocalizationFont": true,
+         "fontType": 0,
+         "labelFontSize": 70
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 0.1843,
+          "g": 0.1451,
+          "b": 0.1059,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 0,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_FontData": {
+          "m_Font": {
+           "type": "Font",
+           "name": "majallab",
+           "file": "sharedassets0.assets"
+          },
+          "m_FontSize": 70,
+          "m_FontStyle": 0,
+          "m_BestFit": 1,
+          "m_MinSize": 7,
+          "m_MaxSize": 70,
+          "m_Alignment": 4,
+          "m_AlignByGeometry": 0,
+          "m_RichText": 1,
+          "m_HorizontalOverflow": 0,
+          "m_VerticalOverflow": 0,
+          "m_LineSpacing": 0.7
+         },
+         "m_Text": "Победи пятого стража Рыси, чтобы открыть Подземный Мир",
+         "GlyphPrefabs": [],
+         "ForceUseAlignedBestFit": 0,
+         "ForbiddenUseAlignedBestFit": 0,
+         "FitImageLineHeightParam": {
+          "ScaleMaxLineHeightFactor": 1.1,
+          "ApplyToSingleLine": 0,
+          "Enabled": 1
+         },
+         "_useLocalizationFont": 1,
+         "_fontType": 0,
+         "_useLabelFontSize": 1,
+         "_labelFontSize": 70,
+         "_useLabelLineSpacing": 0,
+         "_labelLineSpacing": 0.0,
+         "_Alias": "hintZoneRaidLocked",
+         "_ToUpperCase": 0
+        }
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Arrow",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      1.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      0.0
+     ],
+     "anchoredPosition": [
+      -24.0998,
+      57.2
+     ],
+     "sizeDelta": [
+      115.0,
+      67.0
+     ],
+     "pivot": [
+      0.5,
+      0.0
+     ],
+     "localScale": [
+      0.5,
+      0.5,
+      0.5
+     ],
+     "rotationZ": 180.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImage",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+       ],
+       "raycastTarget": true,
+       "runtimeSprites": {
+        "SpriteName": {
+         "name": "Hints.Arrow",
+         "texture": "Hints",
+         "resourcesPath": "UI/Atlases/",
+         "resolved": true
+        }
+       },
+       "sprite": "Hints.Arrow",
+       "texture": "Hints",
+       "spriteSource": "runtime:_SpriteName",
+       "spriteInfo": {
+        "type": "Sprite",
+        "name": "Hints.Arrow",
+        "file": "9b45a8d22d41a9744be62c0ff21f54ea",
+        "texture": "Hints",
+        "textureSize": [
+         128,
+         256
+        ],
+        "png": "tex/APK/Hints.png",
+        "textureRect": [
+         1.0,
+         188.0,
+         115.0,
+         67.0
+        ],
+        "rect": [
+         1.0,
+         188.0,
+         115.0,
+         67.0
+        ],
+        "pivot": [
+         0.0,
+         0.0
+        ],
+        "ppu": 100.0
+       },
+       "type": "simple",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "UI/Atlases/",
+       "_SpriteName": "Hints.Arrow"
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "LayoutElement",
+      "namespace": "UnityEngine.UI",
+      "assembly": "UnityEngine.UI",
+      "enabled": true,
+      "ui": {
+       "IgnoreLayout": 1,
+       "MinWidth": -1.0,
+       "MinHeight": -1.0,
+       "PreferredWidth": -1.0,
+       "PreferredHeight": -1.0,
+       "FlexibleWidth": -1.0,
+       "FlexibleHeight": -1.0
+      },
+      "fields": {
+       "m_IgnoreLayout": 1,
+       "m_MinWidth": -1.0,
+       "m_MinHeight": -1.0,
+       "m_PreferredWidth": -1.0,
+       "m_PreferredHeight": -1.0,
+       "m_FlexibleWidth": -1.0,
+       "m_FlexibleHeight": -1.0,
+       "m_LayoutPriority": 1
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

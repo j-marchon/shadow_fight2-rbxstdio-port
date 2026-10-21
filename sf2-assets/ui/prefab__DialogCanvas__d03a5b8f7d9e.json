@@ -1,0 +1,665 @@
+{
+ "source": "d03a5b8f7d9e54f8faca4d11e54a851f",
+ "pathID": 10,
+ "root": {
+  "name": "DialogCanvas",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.0,
+    0.0
+   ],
+   "anchorMax": [
+    0.0,
+    0.0
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    0.0,
+    0.0
+   ],
+   "pivot": [
+    0.0,
+    0.0
+   ],
+   "localScale": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "DialogCanvasController",
+    "namespace": "Nekki.SF2.GUI.Dialogs",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_background": {
+      "type": "ResolutionImage",
+      "path": "DialogCanvas/Image"
+     },
+     "_inputBlocker": {
+      "type": "RectTransform",
+      "path": "DialogCanvas/INPUT BLOCKER"
+     },
+     "_chatHidedMount": {
+      "type": "RectTransform",
+      "path": "DialogCanvas/MountChat Hide"
+     },
+     "_dialogsMount": {
+      "type": "RectTransform",
+      "path": "DialogCanvas/MountDialogs"
+     },
+     "_chatShownMount": {
+      "type": "RectTransform",
+      "path": "DialogCanvas/MountChat Shown"
+     },
+     "_dialogs": [
+      {
+       "Type": 310,
+       "Dialog": {
+        "type": "SettingsDialog",
+        "path": "SettingsDialog"
+       }
+      },
+      {
+       "Type": 320,
+       "Dialog": {
+        "type": "SettingsAdvancedDialog",
+        "path": "SettingsAdvancedDialog"
+       }
+      },
+      {
+       "Type": 330,
+       "Dialog": {
+        "type": "SettingsCloudDialog",
+        "path": "SettingsCloudDialog"
+       }
+      },
+      {
+       "Type": 290,
+       "Dialog": {
+        "type": "StrangerDialog",
+        "path": "StrangerDialog"
+       }
+      },
+      {
+       "Type": 280,
+       "Dialog": {
+        "type": "StoryDialog",
+        "path": "StoryDialog"
+       }
+      },
+      {
+       "Type": 340,
+       "Dialog": {
+        "type": "SimpleDialog",
+        "path": "SimpleDialog"
+       }
+      },
+      {
+       "Type": 350,
+       "Dialog": {
+        "type": "TradeDialog",
+        "path": "TradeDialog"
+       }
+      },
+      {
+       "Type": 150,
+       "Dialog": {
+        "type": "NewsDialog",
+        "path": "NewsDialog"
+       }
+      },
+      {
+       "Type": 40,
+       "Dialog": {
+        "type": "ExitDialog",
+        "path": "ExitDialog"
+       }
+      },
+      {
+       "Type": 10,
+       "Dialog": {
+        "type": "CheckTicketsDialog",
+        "path": "CheckTicketsDialog"
+       }
+      },
+      {
+       "Type": 90,
+       "Dialog": {
+        "type": "LotteryDialog",
+        "path": "LotteryDialog"
+       }
+      },
+      {
+       "Type": 30,
+       "Dialog": {
+        "type": "EnchantDialog",
+        "path": "EnchantDialog"
+       }
+      },
+      {
+       "Type": 80,
+       "Dialog": {
+        "type": "ItemSetDialog",
+        "path": "ItemSetDialog"
+       }
+      },
+      {
+       "Type": 70,
+       "Dialog": {
+        "type": "InputDialog",
+        "path": "InputDialog"
+       }
+      },
+      {
+       "Type": 120,
+       "Dialog": {
+        "type": "MatchingDialog",
+        "path": "MatchingDialog"
+       }
+      },
+      {
+       "Type": 220,
+       "Dialog": {
+        "type": "RaidDailyDialog",
+        "path": "RaidDailyDialog"
+       }
+      },
+      {
+       "Type": 170,
+       "Dialog": {
+        "type": "RaidSimpleDialog",
+        "path": "RaidSimpleDialog"
+       }
+      },
+      {
+       "Type": 210,
+       "Dialog": {
+        "type": "RaidBuyConsumablesDialog",
+        "path": "RaidBuyConsumablesDialog"
+       }
+      },
+      {
+       "Type": 190,
+       "Dialog": {
+        "type": "RaidTopHundredDialog",
+        "path": "RaidTopHundredDialog"
+       }
+      },
+      {
+       "Type": 180,
+       "Dialog": {
+        "type": "RaidLeaguesDialog",
+        "path": "RaidLeaguesDialog"
+       }
+      },
+      {
+       "Type": 60,
+       "Dialog": {
+        "type": "FindClanDialog",
+        "path": "FindClanDialog"
+       }
+      },
+      {
+       "Type": 130,
+       "Dialog": {
+        "type": "MainClanDialog",
+        "path": "MainClanDialog"
+       }
+      },
+      {
+       "Type": 110,
+       "Dialog": {
+        "type": "LeaveClanDialog",
+        "path": "LeaveClanDialog"
+       }
+      },
+      {
+       "Type": 20,
+       "Dialog": {
+        "type": "CreateClanDialog",
+        "path": "CreateClanDialog"
+       }
+      },
+      {
+       "Type": 250,
+       "Dialog": {
+        "type": "ClanEditDialog",
+        "path": "ClanEditDialog"
+       }
+      },
+      {
+       "Type": 260,
+       "Dialog": {
+        "type": "ClanRaidPartyDialog",
+        "path": "ClanRaidPartyDialog"
+       }
+      },
+      {
+       "Type": 240,
+       "Dialog": {
+        "type": "CreateClanRaidDialog",
+        "path": "CreateClanRaidDialog"
+       }
+      },
+      {
+       "Type": 270,
+       "Dialog": {
+        "type": "ScrollDialog",
+        "path": "ScrollDialog"
+       }
+      },
+      {
+       "Type": 200,
+       "Dialog": {
+        "type": "RaidSeasonFinishDialog",
+        "path": "RaidSeasonFinishDialog"
+       }
+      },
+      {
+       "Type": 230,
+       "Dialog": {
+        "type": "RaidShowLootDialog",
+        "path": "RaidShowLootDialog"
+       }
+      },
+      {
+       "Type": 140,
+       "Dialog": {
+        "type": "MultiLineScrollDialog",
+        "path": "MultiLineScrollDialog"
+       }
+      },
+      {
+       "Type": 50,
+       "Dialog": {
+        "type": "EventDialog",
+        "path": "EventDialog"
+       }
+      },
+      {
+       "Type": 100,
+       "Dialog": {
+        "type": "LinkAccountDialog",
+        "path": "LinkAccountDialog"
+       }
+      },
+      {
+       "Type": 160,
+       "Dialog": {
+        "type": "ProbabilityDialog",
+        "path": "ProbabilityDialog"
+       }
+      },
+      {
+       "Type": 300,
+       "Dialog": {
+        "type": "StrangerBigDialog",
+        "path": "StrangerBigDialog"
+       }
+      },
+      {
+       "Type": 360,
+       "Dialog": {
+        "type": "ChooseBuyItemDialog",
+        "path": "ChooseBuyItemDialog"
+       }
+      },
+      {
+       "Type": 370,
+       "Dialog": {
+        "type": "ShowLootDialog",
+        "path": "ShowLootDialog"
+       }
+      },
+      {
+       "Type": 380,
+       "Dialog": {
+        "type": "DialogTMPTest",
+        "path": "DIalogTMPTest"
+       }
+      },
+      {
+       "Type": 390,
+       "Dialog": {
+        "type": "WebViewDialog",
+        "path": "WebViewDialog"
+       }
+      },
+      {
+       "Type": 400,
+       "Dialog": {
+        "type": "LocalDailyDialog",
+        "path": "LocalDailyDialog"
+       }
+      },
+      {
+       "Type": 410,
+       "Dialog": {
+        "type": "LocalDailyProgressDialog",
+        "path": "LocalDailyProgressDialog"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "type": "Canvas",
+    "renderMode": "ScreenSpaceOverlay",
+    "enabled": true,
+    "sortingOrder": 5,
+    "overrideSorting": false,
+    "pixelPerfect": false,
+    "planeDistance": 100.0,
+    "sortingLayerID": 0,
+    "camera": null
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "GraphicRaycaster",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI",
+    "enabled": true,
+    "fields": {
+     "m_IgnoreReversedGraphics": 1,
+     "m_BlockingObjects": 0,
+     "m_BlockingMask": {
+      "m_Bits": 4294967295
+     }
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "CanvasScaler",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI",
+    "enabled": true,
+    "ui": {
+     "uiScaleMode": "ScaleWithScreenSize",
+     "referenceResolution": [
+      800.0,
+      1536.0
+     ],
+     "screenMatchMode": "MatchWidthOrHeight",
+     "matchWidthOrHeight": 1.0,
+     "scaleFactor": 1.0,
+     "referencePixelsPerUnit": 100.0
+    },
+    "fields": {
+     "m_UiScaleMode": 1,
+     "m_ReferencePixelsPerUnit": 100.0,
+     "m_ScaleFactor": 1.0,
+     "m_ReferenceResolution": {
+      "x": 800.0,
+      "y": 1536.0
+     },
+     "m_ScreenMatchMode": 0,
+     "m_MatchWidthOrHeight": 1.0,
+     "m_PhysicalUnit": 3,
+     "m_FallbackScreenDPI": 96.0,
+     "m_DefaultSpriteDPI": 96.0,
+     "m_DynamicPixelsPerUnit": 1.0,
+     "m_PresetInfoIsWorld": 0
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "MountChat Hide",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    }
+   },
+   {
+    "name": "INPUT BLOCKER",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "NonDrawingGraphic",
+      "namespace": "",
+      "assembly": "Root",
+      "enabled": true,
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+       },
+       "m_RaycastTarget": 1,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1
+      }
+     }
+    ]
+   },
+   {
+    "name": "Image",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "ResolutionImage",
+      "namespace": "Nekki.SF2.GUI",
+      "assembly": "Root",
+      "enabled": true,
+      "ui": {
+       "kind": "Image",
+       "color": [
+        0.0,
+        0.0,
+        0.0,
+        0.502
+       ],
+       "raycastTarget": false,
+       "sprite": null,
+       "texture": null,
+       "spriteSource": null,
+       "spriteInfo": null,
+       "type": "simple",
+       "preserveAspect": false,
+       "fillCenter": true,
+       "pixelsPerUnitMultiplier": 1.0
+      },
+      "fields": {
+       "m_Material": null,
+       "m_Color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.502
+       },
+       "m_RaycastTarget": 0,
+       "m_RaycastPadding": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+       },
+       "m_Maskable": 1,
+       "m_Sprite": null,
+       "m_Type": 0,
+       "m_PreserveAspect": 0,
+       "m_FillCenter": 1,
+       "m_FillMethod": 4,
+       "m_FillAmount": 1.0,
+       "m_FillClockwise": 1,
+       "m_FillOrigin": 0,
+       "m_UseSpriteMesh": 0,
+       "m_PixelsPerUnitMultiplier": 1.0,
+       "_TexturePath": "",
+       "_SpriteName": ""
+      }
+     }
+    ]
+   },
+   {
+    "name": "MountDialogs",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    }
+   },
+   {
+    "name": "MountChat Shown",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.0
+     ],
+     "anchorMax": [
+      1.0,
+      1.0
+     ],
+     "anchoredPosition": [
+      0.0,
+      0.0
+     ],
+     "sizeDelta": [
+      0.0,
+      0.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    }
+   }
+  ]
+ }
+}

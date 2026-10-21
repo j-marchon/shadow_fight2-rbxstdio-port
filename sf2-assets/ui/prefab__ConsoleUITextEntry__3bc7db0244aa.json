@@ -1,0 +1,114 @@
+{
+ "source": "3bc7db0244aa24a4da356674d6b7458e",
+ "pathID": 4,
+ "root": {
+  "name": "ConsoleUITextEntry",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.0,
+    0.0
+   ],
+   "anchorMax": [
+    0.0,
+    0.0
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    0.0,
+    0.0
+   ],
+   "pivot": [
+    0.5,
+    1.0
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "Text",
+    "namespace": "UnityEngine.UI",
+    "assembly": "UnityEngine.UI",
+    "enabled": true,
+    "ui": {
+     "color": [
+      0.1961,
+      0.1961,
+      0.1961,
+      1.0
+     ],
+     "raycastTarget": true,
+     "text": "",
+     "font": "LegacyRuntime",
+     "fontSize": 50,
+     "fontStyle": "Normal",
+     "alignment": "MiddleLeft",
+     "bestFit": false,
+     "minSize": 10,
+     "maxSize": 50,
+     "richText": true,
+     "horizontalOverflow": "Wrap",
+     "verticalOverflow": "Overflow",
+     "lineSpacing": 1.0
+    },
+    "fields": {
+     "m_Material": null,
+     "m_Color": {
+      "r": 0.1961,
+      "g": 0.1961,
+      "b": 0.1961,
+      "a": 1.0
+     },
+     "m_RaycastTarget": 1,
+     "m_RaycastPadding": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "w": 0.0
+     },
+     "m_Maskable": 1,
+     "m_FontData": {
+      "m_Font": {
+       "type": "Font",
+       "name": "LegacyRuntime",
+       "file": "unity default resources"
+      },
+      "m_FontSize": 50,
+      "m_FontStyle": 0,
+      "m_BestFit": 0,
+      "m_MinSize": 10,
+      "m_MaxSize": 50,
+      "m_Alignment": 3,
+      "m_AlignByGeometry": 0,
+      "m_RichText": 1,
+      "m_HorizontalOverflow": 0,
+      "m_VerticalOverflow": 1,
+      "m_LineSpacing": 1.0
+     },
+     "m_Text": ""
+    }
+   },
+   {
+    "type": "Canvas",
+    "renderMode": "WorldSpace",
+    "enabled": true,
+    "sortingOrder": 0,
+    "overrideSorting": false,
+    "pixelPerfect": false,
+    "planeDistance": 100.0,
+    "sortingLayerID": 0,
+    "camera": null
+   }
+  ]
+ }
+}

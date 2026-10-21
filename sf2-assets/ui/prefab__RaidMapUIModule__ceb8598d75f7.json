@@ -1,0 +1,3759 @@
+{
+ "source": "ceb8598d75f708448b96acfa56043065",
+ "pathID": 69,
+ "root": {
+  "name": "RaidMapUIModule",
+  "active": true,
+  "layer": 5,
+  "rect": {
+   "anchorMin": [
+    0.0,
+    0.0
+   ],
+   "anchorMax": [
+    1.0,
+    1.0
+   ],
+   "anchoredPosition": [
+    0.0,
+    0.0
+   ],
+   "sizeDelta": [
+    0.0,
+    0.0
+   ],
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "localScale": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rotationZ": 0.0
+  },
+  "components": [
+   {
+    "type": "MonoBehaviour",
+    "class": "RaidMapUIModule",
+    "namespace": "Nekki.SF2.GUI",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_Order": 4,
+     "RaidToggleButton": {
+      "type": "RaidToggleButton",
+      "path": "RaidMapUIModule/RaidSwitch buttons/RaidToggleButton"
+     },
+     "RaidKeysPanel": {
+      "type": "MapCurrencyPanel",
+      "path": "RaidMapUIModule/RaidKeysPanel"
+     },
+     "RaidMapScrollButton": {
+      "type": "ResolutionButton",
+      "path": "RaidMapUIModule/RaidSwitch buttons/RaidMapScrollButton"
+     },
+     "RaidHintPrefab": {
+      "type": "HintBoxAutoKilled",
+      "path": "RaidMapUIModuleHint"
+     },
+     "RaidHintPos": {
+      "type": "RectTransform",
+      "path": "RaidMapUIModule/RaidSwitch buttons"
+     },
+     "_raidDailyQuestsButtonSpawnPos": {
+      "type": "RectTransform",
+      "path": "RaidMapUIModule/RaidDailyQuestsButtonSpawnPos"
+     }
+    }
+   },
+   {
+    "type": "MonoBehaviour",
+    "class": "TutorialNode",
+    "namespace": "Nekki.SF2.GUI.Tutorial",
+    "assembly": "Root",
+    "enabled": true,
+    "fields": {
+     "_ID": "RaidMapUIModule"
+    }
+   }
+  ],
+  "children": [
+   {
+    "name": "RaidDailyQuestsButtonSpawnPos",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      1.0,
+      0.5
+     ],
+     "anchorMax": [
+      1.0,
+      0.5
+     ],
+     "anchoredPosition": [
+      -828.0,
+      496.0
+     ],
+     "sizeDelta": [
+      200.0,
+      200.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    }
+   },
+   {
+    "name": "RaidSwitch buttons",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      1.0,
+      0.5
+     ],
+     "anchorMax": [
+      1.0,
+      0.5
+     ],
+     "anchoredPosition": [
+      -890.0,
+      -536.0
+     ],
+     "sizeDelta": [
+      104.0,
+      101.0
+     ],
+     "pivot": [
+      0.5,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "RaidSwitchButtonsRoot",
+      "namespace": "",
+      "assembly": "Root",
+      "enabled": true,
+      "fields": {
+       "_minRatio_ForPos": 1.3,
+       "_maxRatio_ForPos": 1.5,
+       "_minRatioPosX": -830.0,
+       "_maxRatioPosX": -900.0,
+       "_minRatio_ForScale": 1.3,
+       "_maxRatio_ForScale": 1.45,
+       "_minRatioScale": 0.75,
+       "_maxRatioScale": 1.0
+      }
+     }
+    ],
+    "children": [
+     {
+      "name": "RaidMapScrollButton",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        -84.0
+       ],
+       "sizeDelta": [
+        204.0,
+        197.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionButton",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Button",
+         "runtimeSprites": {
+          "normalSpriteName": {
+           "name": "RaidMap.raid_down_arrow",
+           "texture": "RaidMap",
+           "resourcesPath": "UI/Atlases/",
+           "resolved": true
+          }
+         },
+         "interactable": true,
+         "transition": "ColorTint",
+         "targetGraphic": {
+          "type": "ResolutionImage",
+          "path": "RaidMapUIModule/RaidSwitch buttons/RaidMapScrollButton"
+         },
+         "colors": {
+          "m_NormalColor": [
+           1.0,
+           1.0,
+           1.0,
+           1.0
+          ],
+          "m_HighlightedColor": [
+           0.9608,
+           0.9608,
+           0.9608,
+           1.0
+          ],
+          "m_PressedColor": [
+           0.7843,
+           0.7843,
+           0.7843,
+           1.0
+          ],
+          "m_SelectedColor": [
+           0.9608,
+           0.9608,
+           0.9608,
+           1.0
+          ],
+          "m_DisabledColor": [
+           0.7843,
+           0.7843,
+           0.7843,
+           0.502
+          ],
+          "m_ColorMultiplier": 1.0,
+          "m_FadeDuration": 0.1
+         },
+         "onClick": []
+        },
+        "fields": {
+         "m_Navigation": {
+          "m_Mode": 3,
+          "m_WrapAround": 0,
+          "m_SelectOnUp": null,
+          "m_SelectOnDown": null,
+          "m_SelectOnLeft": null,
+          "m_SelectOnRight": null
+         },
+         "m_Transition": 1,
+         "m_Colors": {
+          "m_NormalColor": {
+           "r": 1.0,
+           "g": 1.0,
+           "b": 1.0,
+           "a": 1.0
+          },
+          "m_HighlightedColor": {
+           "r": 0.9608,
+           "g": 0.9608,
+           "b": 0.9608,
+           "a": 1.0
+          },
+          "m_PressedColor": {
+           "r": 0.7843,
+           "g": 0.7843,
+           "b": 0.7843,
+           "a": 1.0
+          },
+          "m_SelectedColor": {
+           "r": 0.9608,
+           "g": 0.9608,
+           "b": 0.9608,
+           "a": 1.0
+          },
+          "m_DisabledColor": {
+           "r": 0.7843,
+           "g": 0.7843,
+           "b": 0.7843,
+           "a": 0.502
+          },
+          "m_ColorMultiplier": 1.0,
+          "m_FadeDuration": 0.1
+         },
+         "m_SpriteState": {
+          "m_HighlightedSprite": null,
+          "m_PressedSprite": null,
+          "m_SelectedSprite": null,
+          "m_DisabledSprite": null
+         },
+         "m_AnimationTriggers": {
+          "m_NormalTrigger": "Normal",
+          "m_HighlightedTrigger": "Highlighted",
+          "m_PressedTrigger": "Pressed",
+          "m_SelectedTrigger": "Highlighted",
+          "m_DisabledTrigger": "Disabled"
+         },
+         "m_Interactable": 1,
+         "m_TargetGraphic": {
+          "type": "ResolutionImage",
+          "path": "RaidMapUIModule/RaidSwitch buttons/RaidMapScrollButton"
+         },
+         "m_OnClick": {
+          "m_PersistentCalls": {
+           "m_Calls": []
+          }
+         },
+         "FlashingImage": null,
+         "_EnableClickAnimation": 0,
+         "_glowSprite": null,
+         "_WaitBeforeClick": 1,
+         "IsOneShot": 0,
+         "_glowTime": 0.0,
+         "ButtonId": -1,
+         "_normalTexturePath": "UI/Atlases/",
+         "_normalSpriteName": "RaidMap.raid_down_arrow",
+         "_disabledTexturePath": "",
+         "_disabledSpriteName": "",
+         "_highlightedTexturePath": "",
+         "_highlightedSpriteName": "",
+         "_pressedTexturePath": "",
+         "_pressedSpriteName": ""
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "ResolutionImage",
+        "namespace": "Nekki.SF2.GUI",
+        "assembly": "Root",
+        "enabled": true,
+        "ui": {
+         "kind": "Image",
+         "color": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+         ],
+         "raycastTarget": true,
+         "runtimeSprites": {
+          "SpriteName": {
+           "name": "RaidMap.raid_down_arrow",
+           "texture": "RaidMap",
+           "resourcesPath": "UI/Atlases/",
+           "resolved": true
+          }
+         },
+         "sprite": "RaidMap.raid_down_arrow",
+         "texture": "RaidMap",
+         "spriteSource": "runtime:_SpriteName",
+         "spriteInfo": {
+          "type": "Sprite",
+          "name": "RaidMap.raid_down_arrow",
+          "file": "010e8c8f60f2b451eaa4e912476364d1",
+          "texture": "RaidMap",
+          "textureSize": [
+           512,
+           1024
+          ],
+          "png": "tex/APK/RaidMap.png",
+          "textureRect": [
+           209.0,
+           548.0,
+           204.0,
+           197.0
+          ],
+          "rect": [
+           209.0,
+           548.0,
+           204.0,
+           197.0
+          ],
+          "pivot": [
+           0.5,
+           0.5
+          ],
+          "ppu": 100.0
+         },
+         "type": "simple",
+         "preserveAspect": false,
+         "fillCenter": true,
+         "pixelsPerUnitMultiplier": 1.0
+        },
+        "fields": {
+         "m_Material": null,
+         "m_Color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+         },
+         "m_RaycastTarget": 1,
+         "m_RaycastPadding": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 0.0
+         },
+         "m_Maskable": 1,
+         "m_Sprite": null,
+         "m_Type": 0,
+         "m_PreserveAspect": 0,
+         "m_FillCenter": 1,
+         "m_FillMethod": 4,
+         "m_FillAmount": 1.0,
+         "m_FillClockwise": 1,
+         "m_FillOrigin": 0,
+         "m_UseSpriteMesh": 0,
+         "m_PixelsPerUnitMultiplier": 1.0,
+         "_TexturePath": "UI/Atlases/",
+         "_SpriteName": "RaidMap.raid_down_arrow"
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "TutorialNode",
+        "namespace": "Nekki.SF2.GUI.Tutorial",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "_ID": "RaidMapScrollButton"
+        }
+       }
+      ],
+      "children": [
+       {
+        "name": "Additional TouchZone",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.5,
+          0.5
+         ],
+         "anchorMax": [
+          0.5,
+          0.5
+         ],
+         "anchoredPosition": [
+          0.0,
+          0.0
+         ],
+         "sizeDelta": [
+          250.0,
+          250.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "NonDrawingGraphic",
+          "namespace": "",
+          "assembly": "Root",
+          "enabled": true,
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 1,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "name": "RaidToggleButton",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.5,
+        0.5
+       ],
+       "anchorMax": [
+        0.5,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        0.0
+       ],
+       "sizeDelta": [
+        104.0,
+        101.0
+       ],
+       "pivot": [
+        0.5,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "RaidToggleButton",
+        "namespace": "Nekki.SF2.GUI.Map",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "_goToStoryBtn": {
+          "type": "ResolutionButton",
+          "path": "RaidMapUIModule/RaidSwitch buttons/RaidToggleButton/Story"
+         },
+         "_goToRaidBtn": {
+          "type": "ResolutionButton",
+          "path": "RaidMapUIModule/RaidSwitch buttons/RaidToggleButton/Raid"
+         }
+        }
+       },
+       {
+        "type": "MonoBehaviour",
+        "class": "TutorialNode",
+        "namespace": "Nekki.SF2.GUI.Tutorial",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "_ID": "RaidToggleButton"
+        }
+       }
+      ],
+      "children": [
+       {
+        "name": "Story",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.5,
+          0.5
+         ],
+         "anchorMax": [
+          0.5,
+          0.5
+         ],
+         "anchoredPosition": [
+          0.0,
+          103.0
+         ],
+         "sizeDelta": [
+          204.0,
+          197.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionButton",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Button",
+           "runtimeSprites": {
+            "normalSpriteName": {
+             "name": "RaidMap.raid_up",
+             "texture": "RaidMap",
+             "resourcesPath": "UI/Atlases/",
+             "resolved": true
+            }
+           },
+           "interactable": true,
+           "transition": "ColorTint",
+           "targetGraphic": {
+            "type": "ResolutionImage",
+            "path": "RaidMapUIModule/RaidSwitch buttons/RaidToggleButton/Story"
+           },
+           "colors": {
+            "m_NormalColor": [
+             1.0,
+             1.0,
+             1.0,
+             1.0
+            ],
+            "m_HighlightedColor": [
+             0.9608,
+             0.9608,
+             0.9608,
+             1.0
+            ],
+            "m_PressedColor": [
+             0.7843,
+             0.7843,
+             0.7843,
+             1.0
+            ],
+            "m_SelectedColor": [
+             0.9608,
+             0.9608,
+             0.9608,
+             1.0
+            ],
+            "m_DisabledColor": [
+             0.7843,
+             0.7843,
+             0.7843,
+             0.502
+            ],
+            "m_ColorMultiplier": 1.0,
+            "m_FadeDuration": 0.1
+           },
+           "onClick": []
+          },
+          "fields": {
+           "m_Navigation": {
+            "m_Mode": 3,
+            "m_WrapAround": 0,
+            "m_SelectOnUp": null,
+            "m_SelectOnDown": null,
+            "m_SelectOnLeft": null,
+            "m_SelectOnRight": null
+           },
+           "m_Transition": 1,
+           "m_Colors": {
+            "m_NormalColor": {
+             "r": 1.0,
+             "g": 1.0,
+             "b": 1.0,
+             "a": 1.0
+            },
+            "m_HighlightedColor": {
+             "r": 0.9608,
+             "g": 0.9608,
+             "b": 0.9608,
+             "a": 1.0
+            },
+            "m_PressedColor": {
+             "r": 0.7843,
+             "g": 0.7843,
+             "b": 0.7843,
+             "a": 1.0
+            },
+            "m_SelectedColor": {
+             "r": 0.9608,
+             "g": 0.9608,
+             "b": 0.9608,
+             "a": 1.0
+            },
+            "m_DisabledColor": {
+             "r": 0.7843,
+             "g": 0.7843,
+             "b": 0.7843,
+             "a": 0.502
+            },
+            "m_ColorMultiplier": 1.0,
+            "m_FadeDuration": 0.1
+           },
+           "m_SpriteState": {
+            "m_HighlightedSprite": null,
+            "m_PressedSprite": null,
+            "m_SelectedSprite": null,
+            "m_DisabledSprite": null
+           },
+           "m_AnimationTriggers": {
+            "m_NormalTrigger": "Normal",
+            "m_HighlightedTrigger": "Highlighted",
+            "m_PressedTrigger": "Pressed",
+            "m_SelectedTrigger": "Highlighted",
+            "m_DisabledTrigger": "Disabled"
+           },
+           "m_Interactable": 1,
+           "m_TargetGraphic": {
+            "type": "ResolutionImage",
+            "path": "RaidMapUIModule/RaidSwitch buttons/RaidToggleButton/Story"
+           },
+           "m_OnClick": {
+            "m_PersistentCalls": {
+             "m_Calls": []
+            }
+           },
+           "FlashingImage": null,
+           "_EnableClickAnimation": 0,
+           "_glowSprite": null,
+           "_WaitBeforeClick": 1,
+           "IsOneShot": 0,
+           "_glowTime": 0.0,
+           "ButtonId": -1,
+           "_normalTexturePath": "UI/Atlases/",
+           "_normalSpriteName": "RaidMap.raid_up",
+           "_disabledTexturePath": "",
+           "_disabledSpriteName": "",
+           "_highlightedTexturePath": "",
+           "_highlightedSpriteName": "",
+           "_pressedTexturePath": "",
+           "_pressedSpriteName": ""
+          }
+         },
+         {
+          "type": "MonoBehaviour",
+          "class": "TutorialButtonTouch",
+          "namespace": "Nekki.SF2.GUI.Tutorial.Controls",
+          "assembly": "Root",
+          "enabled": true,
+          "fields": {
+           "IsActive": 0
+          }
+         },
+         {
+          "type": "MonoBehaviour",
+          "class": "TutorialNode",
+          "namespace": "Nekki.SF2.GUI.Tutorial",
+          "assembly": "Root",
+          "enabled": true,
+          "fields": {
+           "_ID": "StoryButton"
+          }
+         },
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionImage",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Image",
+           "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+           ],
+           "raycastTarget": true,
+           "runtimeSprites": {
+            "SpriteName": {
+             "name": "RaidMap.raid_up",
+             "texture": "RaidMap",
+             "resourcesPath": "UI/Atlases/",
+             "resolved": true
+            }
+           },
+           "sprite": "RaidMap.raid_up",
+           "texture": "RaidMap",
+           "spriteSource": "runtime:_SpriteName",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "RaidMap.raid_up",
+            "file": "010e8c8f60f2b451eaa4e912476364d1",
+            "texture": "RaidMap",
+            "textureSize": [
+             512,
+             1024
+            ],
+            "png": "tex/APK/RaidMap.png",
+            "textureRect": [
+             2.0,
+             348.0,
+             204.0,
+             197.0
+            ],
+            "rect": [
+             2.0,
+             348.0,
+             204.0,
+             197.0
+            ],
+            "pivot": [
+             0.5,
+             0.5
+            ],
+            "ppu": 100.0
+           },
+           "type": "simple",
+           "preserveAspect": false,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 1,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": null,
+           "m_Type": 0,
+           "m_PreserveAspect": 0,
+           "m_FillCenter": 1,
+           "m_FillMethod": 4,
+           "m_FillAmount": 1.0,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0,
+           "_TexturePath": "UI/Atlases/",
+           "_SpriteName": "RaidMap.raid_up"
+          }
+         }
+        ],
+        "children": [
+         {
+          "name": "Additional TouchZone",
+          "active": true,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.5,
+            0.5
+           ],
+           "anchorMax": [
+            0.5,
+            0.5
+           ],
+           "anchoredPosition": [
+            0.0,
+            5.0
+           ],
+           "sizeDelta": [
+            250.0,
+            210.0
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "localScale": [
+            1.0,
+            1.0,
+            1.0
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "NonDrawingGraphic",
+            "namespace": "",
+            "assembly": "Root",
+            "enabled": true,
+            "fields": {
+             "m_Material": null,
+             "m_Color": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+             },
+             "m_RaycastTarget": 1,
+             "m_RaycastPadding": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 0.0
+             },
+             "m_Maskable": 1
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "name": "Raid",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.5,
+          0.5
+         ],
+         "anchorMax": [
+          0.5,
+          0.5
+         ],
+         "anchoredPosition": [
+          0.0,
+          -93.0
+         ],
+         "sizeDelta": [
+          204.0,
+          197.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionButton",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Button",
+           "runtimeSprites": {
+            "normalSpriteName": {
+             "name": "RaidMap.raid_down",
+             "texture": "RaidMap",
+             "resourcesPath": "UI/Atlases/",
+             "resolved": true
+            }
+           },
+           "interactable": true,
+           "transition": "ColorTint",
+           "targetGraphic": {
+            "type": "ResolutionImage",
+            "path": "RaidMapUIModule/RaidSwitch buttons/RaidToggleButton/Raid"
+           },
+           "colors": {
+            "m_NormalColor": [
+             1.0,
+             1.0,
+             1.0,
+             1.0
+            ],
+            "m_HighlightedColor": [
+             0.9608,
+             0.9608,
+             0.9608,
+             1.0
+            ],
+            "m_PressedColor": [
+             0.7843,
+             0.7843,
+             0.7843,
+             1.0
+            ],
+            "m_SelectedColor": [
+             0.9608,
+             0.9608,
+             0.9608,
+             1.0
+            ],
+            "m_DisabledColor": [
+             0.7843,
+             0.7843,
+             0.7843,
+             0.502
+            ],
+            "m_ColorMultiplier": 1.0,
+            "m_FadeDuration": 0.1
+           },
+           "onClick": []
+          },
+          "fields": {
+           "m_Navigation": {
+            "m_Mode": 3,
+            "m_WrapAround": 0,
+            "m_SelectOnUp": null,
+            "m_SelectOnDown": null,
+            "m_SelectOnLeft": null,
+            "m_SelectOnRight": null
+           },
+           "m_Transition": 1,
+           "m_Colors": {
+            "m_NormalColor": {
+             "r": 1.0,
+             "g": 1.0,
+             "b": 1.0,
+             "a": 1.0
+            },
+            "m_HighlightedColor": {
+             "r": 0.9608,
+             "g": 0.9608,
+             "b": 0.9608,
+             "a": 1.0
+            },
+            "m_PressedColor": {
+             "r": 0.7843,
+             "g": 0.7843,
+             "b": 0.7843,
+             "a": 1.0
+            },
+            "m_SelectedColor": {
+             "r": 0.9608,
+             "g": 0.9608,
+             "b": 0.9608,
+             "a": 1.0
+            },
+            "m_DisabledColor": {
+             "r": 0.7843,
+             "g": 0.7843,
+             "b": 0.7843,
+             "a": 0.502
+            },
+            "m_ColorMultiplier": 1.0,
+            "m_FadeDuration": 0.1
+           },
+           "m_SpriteState": {
+            "m_HighlightedSprite": null,
+            "m_PressedSprite": null,
+            "m_SelectedSprite": null,
+            "m_DisabledSprite": null
+           },
+           "m_AnimationTriggers": {
+            "m_NormalTrigger": "Normal",
+            "m_HighlightedTrigger": "Highlighted",
+            "m_PressedTrigger": "Pressed",
+            "m_SelectedTrigger": "Highlighted",
+            "m_DisabledTrigger": "Disabled"
+           },
+           "m_Interactable": 1,
+           "m_TargetGraphic": {
+            "type": "ResolutionImage",
+            "path": "RaidMapUIModule/RaidSwitch buttons/RaidToggleButton/Raid"
+           },
+           "m_OnClick": {
+            "m_PersistentCalls": {
+             "m_Calls": []
+            }
+           },
+           "FlashingImage": null,
+           "_EnableClickAnimation": 0,
+           "_glowSprite": null,
+           "_WaitBeforeClick": 1,
+           "IsOneShot": 0,
+           "_glowTime": 0.0,
+           "ButtonId": -1,
+           "_normalTexturePath": "UI/Atlases/",
+           "_normalSpriteName": "RaidMap.raid_down",
+           "_disabledTexturePath": "",
+           "_disabledSpriteName": "",
+           "_highlightedTexturePath": "",
+           "_highlightedSpriteName": "",
+           "_pressedTexturePath": "",
+           "_pressedSpriteName": ""
+          }
+         },
+         {
+          "type": "MonoBehaviour",
+          "class": "TutorialButtonTouch",
+          "namespace": "Nekki.SF2.GUI.Tutorial.Controls",
+          "assembly": "Root",
+          "enabled": true,
+          "fields": {
+           "IsActive": 0
+          }
+         },
+         {
+          "type": "MonoBehaviour",
+          "class": "TutorialNode",
+          "namespace": "Nekki.SF2.GUI.Tutorial",
+          "assembly": "Root",
+          "enabled": true,
+          "fields": {
+           "_ID": "RaidButton"
+          }
+         },
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionImage",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Image",
+           "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+           ],
+           "raycastTarget": true,
+           "runtimeSprites": {
+            "SpriteName": {
+             "name": "RaidMap.raid_down",
+             "texture": "RaidMap",
+             "resourcesPath": "UI/Atlases/",
+             "resolved": true
+            }
+           },
+           "sprite": "RaidMap.raid_down",
+           "texture": "RaidMap",
+           "spriteSource": "runtime:_SpriteName",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "RaidMap.raid_down",
+            "file": "010e8c8f60f2b451eaa4e912476364d1",
+            "texture": "RaidMap",
+            "textureSize": [
+             512,
+             1024
+            ],
+            "png": "tex/APK/RaidMap.png",
+            "textureRect": [
+             2.0,
+             548.0,
+             204.0,
+             197.0
+            ],
+            "rect": [
+             2.0,
+             548.0,
+             204.0,
+             197.0
+            ],
+            "pivot": [
+             0.5,
+             0.5
+            ],
+            "ppu": 100.0
+           },
+           "type": "simple",
+           "preserveAspect": false,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 1,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": null,
+           "m_Type": 0,
+           "m_PreserveAspect": 0,
+           "m_FillCenter": 1,
+           "m_FillMethod": 4,
+           "m_FillAmount": 1.0,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0,
+           "_TexturePath": "UI/Atlases/",
+           "_SpriteName": "RaidMap.raid_down"
+          }
+         }
+        ],
+        "children": [
+         {
+          "name": "Additional TouchZone",
+          "active": true,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.5,
+            0.5
+           ],
+           "anchorMax": [
+            0.5,
+            0.5
+           ],
+           "anchoredPosition": [
+            0.0,
+            -5.0
+           ],
+           "sizeDelta": [
+            250.0,
+            210.0
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "localScale": [
+            1.0,
+            1.0,
+            1.0
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "NonDrawingGraphic",
+            "namespace": "",
+            "assembly": "Root",
+            "enabled": true,
+            "fields": {
+             "m_Material": null,
+             "m_Color": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+             },
+             "m_RaycastTarget": 1,
+             "m_RaycastPadding": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 0.0
+             },
+             "m_Maskable": 1
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "name": "RaidKeysPanel",
+    "active": true,
+    "layer": 5,
+    "rect": {
+     "anchorMin": [
+      0.0,
+      0.2
+     ],
+     "anchorMax": [
+      0.0,
+      0.2
+     ],
+     "anchoredPosition": [
+      0.0,
+      -10.0
+     ],
+     "sizeDelta": [
+      1300.0,
+      150.0
+     ],
+     "pivot": [
+      0.0,
+      0.5
+     ],
+     "localScale": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "rotationZ": 0.0
+    },
+    "components": [
+     {
+      "type": "MonoBehaviour",
+      "class": "MapCurrencyPanel",
+      "namespace": "Nekki.SF2.GUI.Map",
+      "assembly": "Root",
+      "enabled": true,
+      "fields": {
+       "_currencyType": 0,
+       "_buttonView": {
+        "type": "RaidKeysButtonView",
+        "path": "RaidMapUIModule/RaidKeysPanel/RaidKeysButtonView"
+       }
+      }
+     },
+     {
+      "type": "MonoBehaviour",
+      "class": "TutorialNode",
+      "namespace": "Nekki.SF2.GUI.Tutorial",
+      "assembly": "Root",
+      "enabled": true,
+      "fields": {
+       "_ID": "RaidCurrencyPanel"
+      }
+     }
+    ],
+    "children": [
+     {
+      "name": "ShardsPanel",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.0,
+        0.5
+       ],
+       "anchorMax": [
+        0.0,
+        0.5
+       ],
+       "anchoredPosition": [
+        165.0,
+        0.0
+       ],
+       "sizeDelta": [
+        1300.0,
+        150.0
+       ],
+       "pivot": [
+        0.0,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "MapCurrencyPanel",
+        "namespace": "Nekki.SF2.GUI.Map",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "_currencyType": 1,
+         "_buttonView": {
+          "type": "ShardsButtonView",
+          "path": "RaidMapUIModule/RaidKeysPanel/ShardsPanel/RaidKeysButtonView"
+         }
+        }
+       }
+      ],
+      "children": [
+       {
+        "name": "RaidKeysButtonView",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.0,
+          0.5
+         ],
+         "anchorMax": [
+          0.0,
+          0.5
+         ],
+         "anchoredPosition": [
+          12.0,
+          10.0
+         ],
+         "sizeDelta": [
+          1300.0,
+          150.0
+         ],
+         "pivot": [
+          0.0,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "ShardsButtonView",
+          "namespace": "Nekki.SF2.GUI.Map",
+          "assembly": "Root",
+          "enabled": true,
+          "fields": {
+           "_keyPanel1": {
+            "type": "GameObject",
+            "path": "RaidMapUIModule/RaidKeysPanel/ShardsPanel/RaidKeysButtonView/HintRoot/KeysPanel1"
+           },
+           "_keyPanel2": {
+            "type": "GameObject",
+            "path": "RaidMapUIModule/RaidKeysPanel/ShardsPanel/RaidKeysButtonView/HintRoot/KeysPanel2"
+           },
+           "_hintButton": {
+            "type": "ResolutionButton",
+            "path": "RaidMapUIModule/RaidKeysPanel/ShardsPanel/RaidKeysButtonView/Button"
+           },
+           "_hintFlashing": {
+            "type": "ResolutionImage",
+            "path": "RaidMapUIModule/RaidKeysPanel/ShardsPanel/RaidKeysButtonView/HintFlashing"
+           },
+           "_hintMinWidth": 750,
+           "_hintWidthSpace": 50,
+           "_hintRootCanvasGroup": {
+            "type": "CanvasGroup",
+            "path": "RaidMapUIModule/RaidKeysPanel/ShardsPanel/RaidKeysButtonView/HintRoot"
+           },
+           "_hintRoot": {
+            "type": "RectTransform",
+            "path": "RaidMapUIModule/RaidKeysPanel/ShardsPanel/RaidKeysButtonView/HintRoot"
+           },
+           "_hintTitle": {
+            "type": "LabelAlias",
+            "path": "RaidMapUIModule/RaidKeysPanel/ShardsPanel/RaidKeysButtonView/HintRoot/HintBody/HintText"
+           },
+           "_hintBackgndRoot": {
+            "type": "RectTransform",
+            "path": "RaidMapUIModule/RaidKeysPanel/ShardsPanel/RaidKeysButtonView/HintRoot/HintBody"
+           }
+          }
+         }
+        ],
+        "children": [
+         {
+          "name": "HintFlashing",
+          "active": true,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.0,
+            0.5
+           ],
+           "anchorMax": [
+            0.0,
+            0.5
+           ],
+           "anchoredPosition": [
+            -0.0001,
+            2.7
+           ],
+           "sizeDelta": [
+            249.0,
+            241.0
+           ],
+           "pivot": [
+            0.0,
+            0.5
+           ],
+           "localScale": [
+            0.6235,
+            0.6235,
+            0.6235
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "ResolutionImage",
+            "namespace": "Nekki.SF2.GUI",
+            "assembly": "Root",
+            "enabled": true,
+            "ui": {
+             "kind": "Image",
+             "color": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+             ],
+             "raycastTarget": true,
+             "runtimeSprites": {
+              "SpriteName": {
+               "name": "FightButtons.Charge_Highlight",
+               "texture": "FightButtons",
+               "resourcesPath": "UI/Atlases/",
+               "resolved": true
+              }
+             },
+             "sprite": "FightButtons.Charge_Highlight",
+             "texture": "FightButtons",
+             "spriteSource": "runtime:_SpriteName",
+             "spriteInfo": {
+              "type": "Sprite",
+              "name": "FightButtons.Charge_Highlight",
+              "file": "c4578b4d60ce946eaaab24476db40827",
+              "texture": "FightButtons",
+              "textureSize": [
+               1024,
+               2048
+              ],
+              "png": "tex/APK/FightButtons.png",
+              "textureRect": [
+               735.0,
+               1805.0,
+               249.0,
+               241.0
+              ],
+              "rect": [
+               735.0,
+               1805.0,
+               249.0,
+               241.0
+              ],
+              "pivot": [
+               0.502,
+               0.4979
+              ],
+              "ppu": 100.0
+             },
+             "type": "simple",
+             "preserveAspect": false,
+             "fillCenter": true,
+             "pixelsPerUnitMultiplier": 1.0
+            },
+            "fields": {
+             "m_Material": null,
+             "m_Color": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+             },
+             "m_RaycastTarget": 1,
+             "m_RaycastPadding": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 0.0
+             },
+             "m_Maskable": 1,
+             "m_Sprite": null,
+             "m_Type": 0,
+             "m_PreserveAspect": 0,
+             "m_FillCenter": 1,
+             "m_FillMethod": 4,
+             "m_FillAmount": 1.0,
+             "m_FillClockwise": 1,
+             "m_FillOrigin": 0,
+             "m_UseSpriteMesh": 0,
+             "m_PixelsPerUnitMultiplier": 1.0,
+             "_TexturePath": "UI/Atlases/",
+             "_SpriteName": "FightButtons.Charge_Highlight"
+            }
+           }
+          ]
+         },
+         {
+          "name": "Button",
+          "active": true,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.0,
+            0.5
+           ],
+           "anchorMax": [
+            0.0,
+            0.5
+           ],
+           "anchoredPosition": [
+            76.2,
+            0.0
+           ],
+           "sizeDelta": [
+            124.0,
+            124.0
+           ],
+           "pivot": [
+            0.5,
+            0.5
+           ],
+           "localScale": [
+            1.0,
+            1.0,
+            1.0
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "ResolutionButton",
+            "namespace": "Nekki.SF2.GUI",
+            "assembly": "Root",
+            "enabled": true,
+            "ui": {
+             "kind": "Button",
+             "runtimeSprites": {
+              "normalSpriteName": {
+               "name": "RaidMap.shards",
+               "texture": "RaidMap",
+               "resourcesPath": "UI/Atlases/",
+               "resolved": true
+              }
+             },
+             "interactable": true,
+             "transition": "SpriteSwap",
+             "targetGraphic": {
+              "type": "ResolutionImage",
+              "path": "RaidMapUIModule/RaidKeysPanel/ShardsPanel/RaidKeysButtonView/Button"
+             },
+             "spriteState": {
+              "m_HighlightedSprite": null,
+              "m_PressedSprite": null,
+              "m_SelectedSprite": null,
+              "m_DisabledSprite": null
+             },
+             "onClick": []
+            },
+            "fields": {
+             "m_Navigation": {
+              "m_Mode": 3,
+              "m_WrapAround": 0,
+              "m_SelectOnUp": null,
+              "m_SelectOnDown": null,
+              "m_SelectOnLeft": null,
+              "m_SelectOnRight": null
+             },
+             "m_Transition": 2,
+             "m_Colors": {
+              "m_NormalColor": {
+               "r": 1.0,
+               "g": 1.0,
+               "b": 1.0,
+               "a": 1.0
+              },
+              "m_HighlightedColor": {
+               "r": 0.9608,
+               "g": 0.9608,
+               "b": 0.9608,
+               "a": 1.0
+              },
+              "m_PressedColor": {
+               "r": 0.7843,
+               "g": 0.7843,
+               "b": 0.7843,
+               "a": 1.0
+              },
+              "m_SelectedColor": {
+               "r": 0.9608,
+               "g": 0.9608,
+               "b": 0.9608,
+               "a": 1.0
+              },
+              "m_DisabledColor": {
+               "r": 0.7843,
+               "g": 0.7843,
+               "b": 0.7843,
+               "a": 0.502
+              },
+              "m_ColorMultiplier": 1.0,
+              "m_FadeDuration": 0.1
+             },
+             "m_SpriteState": {
+              "m_HighlightedSprite": null,
+              "m_PressedSprite": null,
+              "m_SelectedSprite": null,
+              "m_DisabledSprite": null
+             },
+             "m_AnimationTriggers": {
+              "m_NormalTrigger": "Normal",
+              "m_HighlightedTrigger": "Highlighted",
+              "m_PressedTrigger": "Pressed",
+              "m_SelectedTrigger": "Highlighted",
+              "m_DisabledTrigger": "Disabled"
+             },
+             "m_Interactable": 1,
+             "m_TargetGraphic": {
+              "type": "ResolutionImage",
+              "path": "RaidMapUIModule/RaidKeysPanel/ShardsPanel/RaidKeysButtonView/Button"
+             },
+             "m_OnClick": {
+              "m_PersistentCalls": {
+               "m_Calls": []
+              }
+             },
+             "FlashingImage": null,
+             "_EnableClickAnimation": 0,
+             "_glowSprite": null,
+             "_WaitBeforeClick": 1,
+             "IsOneShot": 0,
+             "_glowTime": 0.0,
+             "ButtonId": -1,
+             "_normalTexturePath": "UI/Atlases/",
+             "_normalSpriteName": "RaidMap.shards",
+             "_disabledTexturePath": "",
+             "_disabledSpriteName": "",
+             "_highlightedTexturePath": "",
+             "_highlightedSpriteName": "",
+             "_pressedTexturePath": "",
+             "_pressedSpriteName": ""
+            }
+           },
+           {
+            "type": "MonoBehaviour",
+            "class": "ResolutionImage",
+            "namespace": "Nekki.SF2.GUI",
+            "assembly": "Root",
+            "enabled": true,
+            "ui": {
+             "kind": "Image",
+             "color": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+             ],
+             "raycastTarget": true,
+             "runtimeSprites": {
+              "SpriteName": {
+               "name": "RaidMap.shards",
+               "texture": "RaidMap",
+               "resourcesPath": "UI/Atlases/",
+               "resolved": true
+              }
+             },
+             "sprite": "RaidMap.shards",
+             "texture": "RaidMap",
+             "spriteSource": "runtime:_SpriteName",
+             "spriteInfo": {
+              "type": "Sprite",
+              "name": "RaidMap.shards",
+              "file": "010e8c8f60f2b451eaa4e912476364d1",
+              "texture": "RaidMap",
+              "textureSize": [
+               512,
+               1024
+              ],
+              "png": "tex/APK/RaidMap.png",
+              "textureRect": [
+               209.0,
+               399.0,
+               154.0,
+               146.0
+              ],
+              "rect": [
+               209.0,
+               399.0,
+               154.0,
+               146.0
+              ],
+              "pivot": [
+               0.5,
+               0.5
+              ],
+              "ppu": 100.0
+             },
+             "type": "simple",
+             "preserveAspect": false,
+             "fillCenter": true,
+             "pixelsPerUnitMultiplier": 1.0
+            },
+            "fields": {
+             "m_Material": null,
+             "m_Color": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+             },
+             "m_RaycastTarget": 1,
+             "m_RaycastPadding": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 0.0
+             },
+             "m_Maskable": 1,
+             "m_Sprite": null,
+             "m_Type": 0,
+             "m_PreserveAspect": 0,
+             "m_FillCenter": 1,
+             "m_FillMethod": 4,
+             "m_FillAmount": 1.0,
+             "m_FillClockwise": 1,
+             "m_FillOrigin": 0,
+             "m_UseSpriteMesh": 0,
+             "m_PixelsPerUnitMultiplier": 1.0,
+             "_TexturePath": "UI/Atlases/",
+             "_SpriteName": "RaidMap.shards"
+            }
+           },
+           {
+            "type": "MonoBehaviour",
+            "class": "TutorialNode",
+            "namespace": "Nekki.SF2.GUI.Tutorial",
+            "assembly": "Root",
+            "enabled": true,
+            "fields": {
+             "_ID": "ShardsButton"
+            }
+           },
+           {
+            "type": "MonoBehaviour",
+            "class": "TutorialButtonTouch",
+            "namespace": "Nekki.SF2.GUI.Tutorial.Controls",
+            "assembly": "Root",
+            "enabled": true,
+            "fields": {
+             "IsActive": 0
+            }
+           }
+          ],
+          "children": [
+           {
+            "name": "Additional TouchZone",
+            "active": true,
+            "layer": 5,
+            "rect": {
+             "anchorMin": [
+              0.0,
+              0.5
+             ],
+             "anchorMax": [
+              0.0,
+              0.5
+             ],
+             "anchoredPosition": [
+              -26.0,
+              0.0
+             ],
+             "sizeDelta": [
+              180.0,
+              136.0
+             ],
+             "pivot": [
+              0.0,
+              0.5
+             ],
+             "localScale": [
+              1.0,
+              1.0,
+              1.0
+             ],
+             "rotationZ": 0.0
+            },
+            "components": [
+             {
+              "type": "MonoBehaviour",
+              "class": "NonDrawingGraphic",
+              "namespace": "",
+              "assembly": "Root",
+              "enabled": true,
+              "fields": {
+               "m_Material": null,
+               "m_Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+               },
+               "m_RaycastTarget": 1,
+               "m_RaycastPadding": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+               },
+               "m_Maskable": 1
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "name": "HintRoot",
+          "active": true,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.0,
+            0.5
+           ],
+           "anchorMax": [
+            0.0,
+            0.5
+           ],
+           "anchoredPosition": [
+            172.0,
+            -32.0
+           ],
+           "sizeDelta": [
+            870.0,
+            400.0
+           ],
+           "pivot": [
+            0.0,
+            0.71
+           ],
+           "localScale": [
+            1.0,
+            1.0,
+            1.0
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "CanvasGroup",
+            "alpha": 1.0,
+            "interactable": true,
+            "blocksRaycasts": true,
+            "ignoreParentGroups": false
+           }
+          ],
+          "children": [
+           {
+            "name": "HintBody",
+            "active": true,
+            "layer": 5,
+            "rect": {
+             "anchorMin": [
+              0.0,
+              1.0
+             ],
+             "anchorMax": [
+              0.0,
+              1.0
+             ],
+             "anchoredPosition": [
+              0.0,
+              0.0
+             ],
+             "sizeDelta": [
+              1750.0,
+              700.0
+             ],
+             "pivot": [
+              0.0,
+              1.0
+             ],
+             "localScale": [
+              0.5,
+              0.5,
+              0.5
+             ],
+             "rotationZ": 0.0
+            },
+            "components": [
+             {
+              "type": "MonoBehaviour",
+              "class": "ResolutionImage",
+              "namespace": "Nekki.SF2.GUI",
+              "assembly": "Root",
+              "enabled": true,
+              "ui": {
+               "kind": "Image",
+               "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+               ],
+               "raycastTarget": false,
+               "runtimeSprites": {
+                "SpriteName": {
+                 "name": "Hints.Base",
+                 "texture": "Hints",
+                 "resourcesPath": "UI/Atlases/",
+                 "resolved": true
+                }
+               },
+               "sprite": "Hints.Base",
+               "texture": "Hints",
+               "spriteSource": "runtime:_SpriteName",
+               "spriteInfo": {
+                "type": "Sprite",
+                "name": "Hints.Base",
+                "file": "9b45a8d22d41a9744be62c0ff21f54ea",
+                "texture": "Hints",
+                "textureSize": [
+                 128,
+                 256
+                ],
+                "png": "tex/APK/Hints.png",
+                "textureRect": [
+                 1.0,
+                 115.0,
+                 71.0,
+                 71.0
+                ],
+                "rect": [
+                 1.0,
+                 115.0,
+                 71.0,
+                 71.0
+                ],
+                "border": [
+                 35.0,
+                 35.0,
+                 35.0,
+                 35.0
+                ],
+                "pivot": [
+                 0.0,
+                 0.0
+                ],
+                "ppu": 100.0
+               },
+               "type": "sliced",
+               "preserveAspect": false,
+               "fillCenter": true,
+               "pixelsPerUnitMultiplier": 1.0
+              },
+              "fields": {
+               "m_Material": null,
+               "m_Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+               },
+               "m_RaycastTarget": 0,
+               "m_RaycastPadding": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+               },
+               "m_Maskable": 1,
+               "m_Sprite": null,
+               "m_Type": 1,
+               "m_PreserveAspect": 0,
+               "m_FillCenter": 1,
+               "m_FillMethod": 4,
+               "m_FillAmount": 1.0,
+               "m_FillClockwise": 1,
+               "m_FillOrigin": 0,
+               "m_UseSpriteMesh": 0,
+               "m_PixelsPerUnitMultiplier": 1.0,
+               "_TexturePath": "UI/Atlases/",
+               "_SpriteName": "Hints.Base"
+              }
+             }
+            ],
+            "children": [
+             {
+              "name": "HintArrow",
+              "active": true,
+              "layer": 5,
+              "rect": {
+               "anchorMin": [
+                0.0,
+                0.7571
+               ],
+               "anchorMax": [
+                0.0,
+                0.7571
+               ],
+               "anchoredPosition": [
+                -14.0,
+                1.0
+               ],
+               "sizeDelta": [
+                114.0,
+                67.0
+               ],
+               "pivot": [
+                0.5,
+                0.5
+               ],
+               "localScale": [
+                1.0,
+                1.0,
+                1.0
+               ],
+               "rotationZ": 90.0
+              },
+              "components": [
+               {
+                "type": "MonoBehaviour",
+                "class": "ResolutionImage",
+                "namespace": "Nekki.SF2.GUI",
+                "assembly": "Root",
+                "enabled": true,
+                "ui": {
+                 "kind": "Image",
+                 "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                 ],
+                 "raycastTarget": true,
+                 "runtimeSprites": {
+                  "SpriteName": {
+                   "name": "Hints.Arrow",
+                   "texture": "Hints",
+                   "resourcesPath": "UI/Atlases/",
+                   "resolved": true
+                  }
+                 },
+                 "sprite": "Hints.Arrow",
+                 "texture": "Hints",
+                 "spriteSource": "runtime:_SpriteName",
+                 "spriteInfo": {
+                  "type": "Sprite",
+                  "name": "Hints.Arrow",
+                  "file": "9b45a8d22d41a9744be62c0ff21f54ea",
+                  "texture": "Hints",
+                  "textureSize": [
+                   128,
+                   256
+                  ],
+                  "png": "tex/APK/Hints.png",
+                  "textureRect": [
+                   1.0,
+                   188.0,
+                   115.0,
+                   67.0
+                  ],
+                  "rect": [
+                   1.0,
+                   188.0,
+                   115.0,
+                   67.0
+                  ],
+                  "pivot": [
+                   0.0,
+                   0.0
+                  ],
+                  "ppu": 100.0
+                 },
+                 "type": "simple",
+                 "preserveAspect": false,
+                 "fillCenter": true,
+                 "pixelsPerUnitMultiplier": 1.0
+                },
+                "fields": {
+                 "m_Material": null,
+                 "m_Color": {
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0,
+                  "a": 1.0
+                 },
+                 "m_RaycastTarget": 1,
+                 "m_RaycastPadding": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0,
+                  "w": 0.0
+                 },
+                 "m_Maskable": 1,
+                 "m_Sprite": null,
+                 "m_Type": 0,
+                 "m_PreserveAspect": 0,
+                 "m_FillCenter": 1,
+                 "m_FillMethod": 4,
+                 "m_FillAmount": 1.0,
+                 "m_FillClockwise": 1,
+                 "m_FillOrigin": 0,
+                 "m_UseSpriteMesh": 0,
+                 "m_PixelsPerUnitMultiplier": 1.0,
+                 "_TexturePath": "UI/Atlases/",
+                 "_SpriteName": "Hints.Arrow"
+                }
+               }
+              ]
+             },
+             {
+              "name": "HintText",
+              "active": true,
+              "layer": 5,
+              "rect": {
+               "anchorMin": [
+                0.5,
+                1.0
+               ],
+               "anchorMax": [
+                0.5,
+                1.0
+               ],
+               "anchoredPosition": [
+                0.0,
+                0.0
+               ],
+               "sizeDelta": [
+                600.0,
+                80.0
+               ],
+               "pivot": [
+                0.5,
+                1.0
+               ],
+               "localScale": [
+                2.0,
+                2.0,
+                2.0
+               ],
+               "rotationZ": 0.0
+              },
+              "components": [
+               {
+                "type": "MonoBehaviour",
+                "class": "LabelAlias",
+                "namespace": "Nekki.SF2.GUI",
+                "assembly": "Root",
+                "enabled": true,
+                "ui": {
+                 "kind": "Text",
+                 "color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                 ],
+                 "raycastTarget": false,
+                 "text": "Hint Title Raid Button",
+                 "font": "LegacyRuntime",
+                 "fontSize": 40,
+                 "fontStyle": "Normal",
+                 "alignment": "MiddleCenter",
+                 "bestFit": true,
+                 "minSize": 4,
+                 "maxSize": 100,
+                 "richText": true,
+                 "horizontalOverflow": "Wrap",
+                 "verticalOverflow": "Truncate",
+                 "lineSpacing": 1.0,
+                 "locKey": null,
+                 "toUpperCase": false,
+                 "useLocalizationFont": true,
+                 "fontType": 0,
+                 "labelFontSize": 100
+                },
+                "fields": {
+                 "m_Material": null,
+                 "m_Color": {
+                  "r": 0.0,
+                  "g": 0.0,
+                  "b": 0.0,
+                  "a": 1.0
+                 },
+                 "m_RaycastTarget": 0,
+                 "m_RaycastPadding": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0.0,
+                  "w": 0.0
+                 },
+                 "m_Maskable": 1,
+                 "m_FontData": {
+                  "m_Font": {
+                   "type": "Font",
+                   "name": "LegacyRuntime",
+                   "file": "unity default resources"
+                  },
+                  "m_FontSize": 40,
+                  "m_FontStyle": 0,
+                  "m_BestFit": 1,
+                  "m_MinSize": 4,
+                  "m_MaxSize": 100,
+                  "m_Alignment": 4,
+                  "m_AlignByGeometry": 0,
+                  "m_RichText": 1,
+                  "m_HorizontalOverflow": 0,
+                  "m_VerticalOverflow": 0,
+                  "m_LineSpacing": 1.0
+                 },
+                 "m_Text": "Hint Title Raid Button",
+                 "GlyphPrefabs": [],
+                 "ForceUseAlignedBestFit": 0,
+                 "ForbiddenUseAlignedBestFit": 0,
+                 "FitImageLineHeightParam": {
+                  "ScaleMaxLineHeightFactor": 1.0,
+                  "ApplyToSingleLine": 0,
+                  "Enabled": 0
+                 },
+                 "_useLocalizationFont": 1,
+                 "_fontType": 0,
+                 "_useLabelFontSize": 1,
+                 "_labelFontSize": 100,
+                 "_useLabelLineSpacing": 0,
+                 "_labelLineSpacing": 0.0,
+                 "_Alias": "",
+                 "_ToUpperCase": 0
+                }
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "name": "KeysPanel1",
+            "active": true,
+            "layer": 5,
+            "rect": {
+             "anchorMin": [
+              0.0,
+              0.5
+             ],
+             "anchorMax": [
+              1.0,
+              0.5
+             ],
+             "anchoredPosition": [
+              25.0,
+              110.0
+             ],
+             "sizeDelta": [
+              -50.0,
+              110.0
+             ],
+             "pivot": [
+              0.0,
+              1.0
+             ],
+             "localScale": [
+              1.0,
+              1.0,
+              1.0
+             ],
+             "rotationZ": 0.0
+            },
+            "components": [
+             {
+              "type": "MonoBehaviour",
+              "class": "HorizontalLayoutGroup",
+              "namespace": "UnityEngine.UI",
+              "assembly": "UnityEngine.UI",
+              "enabled": true,
+              "ui": {
+               "layout": "HorizontalLayoutGroup",
+               "padding": {
+                "left": 0,
+                "right": 0,
+                "top": 0,
+                "bottom": 0
+               },
+               "childAlignment": "MiddleLeft",
+               "spacing": 10.0,
+               "childControlWidth": 0,
+               "childControlHeight": 0,
+               "childForceExpandWidth": 0,
+               "childForceExpandHeight": 0,
+               "childScaleWidth": 0,
+               "childScaleHeight": 0,
+               "reverseArrangement": 0
+              },
+              "fields": {
+               "m_Padding": {
+                "m_Left": 0,
+                "m_Right": 0,
+                "m_Top": 0,
+                "m_Bottom": 0
+               },
+               "m_ChildAlignment": 3,
+               "m_Spacing": 10.0,
+               "m_ChildForceExpandWidth": 0,
+               "m_ChildForceExpandHeight": 0,
+               "m_ChildControlWidth": 0,
+               "m_ChildControlHeight": 0,
+               "m_ChildScaleWidth": 0,
+               "m_ChildScaleHeight": 0,
+               "m_ReverseArrangement": 0
+              }
+             },
+             {
+              "type": "MonoBehaviour",
+              "class": "Image",
+              "namespace": "UnityEngine.UI",
+              "assembly": "UnityEngine.UI",
+              "enabled": false,
+              "ui": {
+               "color": [
+                0.3396,
+                0.0,
+                0.0,
+                1.0
+               ],
+               "raycastTarget": false,
+               "sprite": null,
+               "texture": null,
+               "spriteSource": null,
+               "spriteInfo": null,
+               "type": "simple",
+               "preserveAspect": false,
+               "fillCenter": true,
+               "pixelsPerUnitMultiplier": 1.0
+              },
+              "fields": {
+               "m_Material": null,
+               "m_Color": {
+                "r": 0.3396,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+               },
+               "m_RaycastTarget": 0,
+               "m_RaycastPadding": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+               },
+               "m_Maskable": 1,
+               "m_Sprite": null,
+               "m_Type": 0,
+               "m_PreserveAspect": 0,
+               "m_FillCenter": 1,
+               "m_FillMethod": 4,
+               "m_FillAmount": 1.0,
+               "m_FillClockwise": 1,
+               "m_FillOrigin": 0,
+               "m_UseSpriteMesh": 0,
+               "m_PixelsPerUnitMultiplier": 1.0
+              }
+             }
+            ]
+           },
+           {
+            "name": "KeysPanel2",
+            "active": true,
+            "layer": 5,
+            "rect": {
+             "anchorMin": [
+              0.0,
+              0.5
+             ],
+             "anchorMax": [
+              1.0,
+              0.5
+             ],
+             "anchoredPosition": [
+              25.0,
+              -20.0
+             ],
+             "sizeDelta": [
+              -50.0,
+              110.0
+             ],
+             "pivot": [
+              0.0,
+              1.0
+             ],
+             "localScale": [
+              1.0,
+              1.0,
+              1.0
+             ],
+             "rotationZ": 0.0
+            },
+            "components": [
+             {
+              "type": "MonoBehaviour",
+              "class": "HorizontalLayoutGroup",
+              "namespace": "UnityEngine.UI",
+              "assembly": "UnityEngine.UI",
+              "enabled": true,
+              "ui": {
+               "layout": "HorizontalLayoutGroup",
+               "padding": {
+                "left": 0,
+                "right": 0,
+                "top": 0,
+                "bottom": 0
+               },
+               "childAlignment": "MiddleLeft",
+               "spacing": 10.0,
+               "childControlWidth": 0,
+               "childControlHeight": 0,
+               "childForceExpandWidth": 0,
+               "childForceExpandHeight": 0,
+               "childScaleWidth": 0,
+               "childScaleHeight": 0,
+               "reverseArrangement": 0
+              },
+              "fields": {
+               "m_Padding": {
+                "m_Left": 0,
+                "m_Right": 0,
+                "m_Top": 0,
+                "m_Bottom": 0
+               },
+               "m_ChildAlignment": 3,
+               "m_Spacing": 10.0,
+               "m_ChildForceExpandWidth": 0,
+               "m_ChildForceExpandHeight": 0,
+               "m_ChildControlWidth": 0,
+               "m_ChildControlHeight": 0,
+               "m_ChildScaleWidth": 0,
+               "m_ChildScaleHeight": 0,
+               "m_ReverseArrangement": 0
+              }
+             },
+             {
+              "type": "MonoBehaviour",
+              "class": "Image",
+              "namespace": "UnityEngine.UI",
+              "assembly": "UnityEngine.UI",
+              "enabled": false,
+              "ui": {
+               "color": [
+                0.3396,
+                0.0,
+                0.0,
+                1.0
+               ],
+               "raycastTarget": false,
+               "sprite": null,
+               "texture": null,
+               "spriteSource": null,
+               "spriteInfo": null,
+               "type": "simple",
+               "preserveAspect": false,
+               "fillCenter": true,
+               "pixelsPerUnitMultiplier": 1.0
+              },
+              "fields": {
+               "m_Material": null,
+               "m_Color": {
+                "r": 0.3396,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+               },
+               "m_RaycastTarget": 0,
+               "m_RaycastPadding": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+               },
+               "m_Maskable": 1,
+               "m_Sprite": null,
+               "m_Type": 0,
+               "m_PreserveAspect": 0,
+               "m_FillCenter": 1,
+               "m_FillMethod": 4,
+               "m_FillAmount": 1.0,
+               "m_FillClockwise": 1,
+               "m_FillOrigin": 0,
+               "m_UseSpriteMesh": 0,
+               "m_PixelsPerUnitMultiplier": 1.0
+              }
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "name": "RaidKeysButtonView",
+      "active": true,
+      "layer": 5,
+      "rect": {
+       "anchorMin": [
+        0.0,
+        0.5
+       ],
+       "anchorMax": [
+        0.0,
+        0.5
+       ],
+       "anchoredPosition": [
+        0.0,
+        10.0
+       ],
+       "sizeDelta": [
+        1300.0,
+        150.0
+       ],
+       "pivot": [
+        0.0,
+        0.5
+       ],
+       "localScale": [
+        1.0,
+        1.0,
+        1.0
+       ],
+       "rotationZ": 0.0
+      },
+      "components": [
+       {
+        "type": "MonoBehaviour",
+        "class": "RaidKeysButtonView",
+        "namespace": "Nekki.SF2.GUI.Map",
+        "assembly": "Root",
+        "enabled": true,
+        "fields": {
+         "_keyPanel1": {
+          "type": "GameObject",
+          "path": "RaidMapUIModule/RaidKeysPanel/RaidKeysButtonView/HintRoot/KeysPanel1"
+         },
+         "_keyPanel2": {
+          "type": "GameObject",
+          "path": "RaidMapUIModule/RaidKeysPanel/RaidKeysButtonView/HintRoot/KeysPanel2"
+         },
+         "_hintButton": {
+          "type": "ResolutionButton",
+          "path": "RaidMapUIModule/RaidKeysPanel/RaidKeysButtonView/Button"
+         },
+         "_hintFlashing": {
+          "type": "ResolutionImage",
+          "path": "RaidMapUIModule/RaidKeysPanel/RaidKeysButtonView/HintFlashing"
+         },
+         "_hintMinWidth": 750,
+         "_hintWidthSpace": 50,
+         "_hintRootCanvasGroup": {
+          "type": "CanvasGroup",
+          "path": "RaidMapUIModule/RaidKeysPanel/RaidKeysButtonView/HintRoot"
+         },
+         "_hintRoot": {
+          "type": "RectTransform",
+          "path": "RaidMapUIModule/RaidKeysPanel/RaidKeysButtonView/HintRoot"
+         },
+         "_hintTitle": {
+          "type": "LabelAlias",
+          "path": "RaidMapUIModule/RaidKeysPanel/RaidKeysButtonView/HintRoot/HintBody/HintText"
+         },
+         "_hintBackgndRoot": {
+          "type": "RectTransform",
+          "path": "RaidMapUIModule/RaidKeysPanel/RaidKeysButtonView/HintRoot/HintBody"
+         }
+        }
+       }
+      ],
+      "children": [
+       {
+        "name": "HintFlashing",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.0,
+          0.5
+         ],
+         "anchorMax": [
+          0.0,
+          0.5
+         ],
+         "anchoredPosition": [
+          -0.0001,
+          2.7
+         ],
+         "sizeDelta": [
+          249.0,
+          241.0
+         ],
+         "pivot": [
+          0.0,
+          0.5
+         ],
+         "localScale": [
+          0.6235,
+          0.6235,
+          0.6235
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionImage",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Image",
+           "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+           ],
+           "raycastTarget": true,
+           "runtimeSprites": {
+            "SpriteName": {
+             "name": "FightButtons.Charge_Highlight",
+             "texture": "FightButtons",
+             "resourcesPath": "UI/Atlases/",
+             "resolved": true
+            }
+           },
+           "sprite": "FightButtons.Charge_Highlight",
+           "texture": "FightButtons",
+           "spriteSource": "runtime:_SpriteName",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "FightButtons.Charge_Highlight",
+            "file": "c4578b4d60ce946eaaab24476db40827",
+            "texture": "FightButtons",
+            "textureSize": [
+             1024,
+             2048
+            ],
+            "png": "tex/APK/FightButtons.png",
+            "textureRect": [
+             735.0,
+             1805.0,
+             249.0,
+             241.0
+            ],
+            "rect": [
+             735.0,
+             1805.0,
+             249.0,
+             241.0
+            ],
+            "pivot": [
+             0.502,
+             0.4979
+            ],
+            "ppu": 100.0
+           },
+           "type": "simple",
+           "preserveAspect": false,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 1,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": null,
+           "m_Type": 0,
+           "m_PreserveAspect": 0,
+           "m_FillCenter": 1,
+           "m_FillMethod": 4,
+           "m_FillAmount": 1.0,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0,
+           "_TexturePath": "UI/Atlases/",
+           "_SpriteName": "FightButtons.Charge_Highlight"
+          }
+         }
+        ]
+       },
+       {
+        "name": "Button",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.0,
+          0.5
+         ],
+         "anchorMax": [
+          0.0,
+          0.5
+         ],
+         "anchoredPosition": [
+          76.2,
+          0.0
+         ],
+         "sizeDelta": [
+          124.0,
+          124.0
+         ],
+         "pivot": [
+          0.5,
+          0.5
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionButton",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Button",
+           "runtimeSprites": {
+            "normalSpriteName": {
+             "name": "RaidMap.keys",
+             "texture": "RaidMap",
+             "resourcesPath": "UI/Atlases/",
+             "resolved": true
+            }
+           },
+           "interactable": true,
+           "transition": "SpriteSwap",
+           "targetGraphic": {
+            "type": "ResolutionImage",
+            "path": "RaidMapUIModule/RaidKeysPanel/RaidKeysButtonView/Button"
+           },
+           "spriteState": {
+            "m_HighlightedSprite": null,
+            "m_PressedSprite": null,
+            "m_SelectedSprite": null,
+            "m_DisabledSprite": null
+           },
+           "onClick": []
+          },
+          "fields": {
+           "m_Navigation": {
+            "m_Mode": 3,
+            "m_WrapAround": 0,
+            "m_SelectOnUp": null,
+            "m_SelectOnDown": null,
+            "m_SelectOnLeft": null,
+            "m_SelectOnRight": null
+           },
+           "m_Transition": 2,
+           "m_Colors": {
+            "m_NormalColor": {
+             "r": 1.0,
+             "g": 1.0,
+             "b": 1.0,
+             "a": 1.0
+            },
+            "m_HighlightedColor": {
+             "r": 0.9608,
+             "g": 0.9608,
+             "b": 0.9608,
+             "a": 1.0
+            },
+            "m_PressedColor": {
+             "r": 0.7843,
+             "g": 0.7843,
+             "b": 0.7843,
+             "a": 1.0
+            },
+            "m_SelectedColor": {
+             "r": 0.9608,
+             "g": 0.9608,
+             "b": 0.9608,
+             "a": 1.0
+            },
+            "m_DisabledColor": {
+             "r": 0.7843,
+             "g": 0.7843,
+             "b": 0.7843,
+             "a": 0.502
+            },
+            "m_ColorMultiplier": 1.0,
+            "m_FadeDuration": 0.1
+           },
+           "m_SpriteState": {
+            "m_HighlightedSprite": null,
+            "m_PressedSprite": null,
+            "m_SelectedSprite": null,
+            "m_DisabledSprite": null
+           },
+           "m_AnimationTriggers": {
+            "m_NormalTrigger": "Normal",
+            "m_HighlightedTrigger": "Highlighted",
+            "m_PressedTrigger": "Pressed",
+            "m_SelectedTrigger": "Highlighted",
+            "m_DisabledTrigger": "Disabled"
+           },
+           "m_Interactable": 1,
+           "m_TargetGraphic": {
+            "type": "ResolutionImage",
+            "path": "RaidMapUIModule/RaidKeysPanel/RaidKeysButtonView/Button"
+           },
+           "m_OnClick": {
+            "m_PersistentCalls": {
+             "m_Calls": []
+            }
+           },
+           "FlashingImage": null,
+           "_EnableClickAnimation": 0,
+           "_glowSprite": null,
+           "_WaitBeforeClick": 1,
+           "IsOneShot": 0,
+           "_glowTime": 0.0,
+           "ButtonId": -1,
+           "_normalTexturePath": "UI/Atlases/",
+           "_normalSpriteName": "RaidMap.keys",
+           "_disabledTexturePath": "",
+           "_disabledSpriteName": "",
+           "_highlightedTexturePath": "",
+           "_highlightedSpriteName": "",
+           "_pressedTexturePath": "",
+           "_pressedSpriteName": ""
+          }
+         },
+         {
+          "type": "MonoBehaviour",
+          "class": "ResolutionImage",
+          "namespace": "Nekki.SF2.GUI",
+          "assembly": "Root",
+          "enabled": true,
+          "ui": {
+           "kind": "Image",
+           "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+           ],
+           "raycastTarget": true,
+           "runtimeSprites": {
+            "SpriteName": {
+             "name": "RaidMap.keys",
+             "texture": "RaidMap",
+             "resourcesPath": "UI/Atlases/",
+             "resolved": true
+            }
+           },
+           "sprite": "RaidMap.keys",
+           "texture": "RaidMap",
+           "spriteSource": "runtime:_SpriteName",
+           "spriteInfo": {
+            "type": "Sprite",
+            "name": "RaidMap.keys",
+            "file": "010e8c8f60f2b451eaa4e912476364d1",
+            "texture": "RaidMap",
+            "textureSize": [
+             512,
+             1024
+            ],
+            "png": "tex/APK/RaidMap.png",
+            "textureRect": [
+             256.0,
+             898.0,
+             124.0,
+             124.0
+            ],
+            "rect": [
+             256.0,
+             898.0,
+             124.0,
+             124.0
+            ],
+            "pivot": [
+             0.5,
+             0.5
+            ],
+            "ppu": 100.0
+           },
+           "type": "simple",
+           "preserveAspect": false,
+           "fillCenter": true,
+           "pixelsPerUnitMultiplier": 1.0
+          },
+          "fields": {
+           "m_Material": null,
+           "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+           },
+           "m_RaycastTarget": 1,
+           "m_RaycastPadding": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+           },
+           "m_Maskable": 1,
+           "m_Sprite": null,
+           "m_Type": 0,
+           "m_PreserveAspect": 0,
+           "m_FillCenter": 1,
+           "m_FillMethod": 4,
+           "m_FillAmount": 1.0,
+           "m_FillClockwise": 1,
+           "m_FillOrigin": 0,
+           "m_UseSpriteMesh": 0,
+           "m_PixelsPerUnitMultiplier": 1.0,
+           "_TexturePath": "UI/Atlases/",
+           "_SpriteName": "RaidMap.keys"
+          }
+         }
+        ],
+        "children": [
+         {
+          "name": "Additional TouchZone",
+          "active": true,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.0,
+            0.5
+           ],
+           "anchorMax": [
+            0.0,
+            0.5
+           ],
+           "anchoredPosition": [
+            -14.0,
+            0.0
+           ],
+           "sizeDelta": [
+            165.0,
+            136.0
+           ],
+           "pivot": [
+            0.0,
+            0.5
+           ],
+           "localScale": [
+            1.0,
+            1.0,
+            1.0
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "NonDrawingGraphic",
+            "namespace": "",
+            "assembly": "Root",
+            "enabled": true,
+            "fields": {
+             "m_Material": null,
+             "m_Color": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+             },
+             "m_RaycastTarget": 1,
+             "m_RaycastPadding": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 0.0
+             },
+             "m_Maskable": 1
+            }
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "name": "HintRoot",
+        "active": true,
+        "layer": 5,
+        "rect": {
+         "anchorMin": [
+          0.0,
+          0.5
+         ],
+         "anchorMax": [
+          0.0,
+          0.5
+         ],
+         "anchoredPosition": [
+          172.0,
+          -32.0
+         ],
+         "sizeDelta": [
+          870.0,
+          400.0
+         ],
+         "pivot": [
+          0.0,
+          0.71
+         ],
+         "localScale": [
+          1.0,
+          1.0,
+          1.0
+         ],
+         "rotationZ": 0.0
+        },
+        "components": [
+         {
+          "type": "CanvasGroup",
+          "alpha": 1.0,
+          "interactable": true,
+          "blocksRaycasts": true,
+          "ignoreParentGroups": false
+         }
+        ],
+        "children": [
+         {
+          "name": "HintBody",
+          "active": true,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.0,
+            1.0
+           ],
+           "anchorMax": [
+            0.0,
+            1.0
+           ],
+           "anchoredPosition": [
+            0.0,
+            0.0
+           ],
+           "sizeDelta": [
+            1750.0,
+            700.0
+           ],
+           "pivot": [
+            0.0,
+            1.0
+           ],
+           "localScale": [
+            0.5,
+            0.5,
+            0.5
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "ResolutionImage",
+            "namespace": "Nekki.SF2.GUI",
+            "assembly": "Root",
+            "enabled": true,
+            "ui": {
+             "kind": "Image",
+             "color": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+             ],
+             "raycastTarget": false,
+             "runtimeSprites": {
+              "SpriteName": {
+               "name": "Hints.Base",
+               "texture": "Hints",
+               "resourcesPath": "UI/Atlases/",
+               "resolved": true
+              }
+             },
+             "sprite": "Hints.Base",
+             "texture": "Hints",
+             "spriteSource": "runtime:_SpriteName",
+             "spriteInfo": {
+              "type": "Sprite",
+              "name": "Hints.Base",
+              "file": "9b45a8d22d41a9744be62c0ff21f54ea",
+              "texture": "Hints",
+              "textureSize": [
+               128,
+               256
+              ],
+              "png": "tex/APK/Hints.png",
+              "textureRect": [
+               1.0,
+               115.0,
+               71.0,
+               71.0
+              ],
+              "rect": [
+               1.0,
+               115.0,
+               71.0,
+               71.0
+              ],
+              "border": [
+               35.0,
+               35.0,
+               35.0,
+               35.0
+              ],
+              "pivot": [
+               0.0,
+               0.0
+              ],
+              "ppu": 100.0
+             },
+             "type": "sliced",
+             "preserveAspect": false,
+             "fillCenter": true,
+             "pixelsPerUnitMultiplier": 1.0
+            },
+            "fields": {
+             "m_Material": null,
+             "m_Color": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+             },
+             "m_RaycastTarget": 0,
+             "m_RaycastPadding": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 0.0
+             },
+             "m_Maskable": 1,
+             "m_Sprite": null,
+             "m_Type": 1,
+             "m_PreserveAspect": 0,
+             "m_FillCenter": 1,
+             "m_FillMethod": 4,
+             "m_FillAmount": 1.0,
+             "m_FillClockwise": 1,
+             "m_FillOrigin": 0,
+             "m_UseSpriteMesh": 0,
+             "m_PixelsPerUnitMultiplier": 1.0,
+             "_TexturePath": "UI/Atlases/",
+             "_SpriteName": "Hints.Base"
+            }
+           }
+          ],
+          "children": [
+           {
+            "name": "HintArrow",
+            "active": true,
+            "layer": 5,
+            "rect": {
+             "anchorMin": [
+              0.0,
+              0.7571
+             ],
+             "anchorMax": [
+              0.0,
+              0.7571
+             ],
+             "anchoredPosition": [
+              -14.0,
+              1.0
+             ],
+             "sizeDelta": [
+              114.0,
+              67.0
+             ],
+             "pivot": [
+              0.5,
+              0.5
+             ],
+             "localScale": [
+              1.0,
+              1.0,
+              1.0
+             ],
+             "rotationZ": 90.0
+            },
+            "components": [
+             {
+              "type": "MonoBehaviour",
+              "class": "ResolutionImage",
+              "namespace": "Nekki.SF2.GUI",
+              "assembly": "Root",
+              "enabled": true,
+              "ui": {
+               "kind": "Image",
+               "color": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+               ],
+               "raycastTarget": true,
+               "runtimeSprites": {
+                "SpriteName": {
+                 "name": "Hints.Arrow",
+                 "texture": "Hints",
+                 "resourcesPath": "UI/Atlases/",
+                 "resolved": true
+                }
+               },
+               "sprite": "Hints.Arrow",
+               "texture": "Hints",
+               "spriteSource": "runtime:_SpriteName",
+               "spriteInfo": {
+                "type": "Sprite",
+                "name": "Hints.Arrow",
+                "file": "9b45a8d22d41a9744be62c0ff21f54ea",
+                "texture": "Hints",
+                "textureSize": [
+                 128,
+                 256
+                ],
+                "png": "tex/APK/Hints.png",
+                "textureRect": [
+                 1.0,
+                 188.0,
+                 115.0,
+                 67.0
+                ],
+                "rect": [
+                 1.0,
+                 188.0,
+                 115.0,
+                 67.0
+                ],
+                "pivot": [
+                 0.0,
+                 0.0
+                ],
+                "ppu": 100.0
+               },
+               "type": "simple",
+               "preserveAspect": false,
+               "fillCenter": true,
+               "pixelsPerUnitMultiplier": 1.0
+              },
+              "fields": {
+               "m_Material": null,
+               "m_Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+               },
+               "m_RaycastTarget": 1,
+               "m_RaycastPadding": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+               },
+               "m_Maskable": 1,
+               "m_Sprite": null,
+               "m_Type": 0,
+               "m_PreserveAspect": 0,
+               "m_FillCenter": 1,
+               "m_FillMethod": 4,
+               "m_FillAmount": 1.0,
+               "m_FillClockwise": 1,
+               "m_FillOrigin": 0,
+               "m_UseSpriteMesh": 0,
+               "m_PixelsPerUnitMultiplier": 1.0,
+               "_TexturePath": "UI/Atlases/",
+               "_SpriteName": "Hints.Arrow"
+              }
+             }
+            ]
+           },
+           {
+            "name": "HintText",
+            "active": true,
+            "layer": 5,
+            "rect": {
+             "anchorMin": [
+              0.5,
+              1.0
+             ],
+             "anchorMax": [
+              0.5,
+              1.0
+             ],
+             "anchoredPosition": [
+              0.0,
+              0.0
+             ],
+             "sizeDelta": [
+              600.0,
+              80.0
+             ],
+             "pivot": [
+              0.5,
+              1.0
+             ],
+             "localScale": [
+              2.0,
+              2.0,
+              2.0
+             ],
+             "rotationZ": 0.0
+            },
+            "components": [
+             {
+              "type": "MonoBehaviour",
+              "class": "LabelAlias",
+              "namespace": "Nekki.SF2.GUI",
+              "assembly": "Root",
+              "enabled": true,
+              "ui": {
+               "kind": "Text",
+               "color": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+               ],
+               "raycastTarget": false,
+               "text": "Hint Title Raid Button",
+               "font": "LegacyRuntime",
+               "fontSize": 40,
+               "fontStyle": "Normal",
+               "alignment": "MiddleCenter",
+               "bestFit": true,
+               "minSize": 4,
+               "maxSize": 100,
+               "richText": true,
+               "horizontalOverflow": "Wrap",
+               "verticalOverflow": "Truncate",
+               "lineSpacing": 1.0,
+               "locKey": null,
+               "toUpperCase": false,
+               "useLocalizationFont": true,
+               "fontType": 0,
+               "labelFontSize": 100
+              },
+              "fields": {
+               "m_Material": null,
+               "m_Color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+               },
+               "m_RaycastTarget": 0,
+               "m_RaycastPadding": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 0.0
+               },
+               "m_Maskable": 1,
+               "m_FontData": {
+                "m_Font": {
+                 "type": "Font",
+                 "name": "LegacyRuntime",
+                 "file": "unity default resources"
+                },
+                "m_FontSize": 40,
+                "m_FontStyle": 0,
+                "m_BestFit": 1,
+                "m_MinSize": 4,
+                "m_MaxSize": 100,
+                "m_Alignment": 4,
+                "m_AlignByGeometry": 0,
+                "m_RichText": 1,
+                "m_HorizontalOverflow": 0,
+                "m_VerticalOverflow": 0,
+                "m_LineSpacing": 1.0
+               },
+               "m_Text": "Hint Title Raid Button",
+               "GlyphPrefabs": [],
+               "ForceUseAlignedBestFit": 0,
+               "ForbiddenUseAlignedBestFit": 0,
+               "FitImageLineHeightParam": {
+                "ScaleMaxLineHeightFactor": 1.0,
+                "ApplyToSingleLine": 0,
+                "Enabled": 0
+               },
+               "_useLocalizationFont": 1,
+               "_fontType": 0,
+               "_useLabelFontSize": 1,
+               "_labelFontSize": 100,
+               "_useLabelLineSpacing": 0,
+               "_labelLineSpacing": 0.0,
+               "_Alias": "",
+               "_ToUpperCase": 0
+              }
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "name": "KeysPanel1",
+          "active": true,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.0,
+            0.5
+           ],
+           "anchorMax": [
+            1.0,
+            0.5
+           ],
+           "anchoredPosition": [
+            25.0,
+            110.0
+           ],
+           "sizeDelta": [
+            -50.0,
+            110.0
+           ],
+           "pivot": [
+            0.0,
+            1.0
+           ],
+           "localScale": [
+            1.0,
+            1.0,
+            1.0
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "HorizontalLayoutGroup",
+            "namespace": "UnityEngine.UI",
+            "assembly": "UnityEngine.UI",
+            "enabled": true,
+            "ui": {
+             "layout": "HorizontalLayoutGroup",
+             "padding": {
+              "left": 0,
+              "right": 0,
+              "top": 0,
+              "bottom": 0
+             },
+             "childAlignment": "MiddleLeft",
+             "spacing": 10.0,
+             "childControlWidth": 0,
+             "childControlHeight": 0,
+             "childForceExpandWidth": 0,
+             "childForceExpandHeight": 0,
+             "childScaleWidth": 0,
+             "childScaleHeight": 0,
+             "reverseArrangement": 0
+            },
+            "fields": {
+             "m_Padding": {
+              "m_Left": 0,
+              "m_Right": 0,
+              "m_Top": 0,
+              "m_Bottom": 0
+             },
+             "m_ChildAlignment": 3,
+             "m_Spacing": 10.0,
+             "m_ChildForceExpandWidth": 0,
+             "m_ChildForceExpandHeight": 0,
+             "m_ChildControlWidth": 0,
+             "m_ChildControlHeight": 0,
+             "m_ChildScaleWidth": 0,
+             "m_ChildScaleHeight": 0,
+             "m_ReverseArrangement": 0
+            }
+           },
+           {
+            "type": "MonoBehaviour",
+            "class": "Image",
+            "namespace": "UnityEngine.UI",
+            "assembly": "UnityEngine.UI",
+            "enabled": false,
+            "ui": {
+             "color": [
+              0.3396,
+              0.0,
+              0.0,
+              1.0
+             ],
+             "raycastTarget": false,
+             "sprite": null,
+             "texture": null,
+             "spriteSource": null,
+             "spriteInfo": null,
+             "type": "simple",
+             "preserveAspect": false,
+             "fillCenter": true,
+             "pixelsPerUnitMultiplier": 1.0
+            },
+            "fields": {
+             "m_Material": null,
+             "m_Color": {
+              "r": 0.3396,
+              "g": 0.0,
+              "b": 0.0,
+              "a": 1.0
+             },
+             "m_RaycastTarget": 0,
+             "m_RaycastPadding": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 0.0
+             },
+             "m_Maskable": 1,
+             "m_Sprite": null,
+             "m_Type": 0,
+             "m_PreserveAspect": 0,
+             "m_FillCenter": 1,
+             "m_FillMethod": 4,
+             "m_FillAmount": 1.0,
+             "m_FillClockwise": 1,
+             "m_FillOrigin": 0,
+             "m_UseSpriteMesh": 0,
+             "m_PixelsPerUnitMultiplier": 1.0
+            }
+           }
+          ]
+         },
+         {
+          "name": "KeysPanel2",
+          "active": true,
+          "layer": 5,
+          "rect": {
+           "anchorMin": [
+            0.0,
+            0.5
+           ],
+           "anchorMax": [
+            1.0,
+            0.5
+           ],
+           "anchoredPosition": [
+            25.0,
+            -20.0
+           ],
+           "sizeDelta": [
+            -50.0,
+            110.0
+           ],
+           "pivot": [
+            0.0,
+            1.0
+           ],
+           "localScale": [
+            1.0,
+            1.0,
+            1.0
+           ],
+           "rotationZ": 0.0
+          },
+          "components": [
+           {
+            "type": "MonoBehaviour",
+            "class": "HorizontalLayoutGroup",
+            "namespace": "UnityEngine.UI",
+            "assembly": "UnityEngine.UI",
+            "enabled": true,
+            "ui": {
+             "layout": "HorizontalLayoutGroup",
+             "padding": {
+              "left": 0,
+              "right": 0,
+              "top": 0,
+              "bottom": 0
+             },
+             "childAlignment": "MiddleLeft",
+             "spacing": 10.0,
+             "childControlWidth": 0,
+             "childControlHeight": 0,
+             "childForceExpandWidth": 0,
+             "childForceExpandHeight": 0,
+             "childScaleWidth": 0,
+             "childScaleHeight": 0,
+             "reverseArrangement": 0
+            },
+            "fields": {
+             "m_Padding": {
+              "m_Left": 0,
+              "m_Right": 0,
+              "m_Top": 0,
+              "m_Bottom": 0
+             },
+             "m_ChildAlignment": 3,
+             "m_Spacing": 10.0,
+             "m_ChildForceExpandWidth": 0,
+             "m_ChildForceExpandHeight": 0,
+             "m_ChildControlWidth": 0,
+             "m_ChildControlHeight": 0,
+             "m_ChildScaleWidth": 0,
+             "m_ChildScaleHeight": 0,
+             "m_ReverseArrangement": 0
+            }
+           },
+           {
+            "type": "MonoBehaviour",
+            "class": "Image",
+            "namespace": "UnityEngine.UI",
+            "assembly": "UnityEngine.UI",
+            "enabled": false,
+            "ui": {
+             "color": [
+              0.3396,
+              0.0,
+              0.0,
+              1.0
+             ],
+             "raycastTarget": false,
+             "sprite": null,
+             "texture": null,
+             "spriteSource": null,
+             "spriteInfo": null,
+             "type": "simple",
+             "preserveAspect": false,
+             "fillCenter": true,
+             "pixelsPerUnitMultiplier": 1.0
+            },
+            "fields": {
+             "m_Material": null,
+             "m_Color": {
+              "r": 0.3396,
+              "g": 0.0,
+              "b": 0.0,
+              "a": 1.0
+             },
+             "m_RaycastTarget": 0,
+             "m_RaycastPadding": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 0.0
+             },
+             "m_Maskable": 1,
+             "m_Sprite": null,
+             "m_Type": 0,
+             "m_PreserveAspect": 0,
+             "m_FillCenter": 1,
+             "m_FillMethod": 4,
+             "m_FillAmount": 1.0,
+             "m_FillClockwise": 1,
+             "m_FillOrigin": 0,
+             "m_UseSpriteMesh": 0,
+             "m_PixelsPerUnitMultiplier": 1.0
+            }
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}
