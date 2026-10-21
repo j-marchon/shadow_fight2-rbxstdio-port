@@ -18,18 +18,24 @@ local function itemMatches(loadout: { any }, c: any): boolean
 end
 Moves.itemMatches = itemMatches
 
-local function lockPasses(loadout: { any }, c: any): boolean
+local function lockPasses(loadout: { any }, c: any, perks: { [string]: boolean }?): boolean
 	if c.t == "const" then
 		return c.v
 	end
 	local v: boolean
-	if c.t == "item" then
+	if c.t == "screen" then
+		-- a fighter's moves are the fight screen's; the shop and profile preview sets are not loaded here
+		v = c.name == "Fight"
+	elseif c.t == "perk" then
+		-- the learnable moves: the fighter knows them only while it has the perk
+		v = perks ~= nil and perks[c.name] == true
+	elseif c.t == "item" then
 		v = itemMatches(loadout, c)
 	else
 		local all = c.op == "and"
 		v = all
 		for _, k in c.kids do
-			if lockPasses(loadout, k) ~= all then
+			if lockPasses(loadout, k, perks) ~= all then
 				v = not all
 				break
 			end
@@ -52,17 +58,25 @@ function Moves.library(): { any }
 end
 
 local sets = {}
-function Moves.forLoadout(loadout: { any }): { any }
+-- The moves a fighter can use: every library move whose <Locks> pass for this equipment and this set of
+-- perks. The perks matter because the learnable moves are locked behind one each (PERK_DOUBLE_SWEEP and
+-- friends), so they go in the cache key too.
+function Moves.forLoadout(loadout: { any }, perks: { [string]: boolean }?): { any }
 	local keyParts = {}
 	for _, it in loadout do table.insert(keyParts, it.Type .. ":" .. it.Name .. ":" .. (it.SubType or "")) end
-	local key = table.concat(keyParts, "|")
+	local perkNames = {}
+	for name, on in perks or {} do
+		if on then table.insert(perkNames, name) end
+	end
+	table.sort(perkNames)
+	local key = table.concat(keyParts, "|") .. "#" .. table.concat(perkNames, ",")
 	local set = sets[key]
 	if set then return set end
 	set = {}
 	for _, m in Moves.library() do
 		local ok = true
 		for _, c in m.locks or {} do
-			if not lockPasses(loadout, c) then
+			if not lockPasses(loadout, c, perks) then
 				ok = false
 				break
 			end

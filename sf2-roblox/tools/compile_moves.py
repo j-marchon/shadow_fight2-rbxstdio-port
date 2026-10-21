@@ -35,8 +35,10 @@ def lock_ok(el):
         kids = [lock_ok(c) for c in el]
         v = all(kids) if (el.get('Type') or '').lower() == 'and' else any(kids)
         return v != (el.get('Not') == '1')
-    if tag in ('Perk', 'Screen'):
-        return el.get('Not') == '1'  # no perks / not on a special screen
+    if tag == 'Screen':
+        return (el.get('Name') == 'Fight') != (el.get('Not') == '1')  # built for the fight screen
+    if tag == 'Perk':
+        return el.get('Not') == '1'  # no perks
     return True
 
 def locks_pass(move):
@@ -52,8 +54,17 @@ def lock_tree(el):
     if tag == 'Operator':
         op = 'and' if (el.get('Type') or '').lower() == 'and' else 'or'
         return f"{{t=\"op\",op=\"{op}\",nt={nt},kids={{{','.join(lock_tree(c) for c in el)}}}}}"
-    if tag in ('Perk', 'Screen'):
-        return f"{{t=\"const\",v={nt}}}"
+    if tag == 'Screen':
+        # Which screen the move belongs to. A fighter's move set is built for the fight screen, so
+        # <Screen Name="Fight"/> passes and the shop / profile preview screens do not. Emitting a flat
+        # false here (the old "not on a special screen") threw away the 37 moves locked to Fight --
+        # DoubleSweep, DoublePunch, DoubleJumpKick, ElbowStrike, the throws -- which is why none of the
+        # learnable moves ever showed up.
+        return f"{{t=\"screen\",nt={nt},name={s(el.get('Name') or '')}}}"
+    if tag == 'Perk':
+        # a move the fighter learns with a perk (PERK_DOUBLE_SWEEP, PERK_ELBOW_STRIKE, PERK_SUPLEX,
+        # PERK_DOUBLE_JUMP_KICK ...), tested against the perks passed to Moves.forLoadout
+        return f"{{t=\"perk\",nt={nt},name={s(el.get('Name') or '')}}}"
     return '{t="const",v=true}'
 
 def s(v):

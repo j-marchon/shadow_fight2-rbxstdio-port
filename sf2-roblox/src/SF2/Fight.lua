@@ -111,8 +111,8 @@ function Fight.new(opts: any)
 		e.attributes = table.clone(b.attributes)
 		e.voice = b.voice
 		e.name = b.name or ""
-		e.perks = {}
-		for _, p in b.def.perks or {} do e.perks[p] = true end
+		-- Warrior.build already merged the stage's <Perks> with the level's PerkTree perks
+		e.perks = table.clone(b.perks or {})
 		-- fight rules (SF2.Rules) for this side
 		local rule = (opts.rules and opts.rules[i]) or {}
 		e.rule = rule

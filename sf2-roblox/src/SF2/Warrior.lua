@@ -19,6 +19,28 @@ export type Def = {
 	attributes: { [string]: number }?, perks: { string }?, tactic: string?,
 }
 
+-- CharacterProgress <PerkTree>: <Level Value="N"> lists the perks learned on reaching level N, and
+-- <Upgrade Name> raises one already learned. This is the game's own unlock order, so the learnable moves
+-- appear exactly when it says: Double Sweep at 2, Double Jump Kick at 4, and so on.
+local perkTree: { { level: number, perks: { string } } }? = nil
+function Warrior.perksForLevel(level: number): { [string]: boolean }
+	if not perkTree then
+		perkTree = {}
+		for _, l in Xml.all(Xml.first(Xml.doc("CharacterProgress"), "PerkTree"), "Level") do
+			local names = {}
+			for _, p in Xml.all(l, "Perk") do table.insert(names, Xml.attr(p, "Name") :: string) end
+			table.insert(perkTree :: any, { level = Xml.num(l, "Value", 1) :: number, perks = names })
+		end
+	end
+	local out: { [string]: boolean } = {}
+	for _, l in perkTree :: any do
+		if l.level <= level then
+			for _, n in l.perks do out[n] = true end
+		end
+	end
+	return out
+end
+
 local SLOTS = { "Skeleton", "Weapon", "Ranged", "Magic", "Armor", "Helm", "Decorate" }
 Warrior.SLOTS = SLOTS
 local DEFAULTS = { Skeleton = "Skeleton", Armor = "Body", Helm = "Head", Weapon = "Fists", Ranged = "NoRanged", Magic = "NoMagic" }
@@ -98,13 +120,21 @@ function Warrior.build(def: Def): any
 	for k, v in def.attributes or {} do attributes[k] = v end
 	-- fight rules: <Attributes ... ApplyTo> add to the warrior's values (DamageFactor, ...)
 	for k, v in (def :: any).add or {} do attributes[k] = (attributes[k] or 0) + v end
+	-- perks: the ones this warrior is given (stages.xml <Perks>) plus, for anyone progressing by level,
+	-- the PerkTree perks earned up to that level. They decide which learnable moves are in the set.
+	local perks: { [string]: boolean } = {}
+	if (def :: any).perkTree ~= false then
+		for name in Warrior.perksForLevel(def.level or 1) do perks[name] = true end
+	end
+	for _, name in def.perks or {} do perks[name] = true end
 	return {
 		def = def,
 		items = items,
 		loadout = loadout,
 		models = models,
+		perks = perks,
 		rig = Rigs.build(models),
-		moves = Moves.forLoadout(loadout),
+		moves = Moves.forLoadout(loadout, perks),
 		attributes = attributes,
 		voice = def.voice or "Male",
 		name = def.name or "",
