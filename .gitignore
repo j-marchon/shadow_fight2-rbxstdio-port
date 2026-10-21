@@ -1,10 +1,10 @@
-# Private or copyrighted, never push: keys, original APKs, decrypted game data, extracted assets, decompiled code
-apk/
-sf2-data/
-sf2-assets/
-sf2-il2cpp/
-_archive/
+# Secrets (AES key, Roblox Open Cloud key): never push
+sf2-data/keys/
+# Too big for GitHub (2.3 GB Ghidra database; over even the Git LFS per-file limit). Stays local; rebuild from libil2cpp.so if lost.
+sf2-il2cpp/ghidra_proj/
+# Ghidra installer, re-downloadable
+_archive/SF2-RE/tools/dl/*.zip
+# Java/Ghidra temp files
 tmp/
-
 # Separate local copy (Antigravity), not part of this repo
 sf2-standalone/
