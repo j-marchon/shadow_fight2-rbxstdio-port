@@ -1,0 +1,12 @@
+// OGMFFOMHGIA$$FAEBPLENEGK @ RVA 0x31D5244
+
+bool OGMFFOMHGIA__FAEBPLENEGK
+               (SimpleJSON_JSONNode_o *JHMENEKPIBO,bool HBFDLMOKDGA,MethodInfo *method)
+
+{
+  bool bVar1;
+  
+  bVar1 = OGMFFOMHGIA__FMBMNDIGLIG(JHMENEKPIBO,HBFDLMOKDGA,method);
+  return bVar1;
+}
+

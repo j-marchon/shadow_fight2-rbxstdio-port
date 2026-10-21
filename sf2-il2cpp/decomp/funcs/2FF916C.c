@@ -1,0 +1,11 @@
+// JMDPBFOCHHP$$GFECENPAABF @ RVA 0x2FF916C
+
+void JMDPBFOCHHP__GFECENPAABF
+               (JMDPBFOCHHP_o *__this,JMDPBFOCHHP_PEFEIMKBGAH_o *IMMNELPBGIF,MethodInfo *method)
+
+{
+  (__this->fields).EJCCMMEGGFF = IMMNELPBGIF;
+  thunk_FUN_01c20e04();
+  return;
+}
+

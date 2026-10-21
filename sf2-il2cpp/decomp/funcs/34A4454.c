@@ -1,0 +1,9 @@
+// MGDJPGGPDJI$$OFJLHAKNDGH @ RVA 0x34A4454
+
+void MGDJPGGPDJI__OFJLHAKNDGH(MGDJPGGPDJI_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).NLLKMEMKBAF = CJNHFNHJHPE;
+  return;
+}
+

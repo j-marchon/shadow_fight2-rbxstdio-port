@@ -1,0 +1,8 @@
+// JANDANNAOBB$$KGGGBHEMAOO @ RVA 0x334A9C8
+
+int32_t JANDANNAOBB__KGGGBHEMAOO(JANDANNAOBB_o *__this,MethodInfo *method)
+
+{
+  return 5;
+}
+

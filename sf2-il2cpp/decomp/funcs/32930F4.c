@@ -1,0 +1,10 @@
+// OJFPEINHCDP$$EKMGFBCDOOA @ RVA 0x32930F4
+
+void OJFPEINHCDP__EKMGFBCDOOA(OJFPEINHCDP_o *__this,KDADMJGPAOM_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).LHFLMBNKPHF = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

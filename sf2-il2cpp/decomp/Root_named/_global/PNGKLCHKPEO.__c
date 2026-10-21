@@ -1,0 +1,71 @@
+// TypeDefIndex 1762
+// Namespace: 
+// [Serializable]
+// private sealed class DistancePoint.<>c
+// Fields:
+//   public static readonly DistancePoint.<>c <>9; // 0x0
+//   public static Action<DistancePoint.PLCIDMPOECL> <>9__35_0; // 0x8
+//   public static Action<DistancePoint.PLCIDMPOECL> <>9__35_1; // 0x10
+
+// ===== internal void AOPHCHOCAMJ(DistancePoint.PLCIDMPOECL x)  [RVA 0x31E7044]
+// DistancePoint.<>c$$AOPHCHOCAMJ @ RVA 0x31E7044
+
+void DistancePoint_<>c__AOPHCHOCAMJ
+               (DistancePoint___c_o *__this,DistancePoint_PLCIDMPOECL_o *x,MethodInfo *method)
+
+{
+  if (x != (DistancePoint_PLCIDMPOECL_o *)0x0) {
+    DistancePoint_PLCIDMPOECL__RandomizeObscuredVars(x,(MethodInfo *)x);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== private static void .cctor()  [RVA 0x31E7058]
+// DistancePoint.<>c$$.cctor @ RVA 0x31E7058
+
+void DistancePoint_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_04566d6e & 1) == 0) {
+    FUN_01bab630(&DistancePoint_<>c_TypeInfo);
+    DAT_04566d6e = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(DistancePoint_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  DistancePoint_<>c_TypeInfo->static_fields->__9 = (DistancePoint___c_o *)__this;
+  thunk_FUN_01c20e04(DistancePoint_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== internal void KICDPDGGBJP(DistancePoint.PLCIDMPOECL x)  [RVA 0x31E70C8]
+// DistancePoint.<>c$$KICDPDGGBJP @ RVA 0x31E70C8
+
+void DistancePoint_<>c__KICDPDGGBJP
+               (DistancePoint___c_o *__this,DistancePoint_PLCIDMPOECL_o *x,MethodInfo *method)
+
+{
+  if (x != (DistancePoint_PLCIDMPOECL_o *)0x0) {
+    DistancePoint_PLCIDMPOECL__RandomizeObscuredVars(x,(MethodInfo *)x);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== public void .ctor()  [RVA 0x31E70C0]
+// DistancePoint.<>c$$.ctor @ RVA 0x31E70C0
+
+void DistancePoint_<>c___ctor(DistancePoint___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+

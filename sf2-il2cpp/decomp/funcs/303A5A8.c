@@ -1,0 +1,9 @@
+// LJNJDFEAIOH$$NKLNDGMMAAH @ RVA 0x303A5A8
+
+void LJNJDFEAIOH__NKLNDGMMAAH(LJNJDFEAIOH_o *__this,Il2CppObject *IMMNELPBGIF,MethodInfo *method)
+
+{
+  LJNJDFEAIOH__HDMPAKAHHJG(__this,(__this->fields).IHODMKCBNKJ,method);
+  return;
+}
+

@@ -1,0 +1,8 @@
+// OIIEGNHALFL$$ALHDJFICEBG @ RVA 0x3073724
+
+int32_t OIIEGNHALFL__ALHDJFICEBG(OIIEGNHALFL_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

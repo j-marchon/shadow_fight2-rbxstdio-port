@@ -1,0 +1,9 @@
+// KJNCNBJIJPC$$FPIHHKGJJBB @ RVA 0x331B66C
+
+void KJNCNBJIJPC__FPIHHKGJJBB(KJNCNBJIJPC_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).OJBIFDEEBNO = CJNHFNHJHPE;
+  return;
+}
+

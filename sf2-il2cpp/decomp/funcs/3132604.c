@@ -1,0 +1,8 @@
+// PLMEGPKDHBF$$JFGBPBOCOIC @ RVA 0x3132604
+
+bool PLMEGPKDHBF__JFGBPBOCOIC(PLMEGPKDHBF_o *__this,int32_t HJDMBDBJEFL,MethodInfo *method)
+
+{
+  return true;
+}
+

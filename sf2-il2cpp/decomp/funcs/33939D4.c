@@ -1,0 +1,9 @@
+// KDADMJGPAOM$$IFADJKCOFNA @ RVA 0x33939D4
+
+void KDADMJGPAOM__IFADJKCOFNA(KDADMJGPAOM_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).PDGEHKCPGDK = CJNHFNHJHPE;
+  return;
+}
+

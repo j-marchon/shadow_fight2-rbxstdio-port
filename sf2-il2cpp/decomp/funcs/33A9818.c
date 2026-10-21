@@ -1,0 +1,13 @@
+// NKDMOOEFPHJ.ACFDNGGGDIJ$$KBBHCAAFDCO @ RVA 0x33A9818
+
+void NKDMOOEFPHJ_ACFDNGGGDIJ__KBBHCAAFDCO
+               (NKDMOOEFPHJ_ACFDNGGGDIJ_o *__this,float LINBBAKAFCP,int32_t DDNILPCHOCN,
+               float AIHACFDHGMA,MethodInfo *method)
+
+{
+  NKDMOOEFPHJ_ACFDNGGGDIJ__IFKEDFECIBH(__this,DDNILPCHOCN,AIHACFDHGMA,method);
+  (__this->fields).KMENOPCKFLM = (__this->fields).KMENOPCKFLM + LINBBAKAFCP;
+  (__this->fields).AGMCOJBKCAA = (__this->fields).AGMCOJBKCAA + 1.0;
+  return;
+}
+

@@ -1,0 +1,9 @@
+// JHMFOIIPEHB$$OKNGMFGIHOO @ RVA 0x30CEAF4
+
+void JHMFOIIPEHB__OKNGMFGIHOO(JHMFOIIPEHB_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).LMHBPLAAEIE = CJNHFNHJHPE;
+  return;
+}
+

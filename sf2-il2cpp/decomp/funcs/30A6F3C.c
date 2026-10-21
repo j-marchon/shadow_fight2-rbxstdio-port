@@ -1,0 +1,8 @@
+// BGMNPFKLGJL$$KCBILPIAPHN @ RVA 0x30A6F3C
+
+int32_t BGMNPFKLGJL__KCBILPIAPHN(BGMNPFKLGJL_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

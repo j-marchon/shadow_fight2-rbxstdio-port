@@ -1,0 +1,8 @@
+// NLPJLHOEAOE$$JMKKMONJCGK @ RVA 0x31F2468
+
+bool NLPJLHOEAOE__JMKKMONJCGK(HOOAAGABMBL_o *IKKAMAMLIKA,MethodInfo *method)
+
+{
+  return true;
+}
+

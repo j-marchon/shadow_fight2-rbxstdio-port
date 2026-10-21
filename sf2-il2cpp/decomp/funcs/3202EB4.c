@@ -1,0 +1,8 @@
+// NLPJLHOEAOE$$OCCEAGJJCDF @ RVA 0x3202EB4
+
+IFKFDFGNMMN_o * NLPJLHOEAOE__OCCEAGJJCDF(NLPJLHOEAOE_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).OMDCNDHOACL;
+}
+

@@ -1,0 +1,9 @@
+// ICBMOMGINFH$$FPDDGLENCPA @ RVA 0x317DE54
+
+void ICBMOMGINFH__FPDDGLENCPA(ICBMOMGINFH_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).FBKKMKKHPBC = CJNHFNHJHPE;
+  return;
+}
+

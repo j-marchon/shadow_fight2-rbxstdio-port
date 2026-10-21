@@ -1,0 +1,9 @@
+// FADHMEJJCPO$$EMKELMJKKLO @ RVA 0x33CE8F8
+
+void FADHMEJJCPO__EMKELMJKKLO(FADHMEJJCPO_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).PDOMCPONBNB = CJNHFNHJHPE;
+  return;
+}
+

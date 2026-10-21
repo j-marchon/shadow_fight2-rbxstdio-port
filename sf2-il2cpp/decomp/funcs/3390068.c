@@ -1,0 +1,9 @@
+// HBHFOKIPAHA$$OPKJBABEHFH @ RVA 0x3390068
+
+void HBHFOKIPAHA__OPKJBABEHFH(HBHFOKIPAHA_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MAHGAIJBBHF = CJNHFNHJHPE;
+  return;
+}
+

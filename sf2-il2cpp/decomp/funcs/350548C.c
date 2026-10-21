@@ -1,0 +1,8 @@
+// COADHFKEKDD$$KCBILPIAPHN @ RVA 0x350548C
+
+int32_t COADHFKEKDD__KCBILPIAPHN(COADHFKEKDD_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

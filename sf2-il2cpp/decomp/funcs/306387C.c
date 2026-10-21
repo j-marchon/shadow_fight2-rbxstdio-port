@@ -1,0 +1,8 @@
+// ACHLOMELAJE$$JENNAPCJNBG @ RVA 0x306387C
+
+LPAPAMPGDFN_o * ACHLOMELAJE__JENNAPCJNBG(ACHLOMELAJE_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).LMCDOMHENMC;
+}
+

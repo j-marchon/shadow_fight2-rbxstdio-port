@@ -1,0 +1,8 @@
+// EPCCNLNOALL$$JCKINNMKHBA @ RVA 0x32FBE20
+
+KAMBBJFPLGM_o * EPCCNLNOALL__JCKINNMKHBA(EPCCNLNOALL_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).OPHCNELIOLD;
+}
+

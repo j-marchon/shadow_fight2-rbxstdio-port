@@ -1,0 +1,9 @@
+// GKLPDMLELJF$$HGNFANPBJLG @ RVA 0x34B9C74
+
+void GKLPDMLELJF__HGNFANPBJLG(GKLPDMLELJF_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).PEBHLKLGDBM = CJNHFNHJHPE;
+  return;
+}
+

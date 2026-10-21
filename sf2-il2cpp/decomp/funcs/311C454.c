@@ -1,0 +1,8 @@
+// NAKKKCKOHGH$$DFBPBPPNIBC @ RVA 0x311C454
+
+bool NAKKKCKOHGH__DFBPBPPNIBC(NAKKKCKOHGH_o *__this,JMIFGHKOLCL_o *LDOOMGABFME,MethodInfo *method)
+
+{
+  return false;
+}
+

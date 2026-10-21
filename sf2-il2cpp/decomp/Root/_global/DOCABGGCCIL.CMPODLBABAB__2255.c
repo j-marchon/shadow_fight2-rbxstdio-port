@@ -1,0 +1,11 @@
+// TypeDefIndex 2255
+// Namespace: 
+// public enum DOCABGGCCIL.CMPODLBABAB
+// Fields:
+//   public int value__; // 0x0
+//   public const DOCABGGCCIL.CMPODLBABAB REWARD_NOTHING = 0;
+//   public const DOCABGGCCIL.CMPODLBABAB REWARD_ITEM = 1;
+//   public const DOCABGGCCIL.CMPODLBABAB REWARD_MONEY = 2;
+//   public const DOCABGGCCIL.CMPODLBABAB REWARD_CURRENCY = 3;
+//   public const DOCABGGCCIL.CMPODLBABAB REWARD_RESISTANCE = 4;
+//   public const DOCABGGCCIL.CMPODLBABAB REWARD_LOTTERY = 5;

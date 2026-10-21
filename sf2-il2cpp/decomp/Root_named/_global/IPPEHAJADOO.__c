@@ -1,0 +1,54 @@
+// TypeDefIndex 1249
+// Namespace: 
+// [Serializable]
+// private sealed class EventTriggers.<>c
+// Fields:
+//   public static readonly EventTriggers.<>c <>9; // 0x0
+//   public static Predicate<EventTriggers.GHFEMFCMBEJ> <>9__31_0; // 0x8
+
+// ===== internal bool BGPBDFCDLIF(EventTriggers.GHFEMFCMBEJ x)  [RVA 0x3143568]
+// EventTriggers.<>c$$BGPBDFCDLIF @ RVA 0x3143568
+
+bool EventTriggers_<>c__BGPBDFCDLIF
+               (EventTriggers___c_o *__this,EventTriggers_GHFEMFCMBEJ_o *x,MethodInfo *method)
+
+{
+  if (x != (EventTriggers_GHFEMFCMBEJ_o *)0x0) {
+    EventTriggers_GHFEMFCMBEJ__LLCONNGHGKD(x,(MethodInfo *)x);
+    return (x->fields).COJOJNLJBDO;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== public void .ctor()  [RVA 0x314358C]
+// EventTriggers.<>c$$.ctor @ RVA 0x314358C
+
+void EventTriggers_<>c___ctor(EventTriggers___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== private static void .cctor()  [RVA 0x3143594]
+// EventTriggers.<>c$$.cctor @ RVA 0x3143594
+
+void EventTriggers_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_04566768 & 1) == 0) {
+    FUN_01bab630(&EventTriggers_<>c_TypeInfo);
+    DAT_04566768 = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(EventTriggers_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  EventTriggers_<>c_TypeInfo->static_fields->__9 = (EventTriggers___c_o *)__this;
+  thunk_FUN_01c20e04(EventTriggers_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+

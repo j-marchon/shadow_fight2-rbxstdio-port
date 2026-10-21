@@ -1,0 +1,8 @@
+// IFKFDFGNMMN$$DPOEFEMDMJI @ RVA 0x31B93EC
+
+JFMLOEMEKLI_array * IFKFDFGNMMN__DPOEFEMDMJI(IFKFDFGNMMN_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).DFIBPGKOKEG;
+}
+

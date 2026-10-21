@@ -1,0 +1,10 @@
+// OPNFCOGALLI$$DKPGGGILMJE @ RVA 0x310A848
+
+void OPNFCOGALLI__DKPGGGILMJE(OPNFCOGALLI_o *__this,ECENNHNBAME_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).NDBPNFLAKDL = CJNHFNHJHPE;
+  thunk_FUN_01c20e04(&(__this->fields).NDBPNFLAKDL);
+  return;
+}
+

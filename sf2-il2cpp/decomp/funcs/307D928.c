@@ -1,0 +1,8 @@
+// IKLJMCMIMJF$$KCBILPIAPHN @ RVA 0x307D928
+
+int32_t IKLJMCMIMJF__KCBILPIAPHN(IKLJMCMIMJF_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

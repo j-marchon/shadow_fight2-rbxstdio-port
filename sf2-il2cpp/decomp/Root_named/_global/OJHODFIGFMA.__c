@@ -1,0 +1,49 @@
+// TypeDefIndex 1841
+// Namespace: 
+// [Serializable]
+// private sealed class CountersFight.<>c
+// Fields:
+//   public static readonly CountersFight.<>c <>9; // 0x0
+//   public static Action<CountersFight.MJOLIJOPBMO> <>9__44_0; // 0x8
+
+// ===== private static void .cctor()  [RVA 0x3243470]
+// CountersFight.<>c$$.cctor @ RVA 0x3243470
+
+void CountersFight_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_045670a2 & 1) == 0) {
+    FUN_01bab630(&CountersFight_<>c_TypeInfo);
+    DAT_045670a2 = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(CountersFight_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  CountersFight_<>c_TypeInfo->static_fields->__9 = (CountersFight___c_o *)__this;
+  thunk_FUN_01c20e04(CountersFight_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== internal void FMDFGIKBIID(CountersFight.MJOLIJOPBMO <p0>)  [RVA 0x32434E0]
+// CountersFight.<>c$$FMDFGIKBIID @ RVA 0x32434E0
+
+void CountersFight_<>c__FMDFGIKBIID
+               (CountersFight___c_o *__this,CountersFight_MJOLIJOPBMO_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== public void .ctor()  [RVA 0x32434D8]
+// CountersFight.<>c$$.ctor @ RVA 0x32434D8
+
+void CountersFight_<>c___ctor(CountersFight___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+

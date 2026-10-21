@@ -1,0 +1,8 @@
+// BPOJGPCCMPD$$KCBILPIAPHN @ RVA 0x31CB588
+
+int32_t BPOJGPCCMPD__KCBILPIAPHN(BPOJGPCCMPD_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

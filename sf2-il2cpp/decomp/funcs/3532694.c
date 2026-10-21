@@ -1,0 +1,15 @@
+// JJPNLEPEAFM$$CMMCCNHIIOP @ RVA 0x3532694
+
+Nekki_SF2_GUI_Dialogs_BaseDialog_o *
+JJPNLEPEAFM__CMMCCNHIIOP(HEFOANCOHDC_o *EIKFGOCCOIE,MethodInfo *method)
+
+{
+  HHKELHDGPDO_o *IMMNELPBGIF;
+  Nekki_SF2_GUI_Dialogs_BaseDialog_o *pNVar1;
+  MethodInfo *in_x2;
+  
+  IMMNELPBGIF = JJPNLEPEAFM__IIAPLAPOCGL((PLCCJCFAFKA_o *)0x0,EIKFGOCCOIE,in_x2);
+  pNVar1 = GCIFMNHADDF__ACDDKABEBAP(0x50,(Il2CppObject *)IMMNELPBGIF,(MethodInfo *)0x0);
+  return pNVar1;
+}
+

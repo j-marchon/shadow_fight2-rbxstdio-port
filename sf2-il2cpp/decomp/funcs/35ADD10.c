@@ -1,0 +1,8 @@
+// AJNNHGGLGIF$$IKPFDDBJABL @ RVA 0x35ADD10
+
+DPDDOKKMMOM_o * AJNNHGGLGIF__IKPFDDBJABL(AJNNHGGLGIF_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).HIJMBHIMFBB;
+}
+

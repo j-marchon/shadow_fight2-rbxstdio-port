@@ -1,0 +1,9 @@
+// OBCMNBDBNFO$$NFOKHOLMHFP @ RVA 0x3502678
+
+void OBCMNBDBNFO__NFOKHOLMHFP(OBCMNBDBNFO_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).GCELGJPAMAA = CJNHFNHJHPE;
+  return;
+}
+

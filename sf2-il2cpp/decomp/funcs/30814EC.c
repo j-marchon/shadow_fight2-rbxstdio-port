@@ -1,0 +1,8 @@
+// DDANFHMJGDH$$KCBILPIAPHN @ RVA 0x30814EC
+
+int32_t DDANFHMJGDH__KCBILPIAPHN(DDANFHMJGDH_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

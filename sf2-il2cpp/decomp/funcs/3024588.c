@@ -1,0 +1,16 @@
+// KJFPGDFNFCL$$.ctor @ RVA 0x3024588
+
+void KJFPGDFNFCL___ctor(KJFPGDFNFCL_o *__this,int32_t ACCIHBHMFPN,MethodInfo *method)
+
+{
+  CodeStage_AntiCheat_ObscuredTypes_ObscuredInt_Fields CVar1;
+  
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  CVar1 = (CodeStage_AntiCheat_ObscuredTypes_ObscuredInt_Fields)
+          CodeStage_AntiCheat_ObscuredTypes_ObscuredInt__ALBJPLAPOBO(ACCIHBHMFPN,(MethodInfo *)0x0);
+  (__this->fields).KPFGHBEKJIM = (NJPBHDMCLIN_o *)0x0;
+  (__this->fields).BFBBNLFNBLK.fields = CVar1;
+  thunk_FUN_01c20e04(&__this->fields,0);
+  return;
+}
+

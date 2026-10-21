@@ -1,0 +1,9 @@
+// LKAFKHBBNOH$$DPNGBFACKOL @ RVA 0x318DAA8
+
+void LKAFKHBBNOH__DPNGBFACKOL(LKAFKHBBNOH_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MKGNDFBBANC = CJNHFNHJHPE;
+  return;
+}
+

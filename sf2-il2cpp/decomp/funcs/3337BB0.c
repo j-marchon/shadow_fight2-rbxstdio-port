@@ -1,0 +1,8 @@
+// OHDDKGHEEPA.NHCNEOLLGHG$$PCNKBAKFNBL @ RVA 0x3337BB0
+
+float OHDDKGHEEPA_NHCNEOLLGHG__PCNKBAKFNBL(OHDDKGHEEPA_NHCNEOLLGHG_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields)._BLCPPMPOEHJ_k__BackingField;
+}
+

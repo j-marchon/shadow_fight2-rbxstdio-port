@@ -1,0 +1,10 @@
+// BKMLILFFPIH$$EAAABDOJHNI @ RVA 0x3047774
+
+void BKMLILFFPIH__EAAABDOJHNI(BKMLILFFPIH_o *__this,BECIPDJBAOG_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MJIIHOLHNCK = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

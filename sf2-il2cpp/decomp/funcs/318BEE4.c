@@ -1,0 +1,8 @@
+// FDGBGINGEBP$$KCBILPIAPHN @ RVA 0x318BEE4
+
+int32_t FDGBGINGEBP__KCBILPIAPHN(FDGBGINGEBP_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

@@ -1,0 +1,8 @@
+// HOOAAGABMBL$$ELNJLGOFCBK @ RVA 0x30E7DA0
+
+NMAHEBEALAB_o * HOOAAGABMBL__ELNJLGOFCBK(HOOAAGABMBL_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).LDIJKGOHMPG;
+}
+

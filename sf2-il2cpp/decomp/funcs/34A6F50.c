@@ -1,0 +1,8 @@
+// DIBOHFIDBEB$$KCBILPIAPHN @ RVA 0x34A6F50
+
+int32_t DIBOHFIDBEB__KCBILPIAPHN(DIBOHFIDBEB_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

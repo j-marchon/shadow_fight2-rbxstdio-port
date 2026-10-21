@@ -1,0 +1,16 @@
+// OJJLPLHNGBP.BELGMANHGIJ$$EOHMFJFFFIN @ RVA 0x3030360
+
+OJJLPLHNGBP_BELGMANHGIJ_o * OJJLPLHNGBP_BELGMANHGIJ__EOHMFJFFFIN(MethodInfo *method)
+
+{
+  undefined1 auVar1 [16];
+  
+  if ((DAT_04565cf4 & 1) == 0) {
+    FUN_01bab630(&OJJLPLHNGBP_BELGMANHGIJ_TypeInfo);
+    DAT_04565cf4 = 1;
+  }
+  auVar1 = thunk_FUN_01bda818(OJJLPLHNGBP_BELGMANHGIJ_TypeInfo);
+  OJJLPLHNGBP_BELGMANHGIJ___ctor(auVar1._0_8_,auVar1._8_8_);
+  return auVar1._0_8_;
+}
+

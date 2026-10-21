@@ -1,0 +1,8 @@
+// EGMONPGHHDP$$AGHJIIFNBFP @ RVA 0x304C7DC
+
+JMDPBFOCHHP_JMEJFGKJNEA_o * EGMONPGHHDP__AGHJIIFNBFP(EGMONPGHHDP_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields)._BJALAALAIDH_k__BackingField;
+}
+

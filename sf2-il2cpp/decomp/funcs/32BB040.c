@@ -1,0 +1,17 @@
+// NFFDIPBFJHP$$INFCMFGPCMI @ RVA 0x32BB040
+
+KGBIBHEFBHA_o * NFFDIPBFJHP__INFCMFGPCMI(NFFDIPBFJHP_o *__this,MethodInfo *method)
+
+{
+  KGBIBHEFBHA_o *pKVar1;
+  GLPEFEEGCPM_o *BFFBKNCLLML;
+  MethodInfo *in_x2;
+  
+  BFFBKNCLLML = (__this->fields).NEACDFLBNFO;
+  if (BFFBKNCLLML != (GLPEFEEGCPM_o *)0x0) {
+    pKVar1 = NFFDIPBFJHP__GMMAAHEMGHH(__this,BFFBKNCLLML,in_x2);
+    return pKVar1;
+  }
+  return (KGBIBHEFBHA_o *)0x0;
+}
+

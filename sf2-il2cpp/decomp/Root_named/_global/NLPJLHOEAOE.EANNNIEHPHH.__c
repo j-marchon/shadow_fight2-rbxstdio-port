@@ -1,0 +1,55 @@
+// TypeDefIndex 1782
+// Namespace: 
+// [Serializable]
+// private sealed class NLPJLHOEAOE.EANNNIEHPHH.<>c
+// Fields:
+//   public static readonly NLPJLHOEAOE.EANNNIEHPHH.<>c <>9; // 0x0
+//   public static Action<ModelParameters> <>9__8_0; // 0x8
+
+// ===== private static void .cctor()  [RVA 0x3208EE4]
+// NLPJLHOEAOE.EANNNIEHPHH.<>c$$.cctor @ RVA 0x3208EE4
+
+void NLPJLHOEAOE_EANNNIEHPHH_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_04566e61 & 1) == 0) {
+    FUN_01bab630(&NLPJLHOEAOE_EANNNIEHPHH_<>c_TypeInfo);
+    DAT_04566e61 = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(NLPJLHOEAOE_EANNNIEHPHH_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  NLPJLHOEAOE_EANNNIEHPHH_<>c_TypeInfo->static_fields->__9 = (NLPJLHOEAOE_EANNNIEHPHH___c_o *)__this
+  ;
+  thunk_FUN_01c20e04(NLPJLHOEAOE_EANNNIEHPHH_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== internal void EKMLLOCFPGP(ModelParameters x)  [RVA 0x3208F54]
+// NLPJLHOEAOE.EANNNIEHPHH.<>c$$EKMLLOCFPGP @ RVA 0x3208F54
+
+void NLPJLHOEAOE_EANNNIEHPHH_<>c__EKMLLOCFPGP
+               (NLPJLHOEAOE_EANNNIEHPHH___c_o *__this,ModelParameters_o *x,MethodInfo *method)
+
+{
+  if (x != (ModelParameters_o *)0x0) {
+    ModelParameters__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== public void .ctor()  [RVA 0x3208F4C]
+// NLPJLHOEAOE.EANNNIEHPHH.<>c$$.ctor @ RVA 0x3208F4C
+
+void NLPJLHOEAOE_EANNNIEHPHH_<>c___ctor(NLPJLHOEAOE_EANNNIEHPHH___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+

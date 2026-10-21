@@ -1,0 +1,10 @@
+// FCJBEKHDLAF$$DIKFDGGFOLN @ RVA 0x33F32C8
+
+void FCJBEKHDLAF__DIKFDGGFOLN(FCJBEKHDLAF_o *__this,AFFHKININGD_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).FBFPLEFCDOK = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

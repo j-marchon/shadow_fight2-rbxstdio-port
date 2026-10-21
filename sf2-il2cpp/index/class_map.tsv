@@ -1,0 +1,254 @@
+namespace	real_name	obfuscated	confidence	evidence
+	BackKeyManager	BackKeyManager	low	2 self-named log strings
+	ChangingSprite	GMGALNFPLPA	low	2 self-named log strings
+	CocosAnimation	CocosAnimation	low	2 self-named log strings
+	LevelPlaySample	LevelPlaySample	medium	82 self-named log strings
+	MainMenuRaidRatingPanel	MainMenuRaidRatingPanel	medium	6 self-named log strings
+	MatchingDialog	MatchingDialog	low	2 self-named log strings
+	RegexTest	MKFPGMBBGIA	medium	5 self-named log strings
+	ScreenTypeExtension	MEJPIPJPKNP	medium	4 self-named log strings
+	TabView	FEKEAPCCOOB	low	2 self-named log strings
+	Vector3f	CNDPAJOLKFN	medium	3-float vector type, ToString "X= Y= Z=", 61 methods; real name list has |Vector3f
+	VideoPlayerController	VideoPlayerController	low	2 self-named log strings
+CUDLR	Console	CFEANGJDHEE	medium	4 self-named log strings
+Core.ATT	ATTHandler	IJALENMNAIA	low	2 self-named log strings
+Core.EventTracker	EventTrackerAggregator	HNHFLBKDDHP	low	2 self-named log strings
+Nekki.SF2.Core	SF2Paths	MGENAMAJALB	high	log "SF2Paths::Init"
+Nekki.SF2.Core.AD	AdvertisingRetryService	KICJDJCJLKJ	low	2 self-named log strings
+Nekki.SF2.Core.AD	AdvertisingViewsManager	PCKJEMMFMKL	medium	4 self-named log strings
+Nekki.SF2.Core.AD.RewardHelpers	DailyRefreshRewardHelper	LHEANFBMAAI	medium	6 self-named log strings
+Nekki.SF2.Core.AD.RewardHelpers	LotterySpinRewardHelper	FDEOKGMPLBK	medium	6 self-named log strings
+Nekki.SF2.Core.AD.RewardHelpers	RaidFightRewardHelper	GALMANBEDCE	medium	6 self-named log strings
+Nekki.SF2.Core.AD.RewardHelpers	SkipItemDeliveryRewardHelper	FEPCHKMAIBL	medium	10 self-named log strings
+Nekki.SF2.Core.API	GamingServiceAuthenticator	GGAFBEMCEIN.OLEGMJAGCAJ	medium	6 self-named log strings
+Nekki.SF2.Core.API	ListSF	AGGMBMDDJIO	medium	4 self-named log strings
+Nekki.SF2.Core.API	MainSettings	FGKGKDEJCOG	low	2 self-named log strings
+Nekki.SF2.Core.API	PvpSettings	IFKFDFGNMMN	low	2 self-named log strings
+Nekki.SF2.Core.API	RewardCurrency	HFNLANEMDFI	low	2 self-named log strings
+Nekki.SF2.Core.API	Roster	ACHLOMELAJE	medium	4 self-named log strings
+Nekki.SF2.Core.API.Counters	CounterConditionsParser	CKMOFDBAEKH	high	log "CounterConditionsParser::parseCondition"
+Nekki.SF2.Core.API.Items	EndDiscountManager	IEHDDOIHPNI	medium	8 self-named log strings
+Nekki.SF2.Core.AssetBundle	BundleManager	CLFCKIFNGHA.NEPIAMCAOBL	low	2 self-named log strings
+Nekki.SF2.Core.Console	ConsoleDatabase	BHNHMJNIAII	low	2 self-named log strings
+Nekki.SF2.Core.Fights	Camera	BEPJMNAHCAD	medium	"Camera"/"Position"; 10 Vector3f, Render, Location
+Nekki.SF2.Core.Fights	CountersFight	OJHODFIGFMA	medium	ComboCount/PerfectRound/HeadKick/FirstHits counters
+Nekki.SF2.Core.Fights	Fight	FCJBEKHDLAF	medium	36 self-named log strings
+Nekki.SF2.Core.Fights	Location	NHBBOEHHEKG	medium	self-named log strings; Camera/Render field
+Nekki.SF2.Core.Fights	MovesInFightVariables	MMDDDDFHOLG	low	variables dictionary by namespace, ModExpires
+Nekki.SF2.Core.Fights	StageType	LJJOOIHCCEP	low	2 self-named log strings
+Nekki.SF2.Core.Fights.Model	EventTriggers	IPPEHAJADOO	low	lists of models, event instances and contexts; Fight calls it 12x
+Nekki.SF2.Core.Fights.Model	KeyFrames	MBDJMJLHFOO	medium	frame list built from Vector3[][], playback stepping, owned by ModelAnimation; nested Frame
+Nekki.SF2.Core.Fights.Model	Model	OLKKAIFGGAK	medium	16 self-named log strings; owns ModelObject/ModelAnimation/ModelAi components
+Nekki.SF2.Core.Fights.Model	ModelAnimation	OPNFCOGALLI	medium	12 self-named log strings
+Nekki.SF2.Core.Fights.Model	ModelCollision	MCIBPLJEFLJ	medium	edge-vs-edge intersection with radii during IntervalAnimation
+Nekki.SF2.Core.Fights.Model	ModelLoader	MDFGJKBMECA	high	logs "Capsules was not parsed"/"Edges was not parsed"; parses Node/Edge/Capsule/Triangle
+Nekki.SF2.Core.Fights.Model	ModelObject	GBJGJEGPHKD	high	log "ModelObject::addComNodes"
+Nekki.SF2.Core.Fights.Model	ModelPhysics	MMDPNDAECII	medium	per-node/edge stepping with float timestep methods, owned by Model
+Nekki.SF2.Core.Fights.Model	ModelReloader	POECGHDENAF	high	log "Model reload: {0} -- {1}"
+Nekki.SF2.Core.Fights.Model.AI	ModelAi	NGKBNOEJLPH	medium	"null dodge table", ConditionalAnimation lists, owned by Model
+Nekki.SF2.Core.Fights.Model.AI.Data	AiData	OCMLPCKBHPN	medium	AttackTables/DodgeTable/EmergencyDodges/CautiousMovements/ComputerSettings.xml
+Nekki.SF2.Core.Fights.Model.AI.Data	ConditionalAnimation	OANGEOLKMJG	medium	Conditions/Names/Priority; List<TacticConditionBase>
+Nekki.SF2.Core.Fights.Model.AI.Data	GroupTables	LFBHPHJFCPO	medium	label -> TacticalTable[]; "table for label {0} not found"
+Nekki.SF2.Core.Fights.Model.AI.Data	IntervalNew	IHNJJHJKJCL	low	InfoAnimation + float[] weights + int[] frames
+Nekki.SF2.Core.Fights.Model.AI.Data	Intervals	LLGIDMGDNPG	low	array of IntervalNew; stored in TacticalTableHolder
+Nekki.SF2.Core.Fights.Model.AI.Data	ModelShiftTable	KOGMOACEOAM	medium	List<float[]> node trajectories per animation; "heel {0} not found in shift table"
+Nekki.SF2.Core.Fights.Model.AI.Data	Tactic	CAAJMGKIPIE	medium	Block/Dodge/CounterAttack chances, ResponseDelay, QuickAttacks, Evades, Memory
+Nekki.SF2.Core.Fights.Model.AI.Data	TacticConditionAnimation	NIELMODLCLC	high	subclass of TacticConditionBase; Animations list
+Nekki.SF2.Core.Fights.Model.AI.Data	TacticConditionAnimationFrame	GDMHNGKMPDJ	high	EAAHMDAMHNI:"AnimationFrame"
+Nekki.SF2.Core.Fights.Model.AI.Data	TacticConditionBase	EAAHMDAMHNI	high	base class + parser of the 6 TacticCondition* types
+Nekki.SF2.Core.Fights.Model.AI.Data	TacticConditionData	ABMJNMFPDEJ	medium	struct of me/enemy Model passed to all TacticCondition*
+Nekki.SF2.Core.Fights.Model.AI.Data	TacticConditionDistance	LEKPMNDHDNH	high	subclass of TacticConditionBase; Distance From/To, Me/Enemy
+Nekki.SF2.Core.Fights.Model.AI.Data	TacticConditionModelItem	HDNBOMFNDFJ	high	EAAHMDAMHNI:"ModelItem"
+Nekki.SF2.Core.Fights.Model.AI.Data	TacticConditionOperator	IPEAKKBOJCA	high	EAAHMDAMHNI:"Operator"
+Nekki.SF2.Core.Fights.Model.AI.Data	TacticConditionRandom	MPADAHNNFJH	high	subclass of TacticConditionBase; PercentPerFrame
+Nekki.SF2.Core.Fights.Model.AI.Data	TacticFactors	OBOBEOMMECI	medium	Damage/Distance/Health/Counter factors, Limit, Linear/Exponential
+Nekki.SF2.Core.Fights.Model.AI.Data	TacticalTable	PCNNBADGEGD	medium	name + id + Intervals[] rows; stored in TacticalTableHolder
+Nekki.SF2.Core.Fights.Model.AI.Data	TacticalTableHolder	KJFHBENFBBO	medium	C++ asserts _tables/_distances/_intervals/_groups
+Nekki.SF2.Core.Fights.Model.AI.Data	TacticsArchiver	IOIKBGAJIGO	medium	12 self-named log strings
+Nekki.SF2.Core.Fights.Model.Animation.Data	AnimationData	LDHBHPILNMA	low	static registry of all InfoAnimations/groups, Stance/StanceIdle
+Nekki.SF2.Core.Fights.Model.Animation.Keys	KeyData	NKOIBKNPICN	high	ToString "KeyData:", PressType/Sequence, UF/DF/UB/DB
+Nekki.SF2.Core.Fights.Model.Animation.Moves	InfoAnimation	ECENNHNBAME	high	log "InfoAnimation::LoadDataFromContainerStruct"
+Nekki.SF2.Core.Fights.Model.Animation.Moves	MovesCompiler	CGALNIOABHK	medium	reads /moves.xml; Actions/Conditions/Events/Intervals/Labels
+Nekki.SF2.Core.Fights.Model.Animation.Moves	MovesMaps	CMCJGLAABFO	high	log "MovesMaps::getIndex"
+Nekki.SF2.Core.Fights.Model.Animation.Moves	MovesParser	NEKMLJBFJFG	high	log "MovesParser::eventsParse"
+Nekki.SF2.Core.Fights.Model.Animation.Moves	TemplateAnimation	FCFGGKLDBFJ	medium	MovesCompiler builds it from "Template"; Name + List<InfoAnimation>
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Actions	ActionAddBullets	HMKNNONIOGK	high	OINHIBPHHJM:"AddBullets"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Actions	ActionAnimation	IIMNGGHGKOD	medium	base class of all Action* (ActionsParser return type); real name list order
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Actions	ActionCameraWeight	PEJCGNNAPHG	high	OINHIBPHHJM:"CameraWeight"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Actions	ActionCreateModel	HDHBGBEEKDM	high	ActionsParser "CreatePlayer" -> ctor
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Actions	ActionDelete	AKBKIMDNKGA	high	OINHIBPHHJM:"Delete"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Actions	ActionEffect	HDBPKHNKOGI	high	OINHIBPHHJM:"Effect"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Actions	ActionEnableBossAbility	ANBKLGFGGFH	high	OINHIBPHHJM:"EnableBossAbility"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Actions	ActionHitEffect	JDIJBAPLFOK	high	OINHIBPHHJM:"HitEffect"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Actions	ActionPlayAnimation	BDJGLFNEODH	high	OINHIBPHHJM:"PlayAnimation"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Actions	ActionRandomSound	FIALDHOKCBK	high	OINHIBPHHJM:"RandomSound"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Actions	ActionSetCooldown	JNIHOEBPIND	high	OINHIBPHHJM:"SetCooldown"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Actions	ActionSetEndStage	MDOLLIDNIFL	high	OINHIBPHHJM:"SetEndStage"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Actions	ActionShakeScreen	FGDNDHOEMND	high	OINHIBPHHJM:"ShakeScreen"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Actions	ActionSound	CAAGJEKMDOA	high	OINHIBPHHJM:"Sound"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Actions	ActionStopEffect	HPNBNJKDGLB	high	OINHIBPHHJM:"StopEffect"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Actions	ActionStopFollowEffect	IHHNAHGMKIJ	high	OINHIBPHHJM:"StopFollowEffect"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Actions	ActionStopSound	KNBKJPIDHJA	high	OINHIBPHHJM:"StopSound"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Actions	ActionTryOnEnd	JEEIHDPGJKF	high	OINHIBPHHJM:"TryOnEnd"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Actions	ActionZoomEffect	MCIEPLBJLKN	high	OINHIBPHHJM:"ZoomEffect"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Actions	ActionsParser	OINHIBPHHJM	high	log "ActionsParser::create"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionAnimation	IENLNOEDCFF	medium	base class of all Condition*; "Unknown condition type checked"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionBattleType	ACPDNPJECMD	high	ConditionsParser case [22] = ['BattleType']
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionBirth	FAFFHLJEDAN	high	ConditionsParser case [16] = ['Birth']
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionBossAbilityState	IJIPGGOAGBO	high	ConditionsParser case [23] = ['BossAbilityState']
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionBullets	HEGNACFOHEB	high	ConditionsParser case [14] = ['Bullets']
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionCurrentAnimation	GDINNHKFKMB	high	ConditionsParser cases 3 and 10 "CurrentAnimation"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionDirection	NBOACIABNIG	high	ConditionsParser case [21] = ['Direction']
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionDistance	EIEJHJLDGNH	high	ConditionsParser case [2] = ['Distance']
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionHealth	NCGOMGGFPJH	high	ConditionsParser case [7] = ['Health']
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionHit	OALOIHHAHAD	high	ConditionsParser case [24] = ['Hit']
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionInterval	PCGLKFBEGCD	high	ConditionsParser case 9 "CurrentInterval"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionItemInfo	DCMMOJCGNNK	high	ConditionsParser case 13 "Item"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionKeys	GBKCLIFGIFN	high	ConditionsParser case [4] = ['Keys']
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionList	KAFMFFDFDBL	high	ConditionsParser case 8 "Operator"; no ConditionOperator exists in Moves.Conditions
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionModExists	GEGIPFKMLMO	high	ConditionsParser case [20] = ['ModExists']
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionModelExists	AFJEGLNKCHN	high	ConditionsParser case [25] = ['ModelExists']
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionModelMirrored	IENCDFELNPO	high	ConditionsParser case [19] = ['ModelMirrored']
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionName	PPABOCBJHCB	high	ConditionsParser case [17] = ['Name']
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionPerk	FKGDENPCMPH	high	ConditionsParser case [15] = ['Perk']
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionPhysics	EFPOGFPCBNE	high	ConditionsParser case 11 "PhysicsFrameNumber"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionPlayer	ALIDPKFDNBA	high	ConditionsParser case [6] = ['Player']
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionRound	NECMEJDCLHM	medium	ConditionsParser case 1; only remaining Condition* name
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionRoundResult	PHGEMMOPIFJ	high	ConditionsParser case [12] = ['RoundResult']
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionScene	LFDEBALJBHC	high	ConditionsParser case 18 "Screen"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionWeapon	FJMCMFBLEOE	high	ConditionsParser case [5] = ['Weapon']
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ConditionsParser	LFMDPJJICHF	high	switch over MovesMaps condition enum building condition classes
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Conditions	ModelConditions	KAFCPHCBLPL	low	List<ConditionAnimation> built by MovesCompiler from "Conditions"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Events	EventAnimation	KJFPGDFNFCL	medium	base class of all Event*; parses every event type name
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Events	EventAnimationEnd	MEGGKMKGNCP	high	NEKMLJBFJFG:"AnimationEnd"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Events	EventAnimationInterrupted	JJPKEILDJCP	high	NEKMLJBFJFG:"AnimationInterrupted"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Events	EventAnimationStart	GPJJNJJBPBG	high	NEKMLJBFJFG:"AnimationStart"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Events	EventBirth	AFBIGJEEPII	high	MovesParser "Birth" -> ctor; derives EventAnimation
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Events	EventEveryFrame	KGAGPHANJAO	high	NEKMLJBFJFG:"EveryFrame"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Events	EventHit	LKBNKHMKFMG	high	MovesParser "Hit" -> ctor; derives EventAnimation
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Events	EventIntervalEnd	FBDLCENGKKF	high	NEKMLJBFJFG:"IntervalEnd"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Events	EventIntervalStart	PKIOGLDBKOI	high	NEKMLJBFJFG:"IntervalStart"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Events	EventKeyPressed	HFJBEIGMDDD	high	NEKMLJBFJFG:"KeyPressed"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Events	EventKeyReleased	FBKAOINMJEE	high	NEKMLJBFJFG:"KeyReleased"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Events	EventModExpires	DPNLDOJECPA	high	NEKMLJBFJFG:"ModExpires"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Events	EventRoundStage	AOMIBNJMLEL	high	MovesParser "RoundStageStart" -> ctor; derives EventAnimation
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Events	EventStrike	NDPDFLHBDJA	high	NEKMLJBFJFG:"Strike"
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Intervals	IntervalAnimation	JADGCGOJLJB	medium	interval types Attack/Block/Invulnerable/Uninterrupt/Unstable, Start/End
+Nekki.SF2.Core.Fights.Model.Animation.Moves.Intervals	IntervalAttack	MDAPDLLMOMF	high	subclass of IntervalAnimation; Damage/Impulse/AttackingParts/IgnoresBlock; "outside of attack interval"
+Nekki.SF2.Core.Fights.Model.Animation.MovesPoint	DistancePoint	PNGKLCHKPEO	medium	14 self-named log strings
+Nekki.SF2.Core.Fights.Model.Animation.MovesPoint	DistancePointFollow	EHEHBPFEIKB	high	subclass of DistancePoint; "Follow"
+Nekki.SF2.Core.Fights.Model.Animation.MovesPoint	ShiftValue	FKGKLILLOBG	medium	MovesCompiler builds it from Part/ShiftX/ShiftY; DistancePoint holds two
+Nekki.SF2.Core.Fights.Model.Components.Edges	ModelEdge	GEBHIBIEAJE	medium	two ModelNode ends + 4 Vector3f; built by ModelLoader Edge/Muscle parser
+Nekki.SF2.Core.Fights.Model.Components.Figures	Capsule	JGHEMMGMLND	high	built by ModelLoader "Capsule" figure branch; Radius1/Margin1/Margin2
+Nekki.SF2.Core.Fights.Model.Components.Figures	Triangle	BIDBHCDLLHH	high	built by ModelLoader "Triangle" figure branch; ModelNode[]
+Nekki.SF2.Core.Fights.Model.Components.Nodes	ModelMacroNode	BCPODJMEKMJ	high	subclass of ModelNode with weighted node list; built by ModelLoader "MacroNode" branch
+Nekki.SF2.Core.Fights.Model.Components.Nodes	ModelNode	IEFEBEDLHNN	high	ToString "ModelNode(name = [{0}] c_pos= [{1}])"; built by ModelLoader "Node" branch
+Nekki.SF2.Core.Fights.Model.Controller	ModelController	IPCACEBFONO	medium	indexed KeyData input queue, owned by Model
+Nekki.SF2.Core.Fights.Model.Statistics	ModelStatistics	NKDMOOEFPHJ	medium	per-InfoAnimation me/enemy float stats, owned by Model
+Nekki.SF2.Core.Fights.Model.Support	ModelParameters	PJKHAJKEHEL	medium	Head/BodyDefense, Weapon/Magic/RangedDamage, Easy/ImpossibleRatio
+Nekki.SF2.Core.Fights.Renders	Render	MNLIBPAOCLG	medium	4 self-named log strings
+Nekki.SF2.Core.Fights.Rules	AttributesRule	JFDPMLLJKFH	high	RuleParser "Attributes" -> enum 10 -> case ctor
+Nekki.SF2.Core.Fights.Rules	ComboRule	HHCPHEMFLGO	high	RuleParser "Combo" -> enum 16 -> case ctor
+Nekki.SF2.Core.Fights.Rules	CrazyRule	ACKAABIGIAI	high	RuleParser "Crazy" -> enum 13 -> case ctor
+Nekki.SF2.Core.Fights.Rules	DamageFactorRule	DEENPPDACAD	high	RuleParser "DamageFactor" -> enum 11 -> case ctor
+Nekki.SF2.Core.Fights.Rules	DarknessRule	EDIHAKCJAMI	high	RuleParser "Darkness" -> enum 6 -> case ctor
+Nekki.SF2.Core.Fights.Rules	EquipItemRule	AJLPMEBENAE	high	FCFEFEBAILK:"EquipItem"
+Nekki.SF2.Core.Fights.Rules	HotGroundRule	AFIEAGJGHGK	high	RuleParser "HotGround" -> enum 7 -> case ctor
+Nekki.SF2.Core.Fights.Rules	InFightRule	CNIGOFCKBGI	medium	base of in-fight rules (RingOut, Darkness, ...)
+Nekki.SF2.Core.Fights.Rules	InvertJoystickRule	IEDMAJBEPCN	high	RuleParser "InvertJoystick" -> enum 31 -> case ctor
+Nekki.SF2.Core.Fights.Rules	InvulnerabilityRule	HLBENPGOJAN	high	RuleParser "Invulnerability" -> enum 34 -> case ctor
+Nekki.SF2.Core.Fights.Rules	ItemRule	JCHNBADDBGO	medium	RuleParser "RequireItem"; base of EquipItem/RandomAquiredItem rules
+Nekki.SF2.Core.Fights.Rules	LifeStealRule	APGFNOPIODP	high	RuleParser "Lifesteal" -> enum 14 -> case ctor
+Nekki.SF2.Core.Fights.Rules	LoseFallRule	PADDODJLLFJ	high	RuleParser "LoseFall" -> enum 8 -> case ctor
+Nekki.SF2.Core.Fights.Rules	NoBulletsReplenishmentRule	BIEHNLODKBK	high	RuleParser "NoBulletsReplenishment" -> enum 20 -> case ctor
+Nekki.SF2.Core.Fights.Rules	NoButtonRule	KMFIGBGAKNL	high	FCFEFEBAILK:"NoButton"
+Nekki.SF2.Core.Fights.Rules	NoHealthBarRule	CNPFMNENBMG	high	RuleParser "NoHealthBar" -> enum 15 -> case ctor
+Nekki.SF2.Core.Fights.Rules	NoPerksRule	CCAEOJMALLA	high	RuleParser "NoPerks" -> enum 25 -> case ctor
+Nekki.SF2.Core.Fights.Rules	PerkRule	LNMCGOLABEK	high	RuleParser "Perk" -> enum 24 -> case ctor
+Nekki.SF2.Core.Fights.Rules	PointsRule	EDELKOLBNDG	high	RuleParser "Points" -> enum 18 -> case ctor
+Nekki.SF2.Core.Fights.Rules	PvpRule	HMPMHFHGAMH	high	RuleParser "Pvp" -> enum 40 -> case ctor
+Nekki.SF2.Core.Fights.Rules	RandomAquiredItemRule	MJACKBKADMN	high	FCFEFEBAILK:"RandomAquiredItem"
+Nekki.SF2.Core.Fights.Rules	RandomAreaRule	ACBCKKIEOCE	high	RuleParser "RandomArea" -> enum 32 -> case ctor
+Nekki.SF2.Core.Fights.Rules	RandomRule	AGCDKMOOJGI	medium	4 self-named log strings
+Nekki.SF2.Core.Fights.Rules	RechargeMagicEachRoundRule	KMCKIANFOLB	high	RuleParser "RechargeMagicEachRound" -> enum 19 -> case ctor
+Nekki.SF2.Core.Fights.Rules	RegenerationRule	BDGLOJJKLFN	high	RuleParser "Regeneration" -> enum 9 -> case ctor
+Nekki.SF2.Core.Fights.Rules	RemoveIntervalRule	NAKKKCKOHGH	high	RuleParser "RemoveInterval" -> enum 12 -> case ctor
+Nekki.SF2.Core.Fights.Rules	ResistanceRule	PLIKNCJICMM	high	RuleParser "Resistance" -> enum 36 -> case ctor
+Nekki.SF2.Core.Fights.Rules	RingOutRule	NBCALFOIEAA	high	RuleParser "Ringout" -> enum 5 -> case ctor
+Nekki.SF2.Core.Fights.Rules	Rule	AJNNHGGLGIF	medium	base class of all rules
+Nekki.SF2.Core.Fights.Rules	RuleLightInTheDarkness	OGOKJDDJEOE	medium	RuleParser case 42; LightRadius/Hole material
+Nekki.SF2.Core.Fights.Rules	RuleParser	FCFEFEBAILK	high	log "RuleParser::parseRules"
+Nekki.SF2.Core.Fights.Rules	RulesInspector	KAHMAJKJMBK	medium	14 self-named log strings
+Nekki.SF2.Core.Fights.Rules	TacticRule	BFDLCIGIKBJ	medium	RuleParser "SetTactic" -> enum 30
+Nekki.SF2.Core.Fights.Rules	TimeoutWinRule	MAMPGAGEGOG	high	RuleParser "TimeOutWin" -> enum 17 -> case ctor
+Nekki.SF2.Core.Fights.Rules	WinComboRule	IEEEKABGCHL	high	RuleParser "WinCombo" -> enum 27 -> case ctor
+Nekki.SF2.Core.Fights.Rules	WinShockRule	IJHANGIFHPF	high	RuleParser "WinShock" -> enum 28 -> case ctor
+Nekki.SF2.Core.Fights.Rules	WinStyleRule	CIDOIOIEAFF	high	RuleParser "WinStyle" -> enum 26 -> case ctor
+Nekki.SF2.Core.Localization	LocalizationManager	NGFEKJBMGEB	low	2 self-named log strings
+Nekki.SF2.Core.MultiplayerSF	ChatManager	AKOMJPINHEN	medium	8 self-named log strings
+Nekki.SF2.Core.MultiplayerSF	ClanRaidsController	CJFBGEEIPBA	low	2 self-named log strings
+Nekki.SF2.Core.MultiplayerSF	PlayerData	EEGDOGKBLNG	medium	4 self-named log strings
+Nekki.SF2.Core.MultiplayerSF	RaidConfig	JMDPBFOCHHP	low	2 self-named log strings
+Nekki.SF2.Core.MultiplayerSF	RaidConfigParser	FCNNPBIIEOK	low	2 self-named log strings
+Nekki.SF2.Core.MultiplayerSF	RaidLeaderboardsManager	PLIIGOCLJDL	medium	12 self-named log strings
+Nekki.SF2.Core.MultiplayerSF	RaidManager	CHDGOFBHAFI	medium	8 self-named log strings
+Nekki.SF2.Core.MultiplayerSF	RaidMovesChecker	NJNCPNBIPCD	low	2 self-named log strings
+Nekki.SF2.Core.MultiplayerSF	RaidPaymentService	ADJEBFOPFFF	medium	4 self-named log strings
+Nekki.SF2.Core.MultiplayerSF	RaidPlayerInfoHelper	PEEIMHCMDND	medium	17 self-named log strings
+Nekki.SF2.Core.MultiplayerSF	RaidQuestsManager	GALHNMPIEHA	medium	4 self-named log strings
+Nekki.SF2.Core.MultiplayerSF	SFRequestSender	KKLJIDJBFEI	medium	50 self-named log strings
+Nekki.SF2.Core.MultiplayerSF	SFSConfigManager	AJJPCMDCAOB	medium	4 self-named log strings
+Nekki.SF2.Core.MultiplayerSF	SFSConnection	KDPDBGNOFEN	ambiguous	28 self-named log strings
+Nekki.SF2.Core.MultiplayerSF	SFSConnection	KDPDBGNOFEN.KDFLJCAMJPJ	ambiguous	2 self-named log strings
+Nekki.SF2.Core.MultiplayerSF	SFSInitializer	FKDLCJJOGIP.	low	2 self-named log strings
+Nekki.SF2.Core.MultiplayerSF.Clans	RaidClansManager	EEOMEMBBGNA	medium	12 self-named log strings
+Nekki.SF2.Core.MultiplayerSF.RaidConfig+DailyQuestInfo	Condition	CLIMGHHIDIK	low	3 self-named log strings
+Nekki.SF2.Core.Quests	QuestAction	BOFEMGGNODC	low	2 self-named log strings
+Nekki.SF2.Core.Quests	QuestCondition	LEGDPJHPEOB	medium	39 self-named log strings
+Nekki.SF2.Core.Quests.Actions	QuestActionAttachFile	IHGCMCMFNDO	medium	4 self-named log strings
+Nekki.SF2.Core.Quests.Actions	QuestActionBlockDialogTouches	GAEHKDPPOBL	low	2 self-named log strings
+Nekki.SF2.Core.Quests.Actions	QuestActionDeleteSave	HOEDBLCFMAO	low	2 self-named log strings
+Nekki.SF2.Core.Quests.Actions	QuestActionDownloadPack	OICHGEFJHDF	low	2 self-named log strings
+Nekki.SF2.Core.Quests.Actions	QuestActionRestartApplication	MMGCBJFEBKG	low	1 self-named log strings
+Nekki.SF2.Core.Quests.Actions	QuestActionRunCallback	JJBMNHGADNC	low	2 self-named log strings
+Nekki.SF2.Core.Quests.Actions	QuestActionSetEnergy	OJFOEAFKDEL	low	2 self-named log strings
+Nekki.SF2.Core.Quests.Actions	QuestActionShowSetTutorial	MLDIGNOAANN	low	2 self-named log strings
+Nekki.SF2.Core.Quests.Actions	QuestActionTapjoyActionCall	CJPHJGABBNE	low	2 self-named log strings
+Nekki.SF2.Core.Quests.Actions	QuestActionUnlockCharacter	NMJMNCLAHCM	low	2 self-named log strings
+Nekki.SF2.Core.Quests.Actions	QuestActionVariable	HLPBEPCFOPH	low	2 self-named log strings
+Nekki.SF2.Core.Quests.Actions.Raid	QuestActionRaidFightScrollToNextCharge	FFNHCBACKPN	low	2 self-named log strings
+Nekki.SF2.Core.Quests.Actions.Raid	QuestActionRaidIndicateRaidBtn	MPFCDEPCALP	low	2 self-named log strings
+Nekki.SF2.Core.Security	SecurityManager	POEIJGLGEED	medium	5 self-named log strings
+Nekki.SF2.Core.Settings	GameSettings	ANFOHCGLHID	medium	6 self-named log strings
+Nekki.SF2.Core.Settings	QualityOption	DBGBHDDCAJC	medium	4 self-named log strings
+Nekki.SF2.Core.Utils	AntiCheatSettings	LMDGNPDFNKF	low	2 self-named log strings
+Nekki.SF2.Core.Utils	GameUtils	MGNPHCAAEIO	medium	8 self-named log strings
+Nekki.SF2.Core.Utils	InitSettings	DBIINAFCKME	low	2 self-named log strings
+Nekki.SF2.Core.Utils.Perks	PerkConditionHealth	BHHOLHDJKLE	low	2 self-named log strings
+Nekki.SF2.Core.Utils.Perks	PerkInfoItem	HEFOANCOHDC	low	2 self-named log strings
+Nekki.SF2.Core.Zones	Battle	DKEOKAONIIB	ambiguous	2 self-named log strings
+Nekki.SF2.Core.Zones	Battle	OOMHDDBCBJP	ambiguous	2 self-named log strings
+Nekki.SF2.Core.Zones	BattlePeriodic	AGILEPNENOH	low	2 self-named log strings
+Nekki.SF2.Core.Zones	FightList	AFFHKININGD	medium	10 self-named log strings
+Nekki.SF2.GUI	SceneManagerSF	KJFLIAMBKEB	medium	4 self-named log strings
+Nekki.SF2.GUI.Common	MenuControls	MenuControls.EBHCGCMCBML	low	2 self-named log strings
+Nekki.SF2.GUI.Common.Hints	HintCreator	GKOFFCMIOFC	medium	6 self-named log strings
+Nekki.SF2.GUI.Common.Hints	HintSchemeController	JLEKKANADII	ambiguous	2 self-named log strings
+Nekki.SF2.GUI.Common.Hints	HintSchemeController	JLEKKANADII.HFHJKBCIILG	ambiguous	2 self-named log strings
+Nekki.SF2.GUI.Common.Hints	HintSchemeUtility	GJAEIBMAFGE	medium	8 self-named log strings
+Nekki.SF2.GUI.Common.Pool.UIObjectPool+Pool	Item	DOPEEDABNEK	low	2 self-named log strings
+Nekki.SF2.GUI.Dialogs	DialogsManager	GCIFMNHADDF	low	2 self-named log strings
+Nekki.SF2.GUI.Dialogs	DialogsOpener	JJPNLEPEAFM	low	2 self-named log strings
+Nekki.SF2.GUI.Dialogs.Raids	RaidViewController	LJNJDFEAIOH	medium	6 self-named log strings
+Nekki.SF2.GUI.Dialogs.Raids	SortedPlayersCollection	CNIFAIKGHKO	low	2 self-named log strings
+Nekki.SF2.GUI.Map	MapButtonController	NCNJEIBHGBH	low	2 self-named log strings
+Nekki.SF2.GUI.Profile	ProfileScene	ProfileScene.ADBKDCAJPFM	medium	6 self-named log strings
+Nekki.SF2.GUI.Scenes	LoaderScene	LoaderScreen.DJDIBKHLMKE	ambiguous	2 self-named log strings
+Nekki.SF2.GUI.Scenes	LoaderScene	LoaderScreen.OLDMOCJKALI	ambiguous	2 self-named log strings
+Nekki.SF2.GUI.Tutorial	TutorialExtension	AKJJAPEHKCG	medium	4 self-named log strings
+Nekki.SF2.GUI.UITextParseUtils	Command	AEGOLGIJEBI.BPIAJOBCKFC	medium	4 self-named log strings
+Nekki.Utils	RaidBetaLogger	RaidBetaLogger.BPOIDCPBLEF	medium	6 self-named log strings
+Network.core	RequestHistory	ACAEKBNCODE	low	2 self-named log strings
+Network.core	RequestObject	ONPHBGJDFBM	low	2 self-named log strings
+Network.core.events	EventType	OGGBALCBCLL	low	2 self-named log strings
+Network.core.events	NetworkEventManager	ICOEHFKOMGO	medium	4 self-named log strings

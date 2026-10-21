@@ -1,0 +1,9 @@
+// PIADCKMDDAK$$PKPLAKAMOPO @ RVA 0x32BE1D4
+
+void PIADCKMDDAK__PKPLAKAMOPO(PIADCKMDDAK_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).GDKPGIBMFPA = CJNHFNHJHPE;
+  return;
+}
+

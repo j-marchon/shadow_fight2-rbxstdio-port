@@ -1,0 +1,8 @@
+// OLCBPIHLPEC$$MLFJHBIJMAA @ RVA 0x35BA9E0
+
+PGICCMFLDPI_o * OLCBPIHLPEC__MLFJHBIJMAA(OLCBPIHLPEC_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).MIINPPOCPCN;
+}
+

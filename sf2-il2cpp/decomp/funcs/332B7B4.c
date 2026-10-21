@@ -1,0 +1,8 @@
+// JGMAPPPOEOF$$KGGGBHEMAOO @ RVA 0x332B7B4
+
+int32_t JGMAPPPOEOF__KGGGBHEMAOO(JGMAPPPOEOF_o *__this,MethodInfo *method)
+
+{
+  return 4;
+}
+

@@ -1,0 +1,8 @@
+// KKGHPKOFEHM$$JCKINNMKHBA @ RVA 0x308DADC
+
+KAMBBJFPLGM_o * KKGHPKOFEHM__JCKINNMKHBA(KKGHPKOFEHM_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).OPHCNELIOLD;
+}
+

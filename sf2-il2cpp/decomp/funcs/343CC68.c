@@ -1,0 +1,9 @@
+// IHMIMECHIAN$$EOMHGKAKFBE @ RVA 0x343CC68
+
+void IHMIMECHIAN__EOMHGKAKFBE(IHMIMECHIAN_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).LADINGEOKCK = CJNHFNHJHPE;
+  return;
+}
+

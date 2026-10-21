@@ -1,0 +1,8 @@
+// BIDBHCDLLHH$$DDAIJAGNCNC @ RVA 0x34B387C
+
+void BIDBHCDLLHH__DDAIJAGNCNC(BIDBHCDLLHH_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

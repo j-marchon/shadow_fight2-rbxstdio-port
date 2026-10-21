@@ -1,0 +1,9 @@
+// IENLNOEDCFF$$ENEJIHFIBFM @ RVA 0x30F2394
+
+void IENLNOEDCFF__ENEJIHFIBFM(IENLNOEDCFF_o *__this,int32_t ACCIHBHMFPN,MethodInfo *method)
+
+{
+  (__this->fields).LOAFPIOGJAF = ACCIHBHMFPN;
+  return;
+}
+

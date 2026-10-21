@@ -1,0 +1,8 @@
+// MGNPHCAAEIO$$NKPJJJDKFBG @ RVA 0x34000F4
+
+float MGNPHCAAEIO__NKPJJJDKFBG(MethodInfo *method)
+
+{
+  return 650.0;
+}
+

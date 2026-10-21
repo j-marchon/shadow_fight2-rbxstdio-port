@@ -1,0 +1,8 @@
+// BEPJMNAHCAD$$BDOMLLIHEBH @ RVA 0x318A4A0
+
+MNLIBPAOCLG_o * BEPJMNAHCAD__BDOMLLIHEBH(BEPJMNAHCAD_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).LIICCFBEOLC;
+}
+

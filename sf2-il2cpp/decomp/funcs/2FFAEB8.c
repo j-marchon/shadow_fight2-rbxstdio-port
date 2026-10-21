@@ -1,0 +1,11 @@
+// JMDPBFOCHHP.ODJJOAOCFKO$$KEFGFJLBHFA @ RVA 0x2FFAEB8
+
+void JMDPBFOCHHP_ODJJOAOCFKO__KEFGFJLBHFA
+               (JMDPBFOCHHP_ODJJOAOCFKO_o *__this,System_String_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).JNGEDEBBMNP = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

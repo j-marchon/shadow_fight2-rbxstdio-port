@@ -1,0 +1,8 @@
+// OLKKAIFGGAK$$HNHDOJOECIO @ RVA 0x34F3780
+
+OLKKAIFGGAK_o * OLKKAIFGGAK__HNHDOJOECIO(OLKKAIFGGAK_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).BPJMMBGIMNC;
+}
+

@@ -1,0 +1,8 @@
+// AMJMGFCCAKN$$EJIOIDAJOEL @ RVA 0x303C0AC
+
+GGLKHCAIGDI_o * AMJMGFCCAKN__EJIOIDAJOEL(AMJMGFCCAKN_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).PHAGOJCOMPN;
+}
+

@@ -1,0 +1,8 @@
+// OOMEDFCGKJB$$KCBILPIAPHN @ RVA 0x32D2340
+
+int32_t OOMEDFCGKJB__KCBILPIAPHN(OOMEDFCGKJB_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

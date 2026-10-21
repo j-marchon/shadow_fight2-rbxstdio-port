@@ -1,0 +1,10 @@
+// KAMBBJFPLGM$$EAOKPAJBMNI @ RVA 0x311A4F4
+
+void KAMBBJFPLGM__EAOKPAJBMNI(KAMBBJFPLGM_o *__this,KEGDLHPEJBG_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).LIGHEGAMGHD = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

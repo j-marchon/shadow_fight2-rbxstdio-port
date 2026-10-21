@@ -1,0 +1,8 @@
+// IEFEBEDLHNN$$KDAFLKAKDJL @ RVA 0x308BF88
+
+IEFEBEDLHNN_o * IEFEBEDLHNN__KDAFLKAKDJL(IEFEBEDLHNN_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).GAFCPEOANDD;
+}
+

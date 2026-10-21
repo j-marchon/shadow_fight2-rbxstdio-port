@@ -1,0 +1,8 @@
+// GFCCCDLDGEG$$KCBILPIAPHN @ RVA 0x30DD344
+
+int32_t GFCCCDLDGEG__KCBILPIAPHN(GFCCCDLDGEG_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

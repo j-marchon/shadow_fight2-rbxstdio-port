@@ -1,0 +1,9 @@
+// BJEFHIBMHEJ$$DPMIFDKPDMG @ RVA 0x310B9F4
+
+void BJEFHIBMHEJ__DPMIFDKPDMG(BJEFHIBMHEJ_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).BNFCJPJJIEJ = CJNHFNHJHPE;
+  return;
+}
+

@@ -1,0 +1,8 @@
+// HGHOHEHDJOB$$KCBILPIAPHN @ RVA 0x31BE338
+
+int32_t HGHOHEHDJOB__KCBILPIAPHN(HGHOHEHDJOB_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

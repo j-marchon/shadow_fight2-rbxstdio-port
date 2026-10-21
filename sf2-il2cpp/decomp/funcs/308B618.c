@@ -1,0 +1,9 @@
+// IEFEBEDLHNN$$AMAPHJNBHLH @ RVA 0x308B618
+
+void IEFEBEDLHNN__AMAPHJNBHLH(IEFEBEDLHNN_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).EKMNMODEKKP = CJNHFNHJHPE;
+  return;
+}
+

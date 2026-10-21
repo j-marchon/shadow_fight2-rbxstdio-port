@@ -1,0 +1,10 @@
+// OJEHKJHEBID$$GGBIEOLAGNO @ RVA 0x34B60BC
+
+void OJEHKJHEBID__GGBIEOLAGNO(OJEHKJHEBID_o *__this,EEHFEPPDBHL_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MMIHELOLFPP = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

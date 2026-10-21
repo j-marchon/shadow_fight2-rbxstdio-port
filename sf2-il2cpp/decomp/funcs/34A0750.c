@@ -1,0 +1,8 @@
+// KOCAEDNKMJE$$KCBILPIAPHN @ RVA 0x34A0750
+
+int32_t KOCAEDNKMJE__KCBILPIAPHN(KOCAEDNKMJE_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

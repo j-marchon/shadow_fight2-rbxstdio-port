@@ -1,0 +1,10 @@
+// OHDDKGHEEPA.NHCNEOLLGHG$$GDNCEGEFGBA @ RVA 0x3337BA0
+
+void OHDDKGHEEPA_NHCNEOLLGHG__GDNCEGEFGBA
+               (OHDDKGHEEPA_NHCNEOLLGHG_o *__this,float CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields)._DAJMKNDILJA_k__BackingField = CJNHFNHJHPE;
+  return;
+}
+

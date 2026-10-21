@@ -1,0 +1,8 @@
+// KGLCGFMIEGI$$OIFHOGLBCOL @ RVA 0x31EB5C0
+
+void KGLCGFMIEGI__OIFHOGLBCOL(KGLCGFMIEGI_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

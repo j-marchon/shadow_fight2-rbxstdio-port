@@ -1,0 +1,11 @@
+// CNDPAJOLKFN$$FCEAFPLBNGE @ RVA 0x307C764
+
+float CNDPAJOLKFN__FCEAFPLBNGE(CNDPAJOLKFN_o *__this,CNDPAJOLKFN_o *PHCOHKNFGLE,MethodInfo *method)
+
+{
+  float fVar1;
+  
+  fVar1 = CNDPAJOLKFN__NAHOANMJIEB(PHCOHKNFGLE,__this,method);
+  return SQRT(fVar1);
+}
+

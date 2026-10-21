@@ -1,0 +1,14 @@
+// EGMONPGHHDP$$APIOBOAFKKN @ RVA 0x304ACCC
+
+int32_t EGMONPGHHDP__APIOBOAFKKN(EGMONPGHHDP_o *__this,MethodInfo *method)
+
+{
+  int32_t iVar1;
+  JMDPBFOCHHP_CKEMIAEPGKD_o *CLDEGLBDGGE;
+  MethodInfo *in_x2;
+  
+  CLDEGLBDGGE = EGMONPGHHDP__OKBKFJKEAAG(__this,method);
+  iVar1 = EGMONPGHHDP__AKDNGOBCGHB(__this,CLDEGLBDGGE,in_x2);
+  return iVar1;
+}
+

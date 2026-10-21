@@ -1,0 +1,8 @@
+// AGJLPAAEJEF$$KGGGBHEMAOO @ RVA 0x3567684
+
+int32_t AGJLPAAEJEF__KGGGBHEMAOO(AGJLPAAEJEF_o *__this,MethodInfo *method)
+
+{
+  return 8;
+}
+

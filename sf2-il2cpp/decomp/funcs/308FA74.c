@@ -1,0 +1,49 @@
+// IPEAKKBOJCA$$GIENGNEGHPJ @ RVA 0x308FA74
+
+void IPEAKKBOJCA__GIENGNEGHPJ(IPEAKKBOJCA_o *__this,ABMJNMFPDEJ_o APOLFFJGBEO,MethodInfo *method)
+
+{
+  bool bVar1;
+  System_Collections_Generic_List_EAAHMDAMHNI__o *__this_00;
+  System_Collections_Generic_List_Enumerator_T__o local_48;
+  
+  if ((DAT_04566092 & 1) == 0) {
+    FUN_01bab630(&Method_System_Collections_Generic_List_Enumerator<EAAHMDAMHNI>_Dispose__);
+    FUN_01bab630(&Method_System_Collections_Generic_List_Enumerator<EAAHMDAMHNI>_MoveNext__);
+    FUN_01bab630(&Method_System_Collections_Generic_List_Enumerator<EAAHMDAMHNI>_get_Current__);
+    FUN_01bab630(&Method_System_Collections_Generic_List<EAAHMDAMHNI>_GetEnumerator__);
+    DAT_04566092 = 1;
+  }
+  local_48.fields._list = (System_Collections_Generic_List_T__o *)0x0;
+  local_48.fields._index = 0;
+  local_48.fields._version = 0;
+  local_48.fields._current = (Il2CppObject *)0x0;
+  EAAHMDAMHNI__GIENGNEGHPJ((EAAHMDAMHNI_o *)__this,APOLFFJGBEO,(MethodInfo *)0x0);
+  __this_00 = (__this->fields).KDIMDBHMBEM;
+  if (__this_00 != (System_Collections_Generic_List_EAAHMDAMHNI__o *)0x0) {
+    System_Collections_Generic_List<object>__GetEnumerator
+              (&local_48,(System_Collections_Generic_List_object__o *)__this_00,
+               Method_System_Collections_Generic_List<EAAHMDAMHNI>_GetEnumerator__);
+    while( true ) {
+      bVar1 = System_Collections_Generic_List_Enumerator<object>__MoveNext
+                        (&local_48,
+                         Method_System_Collections_Generic_List_Enumerator<EAAHMDAMHNI>_MoveNext__);
+      if (!bVar1) {
+        System_Collections_Generic_List_Enumerator<object>__Dispose
+                  (&local_48,
+                   Method_System_Collections_Generic_List_Enumerator<EAAHMDAMHNI>_Dispose__);
+        return;
+      }
+      if (local_48.fields._current == (Il2CppObject *)0x0) break;
+      (*(local_48.fields._current)->klass->vtable[6].methodPtr)
+                (local_48.fields._current,APOLFFJGBEO.fields.LHNJNJMBLJM,
+                 APOLFFJGBEO.fields.EMCFCMFGPME,(local_48.fields._current)->klass->vtable[6].method)
+      ;
+    }
+                    /* WARNING: Subroutine does not return */
+    FUN_01bab8c8();
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

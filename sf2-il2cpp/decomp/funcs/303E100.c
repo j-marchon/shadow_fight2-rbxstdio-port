@@ -1,0 +1,9 @@
+// PJKHAJKEHEL$$HNEGKFFIFDL @ RVA 0x303E100
+
+void PJKHAJKEHEL__HNEGKFFIFDL(PJKHAJKEHEL_o *__this,float CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).HFBGBIHPENG = CJNHFNHJHPE;
+  return;
+}
+

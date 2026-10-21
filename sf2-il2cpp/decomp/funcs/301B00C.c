@@ -1,0 +1,8 @@
+// EFJDJIIIANH$$KCBILPIAPHN @ RVA 0x301B00C
+
+int32_t EFJDJIIIANH__KCBILPIAPHN(EFJDJIIIANH_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

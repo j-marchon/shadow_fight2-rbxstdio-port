@@ -1,0 +1,8 @@
+// CHDGOFBHAFI$$BOPPNNMNDCB @ RVA 0x3246AC8
+
+void CHDGOFBHAFI__BOPPNNMNDCB(CHDGOFBHAFI_o *__this,Il2CppObject *IMMNELPBGIF,MethodInfo *method)
+
+{
+  return;
+}
+

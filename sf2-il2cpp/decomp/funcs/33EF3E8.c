@@ -1,0 +1,9 @@
+// FCJBEKHDLAF$$HDFOKKOBLFE @ RVA 0x33EF3E8
+
+void FCJBEKHDLAF__HDFOKKOBLFE(FCJBEKHDLAF_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).EPKNDHOGELF = CJNHFNHJHPE;
+  return;
+}
+

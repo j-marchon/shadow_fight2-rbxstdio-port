@@ -1,0 +1,10 @@
+// FIMAAAOEIGM$$IIBFFDJAKFB @ RVA 0x3425CEC
+
+void FIMAAAOEIGM__IIBFFDJAKFB(FIMAAAOEIGM_o *__this,KAMBBJFPLGM_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).OPHCNELIOLD = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

@@ -1,0 +1,9 @@
+// KMAOIKKMFJF$$EKDHEGGGAAP @ RVA 0x303306C
+
+void KMAOIKKMFJF__EKDHEGGGAAP(KMAOIKKMFJF_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).CMKMIFIIGBK = CJNHFNHJHPE;
+  return;
+}
+

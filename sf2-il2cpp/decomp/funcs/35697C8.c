@@ -1,0 +1,8 @@
+// FDEACCCEBFA$$KCBILPIAPHN @ RVA 0x35697C8
+
+int32_t FDEACCCEBFA__KCBILPIAPHN(FDEACCCEBFA_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

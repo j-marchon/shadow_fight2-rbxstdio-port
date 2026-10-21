@@ -1,0 +1,8 @@
+// HAGEDBILHHL$$KGGGBHEMAOO @ RVA 0x31D3C7C
+
+int32_t HAGEDBILHHL__KGGGBHEMAOO(HAGEDBILHHL_o *__this,MethodInfo *method)
+
+{
+  return 10;
+}
+

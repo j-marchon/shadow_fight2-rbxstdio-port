@@ -1,0 +1,8 @@
+// HAGEDBILHHL$$JFGBPBOCOIC @ RVA 0x31D3CA0
+
+bool HAGEDBILHHL__JFGBPBOCOIC(HAGEDBILHHL_o *__this,int32_t HJDMBDBJEFL,MethodInfo *method)
+
+{
+  return true;
+}
+

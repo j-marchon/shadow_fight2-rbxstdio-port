@@ -1,0 +1,9 @@
+// IHMIMECHIAN$$JHABCEGCACA @ RVA 0x343C810
+
+void IHMIMECHIAN__JHABCEGCACA(IHMIMECHIAN_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).HOFAHGOCDCE = CJNHFNHJHPE;
+  return;
+}
+

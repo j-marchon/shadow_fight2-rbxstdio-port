@@ -1,0 +1,56 @@
+// TypeDefIndex 795
+// Namespace: 
+// [Serializable]
+// private sealed class ChangingSprite.<>c
+// Fields:
+//   public static readonly ChangingSprite.<>c <>9; // 0x0
+//   public static Action<ChangingSprite> <>9__59_0; // 0x8
+
+// ===== public void .ctor()  [RVA 0x306E440]
+// ChangingSprite.<>c$$.ctor @ RVA 0x306E440
+
+void ChangingSprite_<>c___ctor(ChangingSprite___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== private static void .cctor()  [RVA 0x306E448]
+// ChangingSprite.<>c$$.cctor @ RVA 0x306E448
+
+void ChangingSprite_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_04565f4a & 1) == 0) {
+    FUN_01bab630(&ChangingSprite_<>c_TypeInfo);
+    DAT_04565f4a = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(ChangingSprite_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  ChangingSprite_<>c_TypeInfo->static_fields->__9 = (ChangingSprite___c_o *)__this;
+  thunk_FUN_01c20e04(ChangingSprite_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== internal void CLOGMAPBOCG(ChangingSprite child)  [RVA 0x306E4B0]
+// ChangingSprite.<>c$$CLOGMAPBOCG @ RVA 0x306E4B0
+
+void ChangingSprite_<>c__CLOGMAPBOCG(ChangingSprite___c_o *__this,ChangingSprite_o *child,MethodInfo *method)
+
+{
+  if (child != (ChangingSprite_o *)0x0) {
+    (child->fields).BDDKEKCPADJ = 0.0;
+    (child->fields).HFLMCCMEBNP = 0.0;
+    (child->fields).DJIFHDOPPPE = false;
+    ChangingSprite__NOKHGKKMCHA(child,true,method);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

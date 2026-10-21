@@ -1,0 +1,8 @@
+// OJEHKJHEBID$$LELBMGAKKCE @ RVA 0x34B5E14
+
+EEHFEPPDBHL_o * OJEHKJHEBID__LELBMGAKKCE(OJEHKJHEBID_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).MMIHELOLFPP;
+}
+

@@ -1,0 +1,9 @@
+// CHDGOFBHAFI$$ANPOBDHGAOI @ RVA 0x32460B4
+
+void CHDGOFBHAFI__ANPOBDHGAOI(CHDGOFBHAFI_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).GBGHPLFONHD = CJNHFNHJHPE;
+  return;
+}
+

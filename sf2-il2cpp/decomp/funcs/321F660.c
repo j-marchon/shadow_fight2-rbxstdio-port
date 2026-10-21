@@ -1,0 +1,11 @@
+// FPPKHNNABAD$$CMPFBCCGBGK @ RVA 0x321F660
+
+bool FPPKHNNABAD__CMPFBCCGBGK(FPPKHNNABAD_o *__this,int32_t HIHCBMNGGEO,MethodInfo *method)
+
+{
+  KFKFNDEJLKK_o *pKVar1;
+  
+  pKVar1 = FPPKHNNABAD__INCPDCLNGNJ(__this,HIHCBMNGGEO,method);
+  return pKVar1 != (KFKFNDEJLKK_o *)0x0;
+}
+

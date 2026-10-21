@@ -1,0 +1,8 @@
+// GNNIOHGGHAF$$KCBILPIAPHN @ RVA 0x32265EC
+
+int32_t GNNIOHGGHAF__KCBILPIAPHN(GNNIOHGGHAF_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

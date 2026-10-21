@@ -1,0 +1,8 @@
+// FGOIMLHDMNF$$KCBILPIAPHN @ RVA 0x31ADC7C
+
+int32_t FGOIMLHDMNF__KCBILPIAPHN(FGOIMLHDMNF_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

@@ -1,0 +1,8 @@
+// BDMABHJEEGD$$NNAKKCHDFAN @ RVA 0x310C6E0
+
+BECIPDJBAOG_o * BDMABHJEEGD__NNAKKCHDFAN(BDMABHJEEGD_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).MJIIHOLHNCK;
+}
+

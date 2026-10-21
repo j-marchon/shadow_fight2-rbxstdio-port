@@ -1,0 +1,9 @@
+// HDBPKHNKOGI$$NIPFFEGFKHC @ RVA 0x3194228
+
+void HDBPKHNKOGI__NIPFFEGFKHC(HDBPKHNKOGI_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).NMIEFOCHBNM = CJNHFNHJHPE;
+  return;
+}
+

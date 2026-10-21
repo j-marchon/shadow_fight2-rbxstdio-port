@@ -1,0 +1,8 @@
+// FCJBEKHDLAF$$FKBHJLBIIDP @ RVA 0x33EF3F4
+
+AFFHKININGD_o * FCJBEKHDLAF__FKBHJLBIIDP(FCJBEKHDLAF_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).FBFPLEFCDOK;
+}
+

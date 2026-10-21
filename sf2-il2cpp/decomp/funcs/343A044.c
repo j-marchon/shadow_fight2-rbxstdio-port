@@ -1,0 +1,9 @@
+// AADKBCFCLKK$$IAMEDEAIENF @ RVA 0x343A044
+
+void AADKBCFCLKK__IAMEDEAIENF(AADKBCFCLKK_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).IOLELGMBJFL = CJNHFNHJHPE;
+  return;
+}
+

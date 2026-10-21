@@ -1,0 +1,8 @@
+// JMDPBFOCHHP$$KIENKNOPIHE @ RVA 0x2FF84D4
+
+JMDPBFOCHHP_BEGFIIECDMN_o * JMDPBFOCHHP__KIENKNOPIHE(JMDPBFOCHHP_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields)._MFDCPFIBKNL_k__BackingField;
+}
+

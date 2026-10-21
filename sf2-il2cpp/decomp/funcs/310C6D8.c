@@ -1,0 +1,9 @@
+// BDMABHJEEGD$$CLAKDGNENAO @ RVA 0x310C6D8
+
+void BDMABHJEEGD__CLAKDGNENAO(BDMABHJEEGD_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).CLLIINPOPHO = CJNHFNHJHPE;
+  return;
+}
+

@@ -1,0 +1,8 @@
+// AMJMGFCCAKN$$DCFNBJCLAGP @ RVA 0x303C094
+
+IGFGDDANEPE_o * AMJMGFCCAKN__DCFNBJCLAGP(AMJMGFCCAKN_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).MNELBNHIKGH;
+}
+

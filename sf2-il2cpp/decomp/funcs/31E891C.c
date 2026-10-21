@@ -1,0 +1,8 @@
+// MNLIBPAOCLG$$HDPHJDAOIDC @ RVA 0x31E891C
+
+KHEDNGODOIC_o * MNLIBPAOCLG__HDPHJDAOIDC(MNLIBPAOCLG_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).ANDGPHHMNMC;
+}
+

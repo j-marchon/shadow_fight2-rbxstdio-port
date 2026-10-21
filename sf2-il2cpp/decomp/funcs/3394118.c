@@ -1,0 +1,9 @@
+// KDADMJGPAOM$$HPKABGAINMH @ RVA 0x3394118
+
+void KDADMJGPAOM__HPKABGAINMH(KDADMJGPAOM_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).IOJIABMGMGB = CJNHFNHJHPE;
+  return;
+}
+

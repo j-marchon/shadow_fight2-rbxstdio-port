@@ -1,0 +1,8 @@
+// ONEDJCACCGM$$DCIMFCCJPMO @ RVA 0x31E1144
+
+bool ONEDJCACCGM__DCIMFCCJPMO(int32_t BKFOLMBMFNP,MethodInfo *method)
+
+{
+  return true;
+}
+

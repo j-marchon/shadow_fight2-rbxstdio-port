@@ -1,0 +1,8 @@
+// NFFDIPBFJHP$$DFOPNHPBEJM @ RVA 0x32BB038
+
+GLPEFEEGCPM_o * NFFDIPBFJHP__DFOPNHPBEJM(NFFDIPBFJHP_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).DFGECIPDPCD;
+}
+

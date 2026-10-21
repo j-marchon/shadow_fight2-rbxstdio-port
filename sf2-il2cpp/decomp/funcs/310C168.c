@@ -1,0 +1,8 @@
+// BDMABHJEEGD$$DHNJAEIIMKC @ RVA 0x310C168
+
+PGICCMFLDPI_o * BDMABHJEEGD__DHNJAEIIMKC(BDMABHJEEGD_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).GMHNOGKNFNB;
+}
+

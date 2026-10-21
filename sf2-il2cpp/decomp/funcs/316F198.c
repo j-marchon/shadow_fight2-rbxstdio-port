@@ -1,0 +1,9 @@
+// JHHFDBLANPH.MNHKJDJJINH$$KCBACMMPHLJ @ RVA 0x316F198
+
+UnityEngine_Sprite_o *
+JHHFDBLANPH_MNHKJDJJINH__KCBACMMPHLJ(JHHFDBLANPH_MNHKJDJJINH_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).CPBJNFGMDFG;
+}
+

@@ -1,0 +1,8 @@
+// FADHMEJJCPO$$LFNBOGPIBLJ @ RVA 0x33CE560
+
+PGICCMFLDPI_o * FADHMEJJCPO__LFNBOGPIBLJ(FADHMEJJCPO_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).IMNALGKNMNP;
+}
+

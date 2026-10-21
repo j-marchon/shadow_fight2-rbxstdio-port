@@ -1,0 +1,8 @@
+// NBCGIBBCCHL$$KCBILPIAPHN @ RVA 0x31994F0
+
+int32_t NBCGIBBCCHL__KCBILPIAPHN(NBCGIBBCCHL_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

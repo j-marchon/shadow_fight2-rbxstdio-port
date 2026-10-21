@@ -1,0 +1,8 @@
+// EPCCNLNOALL$$JDJENCCNOFI @ RVA 0x32FBE28
+
+OJEHKJHEBID_o * EPCCNLNOALL__JDJENCCNOFI(EPCCNLNOALL_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).KOGEBALMCBB;
+}
+

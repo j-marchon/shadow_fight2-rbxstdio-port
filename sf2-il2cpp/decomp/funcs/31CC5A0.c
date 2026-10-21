@@ -1,0 +1,8 @@
+// JKKDPACDKFL$$KCBILPIAPHN @ RVA 0x31CC5A0
+
+int32_t JKKDPACDKFL__KCBILPIAPHN(JKKDPACDKFL_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

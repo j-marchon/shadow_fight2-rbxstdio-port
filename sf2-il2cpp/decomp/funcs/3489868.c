@@ -1,0 +1,11 @@
+// HFJBEIGMDDD$$DGCODECJJCC @ RVA 0x3489868
+
+bool HFJBEIGMDDD__DGCODECJJCC(HFJBEIGMDDD_o *__this,ECAIEGNAOAL_o *KDFMDHADHMD,MethodInfo *method)
+
+{
+  bool bVar1;
+  
+  bVar1 = KJFPGDFNFCL__DGCODECJJCC((KJFPGDFNFCL_o *)__this,KDFMDHADHMD,(MethodInfo *)0x0);
+  return bVar1;
+}
+

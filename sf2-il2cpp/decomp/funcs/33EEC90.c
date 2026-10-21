@@ -1,0 +1,8 @@
+// FCJBEKHDLAF$$CHMDKOHEODB @ RVA 0x33EEC90
+
+JIMKCICMMIL_o * FCJBEKHDLAF__CHMDKOHEODB(FCJBEKHDLAF_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).ODIAFMNGOLA;
+}
+

@@ -1,0 +1,8 @@
+// AGGMBMDDJIO$$JFGBPBOCOIC @ RVA 0x343BAFC
+
+bool AGGMBMDDJIO__JFGBPBOCOIC(AGGMBMDDJIO_o *__this,int32_t HJDMBDBJEFL,MethodInfo *method)
+
+{
+  return HJDMBDBJEFL == 0;
+}
+

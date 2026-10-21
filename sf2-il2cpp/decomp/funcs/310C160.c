@@ -1,0 +1,10 @@
+// BDMABHJEEGD$$EAAABDOJHNI @ RVA 0x310C160
+
+void BDMABHJEEGD__EAAABDOJHNI(BDMABHJEEGD_o *__this,BECIPDJBAOG_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MJIIHOLHNCK = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

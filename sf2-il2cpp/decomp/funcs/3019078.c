@@ -1,0 +1,8 @@
+// ECENNHNBAME$$FEADJHKAABC @ RVA 0x3019078
+
+PNGKLCHKPEO_o * ECENNHNBAME__FEADJHKAABC(ECENNHNBAME_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).JCKNGNJBIIF;
+}
+

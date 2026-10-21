@@ -1,0 +1,8 @@
+// CDAAECGFKON$$OFEJDPOADJM @ RVA 0x321239C
+
+AADKBCFCLKK_o * CDAAECGFKON__OFEJDPOADJM(CDAAECGFKON_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).PMFAFJFPHGO;
+}
+

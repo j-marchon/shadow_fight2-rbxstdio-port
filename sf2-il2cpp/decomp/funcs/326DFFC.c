@@ -1,0 +1,11 @@
+// LMEMJBOBHBE.<>c$$OEFEKGDDHPN @ RVA 0x326DFFC
+
+LMEMJBOBHBE_o * LMEMJBOBHBE_<>c__OEFEKGDDHPN(LMEMJBOBHBE___c_o *__this,MethodInfo *method)
+
+{
+  LMEMJBOBHBE_o *pLVar1;
+  
+  pLVar1 = (LMEMJBOBHBE_o *)FUN_03f93640(DAT_04567202);
+  return pLVar1;
+}
+

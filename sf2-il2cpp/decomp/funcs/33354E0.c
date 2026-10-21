@@ -1,0 +1,10 @@
+// FGKGKDEJCOG$$JDAMFAMMNKM @ RVA 0x33354E0
+
+void FGKGKDEJCOG__JDAMFAMMNKM(FGKGKDEJCOG_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).AFGIAJPDOKH = CJNHFNHJHPE;
+  CIOBNDOOGIM__BHFGGAKKJKP((CIOBNDOOGIM_o *)__this,true,(MethodInfo *)0x0);
+  return;
+}
+

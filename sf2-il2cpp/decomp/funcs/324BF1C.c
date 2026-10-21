@@ -1,0 +1,10 @@
+// ELBBEAGGAOH$$HJNKIBNHMFL @ RVA 0x324BF1C
+
+void ELBBEAGGAOH__HJNKIBNHMFL(ELBBEAGGAOH_o *__this,EKCGNICFDEO_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).FFDNNGLMPJJ = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

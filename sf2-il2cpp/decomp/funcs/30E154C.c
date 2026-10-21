@@ -1,0 +1,8 @@
+// PKNBJJPHAKI$$EGOLFIDLFOF @ RVA 0x30E154C
+
+GBJGJEGPHKD_o * PKNBJJPHAKI__EGOLFIDLFOF(PKNBJJPHAKI_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).AAJIHJPLHDA;
+}
+

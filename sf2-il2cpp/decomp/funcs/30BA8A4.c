@@ -1,0 +1,8 @@
+// DMOPGPMINJD$$LELBMGAKKCE @ RVA 0x30BA8A4
+
+EEHFEPPDBHL_o * DMOPGPMINJD__LELBMGAKKCE(DMOPGPMINJD_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).MMIHELOLFPP;
+}
+

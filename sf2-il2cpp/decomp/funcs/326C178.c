@@ -1,0 +1,8 @@
+// OLFMHJKAHPK$$KCBILPIAPHN @ RVA 0x326C178
+
+int32_t OLFMHJKAHPK__KCBILPIAPHN(OLFMHJKAHPK_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

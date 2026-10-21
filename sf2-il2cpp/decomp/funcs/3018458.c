@@ -1,0 +1,17 @@
+// ECENNHNBAME$$LIKCEDBLBCD @ RVA 0x3018458
+
+KJFPGDFNFCL_o *
+ECENNHNBAME__LIKCEDBLBCD(ECENNHNBAME_o *__this,int32_t ACCIHBHMFPN,MethodInfo *method)
+
+{
+  ECENNHNBAME_HJPFANEPGJF_o *__this_00;
+  KJFPGDFNFCL_o *pKVar1;
+  
+  __this_00 = (__this->fields).DMGLMCBIAGL;
+  if (__this_00 != (ECENNHNBAME_HJPFANEPGJF_o *)0x0) {
+    pKVar1 = ECENNHNBAME_HJPFANEPGJF__LIKCEDBLBCD(__this_00,ACCIHBHMFPN,method);
+    return pKVar1;
+  }
+  return (KJFPGDFNFCL_o *)0x0;
+}
+

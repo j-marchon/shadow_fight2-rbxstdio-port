@@ -1,0 +1,8 @@
+// OPNFCOGALLI$$BPLICKJOHGO @ RVA 0x310A7C0
+
+ECENNHNBAME_o * OPNFCOGALLI__BPLICKJOHGO(OPNFCOGALLI_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).FFIBKLFJKAO;
+}
+

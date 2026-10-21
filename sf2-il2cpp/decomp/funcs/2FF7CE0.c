@@ -1,0 +1,8 @@
+// JMDPBFOCHHP$$CBGCLALJPMI @ RVA 0x2FF7CE0
+
+JMDPBFOCHHP_NMAJABPDEPE_o * JMDPBFOCHHP__CBGCLALJPMI(JMDPBFOCHHP_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields)._IGLEEEJGEEJ_k__BackingField;
+}
+

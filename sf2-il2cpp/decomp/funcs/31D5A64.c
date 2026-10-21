@@ -1,0 +1,8 @@
+// PLKJLHNOKPI$$KCBILPIAPHN @ RVA 0x31D5A64
+
+int32_t PLKJLHNOKPI__KCBILPIAPHN(PLKJLHNOKPI_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

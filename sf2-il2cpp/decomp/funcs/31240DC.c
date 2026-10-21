@@ -1,0 +1,8 @@
+// EIBCOMCKIIG$$KCBILPIAPHN @ RVA 0x31240DC
+
+int32_t EIBCOMCKIIG__KCBILPIAPHN(EIBCOMCKIIG_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

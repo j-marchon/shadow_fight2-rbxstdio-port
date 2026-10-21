@@ -1,0 +1,8 @@
+// JLGNBOILFLN$$PGGIAJNCCNG @ RVA 0x32489C4
+
+bool JLGNBOILFLN__PGGIAJNCCNG(JLGNBOILFLN_o *__this,int32_t PIDMGHLCFAJ,MethodInfo *method)
+
+{
+  return PIDMGHLCFAJ < (__this->fields).GHPHFGBIPCI;
+}
+

@@ -1,0 +1,8 @@
+// FCJBEKHDLAF$$JENDJCIAMAN @ RVA 0x33EE478
+
+MMDDDDFHOLG_o * FCJBEKHDLAF__JENDJCIAMAN(FCJBEKHDLAF_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).POEGCOJFMDB;
+}
+

@@ -1,0 +1,8 @@
+// IGNCJNPCAEN$$PJEACOOPNDB @ RVA 0x34295A8
+
+void IGNCJNPCAEN__PJEACOOPNDB(MethodInfo *method)
+
+{
+  return;
+}
+

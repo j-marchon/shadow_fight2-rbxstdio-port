@@ -1,0 +1,10 @@
+// AMIINPEKKFB.DBJKKCAJDLA$$KOEDHGDHOIC @ RVA 0x3512448
+
+void AMIINPEKKFB_DBJKKCAJDLA__KOEDHGDHOIC
+               (AMIINPEKKFB_DBJKKCAJDLA_o *__this,BKKPAKHJDKB_o *t,MethodInfo *method)
+
+{
+  AMIINPEKKFB__GPAJFKADBKK(t,(__this->fields).callback,method);
+  return;
+}
+

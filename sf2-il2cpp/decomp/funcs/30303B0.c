@@ -1,0 +1,15 @@
+// OJJLPLHNGBP.BELGMANHGIJ$$.ctor @ RVA 0x30303B0
+
+void OJJLPLHNGBP_BELGMANHGIJ___ctor(OJJLPLHNGBP_BELGMANHGIJ_o *__this,MethodInfo *method)
+
+{
+  if ((DAT_04565cf7 & 1) == 0) {
+    FUN_01bab630(&Method_PDBDELCMKJG_DGCHKODLPJG<OJJLPLHNGBP_BELGMANHGIJ>__ctor__);
+    DAT_04565cf7 = 1;
+  }
+  PDBDELCMKJG_DGCHKODLPJG<object>___ctor
+            ((PDBDELCMKJG_DGCHKODLPJG_TBuilder__o *)__this,
+             Method_PDBDELCMKJG_DGCHKODLPJG<OJJLPLHNGBP_BELGMANHGIJ>__ctor__);
+  return;
+}
+

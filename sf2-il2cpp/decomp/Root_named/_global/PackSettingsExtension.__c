@@ -1,0 +1,38 @@
+// TypeDefIndex 2130
+// Namespace: 
+// [CompilerGenerated]
+// private sealed class PackSettingsExtension.<>c__DisplayClass1_0
+// Fields:
+//   public PKHMIGFEJCL parameters; // 0x10
+
+// ===== public void .ctor()  [RVA 0x32CFBB4]
+// Core.Configs.Models.PackSettingsExtension.<>c__DisplayClass1_0$$.ctor @ RVA 0x32CFBB4
+
+void Core_Configs_Models_PackSettingsExtension_<>c__DisplayClass1_0___ctor
+               (Core_Configs_Models_PackSettingsExtension___c__DisplayClass1_0_o *__this,
+               MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== internal bool <CheckDownloadConditions>b__0(QuestCondition condition)  [RVA 0x32CFBBC]
+// Core.Configs.Models.PackSettingsExtension.<>c__DisplayClass1_0$$<CheckDownloadConditions>b__0 @ RVA 0x32CFBBC
+
+bool Core_Configs_Models_PackSettingsExtension_<>c__DisplayClass1_0__<CheckDownloadConditions>b__0
+               (Core_Configs_Models_PackSettingsExtension___c__DisplayClass1_0_o *__this,
+               QuestCondition_o *condition,MethodInfo *method)
+
+{
+  bool bVar1;
+  
+  if (condition != (QuestCondition_o *)0x0) {
+    bVar1 = QuestCondition__DGCODECJJCC(condition,(__this->fields).parameters,(MethodInfo *)0x0);
+    return bVar1;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

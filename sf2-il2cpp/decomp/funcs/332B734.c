@@ -1,0 +1,8 @@
+// HPPHKOJNEPB$$JCPHPODEADJ @ RVA 0x332B734
+
+void HPPHKOJNEPB__JCPHPODEADJ(HPPHKOJNEPB_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

@@ -1,0 +1,9 @@
+// HBLHCCMEEEC$$OIHLLLLKGLI @ RVA 0x3153A44
+
+void HBLHCCMEEEC__OIHLLLLKGLI(HBLHCCMEEEC_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).IAAJODFMEIC = CJNHFNHJHPE;
+  return;
+}
+

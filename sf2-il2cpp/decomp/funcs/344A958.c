@@ -1,0 +1,11 @@
+// NDPMLPGANCI$$PHFCKPKDMBK @ RVA 0x344A958
+
+void NDPMLPGANCI__PHFCKPKDMBK
+               (NDPMLPGANCI_o *__this,bool MDKMKBGODBK,bool GBCNCHFKMCD,MethodInfo *method)
+
+{
+  (__this->fields).JCPABCJKJMC = MDKMKBGODBK;
+  NDPMLPGANCI__LLKODNOJFPJ(__this,GBCNCHFKMCD,(MethodInfo *)(ulong)GBCNCHFKMCD);
+  return;
+}
+

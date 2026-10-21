@@ -1,0 +1,8 @@
+// FHHIGHMFNAC$$KGGGBHEMAOO @ RVA 0x32CDE7C
+
+int32_t FHHIGHMFNAC__KGGGBHEMAOO(FHHIGHMFNAC_o *__this,MethodInfo *method)
+
+{
+  return 0xe;
+}
+

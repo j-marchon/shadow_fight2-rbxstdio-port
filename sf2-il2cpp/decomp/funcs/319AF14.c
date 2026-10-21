@@ -1,0 +1,8 @@
+// EJIDHAPCHBA$$KCBILPIAPHN @ RVA 0x319AF14
+
+int32_t EJIDHAPCHBA__KCBILPIAPHN(EJIDHAPCHBA_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

@@ -1,0 +1,11 @@
+// OPNFCOGALLI$$MMLLFINLMDJ @ RVA 0x3107170
+
+CNDPAJOLKFN_o * OPNFCOGALLI__MMLLFINLMDJ(OPNFCOGALLI_o *__this,MethodInfo *method)
+
+{
+  CNDPAJOLKFN_o *pCVar1;
+  
+  pCVar1 = CNDPAJOLKFN__ALBJPLAPOBO((UnityEngine_Vector3_o)ZEXT812(0),(MethodInfo *)0x0);
+  return pCVar1;
+}
+

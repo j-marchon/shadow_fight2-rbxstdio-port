@@ -1,0 +1,9 @@
+// CADIGFIBFEN$$FLKPNGAOMGD @ RVA 0x3565AF4
+
+void CADIGFIBFEN__FLKPNGAOMGD(CADIGFIBFEN_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).BLGKCOLNMCK = CJNHFNHJHPE;
+  return;
+}
+

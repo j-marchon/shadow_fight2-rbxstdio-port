@@ -1,0 +1,8 @@
+// EMBNHHOCCBH$$JCKINNMKHBA @ RVA 0x35A9E1C
+
+KAMBBJFPLGM_o * EMBNHHOCCBH__JCKINNMKHBA(EMBNHHOCCBH_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).OPHCNELIOLD;
+}
+

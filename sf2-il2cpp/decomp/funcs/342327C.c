@@ -1,0 +1,8 @@
+// GPEBLILEBPK$$KCBILPIAPHN @ RVA 0x342327C
+
+int32_t GPEBLILEBPK__KCBILPIAPHN(GPEBLILEBPK_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

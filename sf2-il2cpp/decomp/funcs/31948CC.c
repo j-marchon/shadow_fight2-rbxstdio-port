@@ -1,0 +1,8 @@
+// HDBPKHNKOGI$$EDHDPKFEACM @ RVA 0x31948CC
+
+CPAJCJHOLEJ_o * HDBPKHNKOGI__EDHDPKFEACM(HDBPKHNKOGI_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).PKNGDBGLNEO;
+}
+

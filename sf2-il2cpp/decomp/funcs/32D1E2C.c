@@ -1,0 +1,10 @@
+// Nekki.SF2.GUI.Profile.PerksController.NGLKEAEAKEO$$System.Collections.IEnumerator.get_Current @ RVA 0x32D1E2C
+
+Il2CppObject *
+Nekki_SF2_GUI_Profile_PerksController_NGLKEAEAKEO__System_Collections_IEnumerator_get_Current
+          (Nekki_SF2_GUI_Profile_PerksController_NGLKEAEAKEO_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).__2__current;
+}
+

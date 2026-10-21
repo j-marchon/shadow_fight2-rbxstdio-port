@@ -1,0 +1,9 @@
+// MDAPDLLMOMF$$DKAHEDLNMBK @ RVA 0x30C26D4
+
+void MDAPDLLMOMF__DKAHEDLNMBK(MDAPDLLMOMF_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).BDDHELGFNIA = CJNHFNHJHPE;
+  return;
+}
+

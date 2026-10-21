@@ -1,0 +1,8 @@
+// IEFEBEDLHNN$$BMENFNNGAME @ RVA 0x308C13C
+
+CNDPAJOLKFN_o * IEFEBEDLHNN__BMENFNNGAME(IEFEBEDLHNN_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).BJKKHONDAKP;
+}
+

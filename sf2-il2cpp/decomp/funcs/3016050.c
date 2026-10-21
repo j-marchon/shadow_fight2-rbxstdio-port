@@ -1,0 +1,9 @@
+// ECENNHNBAME$$AAODMPEOBPJ @ RVA 0x3016050
+
+void ECENNHNBAME__AAODMPEOBPJ(ECENNHNBAME_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).NECLMKFFDCO = CJNHFNHJHPE;
+  return;
+}
+

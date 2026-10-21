@@ -1,0 +1,9 @@
+// AFFHKININGD$$AIFHABOFCNN @ RVA 0x333E550
+
+void AFFHKININGD__AIFHABOFCNN(AFFHKININGD_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).GKCEBBGMBGA = CJNHFNHJHPE;
+  return;
+}
+

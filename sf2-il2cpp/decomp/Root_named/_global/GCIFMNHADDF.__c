@@ -1,0 +1,7 @@
+// TypeDefIndex 1556
+// Namespace: 
+// [Serializable]
+// private sealed class DialogsManager.<>c__26<T>
+// Fields:
+//   public static readonly DialogsManager.<>c__26<T> <>9; // 0x0
+//   public static Predicate<BaseDialog> <>9__26_0; // 0x0

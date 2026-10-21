@@ -1,0 +1,9 @@
+// JMDPBFOCHHP.ODJJOAOCFKO$$DIKEKMIHJHK @ RVA 0x2FFAEA0
+
+System_String_o *
+JMDPBFOCHHP_ODJJOAOCFKO__DIKEKMIHJHK(JMDPBFOCHHP_ODJJOAOCFKO_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).JNGEDEBBMNP;
+}
+

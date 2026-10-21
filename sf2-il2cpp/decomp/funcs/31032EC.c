@@ -1,0 +1,9 @@
+// CBPENMDOJDB$$PCOFNFAMLGJ @ RVA 0x31032EC
+
+void CBPENMDOJDB__PCOFNFAMLGJ(CBPENMDOJDB_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).ADEIKPGDIPM = CJNHFNHJHPE;
+  return;
+}
+

@@ -1,0 +1,8 @@
+// OANBNKOOJFH$$ENMHDGDKLJD @ RVA 0x30D092C
+
+void OANBNKOOJFH__ENMHDGDKLJD(OANBNKOOJFH_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

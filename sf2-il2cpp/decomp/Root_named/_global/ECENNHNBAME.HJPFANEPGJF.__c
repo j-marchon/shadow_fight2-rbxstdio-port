@@ -1,0 +1,167 @@
+// TypeDefIndex 131
+// Namespace: 
+// [Serializable]
+// private sealed class InfoAnimation.HJPFANEPGJF.<>c
+// Fields:
+//   public static readonly InfoAnimation.HJPFANEPGJF.<>c <>9; // 0x0
+//   public static Action<EventAnimation> <>9__15_0; // 0x8
+//   public static Action<ConditionAnimation> <>9__15_1; // 0x10
+//   public static Action<ConditionAnimation> <>9__15_2; // 0x18
+//   public static Action<IntervalAnimation> <>9__15_3; // 0x20
+//   public static Action<ConditionAnimation> <>9__15_4; // 0x28
+//   public static Action<ModelConditions> <>9__15_5; // 0x30
+//   public static Action<ActionAnimation> <>9__15_6; // 0x38
+
+// ===== internal void JEKLOKHMKEO(ConditionAnimation x)  [RVA 0x301AC5C]
+// InfoAnimation.HJPFANEPGJF.<>c$$JEKLOKHMKEO @ RVA 0x301AC5C
+
+void InfoAnimation_HJPFANEPGJF_<>c__JEKLOKHMKEO
+               (InfoAnimation_HJPFANEPGJF___c_o *__this,ConditionAnimation_o *x,MethodInfo *method)
+
+{
+  if (x != (ConditionAnimation_o *)0x0) {
+    ConditionAnimation__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal void LHOCPLAKAEP(ModelConditions x)  [RVA 0x301AC74]
+// InfoAnimation.HJPFANEPGJF.<>c$$LHOCPLAKAEP @ RVA 0x301AC74
+
+void InfoAnimation_HJPFANEPGJF_<>c__LHOCPLAKAEP
+               (InfoAnimation_HJPFANEPGJF___c_o *__this,ModelConditions_o *x,MethodInfo *method)
+
+{
+  if (x != (ModelConditions_o *)0x0) {
+    ModelConditions__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== private static void .cctor()  [RVA 0x301AC8C]
+// InfoAnimation.HJPFANEPGJF.<>c$$.cctor @ RVA 0x301AC8C
+
+void InfoAnimation_HJPFANEPGJF_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_04565c09 & 1) == 0) {
+    FUN_01bab630(&InfoAnimation_HJPFANEPGJF_<>c_TypeInfo);
+    DAT_04565c09 = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(InfoAnimation_HJPFANEPGJF_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  InfoAnimation_HJPFANEPGJF_<>c_TypeInfo->static_fields->__9 = (InfoAnimation_HJPFANEPGJF___c_o *)__this
+  ;
+  thunk_FUN_01c20e04(InfoAnimation_HJPFANEPGJF_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== internal void KGHINBKIJFA(ConditionAnimation x)  [RVA 0x301ACFC]
+// InfoAnimation.HJPFANEPGJF.<>c$$KGHINBKIJFA @ RVA 0x301ACFC
+
+void InfoAnimation_HJPFANEPGJF_<>c__KGHINBKIJFA
+               (InfoAnimation_HJPFANEPGJF___c_o *__this,ConditionAnimation_o *x,MethodInfo *method)
+
+{
+  if (x != (ConditionAnimation_o *)0x0) {
+    ConditionAnimation__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== public void .ctor()  [RVA 0x301ACF4]
+// InfoAnimation.HJPFANEPGJF.<>c$$.ctor @ RVA 0x301ACF4
+
+void InfoAnimation_HJPFANEPGJF_<>c___ctor(InfoAnimation_HJPFANEPGJF___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== internal void COMFDJIENAL(IntervalAnimation x)  [RVA 0x301AD14]
+// InfoAnimation.HJPFANEPGJF.<>c$$COMFDJIENAL @ RVA 0x301AD14
+
+void InfoAnimation_HJPFANEPGJF_<>c__COMFDJIENAL
+               (InfoAnimation_HJPFANEPGJF___c_o *__this,IntervalAnimation_o *x,MethodInfo *method)
+
+{
+  if (x != (IntervalAnimation_o *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0x0311ad30. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(x->klass->vtable)._5_RandomizeObscuredVars.methodPtr)
+              (x,(x->klass->vtable)._5_RandomizeObscuredVars.method);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal void KMDNBGPHGGB(EventAnimation x)  [RVA 0x301AD38]
+// InfoAnimation.HJPFANEPGJF.<>c$$KMDNBGPHGGB @ RVA 0x301AD38
+
+void InfoAnimation_HJPFANEPGJF_<>c__KMDNBGPHGGB
+               (InfoAnimation_HJPFANEPGJF___c_o *__this,EventAnimation_o *x,MethodInfo *method)
+
+{
+  CodeStage_AntiCheat_ObscuredTypes_ObscuredInt_o __this_00;
+  
+  if (x != (EventAnimation_o *)0x0) {
+    __this_00.fields.fakeValue = 0;
+    __this_00.fields.fakeValueActive = false;
+    __this_00.fields.inited = false;
+    __this_00.fields._14_2_ = 0;
+    __this_00.fields._0_8_ = &(x->fields).BFBBNLFNBLK;
+    CodeStage_AntiCheat_ObscuredTypes_ObscuredInt__GPJJDLBJOAL(__this_00,method);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal void MPBOHNDPNBO(ConditionAnimation x)  [RVA 0x301AD5C]
+// InfoAnimation.HJPFANEPGJF.<>c$$MPBOHNDPNBO @ RVA 0x301AD5C
+
+void InfoAnimation_HJPFANEPGJF_<>c__MPBOHNDPNBO
+               (InfoAnimation_HJPFANEPGJF___c_o *__this,ConditionAnimation_o *x,MethodInfo *method)
+
+{
+  if (x != (ConditionAnimation_o *)0x0) {
+    ConditionAnimation__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal void FIDKKLKLKGH(ActionAnimation x)  [RVA 0x301AD74]
+// InfoAnimation.HJPFANEPGJF.<>c$$FIDKKLKLKGH @ RVA 0x301AD74
+
+void InfoAnimation_HJPFANEPGJF_<>c__FIDKKLKLKGH
+               (InfoAnimation_HJPFANEPGJF___c_o *__this,ActionAnimation_o *x,MethodInfo *method)
+
+{
+  if (x != (ActionAnimation_o *)0x0) {
+    ActionAnimation__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

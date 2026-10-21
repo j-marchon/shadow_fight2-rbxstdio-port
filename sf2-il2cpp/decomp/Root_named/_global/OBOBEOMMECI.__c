@@ -1,0 +1,104 @@
+// TypeDefIndex 3318
+// Namespace: 
+// [Serializable]
+// private sealed class TacticFactors.<>c
+// Fields:
+//   public static readonly TacticFactors.<>c <>9; // 0x0
+//   public static Action<MGNDHCBAPEN<string, TacticFactors>> <>9__31_0; // 0x8
+//   public static Action<MGNDHCBAPEN<InfoAnimation, float>> <>9__31_1; // 0x10
+//   public static Action<MGNDHCBAPEN<InfoAnimation, float>> <>9__31_2; // 0x18
+
+// ===== internal void NKDGLBACCIE(MGNDHCBAPEN<InfoAnimation, float> x)  [RVA 0x3528E3C]
+// TacticFactors.<>c$$NKDGLBACCIE @ RVA 0x3528E3C
+
+void TacticFactors_<>c__NKDGLBACCIE
+               (TacticFactors___c_o *__this,MGNDHCBAPEN_ECENNHNBAME__float__o *x,MethodInfo *method)
+
+{
+  InfoAnimation_o *__this_00;
+  
+  if (x == (MGNDHCBAPEN_ECENNHNBAME__float__o *)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_01bab8c8();
+  }
+  __this_00 = (x->fields).PHPELPFMOII;
+  if (__this_00 != (InfoAnimation_o *)0x0) {
+    InfoAnimation__RandomizeObscuredVars(__this_00,(MethodInfo *)0x0);
+    return;
+  }
+  return;
+}
+
+
+// ===== public void .ctor()  [RVA 0x3528E64]
+// TacticFactors.<>c$$.ctor @ RVA 0x3528E64
+
+void TacticFactors_<>c___ctor(TacticFactors___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== internal void KOLOJLEELJE(MGNDHCBAPEN<InfoAnimation, float> x)  [RVA 0x3528E6C]
+// TacticFactors.<>c$$KOLOJLEELJE @ RVA 0x3528E6C
+
+void TacticFactors_<>c__KOLOJLEELJE
+               (TacticFactors___c_o *__this,MGNDHCBAPEN_ECENNHNBAME__float__o *x,MethodInfo *method)
+
+{
+  InfoAnimation_o *__this_00;
+  
+  if (x == (MGNDHCBAPEN_ECENNHNBAME__float__o *)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_01bab8c8();
+  }
+  __this_00 = (x->fields).PHPELPFMOII;
+  if (__this_00 != (InfoAnimation_o *)0x0) {
+    InfoAnimation__RandomizeObscuredVars(__this_00,(MethodInfo *)0x0);
+    return;
+  }
+  return;
+}
+
+
+// ===== internal void HMJINIHEOFI(MGNDHCBAPEN<string, TacticFactors> x)  [RVA 0x3528E94]
+// TacticFactors.<>c$$HMJINIHEOFI @ RVA 0x3528E94
+
+void TacticFactors_<>c__HMJINIHEOFI
+               (TacticFactors___c_o *__this,MGNDHCBAPEN_string__OBOBEOMMECI__o *x,MethodInfo *method)
+
+{
+  TacticFactors_o *__this_00;
+  
+  if ((x != (MGNDHCBAPEN_string__OBOBEOMMECI__o *)0x0) &&
+     (__this_00 = (x->fields).DOKHHBGJICA, __this = (TacticFactors___c_o *)0x0,
+     __this_00 != (TacticFactors_o *)0x0)) {
+    TacticFactors__RandomizeObscuredVars(__this_00,(MethodInfo *)x);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8(__this);
+}
+
+
+// ===== private static void .cctor()  [RVA 0x3528EB0]
+// TacticFactors.<>c$$.cctor @ RVA 0x3528EB0
+
+void TacticFactors_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_04568a09 & 1) == 0) {
+    FUN_01bab630(&TacticFactors_<>c_TypeInfo);
+    DAT_04568a09 = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(TacticFactors_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  TacticFactors_<>c_TypeInfo->static_fields->__9 = (TacticFactors___c_o *)__this;
+  thunk_FUN_01c20e04(TacticFactors_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+

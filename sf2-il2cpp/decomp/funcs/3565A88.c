@@ -1,0 +1,9 @@
+// CADIGFIBFEN$$GNPFIMOEMGH @ RVA 0x3565A88
+
+void CADIGFIBFEN__GNPFIMOEMGH(CADIGFIBFEN_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).PCKJAOOKJKK = CJNHFNHJHPE;
+  return;
+}
+

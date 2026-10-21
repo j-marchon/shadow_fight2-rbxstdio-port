@@ -1,0 +1,9 @@
+// BECIPDJBAOG$$PGOIFJBNJCE @ RVA 0x30D1670
+
+void BECIPDJBAOG__PGOIFJBNJCE(BECIPDJBAOG_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).EMOLIBOCKJK = CJNHFNHJHPE;
+  return;
+}
+

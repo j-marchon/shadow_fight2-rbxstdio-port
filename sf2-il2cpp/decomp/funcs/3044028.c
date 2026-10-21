@@ -1,0 +1,9 @@
+// PJKHAJKEHEL$$CPNICJHLDLA @ RVA 0x3044028
+
+void PJKHAJKEHEL__CPNICJHLDLA(PJKHAJKEHEL_o *__this,float CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).OODFLBMELPL = CJNHFNHJHPE;
+  return;
+}
+

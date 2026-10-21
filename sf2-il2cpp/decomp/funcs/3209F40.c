@@ -1,0 +1,8 @@
+// Util$$JFJCDAJGFKD @ RVA 0x3209F40
+
+bool Util__JFJCDAJGFKD(float CHOCOAGNFDD,float ABJFEGILLJG,float LGLJJDGHBLN,MethodInfo *method)
+
+{
+  return ABS(CHOCOAGNFDD - ABJFEGILLJG) < LGLJJDGHBLN;
+}
+

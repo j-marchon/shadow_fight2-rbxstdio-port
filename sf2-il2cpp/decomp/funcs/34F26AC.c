@@ -1,0 +1,9 @@
+// OLKKAIFGGAK$$CCJBOGAHMKD @ RVA 0x34F26AC
+
+void OLKKAIFGGAK__CCJBOGAHMKD(OLKKAIFGGAK_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).ACFHDECBFOG = CJNHFNHJHPE;
+  return;
+}
+

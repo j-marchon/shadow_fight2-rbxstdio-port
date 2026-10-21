@@ -1,0 +1,10 @@
+// BDMABHJEEGD$$MGALHCGHPNO @ RVA 0x310C578
+
+void BDMABHJEEGD__MGALHCGHPNO(BDMABHJEEGD_o *__this,PGICCMFLDPI_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).LBKLNIPHGMM = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

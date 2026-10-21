@@ -1,0 +1,8 @@
+// ODKDFMHHLIP$$NOBCLMOONLJ @ RVA 0x30C4BB4
+
+bool ODKDFMHHLIP__NOBCLMOONLJ(int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  return CJNHFNHJHPE - 1U < 3;
+}
+

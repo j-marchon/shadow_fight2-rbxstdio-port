@@ -1,0 +1,10 @@
+// LEGDPJHPEOB$$LKIGECEPELE @ RVA 0x3544960
+
+void LEGDPJHPEOB__LKIGECEPELE(LEGDPJHPEOB_o *__this,PKHMIGFEJCL_o *OKBIKHHKOEN,MethodInfo *method)
+
+{
+  (__this->fields).AAJBIMFNMBB = OKBIKHHKOEN;
+  thunk_FUN_01c20e04();
+  return;
+}
+

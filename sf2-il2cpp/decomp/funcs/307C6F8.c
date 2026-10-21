@@ -1,0 +1,12 @@
+// CNDPAJOLKFN$$LJOKBIDEOMJ @ RVA 0x307C6F8
+
+bool CNDPAJOLKFN__LJOKBIDEOMJ
+               (CNDPAJOLKFN_o *COKCFOBBGLI,CNDPAJOLKFN_o *JEEAGFAHKJF,MethodInfo *method)
+
+{
+  bool bVar1;
+  
+  bVar1 = CNDPAJOLKFN__LCAEEPKOHMN(COKCFOBBGLI,JEEAGFAHKJF,method);
+  return (bool)(~bVar1 & 1);
+}
+

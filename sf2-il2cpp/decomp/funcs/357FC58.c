@@ -1,0 +1,8 @@
+// EOLFEKNCPLM$$DIIJCCHLOHC @ RVA 0x357FC58
+
+GKLPDMLELJF_o * EOLFEKNCPLM__DIIJCCHLOHC(EOLFEKNCPLM_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).MCOPPCNPAHF;
+}
+

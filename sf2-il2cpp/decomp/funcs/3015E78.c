@@ -1,0 +1,8 @@
+// ECENNHNBAME$$IGNHJMDLAKB @ RVA 0x3015E78
+
+ECENNHNBAME_o * ECENNHNBAME__IGNHJMDLAKB(ECENNHNBAME_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).CPCDDBKNDAC;
+}
+

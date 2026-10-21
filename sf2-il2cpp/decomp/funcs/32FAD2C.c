@@ -1,0 +1,8 @@
+// EEOMEMBBGNA$$JJDKNEJADJF @ RVA 0x32FAD2C
+
+CJFBGEEIPBA_o * EEOMEMBBGNA__JJDKNEJADJF(EEOMEMBBGNA_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).GMNJEBCECDA;
+}
+

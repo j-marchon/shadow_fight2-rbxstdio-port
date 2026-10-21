@@ -1,0 +1,13 @@
+// MKFAKELPPAC$$HCPKDCBMMBA @ RVA 0x3316E44
+
+bool MKFAKELPPAC__HCPKDCBMMBA(MKFAKELPPAC_o *__this,System_String_o *IJEBNFFBLPF,MethodInfo *method)
+
+{
+  bool bVar1;
+  int32_t BKFOLMBMFNP;
+  
+  BKFOLMBMFNP = OMMDIMHOHLK__POBLIPFPGPD(IJEBNFFBLPF,(MethodInfo *)0x0);
+  bVar1 = MKFAKELPPAC__HCPKDCBMMBA(__this,BKFOLMBMFNP,method);
+  return bVar1;
+}
+

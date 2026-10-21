@@ -1,0 +1,10 @@
+// DBNIPENAEKO$$HHAGEFACJOI @ RVA 0x31C8910
+
+void DBNIPENAEKO__HHAGEFACJOI(DBNIPENAEKO_o *__this,AFLJMCMKCIG_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).HBCNHAMIMGF = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

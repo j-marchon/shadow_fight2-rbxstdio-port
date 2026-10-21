@@ -1,0 +1,8 @@
+// FIMAAAOEIGM$$OFEJDPOADJM @ RVA 0x3425E34
+
+AADKBCFCLKK_o * FIMAAAOEIGM__OFEJDPOADJM(FIMAAAOEIGM_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).PMFAFJFPHGO;
+}
+

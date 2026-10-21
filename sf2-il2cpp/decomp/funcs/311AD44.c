@@ -1,0 +1,9 @@
+// KAMBBJFPLGM$$ONFKPLLCLPP @ RVA 0x311AD44
+
+void KAMBBJFPLGM__ONFKPLLCLPP(KAMBBJFPLGM_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).GNKNDHJHFOC = CJNHFNHJHPE;
+  return;
+}
+

@@ -1,0 +1,9 @@
+// IMBPILFKGEO$$JCHIKPKDDCI @ RVA 0x30AB7F4
+
+void IMBPILFKGEO__JCHIKPKDDCI(IMBPILFKGEO_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).DMIOJDBLCGB = CJNHFNHJHPE;
+  return;
+}
+

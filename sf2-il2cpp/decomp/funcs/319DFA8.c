@@ -1,0 +1,8 @@
+// GPKDMPJJEOO$$MLFJHBIJMAA @ RVA 0x319DFA8
+
+PGICCMFLDPI_o * GPKDMPJJEOO__MLFJHBIJMAA(GPKDMPJJEOO_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).MIINPPOCPCN;
+}
+

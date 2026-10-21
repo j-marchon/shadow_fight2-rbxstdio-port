@@ -1,0 +1,10 @@
+// HGADMOBFBBF$$EKMGFBCDOOA @ RVA 0x31A37E4
+
+void HGADMOBFBBF__EKMGFBCDOOA(HGADMOBFBBF_o *__this,KDADMJGPAOM_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).LHFLMBNKPHF = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

@@ -1,0 +1,8 @@
+// OPNFCOGALLI$$AMANOIKLLAE @ RVA 0x31066DC
+
+IEFEBEDLHNN_o * OPNFCOGALLI__AMANOIKLLAE(OPNFCOGALLI_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).BAAPAKJGOMG;
+}
+

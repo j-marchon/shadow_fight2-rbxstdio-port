@@ -1,0 +1,10 @@
+// HOOAAGABMBL$$LDMCOCNAPGC @ RVA 0x30EA070
+
+void HOOAAGABMBL__LDMCOCNAPGC(HOOAAGABMBL_o *__this,NMAHEBEALAB_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).DLBFLPBOJNI = CJNHFNHJHPE;
+  thunk_FUN_01c20e04(&(__this->fields).DLBFLPBOJNI);
+  return;
+}
+

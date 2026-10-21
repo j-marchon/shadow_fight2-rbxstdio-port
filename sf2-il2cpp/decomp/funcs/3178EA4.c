@@ -1,0 +1,8 @@
+// LIEDABKCNJM$$CMHPNBBKBBJ @ RVA 0x3178EA4
+
+KALOJBMDHLA_o * LIEDABKCNJM__CMHPNBBKBBJ(LIEDABKCNJM_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).OLPFCBOJCHF;
+}
+

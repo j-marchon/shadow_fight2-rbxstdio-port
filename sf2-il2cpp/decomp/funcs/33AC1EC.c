@@ -1,0 +1,8 @@
+// OLKPEJMEBPJ$$IJKGMDECHJD @ RVA 0x33AC1EC
+
+DNELIPCHKLK_o * OLKPEJMEBPJ__IJKGMDECHJD(OLKPEJMEBPJ_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).BBELCDHPJIP;
+}
+

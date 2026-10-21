@@ -1,0 +1,9 @@
+// BDMABHJEEGD$$PEMJOKFFAMO @ RVA 0x310C2A0
+
+void BDMABHJEEGD__PEMJOKFFAMO(BDMABHJEEGD_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).OHMDCKEDOGH = CJNHFNHJHPE;
+  return;
+}
+

@@ -1,0 +1,8 @@
+// PNEMMDJNLDI$$KCBILPIAPHN @ RVA 0x30CCF80
+
+int32_t PNEMMDJNLDI__KCBILPIAPHN(PNEMMDJNLDI_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

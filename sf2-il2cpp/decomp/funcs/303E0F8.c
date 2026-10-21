@@ -1,0 +1,9 @@
+// PJKHAJKEHEL$$CONAOFNCNII @ RVA 0x303E0F8
+
+void PJKHAJKEHEL__CONAOFNCNII(PJKHAJKEHEL_o *__this,float CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).HBDJEEAJOKG = CJNHFNHJHPE;
+  return;
+}
+

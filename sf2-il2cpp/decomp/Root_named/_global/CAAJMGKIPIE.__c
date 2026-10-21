@@ -1,0 +1,121 @@
+// TypeDefIndex 93
+// Namespace: 
+// [Serializable]
+// private sealed class Tactic.<>c
+// Fields:
+//   public static readonly Tactic.<>c <>9; // 0x0
+//   public static Action<MGNDHCBAPEN<string, TacticFactors>> <>9__51_0; // 0x8
+//   public static Action<MGNDHCBAPEN<string, TacticFactors>> <>9__51_1; // 0x10
+//   public static Action<MGNDHCBAPEN<string, TacticFactors>> <>9__51_2; // 0x18
+//   public static Action<MGNDHCBAPEN<string, TacticFactors>> <>9__51_3; // 0x20
+
+// ===== public void .ctor()  [RVA 0x3004374]
+// Tactic.<>c$$.ctor @ RVA 0x3004374
+
+void Tactic_<>c___ctor(Tactic___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== internal void BKFDLLEGEHE(MGNDHCBAPEN<string, TacticFactors> x)  [RVA 0x300437C]
+// Tactic.<>c$$BKFDLLEGEHE @ RVA 0x300437C
+
+void Tactic_<>c__BKFDLLEGEHE
+               (Tactic___c_o *__this,MGNDHCBAPEN_string__OBOBEOMMECI__o *x,MethodInfo *method)
+
+{
+  TacticFactors_o *__this_00;
+  
+  if ((x != (MGNDHCBAPEN_string__OBOBEOMMECI__o *)0x0) &&
+     (__this_00 = (x->fields).DOKHHBGJICA, __this = (Tactic___c_o *)0x0,
+     __this_00 != (TacticFactors_o *)0x0)) {
+    TacticFactors__RandomizeObscuredVars(__this_00,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8(__this);
+}
+
+
+// ===== internal void DADJLHCKIHD(MGNDHCBAPEN<string, TacticFactors> x)  [RVA 0x300439C]
+// Tactic.<>c$$DADJLHCKIHD @ RVA 0x300439C
+
+void Tactic_<>c__DADJLHCKIHD
+               (Tactic___c_o *__this,MGNDHCBAPEN_string__OBOBEOMMECI__o *x,MethodInfo *method)
+
+{
+  TacticFactors_o *__this_00;
+  
+  if ((x != (MGNDHCBAPEN_string__OBOBEOMMECI__o *)0x0) &&
+     (__this_00 = (x->fields).DOKHHBGJICA, __this = (Tactic___c_o *)0x0,
+     __this_00 != (TacticFactors_o *)0x0)) {
+    TacticFactors__RandomizeObscuredVars(__this_00,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8(__this);
+}
+
+
+// ===== private static void .cctor()  [RVA 0x30043BC]
+// Tactic.<>c$$.cctor @ RVA 0x30043BC
+
+void Tactic_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_04565b34 & 1) == 0) {
+    FUN_01bab630(&Tactic_<>c_TypeInfo);
+    DAT_04565b34 = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(Tactic_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  Tactic_<>c_TypeInfo->static_fields->__9 = (Tactic___c_o *)__this;
+  thunk_FUN_01c20e04(Tactic_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== internal void EKHCEBINOPH(MGNDHCBAPEN<string, TacticFactors> x)  [RVA 0x3004424]
+// Tactic.<>c$$EKHCEBINOPH @ RVA 0x3004424
+
+void Tactic_<>c__EKHCEBINOPH
+               (Tactic___c_o *__this,MGNDHCBAPEN_string__OBOBEOMMECI__o *x,MethodInfo *method)
+
+{
+  TacticFactors_o *__this_00;
+  
+  if ((x != (MGNDHCBAPEN_string__OBOBEOMMECI__o *)0x0) &&
+     (__this_00 = (x->fields).DOKHHBGJICA, __this = (Tactic___c_o *)0x0,
+     __this_00 != (TacticFactors_o *)0x0)) {
+    TacticFactors__RandomizeObscuredVars(__this_00,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8(__this);
+}
+
+
+// ===== internal void MCHOPEPAPGJ(MGNDHCBAPEN<string, TacticFactors> x)  [RVA 0x3004444]
+// Tactic.<>c$$MCHOPEPAPGJ @ RVA 0x3004444
+
+void Tactic_<>c__MCHOPEPAPGJ
+               (Tactic___c_o *__this,MGNDHCBAPEN_string__OBOBEOMMECI__o *x,MethodInfo *method)
+
+{
+  TacticFactors_o *__this_00;
+  
+  if ((x != (MGNDHCBAPEN_string__OBOBEOMMECI__o *)0x0) &&
+     (__this_00 = (x->fields).DOKHHBGJICA, __this = (Tactic___c_o *)0x0,
+     __this_00 != (TacticFactors_o *)0x0)) {
+    TacticFactors__RandomizeObscuredVars(__this_00,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8(__this);
+}
+

@@ -1,0 +1,8 @@
+// DBNIPENAEKO$$OAHNNPMAACG @ RVA 0x31C8E58
+
+AFLJMCMKCIG_o * DBNIPENAEKO__OAHNNPMAACG(DBNIPENAEKO_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).HBCNHAMIMGF;
+}
+

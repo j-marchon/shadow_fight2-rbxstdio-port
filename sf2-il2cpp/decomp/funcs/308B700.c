@@ -1,0 +1,9 @@
+// IEFEBEDLHNN$$ABGNKEBJOAK @ RVA 0x308B700
+
+void IEFEBEDLHNN__ABGNKEBJOAK(IEFEBEDLHNN_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).FLDBGCIKMKA = CJNHFNHJHPE;
+  return;
+}
+

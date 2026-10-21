@@ -1,0 +1,9 @@
+// AADKBCFCLKK$$MNHJNOLDJEO @ RVA 0x34398D0
+
+void AADKBCFCLKK__MNHJNOLDJEO(AADKBCFCLKK_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).AMKHEHFFAKJ = CJNHFNHJHPE;
+  return;
+}
+

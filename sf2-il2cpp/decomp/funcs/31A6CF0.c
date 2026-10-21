@@ -1,0 +1,14 @@
+// HLPBEPCFOPH$$MAHFCKJGBPP @ RVA 0x31A6CF0
+
+void HLPBEPCFOPH__MAHFCKJGBPP(HLPBEPCFOPH_o *__this,PKHMIGFEJCL_o *AAJBIMFNMBB,MethodInfo *method)
+
+{
+  MethodInfo *method_00;
+  
+  method_00 = (MethodInfo *)0x0;
+  BOFEMGGNODC__MAHFCKJGBPP((BOFEMGGNODC_o *)__this,AAJBIMFNMBB,(MethodInfo *)0x0);
+  HLPBEPCFOPH__HFBAJKCHKNP(__this,AAJBIMFNMBB,method_00);
+  BOFEMGGNODC__FGNINNOOCCL((BOFEMGGNODC_o *)__this,(MethodInfo *)0x0);
+  return;
+}
+

@@ -1,0 +1,9 @@
+// OJEHKJHEBID$$NLDMPANNFHG @ RVA 0x34B5E74
+
+void OJEHKJHEBID__NLDMPANNFHG(OJEHKJHEBID_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).IBFEHEDKGAL = CJNHFNHJHPE;
+  return;
+}
+

@@ -1,0 +1,8 @@
+// LIGIADJEGPL$$KCBILPIAPHN @ RVA 0x30255F4
+
+int32_t LIGIADJEGPL__KCBILPIAPHN(LIGIADJEGPL_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

@@ -1,0 +1,10 @@
+// BHHMILDAFKI$$NPIFBKCLFMI @ RVA 0x321E8B0
+
+void BHHMILDAFKI__NPIFBKCLFMI
+               (System_String_o *JGHIJMJNJLE,System_String_o *IBOAKONNBMM,MethodInfo *method)
+
+{
+  BHHMILDAFKI__AGBMPFBJBGM(JGHIJMJNJLE,IBOAKONNBMM,method);
+  return;
+}
+

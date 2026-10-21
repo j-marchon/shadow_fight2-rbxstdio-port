@@ -1,0 +1,8 @@
+// OJFPEINHCDP$$JCKINNMKHBA @ RVA 0x3293094
+
+NODLJPNGNBG_o * OJFPEINHCDP__JCKINNMKHBA(OJFPEINHCDP_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).OPHCNELIOLD;
+}
+

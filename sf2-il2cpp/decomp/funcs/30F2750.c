@@ -1,0 +1,8 @@
+// IENLNOEDCFF$$GIENGNEGHPJ @ RVA 0x30F2750
+
+void IENLNOEDCFF__GIENGNEGHPJ(IENLNOEDCFF_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

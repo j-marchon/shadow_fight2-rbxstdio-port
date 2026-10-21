@@ -1,0 +1,9 @@
+// KAMBBJFPLGM$$LMILBHACLBI @ RVA 0x311B2B8
+
+void KAMBBJFPLGM__LMILBHACLBI(KAMBBJFPLGM_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).IJBBNNHJPLF = CJNHFNHJHPE;
+  return;
+}
+

@@ -1,0 +1,8 @@
+// CGOBMFJEDCI$$KCBILPIAPHN @ RVA 0x318E100
+
+int32_t CGOBMFJEDCI__KCBILPIAPHN(CGOBMFJEDCI_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

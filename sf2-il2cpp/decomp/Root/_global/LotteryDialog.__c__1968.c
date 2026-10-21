@@ -1,0 +1,186 @@
+// TypeDefIndex 1968
+// Namespace: 
+// [Serializable]
+// private sealed class LotteryDialog.<>c
+// Fields:
+//   public static readonly LotteryDialog.<>c <>9; // 0x0
+//   public static Predicate<DILGLGMKOFG> <>9__74_0; // 0x8
+//   public static Predicate<HFNLANEMDFI> <>9__75_0; // 0x10
+//   public static Action<object> <>9__82_0; // 0x18
+//   public static Predicate<DILGLGMKOFG> <>9__90_5; // 0x20
+//   public static Predicate<DILGLGMKOFG> <>9__90_6; // 0x28
+//   public static Predicate<DILGLGMKOFG> <>9__92_0; // 0x30
+
+// ===== internal bool DNHHDBDKKMP(DILGLGMKOFG slot)  [RVA 0x328E2F4]
+// Nekki.SF2.GUI.Dialogs.LotteryDialog.<>c$$DNHHDBDKKMP @ RVA 0x328E2F4
+
+bool Nekki_SF2_GUI_Dialogs_LotteryDialog_<>c__DNHHDBDKKMP
+               (Nekki_SF2_GUI_Dialogs_LotteryDialog___c_o *__this,DILGLGMKOFG_o *slot,
+               MethodInfo *method)
+
+{
+  bool bVar1;
+  
+  if (slot != (DILGLGMKOFG_o *)0x0) {
+    if ((slot->fields).super._GDKBFEGNHNP_k__BackingField == false) {
+      bVar1 = false;
+    }
+    else {
+      bVar1 = (slot->fields).super.field_0x3c == '\0';
+    }
+    return bVar1;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal bool HMICFHKOPCH(DILGLGMKOFG slot)  [RVA 0x328E324]
+// Nekki.SF2.GUI.Dialogs.LotteryDialog.<>c$$HMICFHKOPCH @ RVA 0x328E324
+
+bool Nekki_SF2_GUI_Dialogs_LotteryDialog_<>c__HMICFHKOPCH
+               (Nekki_SF2_GUI_Dialogs_LotteryDialog___c_o *__this,DILGLGMKOFG_o *slot,
+               MethodInfo *method)
+
+{
+  if (slot != (DILGLGMKOFG_o *)0x0) {
+    return (slot->fields).super._GDKBFEGNHNP_k__BackingField;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== private static void .cctor()  [RVA 0x328E33C]
+// Nekki.SF2.GUI.Dialogs.LotteryDialog.<>c$$.cctor @ RVA 0x328E33C
+
+void Nekki_SF2_GUI_Dialogs_LotteryDialog_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_045672fd & 1) == 0) {
+    FUN_01bab630(&Nekki_SF2_GUI_Dialogs_LotteryDialog_<>c_TypeInfo);
+    DAT_045672fd = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(Nekki_SF2_GUI_Dialogs_LotteryDialog_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  Nekki_SF2_GUI_Dialogs_LotteryDialog_<>c_TypeInfo->static_fields->__9 =
+       (Nekki_SF2_GUI_Dialogs_LotteryDialog___c_o *)__this;
+  thunk_FUN_01c20e04(Nekki_SF2_GUI_Dialogs_LotteryDialog_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== internal void FILHPJCAFHA(object value)  [RVA 0x328E3AC]
+// Nekki.SF2.GUI.Dialogs.LotteryDialog.<>c$$FILHPJCAFHA @ RVA 0x328E3AC
+
+void Nekki_SF2_GUI_Dialogs_LotteryDialog_<>c__FILHPJCAFHA
+               (Nekki_SF2_GUI_Dialogs_LotteryDialog___c_o *__this,Il2CppObject *value,
+               MethodInfo *method)
+
+{
+  int *piVar1;
+  
+  if ((DAT_045672fe & 1) == 0) {
+    FUN_01bab630(&int_TypeInfo);
+    __this = (Nekki_SF2_GUI_Dialogs_LotteryDialog___c_o *)
+             FUN_01bab630(&Nekki_SF2_GUI_Map_MapScene_TypeInfo);
+    DAT_045672fe = 1;
+  }
+  if (value == (Il2CppObject *)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_01bab8c8(__this);
+  }
+  if ((value->klass->_1).element_class != (int_TypeInfo->_1).element_class) {
+                    /* WARNING: Subroutine does not return */
+    FUN_01babc64(value);
+  }
+  piVar1 = (int *)thunk_FUN_01bda96c();
+  if (*piVar1 == 2) {
+    if ((Nekki_SF2_GUI_Map_MapScene_TypeInfo->_2).cctor_finished == 0) {
+      thunk_FUN_01ba7564();
+    }
+    Nekki_SF2_GUI_Map_MapScene__SwitchToMapSceneAndOpenRaidMap
+              ((System_Action_o *)0x0,(MethodInfo *)0x0);
+    return;
+  }
+  return;
+}
+
+
+// ===== internal bool ALGGCJBHNPD(DILGLGMKOFG slot)  [RVA 0x328E45C]
+// Nekki.SF2.GUI.Dialogs.LotteryDialog.<>c$$ALGGCJBHNPD @ RVA 0x328E45C
+
+bool Nekki_SF2_GUI_Dialogs_LotteryDialog_<>c__ALGGCJBHNPD
+               (Nekki_SF2_GUI_Dialogs_LotteryDialog___c_o *__this,DILGLGMKOFG_o *slot,
+               MethodInfo *method)
+
+{
+  if (slot != (DILGLGMKOFG_o *)0x0) {
+    return (bool)(slot->fields).super.field_0x3c;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal bool IKDGHDCECPN(HFNLANEMDFI entry)  [RVA 0x328E474]
+// Nekki.SF2.GUI.Dialogs.LotteryDialog.<>c$$IKDGHDCECPN @ RVA 0x328E474
+
+bool Nekki_SF2_GUI_Dialogs_LotteryDialog_<>c__IKDGHDCECPN
+               (Nekki_SF2_GUI_Dialogs_LotteryDialog___c_o *__this,HFNLANEMDFI_o *entry,
+               MethodInfo *method)
+
+{
+  bool bVar1;
+  
+  if ((DAT_045672ff & 1) == 0) {
+    __this = (Nekki_SF2_GUI_Dialogs_LotteryDialog___c_o *)FUN_01bab630(&StringLiteral_3107/*"AscensionTicket"*/);
+    DAT_045672ff = 1;
+  }
+  if (entry != (HFNLANEMDFI_o *)0x0) {
+    bVar1 = System_String__op_Equality
+                      ((entry->fields).JIJLBFGKNJK,StringLiteral_3107/*"AscensionTicket"*/,(MethodInfo *)0x0);
+    return bVar1;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8(__this);
+}
+
+
+// ===== public void .ctor()  [RVA 0x328E3A4]
+// Nekki.SF2.GUI.Dialogs.LotteryDialog.<>c$$.ctor @ RVA 0x328E3A4
+
+void Nekki_SF2_GUI_Dialogs_LotteryDialog_<>c___ctor
+               (Nekki_SF2_GUI_Dialogs_LotteryDialog___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== internal bool GFOHJAFJIHP(DILGLGMKOFG slot)  [RVA 0x328E4C8]
+// Nekki.SF2.GUI.Dialogs.LotteryDialog.<>c$$GFOHJAFJIHP @ RVA 0x328E4C8
+
+bool Nekki_SF2_GUI_Dialogs_LotteryDialog_<>c__GFOHJAFJIHP
+               (Nekki_SF2_GUI_Dialogs_LotteryDialog___c_o *__this,DILGLGMKOFG_o *slot,
+               MethodInfo *method)
+
+{
+  bool bVar1;
+  
+  if (slot != (DILGLGMKOFG_o *)0x0) {
+    if ((slot->fields).super.field_0x3c == '\0') {
+      bVar1 = false;
+    }
+    else {
+      bVar1 = (slot->fields).super._GDKBFEGNHNP_k__BackingField != false;
+    }
+    return bVar1;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

@@ -1,0 +1,9 @@
+// IHMIMECHIAN$$PIDGCFAIKLJ @ RVA 0x343C7FC
+
+void IHMIMECHIAN__PIDGCFAIKLJ(IHMIMECHIAN_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).NNCLFDMPFHP = CJNHFNHJHPE;
+  return;
+}
+

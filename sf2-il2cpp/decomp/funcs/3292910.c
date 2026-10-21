@@ -1,0 +1,8 @@
+// OJFPEINHCDP$$KJBIABLOHLF @ RVA 0x3292910
+
+KDADMJGPAOM_o * OJFPEINHCDP__KJBIABLOHLF(OJFPEINHCDP_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).LHFLMBNKPHF;
+}
+

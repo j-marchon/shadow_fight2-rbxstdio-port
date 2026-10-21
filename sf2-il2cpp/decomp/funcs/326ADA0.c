@@ -1,0 +1,8 @@
+// GBBCLAJELFO$$KCBILPIAPHN @ RVA 0x326ADA0
+
+int32_t GBBCLAJELFO__KCBILPIAPHN(GBBCLAJELFO_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

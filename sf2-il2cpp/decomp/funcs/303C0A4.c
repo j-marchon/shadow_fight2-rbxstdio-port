@@ -1,0 +1,9 @@
+// AMJMGFCCAKN$$JONJCPBEJDP @ RVA 0x303C0A4
+
+void AMJMGFCCAKN__JONJCPBEJDP(AMJMGFCCAKN_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).CJKLJJIMECK = CJNHFNHJHPE;
+  return;
+}
+

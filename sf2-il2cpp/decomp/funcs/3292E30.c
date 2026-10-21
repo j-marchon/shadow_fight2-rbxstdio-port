@@ -1,0 +1,10 @@
+// OJFPEINHCDP$$IIBFFDJAKFB @ RVA 0x3292E30
+
+void OJFPEINHCDP__IIBFFDJAKFB(OJFPEINHCDP_o *__this,NODLJPNGNBG_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).OPHCNELIOLD = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

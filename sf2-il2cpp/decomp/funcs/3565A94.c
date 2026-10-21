@@ -1,0 +1,10 @@
+// CADIGFIBFEN$$KAIDLBNPCJH @ RVA 0x3565A94
+
+void CADIGFIBFEN__KAIDLBNPCJH(CADIGFIBFEN_o *__this,PGICCMFLDPI_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MIINPPOCPCN = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

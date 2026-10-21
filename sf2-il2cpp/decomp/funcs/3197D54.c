@@ -1,0 +1,8 @@
+// OMMDIMHOHLK$$JKOMBMIBMBL @ RVA 0x3197D54
+
+bool OMMDIMHOHLK__JKOMBMIBMBL(int32_t BKFOLMBMFNP,MethodInfo *method)
+
+{
+  return BKFOLMBMFNP - 7U < 9;
+}
+

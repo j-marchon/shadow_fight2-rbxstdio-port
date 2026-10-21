@@ -1,0 +1,8 @@
+// HMPMHFHGAMH$$DFBPBPPNIBC @ RVA 0x30E7A5C
+
+bool HMPMHFHGAMH__DFBPBPPNIBC(HMPMHFHGAMH_o *__this,JMIFGHKOLCL_o *LDOOMGABFME,MethodInfo *method)
+
+{
+  return false;
+}
+

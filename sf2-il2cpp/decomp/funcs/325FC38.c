@@ -1,0 +1,11 @@
+// AAPGCAPGBLG$$JPLEKDCHPDL @ RVA 0x325FC38
+
+bool AAPGCAPGBLG__JPLEKDCHPDL(AAPGCAPGBLG_o *__this,System_String_o *KGLJICLJHEL,MethodInfo *method)
+
+{
+  CCLKPGBIBOP_o *pCVar1;
+  
+  pCVar1 = AAPGCAPGBLG__DNBPEJFJHEP(__this,KGLJICLJHEL,method);
+  return pCVar1 != (CCLKPGBIBOP_o *)0x0;
+}
+

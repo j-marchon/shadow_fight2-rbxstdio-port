@@ -1,0 +1,9 @@
+// JHHFDBLANPH.MNHKJDJJINH$$KCHJCGEMCGE @ RVA 0x316F190
+
+System_String_o *
+JHHFDBLANPH_MNHKJDJJINH__KCHJCGEMCGE(JHHFDBLANPH_MNHKJDJJINH_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).NPFMOEOIEKM;
+}
+

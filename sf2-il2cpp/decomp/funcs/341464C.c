@@ -1,0 +1,17 @@
+// NJJFMGMKALF.NGCOJKOBJFM$$OKKBLGDCOLA @ RVA 0x341464C
+
+void NJJFMGMKALF_NGCOJKOBJFM__OKKBLGDCOLA
+               (NJJFMGMKALF_NGCOJKOBJFM_o *__this,Il2CppObject *__,MethodInfo *method)
+
+{
+  NJJFMGMKALF_o *__this_00;
+  
+  __this_00 = (__this->fields).__4__this;
+  if (__this_00 != (NJJFMGMKALF_o *)0x0) {
+    NJJFMGMKALF__EGMMOMCKKOP(__this_00,(__this->fields).questParameters,method);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

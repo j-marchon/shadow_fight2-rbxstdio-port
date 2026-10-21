@@ -1,0 +1,8 @@
+// MNLIBPAOCLG$$IIFIHKHDNCM @ RVA 0x31E96C0
+
+float MNLIBPAOCLG__IIFIHKHDNCM(MNLIBPAOCLG_o *__this,MethodInfo *method)
+
+{
+  return 1.0;
+}
+

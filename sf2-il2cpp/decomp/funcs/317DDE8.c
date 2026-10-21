@@ -1,0 +1,9 @@
+// ICBMOMGINFH$$EFEGGPNEJKH @ RVA 0x317DDE8
+
+void ICBMOMGINFH__EFEGGPNEJKH(ICBMOMGINFH_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).EJKCJCAPKKG = CJNHFNHJHPE;
+  return;
+}
+

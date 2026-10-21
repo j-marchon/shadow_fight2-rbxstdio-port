@@ -1,0 +1,9 @@
+// AFFHKININGD$$PDLFEEJMHHF @ RVA 0x3342FC4
+
+void AFFHKININGD__PDLFEEJMHHF(AFFHKININGD_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).GFCLPPPMGAK = CJNHFNHJHPE;
+  return;
+}
+

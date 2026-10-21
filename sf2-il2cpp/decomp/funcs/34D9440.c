@@ -1,0 +1,10 @@
+// OJHLANCHFPC$$BNDEINIBMDP @ RVA 0x34D9440
+
+void OJHLANCHFPC__BNDEINIBMDP(OJHLANCHFPC_o *__this,AADKBCFCLKK_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).PKIDDHNAOAC = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

@@ -1,0 +1,10 @@
+// DMOPGPMINJD$$GGBIEOLAGNO @ RVA 0x30BA5B0
+
+void DMOPGPMINJD__GGBIEOLAGNO(DMOPGPMINJD_o *__this,EEHFEPPDBHL_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MMIHELOLFPP = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

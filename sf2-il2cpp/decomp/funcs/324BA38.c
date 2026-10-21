@@ -1,0 +1,8 @@
+// ELBBEAGGAOH$$KBODMAFMHCC @ RVA 0x324BA38
+
+KAMBBJFPLGM_o * ELBBEAGGAOH__KBODMAFMHCC(ELBBEAGGAOH_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).CBHDCHDBFGB;
+}
+

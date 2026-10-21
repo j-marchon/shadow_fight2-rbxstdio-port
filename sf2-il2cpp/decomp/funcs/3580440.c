@@ -1,0 +1,8 @@
+// EOLFEKNCPLM$$CECHCMPKDKM @ RVA 0x3580440
+
+OBCMNBDBNFO_o * EOLFEKNCPLM__CECHCMPKDKM(EOLFEKNCPLM_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).PLJJCOHGICK;
+}
+

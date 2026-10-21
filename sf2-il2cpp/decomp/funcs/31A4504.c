@@ -1,0 +1,8 @@
+// LGICOANJJLI$$KCBILPIAPHN @ RVA 0x31A4504
+
+int32_t LGICOANJJLI__KCBILPIAPHN(LGICOANJJLI_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

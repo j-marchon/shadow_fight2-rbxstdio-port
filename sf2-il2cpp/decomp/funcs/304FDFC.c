@@ -1,0 +1,8 @@
+// MCIBPLJEFLJ$$NHONNGBAAKM @ RVA 0x304FDFC
+
+bool MCIBPLJEFLJ__NHONNGBAAKM(MCIBPLJEFLJ_o *__this,Il2CppObject *JOOCKFFLOPJ,MethodInfo *method)
+
+{
+  return (__this->fields).MKPKPODAGPH == JOOCKFFLOPJ;
+}
+

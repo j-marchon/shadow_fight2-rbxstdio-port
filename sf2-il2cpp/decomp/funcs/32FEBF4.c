@@ -1,0 +1,8 @@
+// JCHNBADDBGO$$IDADGMDDNAK @ RVA 0x32FEBF4
+
+IGFGDDANEPE_o * JCHNBADDBGO__IDADGMDDNAK(JCHNBADDBGO_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).DPCOEJPACKA;
+}
+

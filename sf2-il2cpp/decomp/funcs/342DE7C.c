@@ -1,0 +1,8 @@
+// GBJGJEGPHKD$$BBGBNLKMBMG @ RVA 0x342DE7C
+
+OLKKAIFGGAK_o * GBJGJEGPHKD__BBGBNLKMBMG(GBJGJEGPHKD_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).KOHECBJAFKG;
+}
+

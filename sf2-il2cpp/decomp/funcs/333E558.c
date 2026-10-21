@@ -1,0 +1,8 @@
+// AFFHKININGD$$GOCFHEAJLKK @ RVA 0x333E558
+
+PAMEPBLOLPB_o * AFFHKININGD__GOCFHEAJLKK(AFFHKININGD_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).JPBIBBBMCCD;
+}
+

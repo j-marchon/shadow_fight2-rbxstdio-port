@@ -1,0 +1,8 @@
+// NFJNEIFINHA$$JFGBPBOCOIC @ RVA 0x317FAC0
+
+bool NFJNEIFINHA__JFGBPBOCOIC(NFJNEIFINHA_o *__this,int32_t HJDMBDBJEFL,MethodInfo *method)
+
+{
+  return HJDMBDBJEFL == 0;
+}
+

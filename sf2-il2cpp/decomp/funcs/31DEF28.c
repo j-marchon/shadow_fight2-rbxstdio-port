@@ -1,0 +1,8 @@
+// ONEDJCACCGM$$KDFMBBPEJDE @ RVA 0x31DEF28
+
+bool ONEDJCACCGM__KDFMBBPEJDE(int32_t BKFOLMBMFNP,MethodInfo *method)
+
+{
+  return true;
+}
+

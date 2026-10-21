@@ -1,0 +1,24 @@
+// OLKKAIFGGAK$$NCGLMMIDEKK @ RVA 0x34EE4C0
+
+float OLKKAIFGGAK__NCGLMMIDEKK
+                (OLKKAIFGGAK_o *FMPJLBLNHMC,OLKKAIFGGAK_o *IHEPHBIPLPM,MethodInfo *method)
+
+{
+  GBJGJEGPHKD_o *pGVar1;
+  CNDPAJOLKFN_o *BJCLOGCDNEG;
+  CNDPAJOLKFN_o *JDFOLIMEDCJ;
+  float fVar2;
+  
+  if ((((FMPJLBLNHMC != (OLKKAIFGGAK_o *)0x0) &&
+       (pGVar1 = (FMPJLBLNHMC->fields).HMIAFJALFCJ, pGVar1 != (GBJGJEGPHKD_o *)0x0)) &&
+      (BJCLOGCDNEG = GBJGJEGPHKD__PLEJOMOEFNE(pGVar1,(MethodInfo *)0x0),
+      IHEPHBIPLPM != (OLKKAIFGGAK_o *)0x0)) &&
+     (pGVar1 = (IHEPHBIPLPM->fields).HMIAFJALFCJ, pGVar1 != (GBJGJEGPHKD_o *)0x0)) {
+    JDFOLIMEDCJ = GBJGJEGPHKD__PLEJOMOEFNE(pGVar1,(MethodInfo *)0x0);
+    fVar2 = CNDPAJOLKFN__FCEAFPLBNGE(BJCLOGCDNEG,JDFOLIMEDCJ,(MethodInfo *)0x0);
+    return fVar2;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

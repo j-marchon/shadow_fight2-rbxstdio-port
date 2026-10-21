@@ -1,0 +1,8 @@
+// IPCACEBFONO$$NPDCHGGEAOK @ RVA 0x34E2630
+
+NKOIBKNPICN_o * IPCACEBFONO__NPDCHGGEAOK(IPCACEBFONO_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).MAABMIGPEIL;
+}
+

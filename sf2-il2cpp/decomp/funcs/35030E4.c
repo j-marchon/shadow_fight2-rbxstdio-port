@@ -1,0 +1,9 @@
+// OBCMNBDBNFO$$FEKPEMKJAJL @ RVA 0x35030E4
+
+void OBCMNBDBNFO__FEKPEMKJAJL(OBCMNBDBNFO_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).JEAFOMDCLHD = CJNHFNHJHPE;
+  return;
+}
+

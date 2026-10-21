@@ -1,0 +1,8 @@
+// KKLFGJCMPDA$$FPHGCKCNOLF @ RVA 0x3219DE4
+
+FAIJGJCCKJC_o * KKLFGJCMPDA__FPHGCKCNOLF(KKLFGJCMPDA_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).EAAEJJKFKEG;
+}
+

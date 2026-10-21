@@ -1,0 +1,8 @@
+// DAMKIPCICBK$$KCBILPIAPHN @ RVA 0x330E220
+
+int32_t DAMKIPCICBK__KCBILPIAPHN(DAMKIPCICBK_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

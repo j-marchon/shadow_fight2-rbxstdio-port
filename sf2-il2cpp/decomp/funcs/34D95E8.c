@@ -1,0 +1,8 @@
+// OJHLANCHFPC$$GJAMLPCIDGC @ RVA 0x34D95E8
+
+PGICCMFLDPI_o * OJHLANCHFPC__GJAMLPCIDGC(OJHLANCHFPC_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).OBKCJGGIEMF;
+}
+

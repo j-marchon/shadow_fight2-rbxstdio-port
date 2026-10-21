@@ -1,0 +1,13 @@
+// EBGMOLCMOHK$$IFIHEMDKGMO @ RVA 0x3105D50
+
+void EBGMOLCMOHK__IFIHEMDKGMO(float CJNHFNHJHPE,MethodInfo *method)
+
+{
+  if ((DAT_04566504 & 1) == 0) {
+    FUN_01bab630(&EBGMOLCMOHK_TypeInfo);
+    DAT_04566504 = 1;
+  }
+  EBGMOLCMOHK_TypeInfo->static_fields->DBIHPEGBLNF = CJNHFNHJHPE;
+  return;
+}
+

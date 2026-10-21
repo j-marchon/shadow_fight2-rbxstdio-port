@@ -1,0 +1,8 @@
+// OJHLANCHFPC$$GLIKBDJEDOL @ RVA 0x34D95F0
+
+AADKBCFCLKK_o * OJHLANCHFPC__GLIKBDJEDOL(OJHLANCHFPC_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).PKIDDHNAOAC;
+}
+

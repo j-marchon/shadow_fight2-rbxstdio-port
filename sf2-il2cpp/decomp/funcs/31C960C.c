@@ -1,0 +1,9 @@
+// DBNIPENAEKO$$ICPMGFCEAPN @ RVA 0x31C960C
+
+void DBNIPENAEKO__ICPMGFCEAPN(DBNIPENAEKO_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).LCAENFFHHEI = CJNHFNHJHPE;
+  return;
+}
+

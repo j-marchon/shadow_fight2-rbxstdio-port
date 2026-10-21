@@ -1,0 +1,8 @@
+// EINKKMIHCHI$$MEHFGJDCBDP @ RVA 0x34C7C20
+
+int32_t EINKKMIHCHI__MEHFGJDCBDP(EINKKMIHCHI_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

@@ -1,0 +1,8 @@
+// KMDOLFBIGNC$$IBBECMECOEE @ RVA 0x312356C
+
+PGICCMFLDPI_o * KMDOLFBIGNC__IBBECMECOEE(KMDOLFBIGNC_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).PNGGPPDKHPH;
+}
+

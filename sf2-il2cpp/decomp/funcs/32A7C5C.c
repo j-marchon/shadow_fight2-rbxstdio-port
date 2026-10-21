@@ -1,0 +1,9 @@
+// NLFLMJPNOLF$$PEMJOKFFAMO @ RVA 0x32A7C5C
+
+void NLFLMJPNOLF__PEMJOKFFAMO(NLFLMJPNOLF_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).OHMDCKEDOGH = CJNHFNHJHPE;
+  return;
+}
+

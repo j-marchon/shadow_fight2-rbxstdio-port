@@ -1,0 +1,9 @@
+// JGELBDHDHAO$$GHGHBICABHJ @ RVA 0x35047EC
+
+void JGELBDHDHAO__GHGHBICABHJ(JGELBDHDHAO_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).IFBHDAMCHNM = CJNHFNHJHPE;
+  return;
+}
+

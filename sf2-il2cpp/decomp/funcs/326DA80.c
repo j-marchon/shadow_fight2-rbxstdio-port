@@ -1,0 +1,9 @@
+// LMEMJBOBHBE$$MGDCMOPLDNM @ RVA 0x326DA80
+
+void LMEMJBOBHBE__MGDCMOPLDNM(LMEMJBOBHBE_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).PHICOONBADJ = CJNHFNHJHPE;
+  return;
+}
+

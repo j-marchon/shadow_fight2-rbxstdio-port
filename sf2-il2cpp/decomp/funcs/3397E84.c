@@ -1,0 +1,11 @@
+// AKADDLNNLKH$$EGFMIDAKOFH @ RVA 0x3397E84
+
+bool AKADDLNNLKH__EGFMIDAKOFH(AKADDLNNLKH_o *__this,System_String_o *KGLJICLJHEL,MethodInfo *method)
+
+{
+  HOGPIBHKJDL_o *pHVar1;
+  
+  pHVar1 = AKADDLNNLKH__PKFOJKHFKKL(__this,KGLJICLJHEL,method);
+  return pHVar1 != (HOGPIBHKJDL_o *)0x0;
+}
+

@@ -1,0 +1,8 @@
+// NFFDIPBFJHP$$MFFHGHNBOOI @ RVA 0x32BB1C4
+
+GLPEFEEGCPM_o * NFFDIPBFJHP__MFFHGHNBOOI(NFFDIPBFJHP_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).NEACDFLBNFO;
+}
+

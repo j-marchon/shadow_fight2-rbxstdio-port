@@ -1,0 +1,8 @@
+// FMNPEJKMBMB$$GIMAJOGGBHM @ RVA 0x3474324
+
+void FMNPEJKMBMB__GIMAJOGGBHM(FMNPEJKMBMB_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

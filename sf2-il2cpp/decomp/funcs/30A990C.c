@@ -1,0 +1,9 @@
+// HCKHJECBIJC$$IAJAOBGCOKE @ RVA 0x30A990C
+
+void HCKHJECBIJC__IAJAOBGCOKE(HCKHJECBIJC_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).CCCDGBNPNOD = CJNHFNHJHPE;
+  return;
+}
+

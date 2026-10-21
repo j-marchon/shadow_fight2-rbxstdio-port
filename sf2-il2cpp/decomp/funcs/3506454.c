@@ -1,0 +1,8 @@
+// LBEFKCIHJNG$$KCBILPIAPHN @ RVA 0x3506454
+
+int32_t LBEFKCIHJNG__KCBILPIAPHN(LBEFKCIHJNG_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

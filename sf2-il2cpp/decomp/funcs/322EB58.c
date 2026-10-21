@@ -1,0 +1,503 @@
+// InControl.HamaBlackForceWinProfile$$.ctor @ RVA 0x322EB58
+
+void InControl_HamaBlackForceWinProfile___ctor
+               (InControl_HamaBlackForceWinProfile_o *__this,MethodInfo *method)
+
+{
+  System_String_array *pSVar1;
+  System_String_array **ppSVar2;
+  InControl_InputControlMapping_array *pIVar3;
+  InControl_InputControlMapping_o *pIVar4;
+  long lVar5;
+  InControl_InputControlMapping_array **ppIVar6;
+  undefined8 uVar7;
+  MethodInfo *extraout_x1;
+  
+  if ((DAT_04566fc6 & 1) == 0) {
+    FUN_01bab630(&InControl_InputControlMapping___TypeInfo);
+    FUN_01bab630(&InControl_InputControlMapping_TypeInfo);
+    FUN_01bab630(&InControl_InputControlMapping_Range_TypeInfo);
+    FUN_01bab630(&string___TypeInfo);
+    FUN_01bab630(&InControl_UnityInputDeviceProfile_TypeInfo);
+    FUN_01bab630(&StringLiteral_8380);
+    FUN_01bab630(&StringLiteral_8383);
+    FUN_01bab630(&StringLiteral_7003);
+    FUN_01bab630(&StringLiteral_2019);
+    FUN_01bab630(&StringLiteral_5029);
+    FUN_01bab630(&StringLiteral_1943);
+    FUN_01bab630(&StringLiteral_14965);
+    FUN_01bab630(&StringLiteral_11387);
+    FUN_01bab630(&StringLiteral_8381);
+    FUN_01bab630(&StringLiteral_5030);
+    FUN_01bab630(&StringLiteral_2036);
+    FUN_01bab630(&StringLiteral_11386);
+    FUN_01bab630(&StringLiteral_11383);
+    FUN_01bab630(&StringLiteral_5031);
+    FUN_01bab630(&StringLiteral_8379);
+    FUN_01bab630(&StringLiteral_6741);
+    FUN_01bab630(&StringLiteral_3280);
+    FUN_01bab630(&StringLiteral_11385);
+    FUN_01bab630(&StringLiteral_3282);
+    FUN_01bab630(&StringLiteral_7002);
+    FUN_01bab630(&StringLiteral_5028);
+    FUN_01bab630(&StringLiteral_1606);
+    FUN_01bab630(&StringLiteral_8382);
+    FUN_01bab630(&StringLiteral_11384);
+    DAT_04566fc6 = 1;
+    method = extraout_x1;
+  }
+  if ((InControl_UnityInputDeviceProfile_TypeInfo->_2).cctor_finished == 0) {
+    thunk_FUN_01ba7564(InControl_UnityInputDeviceProfile_TypeInfo,method);
+  }
+  InControl_UnityInputDeviceProfile___ctor
+            ((InControl_UnityInputDeviceProfile_o *)__this,(MethodInfo *)0x0);
+  (__this->fields).super._Name_k__BackingField = StringLiteral_7002;
+  thunk_FUN_01c20e04();
+  (__this->fields).super._Meta_k__BackingField = StringLiteral_7003;
+  thunk_FUN_01c20e04();
+  pSVar1 = (System_String_array *)FUN_01bab718(string___TypeInfo,1);
+  if (pSVar1 != (System_String_array *)0x0) {
+    if ((int)pSVar1->max_length == 0) {
+LAB_0332f930:
+                    /* WARNING: Subroutine does not return */
+      FUN_01bab8d0();
+    }
+    pSVar1->m_Items[0] = StringLiteral_14965;
+    thunk_FUN_01c20e04();
+    ppSVar2 = &(__this->fields).super.SupportedPlatforms;
+    *ppSVar2 = pSVar1;
+    thunk_FUN_01c20e04(ppSVar2,pSVar1);
+    pSVar1 = (System_String_array *)FUN_01bab718(string___TypeInfo,1);
+    if (pSVar1 != (System_String_array *)0x0) {
+      if ((int)pSVar1->max_length == 0) goto LAB_0332f930;
+      pSVar1->m_Items[0] = StringLiteral_6741;
+      thunk_FUN_01c20e04();
+      ppSVar2 = &(__this->fields).super.JoystickNames;
+      *ppSVar2 = pSVar1;
+      thunk_FUN_01c20e04(ppSVar2,pSVar1);
+      pIVar3 = (InControl_InputControlMapping_array *)
+               FUN_01bab718(InControl_InputControlMapping___TypeInfo,0xc);
+      pIVar4 = (InControl_InputControlMapping_o *)
+               thunk_FUN_01bda818(InControl_InputControlMapping_TypeInfo);
+      InControl_InputControlMapping___ctor(pIVar4,(MethodInfo *)0x0);
+      if (pIVar4 != (InControl_InputControlMapping_o *)0x0) {
+        (pIVar4->fields).handle = StringLiteral_2019;
+        thunk_FUN_01c20e04();
+        (pIVar4->fields).Target = 0xb;
+        (pIVar4->fields).Source = InControl_UnityInputDeviceProfile_TypeInfo->static_fields->Button2
+        ;
+        thunk_FUN_01c20e04();
+        if (pIVar3 != (InControl_InputControlMapping_array *)0x0) {
+          lVar5 = thunk_FUN_01bda71c(pIVar4,(((pIVar3->obj).klass)->_1).element_class);
+          if (lVar5 == 0) {
+LAB_0332f924:
+            uVar7 = thunk_FUN_01be8e1c();
+                    /* WARNING: Subroutine does not return */
+            FUN_01bab798(uVar7,0);
+          }
+          if ((int)pIVar3->max_length == 0) goto LAB_0332f930;
+          pIVar3->m_Items[0] = pIVar4;
+          thunk_FUN_01c20e04(pIVar3->m_Items,pIVar4);
+          pIVar4 = (InControl_InputControlMapping_o *)
+                   thunk_FUN_01bda818(InControl_InputControlMapping_TypeInfo);
+          InControl_InputControlMapping___ctor(pIVar4,(MethodInfo *)0x0);
+          if (pIVar4 == (InControl_InputControlMapping_o *)0x0) goto LAB_0332f920;
+          (pIVar4->fields).handle = StringLiteral_1943;
+          thunk_FUN_01c20e04();
+          (pIVar4->fields).Target = 0xc;
+          (pIVar4->fields).Source =
+               InControl_UnityInputDeviceProfile_TypeInfo->static_fields->Button1;
+          thunk_FUN_01c20e04();
+          lVar5 = thunk_FUN_01bda71c(pIVar4,(((pIVar3->obj).klass)->_1).element_class);
+          if (lVar5 == 0) goto LAB_0332f924;
+          if ((uint)pIVar3->max_length < 2) goto LAB_0332f930;
+          pIVar3->m_Items[1] = pIVar4;
+          thunk_FUN_01c20e04(pIVar3->m_Items + 1,pIVar4);
+          pIVar4 = (InControl_InputControlMapping_o *)
+                   thunk_FUN_01bda818(InControl_InputControlMapping_TypeInfo);
+          InControl_InputControlMapping___ctor(pIVar4,(MethodInfo *)0x0);
+          if (pIVar4 == (InControl_InputControlMapping_o *)0x0) goto LAB_0332f920;
+          (pIVar4->fields).handle = StringLiteral_2036;
+          thunk_FUN_01c20e04();
+          (pIVar4->fields).Target = 0xd;
+          (pIVar4->fields).Source =
+               InControl_UnityInputDeviceProfile_TypeInfo->static_fields->Button3;
+          thunk_FUN_01c20e04();
+          lVar5 = thunk_FUN_01bda71c(pIVar4,(((pIVar3->obj).klass)->_1).element_class);
+          if (lVar5 == 0) goto LAB_0332f924;
+          if ((uint)pIVar3->max_length < 3) goto LAB_0332f930;
+          pIVar3->m_Items[2] = pIVar4;
+          thunk_FUN_01c20e04(pIVar3->m_Items + 2,pIVar4);
+          pIVar4 = (InControl_InputControlMapping_o *)
+                   thunk_FUN_01bda818(InControl_InputControlMapping_TypeInfo);
+          InControl_InputControlMapping___ctor(pIVar4,(MethodInfo *)0x0);
+          if (pIVar4 == (InControl_InputControlMapping_o *)0x0) goto LAB_0332f920;
+          (pIVar4->fields).handle = StringLiteral_1606;
+          thunk_FUN_01c20e04();
+          (pIVar4->fields).Target = 0xe;
+          (pIVar4->fields).Source =
+               InControl_UnityInputDeviceProfile_TypeInfo->static_fields->Button0;
+          thunk_FUN_01c20e04();
+          lVar5 = thunk_FUN_01bda71c(pIVar4,(((pIVar3->obj).klass)->_1).element_class);
+          if (lVar5 == 0) goto LAB_0332f924;
+          if ((uint)pIVar3->max_length < 4) goto LAB_0332f930;
+          pIVar3->m_Items[3] = pIVar4;
+          thunk_FUN_01c20e04(pIVar3->m_Items + 3,pIVar4);
+          pIVar4 = (InControl_InputControlMapping_o *)
+                   thunk_FUN_01bda818(InControl_InputControlMapping_TypeInfo);
+          InControl_InputControlMapping___ctor(pIVar4,(MethodInfo *)0x0);
+          if (pIVar4 == (InControl_InputControlMapping_o *)0x0) goto LAB_0332f920;
+          (pIVar4->fields).handle = StringLiteral_8379;
+          thunk_FUN_01c20e04();
+          (pIVar4->fields).Target = 0x11;
+          (pIVar4->fields).Source =
+               InControl_UnityInputDeviceProfile_TypeInfo->static_fields->Button4;
+          thunk_FUN_01c20e04();
+          lVar5 = thunk_FUN_01bda71c(pIVar4,(((pIVar3->obj).klass)->_1).element_class);
+          if (lVar5 == 0) goto LAB_0332f924;
+          if ((uint)pIVar3->max_length < 5) goto LAB_0332f930;
+          pIVar3->m_Items[4] = pIVar4;
+          thunk_FUN_01c20e04(pIVar3->m_Items + 4,pIVar4);
+          pIVar4 = (InControl_InputControlMapping_o *)
+                   thunk_FUN_01bda818(InControl_InputControlMapping_TypeInfo);
+          InControl_InputControlMapping___ctor(pIVar4,(MethodInfo *)0x0);
+          if (pIVar4 == (InControl_InputControlMapping_o *)0x0) goto LAB_0332f920;
+          (pIVar4->fields).handle = StringLiteral_11383;
+          thunk_FUN_01c20e04();
+          (pIVar4->fields).Target = 0x12;
+          (pIVar4->fields).Source =
+               InControl_UnityInputDeviceProfile_TypeInfo->static_fields->Button5;
+          thunk_FUN_01c20e04();
+          lVar5 = thunk_FUN_01bda71c(pIVar4,(((pIVar3->obj).klass)->_1).element_class);
+          if (lVar5 == 0) goto LAB_0332f924;
+          if ((uint)pIVar3->max_length < 6) goto LAB_0332f930;
+          pIVar3->m_Items[5] = pIVar4;
+          thunk_FUN_01c20e04(pIVar3->m_Items + 5,pIVar4);
+          pIVar4 = (InControl_InputControlMapping_o *)
+                   thunk_FUN_01bda818(InControl_InputControlMapping_TypeInfo);
+          InControl_InputControlMapping___ctor(pIVar4,(MethodInfo *)0x0);
+          if (pIVar4 == (InControl_InputControlMapping_o *)0x0) goto LAB_0332f920;
+          (pIVar4->fields).handle = StringLiteral_8383;
+          thunk_FUN_01c20e04();
+          (pIVar4->fields).Target = 0xf;
+          (pIVar4->fields).Source =
+               InControl_UnityInputDeviceProfile_TypeInfo->static_fields->Button6;
+          thunk_FUN_01c20e04();
+          lVar5 = thunk_FUN_01bda71c(pIVar4,(((pIVar3->obj).klass)->_1).element_class);
+          if (lVar5 == 0) goto LAB_0332f924;
+          if ((uint)pIVar3->max_length < 7) goto LAB_0332f930;
+          pIVar3->m_Items[6] = pIVar4;
+          thunk_FUN_01c20e04(pIVar3->m_Items + 6,pIVar4);
+          pIVar4 = (InControl_InputControlMapping_o *)
+                   thunk_FUN_01bda818(InControl_InputControlMapping_TypeInfo);
+          InControl_InputControlMapping___ctor(pIVar4,(MethodInfo *)0x0);
+          if (pIVar4 == (InControl_InputControlMapping_o *)0x0) goto LAB_0332f920;
+          (pIVar4->fields).handle = StringLiteral_11387;
+          thunk_FUN_01c20e04();
+          (pIVar4->fields).Target = 0x10;
+          (pIVar4->fields).Source =
+               InControl_UnityInputDeviceProfile_TypeInfo->static_fields->Button7;
+          thunk_FUN_01c20e04();
+          lVar5 = thunk_FUN_01bda71c(pIVar4,(((pIVar3->obj).klass)->_1).element_class);
+          if (lVar5 == 0) goto LAB_0332f924;
+          if ((uint)pIVar3->max_length < 8) goto LAB_0332f930;
+          pIVar3->m_Items[7] = pIVar4;
+          thunk_FUN_01c20e04(pIVar3->m_Items + 7,pIVar4);
+          pIVar4 = (InControl_InputControlMapping_o *)
+                   thunk_FUN_01bda818(InControl_InputControlMapping_TypeInfo);
+          InControl_InputControlMapping___ctor(pIVar4,(MethodInfo *)0x0);
+          if (pIVar4 == (InControl_InputControlMapping_o *)0x0) goto LAB_0332f920;
+          (pIVar4->fields).handle = StringLiteral_3282;
+          thunk_FUN_01c20e04();
+          (pIVar4->fields).Target = 0x15;
+                    /* try { // try from 0332f228 to 0342f377 has its CatchHandler @ 0332f228
+                       catch() { ... } // from try @ 0332f228 with catch @ 0332f228
+                       catch() { ... } // from try @ 0332f464 with catch @ 0332f228
+                       catch() { ... } // from try @ 0332f494 with catch @ 0332f228
+                       catch() { ... } // from try @ 0332f4f0 with catch @ 0332f228
+                       catch() { ... } // from try @ 0332f51c with catch @ 0332f228
+                       catch() { ... } // from try @ 0332f574 with catch @ 0332f228
+                       catch() { ... } // from try @ 0332f5bc with catch @ 0332f228 */
+          (pIVar4->fields).Source =
+               InControl_UnityInputDeviceProfile_TypeInfo->static_fields->Button8;
+          thunk_FUN_01c20e04();
+          lVar5 = thunk_FUN_01bda71c(pIVar4,(((pIVar3->obj).klass)->_1).element_class);
+          if (lVar5 == 0) goto LAB_0332f924;
+          if ((uint)pIVar3->max_length < 9) goto LAB_0332f930;
+          pIVar3->m_Items[8] = pIVar4;
+          thunk_FUN_01c20e04(pIVar3->m_Items + 8,pIVar4);
+          pIVar4 = (InControl_InputControlMapping_o *)
+                   thunk_FUN_01bda818(InControl_InputControlMapping_TypeInfo);
+          InControl_InputControlMapping___ctor(pIVar4,(MethodInfo *)0x0);
+          if (pIVar4 == (InControl_InputControlMapping_o *)0x0) goto LAB_0332f920;
+          (pIVar4->fields).handle = StringLiteral_8380;
+          thunk_FUN_01c20e04();
+          (pIVar4->fields).Target = 3;
+          (pIVar4->fields).Source =
+               InControl_UnityInputDeviceProfile_TypeInfo->static_fields->Button10;
+          thunk_FUN_01c20e04();
+          lVar5 = thunk_FUN_01bda71c(pIVar4,(((pIVar3->obj).klass)->_1).element_class);
+          if (lVar5 == 0) goto LAB_0332f924;
+          if ((uint)pIVar3->max_length < 10) goto LAB_0332f930;
+          pIVar3->m_Items[9] = pIVar4;
+          thunk_FUN_01c20e04(pIVar3->m_Items + 9,pIVar4);
+          pIVar4 = (InControl_InputControlMapping_o *)
+                   thunk_FUN_01bda818(InControl_InputControlMapping_TypeInfo);
+          InControl_InputControlMapping___ctor(pIVar4,(MethodInfo *)0x0);
+          if (pIVar4 == (InControl_InputControlMapping_o *)0x0) goto LAB_0332f920;
+          (pIVar4->fields).handle = StringLiteral_11384;
+          thunk_FUN_01c20e04();
+          (pIVar4->fields).Target = 6;
+          (pIVar4->fields).Source =
+               InControl_UnityInputDeviceProfile_TypeInfo->static_fields->Button11;
+          thunk_FUN_01c20e04();
+          lVar5 = thunk_FUN_01bda71c(pIVar4,(((pIVar3->obj).klass)->_1).element_class);
+          if (lVar5 == 0) goto LAB_0332f924;
+          if ((uint)pIVar3->max_length < 0xb) goto LAB_0332f930;
+          pIVar3->m_Items[10] = pIVar4;
+          thunk_FUN_01c20e04(pIVar3->m_Items + 10,pIVar4);
+          pIVar4 = (InControl_InputControlMapping_o *)
+                   thunk_FUN_01bda818(InControl_InputControlMapping_TypeInfo);
+          InControl_InputControlMapping___ctor(pIVar4,(MethodInfo *)0x0);
+                    /* try { // try from 0332f378 to 0342f37f has its CatchHandler @ 0332f554 */
+          if (pIVar4 == (InControl_InputControlMapping_o *)0x0) goto LAB_0332f920;
+          (pIVar4->fields).handle = StringLiteral_3280;
+          thunk_FUN_01c20e04();
+                    /* try { // try from 0332f394 to 0342f397 has its CatchHandler @ 0332f544 */
+          (pIVar4->fields).Target = 0x14;
+          (pIVar4->fields).Source =
+               InControl_UnityInputDeviceProfile_TypeInfo->static_fields->Button9;
+                    /* try { // try from 0332f3b0 to 0342f3b7 has its CatchHandler @ 0332f548 */
+          thunk_FUN_01c20e04();
+          lVar5 = thunk_FUN_01bda71c(pIVar4,(((pIVar3->obj).klass)->_1).element_class);
+          if (lVar5 == 0) goto LAB_0332f924;
+                    /* try { // try from 0332f3c8 to 0342f3d3 has its CatchHandler @ 0332f528 */
+          if ((uint)pIVar3->max_length < 0xc) goto LAB_0332f930;
+          pIVar3->m_Items[0xb] = pIVar4;
+          thunk_FUN_01c20e04(pIVar3->m_Items + 0xb,pIVar4);
+          ppIVar6 = &(__this->fields).super._ButtonMappings_k__BackingField;
+                    /* try { // try from 0332f3e8 to 0342f3ef has its CatchHandler @ 0332f474 */
+          *ppIVar6 = pIVar3;
+          thunk_FUN_01c20e04(ppIVar6,pIVar3);
+          pIVar3 = (InControl_InputControlMapping_array *)
+                   FUN_01bab718(InControl_InputControlMapping___TypeInfo,8);
+                    /* try { // try from 0332f404 to 0342f40b has its CatchHandler @ 0332f468 */
+          pIVar4 = (InControl_InputControlMapping_o *)
+                   thunk_FUN_01bda818(InControl_InputControlMapping_TypeInfo);
+                    /* try { // try from 0332f418 to 0342f41f has its CatchHandler @ 0332f46c */
+          InControl_InputControlMapping___ctor(pIVar4,(MethodInfo *)0x0);
+          if (pIVar4 != (InControl_InputControlMapping_o *)0x0) {
+            (pIVar4->fields).handle = StringLiteral_8381;
+            thunk_FUN_01c20e04();
+            (pIVar4->fields).Target = 1;
+                    /* try { // try from 0332f444 to 0342f44b has its CatchHandler @ 0332f53c */
+            (pIVar4->fields).Source =
+                 InControl_UnityInputDeviceProfile_TypeInfo->static_fields->Analog0;
+            thunk_FUN_01c20e04();
+            if (pIVar3 != (InControl_InputControlMapping_array *)0x0) {
+                    /* try { // try from 0332f460 to 0342f463 has its CatchHandler @ 0332f470 */
+                    /* try { // try from 0332f464 to 0342f48f has its CatchHandler @ 0332f228 */
+                    /* catch() { ... } // from try @ 0332f404 with catch @ 0332f468 */
+              lVar5 = thunk_FUN_01bda71c(pIVar4,(((pIVar3->obj).klass)->_1).element_class);
+                    /* catch() { ... } // from try @ 0332f418 with catch @ 0332f46c */
+              if (lVar5 == 0) goto LAB_0332f924;
+                    /* catch() { ... } // from try @ 0332f460 with catch @ 0332f470 */
+                    /* catch() { ... } // from try @ 0332f3e8 with catch @ 0332f474 */
+              if ((int)pIVar3->max_length != 0) {
+                pIVar3->m_Items[0] = pIVar4;
+                thunk_FUN_01c20e04(pIVar3->m_Items,pIVar4);
+                pIVar4 = (InControl_InputControlMapping_o *)
+                         thunk_FUN_01bda818(InControl_InputControlMapping_TypeInfo);
+                    /* try { // try from 0332f490 to 0342f493 has its CatchHandler @ 0332f51c */
+                    /* try { // try from 0332f494 to 0342f4e7 has its CatchHandler @ 0332f228 */
+                InControl_InputControlMapping___ctor(pIVar4,(MethodInfo *)0x0);
+                if (pIVar4 == (InControl_InputControlMapping_o *)0x0) goto LAB_0332f920;
+                (pIVar4->fields).handle = StringLiteral_8382;
+                thunk_FUN_01c20e04();
+                (pIVar4->fields).Target = 2;
+                (pIVar4->fields).Source =
+                     InControl_UnityInputDeviceProfile_TypeInfo->static_fields->Analog1;
+                thunk_FUN_01c20e04();
+                (pIVar4->fields).Invert = true;
+                    /* try { // try from 0332f4e8 to 0342f4eb has its CatchHandler @ 0332f550 */
+                    /* try { // try from 0332f4ec to 0342f4ef has its CatchHandler @ 0332f54c */
+                lVar5 = thunk_FUN_01bda71c(pIVar4,(((pIVar3->obj).klass)->_1).element_class);
+                    /* try { // try from 0332f4f0 to 0342f4fb has its CatchHandler @ 0332f228 */
+                if (lVar5 == 0) goto LAB_0332f924;
+                    /* try { // try from 0332f4fc to 0342f50f has its CatchHandler @ 0332f5d0 */
+                if (1 < (uint)pIVar3->max_length) {
+                  pIVar3->m_Items[1] = pIVar4;
+                  thunk_FUN_01c20e04(pIVar3->m_Items + 1,pIVar4);
+                    /* try { // try from 0332f510 to 0342f517 has its CatchHandler @ 0332f540 */
+                  pIVar4 = (InControl_InputControlMapping_o *)
+                           thunk_FUN_01bda818(InControl_InputControlMapping_TypeInfo);
+                    /* try { // try from 0332f518 to 0342f51b has its CatchHandler @ 0332f52c */
+                    /* catch() { ... } // from try @ 0332f490 with catch @ 0332f51c
+                       try { // try from 0332f51c to 0342f56f has its CatchHandler @ 0332f228 */
+                  InControl_InputControlMapping___ctor(pIVar4,(MethodInfo *)0x0);
+                  if (pIVar4 == (InControl_InputControlMapping_o *)0x0) goto LAB_0332f920;
+                    /* catch() { ... } // from try @ 0332f3c8 with catch @ 0332f528 */
+                    /* catch() { ... } // from try @ 0332f518 with catch @ 0332f52c */
+                  (pIVar4->fields).handle = StringLiteral_11385;
+                    /* catch() { ... } // from try @ 0332f444 with catch @ 0332f53c */
+                  thunk_FUN_01c20e04();
+                    /* catch() { ... } // from try @ 0332f510 with catch @ 0332f540 */
+                    /* catch() { ... } // from try @ 0332f394 with catch @ 0332f544 */
+                  (pIVar4->fields).Target = 4;
+                    /* catch() { ... } // from try @ 0332f3b0 with catch @ 0332f548 */
+                    /* catch() { ... } // from try @ 0332f4ec with catch @ 0332f54c */
+                    /* catch() { ... } // from try @ 0332f4e8 with catch @ 0332f550 */
+                    /* catch() { ... } // from try @ 0332f378 with catch @ 0332f554 */
+                  (pIVar4->fields).Source =
+                       InControl_UnityInputDeviceProfile_TypeInfo->static_fields->Analog2;
+                  thunk_FUN_01c20e04();
+                  lVar5 = thunk_FUN_01bda71c(pIVar4,(((pIVar3->obj).klass)->_1).element_class);
+                    /* try { // try from 0332f570 to 0342f573 has its CatchHandler @ 0332f5a4 */
+                  if (lVar5 == 0) goto LAB_0332f924;
+                    /* try { // try from 0332f574 to 0342f5b3 has its CatchHandler @ 0332f228 */
+                  if (2 < (uint)pIVar3->max_length) {
+                    pIVar3->m_Items[2] = pIVar4;
+                    thunk_FUN_01c20e04(pIVar3->m_Items + 2,pIVar4);
+                    pIVar4 = (InControl_InputControlMapping_o *)
+                             thunk_FUN_01bda818(InControl_InputControlMapping_TypeInfo);
+                    InControl_InputControlMapping___ctor(pIVar4,(MethodInfo *)0x0);
+                    /* catch() { ... } // from try @ 0332f570 with catch @ 0332f5a4 */
+                    if (pIVar4 == (InControl_InputControlMapping_o *)0x0) goto LAB_0332f920;
+                    /* try { // try from 0332f5b4 to 0342f5bb has its CatchHandler @ 0332f5d0 */
+                    (pIVar4->fields).handle = StringLiteral_11386;
+                    /* try { // try from 0332f5bc to 0342f5c7 has its CatchHandler @ 0332f228 */
+                    thunk_FUN_01c20e04();
+                    (pIVar4->fields).Target = 5;
+                    /* try { // try from 0332f5c8 to 0342f5cf has its CatchHandler @ 0332f5d0 */
+                    /* catch() { ... } // from try @ 0332f4fc with catch @ 0332f5d0
+                       catch() { ... } // from try @ 0332f5b4 with catch @ 0332f5d0
+                       catch() { ... } // from try @ 0332f5c8 with catch @ 0332f5d0 */
+                    (pIVar4->fields).Source =
+                         InControl_UnityInputDeviceProfile_TypeInfo->static_fields->Analog4;
+                    thunk_FUN_01c20e04();
+                    (pIVar4->fields).Invert = true;
+                    lVar5 = thunk_FUN_01bda71c(pIVar4,(((pIVar3->obj).klass)->_1).element_class);
+                    if (lVar5 == 0) goto LAB_0332f924;
+                    if (3 < (uint)pIVar3->max_length) {
+                      pIVar3->m_Items[3] = pIVar4;
+                      thunk_FUN_01c20e04(pIVar3->m_Items + 3,pIVar4);
+                      pIVar4 = (InControl_InputControlMapping_o *)
+                               thunk_FUN_01bda818(InControl_InputControlMapping_TypeInfo);
+                      InControl_InputControlMapping___ctor(pIVar4,(MethodInfo *)0x0);
+                      if (pIVar4 == (InControl_InputControlMapping_o *)0x0) goto LAB_0332f920;
+                      (pIVar4->fields).handle = StringLiteral_5029;
+                      thunk_FUN_01c20e04();
+                      (pIVar4->fields).Target = 9;
+                      (pIVar4->fields).Source =
+                           InControl_UnityInputDeviceProfile_TypeInfo->static_fields->Analog5;
+                      thunk_FUN_01c20e04();
+                      if ((InControl_InputControlMapping_Range_TypeInfo->_2).cctor_finished == 0) {
+                        thunk_FUN_01ba7564();
+                      }
+                      (pIVar4->fields).SourceRange =
+                           InControl_InputControlMapping_Range_TypeInfo->static_fields->Negative;
+                      thunk_FUN_01c20e04();
+                      (pIVar4->fields).TargetRange =
+                           InControl_InputControlMapping_Range_TypeInfo->static_fields->Negative;
+                      thunk_FUN_01c20e04();
+                      (pIVar4->fields).Invert = true;
+                      lVar5 = thunk_FUN_01bda71c(pIVar4,(((pIVar3->obj).klass)->_1).element_class);
+                      if (lVar5 == 0) goto LAB_0332f924;
+                      if (4 < (uint)pIVar3->max_length) {
+                        pIVar3->m_Items[4] = pIVar4;
+                        thunk_FUN_01c20e04(pIVar3->m_Items + 4,pIVar4);
+                        pIVar4 = (InControl_InputControlMapping_o *)
+                                 thunk_FUN_01bda818(InControl_InputControlMapping_TypeInfo);
+                        InControl_InputControlMapping___ctor(pIVar4,(MethodInfo *)0x0);
+                        if (pIVar4 == (InControl_InputControlMapping_o *)0x0) goto LAB_0332f920;
+                        (pIVar4->fields).handle = StringLiteral_5030;
+                        thunk_FUN_01c20e04();
+                        (pIVar4->fields).Target = 10;
+                        (pIVar4->fields).Source =
+                             InControl_UnityInputDeviceProfile_TypeInfo->static_fields->Analog5;
+                        thunk_FUN_01c20e04();
+                        (pIVar4->fields).SourceRange =
+                             InControl_InputControlMapping_Range_TypeInfo->static_fields->Positive;
+                        thunk_FUN_01c20e04();
+                        (pIVar4->fields).TargetRange =
+                             InControl_InputControlMapping_Range_TypeInfo->static_fields->Positive;
+                        thunk_FUN_01c20e04();
+                        lVar5 = thunk_FUN_01bda71c(pIVar4,(((pIVar3->obj).klass)->_1).element_class)
+                        ;
+                        if (lVar5 == 0) goto LAB_0332f924;
+                        if (5 < (uint)pIVar3->max_length) {
+                          pIVar3->m_Items[5] = pIVar4;
+                          thunk_FUN_01c20e04(pIVar3->m_Items + 5,pIVar4);
+                          pIVar4 = (InControl_InputControlMapping_o *)
+                                   thunk_FUN_01bda818(InControl_InputControlMapping_TypeInfo);
+                          InControl_InputControlMapping___ctor(pIVar4,(MethodInfo *)0x0);
+                          if (pIVar4 == (InControl_InputControlMapping_o *)0x0) goto LAB_0332f920;
+                          (pIVar4->fields).handle = StringLiteral_5031;
+                          thunk_FUN_01c20e04();
+                          (pIVar4->fields).Target = 7;
+                          (pIVar4->fields).Source =
+                               InControl_UnityInputDeviceProfile_TypeInfo->static_fields->Analog6;
+                          thunk_FUN_01c20e04();
+                          (pIVar4->fields).SourceRange =
+                               InControl_InputControlMapping_Range_TypeInfo->static_fields->Positive
+                          ;
+                          thunk_FUN_01c20e04();
+                          (pIVar4->fields).TargetRange =
+                               InControl_InputControlMapping_Range_TypeInfo->static_fields->Positive
+                          ;
+                          thunk_FUN_01c20e04();
+                          lVar5 = thunk_FUN_01bda71c(pIVar4,(((pIVar3->obj).klass)->_1).
+                                                            element_class);
+                          if (lVar5 == 0) goto LAB_0332f924;
+                          if (6 < (uint)pIVar3->max_length) {
+                            pIVar3->m_Items[6] = pIVar4;
+                            thunk_FUN_01c20e04(pIVar3->m_Items + 6,pIVar4);
+                            pIVar4 = (InControl_InputControlMapping_o *)
+                                     thunk_FUN_01bda818(InControl_InputControlMapping_TypeInfo);
+                            InControl_InputControlMapping___ctor(pIVar4,(MethodInfo *)0x0);
+                            if (pIVar4 == (InControl_InputControlMapping_o *)0x0) goto LAB_0332f920;
+                            (pIVar4->fields).handle = StringLiteral_5028;
+                            thunk_FUN_01c20e04();
+                            (pIVar4->fields).Target = 8;
+                            (pIVar4->fields).Source =
+                                 InControl_UnityInputDeviceProfile_TypeInfo->static_fields->Analog6;
+                            thunk_FUN_01c20e04();
+                            (pIVar4->fields).SourceRange =
+                                 InControl_InputControlMapping_Range_TypeInfo->static_fields->
+                                 Negative;
+                            thunk_FUN_01c20e04();
+                            (pIVar4->fields).TargetRange =
+                                 InControl_InputControlMapping_Range_TypeInfo->static_fields->
+                                 Negative;
+                            thunk_FUN_01c20e04();
+                            (pIVar4->fields).Invert = true;
+                            lVar5 = thunk_FUN_01bda71c(pIVar4,(((pIVar3->obj).klass)->_1).
+                                                              element_class);
+                            if (lVar5 == 0) goto LAB_0332f924;
+                            if (7 < (uint)pIVar3->max_length) {
+                              pIVar3->m_Items[7] = pIVar4;
+                              thunk_FUN_01c20e04(pIVar3->m_Items + 7,pIVar4);
+                              ppIVar6 = &(__this->fields).super._AnalogMappings_k__BackingField;
+                              *ppIVar6 = pIVar3;
+                              thunk_FUN_01c20e04(ppIVar6,pIVar3);
+                              return;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              goto LAB_0332f930;
+            }
+          }
+        }
+      }
+    }
+  }
+LAB_0332f920:
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

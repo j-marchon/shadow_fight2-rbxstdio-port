@@ -1,0 +1,9 @@
+// KMAOIKKMFJF$$EHMLCEKLCDD @ RVA 0x3032C30
+
+void KMAOIKKMFJF__EHMLCEKLCDD(KMAOIKKMFJF_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).ANAJGHJEEOC = CJNHFNHJHPE;
+  return;
+}
+

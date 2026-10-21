@@ -1,0 +1,8 @@
+// NOHICBGCIGP$$KCBILPIAPHN @ RVA 0x3391B2C
+
+int32_t NOHICBGCIGP__KCBILPIAPHN(NOHICBGCIGP_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

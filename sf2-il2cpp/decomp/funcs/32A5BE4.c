@@ -1,0 +1,8 @@
+// CFLBEJAKHAL$$KGGGBHEMAOO @ RVA 0x32A5BE4
+
+int32_t CFLBEJAKHAL__KGGGBHEMAOO(CFLBEJAKHAL_o *__this,MethodInfo *method)
+
+{
+  return 6;
+}
+

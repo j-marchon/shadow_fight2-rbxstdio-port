@@ -1,0 +1,70 @@
+// TypeDefIndex 1252
+// Namespace: 
+// [Serializable]
+// private sealed class SFRequestSender.<>c
+// Fields:
+//   public static readonly SFRequestSender.<>c <>9; // 0x0
+//   public static Action <>9__41_0; // 0x8
+//   public static Action <>9__41_1; // 0x10
+//   public static Action <>9__41_2; // 0x18
+
+// ===== private static void .cctor()  [RVA 0x314A07C]
+// SFRequestSender.<>c$$.cctor @ RVA 0x314A07C
+
+void SFRequestSender_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_045667ab & 1) == 0) {
+    FUN_01bab630(&SFRequestSender_<>c_TypeInfo);
+    DAT_045667ab = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(SFRequestSender_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  SFRequestSender_<>c_TypeInfo->static_fields->__9 = (SFRequestSender___c_o *)__this;
+  thunk_FUN_01c20e04(SFRequestSender_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== internal void BMDJMGHDEPM()  [RVA 0x314A0EC]
+// SFRequestSender.<>c$$BMDJMGHDEPM @ RVA 0x314A0EC
+
+void SFRequestSender_<>c__BMDJMGHDEPM(SFRequestSender___c_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void HDMHEGAHCCK()  [RVA 0x314A0F0]
+// SFRequestSender.<>c$$HDMHEGAHCCK @ RVA 0x314A0F0
+
+void SFRequestSender_<>c__HDMHEGAHCCK(SFRequestSender___c_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== public void .ctor()  [RVA 0x314A0E4]
+// SFRequestSender.<>c$$.ctor @ RVA 0x314A0E4
+
+void SFRequestSender_<>c___ctor(SFRequestSender___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== internal void GAHIKDHMMBA()  [RVA 0x314A0F4]
+// SFRequestSender.<>c$$GAHIKDHMMBA @ RVA 0x314A0F4
+
+void SFRequestSender_<>c__GAHIKDHMMBA(SFRequestSender___c_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

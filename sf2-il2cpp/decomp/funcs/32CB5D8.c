@@ -1,0 +1,8 @@
+// KJKIPGGDKLG$$JFGBPBOCOIC @ RVA 0x32CB5D8
+
+bool KJKIPGGDKLG__JFGBPBOCOIC(KJKIPGGDKLG_o *__this,int32_t HJDMBDBJEFL,MethodInfo *method)
+
+{
+  return HJDMBDBJEFL == 0;
+}
+

@@ -1,0 +1,9 @@
+// ACHLOMELAJE$$MEBIEMOMELE @ RVA 0x305EAA4
+
+void ACHLOMELAJE__MEBIEMOMELE(ACHLOMELAJE_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MMOJIJHAJJL = CJNHFNHJHPE;
+  return;
+}
+

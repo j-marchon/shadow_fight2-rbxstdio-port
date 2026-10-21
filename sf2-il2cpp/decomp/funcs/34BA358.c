@@ -1,0 +1,8 @@
+// AKIPHDKLFDG$$KCBILPIAPHN @ RVA 0x34BA358
+
+int32_t AKIPHDKLFDG__KCBILPIAPHN(AKIPHDKLFDG_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

@@ -1,0 +1,8 @@
+// FGDNDHOEMND$$JOHDKCDCPBD @ RVA 0x3419B08
+
+MBALPICJBHF_o * FGDNDHOEMND__JOHDKCDCPBD(FGDNDHOEMND_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).AHCGNPCNCKJ;
+}
+

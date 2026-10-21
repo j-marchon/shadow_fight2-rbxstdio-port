@@ -1,0 +1,9 @@
+// BANPLPOPIGI$$JJBDNGPJEFD @ RVA 0x33C7BF4
+
+void BANPLPOPIGI__JJBDNGPJEFD(BANPLPOPIGI_o *__this,int32_t PCAIKIGGBMJ,MethodInfo *method)
+
+{
+  (__this->fields).FFLNLBEPNNH = PCAIKIGGBMJ;
+  return;
+}
+

@@ -1,0 +1,8 @@
+// NEEBOJENFOL$$KCBILPIAPHN @ RVA 0x32B9AF8
+
+int32_t NEEBOJENFOL__KCBILPIAPHN(NEEBOJENFOL_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

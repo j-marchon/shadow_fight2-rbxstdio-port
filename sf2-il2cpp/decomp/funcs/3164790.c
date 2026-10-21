@@ -1,0 +1,9 @@
+// MFLHNKGKEGA.<>c$$.ctor @ RVA 0x3164790
+
+void MFLHNKGKEGA_<>c___ctor(MFLHNKGKEGA___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+

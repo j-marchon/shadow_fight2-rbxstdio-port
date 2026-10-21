@@ -1,0 +1,69 @@
+// TypeDefIndex 2841
+// Namespace: 
+// [Serializable]
+// private sealed class ModelObject.<>c
+// Fields:
+//   public static readonly ModelObject.<>c <>9; // 0x0
+//   public static Action<ModelNode> <>9__78_0; // 0x8
+//   public static Action<ModelEdge> <>9__78_1; // 0x10
+
+// ===== public void .ctor()  [RVA 0x34306A8]
+// ModelObject.<>c$$.ctor @ RVA 0x34306A8
+
+void ModelObject_<>c___ctor(ModelObject___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== internal void DHODDGENKLG(ModelEdge x)  [RVA 0x34306B0]
+// ModelObject.<>c$$DHODDGENKLG @ RVA 0x34306B0
+
+void ModelObject_<>c__DHODDGENKLG(ModelObject___c_o *__this,ModelEdge_o *x,MethodInfo *method)
+
+{
+  if (x != (ModelEdge_o *)0x0) {
+    ModelEdge__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== private static void .cctor()  [RVA 0x34306C8]
+// ModelObject.<>c$$.cctor @ RVA 0x34306C8
+
+void ModelObject_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_0456816e & 1) == 0) {
+    FUN_01bab630(&ModelObject_<>c_TypeInfo);
+    DAT_0456816e = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(ModelObject_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  ModelObject_<>c_TypeInfo->static_fields->__9 = (ModelObject___c_o *)__this;
+  thunk_FUN_01c20e04(ModelObject_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== internal void JIAGBOJOIHO(ModelNode x)  [RVA 0x3430730]
+// ModelObject.<>c$$JIAGBOJOIHO @ RVA 0x3430730
+
+void ModelObject_<>c__JIAGBOJOIHO(ModelObject___c_o *__this,ModelNode_o *x,MethodInfo *method)
+
+{
+  if (x != (ModelNode_o *)0x0) {
+    ModelNode__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

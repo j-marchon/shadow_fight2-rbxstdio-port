@@ -1,0 +1,8 @@
+// FCJBEKHDLAF$$CIKMANNKOLI @ RVA 0x33EF3E0
+
+BEPJMNAHCAD_o * FCJBEKHDLAF__CIKMANNKOLI(FCJBEKHDLAF_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).FAJCMHDLBEJ;
+}
+

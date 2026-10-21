@@ -1,0 +1,55 @@
+// TypeDefIndex 3182
+// Namespace: 
+// [Serializable]
+// private sealed class Model.IEMCMOPNPEA.<>c
+// Fields:
+//   public static readonly Model.IEMCMOPNPEA.<>c <>9; // 0x0
+//   public static Action<OIGAJAKPPEO> <>9__3_0; // 0x8
+
+// ===== private static void .cctor()  [RVA 0x34F8568]
+// Model.IEMCMOPNPEA.<>c$$.cctor @ RVA 0x34F8568
+
+void Model_IEMCMOPNPEA_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_0456880e & 1) == 0) {
+    FUN_01bab630(&Model_IEMCMOPNPEA_<>c_TypeInfo);
+    DAT_0456880e = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(Model_IEMCMOPNPEA_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  Model_IEMCMOPNPEA_<>c_TypeInfo->static_fields->__9 = (Model_IEMCMOPNPEA___c_o *)__this
+  ;
+  thunk_FUN_01c20e04(Model_IEMCMOPNPEA_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== internal void KLDHGFMNGJF(OIGAJAKPPEO x)  [RVA 0x34F85D8]
+// Model.IEMCMOPNPEA.<>c$$KLDHGFMNGJF @ RVA 0x34F85D8
+
+void Model_IEMCMOPNPEA_<>c__KLDHGFMNGJF
+               (Model_IEMCMOPNPEA___c_o *__this,OIGAJAKPPEO_o *x,MethodInfo *method)
+
+{
+  if (x != (OIGAJAKPPEO_o *)0x0) {
+    Model__BJJFFANJPAF((Model_o *)x,true,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== public void .ctor()  [RVA 0x34F85D0]
+// Model.IEMCMOPNPEA.<>c$$.ctor @ RVA 0x34F85D0
+
+void Model_IEMCMOPNPEA_<>c___ctor(Model_IEMCMOPNPEA___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+

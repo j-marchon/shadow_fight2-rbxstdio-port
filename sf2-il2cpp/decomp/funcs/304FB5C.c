@@ -1,0 +1,9 @@
+// EIBAKHBHMAO$$ECCECPDGDCM @ RVA 0x304FB5C
+
+void EIBAKHBHMAO__ECCECPDGDCM(EIBAKHBHMAO_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).FMNDJOFNPBP = CJNHFNHJHPE;
+  return;
+}
+

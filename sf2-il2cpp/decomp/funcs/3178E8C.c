@@ -1,0 +1,8 @@
+// LIEDABKCNJM$$IIPGLABFDFO @ RVA 0x3178E8C
+
+KALOJBMDHLA_o * LIEDABKCNJM__IIPGLABFDFO(LIEDABKCNJM_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).CHONKEHLFNF;
+}
+

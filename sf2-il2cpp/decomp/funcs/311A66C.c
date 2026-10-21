@@ -1,0 +1,10 @@
+// KAMBBJFPLGM$$AMIKJFGIFGK @ RVA 0x311A66C
+
+void KAMBBJFPLGM__AMIKJFGIFGK(KAMBBJFPLGM_o *__this,EOLFEKNCPLM_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).FLAFELDNABC = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

@@ -1,0 +1,13 @@
+// EIABCPKDEBD$$AKEMHLAANAH @ RVA 0x31351C8
+
+MGNDHCBAPEN_float__float__o *
+EIABCPKDEBD__AKEMHLAANAH
+          (System_Xml_XmlNode_o *JHMENEKPIBO,float KMKCEANBDGG,float IEJIPPALEFB,MethodInfo *method)
+
+{
+  MGNDHCBAPEN_float__float__o *pMVar1;
+  
+  pMVar1 = GIAMPEGMNHE__DOLFIEDIDHN(JHMENEKPIBO,KMKCEANBDGG,IEJIPPALEFB,(MethodInfo *)0x0);
+  return pMVar1;
+}
+

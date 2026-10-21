@@ -1,0 +1,8 @@
+// IGNCJNPCAEN$$BOGNOKPMNAK @ RVA 0x34295AC
+
+void IGNCJNPCAEN__BOGNOKPMNAK(MethodInfo *method)
+
+{
+  return;
+}
+

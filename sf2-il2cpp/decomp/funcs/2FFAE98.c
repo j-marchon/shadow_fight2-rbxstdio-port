@@ -1,0 +1,9 @@
+// JMDPBFOCHHP.ODJJOAOCFKO$$DNOMHOGFIFO @ RVA 0x2FFAE98
+
+System_String_o *
+JMDPBFOCHHP_ODJJOAOCFKO__DNOMHOGFIFO(JMDPBFOCHHP_ODJJOAOCFKO_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).APBICPEOMOM;
+}
+

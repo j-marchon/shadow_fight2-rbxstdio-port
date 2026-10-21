@@ -1,0 +1,9 @@
+// BFLFFPLIIFM$$CNLPFGDBIIM @ RVA 0x3232C60
+
+void BFLFFPLIIFM__CNLPFGDBIIM(BFLFFPLIIFM_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).POLEIDMHDNP = CJNHFNHJHPE;
+  return;
+}
+

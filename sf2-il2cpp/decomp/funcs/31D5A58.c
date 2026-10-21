@@ -1,0 +1,8 @@
+// KEMCBDKAPBD$$JFGBPBOCOIC @ RVA 0x31D5A58
+
+bool KEMCBDKAPBD__JFGBPBOCOIC(KEMCBDKAPBD_o *__this,int32_t HJDMBDBJEFL,MethodInfo *method)
+
+{
+  return HJDMBDBJEFL == 1;
+}
+

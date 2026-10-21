@@ -1,0 +1,9 @@
+// NODLJPNGNBG$$HEPJKPBPEAD @ RVA 0x3090AF0
+
+void NODLJPNGNBG__HEPJKPBPEAD(NODLJPNGNBG_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).DMFDEJEDMPO = CJNHFNHJHPE;
+  return;
+}
+

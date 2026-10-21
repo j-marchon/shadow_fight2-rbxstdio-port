@@ -1,0 +1,8 @@
+// IGFGDDANEPE$$CLDPCJADIMH @ RVA 0x30A412C
+
+HOOAAGABMBL_o * IGFGDDANEPE__CLDPCJADIMH(IGFGDDANEPE_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).LFPOIAJDMBK;
+}
+

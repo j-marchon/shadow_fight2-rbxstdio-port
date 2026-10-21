@@ -1,0 +1,8 @@
+// LDFIBPDJCFJ$$KCBILPIAPHN @ RVA 0x31BFB64
+
+int32_t LDFIBPDJCFJ__KCBILPIAPHN(LDFIBPDJCFJ_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

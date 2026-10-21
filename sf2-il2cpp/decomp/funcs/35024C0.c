@@ -1,0 +1,9 @@
+// OBCMNBDBNFO$$NELEMAPEJEP @ RVA 0x35024C0
+
+void OBCMNBDBNFO__NELEMAPEJEP(OBCMNBDBNFO_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).AKBMEEECABK = CJNHFNHJHPE;
+  return;
+}
+

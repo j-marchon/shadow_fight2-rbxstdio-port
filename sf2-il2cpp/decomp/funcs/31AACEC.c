@@ -1,0 +1,8 @@
+// KCJBHAFMPDP$$KCBILPIAPHN @ RVA 0x31AACEC
+
+int32_t KCJBHAFMPDP__KCBILPIAPHN(KCJBHAFMPDP_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

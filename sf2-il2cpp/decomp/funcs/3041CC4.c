@@ -1,0 +1,9 @@
+// PJKHAJKEHEL$$HLLHJNECGNJ @ RVA 0x3041CC4
+
+void PJKHAJKEHEL__HLLHJNECGNJ(PJKHAJKEHEL_o *__this,float CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MGJLOFGAPOM = CJNHFNHJHPE;
+  return;
+}
+

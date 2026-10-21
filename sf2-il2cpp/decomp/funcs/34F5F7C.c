@@ -1,0 +1,8 @@
+// OLKKAIFGGAK$$FKPAECDEPLC @ RVA 0x34F5F7C
+
+MMDPNDAECII_o * OLKKAIFGGAK__FKPAECDEPLC(OLKKAIFGGAK_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).GJLEPEPAOKD;
+}
+

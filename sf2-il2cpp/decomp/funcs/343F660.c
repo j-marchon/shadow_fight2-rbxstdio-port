@@ -1,0 +1,10 @@
+// OMFJHNMDIBF$$GOEEGCGLADH @ RVA 0x343F660
+
+void OMFJHNMDIBF__GOEEGCGLADH(OMFJHNMDIBF_o *__this,PIADCKMDDAK_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).IEDLACLJJOK = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

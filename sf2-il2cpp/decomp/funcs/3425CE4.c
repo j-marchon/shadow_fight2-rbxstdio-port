@@ -1,0 +1,8 @@
+// FIMAAAOEIGM$$JCKINNMKHBA @ RVA 0x3425CE4
+
+KAMBBJFPLGM_o * FIMAAAOEIGM__JCKINNMKHBA(FIMAAAOEIGM_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).OPHCNELIOLD;
+}
+

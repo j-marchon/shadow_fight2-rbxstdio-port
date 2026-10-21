@@ -1,0 +1,8 @@
+// OMFJHNMDIBF$$NIGKCIHAAFH @ RVA 0x343F378
+
+PIADCKMDDAK_o * OMFJHNMDIBF__NIGKCIHAAFH(OMFJHNMDIBF_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).IEDLACLJJOK;
+}
+

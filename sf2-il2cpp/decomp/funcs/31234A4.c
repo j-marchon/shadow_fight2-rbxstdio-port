@@ -1,0 +1,10 @@
+// KMDOLFBIGNC$$IKFMHNAFHDD @ RVA 0x31234A4
+
+void KMDOLFBIGNC__IKFMHNAFHDD(KMDOLFBIGNC_o *__this,PGICCMFLDPI_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).PNGGPPDKHPH = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

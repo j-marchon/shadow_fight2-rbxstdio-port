@@ -1,0 +1,8 @@
+// KAMBBJFPLGM$$BEIPEFPMCFP @ RVA 0x311B588
+
+BPBGAAHBFKH_o * KAMBBJFPLGM__BEIPEFPMCFP(KAMBBJFPLGM_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).IGPJEDLPAGI;
+}
+

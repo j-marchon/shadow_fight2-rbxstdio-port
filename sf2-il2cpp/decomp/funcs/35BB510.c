@@ -1,0 +1,9 @@
+// OLCBPIHLPEC$$PFADEIOFOJB @ RVA 0x35BB510
+
+void OLCBPIHLPEC__PFADEIOFOJB(OLCBPIHLPEC_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).NGODFBDEMLE = CJNHFNHJHPE;
+  return;
+}
+

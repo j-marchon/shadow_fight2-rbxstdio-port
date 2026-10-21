@@ -1,0 +1,106 @@
+// TypeDefIndex 1467
+// Namespace: 
+// [Serializable]
+// private sealed class ABNLGBHKOCE.JBMHDDKONHC.<>c
+// Fields:
+//   public static readonly ABNLGBHKOCE.JBMHDDKONHC.<>c <>9; // 0x0
+//   public static Action<EventAnimation> <>9__5_0; // 0x8
+//   public static Action<ConditionAnimation> <>9__5_1; // 0x10
+//   public static Action<ActionAnimation> <>9__5_2; // 0x18
+//   public static Action<ConditionAnimation> <>9__5_3; // 0x20
+
+// ===== internal void OCLFJIFMNMO(EventAnimation x)  [RVA 0x3194158]
+// ABNLGBHKOCE.JBMHDDKONHC.<>c$$OCLFJIFMNMO @ RVA 0x3194158
+
+void ABNLGBHKOCE_JBMHDDKONHC_<>c__OCLFJIFMNMO
+               (ABNLGBHKOCE_JBMHDDKONHC___c_o *__this,EventAnimation_o *x,MethodInfo *method)
+
+{
+  if (x != (EventAnimation_o *)0x0) {
+    EventAnimation__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal void NICDOCKIHDC(ActionAnimation x)  [RVA 0x3194170]
+// ABNLGBHKOCE.JBMHDDKONHC.<>c$$NICDOCKIHDC @ RVA 0x3194170
+
+void ABNLGBHKOCE_JBMHDDKONHC_<>c__NICDOCKIHDC
+               (ABNLGBHKOCE_JBMHDDKONHC___c_o *__this,ActionAnimation_o *x,MethodInfo *method)
+
+{
+  if (x != (ActionAnimation_o *)0x0) {
+    ActionAnimation__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal void IBEPKOEIAMP(ConditionAnimation x)  [RVA 0x3194188]
+// ABNLGBHKOCE.JBMHDDKONHC.<>c$$IBEPKOEIAMP @ RVA 0x3194188
+
+void ABNLGBHKOCE_JBMHDDKONHC_<>c__IBEPKOEIAMP
+               (ABNLGBHKOCE_JBMHDDKONHC___c_o *__this,ConditionAnimation_o *x,MethodInfo *method)
+
+{
+  if (x != (ConditionAnimation_o *)0x0) {
+    ConditionAnimation__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal void BNHALKLDOIP(ConditionAnimation x)  [RVA 0x31941A0]
+// ABNLGBHKOCE.JBMHDDKONHC.<>c$$BNHALKLDOIP @ RVA 0x31941A0
+
+void ABNLGBHKOCE_JBMHDDKONHC_<>c__BNHALKLDOIP
+               (ABNLGBHKOCE_JBMHDDKONHC___c_o *__this,ConditionAnimation_o *x,MethodInfo *method)
+
+{
+  if (x != (ConditionAnimation_o *)0x0) {
+    ConditionAnimation__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== public void .ctor()  [RVA 0x31941B8]
+// ABNLGBHKOCE.JBMHDDKONHC.<>c$$.ctor @ RVA 0x31941B8
+
+void ABNLGBHKOCE_JBMHDDKONHC_<>c___ctor(ABNLGBHKOCE_JBMHDDKONHC___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== private static void .cctor()  [RVA 0x31941C0]
+// ABNLGBHKOCE.JBMHDDKONHC.<>c$$.cctor @ RVA 0x31941C0
+
+void ABNLGBHKOCE_JBMHDDKONHC_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_04566a56 & 1) == 0) {
+    FUN_01bab630(&ABNLGBHKOCE_JBMHDDKONHC_<>c_TypeInfo);
+    DAT_04566a56 = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(ABNLGBHKOCE_JBMHDDKONHC_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  ABNLGBHKOCE_JBMHDDKONHC_<>c_TypeInfo->static_fields->__9 = (ABNLGBHKOCE_JBMHDDKONHC___c_o *)__this
+  ;
+  thunk_FUN_01c20e04(ABNLGBHKOCE_JBMHDDKONHC_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+

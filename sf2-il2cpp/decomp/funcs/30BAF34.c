@@ -1,0 +1,8 @@
+// DANCCJHADOA$$NBEOBEKPHMN @ RVA 0x30BAF34
+
+bool DANCCJHADOA__NBEOBEKPHMN(int32_t AAJGEHHPMGH,MethodInfo *method)
+
+{
+  return AAJGEHHPMGH - 4U < 0xc;
+}
+

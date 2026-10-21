@@ -1,0 +1,8 @@
+// CIMBHPHICBD$$KCBILPIAPHN @ RVA 0x3480248
+
+int32_t CIMBHPHICBD__KCBILPIAPHN(CIMBHPHICBD_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

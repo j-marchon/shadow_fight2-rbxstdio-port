@@ -1,0 +1,8 @@
+// LMPGMKLOHAH$$NHGGBEACKBD @ RVA 0x359404C
+
+int32_t LMPGMKLOHAH__NHGGBEACKBD(LMPGMKLOHAH_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

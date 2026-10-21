@@ -1,0 +1,12 @@
+// TypeDefIndex 1757
+// Namespace: 
+// public enum PNGKLCHKPEO.NOLNDEAFBEL
+// Fields:
+//   public int value__; // 0x0
+//   public const PNGKLCHKPEO.NOLNDEAFBEL OBJECT_NULL = 0;
+//   public const PNGKLCHKPEO.NOLNDEAFBEL OBJECT_NODES = 1;
+//   public const PNGKLCHKPEO.NOLNDEAFBEL OBJECT_PIVOT = 2;
+//   public const PNGKLCHKPEO.NOLNDEAFBEL OBJECT_WALL = 3;
+//   public const PNGKLCHKPEO.NOLNDEAFBEL OBJECT_FLOOR = 4;
+//   public const PNGKLCHKPEO.NOLNDEAFBEL OBJECT_MAP_CENTER = 5;
+//   public const PNGKLCHKPEO.NOLNDEAFBEL OBJECT_COM = 6;

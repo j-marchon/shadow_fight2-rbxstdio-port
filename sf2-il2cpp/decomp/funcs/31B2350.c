@@ -1,0 +1,201 @@
+// JIALPJBDBEE$$POBKBBAGBJE @ RVA 0x31B2350
+
+void JIALPJBDBEE__POBKBBAGBJE(JIALPJBDBEE_o *__this,MethodInfo *method)
+
+{
+  ushort uVar1;
+  bool bVar2;
+  System_Action_o *CJNHFNHJHPE;
+  PBAKFOBIHEG_o *pPVar3;
+  VirtualInvokeData *pVVar4;
+  Nekki_SF2_GUI_Menu_MainMenu_o *__this_00;
+  Nekki_SF2_GUI_ProgressButton_o *pNVar5;
+  System_Collections_Generic_List_OLKKAIFGGAK__o *__this_01;
+  OLKKAIFGGAK_o *__this_02;
+  System_Action_OLKKAIFGGAK_EAOIGPODIAI__o *CJNHFNHJHPE_00;
+  MethodInfo *extraout_x1;
+  MethodInfo *extraout_x1_00;
+  MethodInfo *extraout_x1_01;
+  ACHLOMELAJE_o *pAVar6;
+  PBAKFOBIHEG_c *pPVar7;
+  Nekki_SF2_Core_Fights_Controls_GameController_o *pNVar8;
+  Nekki_SF2_Core_Fights_Controls_ActionButtons_o *pNVar9;
+  FCJBEKHDLAF_o *pFVar10;
+  ulong uVar11;
+  int32_t *piVar12;
+  LPAPAMPGDFN_o *pLVar13;
+  System_Collections_IEnumerator_o **ppSVar14;
+  System_Collections_IEnumerator_o *pSVar15;
+  
+                    /* try { // try from 032b2350 to 033b2357 has its CatchHandler @ 032b237c */
+                    /* try { // try from 032b2358 to 033b2393 has its CatchHandler @ 032b202c */
+                    /* catch(type#1 @ 03f99f68) { ... } // from try @ 032b2260 with catch @ 032b235c
+                        */
+                    /* catch(type#1 @ 03f99f68) { ... } // from try @ 032b2248 with catch @ 032b2360
+                        */
+                    /* catch(type#1 @ 03f99f68) { ... } // from try @ 032b222c with catch @ 032b2364
+                        */
+                    /* catch(type#1 @ 03f99f68) { ... } // from try @ 032b21ec with catch @ 032b2368
+                        */
+                    /* catch(type#1 @ 03f99f68) { ... } // from try @ 032b220c with catch @ 032b236c
+                        */
+                    /* catch(type#1 @ 03f99f68) { ... } // from try @ 032b234c with catch @ 032b2370
+                        */
+                    /* catch(type#1 @ 03f99f68) { ... } // from try @ 032b226c with catch @ 032b2374
+                        */
+  if ((DAT_04566b88 & 1) == 0) {
+                    /* catch(type#1 @ 03f99f68) { ... } // from try @ 032b218c with catch @ 032b2378
+                        */
+                    /* catch(type#1 @ 03f99f68) { ... } // from try @ 032b2350 with catch @ 032b237c
+                        */
+    FUN_01bab630(&System_Action<OLKKAIFGGAK_EAOIGPODIAI>_TypeInfo);
+    FUN_01bab630(&System_Action_TypeInfo);
+                    /* try { // try from 032b2394 to 033b2397 has its CatchHandler @ 032b23c0 */
+                    /* try { // try from 032b2398 to 033b23cf has its CatchHandler @ 032b202c */
+    FUN_01bab630(&FCJBEKHDLAF_TypeInfo);
+    FUN_01bab630(&Method_JIALPJBDBEE_BBCAMJDDOII__);
+    FUN_01bab630(&Method_JIALPJBDBEE_POBKBBAGBJE__);
+    FUN_01bab630(&Method_System_Collections_Generic_List<OLKKAIFGGAK>_get_Item__);
+                    /* catch() { ... } // from try @ 032b2394 with catch @ 032b23c0 */
+    FUN_01bab630(&NLPJLHOEAOE_TypeInfo);
+                    /* try { // try from 032b23d0 to 033b23d7 has its CatchHandler @ 032b23ec */
+    FUN_01bab630(&PBAKFOBIHEG_TypeInfo);
+                    /* try { // try from 032b23d8 to 033b23e3 has its CatchHandler @ 032b202c */
+    DAT_04566b88 = 1;
+    method = extraout_x1;
+  }
+                    /* try { // try from 032b23e4 to 033b23eb has its CatchHandler @ 032b23ec */
+  if ((NLPJLHOEAOE_TypeInfo->_2).cctor_finished == 0) {
+                    /* catch(type#2 @ 00000000) { ... } // from try @ 032b23d0 with catch @ 032b23ec
+                       catch(type#2 @ 00000000) { ... } // from try @ 032b23e4 with catch @ 032b23ec
+                        */
+    thunk_FUN_01ba7564(NLPJLHOEAOE_TypeInfo,method);
+    method = extraout_x1_00;
+  }
+  if (DAT_04565b7d == '\0') {
+    FUN_01bab630(&NLPJLHOEAOE_TypeInfo);
+    DAT_04565b7d = '\x01';
+    method = extraout_x1_01;
+  }
+  if ((NLPJLHOEAOE_TypeInfo->_2).cctor_finished == 0) {
+    thunk_FUN_01ba7564(NLPJLHOEAOE_TypeInfo,method);
+  }
+  pAVar6 = NLPJLHOEAOE_TypeInfo->static_fields->_EDIEPEOIMDF_k__BackingField;
+  if (pAVar6 != (ACHLOMELAJE_o *)0x0) {
+    pLVar13 = (pAVar6->fields).LMCDOMHENMC;
+    CJNHFNHJHPE = (System_Action_o *)thunk_FUN_01bda818(System_Action_TypeInfo);
+    System_Action___ctor();
+    if (pLVar13 != (LPAPAMPGDFN_o *)0x0) {
+      LPAPAMPGDFN__OJMMJBJOPKK(pLVar13,CJNHFNHJHPE,(MethodInfo *)0x0);
+      ppSVar14 = &(__this->fields).AMFDKDCIJLE;
+      if (*ppSVar14 != (System_Collections_IEnumerator_o *)0x0) {
+        pPVar3 = CoroutineManager__get_Current((MethodInfo *)0x0);
+        if (pPVar3 == (PBAKFOBIHEG_o *)0x0) goto LAB_032b2744;
+        pPVar7 = pPVar3->klass;
+        pSVar15 = *ppSVar14;
+        uVar1._0_1_ = (pPVar7->_2).rank;
+        uVar1._1_1_ = (pPVar7->_2).minimumAlignment;
+        uVar11 = (ulong)uVar1;
+        if (uVar11 != 0) {
+          piVar12 = &((pPVar7->_1).interfaceOffsets)->offset;
+          do {
+            if (((Il2CppRuntimeInterfaceOffsetPair *)(piVar12 + -2))->interfaceType ==
+                (Il2CppClass *)PBAKFOBIHEG_TypeInfo) {
+              pVVar4 = pPVar7->vtable + (*piVar12 + 1);
+              goto LAB_032b24ec;
+            }
+            uVar11 = uVar11 - 1;
+            piVar12 = piVar12 + 4;
+          } while (uVar11 != 0);
+        }
+        pVVar4 = (VirtualInvokeData *)FUN_01b81914(pPVar3,PBAKFOBIHEG_TypeInfo,1);
+LAB_032b24ec:
+        (*pVVar4->methodPtr)(pPVar3,pSVar15,pVVar4->method);
+        *ppSVar14 = (System_Collections_IEnumerator_o *)0x0;
+        thunk_FUN_01c20e04(ppSVar14,0);
+      }
+      if (DAT_04565b84 == '\0') {
+        FUN_01bab630(&Nekki_SF2_GUI_Menu_MainMenu_TypeInfo);
+        DAT_04565b84 = '\x01';
+      }
+      __this_00 = Nekki_SF2_GUI_Menu_MainMenu_TypeInfo->static_fields->_JPDNDPEAJAL_k__BackingField;
+      if (__this_00 != (Nekki_SF2_GUI_Menu_MainMenu_o *)0x0) {
+        Nekki_SF2_GUI_Menu_MainMenu__set_IsEnabled(__this_00,true,(MethodInfo *)0x0);
+        bVar2 = BOFEMGGNODC__EDMJCPEGFOC((BOFEMGGNODC_o *)__this,(MethodInfo *)0x0);
+        if (bVar2) {
+          if (DAT_04565c84 == '\0') {
+            FUN_01bab630(&Nekki_SF2_Core_Fights_Controls_GameController_TypeInfo);
+            DAT_04565c84 = '\x01';
+          }
+          pNVar8 = Nekki_SF2_Core_Fights_Controls_GameController_TypeInfo->static_fields->
+                   CNMHHKAMGPI;
+          if (((pNVar8 == (Nekki_SF2_Core_Fights_Controls_GameController_o *)0x0) ||
+              (pNVar9 = (pNVar8->fields)._ActionButtons,
+              pNVar9 == (Nekki_SF2_Core_Fights_Controls_ActionButtons_o *)0x0)) ||
+             (pNVar5 = (pNVar9->fields)._btnPunch, pNVar5 == (Nekki_SF2_GUI_ProgressButton_o *)0x0))
+          goto LAB_032b2744;
+          SFButton__set_IsFlashing((SFButton_o *)pNVar5,false,(MethodInfo *)0x0);
+          if (DAT_04565c84 == '\0') {
+            FUN_01bab630(&Nekki_SF2_Core_Fights_Controls_GameController_TypeInfo);
+            DAT_04565c84 = '\x01';
+          }
+          pNVar8 = Nekki_SF2_Core_Fights_Controls_GameController_TypeInfo->static_fields->
+                   CNMHHKAMGPI;
+          if (((pNVar8 == (Nekki_SF2_Core_Fights_Controls_GameController_o *)0x0) ||
+              (pNVar9 = (pNVar8->fields)._ActionButtons,
+              pNVar9 == (Nekki_SF2_Core_Fights_Controls_ActionButtons_o *)0x0)) ||
+             (pNVar5 = (pNVar9->fields)._btnKick, pNVar5 == (Nekki_SF2_GUI_ProgressButton_o *)0x0))
+          goto LAB_032b2744;
+          SFButton__set_IsFlashing((SFButton_o *)pNVar5,false,(MethodInfo *)0x0);
+          if ((FCJBEKHDLAF_TypeInfo->_2).cctor_finished == 0) {
+            thunk_FUN_01ba7564();
+          }
+          if (DAT_04565b7f == '\0') {
+            FUN_01bab630(&FCJBEKHDLAF_TypeInfo);
+            DAT_04565b7f = '\x01';
+          }
+          if ((FCJBEKHDLAF_TypeInfo->_2).cctor_finished == 0) {
+            thunk_FUN_01ba7564();
+          }
+          pFVar10 = FCJBEKHDLAF_TypeInfo->static_fields->IGABFCCGLCO;
+          if ((pFVar10 == (FCJBEKHDLAF_o *)0x0) ||
+             (__this_01 = (pFVar10->fields).IILLHHPGGKA,
+             __this_01 == (System_Collections_Generic_List_OLKKAIFGGAK__o *)0x0)) goto LAB_032b2744;
+          __this_02 = (OLKKAIFGGAK_o *)
+                      System_Collections_Generic_List<object>__get_Item
+                                ((System_Collections_Generic_List_object__o *)__this_01,0,
+                                 Method_System_Collections_Generic_List<OLKKAIFGGAK>_get_Item__);
+          CJNHFNHJHPE_00 =
+               (System_Action_OLKKAIFGGAK_EAOIGPODIAI__o *)
+               thunk_FUN_01bda818(System_Action<OLKKAIFGGAK_EAOIGPODIAI>_TypeInfo);
+          System_Action<object>___ctor();
+          if (__this_02 == (OLKKAIFGGAK_o *)0x0) goto LAB_032b2744;
+          OLKKAIFGGAK__PLMIOLEFAEF(__this_02,CJNHFNHJHPE_00,(MethodInfo *)0x0);
+        }
+        if ((NLPJLHOEAOE_TypeInfo->_2).cctor_finished == 0) {
+          thunk_FUN_01ba7564();
+        }
+        if (DAT_04565b7d == '\0') {
+          FUN_01bab630(&NLPJLHOEAOE_TypeInfo);
+          DAT_04565b7d = '\x01';
+        }
+        if ((NLPJLHOEAOE_TypeInfo->_2).cctor_finished == 0) {
+          thunk_FUN_01ba7564();
+        }
+        pAVar6 = NLPJLHOEAOE_TypeInfo->static_fields->_EDIEPEOIMDF_k__BackingField;
+        if ((pAVar6 != (ACHLOMELAJE_o *)0x0) &&
+           (pLVar13 = (pAVar6->fields).LMCDOMHENMC, pLVar13 != (LPAPAMPGDFN_o *)0x0)) {
+          if ((pLVar13->fields).HBFBGGBPLOB != false) {
+            return;
+          }
+          BOFEMGGNODC__FGNINNOOCCL((BOFEMGGNODC_o *)__this,(MethodInfo *)0x0);
+          return;
+        }
+      }
+    }
+  }
+LAB_032b2744:
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

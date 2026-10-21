@@ -1,0 +1,9 @@
+// GMGALNFPLPA$$AOKENFHKCEF @ RVA 0x306C8B8
+
+void GMGALNFPLPA__AOKENFHKCEF(GMGALNFPLPA_o *__this,float JMDNEKBBCCK,MethodInfo *method)
+
+{
+  (__this->fields).PLABOODCDAJ = JMDNEKBBCCK;
+  return;
+}
+

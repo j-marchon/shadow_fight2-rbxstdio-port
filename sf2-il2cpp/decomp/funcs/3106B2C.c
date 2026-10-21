@@ -1,0 +1,8 @@
+// OPNFCOGALLI$$BKELDNLBJIB @ RVA 0x3106B2C
+
+void OPNFCOGALLI__BKELDNLBJIB(OPNFCOGALLI_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

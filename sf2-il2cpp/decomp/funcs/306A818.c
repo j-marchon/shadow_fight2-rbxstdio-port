@@ -1,0 +1,8 @@
+// KJPDGEIKFAH$$KCBILPIAPHN @ RVA 0x306A818
+
+int32_t KJPDGEIKFAH__KCBILPIAPHN(KJPDGEIKFAH_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

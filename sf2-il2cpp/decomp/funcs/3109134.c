@@ -1,0 +1,10 @@
+// OPNFCOGALLI$$HAKBGOLHNOK @ RVA 0x3109134
+
+void OPNFCOGALLI__HAKBGOLHNOK(OPNFCOGALLI_o *__this,OPNFCOGALLI_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).DPNACGKHLGD = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

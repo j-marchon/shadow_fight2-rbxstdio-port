@@ -1,0 +1,9 @@
+// PKHLGDMJPMF$$BMEDMBPNHLC @ RVA 0x319BE38
+
+void PKHLGDMJPMF__BMEDMBPNHLC(PKHLGDMJPMF_o *__this,float CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).JOLEIODMLFL = CJNHFNHJHPE;
+  return;
+}
+

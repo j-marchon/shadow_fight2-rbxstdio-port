@@ -1,0 +1,9 @@
+// HPEENDCCJND$$LIOJDJDKNOA @ RVA 0x3157CFC
+
+System_String_o *
+HPEENDCCJND__LIOJDJDKNOA(HPEENDCCJND_o *__this,System_String_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  return CJNHFNHJHPE;
+}
+

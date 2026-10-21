@@ -1,0 +1,9 @@
+// FCJBEKHDLAF$$CGGIICAPDGF @ RVA 0x33F36E4
+
+void FCJBEKHDLAF__CGGIICAPDGF(FCJBEKHDLAF_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).IIOMDDLGPIK = CJNHFNHJHPE;
+  return;
+}
+

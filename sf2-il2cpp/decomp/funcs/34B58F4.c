@@ -1,0 +1,9 @@
+// OJEHKJHEBID$$PCOFNFAMLGJ @ RVA 0x34B58F4
+
+void OJEHKJHEBID__PCOFNFAMLGJ(OJEHKJHEBID_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).ADEIKPGDIPM = CJNHFNHJHPE;
+  return;
+}
+

@@ -1,0 +1,13 @@
+// KAFMFFDFDBL$$CFANNGPGDPJ @ RVA 0x34B3D68
+
+bool KAFMFFDFDBL__CFANNGPGDPJ
+               (KAFMFFDFDBL_o *__this,NJPBHDMCLIN_o *AHEFOIOKDOK,OLKKAIFGGAK_o *BCKBBGCOMJD,
+               KJFPGDFNFCL_o *FKDOMEBPFPF,MethodInfo *method)
+
+{
+  bool bVar1;
+  
+  bVar1 = KAFMFFDFDBL__NIHJAGFBOKF(__this,AHEFOIOKDOK,BCKBBGCOMJD,FKDOMEBPFPF,method);
+  return bVar1 != ((__this->fields).super.GBBHFPBFOPI != false);
+}
+

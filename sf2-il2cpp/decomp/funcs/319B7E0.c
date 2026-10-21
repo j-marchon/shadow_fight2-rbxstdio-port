@@ -1,0 +1,9 @@
+// PKHLGDMJPMF$$BLOELEJPPDM @ RVA 0x319B7E0
+
+void PKHLGDMJPMF__BLOELEJPPDM(PKHLGDMJPMF_o *__this,float CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).OHHDBINAJCB = CJNHFNHJHPE;
+  return;
+}
+

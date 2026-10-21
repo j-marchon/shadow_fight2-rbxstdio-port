@@ -1,0 +1,75 @@
+// TypeDefIndex 1525
+// Namespace: 
+// [Serializable]
+// private sealed class AnimationData.<>c
+// Fields:
+//   public static readonly AnimationData.<>c <>9; // 0x0
+//   public static Action<InfoAnimation> <>9__24_0; // 0x8
+//   public static Action<ABNLGBHKOCE> <>9__24_1; // 0x10
+
+// ===== private static void .cctor()  [RVA 0x31A2704]
+// AnimationData.<>c$$.cctor @ RVA 0x31A2704
+
+void AnimationData_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_04566aeb & 1) == 0) {
+    FUN_01bab630(&AnimationData_<>c_TypeInfo);
+    DAT_04566aeb = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(AnimationData_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+                    /* try { // try from 032a274c to 033a289b has its CatchHandler @ 032a274c
+                       catch() { ... } // from try @ 032a274c with catch @ 032a274c
+                       catch() { ... } // from try @ 032a2978 with catch @ 032a274c
+                       catch() { ... } // from try @ 032a29c4 with catch @ 032a274c
+                       catch() { ... } // from try @ 032a2a14 with catch @ 032a274c
+                       catch() { ... } // from try @ 032a2a54 with catch @ 032a274c */
+  AnimationData_<>c_TypeInfo->static_fields->__9 = (AnimationData___c_o *)__this;
+  thunk_FUN_01c20e04(AnimationData_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== internal void CEOPGMFFAAE(InfoAnimation x)  [RVA 0x31A2774]
+// AnimationData.<>c$$CEOPGMFFAAE @ RVA 0x31A2774
+
+void AnimationData_<>c__CEOPGMFFAAE(AnimationData___c_o *__this,InfoAnimation_o *x,MethodInfo *method)
+
+{
+  if (x != (InfoAnimation_o *)0x0) {
+    InfoAnimation__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== public void .ctor()  [RVA 0x31A276C]
+// AnimationData.<>c$$.ctor @ RVA 0x31A276C
+
+void AnimationData_<>c___ctor(AnimationData___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== internal void MILKNFHIGIM(ABNLGBHKOCE x)  [RVA 0x31A278C]
+// AnimationData.<>c$$MILKNFHIGIM @ RVA 0x31A278C
+
+void AnimationData_<>c__MILKNFHIGIM(AnimationData___c_o *__this,ABNLGBHKOCE_o *x,MethodInfo *method)
+
+{
+  if (x != (ABNLGBHKOCE_o *)0x0) {
+    ABNLGBHKOCE__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

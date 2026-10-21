@@ -1,0 +1,9 @@
+// OJEHKJHEBID$$EBJJGMCGLFM @ RVA 0x34B6118
+
+void OJEHKJHEBID__EBJJGMCGLFM(OJEHKJHEBID_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).GPDALMOAKGG = CJNHFNHJHPE;
+  return;
+}
+

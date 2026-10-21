@@ -1,0 +1,8 @@
+// KFHIPIPCOHK$$HJKJNLIKHMM @ RVA 0x3419C1C
+
+void KFHIPIPCOHK__HJKJNLIKHMM(KFHIPIPCOHK_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

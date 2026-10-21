@@ -1,0 +1,8 @@
+// BAJEMIOPBCE$$KCBILPIAPHN @ RVA 0x3485AA0
+
+int32_t BAJEMIOPBCE__KCBILPIAPHN(BAJEMIOPBCE_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

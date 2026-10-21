@@ -1,0 +1,8 @@
+// JANDANNAOBB$$JFGBPBOCOIC @ RVA 0x334A9D0
+
+bool JANDANNAOBB__JFGBPBOCOIC(JANDANNAOBB_o *__this,int32_t HJDMBDBJEFL,MethodInfo *method)
+
+{
+  return true;
+}
+

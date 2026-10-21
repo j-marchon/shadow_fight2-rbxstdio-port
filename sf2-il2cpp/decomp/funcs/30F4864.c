@@ -1,0 +1,8 @@
+// MAMPGAGEGOG$$DFBPBPPNIBC @ RVA 0x30F4864
+
+bool MAMPGAGEGOG__DFBPBPPNIBC(MAMPGAGEGOG_o *__this,JMIFGHKOLCL_o *LDOOMGABFME,MethodInfo *method)
+
+{
+  return true;
+}
+

@@ -1,0 +1,8 @@
+// GDPNBLFNJKP$$ODGFCLOEKJD @ RVA 0x3122A34
+
+void GDPNBLFNJKP__ODGFCLOEKJD(GDPNBLFNJKP_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

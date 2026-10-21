@@ -1,0 +1,9 @@
+// KLFDBIKLFBF$$.ctor @ RVA 0x308A4F4
+
+void KLFDBIKLFBF___ctor(KLFDBIKLFBF_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+

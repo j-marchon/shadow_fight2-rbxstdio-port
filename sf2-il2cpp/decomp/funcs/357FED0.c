@@ -1,0 +1,9 @@
+// EOLFEKNCPLM$$OMPOEHGMMHF @ RVA 0x357FED0
+
+void EOLFEKNCPLM__OMPOEHGMMHF(EOLFEKNCPLM_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).IINFDIJOFIG = CJNHFNHJHPE;
+  return;
+}
+

@@ -1,0 +1,8 @@
+// CNPFMNENBMG$$DFBPBPPNIBC @ RVA 0x304E36C
+
+bool CNPFMNENBMG__DFBPBPPNIBC(CNPFMNENBMG_o *__this,JMIFGHKOLCL_o *LDOOMGABFME,MethodInfo *method)
+
+{
+  return false;
+}
+

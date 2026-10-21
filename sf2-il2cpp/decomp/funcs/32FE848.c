@@ -1,0 +1,9 @@
+// JCHNBADDBGO$$EODHHFEAIGP @ RVA 0x32FE848
+
+void JCHNBADDBGO__EODHHFEAIGP(JCHNBADDBGO_o *__this,int32_t KFLAAIMLKOE,MethodInfo *method)
+
+{
+  (__this->fields).IDNBELKLCEL = KFLAAIMLKOE;
+  return;
+}
+

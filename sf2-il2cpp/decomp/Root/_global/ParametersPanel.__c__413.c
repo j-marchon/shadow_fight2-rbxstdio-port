@@ -1,0 +1,73 @@
+// TypeDefIndex 413
+// Namespace: 
+// [Serializable]
+// private sealed class ParametersPanel.<>c
+// Fields:
+//   public static readonly ParametersPanel.<>c <>9; // 0x0
+//   public static Comparison<HEFOANCOHDC> <>9__12_0; // 0x8
+
+// ===== internal int PLNDGIALHJB(HEFOANCOHDC p_perk1, HEFOANCOHDC p_perk2)  [RVA 0x34876C8]
+// Nekki.SF2.GUI.Shop.ParametersPanel.<>c$$PLNDGIALHJB @ RVA 0x34876C8
+
+int32_t Nekki_SF2_GUI_Shop_ParametersPanel_<>c__PLNDGIALHJB
+                  (Nekki_SF2_GUI_Shop_ParametersPanel___c_o *__this,HEFOANCOHDC_o *p_perk1,
+                  HEFOANCOHDC_o *p_perk2,MethodInfo *method)
+
+{
+  int32_t iVar1;
+  Il2CppObject *target;
+  System_Enum_o local_40;
+  int32_t local_30;
+  int32_t local_24;
+  
+  if ((DAT_045683bc & 1) == 0) {
+    __this = (Nekki_SF2_GUI_Shop_ParametersPanel___c_o *)
+             FUN_01bab630(&HEFOANCOHDC_JIDALCNODNB_TypeInfo);
+    DAT_045683bc = 1;
+  }
+  if ((p_perk1 != (HEFOANCOHDC_o *)0x0) && (p_perk2 != (HEFOANCOHDC_o *)0x0)) {
+    local_24 = (p_perk2->fields).OCABLLPNEGL;
+    target = (Il2CppObject *)thunk_FUN_01bda448(HEFOANCOHDC_JIDALCNODNB_TypeInfo,&local_24);
+    local_40.klass = (System_Enum_c *)HEFOANCOHDC_JIDALCNODNB_TypeInfo;
+    local_40.monitor = (void *)0xffffffffffffffff;
+    local_30 = (p_perk1->fields).OCABLLPNEGL;
+    iVar1 = System_Enum__CompareTo(&local_40,target,(MethodInfo *)0x0);
+    return -iVar1;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8(__this);
+}
+
+
+// ===== public void .ctor()  [RVA 0x348775C]
+// Nekki.SF2.GUI.Shop.ParametersPanel.<>c$$.ctor @ RVA 0x348775C
+
+void Nekki_SF2_GUI_Shop_ParametersPanel_<>c___ctor
+               (Nekki_SF2_GUI_Shop_ParametersPanel___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== private static void .cctor()  [RVA 0x3487764]
+// Nekki.SF2.GUI.Shop.ParametersPanel.<>c$$.cctor @ RVA 0x3487764
+
+void Nekki_SF2_GUI_Shop_ParametersPanel_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_045683bd & 1) == 0) {
+    FUN_01bab630(&Nekki_SF2_GUI_Shop_ParametersPanel_<>c_TypeInfo);
+    DAT_045683bd = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(Nekki_SF2_GUI_Shop_ParametersPanel_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  Nekki_SF2_GUI_Shop_ParametersPanel_<>c_TypeInfo->static_fields->__9 =
+       (Nekki_SF2_GUI_Shop_ParametersPanel___c_o *)__this;
+  thunk_FUN_01c20e04(Nekki_SF2_GUI_Shop_ParametersPanel_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+

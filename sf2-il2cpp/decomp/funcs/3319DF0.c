@@ -1,0 +1,8 @@
+// MKFAKELPPAC$$HJFEGIDHJDK @ RVA 0x3319DF0
+
+void MKFAKELPPAC__HJFEGIDHJDK(MKFAKELPPAC_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

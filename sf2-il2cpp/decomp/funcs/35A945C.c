@@ -1,0 +1,9 @@
+// KEGDLHPEJBG$$DNLFOEBCKFP @ RVA 0x35A945C
+
+void KEGDLHPEJBG__DNLFOEBCKFP(KEGDLHPEJBG_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).HFHGCALGKHH = CJNHFNHJHPE;
+  return;
+}
+

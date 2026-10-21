@@ -1,0 +1,9 @@
+// EINKKMIHCHI$$BIMICOKMKDD @ RVA 0x34C6EDC
+
+void EINKKMIHCHI__BIMICOKMKDD(EINKKMIHCHI_o *__this,int32_t KEFILECBPMF,MethodInfo *method)
+
+{
+  EINKKMIHCHI__IEIIOHNJOAL(__this,KEFILECBPMF == 0,method);
+  return;
+}
+

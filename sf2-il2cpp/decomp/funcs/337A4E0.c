@@ -1,0 +1,8 @@
+// IHNONPFHALL$$KCBILPIAPHN @ RVA 0x337A4E0
+
+int32_t IHNONPFHALL__KCBILPIAPHN(IHNONPFHALL_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

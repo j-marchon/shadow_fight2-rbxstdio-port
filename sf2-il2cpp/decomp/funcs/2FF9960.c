@@ -1,0 +1,9 @@
+// JMDPBFOCHHP.CMLEEJPGHNC$$DNOMHOGFIFO @ RVA 0x2FF9960
+
+System_String_o *
+JMDPBFOCHHP_CMLEEJPGHNC__DNOMHOGFIFO(JMDPBFOCHHP_CMLEEJPGHNC_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).APBICPEOMOM;
+}
+

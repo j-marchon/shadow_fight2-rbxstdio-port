@@ -1,0 +1,8 @@
+// ECFPHLHDCAC$$KCBILPIAPHN @ RVA 0x347837C
+
+int32_t ECFPHLHDCAC__KCBILPIAPHN(ECFPHLHDCAC_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

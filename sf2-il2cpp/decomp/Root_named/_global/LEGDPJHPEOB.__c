@@ -1,0 +1,325 @@
+// TypeDefIndex 3391
+// Namespace: 
+// [Serializable]
+// private sealed class QuestCondition.<>c
+// Fields:
+//   public static readonly QuestCondition.<>c <>9; // 0x0
+//   public static Func<NCCFNKMICGK, bool> <>9__74_0; // 0x8
+//   public static Func<NCCFNKMICGK, bool> <>9__74_1; // 0x10
+//   public static Func<NCCFNKMICGK, bool> <>9__74_2; // 0x18
+//   public static Func<NCCFNKMICGK, bool> <>9__74_3; // 0x20
+//   public static Func<NCCFNKMICGK, bool> <>9__74_4; // 0x28
+//   public static Func<NCCFNKMICGK, bool> <>9__74_5; // 0x30
+
+// ===== public void .ctor()  [RVA 0x35522B0]
+// QuestCondition.<>c$$.ctor @ RVA 0x35522B0
+
+void QuestCondition_<>c___ctor(QuestCondition___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== internal bool BKJJDOGIFBJ(NCCFNKMICGK offer)  [RVA 0x35522B8]
+// QuestCondition.<>c$$BKJJDOGIFBJ @ RVA 0x35522B8
+
+bool QuestCondition_<>c__BKJJDOGIFBJ(QuestCondition___c_o *__this,NCCFNKMICGK_o *offer,MethodInfo *method)
+
+{
+  ushort uVar1;
+  VirtualInvokeData *pVVar2;
+  long lVar3;
+  NCCFNKMICGK_c *pNVar4;
+  ulong uVar5;
+  int32_t *piVar6;
+  
+  if ((DAT_04568b40 & 1) == 0) {
+    __this = (QuestCondition___c_o *)FUN_01bab630(&NCCFNKMICGK_TypeInfo);
+    DAT_04568b40 = 1;
+  }
+  if (offer != (NCCFNKMICGK_o *)0x0) {
+    pNVar4 = offer->klass;
+    uVar1._0_1_ = (pNVar4->_2).rank;
+    uVar1._1_1_ = (pNVar4->_2).minimumAlignment;
+    uVar5 = (ulong)uVar1;
+    if (uVar5 != 0) {
+      piVar6 = &((pNVar4->_1).interfaceOffsets)->offset;
+      do {
+        if (((Il2CppRuntimeInterfaceOffsetPair *)(piVar6 + -2))->interfaceType ==
+            (Il2CppClass *)NCCFNKMICGK_TypeInfo) {
+          pVVar2 = pNVar4->vtable + (*piVar6 + 1);
+          goto LAB_03652340;
+        }
+        uVar5 = uVar5 - 1;
+        piVar6 = piVar6 + 4;
+      } while (uVar5 != 0);
+    }
+    pVVar2 = (VirtualInvokeData *)FUN_01b81914(offer,NCCFNKMICGK_TypeInfo,1);
+LAB_03652340:
+    lVar3 = (*pVVar2->methodPtr)(offer,pVVar2->method);
+    __this = (QuestCondition___c_o *)0x0;
+    if (lVar3 != 0) {
+      return *(int *)(lVar3 + 0x18) == 3;
+    }
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8(__this);
+}
+
+
+// ===== internal bool AMODLCCMEFG(NCCFNKMICGK offer)  [RVA 0x355236C]
+// QuestCondition.<>c$$AMODLCCMEFG @ RVA 0x355236C
+
+bool QuestCondition_<>c__AMODLCCMEFG(QuestCondition___c_o *__this,NCCFNKMICGK_o *offer,MethodInfo *method)
+
+{
+  ushort uVar1;
+  VirtualInvokeData *pVVar2;
+  long lVar3;
+  NCCFNKMICGK_c *pNVar4;
+  ulong uVar5;
+  int32_t *piVar6;
+  
+  if ((DAT_04568b41 & 1) == 0) {
+    __this = (QuestCondition___c_o *)FUN_01bab630(&NCCFNKMICGK_TypeInfo);
+    DAT_04568b41 = 1;
+  }
+  if (offer != (NCCFNKMICGK_o *)0x0) {
+    pNVar4 = offer->klass;
+    uVar1._0_1_ = (pNVar4->_2).rank;
+    uVar1._1_1_ = (pNVar4->_2).minimumAlignment;
+    uVar5 = (ulong)uVar1;
+    if (uVar5 != 0) {
+      piVar6 = &((pNVar4->_1).interfaceOffsets)->offset;
+      do {
+        if (((Il2CppRuntimeInterfaceOffsetPair *)(piVar6 + -2))->interfaceType ==
+            (Il2CppClass *)NCCFNKMICGK_TypeInfo) {
+          pVVar2 = pNVar4->vtable + (*piVar6 + 1);
+          goto LAB_036523f4;
+        }
+        uVar5 = uVar5 - 1;
+        piVar6 = piVar6 + 4;
+      } while (uVar5 != 0);
+    }
+    pVVar2 = (VirtualInvokeData *)FUN_01b81914(offer,NCCFNKMICGK_TypeInfo,1);
+LAB_036523f4:
+    lVar3 = (*pVVar2->methodPtr)(offer,pVVar2->method);
+    __this = (QuestCondition___c_o *)0x0;
+    if (lVar3 != 0) {
+      return *(int *)(lVar3 + 0x18) == 5;
+    }
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8(__this);
+}
+
+
+// ===== internal bool JKLLEJDHGFE(NCCFNKMICGK offer)  [RVA 0x3552420]
+// QuestCondition.<>c$$JKLLEJDHGFE @ RVA 0x3552420
+
+bool QuestCondition_<>c__JKLLEJDHGFE(QuestCondition___c_o *__this,NCCFNKMICGK_o *offer,MethodInfo *method)
+
+{
+  ushort uVar1;
+  VirtualInvokeData *pVVar2;
+  long lVar3;
+  NCCFNKMICGK_c *pNVar4;
+  ulong uVar5;
+  int32_t *piVar6;
+  
+  if ((DAT_04568b42 & 1) == 0) {
+    __this = (QuestCondition___c_o *)FUN_01bab630(&NCCFNKMICGK_TypeInfo);
+    DAT_04568b42 = 1;
+  }
+  if (offer != (NCCFNKMICGK_o *)0x0) {
+    pNVar4 = offer->klass;
+    uVar1._0_1_ = (pNVar4->_2).rank;
+    uVar1._1_1_ = (pNVar4->_2).minimumAlignment;
+    uVar5 = (ulong)uVar1;
+    if (uVar5 != 0) {
+      piVar6 = &((pNVar4->_1).interfaceOffsets)->offset;
+      do {
+        if (((Il2CppRuntimeInterfaceOffsetPair *)(piVar6 + -2))->interfaceType ==
+            (Il2CppClass *)NCCFNKMICGK_TypeInfo) {
+          pVVar2 = pNVar4->vtable + (*piVar6 + 1);
+          goto LAB_036524a8;
+        }
+        uVar5 = uVar5 - 1;
+        piVar6 = piVar6 + 4;
+      } while (uVar5 != 0);
+    }
+    pVVar2 = (VirtualInvokeData *)FUN_01b81914(offer,NCCFNKMICGK_TypeInfo,1);
+LAB_036524a8:
+    lVar3 = (*pVVar2->methodPtr)(offer,pVVar2->method);
+    __this = (QuestCondition___c_o *)0x0;
+    if (lVar3 != 0) {
+      return *(int *)(lVar3 + 0x18) == 1;
+    }
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8(__this);
+}
+
+
+// ===== private static void .cctor()  [RVA 0x35524D4]
+// QuestCondition.<>c$$.cctor @ RVA 0x35524D4
+
+void QuestCondition_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_04568b43 & 1) == 0) {
+    FUN_01bab630(&QuestCondition_<>c_TypeInfo);
+    DAT_04568b43 = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(QuestCondition_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  QuestCondition_<>c_TypeInfo->static_fields->__9 = (QuestCondition___c_o *)__this;
+  thunk_FUN_01c20e04(QuestCondition_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== internal bool DNJGEOKICDG(NCCFNKMICGK offer)  [RVA 0x355253C]
+// QuestCondition.<>c$$DNJGEOKICDG @ RVA 0x355253C
+
+bool QuestCondition_<>c__DNJGEOKICDG(QuestCondition___c_o *__this,NCCFNKMICGK_o *offer,MethodInfo *method)
+
+{
+  ushort uVar1;
+  VirtualInvokeData *pVVar2;
+  long lVar3;
+  NCCFNKMICGK_c *pNVar4;
+  ulong uVar5;
+  int32_t *piVar6;
+  
+  if ((DAT_04568b44 & 1) == 0) {
+    __this = (QuestCondition___c_o *)FUN_01bab630(&NCCFNKMICGK_TypeInfo);
+    DAT_04568b44 = 1;
+  }
+  if (offer != (NCCFNKMICGK_o *)0x0) {
+    pNVar4 = offer->klass;
+    uVar1._0_1_ = (pNVar4->_2).rank;
+    uVar1._1_1_ = (pNVar4->_2).minimumAlignment;
+    uVar5 = (ulong)uVar1;
+    if (uVar5 != 0) {
+      piVar6 = &((pNVar4->_1).interfaceOffsets)->offset;
+      do {
+        if (((Il2CppRuntimeInterfaceOffsetPair *)(piVar6 + -2))->interfaceType ==
+            (Il2CppClass *)NCCFNKMICGK_TypeInfo) {
+          pVVar2 = pNVar4->vtable + (*piVar6 + 1);
+          goto LAB_036525c4;
+        }
+        uVar5 = uVar5 - 1;
+        piVar6 = piVar6 + 4;
+      } while (uVar5 != 0);
+    }
+    pVVar2 = (VirtualInvokeData *)FUN_01b81914(offer,NCCFNKMICGK_TypeInfo,1);
+LAB_036525c4:
+    lVar3 = (*pVVar2->methodPtr)(offer,pVVar2->method);
+    __this = (QuestCondition___c_o *)0x0;
+    if (lVar3 != 0) {
+      return *(int *)(lVar3 + 0x18) == 2;
+    }
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8(__this);
+}
+
+
+// ===== internal bool CMBHLNNACAD(NCCFNKMICGK offer)  [RVA 0x35525F0]
+// QuestCondition.<>c$$CMBHLNNACAD @ RVA 0x35525F0
+
+bool QuestCondition_<>c__CMBHLNNACAD(QuestCondition___c_o *__this,NCCFNKMICGK_o *offer,MethodInfo *method)
+
+{
+  ushort uVar1;
+  VirtualInvokeData *pVVar2;
+  long lVar3;
+  NCCFNKMICGK_c *pNVar4;
+  ulong uVar5;
+  int32_t *piVar6;
+  
+  if ((DAT_04568b45 & 1) == 0) {
+    __this = (QuestCondition___c_o *)FUN_01bab630(&NCCFNKMICGK_TypeInfo);
+    DAT_04568b45 = 1;
+  }
+  if (offer != (NCCFNKMICGK_o *)0x0) {
+    pNVar4 = offer->klass;
+    uVar1._0_1_ = (pNVar4->_2).rank;
+    uVar1._1_1_ = (pNVar4->_2).minimumAlignment;
+    uVar5 = (ulong)uVar1;
+    if (uVar5 != 0) {
+      piVar6 = &((pNVar4->_1).interfaceOffsets)->offset;
+      do {
+        if (((Il2CppRuntimeInterfaceOffsetPair *)(piVar6 + -2))->interfaceType ==
+            (Il2CppClass *)NCCFNKMICGK_TypeInfo) {
+          pVVar2 = pNVar4->vtable + (*piVar6 + 1);
+          goto LAB_03652678;
+        }
+        uVar5 = uVar5 - 1;
+        piVar6 = piVar6 + 4;
+      } while (uVar5 != 0);
+    }
+    pVVar2 = (VirtualInvokeData *)FUN_01b81914(offer,NCCFNKMICGK_TypeInfo,1);
+LAB_03652678:
+    lVar3 = (*pVVar2->methodPtr)(offer,pVVar2->method);
+    __this = (QuestCondition___c_o *)0x0;
+    if (lVar3 != 0) {
+      return *(int *)(lVar3 + 0x18) == 0;
+    }
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8(__this);
+}
+
+
+// ===== internal bool MBNFGEODNLP(NCCFNKMICGK offer)  [RVA 0x35526A4]
+// QuestCondition.<>c$$MBNFGEODNLP @ RVA 0x35526A4
+
+bool QuestCondition_<>c__MBNFGEODNLP(QuestCondition___c_o *__this,NCCFNKMICGK_o *offer,MethodInfo *method)
+
+{
+  ushort uVar1;
+  VirtualInvokeData *pVVar2;
+  long lVar3;
+  NCCFNKMICGK_c *pNVar4;
+  ulong uVar5;
+  int32_t *piVar6;
+  
+  if ((DAT_04568b46 & 1) == 0) {
+    __this = (QuestCondition___c_o *)FUN_01bab630(&NCCFNKMICGK_TypeInfo);
+    DAT_04568b46 = 1;
+  }
+  if (offer != (NCCFNKMICGK_o *)0x0) {
+    pNVar4 = offer->klass;
+    uVar1._0_1_ = (pNVar4->_2).rank;
+    uVar1._1_1_ = (pNVar4->_2).minimumAlignment;
+    uVar5 = (ulong)uVar1;
+    if (uVar5 != 0) {
+      piVar6 = &((pNVar4->_1).interfaceOffsets)->offset;
+      do {
+        if (((Il2CppRuntimeInterfaceOffsetPair *)(piVar6 + -2))->interfaceType ==
+            (Il2CppClass *)NCCFNKMICGK_TypeInfo) {
+          pVVar2 = pNVar4->vtable + (*piVar6 + 1);
+          goto LAB_0365272c;
+        }
+        uVar5 = uVar5 - 1;
+        piVar6 = piVar6 + 4;
+      } while (uVar5 != 0);
+    }
+    pVVar2 = (VirtualInvokeData *)FUN_01b81914(offer,NCCFNKMICGK_TypeInfo,1);
+LAB_0365272c:
+    lVar3 = (*pVVar2->methodPtr)(offer,pVVar2->method);
+    __this = (QuestCondition___c_o *)0x0;
+    if (lVar3 != 0) {
+      return *(int *)(lVar3 + 0x18) == 4;
+    }
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8(__this);
+}
+

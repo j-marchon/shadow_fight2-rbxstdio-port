@@ -1,0 +1,20 @@
+// NLPJLHOEAOE$$MCAIOFGHPKH @ RVA 0x31EF014
+
+ACHLOMELAJE_o *
+NLPJLHOEAOE__MCAIOFGHPKH(NLPJLHOEAOE_o *__this,System_Xml_XmlNode_o *AHDGNOJPPIB,MethodInfo *method)
+
+{
+  PJKHAJKEHEL_o *OKBIKHHKOEN;
+  ACHLOMELAJE_o *__this_00;
+  MethodInfo *in_x4;
+  
+  if ((DAT_04566db9 & 1) == 0) {
+    FUN_01bab630(&ACHLOMELAJE_TypeInfo);
+    DAT_04566db9 = 1;
+  }
+  OKBIKHHKOEN = NLPJLHOEAOE__MDEGKNMDKPN(__this,AHDGNOJPPIB,(PJKHAJKEHEL_o *)0x0,false,in_x4);
+  __this_00 = (ACHLOMELAJE_o *)thunk_FUN_01bda818(ACHLOMELAJE_TypeInfo);
+  ACHLOMELAJE___ctor(__this_00,AHDGNOJPPIB,OKBIKHHKOEN,(MethodInfo *)0x0);
+  return __this_00;
+}
+

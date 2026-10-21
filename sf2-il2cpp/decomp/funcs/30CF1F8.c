@@ -1,0 +1,10 @@
+// JHMFOIIPEHB$$KAIDLBNPCJH @ RVA 0x30CF1F8
+
+void JHMFOIIPEHB__KAIDLBNPCJH(JHMFOIIPEHB_o *__this,PGICCMFLDPI_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MIINPPOCPCN = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

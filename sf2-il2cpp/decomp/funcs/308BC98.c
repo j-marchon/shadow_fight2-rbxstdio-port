@@ -1,0 +1,10 @@
+// IEFEBEDLHNN$$JEFPAOALDGF @ RVA 0x308BC98
+
+void IEFEBEDLHNN__JEFPAOALDGF(IEFEBEDLHNN_o *__this,IEFEBEDLHNN_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).GAFCPEOANDD = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

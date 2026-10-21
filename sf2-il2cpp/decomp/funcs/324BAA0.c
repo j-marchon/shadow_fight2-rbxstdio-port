@@ -1,0 +1,10 @@
+// ELBBEAGGAOH$$KAIDLBNPCJH @ RVA 0x324BAA0
+
+void ELBBEAGGAOH__KAIDLBNPCJH(ELBBEAGGAOH_o *__this,PGICCMFLDPI_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MIINPPOCPCN = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

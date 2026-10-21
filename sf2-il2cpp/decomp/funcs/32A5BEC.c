@@ -1,0 +1,8 @@
+// CFLBEJAKHAL$$JFGBPBOCOIC @ RVA 0x32A5BEC
+
+bool CFLBEJAKHAL__JFGBPBOCOIC(CFLBEJAKHAL_o *__this,int32_t HJDMBDBJEFL,MethodInfo *method)
+
+{
+  return HJDMBDBJEFL == 0;
+}
+

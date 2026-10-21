@@ -1,0 +1,8 @@
+// OOMHDDBCBJP$$EEDIJDBFOGE @ RVA 0x3286EB8
+
+DPDDOKKMMOM_o * OOMHDDBCBJP__EEDIJDBFOGE(OOMHDDBCBJP_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).CIHKJLAGDLJ;
+}
+

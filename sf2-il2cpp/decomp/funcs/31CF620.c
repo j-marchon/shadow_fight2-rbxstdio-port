@@ -1,0 +1,8 @@
+// HPDALAFKDOA$$KCBILPIAPHN @ RVA 0x31CF620
+
+int32_t HPDALAFKDOA__KCBILPIAPHN(HPDALAFKDOA_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

@@ -1,0 +1,10 @@
+// NLBPJNEGNNM$$INOKKGKNDAH @ RVA 0x3557058
+
+void NLBPJNEGNNM__INOKKGKNDAH(NLBPJNEGNNM_o *__this,HCFOFHGNBKP_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).PMMFPJJOPKE = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

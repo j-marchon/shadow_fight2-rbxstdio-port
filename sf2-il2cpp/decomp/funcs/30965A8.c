@@ -1,0 +1,8 @@
+// IPCNEJHDGCC$$KCBILPIAPHN @ RVA 0x30965A8
+
+int32_t IPCNEJHDGCC__KCBILPIAPHN(IPCNEJHDGCC_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

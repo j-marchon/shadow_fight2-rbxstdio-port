@@ -1,0 +1,9 @@
+// KMAKOOHEKNB$$NEHGDABENGG @ RVA 0x2FF6FF4
+
+void KMAKOOHEKNB__NEHGDABENGG(KMAKOOHEKNB_o *__this,float CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).KPGBDEPEHJD = CJNHFNHJHPE;
+  return;
+}
+

@@ -1,0 +1,10 @@
+// EMBNHHOCCBH$$IIBFFDJAKFB @ RVA 0x35A9E90
+
+void EMBNHHOCCBH__IIBFFDJAKFB(EMBNHHOCCBH_o *__this,KAMBBJFPLGM_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).OPHCNELIOLD = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

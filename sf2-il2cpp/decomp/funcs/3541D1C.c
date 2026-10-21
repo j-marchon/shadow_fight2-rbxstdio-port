@@ -1,0 +1,9 @@
+// LKJJCAEOJBG$$OEPCNHDIKJH @ RVA 0x3541D1C
+
+void LKJJCAEOJBG__OEPCNHDIKJH(LKJJCAEOJBG_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).IGBAAAHPLAA = CJNHFNHJHPE;
+  return;
+}
+

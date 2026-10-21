@@ -1,0 +1,44 @@
+// ADJEBFOPFFF.<>c$$IJAKLCJCJAP @ RVA 0x31C4068
+
+void ADJEBFOPFFF_<>c__IJAKLCJCJAP(ADJEBFOPFFF___c_o *__this,PIADCKMDDAK_o *c,MethodInfo *method)
+
+{
+  EEGDOGKBLNG_o *__this_00;
+  
+                    /* try { // try from 032c4068 to 033c406b has its CatchHandler @ 032c40fc */
+                    /* try { // try from 032c406c to 033c406f has its CatchHandler @ 032c40d0 */
+                    /* try { // try from 032c4070 to 033c4077 has its CatchHandler @ 032c40d4 */
+                    /* try { // try from 032c4078 to 033c407f has its CatchHandler @ 032c40b8 */
+                    /* try { // try from 032c4080 to 033c4093 has its CatchHandler @ 032c40bc */
+  if ((DAT_04566c24 & 1) == 0) {
+    FUN_01bab630(&HJPEKDOPBHN_TypeInfo);
+                    /* try { // try from 032c4094 to 033c4097 has its CatchHandler @ 032c3b18 */
+                    /* try { // try from 032c4098 to 033c409b has its CatchHandler @ 032c40a4 */
+    DAT_04566c24 = 1;
+  }
+                    /* try { // try from 032c409c to 033c411b has its CatchHandler @ 032c3b18 */
+                    /* catch() { ... } // from try @ 032c4098 with catch @ 032c40a4 */
+  if ((HJPEKDOPBHN_TypeInfo->_2).cctor_finished == 0) {
+                    /* catch() { ... } // from try @ 032c3f14 with catch @ 032c40a8 */
+    thunk_FUN_01ba7564();
+  }
+                    /* catch() { ... } // from try @ 032c3ef8 with catch @ 032c40ac
+                       catch() { ... } // from try @ 032c3fb0 with catch @ 032c40ac */
+                    /* catch() { ... } // from try @ 032c3ea0 with catch @ 032c40b0 */
+  __this_00 = HJPEKDOPBHN__NLNDOENIAEO((MethodInfo *)0x0);
+                    /* catch() { ... } // from try @ 032c3de8 with catch @ 032c40b4 */
+  if (__this_00 != (EEGDOGKBLNG_o *)0x0) {
+                    /* catch() { ... } // from try @ 032c4078 with catch @ 032c40b8 */
+                    /* catch() { ... } // from try @ 032c4080 with catch @ 032c40bc */
+                    /* catch() { ... } // from try @ 032c3f30 with catch @ 032c40c0 */
+                    /* catch() { ... } // from try @ 032c3da8 with catch @ 032c40c4 */
+                    /* catch() { ... } // from try @ 032c3d5c with catch @ 032c40c8 */
+                    /* catch() { ... } // from try @ 032c3db8 with catch @ 032c40cc */
+    EEGDOGKBLNG__KILLKMHKIMI(__this_00,c,true,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+                    /* catch() { ... } // from try @ 032c406c with catch @ 032c40d0 */
+  FUN_01bab8c8();
+}
+

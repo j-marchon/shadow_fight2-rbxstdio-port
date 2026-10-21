@@ -1,0 +1,8 @@
+// OKKPDLAJBFD$$MKOCEFJACHL @ RVA 0x302248C
+
+PGICCMFLDPI_o * OKKPDLAJBFD__MKOCEFJACHL(OKKPDLAJBFD_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).LGHDNNJIJGO;
+}
+

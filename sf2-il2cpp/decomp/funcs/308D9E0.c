@@ -1,0 +1,10 @@
+// KKGHPKOFEHM$$IIBFFDJAKFB @ RVA 0x308D9E0
+
+void KKGHPKOFEHM__IIBFFDJAKFB(KKGHPKOFEHM_o *__this,KAMBBJFPLGM_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).OPHCNELIOLD = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

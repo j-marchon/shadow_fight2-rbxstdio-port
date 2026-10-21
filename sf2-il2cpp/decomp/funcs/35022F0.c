@@ -1,0 +1,9 @@
+// OBCMNBDBNFO$$MENKEGIMGGI @ RVA 0x35022F0
+
+void OBCMNBDBNFO__MENKEGIMGGI(OBCMNBDBNFO_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MGFICIOBKAI = CJNHFNHJHPE;
+  return;
+}
+

@@ -1,0 +1,9 @@
+// EAJJPPPJENA$$PGOIFJBNJCE @ RVA 0x32D5BA8
+
+void EAJJPPPJENA__PGOIFJBNJCE(EAJJPPPJENA_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).EMOLIBOCKJK = CJNHFNHJHPE;
+  return;
+}
+

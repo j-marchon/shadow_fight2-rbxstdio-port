@@ -1,0 +1,8 @@
+// OPGAJGPHBOJ$$KCBILPIAPHN @ RVA 0x344CDC0
+
+int32_t OPGAJGPHBOJ__KCBILPIAPHN(OPGAJGPHBOJ_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

@@ -1,0 +1,9 @@
+// JCFJFJCKLKG$$EMKELMJKKLO @ RVA 0x333175C
+
+void JCFJFJCKLKG__EMKELMJKKLO(JCFJFJCKLKG_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).PDOMCPONBNB = CJNHFNHJHPE;
+  return;
+}
+

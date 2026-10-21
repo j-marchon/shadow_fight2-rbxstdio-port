@@ -1,0 +1,8 @@
+// OPNFCOGALLI$$CDFAMOHHLDM @ RVA 0x3109434
+
+ECENNHNBAME_o * OPNFCOGALLI__CDFAMOHHLDM(OPNFCOGALLI_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).NOAFGDFHHMN;
+}
+

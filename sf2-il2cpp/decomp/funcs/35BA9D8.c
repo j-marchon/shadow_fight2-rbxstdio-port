@@ -1,0 +1,9 @@
+// OLCBPIHLPEC$$GNLPNKGBAFL @ RVA 0x35BA9D8
+
+void OLCBPIHLPEC__GNLPNKGBAFL(OLCBPIHLPEC_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).EMDNDLOODLG = CJNHFNHJHPE;
+  return;
+}
+

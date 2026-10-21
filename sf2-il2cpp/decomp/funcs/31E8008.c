@@ -1,0 +1,9 @@
+// MNLIBPAOCLG$$ADOHICCAIMN @ RVA 0x31E8008
+
+void MNLIBPAOCLG__ADOHICCAIMN(MNLIBPAOCLG_o *__this,float CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).BIBDPIEOEHF = CJNHFNHJHPE;
+  return;
+}
+

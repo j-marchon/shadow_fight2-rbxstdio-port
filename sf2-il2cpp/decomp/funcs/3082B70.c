@@ -1,0 +1,8 @@
+// IBILFGLMCDM$$KCBILPIAPHN @ RVA 0x3082B70
+
+int32_t IBILFGLMCDM__KCBILPIAPHN(IBILFGLMCDM_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

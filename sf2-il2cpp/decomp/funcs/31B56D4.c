@@ -1,0 +1,9 @@
+// CNIGOFCKBGI$$EODHHFEAIGP @ RVA 0x31B56D4
+
+void CNIGOFCKBGI__EODHHFEAIGP(CNIGOFCKBGI_o *__this,int32_t KFLAAIMLKOE,MethodInfo *method)
+
+{
+  (__this->fields).JGJNBILDCHK = KFLAAIMLKOE;
+  return;
+}
+

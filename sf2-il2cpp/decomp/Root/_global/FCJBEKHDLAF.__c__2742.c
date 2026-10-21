@@ -1,0 +1,173 @@
+// TypeDefIndex 2742
+// Namespace: 
+// [Serializable]
+// private sealed class FCJBEKHDLAF.<>c
+// Fields:
+//   public static readonly FCJBEKHDLAF.<>c <>9; // 0x0
+//   public static Predicate<IMMCKCJBFIL> <>9__22_0; // 0x8
+//   public static Action<PJKHAJKEHEL> <>9__171_0; // 0x10
+//   public static Action<OLKKAIFGGAK> <>9__171_1; // 0x18
+//   public static Comparison<KMJDCOABCCG> <>9__233_0; // 0x20
+
+// ===== internal void MJCHLFDDEHB(PJKHAJKEHEL x)  [RVA 0x33F47D8]
+// FCJBEKHDLAF.<>c$$MJCHLFDDEHB @ RVA 0x33F47D8
+
+void FCJBEKHDLAF_<>c__MJCHLFDDEHB(FCJBEKHDLAF___c_o *__this,PJKHAJKEHEL_o *x,MethodInfo *method)
+
+{
+  if (x != (PJKHAJKEHEL_o *)0x0) {
+                    /* try { // try from 034f47dc to 035f480f has its CatchHandler @ 034f49a0 */
+    PJKHAJKEHEL__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== public void .ctor()  [RVA 0x33F47F0]
+// FCJBEKHDLAF.<>c$$.ctor @ RVA 0x33F47F0
+
+void FCJBEKHDLAF_<>c___ctor(FCJBEKHDLAF___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== internal int APOBCBGOKFG(KMJDCOABCCG a, KMJDCOABCCG b)  [RVA 0x33F47F8]
+// FCJBEKHDLAF.<>c$$APOBCBGOKFG @ RVA 0x33F47F8
+
+int32_t FCJBEKHDLAF_<>c__APOBCBGOKFG
+                  (FCJBEKHDLAF___c_o *__this,KMJDCOABCCG_o *a,KMJDCOABCCG_o *b,MethodInfo *method)
+
+{
+  int32_t iVar1;
+  
+  if ((b != (KMJDCOABCCG_o *)0x0) && (a != (KMJDCOABCCG_o *)0x0)) {
+    iVar1 = System_Int32__CompareTo((int)b + 0x10,(a->fields).EAFPDFHFBOM,(MethodInfo *)0x0);
+    return iVar1;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal void EOLAKDMJEEE(OLKKAIFGGAK x)  [RVA 0x33F481C]
+// FCJBEKHDLAF.<>c$$EOLAKDMJEEE @ RVA 0x33F481C
+
+void FCJBEKHDLAF_<>c__EOLAKDMJEEE(FCJBEKHDLAF___c_o *__this,OLKKAIFGGAK_o *x,MethodInfo *method)
+
+{
+  if (x != (OLKKAIFGGAK_o *)0x0) {
+                    /* try { // try from 034f4824 to 035f482b has its CatchHandler @ 034f4904 */
+    OLKKAIFGGAK__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal bool JHLEBPPMELO(IMMCKCJBFIL x)  [RVA 0x33F4834]
+// FCJBEKHDLAF.<>c$$JHLEBPPMELO @ RVA 0x33F4834
+
+bool FCJBEKHDLAF_<>c__JHLEBPPMELO(FCJBEKHDLAF___c_o *__this,IMMCKCJBFIL_o *x,MethodInfo *method)
+
+{
+  int iVar1;
+  NLPJLHOEAOE_o *pNVar2;
+  
+  if ((DAT_04567f8c & 1) == 0) {
+                    /* try { // try from 034f4850 to 035f4853 has its CatchHandler @ 034f4a98 */
+                    /* try { // try from 034f4854 to 035f4857 has its CatchHandler @ 034f4a34 */
+    __this = (FCJBEKHDLAF___c_o *)FUN_01bab630(&NLPJLHOEAOE_TypeInfo);
+                    /* try { // try from 034f4858 to 035f485b has its CatchHandler @ 034f49e0 */
+                    /* try { // try from 034f485c to 035f485f has its CatchHandler @ 034f49dc */
+    DAT_04567f8c = 1;
+  }
+                    /* try { // try from 034f4860 to 035f4863 has its CatchHandler @ 034f49d4 */
+  if (x != (IMMCKCJBFIL_o *)0x0) {
+                    /* try { // try from 034f4864 to 035f4867 has its CatchHandler @ 034f49cc */
+                    /* try { // try from 034f4868 to 035f486b has its CatchHandler @ 034f49c8 */
+                    /* try { // try from 034f486c to 035f486f has its CatchHandler @ 034f49b4 */
+    iVar1 = (x->fields).PHEIFGLOCKI;
+                    /* try { // try from 034f4870 to 035f4873 has its CatchHandler @ 034f49b0 */
+                    /* try { // try from 034f4874 to 035f4877 has its CatchHandler @ 034f49ac */
+                    /* try { // try from 034f4878 to 035f487b has its CatchHandler @ 034f49a4 */
+    if ((NLPJLHOEAOE_TypeInfo->_2).cctor_finished == 0) {
+                    /* try { // try from 034f487c to 035f487f has its CatchHandler @ 034f4984 */
+      thunk_FUN_01ba7564();
+    }
+                    /* try { // try from 034f4880 to 035f4883 has its CatchHandler @ 034f4964 */
+                    /* try { // try from 034f4884 to 035f4887 has its CatchHandler @ 034f4958 */
+    pNVar2 = NLPJLHOEAOE__AIHNLLGNBLC((MethodInfo *)0x0);
+                    /* try { // try from 034f4888 to 035f488b has its CatchHandler @ 034f4954 */
+    __this = (FCJBEKHDLAF___c_o *)0x0;
+    if (pNVar2 != (NLPJLHOEAOE_o *)0x0) {
+                    /* try { // try from 034f488c to 035f488f has its CatchHandler @ 034f4998 */
+                    /* try { // try from 034f4890 to 035f4893 has its CatchHandler @ 034f4944 */
+                    /* try { // try from 034f4894 to 035f4897 has its CatchHandler @ 034f4998 */
+                    /* try { // try from 034f4898 to 035f489b has its CatchHandler @ 034f493c */
+                    /* try { // try from 034f489c to 035f489f has its CatchHandler @ 034f4938 */
+                    /* try { // try from 034f48a0 to 035f48a3 has its CatchHandler @ 034f4934 */
+      return iVar1 == (pNVar2->fields)._PFHJDMOFFOG_k__BackingField;
+    }
+  }
+                    /* WARNING: Subroutine does not return */
+                    /* try { // try from 034f48a4 to 035f48a7 has its CatchHandler @ 034f4928 */
+  FUN_01bab8c8(__this);
+}
+
+
+// ===== private static void .cctor()  [RVA 0x33F48A8]
+// FCJBEKHDLAF.<>c$$.cctor @ RVA 0x33F48A8
+
+void FCJBEKHDLAF_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+                    /* try { // try from 034f48a8 to 035f48ab has its CatchHandler @ 034f4924 */
+                    /* try { // try from 034f48ac to 035f48af has its CatchHandler @ 034f4920 */
+                    /* try { // try from 034f48b0 to 035f48b3 has its CatchHandler @ 034f490c */
+                    /* try { // try from 034f48b4 to 035f48b7 has its CatchHandler @ 034f4908 */
+                    /* try { // try from 034f48b8 to 035f48bb has its CatchHandler @ 034f48f4 */
+                    /* try { // try from 034f48bc to 035f48c3 has its CatchHandler @ 034f4910 */
+  if ((DAT_04567f8d & 1) == 0) {
+                    /* try { // try from 034f48c4 to 035f48c7 has its CatchHandler @ 034f48fc */
+                    /* try { // try from 034f48c8 to 035f48cb has its CatchHandler @ 034f48ec */
+                    /* try { // try from 034f48cc to 035f48d3 has its CatchHandler @ 034f4904 */
+    FUN_01bab630(&FCJBEKHDLAF_<>c_TypeInfo);
+                    /* try { // try from 034f48d4 to 035f48d7 has its CatchHandler @ 034f48e4 */
+    DAT_04567f8d = 1;
+  }
+                    /* try { // try from 034f48d8 to 035f48df has its CatchHandler @ 034f4900 */
+  __this = (Il2CppObject *)thunk_FUN_01bda818(FCJBEKHDLAF_<>c_TypeInfo);
+                    /* catch() { ... } // from try @ 034f4224 with catch @ 034f48e0
+                       try { // try from 034f48e0 to 035f49fb has its CatchHandler @ 034f4064 */
+                    /* catch() { ... } // from try @ 034f48d4 with catch @ 034f48e4 */
+                    /* catch() { ... } // from try @ 034f4518 with catch @ 034f48e8 */
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+                    /* catch() { ... } // from try @ 034f48c8 with catch @ 034f48ec */
+                    /* catch() { ... } // from try @ 034f43a8 with catch @ 034f48f0 */
+                    /* catch() { ... } // from try @ 034f48b8 with catch @ 034f48f4 */
+                    /* catch() { ... } // from try @ 034f41b8 with catch @ 034f48f8
+                       catch() { ... } // from try @ 034f434c with catch @ 034f48f8
+                       catch() { ... } // from try @ 034f44c4 with catch @ 034f48f8 */
+  FCJBEKHDLAF_<>c_TypeInfo->static_fields->__9 = (FCJBEKHDLAF___c_o *)__this;
+                    /* catch() { ... } // from try @ 034f44d0 with catch @ 034f48fc
+                       catch() { ... } // from try @ 034f48c4 with catch @ 034f48fc */
+                    /* catch() { ... } // from try @ 034f432c with catch @ 034f4900
+                       catch() { ... } // from try @ 034f48d8 with catch @ 034f4900 */
+                    /* catch() { ... } // from try @ 034f4824 with catch @ 034f4904
+                       catch() { ... } // from try @ 034f48cc with catch @ 034f4904 */
+                    /* catch() { ... } // from try @ 034f4360 with catch @ 034f4908
+                       catch() { ... } // from try @ 034f48b4 with catch @ 034f4908 */
+                    /* catch() { ... } // from try @ 034f41c8 with catch @ 034f490c
+                       catch() { ... } // from try @ 034f48b0 with catch @ 034f490c */
+  thunk_FUN_01c20e04(FCJBEKHDLAF_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+

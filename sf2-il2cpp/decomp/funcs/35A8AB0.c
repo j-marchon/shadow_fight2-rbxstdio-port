@@ -1,0 +1,8 @@
+// LNMCGOLABEK$$LNGFDKLLGCL @ RVA 0x35A8AB0
+
+HEFOANCOHDC_o * LNMCGOLABEK__LNGFDKLLGCL(LNMCGOLABEK_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).LENFGEAJDMN;
+}
+

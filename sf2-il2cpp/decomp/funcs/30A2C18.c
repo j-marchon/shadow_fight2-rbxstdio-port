@@ -1,0 +1,8 @@
+// IGFGDDANEPE$$FJKBJKOGCJL @ RVA 0x30A2C18
+
+AMJMGFCCAKN_o * IGFGDDANEPE__FJKBJKOGCJL(IGFGDDANEPE_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).HJLEJIJKJKD;
+}
+

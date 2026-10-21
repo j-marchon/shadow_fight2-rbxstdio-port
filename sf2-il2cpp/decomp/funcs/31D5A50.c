@@ -1,0 +1,8 @@
+// KEMCBDKAPBD$$KGGGBHEMAOO @ RVA 0x31D5A50
+
+int32_t KEMCBDKAPBD__KGGGBHEMAOO(KEMCBDKAPBD_o *__this,MethodInfo *method)
+
+{
+  return 2;
+}
+

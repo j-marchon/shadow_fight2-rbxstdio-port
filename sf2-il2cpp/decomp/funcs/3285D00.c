@@ -1,0 +1,10 @@
+// OOMHDDBCBJP$$JGKHDBDNCCN @ RVA 0x3285D00
+
+void OOMHDDBCBJP__JGKHDBDNCCN(OOMHDDBCBJP_o *__this,MEJIKMPNBNL_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).IAJPHAAMKPC = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

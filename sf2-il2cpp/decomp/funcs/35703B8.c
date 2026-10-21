@@ -1,0 +1,9 @@
+// NLDPAHFABGL$$BBIOHFGNCDO @ RVA 0x35703B8
+
+void NLDPAHFABGL__BBIOHFGNCDO(NLDPAHFABGL_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).IFDGNOKADMK = CJNHFNHJHPE;
+  return;
+}
+

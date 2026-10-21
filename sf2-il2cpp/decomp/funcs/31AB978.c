@@ -1,0 +1,9 @@
+// GCIFMNHADDF.BNFLBFKMCAG$$.ctor @ RVA 0x31AB978
+
+void GCIFMNHADDF_BNFLBFKMCAG___ctor(GCIFMNHADDF_BNFLBFKMCAG_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+

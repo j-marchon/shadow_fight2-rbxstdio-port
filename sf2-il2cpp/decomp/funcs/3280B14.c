@@ -1,0 +1,10 @@
+// FMIEFKAKOMG$$EAAABDOJHNI @ RVA 0x3280B14
+
+void FMIEFKAKOMG__EAAABDOJHNI(FMIEFKAKOMG_o *__this,BECIPDJBAOG_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MJIIHOLHNCK = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

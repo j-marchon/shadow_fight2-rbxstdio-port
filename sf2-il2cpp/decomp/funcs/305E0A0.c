@@ -1,0 +1,8 @@
+// ACHLOMELAJE$$AENIKFLOHAM @ RVA 0x305E0A0
+
+BJAIACBABEB_o * ACHLOMELAJE__AENIKFLOHAM(ACHLOMELAJE_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).BPIMINMEAEM;
+}
+

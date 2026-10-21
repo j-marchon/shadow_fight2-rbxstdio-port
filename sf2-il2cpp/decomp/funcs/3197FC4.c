@@ -1,0 +1,8 @@
+// OMMDIMHOHLK$$GOLOABAFEJA @ RVA 0x3197FC4
+
+bool OMMDIMHOHLK__GOLOABAFEJA(int32_t ACCIHBHMFPN,MethodInfo *method)
+
+{
+  return ACCIHBHMFPN - 2U < 5;
+}
+

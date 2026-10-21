@@ -1,0 +1,8 @@
+// BPAIEBPNHEM$$KCBILPIAPHN @ RVA 0x3010690
+
+int32_t BPAIEBPNHEM__KCBILPIAPHN(BPAIEBPNHEM_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

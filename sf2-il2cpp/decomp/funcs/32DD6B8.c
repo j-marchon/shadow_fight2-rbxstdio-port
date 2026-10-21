@@ -1,0 +1,9 @@
+// LJBDMDHNKFM$$AEDNHMHDFAL @ RVA 0x32DD6B8
+
+void LJBDMDHNKFM__AEDNHMHDFAL(IKBGLDJFIJH_o *__this)
+
+{
+  IKBGLDJFIJH__OEHBFKCJMFA(__this,(MethodInfo *)0x0);
+  return;
+}
+

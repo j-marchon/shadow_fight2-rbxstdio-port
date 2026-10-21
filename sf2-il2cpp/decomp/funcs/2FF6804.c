@@ -1,0 +1,8 @@
+// KJIBPEMIKPJ$$KCBILPIAPHN @ RVA 0x2FF6804
+
+int32_t KJIBPEMIKPJ__KCBILPIAPHN(KJIBPEMIKPJ_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

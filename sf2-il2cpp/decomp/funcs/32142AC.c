@@ -1,0 +1,8 @@
+// HPGLFPGOBFM$$KCBILPIAPHN @ RVA 0x32142AC
+
+int32_t HPGLFPGOBFM__KCBILPIAPHN(HPGLFPGOBFM_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

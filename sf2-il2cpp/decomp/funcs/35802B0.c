@@ -1,0 +1,10 @@
+// EOLFEKNCPLM$$GEAPJPJPOKB @ RVA 0x35802B0
+
+void EOLFEKNCPLM__GEAPJPJPOKB(EOLFEKNCPLM_o *__this,OBCMNBDBNFO_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).PLJJCOHGICK = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

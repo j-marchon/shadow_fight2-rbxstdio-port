@@ -1,0 +1,9 @@
+// BGPFALGFJIL$$.ctor @ RVA 0x32229DC
+
+void BGPFALGFJIL___ctor(BGPFALGFJIL_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+

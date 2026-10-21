@@ -1,0 +1,10 @@
+// KAMBBJFPLGM$$PJKNJFIFAFD @ RVA 0x311B338
+
+void KAMBBJFPLGM__PJKNJFIFAFD(KAMBBJFPLGM_o *__this,NGOFOPOGBMJ_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).CBEJJIHKEGF = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

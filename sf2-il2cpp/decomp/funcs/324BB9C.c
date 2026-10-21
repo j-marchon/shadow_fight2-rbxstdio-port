@@ -1,0 +1,8 @@
+// ELBBEAGGAOH$$NEHMMPDFBOK @ RVA 0x324BB9C
+
+GLPEFEEGCPM_o * ELBBEAGGAOH__NEHMMPDFBOK(ELBBEAGGAOH_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).KEIBPDJHHBB;
+}
+

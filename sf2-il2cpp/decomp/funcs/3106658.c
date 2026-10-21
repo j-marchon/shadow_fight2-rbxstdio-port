@@ -1,0 +1,10 @@
+// OPNFCOGALLI$$IOPFFFHEDFN @ RVA 0x3106658
+
+void OPNFCOGALLI__IOPFFFHEDFN(OPNFCOGALLI_o *__this,ECENNHNBAME_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).FFIBKLFJKAO = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

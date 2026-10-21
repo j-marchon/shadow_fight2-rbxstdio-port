@@ -1,0 +1,8 @@
+// AADKBCFCLKK$$JENKEEHCNBD @ RVA 0x343A1E0
+
+PGICCMFLDPI_o * AADKBCFCLKK__JENKEEHCNBD(AADKBCFCLKK_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).FAEDHKAJJNK;
+}
+

@@ -1,0 +1,8 @@
+// BDMABHJEEGD$$LFNBOGPIBLJ @ RVA 0x310BDC0
+
+PGICCMFLDPI_o * BDMABHJEEGD__LFNBOGPIBLJ(BDMABHJEEGD_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).IMNALGKNMNP;
+}
+

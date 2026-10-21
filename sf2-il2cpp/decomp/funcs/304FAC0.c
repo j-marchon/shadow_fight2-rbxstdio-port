@@ -1,0 +1,9 @@
+// EIBAKHBHMAO$$GNLPNKGBAFL @ RVA 0x304FAC0
+
+void EIBAKHBHMAO__GNLPNKGBAFL(EIBAKHBHMAO_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).EMDNDLOODLG = CJNHFNHJHPE;
+  return;
+}
+

@@ -1,0 +1,9 @@
+// NLPJLHOEAOE$$FAKJCLKLLJA @ RVA 0x31FCFC0
+
+void NLPJLHOEAOE__FAKJCLKLLJA(NLPJLHOEAOE_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).COBIPKHFIKK = CJNHFNHJHPE;
+  return;
+}
+

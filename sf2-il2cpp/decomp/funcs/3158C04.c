@@ -1,0 +1,9 @@
+// HPEENDCCJND$$CENGCEHFGFN @ RVA 0x3158C04
+
+System_String_o *
+HPEENDCCJND__CENGCEHFGFN(HPEENDCCJND_o *__this,System_String_o *AELIJDOOOPN,MethodInfo *method)
+
+{
+  return AELIJDOOOPN;
+}
+

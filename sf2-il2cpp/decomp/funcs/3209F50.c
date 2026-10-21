@@ -1,0 +1,8 @@
+// Util$$KEJBDHBDGNI @ RVA 0x3209F50
+
+bool Util__KEJBDHBDGNI(float CHOCOAGNFDD,float LGLJJDGHBLN,MethodInfo *method)
+
+{
+  return ABS(CHOCOAGNFDD) < LGLJJDGHBLN;
+}
+

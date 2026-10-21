@@ -1,0 +1,9 @@
+// IHMIMECHIAN$$LNEGJIIBIJI @ RVA 0x343C8E8
+
+void IHMIMECHIAN__LNEGJIIBIJI(IHMIMECHIAN_o *__this,float CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).KLOGBBKOLFL = CJNHFNHJHPE;
+  return;
+}
+

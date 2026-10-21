@@ -1,0 +1,10 @@
+// EPCCNLNOALL$$IIBFFDJAKFB @ RVA 0x32FBE18
+
+void EPCCNLNOALL__IIBFFDJAKFB(EPCCNLNOALL_o *__this,KAMBBJFPLGM_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).OPHCNELIOLD = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

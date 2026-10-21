@@ -1,0 +1,8 @@
+// GLPEFEEGCPM$$MBDMKABMELE @ RVA 0x32252F0
+
+FADHMEJJCPO_o * GLPEFEEGCPM__MBDMKABMELE(GLPEFEEGCPM_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).PBBGNHKFEPG;
+}
+

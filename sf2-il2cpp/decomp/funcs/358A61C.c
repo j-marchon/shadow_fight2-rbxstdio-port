@@ -1,0 +1,11 @@
+// OCHIFKHFMAC$$COPDGBDLGEP @ RVA 0x358A61C
+
+PDFMAHPKIEI_o * OCHIFKHFMAC__COPDGBDLGEP(OCHIFKHFMAC_o *__this,MethodInfo *method)
+
+{
+  PDFMAHPKIEI_o *pPVar1;
+  
+  pPVar1 = PDFMAHPKIEI__AIHNLLGNBLC((MethodInfo *)0x0);
+  return pPVar1;
+}
+

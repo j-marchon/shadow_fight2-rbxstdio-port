@@ -1,0 +1,9 @@
+// AJINOJNMEEK$$GNLPNKGBAFL @ RVA 0x304E018
+
+void AJINOJNMEEK__GNLPNKGBAFL(AJINOJNMEEK_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).EMDNDLOODLG = CJNHFNHJHPE;
+  return;
+}
+

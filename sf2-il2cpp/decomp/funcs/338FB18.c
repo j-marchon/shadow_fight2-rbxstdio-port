@@ -1,0 +1,9 @@
+// HBHFOKIPAHA$$OEPCNHDIKJH @ RVA 0x338FB18
+
+void HBHFOKIPAHA__OEPCNHDIKJH(HBHFOKIPAHA_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).IGBAAAHPLAA = CJNHFNHJHPE;
+  return;
+}
+

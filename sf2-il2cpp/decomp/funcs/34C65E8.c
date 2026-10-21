@@ -1,0 +1,8 @@
+// EINKKMIHCHI$$KFHNHPGBJBH @ RVA 0x34C65E8
+
+int32_t EINKKMIHCHI__KFHNHPGBJBH(EINKKMIHCHI_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

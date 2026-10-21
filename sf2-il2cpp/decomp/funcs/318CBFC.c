@@ -1,0 +1,10 @@
+// FDGBGINGEBP.BBPPDHBMBNC$$IMEDHACBLGP @ RVA 0x318CBFC
+
+void FDGBGINGEBP_BBPPDHBMBNC__IMEDHACBLGP
+               (FDGBGINGEBP_BBPPDHBMBNC_o *__this,OPHDIHJPHDE_o *d,MethodInfo *method)
+
+{
+  FDGBGINGEBP__PPHHKDHJJHK((__this->fields).sb,d,method);
+  return;
+}
+

@@ -1,0 +1,12 @@
+// AKOMJPINHEN$$JNCKDHJJBPM @ RVA 0x308E79C
+
+void AKOMJPINHEN__JNCKDHJJBPM(AKOMJPINHEN_o *__this,OJEHKJHEBID_o *PBNPKBJKFHE,MethodInfo *method)
+
+{
+  if (PBNPKBJKFHE != (OJEHKJHEBID_o *)0x0) {
+    AKOMJPINHEN__GMDGMGDNHHP(__this,PBNPKBJKFHE,method);
+    return;
+  }
+  return;
+}
+

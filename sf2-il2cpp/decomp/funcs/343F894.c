@@ -1,0 +1,8 @@
+// OMFJHNMDIBF$$BIBCEJEJJJN @ RVA 0x343F894
+
+PIADCKMDDAK_o * OMFJHNMDIBF__BIBCEJEJJJN(OMFJHNMDIBF_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).JMACIOLHEOF;
+}
+

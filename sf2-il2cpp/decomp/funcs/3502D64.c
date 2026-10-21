@@ -1,0 +1,9 @@
+// OBCMNBDBNFO$$MKKNMHKPKDM @ RVA 0x3502D64
+
+void OBCMNBDBNFO__MKKNMHKPKDM(OBCMNBDBNFO_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).HHNJEEMAEIH = CJNHFNHJHPE;
+  return;
+}
+

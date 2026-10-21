@@ -1,0 +1,9 @@
+// OLKKAIFGGAK$$GAKKOKGJBDD @ RVA 0x34F3B70
+
+void OLKKAIFGGAK__GAKKOKGJBDD(OLKKAIFGGAK_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).ONDNEJFKABA = CJNHFNHJHPE;
+  return;
+}
+

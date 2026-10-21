@@ -1,0 +1,8 @@
+// PLMEGPKDHBF$$KGGGBHEMAOO @ RVA 0x3132474
+
+int32_t PLMEGPKDHBF__KGGGBHEMAOO(PLMEGPKDHBF_o *__this,MethodInfo *method)
+
+{
+  return 7;
+}
+

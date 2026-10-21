@@ -1,0 +1,8 @@
+// ACHLOMELAJE$$CEPCJAPFONK @ RVA 0x305B978
+
+DNELIPCHKLK_o * ACHLOMELAJE__CEPCJAPFONK(ACHLOMELAJE_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).IFIPEAHGJKB;
+}
+

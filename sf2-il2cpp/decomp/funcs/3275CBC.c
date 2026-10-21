@@ -1,0 +1,8 @@
+// AJMOIOIBPGP$$IIADOIBAGNL @ RVA 0x3275CBC
+
+NCCFNKMICGK_o * AJMOIOIBPGP__IIADOIBAGNL(AJMOIOIBPGP_o *__this,MethodInfo *method)
+
+{
+  return (NCCFNKMICGK_o *)(__this->fields).BAAIACCFAPH;
+}
+

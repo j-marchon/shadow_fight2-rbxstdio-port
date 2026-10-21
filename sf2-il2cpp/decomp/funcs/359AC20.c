@@ -1,0 +1,8 @@
+// LPDJPFHIFAP$$KCBILPIAPHN @ RVA 0x359AC20
+
+int32_t LPDJPFHIFAP__KCBILPIAPHN(LPDJPFHIFAP_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

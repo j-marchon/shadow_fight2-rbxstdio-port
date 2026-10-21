@@ -1,0 +1,8 @@
+// AMJMGFCCAKN$$MPEBFOKMCCH @ RVA 0x303BAD4
+
+BFBONKPKBNL_o * AMJMGFCCAKN__MPEBFOKMCCH(AMJMGFCCAKN_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).MHJAFBPAKEG;
+}
+

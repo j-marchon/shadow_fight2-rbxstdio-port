@@ -1,0 +1,9 @@
+// NODLJPNGNBG$$DAGHPBCAEJA @ RVA 0x3090EE0
+
+void NODLJPNGNBG__DAGHPBCAEJA(NODLJPNGNBG_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).LINGIJDCLLC = CJNHFNHJHPE;
+  return;
+}
+

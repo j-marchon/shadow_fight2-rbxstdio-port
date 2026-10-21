@@ -1,0 +1,9 @@
+// ENFPENIMCIK$$JGMKOAMLJII @ RVA 0x3378F0C
+
+void ENFPENIMCIK__JGMKOAMLJII(ENFPENIMCIK_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).CBIFOEGLMNM = CJNHFNHJHPE;
+  return;
+}
+

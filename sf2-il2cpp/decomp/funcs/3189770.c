@@ -1,0 +1,9 @@
+// BEPJMNAHCAD$$DDLPDAEGHBL @ RVA 0x3189770
+
+void BEPJMNAHCAD__DDLPDAEGHBL(BEPJMNAHCAD_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).LDPMIHNLHFE = CJNHFNHJHPE;
+  return;
+}
+

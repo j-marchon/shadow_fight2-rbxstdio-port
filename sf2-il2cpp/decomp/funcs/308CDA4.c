@@ -1,0 +1,8 @@
+// ENOJCLHOINK$$CADFNLGLLOK @ RVA 0x308CDA4
+
+KBFGKFAKGPP_o * ENOJCLHOINK__CADFNLGLLOK(ENOJCLHOINK_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).FIFCACFAFPH;
+}
+

@@ -1,0 +1,9 @@
+// GBJGJEGPHKD$$HBFDJOAMHNA @ RVA 0x342F8BC
+
+void GBJGJEGPHKD__HBFDJOAMHNA(GBJGJEGPHKD_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).FJHAMMNKBPN = CJNHFNHJHPE;
+  return;
+}
+

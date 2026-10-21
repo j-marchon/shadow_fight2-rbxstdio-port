@@ -1,0 +1,11 @@
+// OJEHKJHEBID$$GIKFBFLFOCH @ RVA 0x34B58FC
+
+bool OJEHKJHEBID__GIKFBFLFOCH(OJEHKJHEBID_o *__this,int64_t FKIGDGJPIAC,MethodInfo *method)
+
+{
+  MGDJPGGPDJI_o *pMVar1;
+  
+  pMVar1 = OJEHKJHEBID__LANNCOJFCBD(__this,FKIGDGJPIAC,method);
+  return pMVar1 != (MGDJPGGPDJI_o *)0x0;
+}
+

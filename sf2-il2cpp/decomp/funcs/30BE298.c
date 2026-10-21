@@ -1,0 +1,8 @@
+// DOMFGLFMEMF$$KCBILPIAPHN @ RVA 0x30BE298
+
+int32_t DOMFGLFMEMF__KCBILPIAPHN(DOMFGLFMEMF_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

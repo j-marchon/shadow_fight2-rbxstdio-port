@@ -1,0 +1,8 @@
+// DGECIDJNNBN$$KCBILPIAPHN @ RVA 0x33242CC
+
+int32_t DGECIDJNNBN__KCBILPIAPHN(DGECIDJNNBN_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

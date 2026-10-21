@@ -1,0 +1,12 @@
+// NCNJEIBHGBH$$JCDCJJMEAJA @ RVA 0x32F3990
+
+void NCNJEIBHGBH__JCDCJJMEAJA(NCNJEIBHGBH_o *__this,FKNCNNOOOIO_o *GCOMKDMCMDN,MethodInfo *method)
+
+{
+  if (GCOMKDMCMDN != (FKNCNNOOOIO_o *)0x0) {
+    NCNJEIBHGBH__JCDCJJMEAJA(__this,(GCOMKDMCMDN->fields).JIJLBFGKNJK,method);
+    return;
+  }
+  return;
+}
+

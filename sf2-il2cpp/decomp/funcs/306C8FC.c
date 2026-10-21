@@ -1,0 +1,16 @@
+// GMGALNFPLPA$$IFHBIJJJPEG @ RVA 0x306C8FC
+
+void GMGALNFPLPA__IFHBIJJJPEG(GMGALNFPLPA_o *__this,float MJBMLNKAPGC,MethodInfo *method)
+
+{
+  FKAKHBPABPA_o *__this_00;
+  
+  __this_00 = (__this->fields).OGLDEIPGBAF;
+  if (__this_00 != (FKAKHBPABPA_o *)0x0) {
+    FKAKHBPABPA__JEFMDBBCIOB(__this_00,MJBMLNKAPGC,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

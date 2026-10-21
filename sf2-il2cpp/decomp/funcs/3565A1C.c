@@ -1,0 +1,9 @@
+// CADIGFIBFEN$$HLIJMNIPKNH @ RVA 0x3565A1C
+
+void CADIGFIBFEN__HLIJMNIPKNH(CADIGFIBFEN_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).PLIIOMEEPLO = CJNHFNHJHPE;
+  return;
+}
+

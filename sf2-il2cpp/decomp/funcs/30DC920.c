@@ -1,0 +1,15 @@
+// BKMILGLGFCM.IFBNAEMJLJL$$.ctor @ RVA 0x30DC920
+
+void BKMILGLGFCM_IFBNAEMJLJL___ctor(BKMILGLGFCM_IFBNAEMJLJL_o *__this,MethodInfo *method)
+
+{
+  if ((DAT_04566362 & 1) == 0) {
+    FUN_01bab630(&Method_PDBDELCMKJG_DGCHKODLPJG<BKMILGLGFCM_IFBNAEMJLJL>__ctor__);
+    DAT_04566362 = 1;
+  }
+  PDBDELCMKJG_DGCHKODLPJG<object>___ctor
+            ((PDBDELCMKJG_DGCHKODLPJG_TBuilder__o *)__this,
+             Method_PDBDELCMKJG_DGCHKODLPJG<BKMILGLGFCM_IFBNAEMJLJL>__ctor__);
+  return;
+}
+

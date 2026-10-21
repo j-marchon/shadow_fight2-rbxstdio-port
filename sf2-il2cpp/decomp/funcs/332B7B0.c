@@ -1,0 +1,8 @@
+// HPPHKOJNEPB$$PJEOKMGNMNF @ RVA 0x332B7B0
+
+void HPPHKOJNEPB__PJEOKMGNMNF(HPPHKOJNEPB_o *__this,float MJPEMHDHCCJ,MethodInfo *method)
+
+{
+  return;
+}
+

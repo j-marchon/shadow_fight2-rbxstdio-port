@@ -1,0 +1,8 @@
+// OOMHDDBCBJP$$AGFDCIBNAGM @ RVA 0x328517C
+
+MEJIKMPNBNL_o * OOMHDDBCBJP__AGFDCIBNAGM(OOMHDDBCBJP_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).IAJPHAAMKPC;
+}
+

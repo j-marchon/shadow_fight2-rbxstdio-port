@@ -1,0 +1,10 @@
+// OLCBPIHLPEC$$KAIDLBNPCJH @ RVA 0x35BB508
+
+void OLCBPIHLPEC__KAIDLBNPCJH(OLCBPIHLPEC_o *__this,PGICCMFLDPI_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MIINPPOCPCN = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

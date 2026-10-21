@@ -1,0 +1,12 @@
+// IPPEHAJADOO$$ECOGDHGPHND @ RVA 0x313FEA4
+
+void IPPEHAJADOO__ECOGDHGPHND
+               (IPPEHAJADOO_o *__this,OLKKAIFGGAK_EAOIGPODIAI_o *INNMCFJNEAE,MethodInfo *method)
+
+{
+  MethodInfo *in_x4;
+  
+  IPPEHAJADOO__BKBHKFCCKDO(__this,2,INNMCFJNEAE,false,in_x4);
+  return;
+}
+

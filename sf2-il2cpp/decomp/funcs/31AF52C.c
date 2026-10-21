@@ -1,0 +1,13 @@
+// LHEANFBMAAI$$PLOLMAENPOJ @ RVA 0x31AF52C
+
+void LHEANFBMAAI__PLOLMAENPOJ
+               (int32_t BKFOLMBMFNP,int32_t BHOMLBDEPOK,int32_t LOANACDECHO,MethodInfo *method)
+
+{
+  if (BKFOLMBMFNP == 0xd) {
+    LHEANFBMAAI__MALGBADKPKB(BHOMLBDEPOK,LOANACDECHO,(MethodInfo *)(ulong)(uint)LOANACDECHO);
+    return;
+  }
+  return;
+}
+

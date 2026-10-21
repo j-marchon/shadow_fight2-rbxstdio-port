@@ -1,0 +1,8 @@
+// AGCDKMOOJGI$$KOOIAEOAFNH @ RVA 0x32D688C
+
+AJNNHGGLGIF_o * AGCDKMOOJGI__KOOIAEOAFNH(AGCDKMOOJGI_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).EOKBEEIMNAF;
+}
+

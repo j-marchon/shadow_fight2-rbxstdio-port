@@ -1,0 +1,9 @@
+// KAHMAJKJMBK$$NCAGMLCJACN @ RVA 0x34C2EBC
+
+void KAHMAJKJMBK__NCAGMLCJACN(KAHMAJKJMBK_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).CCMCDKDBNON = CJNHFNHJHPE;
+  return;
+}
+

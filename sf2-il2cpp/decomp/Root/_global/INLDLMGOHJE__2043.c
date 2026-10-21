@@ -1,0 +1,96 @@
+// TypeDefIndex 2043
+// Namespace: 
+// public class INLDLMGOHJE : HJNEOLCKEMD
+// Fields:
+//   private string <EAPIKGAHNBE>k__BackingField; // 0x60
+
+// ===== protected void NDOHNNHJCGK(string CJNHFNHJHPE)  [RVA 0x32AA298]
+// INLDLMGOHJE$$NDOHNNHJCGK @ RVA 0x32AA298
+
+void INLDLMGOHJE__NDOHNNHJCGK(INLDLMGOHJE_o *__this,System_String_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields)._EAPIKGAHNBE_k__BackingField = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+
+
+// ===== public string JAEKFDOJKGP()  [RVA 0x32AA2A0]
+// INLDLMGOHJE$$JAEKFDOJKGP @ RVA 0x32AA2A0
+
+System_String_o * INLDLMGOHJE__JAEKFDOJKGP(INLDLMGOHJE_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields)._EAPIKGAHNBE_k__BackingField;
+}
+
+
+// ===== public override void HNIHOIAMDPC(XmlNode AHDGNOJPPIB)  [RVA 0x32AA2A8]
+// INLDLMGOHJE$$HNIHOIAMDPC @ RVA 0x32AA2A8
+
+void INLDLMGOHJE__HNIHOIAMDPC
+               (INLDLMGOHJE_o *__this,System_Xml_XmlNode_o *AHDGNOJPPIB,MethodInfo *method)
+
+{
+  System_Xml_XmlAttributeCollection_o *__this_00;
+  System_Xml_XmlAttribute_o *LBJNDMNEJJB;
+  System_String_o *pSVar1;
+  System_String_o **ppSVar2;
+  
+  if ((DAT_04567429 & 1) == 0) {
+    FUN_01bab630(&StringLiteral_9327/*"Name"*/);
+    FUN_01bab630(&StringLiteral_1/*""*/);
+    DAT_04567429 = 1;
+  }
+  HJNEOLCKEMD__HNIHOIAMDPC((HJNEOLCKEMD_o *)__this,AHDGNOJPPIB,(MethodInfo *)0x0);
+  HJNEOLCKEMD__GNLPNKGBAFL((HJNEOLCKEMD_o *)__this,0x11,(MethodInfo *)0x0);
+  if (AHDGNOJPPIB != (System_Xml_XmlNode_o *)0x0) {
+    __this_00 = (System_Xml_XmlAttributeCollection_o *)
+                (*(AHDGNOJPPIB->klass->vtable)._16_get_Attributes.methodPtr)
+                          (AHDGNOJPPIB,(AHDGNOJPPIB->klass->vtable)._16_get_Attributes.method);
+    if (__this_00 != (System_Xml_XmlAttributeCollection_o *)0x0) {
+      LBJNDMNEJJB = System_Xml_XmlAttributeCollection__get_ItemOf
+                              (__this_00,StringLiteral_9327/*"Name"*/,(MethodInfo *)0x0);
+      pSVar1 = EIABCPKDEBD__JPKEHIBGOEM(LBJNDMNEJJB,StringLiteral_1/*""*/,(MethodInfo *)0x0);
+      ppSVar2 = &(__this->fields)._EAPIKGAHNBE_k__BackingField;
+      *ppSVar2 = pSVar1;
+      thunk_FUN_01c20e04(ppSVar2,pSVar1);
+      return;
+    }
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== public void .ctor()  [RVA 0x32AA364]
+// INLDLMGOHJE$$.ctor @ RVA 0x32AA364
+
+void INLDLMGOHJE___ctor(INLDLMGOHJE_o *__this,MethodInfo *method)
+
+{
+  HJNEOLCKEMD___ctor((HJNEOLCKEMD_o *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== public void .ctor(INLDLMGOHJE IBKIPBJJCPG)  [RVA 0x32AA36C]
+// INLDLMGOHJE$$.ctor @ RVA 0x32AA36C
+
+void INLDLMGOHJE___ctor(INLDLMGOHJE_o *__this,INLDLMGOHJE_o *IBKIPBJJCPG,MethodInfo *method)
+
+{
+  System_String_o **ppSVar1;
+  
+  HJNEOLCKEMD___ctor((HJNEOLCKEMD_o *)__this,(HJNEOLCKEMD_o *)IBKIPBJJCPG,(MethodInfo *)0x0);
+  if (IBKIPBJJCPG != (INLDLMGOHJE_o *)0x0) {
+    ppSVar1 = &(__this->fields)._EAPIKGAHNBE_k__BackingField;
+    *ppSVar1 = (IBKIPBJJCPG->fields)._EAPIKGAHNBE_k__BackingField;
+    thunk_FUN_01c20e04(ppSVar1);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

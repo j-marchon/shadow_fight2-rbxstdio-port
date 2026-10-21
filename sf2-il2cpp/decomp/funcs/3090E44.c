@@ -1,0 +1,9 @@
+// NODLJPNGNBG$$HNKOFBBHFPM @ RVA 0x3090E44
+
+void NODLJPNGNBG__HNKOFBBHFPM(NODLJPNGNBG_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).PFJPLCAIGJH = CJNHFNHJHPE;
+  return;
+}
+

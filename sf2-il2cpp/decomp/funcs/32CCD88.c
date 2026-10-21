@@ -1,0 +1,8 @@
+// BOFEMGGNODC$$PKIFMKGDJJN @ RVA 0x32CCD88
+
+void BOFEMGGNODC__PKIFMKGDJJN(BOFEMGGNODC_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

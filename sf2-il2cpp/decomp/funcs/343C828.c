@@ -1,0 +1,9 @@
+// IHMIMECHIAN$$POMEAPIEEFA @ RVA 0x343C828
+
+void IHMIMECHIAN__POMEAPIEEFA(IHMIMECHIAN_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).CHLCOKOBIHN = CJNHFNHJHPE;
+  return;
+}
+

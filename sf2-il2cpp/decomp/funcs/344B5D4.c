@@ -1,0 +1,8 @@
+// MEJPIPJPKNP$$FCEPPBHEFLH @ RVA 0x344B5D4
+
+bool MEJPIPJPKNP__FCEPPBHEFLH(int32_t NFOBCFADDHA,MethodInfo *method)
+
+{
+  return NFOBCFADDHA - 3U < 5;
+}
+

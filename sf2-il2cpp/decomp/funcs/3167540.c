@@ -1,0 +1,36 @@
+// GALHNMPIEHA$$BIDBPFJNEJI @ RVA 0x3167540
+
+void GALHNMPIEHA__BIDBPFJNEJI(GALHNMPIEHA_o *__this,System_Action_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  bool bVar1;
+  System_Delegate_o *pSVar2;
+  System_Action_o *pSVar3;
+  System_Action_o *source;
+  
+  if ((DAT_045668c7 & 1) == 0) {
+    FUN_01bab630(&System_Action_TypeInfo);
+    DAT_045668c7 = 1;
+  }
+  source = (__this->fields).IFNPPPGCCKO;
+                    /* try { // try from 0326758c to 03367833 has its CatchHandler @ 0326758c
+                       catch() { ... } // from try @ 0326758c with catch @ 0326758c
+                       catch() { ... } // from try @ 032679f0 with catch @ 0326758c
+                       catch() { ... } // from try @ 03267a88 with catch @ 0326758c
+                       catch() { ... } // from try @ 03267a90 with catch @ 0326758c
+                       catch() { ... } // from try @ 03267b4c with catch @ 0326758c */
+  while ((pSVar2 = System_Delegate__Remove
+                             ((System_Delegate_o *)source,(System_Delegate_o *)CJNHFNHJHPE,
+                              (MethodInfo *)0x0), pSVar2 == (System_Delegate_o *)0x0 ||
+         ((System_Action_c *)pSVar2->klass == System_Action_TypeInfo))) {
+    pSVar3 = (System_Action_o *)FUN_01c07368(&__this->fields,pSVar2,source);
+    bVar1 = source == pSVar3;
+    source = pSVar3;
+    if (bVar1) {
+      return;
+    }
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01babc64(pSVar2);
+}
+

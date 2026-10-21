@@ -1,0 +1,9 @@
+// LHKALFIIJKB$$EGFBLPFMABC @ RVA 0x34FE880
+
+void LHKALFIIJKB__EGFBLPFMABC(MethodInfo *method)
+
+{
+  JJPNLEPEAFM__JHLIJCCIKHF((MethodInfo *)0x0);
+  return;
+}
+

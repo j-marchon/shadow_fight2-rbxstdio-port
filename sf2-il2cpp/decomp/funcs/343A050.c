@@ -1,0 +1,9 @@
+// AADKBCFCLKK$$BNBCBACMMEL @ RVA 0x343A050
+
+void AADKBCFCLKK__BNBCBACMMEL(AADKBCFCLKK_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).IKNCNGMNPPK = CJNHFNHJHPE;
+  return;
+}
+

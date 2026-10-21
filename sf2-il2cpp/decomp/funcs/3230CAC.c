@@ -1,0 +1,23 @@
+// HBDABDKPGJC.PDPKJNNJGKN$$GBHDFOCDJJK @ RVA 0x3230CAC
+
+bool HBDABDKPGJC_PDPKJNNJGKN__GBHDFOCDJJK
+               (HBDABDKPGJC_PDPKJNNJGKN_o *__this,Core_Configs_Models_PackSettings_o *pack,
+               MethodInfo *method)
+
+{
+  bool bVar1;
+  
+  if (pack == (Core_Configs_Models_PackSettings_o *)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_01bab8c8();
+  }
+  if (((pack->fields)._Type_k__BackingField == (__this->fields).packType) &&
+     (bVar1 = Core_Configs_Models_PackSettingsExtension__IsDownloaded(pack,(MethodInfo *)0x0),
+     !bVar1)) {
+    bVar1 = Core_Configs_Models_PackSettingsExtension__CheckDownloadConditions
+                      (pack,(MethodInfo *)0x0);
+    return bVar1;
+  }
+  return false;
+}
+

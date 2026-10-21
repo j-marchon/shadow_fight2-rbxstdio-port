@@ -1,0 +1,8 @@
+// CELDGLHBCAM$$LLCONNGHGKD @ RVA 0x319A96C
+
+void CELDGLHBCAM__LLCONNGHGKD(CELDGLHBCAM_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

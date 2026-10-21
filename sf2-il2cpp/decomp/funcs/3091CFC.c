@@ -1,0 +1,8 @@
+// PJJCPEELONC$$KCBILPIAPHN @ RVA 0x3091CFC
+
+int32_t PJJCPEELONC__KCBILPIAPHN(PJJCPEELONC_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

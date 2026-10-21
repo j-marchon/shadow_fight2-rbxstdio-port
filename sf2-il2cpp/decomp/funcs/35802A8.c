@@ -1,0 +1,9 @@
+// EOLFEKNCPLM$$EIIJCDCCJAL @ RVA 0x35802A8
+
+void EOLFEKNCPLM__EIIJCDCCJAL(EOLFEKNCPLM_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).ODDCBFOLIGB = CJNHFNHJHPE;
+  return;
+}
+

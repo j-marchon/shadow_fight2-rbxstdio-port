@@ -1,0 +1,9 @@
+// BCAEBMNHBAN$$PJFFPGBMMOJ @ RVA 0x34E51AC
+
+void BCAEBMNHBAN__PJFFPGBMMOJ(BCAEBMNHBAN_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).BGPDJHKBKCD = CJNHFNHJHPE;
+  return;
+}
+

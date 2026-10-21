@@ -1,0 +1,11 @@
+// AJNNHGGLGIF$$HNIHOIAMDPC @ RVA 0x35A8A88
+
+void AJNNHGGLGIF__HNIHOIAMDPC
+               (AJNNHGGLGIF_o *__this,System_Xml_XmlNode_o *AHDGNOJPPIB,MethodInfo *method)
+
+{
+  AJNNHGGLGIF__GAJGEHFDCJE(__this,AHDGNOJPPIB,method);
+  AJNNHGGLGIF__FEEFOMDIENJ(__this,AHDGNOJPPIB,method);
+  return;
+}
+

@@ -1,0 +1,9 @@
+// LKAFKHBBNOH$$OPKJBABEHFH @ RVA 0x318D960
+
+void LKAFKHBBNOH__OPKJBABEHFH(LKAFKHBBNOH_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MAHGAIJBBHF = CJNHFNHJHPE;
+  return;
+}
+

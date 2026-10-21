@@ -1,0 +1,8 @@
+// KAMBBJFPLGM$$OIPOEHHCBCP @ RVA 0x311BBF4
+
+NGOFOPOGBMJ_o * KAMBBJFPLGM__OIPOEHHCBCP(KAMBBJFPLGM_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).CBEJJIHKEGF;
+}
+

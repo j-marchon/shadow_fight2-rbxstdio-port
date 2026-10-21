@@ -1,0 +1,8 @@
+// NODLJPNGNBG$$FGMGOKNGJFJ @ RVA 0x3090AFC
+
+ICBMOMGINFH_o * NODLJPNGNBG__FGMGOKNGJFJ(NODLJPNGNBG_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).PMMFPJJOPKE;
+}
+

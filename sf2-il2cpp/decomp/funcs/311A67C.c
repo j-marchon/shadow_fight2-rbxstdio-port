@@ -1,0 +1,8 @@
+// KAMBBJFPLGM$$ABMODDPMPNF @ RVA 0x311A67C
+
+KEGDLHPEJBG_o * KAMBBJFPLGM__ABMODDPMPNF(KAMBBJFPLGM_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).LIGHEGAMGHD;
+}
+

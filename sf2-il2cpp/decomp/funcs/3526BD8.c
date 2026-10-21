@@ -1,0 +1,8 @@
+// OBOBEOMMECI$$HPPIPNEOHPL @ RVA 0x3526BD8
+
+void OBOBEOMMECI__HPPIPNEOHPL(float MCFPOCKJGBM,MethodInfo *method)
+
+{
+  return;
+}
+

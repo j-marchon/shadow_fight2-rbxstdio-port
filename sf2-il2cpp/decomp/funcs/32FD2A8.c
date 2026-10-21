@@ -1,0 +1,9 @@
+// PGICCMFLDPI$$PKPLAKAMOPO @ RVA 0x32FD2A8
+
+void PGICCMFLDPI__PKPLAKAMOPO(PGICCMFLDPI_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).GDKPGIBMFPA = CJNHFNHJHPE;
+  return;
+}
+

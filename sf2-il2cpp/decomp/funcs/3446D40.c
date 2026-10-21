@@ -1,0 +1,9 @@
+// CGALNIOABHK$$JODGPLBHHIA @ RVA 0x3446D40
+
+void CGALNIOABHK__JODGPLBHHIA(MethodInfo *method)
+
+{
+  CMCJGLAABFO__NDNPGAKJLHM((MethodInfo *)0x0);
+  return;
+}
+

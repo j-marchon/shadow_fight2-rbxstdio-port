@@ -1,0 +1,9 @@
+// KDADMJGPAOM$$EDJFPOOPKPB @ RVA 0x3393D54
+
+void KDADMJGPAOM__EDJFPOOPKPB(KDADMJGPAOM_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).IILCHFKCEEH = CJNHFNHJHPE;
+  return;
+}
+

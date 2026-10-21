@@ -1,0 +1,8 @@
+// FLELPJMOHLM$$KCBILPIAPHN @ RVA 0x35B8C10
+
+int32_t FLELPJMOHLM__KCBILPIAPHN(FLELPJMOHLM_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

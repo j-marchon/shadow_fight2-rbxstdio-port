@@ -1,0 +1,9 @@
+// BKMLILFFPIH.<>c$$.ctor @ RVA 0x30477D0
+
+void BKMLILFFPIH_<>c___ctor(BKMLILFFPIH___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+

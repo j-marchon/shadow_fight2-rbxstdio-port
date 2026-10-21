@@ -1,0 +1,8 @@
+// CMAJEGMJEMH$$KEMGPEDFALK @ RVA 0x33E0D18
+
+bool CMAJEGMJEMH__KEMGPEDFALK(CMAJEGMJEMH_o *__this,IEJKLPPLHMO_o *EFENHAFFBAG,MethodInfo *method)
+
+{
+  return true;
+}
+

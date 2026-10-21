@@ -1,0 +1,8 @@
+// FCJBEKHDLAF$$OBNFBGFAOGO @ RVA 0x33F0934
+
+OLKKAIFGGAK_o * FCJBEKHDLAF__OBNFBGFAOGO(FCJBEKHDLAF_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).CLEKIBBCAOJ;
+}
+

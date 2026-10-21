@@ -1,0 +1,8 @@
+// NEHIACBGFPJ$$KCBILPIAPHN @ RVA 0x31BCFB8
+
+int32_t NEHIACBGFPJ__KCBILPIAPHN(NEHIACBGFPJ_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

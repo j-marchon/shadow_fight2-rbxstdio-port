@@ -1,0 +1,8 @@
+// MEJPIPJPKNP$$CAMOIKJFFNC @ RVA 0x344B130
+
+bool MEJPIPJPKNP__CAMOIKJFFNC(int32_t NFOBCFADDHA,MethodInfo *method)
+
+{
+  return NFOBCFADDHA - 3U < 7;
+}
+

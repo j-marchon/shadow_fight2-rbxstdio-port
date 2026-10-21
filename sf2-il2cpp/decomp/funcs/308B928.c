@@ -1,0 +1,8 @@
+// IEFEBEDLHNN$$HNECJAPAFKA @ RVA 0x308B928
+
+CNDPAJOLKFN_o * IEFEBEDLHNN__HNECJAPAFKA(IEFEBEDLHNN_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).CNMHHKAMGPI;
+}
+

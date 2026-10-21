@@ -1,0 +1,8 @@
+// HKNJPBPNGIC$$KCBILPIAPHN @ RVA 0x345131C
+
+int32_t HKNJPBPNGIC__KCBILPIAPHN(HKNJPBPNGIC_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

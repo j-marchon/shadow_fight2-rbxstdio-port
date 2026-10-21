@@ -1,0 +1,9 @@
+// HBLHCCMEEEC$$NOMFMKNHABM @ RVA 0x3153E24
+
+void HBLHCCMEEEC__NOMFMKNHABM(HBLHCCMEEEC_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).HEOOKBCLBGN = CJNHFNHJHPE;
+  return;
+}
+

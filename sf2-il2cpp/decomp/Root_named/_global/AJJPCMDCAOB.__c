@@ -1,0 +1,59 @@
+// TypeDefIndex 2511
+// Namespace: 
+// [Serializable]
+// private sealed class SFSConfigManager.<>c
+// Fields:
+//   public static readonly SFSConfigManager.<>c <>9; // 0x0
+//   public static Action <>9__15_0; // 0x8
+//   public static Action <>9__15_1; // 0x10
+
+// ===== public void .ctor()  [RVA 0x338DAD0]
+// SFSConfigManager.<>c$$.ctor @ RVA 0x338DAD0
+
+void SFSConfigManager_<>c___ctor(SFSConfigManager___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== private static void .cctor()  [RVA 0x338DAD8]
+// SFSConfigManager.<>c$$.cctor @ RVA 0x338DAD8
+
+void SFSConfigManager_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_04567bf8 & 1) == 0) {
+    FUN_01bab630(&SFSConfigManager_<>c_TypeInfo);
+    DAT_04567bf8 = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(SFSConfigManager_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  SFSConfigManager_<>c_TypeInfo->static_fields->__9 = (SFSConfigManager___c_o *)__this;
+  thunk_FUN_01c20e04(SFSConfigManager_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== internal void BIEBHEAAMKL()  [RVA 0x338DB40]
+// SFSConfigManager.<>c$$BIEBHEAAMKL @ RVA 0x338DB40
+
+void SFSConfigManager_<>c__BIEBHEAAMKL(SFSConfigManager___c_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void DIGDCFLCJNP()  [RVA 0x338DB44]
+// SFSConfigManager.<>c$$DIGDCFLCJNP @ RVA 0x338DB44
+
+void SFSConfigManager_<>c__DIGDCFLCJNP(SFSConfigManager___c_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

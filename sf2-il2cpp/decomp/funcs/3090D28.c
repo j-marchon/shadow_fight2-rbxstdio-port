@@ -1,0 +1,9 @@
+// NODLJPNGNBG$$EHMLCEKLCDD @ RVA 0x3090D28
+
+void NODLJPNGNBG__EHMLCEKLCDD(NODLJPNGNBG_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).ANAJGHJEEOC = CJNHFNHJHPE;
+  return;
+}
+

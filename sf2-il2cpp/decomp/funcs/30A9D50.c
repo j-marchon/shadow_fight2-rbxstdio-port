@@ -1,0 +1,9 @@
+// HCKHJECBIJC$$JICKDONAAKL @ RVA 0x30A9D50
+
+void HCKHJECBIJC__JICKDONAAKL(HCKHJECBIJC_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).GCDBBHAFJPN = CJNHFNHJHPE;
+  return;
+}
+

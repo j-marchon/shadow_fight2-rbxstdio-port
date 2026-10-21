@@ -1,0 +1,8 @@
+// JHMFOIIPEHB$$MLFJHBIJMAA @ RVA 0x30CF208
+
+PGICCMFLDPI_o * JHMFOIIPEHB__MLFJHBIJMAA(JHMFOIIPEHB_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).MIINPPOCPCN;
+}
+

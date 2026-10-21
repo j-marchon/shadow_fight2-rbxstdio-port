@@ -1,0 +1,8 @@
+// CNIGOFCKBGI$$NDNPGAKJLHM @ RVA 0x31B5750
+
+void CNIGOFCKBGI__NDNPGAKJLHM(CNIGOFCKBGI_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

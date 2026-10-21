@@ -1,0 +1,10 @@
+// KLFOGICEHJC$$NKGIJKODGAN @ RVA 0x2FED7E4
+
+void KLFOGICEHJC__NKGIJKODGAN(KLFOGICEHJC_o *__this,MethodInfo *method)
+
+{
+  KLFOGICEHJC__KNCDEHOMJKB(__this,method);
+  BOFEMGGNODC__FGNINNOOCCL((BOFEMGGNODC_o *)__this,(MethodInfo *)0x0);
+  return;
+}
+

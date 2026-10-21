@@ -1,0 +1,11 @@
+// FBKAOINMJEE$$DGCODECJJCC @ RVA 0x3554774
+
+bool FBKAOINMJEE__DGCODECJJCC(FBKAOINMJEE_o *__this,ECAIEGNAOAL_o *KDFMDHADHMD,MethodInfo *method)
+
+{
+  bool bVar1;
+  
+  bVar1 = KJFPGDFNFCL__DGCODECJJCC((KJFPGDFNFCL_o *)__this,KDFMDHADHMD,(MethodInfo *)0x0);
+  return bVar1;
+}
+

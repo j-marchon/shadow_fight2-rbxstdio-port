@@ -1,0 +1,8 @@
+// LCNCCGOAJBL$$KCBILPIAPHN @ RVA 0x34D7194
+
+int32_t LCNCCGOAJBL__KCBILPIAPHN(LCNCCGOAJBL_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

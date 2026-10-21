@@ -1,0 +1,9 @@
+// LMEMJBOBHBE$$EBKBEBMFKBF @ RVA 0x326DAE8
+
+void LMEMJBOBHBE__EBKBEBMFKBF(LMEMJBOBHBE_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MOCOKGFIJFP = CJNHFNHJHPE;
+  return;
+}
+

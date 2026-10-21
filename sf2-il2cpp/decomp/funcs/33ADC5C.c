@@ -1,0 +1,11 @@
+// ACAEKBNCODE$$KOIJJKBOMMG @ RVA 0x33ADC5C
+
+bool ACAEKBNCODE__KOIJJKBOMMG(ACAEKBNCODE_o *__this,int32_t OGPGLGPMEPD,MethodInfo *method)
+
+{
+  ONPHBGJDFBM_o *pOVar1;
+  
+  pOVar1 = ACAEKBNCODE__AOPEMKAGCCD(__this,OGPGLGPMEPD,method);
+  return pOVar1 != (ONPHBGJDFBM_o *)0x0;
+}
+

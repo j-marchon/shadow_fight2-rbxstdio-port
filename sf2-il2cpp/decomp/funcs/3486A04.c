@@ -1,0 +1,8 @@
+// MJGADOLMGKK$$KGGGBHEMAOO @ RVA 0x3486A04
+
+int32_t MJGADOLMGKK__KGGGBHEMAOO(MJGADOLMGKK_o *__this,MethodInfo *method)
+
+{
+  return 9;
+}
+

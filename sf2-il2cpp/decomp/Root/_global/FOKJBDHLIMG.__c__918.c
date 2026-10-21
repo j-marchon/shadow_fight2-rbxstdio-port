@@ -1,0 +1,85 @@
+// TypeDefIndex 918
+// Namespace: 
+// [Serializable]
+// private sealed class FOKJBDHLIMG.<>c
+// Fields:
+//   public static readonly FOKJBDHLIMG.<>c <>9; // 0x0
+//   public static Action<HEFOANCOHDC> <>9__14_0; // 0x8
+//   public static Action<HEFOANCOHDC> <>9__14_1; // 0x10
+//   public static Action<HEFOANCOHDC> <>9__14_2; // 0x18
+
+// ===== public void .ctor()  [RVA 0x30A0260]
+// FOKJBDHLIMG.<>c$$.ctor @ RVA 0x30A0260
+
+void FOKJBDHLIMG_<>c___ctor(FOKJBDHLIMG___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== internal void HJNOOBPICAJ(HEFOANCOHDC x)  [RVA 0x30A0268]
+// FOKJBDHLIMG.<>c$$HJNOOBPICAJ @ RVA 0x30A0268
+
+void FOKJBDHLIMG_<>c__HJNOOBPICAJ(FOKJBDHLIMG___c_o *__this,HEFOANCOHDC_o *x,MethodInfo *method)
+
+{
+  if (x != (HEFOANCOHDC_o *)0x0) {
+    HEFOANCOHDC__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== private static void .cctor()  [RVA 0x30A0280]
+// FOKJBDHLIMG.<>c$$.cctor @ RVA 0x30A0280
+
+void FOKJBDHLIMG_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_04566139 & 1) == 0) {
+    FUN_01bab630(&FOKJBDHLIMG_<>c_TypeInfo);
+    DAT_04566139 = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(FOKJBDHLIMG_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  FOKJBDHLIMG_<>c_TypeInfo->static_fields->__9 = (FOKJBDHLIMG___c_o *)__this;
+  thunk_FUN_01c20e04(FOKJBDHLIMG_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== internal void NHIAHDNNNFP(HEFOANCOHDC x)  [RVA 0x30A02E8]
+// FOKJBDHLIMG.<>c$$NHIAHDNNNFP @ RVA 0x30A02E8
+
+void FOKJBDHLIMG_<>c__NHIAHDNNNFP(FOKJBDHLIMG___c_o *__this,HEFOANCOHDC_o *x,MethodInfo *method)
+
+{
+  if (x != (HEFOANCOHDC_o *)0x0) {
+    HEFOANCOHDC__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal void COBLHDIBMAB(HEFOANCOHDC x)  [RVA 0x30A0300]
+// FOKJBDHLIMG.<>c$$COBLHDIBMAB @ RVA 0x30A0300
+
+void FOKJBDHLIMG_<>c__COBLHDIBMAB(FOKJBDHLIMG___c_o *__this,HEFOANCOHDC_o *x,MethodInfo *method)
+
+{
+  if (x != (HEFOANCOHDC_o *)0x0) {
+    HEFOANCOHDC__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

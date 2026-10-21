@@ -1,0 +1,9 @@
+// OJEHKJHEBID$$FBKACEPDFCG @ RVA 0x34B5498
+
+void OJEHKJHEBID__FBKACEPDFCG(OJEHKJHEBID_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).HAKDPKINDPN = CJNHFNHJHPE;
+  return;
+}
+

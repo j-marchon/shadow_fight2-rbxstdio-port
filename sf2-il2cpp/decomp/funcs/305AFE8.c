@@ -1,0 +1,9 @@
+// ACHLOMELAJE$$MPBJMDHDECF @ RVA 0x305AFE8
+
+void ACHLOMELAJE__MPBJMDHDECF(ACHLOMELAJE_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  FUN_03f939d0(DAT_04565e7f,__this,CJNHFNHJHPE);
+  return;
+}
+

@@ -1,0 +1,9 @@
+// IEFEBEDLHNN$$HBFDJOAMHNA @ RVA 0x308C144
+
+void IEFEBEDLHNN__HBFDJOAMHNA(IEFEBEDLHNN_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).FJHAMMNKBPN = CJNHFNHJHPE;
+  return;
+}
+

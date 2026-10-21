@@ -1,0 +1,9 @@
+// IDLLJHPDAHE.GEBJFKLEAMM$$EBAFJKOKCNA @ RVA 0x315EFC0
+
+System_String_o *
+IDLLJHPDAHE_GEBJFKLEAMM__EBAFJKOKCNA(IDLLJHPDAHE_GEBJFKLEAMM_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).KEAMOFCKGHH;
+}
+

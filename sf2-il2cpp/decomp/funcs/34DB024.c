@@ -1,0 +1,9 @@
+// DBOOKMFPFNI$$KCBJNKBILBK @ RVA 0x34DB024
+
+void DBOOKMFPFNI__KCBJNKBILBK(DBOOKMFPFNI_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).LPFKPMGBOGB = CJNHFNHJHPE;
+  return;
+}
+

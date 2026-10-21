@@ -1,0 +1,71 @@
+// TypeDefIndex 2085
+// Namespace: 
+// [Serializable]
+// private sealed class PCDNPOPANBA.<>c
+// Fields:
+//   public static readonly PCDNPOPANBA.<>c <>9; // 0x0
+//   public static Func<bool, bool> <>9__5_0; // 0x8
+
+// ===== private static void .cctor()  [RVA 0x32C32BC]
+// PCDNPOPANBA.<>c$$.cctor @ RVA 0x32C32BC
+
+void PCDNPOPANBA_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_045674da & 1) == 0) {
+    FUN_01bab630(&PCDNPOPANBA_<>c_TypeInfo);
+    DAT_045674da = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(PCDNPOPANBA_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  PCDNPOPANBA_<>c_TypeInfo->static_fields->__9 = (PCDNPOPANBA___c_o *)__this;
+  thunk_FUN_01c20e04(PCDNPOPANBA_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== internal bool FLNDAFMGAIG(bool success)  [RVA 0x32C332C]
+// PCDNPOPANBA.<>c$$FLNDAFMGAIG @ RVA 0x32C332C
+
+bool PCDNPOPANBA_<>c__FLNDAFMGAIG(PCDNPOPANBA___c_o *__this,bool success,MethodInfo *method)
+
+{
+  bool bVar1;
+  
+  if ((DAT_045674db & 1) == 0) {
+    FUN_01bab630(&NLPJLHOEAOE_TypeInfo);
+    DAT_045674db = 1;
+  }
+  if (success) {
+    if ((NLPJLHOEAOE_TypeInfo->_2).cctor_finished == 0) {
+      thunk_FUN_01ba7564();
+    }
+    if (DAT_04565b7d == '\0') {
+      FUN_01bab630(&NLPJLHOEAOE_TypeInfo);
+      DAT_04565b7d = '\x01';
+    }
+    if ((NLPJLHOEAOE_TypeInfo->_2).cctor_finished == 0) {
+      thunk_FUN_01ba7564();
+    }
+    bVar1 = NLPJLHOEAOE_TypeInfo->static_fields->_EDIEPEOIMDF_k__BackingField !=
+            (ACHLOMELAJE_o *)0x0;
+  }
+  else {
+    bVar1 = false;
+  }
+  return bVar1;
+}
+
+
+// ===== public void .ctor()  [RVA 0x32C3324]
+// PCDNPOPANBA.<>c$$.ctor @ RVA 0x32C3324
+
+void PCDNPOPANBA_<>c___ctor(PCDNPOPANBA___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+

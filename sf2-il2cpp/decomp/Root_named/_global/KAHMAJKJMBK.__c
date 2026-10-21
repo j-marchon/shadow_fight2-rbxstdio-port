@@ -1,0 +1,52 @@
+// TypeDefIndex 3065
+// Namespace: 
+// [Serializable]
+// private sealed class RulesInspector.<>c
+// Fields:
+//   public static readonly RulesInspector.<>c <>9; // 0x0
+//   public static Predicate<Rule> <>9__74_0; // 0x8
+
+// ===== internal bool GLENJCEFHDP(Rule x)  [RVA 0x34C36D8]
+// RulesInspector.<>c$$GLENJCEFHDP @ RVA 0x34C36D8
+
+bool RulesInspector_<>c__GLENJCEFHDP(RulesInspector___c_o *__this,Rule_o *x,MethodInfo *method)
+
+{
+  if (x != (Rule_o *)0x0) {
+    return (x->fields).KHKEGAKGNCN;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== private static void .cctor()  [RVA 0x34C36F0]
+// RulesInspector.<>c$$.cctor @ RVA 0x34C36F0
+
+void RulesInspector_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_0456861e & 1) == 0) {
+    FUN_01bab630(&RulesInspector_<>c_TypeInfo);
+    DAT_0456861e = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(RulesInspector_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  RulesInspector_<>c_TypeInfo->static_fields->__9 = (RulesInspector___c_o *)__this;
+  thunk_FUN_01c20e04(RulesInspector_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== public void .ctor()  [RVA 0x34C3758]
+// RulesInspector.<>c$$.ctor @ RVA 0x34C3758
+
+void RulesInspector_<>c___ctor(RulesInspector___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+

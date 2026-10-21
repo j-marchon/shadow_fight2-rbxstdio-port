@@ -1,0 +1,8 @@
+// AJNNHGGLGIF$$DGCODECJJCC @ RVA 0x35ADAA8
+
+bool AJNNHGGLGIF__DGCODECJJCC(AJNNHGGLGIF_o *__this,Il2CppObject *IMMNELPBGIF,MethodInfo *method)
+
+{
+  return true;
+}
+

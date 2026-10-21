@@ -1,0 +1,8 @@
+// KOGMOACEOAM$$FABBCMFIGBM @ RVA 0x32EA3A4
+
+ECENNHNBAME_o * KOGMOACEOAM__FABBCMFIGBM(KOGMOACEOAM_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).OAKOFJJIOFF;
+}
+

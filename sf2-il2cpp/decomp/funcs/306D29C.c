@@ -1,0 +1,9 @@
+// GMGALNFPLPA$$JOGFIELJEGG @ RVA 0x306D29C
+
+void GMGALNFPLPA__JOGFIELJEGG(GMGALNFPLPA_o *__this,float AFPEODJFNID,MethodInfo *method)
+
+{
+  (__this->fields).CMMGIKGFNOF = AFPEODJFNID;
+  return;
+}
+

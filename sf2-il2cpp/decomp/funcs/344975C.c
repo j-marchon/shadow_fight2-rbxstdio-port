@@ -1,0 +1,11 @@
+// NDPMLPGANCI$$IHCKINILJCB @ RVA 0x344975C
+
+void NDPMLPGANCI__IHCKINILJCB
+               (NDPMLPGANCI_o *__this,bool HEAHOADCLAP,bool GBCNCHFKMCD,MethodInfo *method)
+
+{
+  (__this->fields).BCCMIAOKPBI = HEAHOADCLAP;
+  NDPMLPGANCI__LLKODNOJFPJ(__this,GBCNCHFKMCD,(MethodInfo *)(ulong)GBCNCHFKMCD);
+  return;
+}
+

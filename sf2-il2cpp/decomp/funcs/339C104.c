@@ -1,0 +1,8 @@
+// GKODCFPKDOO$$KCBILPIAPHN @ RVA 0x339C104
+
+int32_t GKODCFPKDOO__KCBILPIAPHN(GKODCFPKDOO_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

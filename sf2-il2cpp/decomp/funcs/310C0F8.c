@@ -1,0 +1,10 @@
+// BDMABHJEEGD$$FFNNHKOKGEH @ RVA 0x310C0F8
+
+void BDMABHJEEGD__FFNNHKOKGEH(BDMABHJEEGD_o *__this,PGICCMFLDPI_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).IMNALGKNMNP = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

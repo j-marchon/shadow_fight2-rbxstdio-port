@@ -1,0 +1,8 @@
+// GJFEBGNFFBA$$MELICHAIADL @ RVA 0x3253864
+
+int32_t GJFEBGNFFBA__MELICHAIADL(bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  return (int32_t)CJNHFNHJHPE;
+}
+

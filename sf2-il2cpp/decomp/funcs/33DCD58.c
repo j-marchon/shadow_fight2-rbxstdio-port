@@ -1,0 +1,8 @@
+// BHOHBAAKHOJ$$KCBILPIAPHN @ RVA 0x33DCD58
+
+int32_t BHOHBAAKHOJ__KCBILPIAPHN(BHOHBAAKHOJ_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

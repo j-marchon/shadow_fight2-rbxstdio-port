@@ -1,0 +1,14 @@
+// EIABCPKDEBD$$OIDIMAIELLD @ RVA 0x3133F54
+
+MGNDHCBAPEN_int__int__o *
+EIABCPKDEBD__OIDIMAIELLD
+          (System_Xml_XmlNode_o *JHMENEKPIBO,int32_t KMKCEANBDGG,int32_t IEJIPPALEFB,
+          MethodInfo *method)
+
+{
+  MGNDHCBAPEN_int__int__o *pMVar1;
+  
+  pMVar1 = GIAMPEGMNHE__GGPIBJJKMPK(JHMENEKPIBO,KMKCEANBDGG,IEJIPPALEFB,(MethodInfo *)0x0);
+  return pMVar1;
+}
+

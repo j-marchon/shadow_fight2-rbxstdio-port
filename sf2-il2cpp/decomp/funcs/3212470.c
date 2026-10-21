@@ -1,0 +1,8 @@
+// DMDCBCGELBE$$KCBILPIAPHN @ RVA 0x3212470
+
+int32_t DMDCBCGELBE__KCBILPIAPHN(DMDCBCGELBE_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

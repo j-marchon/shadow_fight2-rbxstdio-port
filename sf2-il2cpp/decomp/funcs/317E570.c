@@ -1,0 +1,10 @@
+// ICBMOMGINFH$$EAAABDOJHNI @ RVA 0x317E570
+
+void ICBMOMGINFH__EAAABDOJHNI(ICBMOMGINFH_o *__this,BECIPDJBAOG_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MJIIHOLHNCK = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

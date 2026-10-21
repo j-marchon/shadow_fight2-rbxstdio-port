@@ -1,0 +1,244 @@
+// TypeDefIndex 3347
+// Namespace: 
+// [Serializable]
+// private sealed class JJPNLEPEAFM.<>c
+// Fields:
+//   public static readonly JJPNLEPEAFM.<>c <>9; // 0x0
+//   public static Action <>9__19_0; // 0x8
+//   public static Action<object> <>9__25_0; // 0x10
+//   public static Action<object> <>9__61_0; // 0x18
+
+// ===== internal void MHJDNNHFNAK(object o)  [RVA 0x3535A74]
+// JJPNLEPEAFM.<>c$$MHJDNNHFNAK @ RVA 0x3535A74
+
+void JJPNLEPEAFM_<>c__MHJDNNHFNAK(JJPNLEPEAFM___c_o *__this,Il2CppObject *o,MethodInfo *method)
+
+{
+  bool bVar1;
+  int *piVar2;
+  long lVar3;
+  GCIFMNHADDF_o *pGVar4;
+  Nekki_SF2_GUI_Dialogs_BaseDialog_o *pNVar5;
+  NDPMLPGANCI_o *__this_00;
+  FFHKCJAOPLI_o *__this_01;
+  UnityEngine_Object_o *x;
+  
+  if ((DAT_04568a8c & 1) == 0) {
+    FUN_01bab630(&FFHKCJAOPLI_TypeInfo);
+    FUN_01bab630(&int_TypeInfo);
+    FUN_01bab630(&UnityEngine_Object_TypeInfo);
+    FUN_01bab630(&Method_Nekki_SF2_GUI_Scene<ShopScene>_get_Current__);
+    DAT_04568a8c = 1;
+  }
+  if (o != (Il2CppObject *)0x0) {
+    if ((o->klass->_1).element_class != (int_TypeInfo->_1).element_class) {
+                    /* WARNING: Subroutine does not return */
+      FUN_01babc64(o);
+    }
+    piVar2 = (int *)thunk_FUN_01bda96c();
+    if (*piVar2 == 0) {
+      pGVar4 = GCIFMNHADDF__AIHNLLGNBLC((MethodInfo *)0x0);
+      if ((pGVar4 != (GCIFMNHADDF_o *)0x0) &&
+         (pNVar5 = (pGVar4->fields)._AOOFDKJAALA_k__BackingField,
+         pNVar5 != (Nekki_SF2_GUI_Dialogs_BaseDialog_o *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0x03635be8. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        (*(pNVar5->klass->vtable)._20_Close.methodPtr)
+                  (pNVar5,(pNVar5->klass->vtable)._20_Close.method);
+        return;
+      }
+    }
+    else {
+      lVar3 = *(long *)(Method_Nekki_SF2_GUI_Scene<ShopScene>_get_Current__ + 0x20);
+      if ((*(byte *)(lVar3 + 0x135) & 1) == 0) {
+        lVar3 = FUN_01b81620();
+      }
+      lVar3 = *(long *)(*(long *)(lVar3 + 0xc0) + 0x10);
+      if ((*(byte *)(lVar3 + 0x135) & 1) == 0) {
+        lVar3 = FUN_01b81620();
+      }
+      x = (UnityEngine_Object_o *)**(undefined8 **)(lVar3 + 0xb8);
+      if ((UnityEngine_Object_TypeInfo->_2).cctor_finished == 0) {
+        thunk_FUN_01ba7564(UnityEngine_Object_TypeInfo);
+      }
+      bVar1 = UnityEngine_Object__op_Inequality(x,(UnityEngine_Object_o *)0x0,(MethodInfo *)0x0);
+      if (bVar1) {
+        pGVar4 = GCIFMNHADDF__AIHNLLGNBLC((MethodInfo *)0x0);
+        if (pGVar4 != (GCIFMNHADDF_o *)0x0) {
+          GCIFMNHADDF__DEAPPIKAHEP(pGVar4,(MethodInfo *)0x0);
+          lVar3 = *(long *)(Method_Nekki_SF2_GUI_Scene<ShopScene>_get_Current__ + 0x20);
+          if ((*(byte *)(lVar3 + 0x135) & 1) == 0) {
+            lVar3 = FUN_01b81620();
+          }
+          lVar3 = *(long *)(*(long *)(lVar3 + 0xc0) + 0x10);
+          if ((*(byte *)(lVar3 + 0x135) & 1) == 0) {
+            lVar3 = FUN_01b81620();
+          }
+          if ((Nekki_SF2_GUI_Shop_ShopScene_o *)**(undefined8 **)(lVar3 + 0xb8) !=
+              (Nekki_SF2_GUI_Shop_ShopScene_o *)0x0) {
+            Nekki_SF2_GUI_Shop_ShopScene__GoToSlider
+                      ((Nekki_SF2_GUI_Shop_ShopScene_o *)**(undefined8 **)(lVar3 + 0xb8),6,true,
+                       (MethodInfo *)0x0);
+            return;
+          }
+        }
+      }
+      else {
+        __this_00 = NDPMLPGANCI__AIHNLLGNBLC((MethodInfo *)0x0);
+        __this_01 = (FFHKCJAOPLI_o *)thunk_FUN_01bda818(FFHKCJAOPLI_TypeInfo);
+        FFHKCJAOPLI___ctor(__this_01,6,(HOOAAGABMBL_o *)0x0,(System_String_o *)0x0,
+                           (System_String_o *)0x0,(MethodInfo *)0x0);
+        if (__this_00 != (NDPMLPGANCI_o *)0x0) {
+          NDPMLPGANCI__EKPAFDJIAGI
+                    (__this_00,4,(Il2CppObject *)__this_01,(System_Action_object__o *)0x0,true,
+                     (MethodInfo *)0x0);
+          return;
+        }
+      }
+    }
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal void AHKHKIMNEPA(object obj)  [RVA 0x3535C58]
+// JJPNLEPEAFM.<>c$$AHKHKIMNEPA @ RVA 0x3535C58
+
+void JJPNLEPEAFM_<>c__AHKHKIMNEPA(JJPNLEPEAFM___c_o *__this,Il2CppObject *obj,MethodInfo *method)
+
+{
+  bool bVar1;
+  CHDGOFBHAFI_o *pCVar2;
+  long lVar3;
+  LJNJDFEAIOH_o *__this_00;
+  Il2CppObject *extraout_x1;
+  Nekki_SF2_GUI_Dialogs_Raids_RaidViewContainer_o *pNVar4;
+  UnityEngine_Object_o *x;
+  LJNJDFEAIOH_o **ppLVar5;
+  AADKBCFCLKK_o *DKMMBMBMJBO;
+  
+  if ((DAT_04568a6c & 1) == 0) {
+    FUN_01bab630(&HJPEKDOPBHN_TypeInfo);
+    FUN_01bab630(&LJNJDFEAIOH_TypeInfo);
+    FUN_01bab630(&UnityEngine_Object_TypeInfo);
+    FUN_01bab630(&Method_Nekki_SF2_GUI_Scene<MapScene>_get_Current__);
+    DAT_04568a6c = 1;
+    obj = extraout_x1;
+  }
+  if (DAT_045660f3 == '\0') {
+    FUN_01bab630(&Nekki_SF2_GUI_Dialogs_Raids_RaidViewContainer_TypeInfo,obj);
+    DAT_045660f3 = '\x01';
+  }
+  pNVar4 = Nekki_SF2_GUI_Dialogs_Raids_RaidViewContainer_TypeInfo->static_fields->FFOLFLCMFCH;
+  if ((UnityEngine_Object_TypeInfo->_2).cctor_finished == 0) {
+    thunk_FUN_01ba7564();
+  }
+  bVar1 = UnityEngine_Object__op_Inequality
+                    ((UnityEngine_Object_o *)pNVar4,(UnityEngine_Object_o *)0x0,(MethodInfo *)0x0);
+  if (bVar1) {
+    if (pNVar4 == (Nekki_SF2_GUI_Dialogs_Raids_RaidViewContainer_o *)0x0) goto LAB_036314b0;
+    if ((pNVar4->fields).Controller != (LJNJDFEAIOH_o *)0x0) {
+      if ((HJPEKDOPBHN_TypeInfo->_2).cctor_finished == 0) {
+        thunk_FUN_01ba7564();
+      }
+      pCVar2 = HJPEKDOPBHN__FKBPIBLMJEF((MethodInfo *)0x0);
+      if (pCVar2 != (CHDGOFBHAFI_o *)0x0) {
+        CHDGOFBHAFI__MCGAMEJDDNG(pCVar2,(pNVar4->fields).Controller,(MethodInfo *)0x0);
+        return;
+      }
+      goto LAB_036314b0;
+    }
+    Nekki_SF2_GUI_Dialogs_Raids_RaidViewContainer__Close(pNVar4,(MethodInfo *)0x0);
+  }
+  lVar3 = *(long *)(Method_Nekki_SF2_GUI_Scene<MapScene>_get_Current__ + 0x20);
+  if ((*(byte *)(lVar3 + 0x135) & 1) == 0) {
+    lVar3 = FUN_01b81620();
+  }
+  lVar3 = *(long *)(*(long *)(lVar3 + 0xc0) + 0x10);
+  if ((*(byte *)(lVar3 + 0x135) & 1) == 0) {
+    lVar3 = FUN_01b81620();
+  }
+  x = (UnityEngine_Object_o *)**(undefined8 **)(lVar3 + 0xb8);
+  if ((UnityEngine_Object_TypeInfo->_2).cctor_finished == 0) {
+    thunk_FUN_01ba7564(UnityEngine_Object_TypeInfo);
+  }
+  bVar1 = UnityEngine_Object__op_Inequality(x,(UnityEngine_Object_o *)0x0,(MethodInfo *)0x0);
+  if (!bVar1) {
+    return;
+  }
+  pNVar4 = Nekki_SF2_GUI_Dialogs_Raids_RaidViewContainer__Instantiate((MethodInfo *)0x0);
+  if ((HJPEKDOPBHN_TypeInfo->_2).cctor_finished == 0) {
+    thunk_FUN_01ba7564(HJPEKDOPBHN_TypeInfo);
+  }
+  pCVar2 = HJPEKDOPBHN__FKBPIBLMJEF((MethodInfo *)0x0);
+  if (pCVar2 != (CHDGOFBHAFI_o *)0x0) {
+    DKMMBMBMJBO = (pCVar2->fields).AABMLCNHHPN;
+    __this_00 = (LJNJDFEAIOH_o *)thunk_FUN_01bda818(LJNJDFEAIOH_TypeInfo);
+    LJNJDFEAIOH___ctor(__this_00,pNVar4,DKMMBMBMJBO,(MethodInfo *)0x0);
+    pCVar2 = HJPEKDOPBHN__FKBPIBLMJEF((MethodInfo *)0x0);
+    if ((pCVar2 != (CHDGOFBHAFI_o *)0x0) &&
+       (CHDGOFBHAFI__MCGAMEJDDNG(pCVar2,__this_00,(MethodInfo *)0x0),
+       pNVar4 != (Nekki_SF2_GUI_Dialogs_Raids_RaidViewContainer_o *)0x0)) {
+      ppLVar5 = &(pNVar4->fields).Controller;
+      *ppLVar5 = __this_00;
+      thunk_FUN_01c20e04(ppLVar5,__this_00);
+      return;
+    }
+  }
+LAB_036314b0:
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== private static void .cctor()  [RVA 0x3535C5C]
+// JJPNLEPEAFM.<>c$$.cctor @ RVA 0x3535C5C
+
+void JJPNLEPEAFM_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_04568a8d & 1) == 0) {
+    FUN_01bab630(&JJPNLEPEAFM_<>c_TypeInfo);
+    DAT_04568a8d = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(JJPNLEPEAFM_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  JJPNLEPEAFM_<>c_TypeInfo->static_fields->__9 = (JJPNLEPEAFM___c_o *)__this;
+  thunk_FUN_01c20e04(JJPNLEPEAFM_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== public void .ctor()  [RVA 0x3535CC4]
+// JJPNLEPEAFM.<>c$$.ctor @ RVA 0x3535CC4
+
+void JJPNLEPEAFM_<>c___ctor(JJPNLEPEAFM___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== internal void AIDODMPPAEO()  [RVA 0x3535CCC]
+// JJPNLEPEAFM.<>c$$AIDODMPPAEO @ RVA 0x3535CCC
+
+void JJPNLEPEAFM_<>c__AIDODMPPAEO(JJPNLEPEAFM___c_o *__this,MethodInfo *method)
+
+{
+  NDPMLPGANCI_o *__this_00;
+  
+  __this_00 = NDPMLPGANCI__AIHNLLGNBLC((MethodInfo *)0x0);
+  if (__this_00 != (NDPMLPGANCI_o *)0x0) {
+    NDPMLPGANCI__EKPAFDJIAGI
+              (__this_00,8,(Il2CppObject *)0x0,(System_Action_object__o *)0x0,false,
+               (MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

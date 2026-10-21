@@ -1,0 +1,9 @@
+// EEHFEPPDBHL$$LFDAAKBMELE @ RVA 0x329C38C
+
+void EEHFEPPDBHL__LFDAAKBMELE(EEHFEPPDBHL_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).JODJOLBBJNI = CJNHFNHJHPE;
+  return;
+}
+

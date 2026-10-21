@@ -1,0 +1,13 @@
+// CHDGOFBHAFI$$GKJIBPANAGN @ RVA 0x3244BB8
+
+NODLJPNGNBG_o *
+CHDGOFBHAFI__GKJIBPANAGN(CHDGOFBHAFI_o *__this,NODLJPNGNBG_o *MOEKOMCEEMM,MethodInfo *method)
+
+{
+  NODLJPNGNBG_o *pNVar1;
+  MethodInfo *in_x3;
+  
+  pNVar1 = CHDGOFBHAFI__PKKGAFHHDMN(__this,(__this->fields).AABMLCNHHPN,MOEKOMCEEMM,in_x3);
+  return pNVar1;
+}
+

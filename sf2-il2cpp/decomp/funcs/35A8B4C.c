@@ -1,0 +1,9 @@
+// BNAIBAODKAK$$GEKCENMGCOC @ RVA 0x35A8B4C
+
+void BNAIBAODKAK__GEKCENMGCOC(BNAIBAODKAK_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).JFAEKJELFFN = CJNHFNHJHPE;
+  return;
+}
+

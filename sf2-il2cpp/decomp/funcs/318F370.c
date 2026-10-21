@@ -1,0 +1,8 @@
+// GOLIIBMCIEJ$$KCBILPIAPHN @ RVA 0x318F370
+
+int32_t GOLIIBMCIEJ__KCBILPIAPHN(GOLIIBMCIEJ_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

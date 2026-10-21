@@ -1,0 +1,9 @@
+// IEFEBEDLHNN$$EJCIECKGPFD @ RVA 0x308B5A4
+
+void IEFEBEDLHNN__EJCIECKGPFD(IEFEBEDLHNN_o *__this,float CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).DDMMFMCNPON = CJNHFNHJHPE;
+  return;
+}
+

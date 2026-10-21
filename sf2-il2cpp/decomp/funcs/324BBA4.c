@@ -1,0 +1,8 @@
+// ELBBEAGGAOH$$MFEFEPKFEJN @ RVA 0x324BBA4
+
+EKCGNICFDEO_o * ELBBEAGGAOH__MFEFEPKFEJN(ELBBEAGGAOH_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).DNKENJFJOMD;
+}
+

@@ -1,0 +1,8 @@
+// KFHIPIPCOHK$$JMCPMFMHCEA @ RVA 0x3419C20
+
+void KFHIPIPCOHK__JMCPMFMHCEA(KFHIPIPCOHK_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

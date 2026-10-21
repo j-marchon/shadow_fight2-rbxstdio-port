@@ -1,0 +1,568 @@
+// TypeDefIndex 3197
+// Namespace: 
+// [Serializable]
+// private sealed class Model.<>c
+// Fields:
+//   public static readonly Model.<>c <>9; // 0x0
+//   public static Action<Model.EAOIGPODIAI> <>9__301_0; // 0x8
+//   public static Action<Model.EAOIGPODIAI> <>9__301_1; // 0x10
+//   public static Action<Model.EAOIGPODIAI> <>9__301_2; // 0x18
+//   public static Action<Model.EAOIGPODIAI> <>9__301_3; // 0x20
+//   public static Action<Model.EAOIGPODIAI> <>9__301_4; // 0x28
+//   public static Action<Model.EAOIGPODIAI> <>9__301_5; // 0x30
+//   public static Action<Model> <>9__301_6; // 0x38
+//   public static Action<Model> <>9__301_7; // 0x40
+//   public static Action<ActionEffect> <>9__301_8; // 0x48
+//   public static Action<ActionStopEffect> <>9__301_9; // 0x50
+//   public static Action<ActionStopFollowEffect> <>9__301_10; // 0x58
+//   public static Action<Model.EAOIGPODIAI> <>9__301_11; // 0x60
+//   public static Action<Model.EAOIGPODIAI> <>9__301_12; // 0x68
+//   public static Action<Model.GNGMELOMKNL> <>9__301_13; // 0x70
+//   public static Action<Model.GNGMELOMKNL> <>9__301_14; // 0x78
+//   public static Action<Model> <>9__301_15; // 0x80
+//   public static Action <>9__301_16; // 0x88
+//   public static Action<ActionShakeScreen> <>9__301_17; // 0x90
+//   public static Action<Model.BJHDMBGMMEP> <>9__301_18; // 0x98
+//   public static Action<ActionZoomEffect> <>9__301_19; // 0xA0
+//   public static Action<ActionCameraWeight> <>9__301_20; // 0xA8
+//   public static Action<ActionEnableBossAbility> <>9__301_21; // 0xB0
+//   public static Action<Model.EAOIGPODIAI> <>9__515_0; // 0xB8
+//   public static Action<Model.EAOIGPODIAI> <>9__515_1; // 0xC0
+//   public static Action<Model.EAOIGPODIAI> <>9__515_2; // 0xC8
+//   public static Action<Model.EAOIGPODIAI> <>9__515_3; // 0xD0
+//   public static Action<Model.EAOIGPODIAI> <>9__515_4; // 0xD8
+//   public static Action<Model.EAOIGPODIAI> <>9__515_5; // 0xE0
+//   public static Action<Model> <>9__515_6; // 0xE8
+//   public static Action<Model> <>9__515_7; // 0xF0
+//   public static Action<ActionEffect> <>9__515_8; // 0xF8
+//   public static Action<ActionStopEffect> <>9__515_9; // 0x100
+//   public static Action<ActionStopFollowEffect> <>9__515_10; // 0x108
+//   public static Action<Model.EAOIGPODIAI> <>9__515_11; // 0x110
+//   public static Action<Model.EAOIGPODIAI> <>9__515_12; // 0x118
+//   public static Action<Model.GNGMELOMKNL> <>9__515_13; // 0x120
+//   public static Action<Model.GNGMELOMKNL> <>9__515_14; // 0x128
+//   public static Action<Model> <>9__515_15; // 0x130
+//   public static Action <>9__515_16; // 0x138
+//   public static Action<ActionShakeScreen> <>9__515_17; // 0x140
+//   public static Action<Model.BJHDMBGMMEP> <>9__515_18; // 0x148
+//   public static Action<ActionZoomEffect> <>9__515_19; // 0x150
+//   public static Action<ActionCameraWeight> <>9__515_20; // 0x158
+//   public static Action<ActionEnableBossAbility> <>9__515_21; // 0x160
+//   public static Action<OIGAJAKPPEO> <>9__548_0; // 0x168
+
+// ===== internal void DCKAHKFDIOE(Model.EAOIGPODIAI <p0>)  [RVA 0x34FA43C]
+// Model.<>c$$DCKAHKFDIOE @ RVA 0x34FA43C
+
+void Model_<>c__DCKAHKFDIOE
+               (Model___c_o *__this,Model_EAOIGPODIAI_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void MDKKEDGLHGN(Model.EAOIGPODIAI <p0>)  [RVA 0x34FA440]
+// Model.<>c$$MDKKEDGLHGN @ RVA 0x34FA440
+
+void Model_<>c__MDKKEDGLHGN
+               (Model___c_o *__this,Model_EAOIGPODIAI_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void GKALMEAGLNB(Model.GNGMELOMKNL <p0>)  [RVA 0x34FA444]
+// Model.<>c$$GKALMEAGLNB @ RVA 0x34FA444
+
+void Model_<>c__GKALMEAGLNB
+               (Model___c_o *__this,Model_GNGMELOMKNL_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void JJPPDKODKOB(Model <p0>)  [RVA 0x34FA448]
+// Model.<>c$$JJPPDKODKOB @ RVA 0x34FA448
+
+void Model_<>c__JJPPDKODKOB(Model___c_o *__this,Model_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void EOCFFBHFLFE(ActionEffect <p0>)  [RVA 0x34FA44C]
+// Model.<>c$$EOCFFBHFLFE @ RVA 0x34FA44C
+
+void Model_<>c__EOCFFBHFLFE(Model___c_o *__this,ActionEffect_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void AJOLALBIMIK(Model.GNGMELOMKNL <p0>)  [RVA 0x34FA450]
+// Model.<>c$$AJOLALBIMIK @ RVA 0x34FA450
+
+void Model_<>c__AJOLALBIMIK
+               (Model___c_o *__this,Model_GNGMELOMKNL_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void KPAKAPCAMAJ(ActionEffect <p0>)  [RVA 0x34FA454]
+// Model.<>c$$KPAKAPCAMAJ @ RVA 0x34FA454
+
+void Model_<>c__KPAKAPCAMAJ(Model___c_o *__this,ActionEffect_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void OKLHFEDMJDI(Model.EAOIGPODIAI <p0>)  [RVA 0x34FA458]
+// Model.<>c$$OKLHFEDMJDI @ RVA 0x34FA458
+
+void Model_<>c__OKLHFEDMJDI
+               (Model___c_o *__this,Model_EAOIGPODIAI_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void EKOEHCAGOOO(Model.BJHDMBGMMEP <p0>)  [RVA 0x34FA45C]
+// Model.<>c$$EKOEHCAGOOO @ RVA 0x34FA45C
+
+void Model_<>c__EKOEHCAGOOO
+               (Model___c_o *__this,Model_BJHDMBGMMEP_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void MJPJBOHOHFI(Model.EAOIGPODIAI <p0>)  [RVA 0x34FA460]
+// Model.<>c$$MJPJBOHOHFI @ RVA 0x34FA460
+
+void Model_<>c__MJPJBOHOHFI
+               (Model___c_o *__this,Model_EAOIGPODIAI_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void KAJJMNFHDMB(ActionStopEffect <p0>)  [RVA 0x34FA464]
+// Model.<>c$$KAJJMNFHDMB @ RVA 0x34FA464
+
+void Model_<>c__KAJJMNFHDMB(Model___c_o *__this,ActionStopEffect_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void EPEGDBBOIFN(Model.EAOIGPODIAI <p0>)  [RVA 0x34FA468]
+// Model.<>c$$EPEGDBBOIFN @ RVA 0x34FA468
+
+void Model_<>c__EPEGDBBOIFN
+               (Model___c_o *__this,Model_EAOIGPODIAI_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void IJFNBCMMMHH(ActionShakeScreen <p0>)  [RVA 0x34FA46C]
+// Model.<>c$$IJFNBCMMMHH @ RVA 0x34FA46C
+
+void Model_<>c__IJFNBCMMMHH(Model___c_o *__this,ActionShakeScreen_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void HFAFLEMNLHH(Model.EAOIGPODIAI <p0>)  [RVA 0x34FA470]
+// Model.<>c$$HFAFLEMNLHH @ RVA 0x34FA470
+
+void Model_<>c__HFAFLEMNLHH
+               (Model___c_o *__this,Model_EAOIGPODIAI_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void AEEAFMDAEDJ(Model.EAOIGPODIAI <p0>)  [RVA 0x34FA474]
+// Model.<>c$$AEEAFMDAEDJ @ RVA 0x34FA474
+
+void Model_<>c__AEEAFMDAEDJ
+               (Model___c_o *__this,Model_EAOIGPODIAI_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void DBPDHEBIGCI(ActionCameraWeight <p0>)  [RVA 0x34FA478]
+// Model.<>c$$DBPDHEBIGCI @ RVA 0x34FA478
+
+void Model_<>c__DBPDHEBIGCI(Model___c_o *__this,ActionCameraWeight_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void AELJGAPFHFH(Model <p0>)  [RVA 0x34FA47C]
+// Model.<>c$$AELJGAPFHFH @ RVA 0x34FA47C
+
+void Model_<>c__AELJGAPFHFH(Model___c_o *__this,Model_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void CMGFPLHKGCH(Model <p0>)  [RVA 0x34FA480]
+// Model.<>c$$CMGFPLHKGCH @ RVA 0x34FA480
+
+void Model_<>c__CMGFPLHKGCH(Model___c_o *__this,Model_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void PFDKGGAIOHA(ActionStopFollowEffect <p0>)  [RVA 0x34FA484]
+// Model.<>c$$PFDKGGAIOHA @ RVA 0x34FA484
+
+void Model_<>c__PFDKGGAIOHA(Model___c_o *__this,ActionStopFollowEffect_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void AANHHHJNLFH(ActionEnableBossAbility <p0>)  [RVA 0x34FA488]
+// Model.<>c$$AANHHHJNLFH @ RVA 0x34FA488
+
+void Model_<>c__AANHHHJNLFH(Model___c_o *__this,ActionEnableBossAbility_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void PLAFEJNEBLO(Model <p0>)  [RVA 0x34FA48C]
+// Model.<>c$$PLAFEJNEBLO @ RVA 0x34FA48C
+
+void Model_<>c__PLAFEJNEBLO(Model___c_o *__this,Model_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void DJJHDPEIDOH(Model.EAOIGPODIAI <p0>)  [RVA 0x34FA490]
+// Model.<>c$$DJJHDPEIDOH @ RVA 0x34FA490
+
+void Model_<>c__DJJHDPEIDOH
+               (Model___c_o *__this,Model_EAOIGPODIAI_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void IKFIPLPBKCJ(Model.EAOIGPODIAI <p0>)  [RVA 0x34FA494]
+// Model.<>c$$IKFIPLPBKCJ @ RVA 0x34FA494
+
+void Model_<>c__IKFIPLPBKCJ
+               (Model___c_o *__this,Model_EAOIGPODIAI_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void ODPHONGBOMF(Model.EAOIGPODIAI <p0>)  [RVA 0x34FA498]
+// Model.<>c$$ODPHONGBOMF @ RVA 0x34FA498
+
+void Model_<>c__ODPHONGBOMF
+               (Model___c_o *__this,Model_EAOIGPODIAI_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void HNJHIPNGNKE(Model <p0>)  [RVA 0x34FA49C]
+// Model.<>c$$HNJHIPNGNKE @ RVA 0x34FA49C
+
+void Model_<>c__HNJHIPNGNKE(Model___c_o *__this,Model_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void CFKHJNJICKH(ActionCameraWeight <p0>)  [RVA 0x34FA4A0]
+// Model.<>c$$CFKHJNJICKH @ RVA 0x34FA4A0
+
+void Model_<>c__CFKHJNJICKH(Model___c_o *__this,ActionCameraWeight_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void IBHOFKPCCOL(ActionShakeScreen <p0>)  [RVA 0x34FA4A4]
+// Model.<>c$$IBHOFKPCCOL @ RVA 0x34FA4A4
+
+void Model_<>c__IBHOFKPCCOL(Model___c_o *__this,ActionShakeScreen_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void OPAMDEFCDGJ(ActionEnableBossAbility <p0>)  [RVA 0x34FA4A8]
+// Model.<>c$$OPAMDEFCDGJ @ RVA 0x34FA4A8
+
+void Model_<>c__OPAMDEFCDGJ(Model___c_o *__this,ActionEnableBossAbility_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void JAIDBACIGOM(Model.EAOIGPODIAI <p0>)  [RVA 0x34FA4AC]
+// Model.<>c$$JAIDBACIGOM @ RVA 0x34FA4AC
+
+void Model_<>c__JAIDBACIGOM
+               (Model___c_o *__this,Model_EAOIGPODIAI_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void EHCHAOFGNBA(Model.EAOIGPODIAI <p0>)  [RVA 0x34FA4B0]
+// Model.<>c$$EHCHAOFGNBA @ RVA 0x34FA4B0
+
+void Model_<>c__EHCHAOFGNBA
+               (Model___c_o *__this,Model_EAOIGPODIAI_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void IIGHOMOAJCK(Model.EAOIGPODIAI <p0>)  [RVA 0x34FA4B4]
+// Model.<>c$$IIGHOMOAJCK @ RVA 0x34FA4B4
+
+void Model_<>c__IIGHOMOAJCK
+               (Model___c_o *__this,Model_EAOIGPODIAI_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void OIEGCHOPBCO(Model.GNGMELOMKNL <p0>)  [RVA 0x34FA4B8]
+// Model.<>c$$OIEGCHOPBCO @ RVA 0x34FA4B8
+
+void Model_<>c__OIEGCHOPBCO
+               (Model___c_o *__this,Model_GNGMELOMKNL_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void OCFIBJJNHGC()  [RVA 0x34FA4BC]
+// Model.<>c$$OCFIBJJNHGC @ RVA 0x34FA4BC
+
+void Model_<>c__OCFIBJJNHGC(Model___c_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void FGAOPDECOEJ(ActionZoomEffect <p0>)  [RVA 0x34FA4C0]
+// Model.<>c$$FGAOPDECOEJ @ RVA 0x34FA4C0
+
+void Model_<>c__FGAOPDECOEJ(Model___c_o *__this,ActionZoomEffect_o *_p0_,MethodInfo *method)
+
+{
+                    /* try { // try from 035fa4c0 to 036fa5f7 has its CatchHandler @ 035fa4c0
+                       catch() { ... } // from try @ 035fa4c0 with catch @ 035fa4c0
+                       catch() { ... } // from try @ 035fa624 with catch @ 035fa4c0
+                       catch() { ... } // from try @ 035faa84 with catch @ 035fa4c0
+                       catch() { ... } // from try @ 035faad4 with catch @ 035fa4c0
+                       catch() { ... } // from try @ 035fab0c with catch @ 035fa4c0
+                       catch() { ... } // from try @ 035fab48 with catch @ 035fa4c0
+                       catch() { ... } // from try @ 035fab64 with catch @ 035fa4c0
+                       catch() { ... } // from try @ 035fab94 with catch @ 035fa4c0 */
+  return;
+}
+
+
+// ===== internal void BDBINMPDOOH(Model.EAOIGPODIAI <p0>)  [RVA 0x34FA4C4]
+// Model.<>c$$BDBINMPDOOH @ RVA 0x34FA4C4
+
+void Model_<>c__BDBINMPDOOH
+               (Model___c_o *__this,Model_EAOIGPODIAI_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void CEAPMHKJPAM(ActionStopFollowEffect <p0>)  [RVA 0x34FA4C8]
+// Model.<>c$$CEAPMHKJPAM @ RVA 0x34FA4C8
+
+void Model_<>c__CEAPMHKJPAM(Model___c_o *__this,ActionStopFollowEffect_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void EDOMJEPOABM()  [RVA 0x34FA4CC]
+// Model.<>c$$EDOMJEPOABM @ RVA 0x34FA4CC
+
+void Model_<>c__EDOMJEPOABM(Model___c_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void DMLKODBDEGK(OIGAJAKPPEO x)  [RVA 0x34FA4D0]
+// Model.<>c$$DMLKODBDEGK @ RVA 0x34FA4D0
+
+void Model_<>c__DMLKODBDEGK(Model___c_o *__this,OIGAJAKPPEO_o *x,MethodInfo *method)
+
+{
+  if (x != (OIGAJAKPPEO_o *)0x0) {
+    Model__RandomizeObscuredVars((Model_o *)x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal void JAOEAFKOJKN(Model.EAOIGPODIAI <p0>)  [RVA 0x34FA4E8]
+// Model.<>c$$JAOEAFKOJKN @ RVA 0x34FA4E8
+
+void Model_<>c__JAOEAFKOJKN
+               (Model___c_o *__this,Model_EAOIGPODIAI_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== public void .ctor()  [RVA 0x34FA4EC]
+// Model.<>c$$.ctor @ RVA 0x34FA4EC
+
+void Model_<>c___ctor(Model___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== internal void PNKBHNJAFCB(Model <p0>)  [RVA 0x34FA4F4]
+// Model.<>c$$PNKBHNJAFCB @ RVA 0x34FA4F4
+
+void Model_<>c__PNKBHNJAFCB(Model___c_o *__this,Model_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void ADBKLFBGPLF(ActionStopEffect <p0>)  [RVA 0x34FA4F8]
+// Model.<>c$$ADBKLFBGPLF @ RVA 0x34FA4F8
+
+void Model_<>c__ADBKLFBGPLF(Model___c_o *__this,ActionStopEffect_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void KJFIFKLKJBB(Model.GNGMELOMKNL <p0>)  [RVA 0x34FA4FC]
+// Model.<>c$$KJFIFKLKJBB @ RVA 0x34FA4FC
+
+void Model_<>c__KJFIFKLKJBB
+               (Model___c_o *__this,Model_GNGMELOMKNL_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== private static void .cctor()  [RVA 0x34FA500]
+// Model.<>c$$.cctor @ RVA 0x34FA500
+
+void Model_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_04568819 & 1) == 0) {
+    FUN_01bab630(&Model_<>c_TypeInfo);
+    DAT_04568819 = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(Model_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  Model_<>c_TypeInfo->static_fields->__9 = (Model___c_o *)__this;
+  thunk_FUN_01c20e04(Model_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== internal void PIABMGKFBAG(ActionZoomEffect <p0>)  [RVA 0x34FA568]
+// Model.<>c$$PIABMGKFBAG @ RVA 0x34FA568
+
+void Model_<>c__PIABMGKFBAG(Model___c_o *__this,ActionZoomEffect_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void JJPCLJGCCHK(Model.EAOIGPODIAI <p0>)  [RVA 0x34FA56C]
+// Model.<>c$$JJPCLJGCCHK @ RVA 0x34FA56C
+
+void Model_<>c__JJPCLJGCCHK
+               (Model___c_o *__this,Model_EAOIGPODIAI_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void DJHJFBEPBBD(Model.BJHDMBGMMEP <p0>)  [RVA 0x34FA570]
+// Model.<>c$$DJHJFBEPBBD @ RVA 0x34FA570
+
+void Model_<>c__DJHJFBEPBBD
+               (Model___c_o *__this,Model_BJHDMBGMMEP_o *_p0_,MethodInfo *method)
+
+{
+  return;
+}
+

@@ -1,0 +1,8 @@
+// LJGNFBFLOCD$$KCBILPIAPHN @ RVA 0x3296258
+
+int32_t LJGNFBFLOCD__KCBILPIAPHN(LJGNFBFLOCD_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

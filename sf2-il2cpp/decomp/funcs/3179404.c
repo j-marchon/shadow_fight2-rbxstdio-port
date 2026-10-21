@@ -1,0 +1,9 @@
+// MEPKDDGONGE$$IAJAOBGCOKE @ RVA 0x3179404
+
+void MEPKDDGONGE__IAJAOBGCOKE(MEPKDDGONGE_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).CCCDGBNPNOD = CJNHFNHJHPE;
+  return;
+}
+

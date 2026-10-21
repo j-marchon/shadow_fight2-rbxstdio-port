@@ -1,0 +1,16 @@
+// ACHLOMELAJE$$LHFJEODGOJL @ RVA 0x3060154
+
+PAMEPBLOLPB_o *
+ACHLOMELAJE__LHFJEODGOJL(ACHLOMELAJE_o *__this,DNELIPCHKLK_o *DBIAAJNKHLH,MethodInfo *method)
+
+{
+  PAMEPBLOLPB_o *pPVar1;
+  
+  pPVar1 = ACHLOMELAJE__EKOLJIPEEHA(__this,DBIAAJNKHLH,method);
+  if (pPVar1 != (PAMEPBLOLPB_o *)0x0) {
+    return pPVar1;
+  }
+  pPVar1 = ACHLOMELAJE__CNEIEMLJKNB(__this,DBIAAJNKHLH,method);
+  return pPVar1;
+}
+

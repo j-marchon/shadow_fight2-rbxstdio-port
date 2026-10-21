@@ -1,0 +1,13 @@
+// PKHLGDMJPMF$$PGLILPKGILI @ RVA 0x319B838
+
+PKHLGDMJPMF_o * PKHLGDMJPMF__PGLILPKGILI(PKHLGDMJPMF_o *__this,float OOGPLJBADCD,MethodInfo *method)
+
+{
+  PKHLGDMJPMF_Fields PVar1;
+  
+  PVar1.JOLEIODMLFL = (__this->fields).JOLEIODMLFL * OOGPLJBADCD;
+  PVar1.OHHDBINAJCB = (__this->fields).OHHDBINAJCB * OOGPLJBADCD;
+  __this->fields = PVar1;
+  return __this;
+}
+

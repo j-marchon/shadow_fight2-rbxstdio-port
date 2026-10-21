@@ -1,0 +1,9 @@
+// EKCGNICFDEO$$EKDHEGGGAAP @ RVA 0x351AE6C
+
+void EKCGNICFDEO__EKDHEGGGAAP(EKCGNICFDEO_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).CMKMIFIIGBK = CJNHFNHJHPE;
+  return;
+}
+

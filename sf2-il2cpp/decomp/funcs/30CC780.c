@@ -1,0 +1,8 @@
+// JIBAEMHNBOF$$KCBILPIAPHN @ RVA 0x30CC780
+
+int32_t JIBAEMHNBOF__KCBILPIAPHN(JIBAEMHNBOF_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

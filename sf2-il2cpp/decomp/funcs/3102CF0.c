@@ -1,0 +1,8 @@
+// HAHJLJGIPLC$$KCBILPIAPHN @ RVA 0x3102CF0
+
+int32_t HAHJLJGIPLC__KCBILPIAPHN(HAHJLJGIPLC_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

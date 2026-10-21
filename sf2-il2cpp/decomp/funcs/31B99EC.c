@@ -1,0 +1,9 @@
+// IFKFDFGNMMN$$PPLFNEHDHCM @ RVA 0x31B99EC
+
+BNAIBAODKAK_array * IFKFDFGNMMN__PPLFNEHDHCM(IFKFDFGNMMN_o *__this,MethodInfo *method)
+
+{
+  IFKFDFGNMMN__JPNNAPGPLDH(__this,method);
+  return (__this->fields).OFNAAFHJIOB;
+}
+

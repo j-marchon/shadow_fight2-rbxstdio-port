@@ -1,0 +1,8 @@
+// KAMBBJFPLGM$$OFJOPJKBAKF @ RVA 0x311A674
+
+EOLFEKNCPLM_o * KAMBBJFPLGM__OFJOPJKBAKF(KAMBBJFPLGM_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).FLAFELDNABC;
+}
+

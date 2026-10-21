@@ -1,0 +1,8 @@
+// FLDDBCHHMNC$$KCBILPIAPHN @ RVA 0x30A73D4
+
+int32_t FLDDBCHHMNC__KCBILPIAPHN(FLDDBCHHMNC_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

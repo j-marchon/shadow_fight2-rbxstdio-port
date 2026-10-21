@@ -1,0 +1,8 @@
+// NMLHEJAFMIL$$KCBILPIAPHN @ RVA 0x33A002C
+
+int32_t NMLHEJAFMIL__KCBILPIAPHN(NMLHEJAFMIL_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

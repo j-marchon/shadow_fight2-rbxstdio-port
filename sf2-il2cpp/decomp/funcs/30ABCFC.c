@@ -1,0 +1,9 @@
+// IMBPILFKGEO$$LELJCPPHELP @ RVA 0x30ABCFC
+
+void IMBPILFKGEO__LELJCPPHELP(IMBPILFKGEO_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).GJMFPDLPLNH = CJNHFNHJHPE;
+  return;
+}
+

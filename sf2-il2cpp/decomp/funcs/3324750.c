@@ -1,0 +1,9 @@
+// Nekki.SF2.GUI.Dialogs.Raids.RaidLeaderboardView$$get_IsDestroyed @ RVA 0x3324750
+
+bool Nekki_SF2_GUI_Dialogs_Raids_RaidLeaderboardView__get_IsDestroyed
+               (Nekki_SF2_GUI_Dialogs_Raids_RaidLeaderboardView_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields)._BOGAKJOFOEK_k__BackingField;
+}
+

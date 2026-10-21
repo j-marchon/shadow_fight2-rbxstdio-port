@@ -1,0 +1,8 @@
+// JGICAMMODIC$$KCBILPIAPHN @ RVA 0x325CEA0
+
+int32_t JGICAMMODIC__KCBILPIAPHN(JGICAMMODIC_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

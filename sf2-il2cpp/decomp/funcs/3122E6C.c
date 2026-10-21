@@ -1,0 +1,9 @@
+// KMDOLFBIGNC$$HHDBPBCFLOK @ RVA 0x3122E6C
+
+void KMDOLFBIGNC__HHDBPBCFLOK(KMDOLFBIGNC_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).HCBJCMDLODI = CJNHFNHJHPE;
+  return;
+}
+

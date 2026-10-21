@@ -1,0 +1,8 @@
+// NLBPJNEGNNM$$JCKINNMKHBA @ RVA 0x3556E2C
+
+KAMBBJFPLGM_o * NLBPJNEGNNM__JCKINNMKHBA(NLBPJNEGNNM_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).OPHCNELIOLD;
+}
+

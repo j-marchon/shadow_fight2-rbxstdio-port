@@ -1,0 +1,17 @@
+// PLIIGOCLJDL$$CFGNIDNCLIL @ RVA 0x3519084
+
+bool PLIIGOCLJDL__CFGNIDNCLIL(PLIIGOCLJDL_o *__this,EOLFEKNCPLM_o *HEHMPFLAEGE,MethodInfo *method)
+
+{
+  JMDPBFOCHHP_AEJBILHMFDB_DFCNIHGANOH_o *pJVar1;
+  GKLPDMLELJF_o *pGVar2;
+  
+  if ((HEHMPFLAEGE != (EOLFEKNCPLM_o *)0x0) &&
+     (pGVar2 = (HEHMPFLAEGE->fields).MCOPPCNPAHF, pGVar2 != (GKLPDMLELJF_o *)0x0)) {
+    pJVar1 = PLIIGOCLJDL__PDEBCPPCEJP(__this,(pGVar2->fields).ANAJGHJEEOC,method);
+    return pJVar1 != (JMDPBFOCHHP_AEJBILHMFDB_DFCNIHGANOH_o *)0x0;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

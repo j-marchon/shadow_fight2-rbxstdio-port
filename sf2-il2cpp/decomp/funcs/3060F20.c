@@ -1,0 +1,8 @@
+// ACHLOMELAJE$$HCEOAOBJFAF @ RVA 0x3060F20
+
+GGHCLMEFIGO_o * ACHLOMELAJE__HCEOAOBJFAF(ACHLOMELAJE_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).OIDPLCLELEN;
+}
+

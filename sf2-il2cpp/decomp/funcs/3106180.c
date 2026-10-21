@@ -1,0 +1,8 @@
+// OPNFCOGALLI$$FABBCMFIGBM @ RVA 0x3106180
+
+ECENNHNBAME_o * OPNFCOGALLI__FABBCMFIGBM(OPNFCOGALLI_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).NDBPNFLAKDL;
+}
+

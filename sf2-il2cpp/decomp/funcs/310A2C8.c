@@ -1,0 +1,8 @@
+// OPNFCOGALLI$$GFOJGDAGOGD @ RVA 0x310A2C8
+
+CNDPAJOLKFN_o * OPNFCOGALLI__GFOJGDAGOGD(OPNFCOGALLI_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).NMLGPAGEDKH;
+}
+

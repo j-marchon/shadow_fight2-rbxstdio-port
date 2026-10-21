@@ -1,0 +1,8 @@
+// BKKENCMPLLF$$AFAFFPBDCHJ @ RVA 0x328F78C
+
+int32_t BKKENCMPLLF__AFAFFPBDCHJ(BKKENCMPLLF_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

@@ -1,0 +1,12 @@
+// HOOAAGABMBL$$OFPDGIIFPLB @ RVA 0x30E9A68
+
+void HOOAAGABMBL__OFPDGIIFPLB(HOOAAGABMBL_o *__this,int32_t GMALOFEKAHI,MethodInfo *method)
+
+{
+  MethodInfo *in_x3;
+  
+  HOOAAGABMBL__OFPDGIIFPLB(__this,(__this->fields).DLBFLPBOJNI,GMALOFEKAHI,in_x3);
+  HOOAAGABMBL__OFPDGIIFPLB(__this,(__this->fields).LDIJKGOHMPG,GMALOFEKAHI,in_x3);
+  return;
+}
+

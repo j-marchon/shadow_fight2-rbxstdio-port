@@ -1,0 +1,13 @@
+// NJJFMGMKALF$$MAHFCKJGBPP @ RVA 0x3414478
+
+void NJJFMGMKALF__MAHFCKJGBPP(NJJFMGMKALF_o *__this,PKHMIGFEJCL_o *AAJBIMFNMBB,MethodInfo *method)
+
+{
+  MethodInfo *method_00;
+  
+  method_00 = (MethodInfo *)0x0;
+  BOFEMGGNODC__MAHFCKJGBPP((BOFEMGGNODC_o *)__this,AAJBIMFNMBB,(MethodInfo *)0x0);
+  NJJFMGMKALF__EGMMOMCKKOP(__this,AAJBIMFNMBB,method_00);
+  return;
+}
+

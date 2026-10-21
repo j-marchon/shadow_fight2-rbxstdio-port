@@ -1,0 +1,22 @@
+// CNDPAJOLKFN$$JHLJELAKADM @ RVA 0x307BC64
+
+float CNDPAJOLKFN__JHLJELAKADM
+                (CNDPAJOLKFN_o *DEGCNPFIIPL,CNDPAJOLKFN_o *GDIHOLFJJGL,CNDPAJOLKFN_o *CMKGDNKJNNC,
+                MethodInfo *method)
+
+{
+  float fVar1;
+  float fVar2;
+  
+  if (((GDIHOLFJJGL != (CNDPAJOLKFN_o *)0x0) &&
+      ((GDIHOLFJJGL->fields).PPOPAMHBMGG = 0.0, DEGCNPFIIPL != (CNDPAJOLKFN_o *)0x0)) &&
+     ((DEGCNPFIIPL->fields).PPOPAMHBMGG = 0.0, CMKGDNKJNNC != (CNDPAJOLKFN_o *)0x0)) {
+    (CMKGDNKJNNC->fields).PPOPAMHBMGG = 0.0;
+    fVar1 = CNDPAJOLKFN__NAHOANMJIEB(GDIHOLFJJGL,CMKGDNKJNNC,(MethodInfo *)CMKGDNKJNNC);
+    fVar2 = CNDPAJOLKFN__NAHOANMJIEB(GDIHOLFJJGL,DEGCNPFIIPL,(MethodInfo *)CMKGDNKJNNC);
+    return SQRT(fVar1) / SQRT(fVar2);
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

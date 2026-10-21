@@ -1,0 +1,13 @@
+// KJFLIAMBKEB$$JFADPAIDDLN @ RVA 0x331EDD0
+
+void KJFLIAMBKEB__JFADPAIDDLN(int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  if ((DAT_04567833 & 1) == 0) {
+    FUN_01bab630(&KJFLIAMBKEB_TypeInfo);
+    DAT_04567833 = 1;
+  }
+  KJFLIAMBKEB_TypeInfo->static_fields->DLOIHNBNGDB = CJNHFNHJHPE;
+  return;
+}
+

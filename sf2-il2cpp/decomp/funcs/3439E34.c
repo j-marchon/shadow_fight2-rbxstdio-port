@@ -1,0 +1,10 @@
+// AADKBCFCLKK$$EKMGFBCDOOA @ RVA 0x3439E34
+
+void AADKBCFCLKK__EKMGFBCDOOA(AADKBCFCLKK_o *__this,KDADMJGPAOM_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).LHFLMBNKPHF = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

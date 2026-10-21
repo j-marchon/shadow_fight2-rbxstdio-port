@@ -1,0 +1,9 @@
+// CBPENMDOJDB$$AKJBHHAHMPG @ RVA 0x3103880
+
+void CBPENMDOJDB__AKJBHHAHMPG(CBPENMDOJDB_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).DIILCCNFMEB = CJNHFNHJHPE;
+  return;
+}
+

@@ -1,0 +1,8 @@
+// FCJBEKHDLAF$$GOCMCMCCBAD @ RVA 0x33E4378
+
+PJKHAJKEHEL_o * FCJBEKHDLAF__GOCMCMCCBAD(FCJBEKHDLAF_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).JEDELFOBLEN;
+}
+

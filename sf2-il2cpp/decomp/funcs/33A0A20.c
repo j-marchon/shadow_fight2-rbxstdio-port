@@ -1,0 +1,9 @@
+// LFELBGMCDHD.<>c$$.ctor @ RVA 0x33A0A20
+
+void LFELBGMCDHD_<>c___ctor(LFELBGMCDHD___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+

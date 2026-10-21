@@ -1,0 +1,9 @@
+// BJEFHIBMHEJ$$LIIAPFHHMEF @ RVA 0x310B738
+
+void BJEFHIBMHEJ__LIIAPFHHMEF(BJEFHIBMHEJ_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).PDABDFMKGDH = CJNHFNHJHPE;
+  return;
+}
+

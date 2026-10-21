@@ -1,0 +1,8 @@
+// LJBDMDHNKFM$$JFGBPBOCOIC @ RVA 0x32DD388
+
+bool LJBDMDHNKFM__JFGBPBOCOIC(LJBDMDHNKFM_o *__this,int32_t HJDMBDBJEFL,MethodInfo *method)
+
+{
+  return HJDMBDBJEFL == 0;
+}
+

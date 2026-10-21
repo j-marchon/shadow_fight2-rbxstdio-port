@@ -1,0 +1,8 @@
+// CNIGOFCKBGI$$DFBPBPPNIBC @ RVA 0x31B5748
+
+bool CNIGOFCKBGI__DFBPBPPNIBC(CNIGOFCKBGI_o *__this,JMIFGHKOLCL_o *LDOOMGABFME,MethodInfo *method)
+
+{
+  return false;
+}
+

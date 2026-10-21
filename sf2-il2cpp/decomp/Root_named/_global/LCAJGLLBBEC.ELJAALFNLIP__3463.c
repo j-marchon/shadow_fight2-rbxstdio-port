@@ -1,0 +1,13 @@
+// TypeDefIndex 3463
+// Namespace: 
+// public enum LCAJGLLBBEC.ELJAALFNLIP
+// Fields:
+//   public int value__; // 0x0
+//   public const LCAJGLLBBEC.ELJAALFNLIP MODEL_NULL = 0;
+//   public const LCAJGLLBBEC.ELJAALFNLIP MODEL_THIS = 1;
+//   public const LCAJGLLBBEC.ELJAALFNLIP MODEL_OTHER = 2;
+//   public const LCAJGLLBBEC.ELJAALFNLIP MODEL_PARENT = 3;
+//   public const LCAJGLLBBEC.ELJAALFNLIP MODEL_CHILD = 4;
+//   public const LCAJGLLBBEC.ELJAALFNLIP MODEL_BOTH = 5;
+//   public const LCAJGLLBBEC.ELJAALFNLIP MODEL_ENEMY_CHILD = 6;
+//   public const LCAJGLLBBEC.ELJAALFNLIP MODEL_SUPER_PARENT = 7;

@@ -1,0 +1,9 @@
+// OJFPEINHCDP$$LNEGJIIBIJI @ RVA 0x3292F88
+
+void OJFPEINHCDP__LNEGJIIBIJI(OJFPEINHCDP_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).KLOGBBKOLFL = CJNHFNHJHPE;
+  return;
+}
+

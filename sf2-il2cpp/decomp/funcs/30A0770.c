@@ -1,0 +1,8 @@
+// MIFGMMCPKPO$$KCBILPIAPHN @ RVA 0x30A0770
+
+int32_t MIFGMMCPKPO__KCBILPIAPHN(MIFGMMCPKPO_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

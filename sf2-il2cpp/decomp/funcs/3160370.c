@@ -1,0 +1,8 @@
+// EOMEJCPONEO$$KCBILPIAPHN @ RVA 0x3160370
+
+int32_t EOMEJCPONEO__KCBILPIAPHN(EOMEJCPONEO_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

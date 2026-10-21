@@ -1,0 +1,8 @@
+// JGMAPPPOEOF$$JFGBPBOCOIC @ RVA 0x332B978
+
+bool JGMAPPPOEOF__JFGBPBOCOIC(JGMAPPPOEOF_o *__this,int32_t HJDMBDBJEFL,MethodInfo *method)
+
+{
+  return true;
+}
+

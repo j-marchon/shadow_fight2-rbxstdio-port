@@ -1,0 +1,8 @@
+// OFGMILFFIDI$$FOCNMCOBBEK @ RVA 0x35B05C4
+
+int32_t OFGMILFFIDI__FOCNMCOBBEK(OFGMILFFIDI_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

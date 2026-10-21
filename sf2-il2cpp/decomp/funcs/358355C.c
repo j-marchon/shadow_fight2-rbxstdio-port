@@ -1,0 +1,8 @@
+// ACBCKKIEOCE$$DFBPBPPNIBC @ RVA 0x358355C
+
+bool ACBCKKIEOCE__DFBPBPPNIBC(ACBCKKIEOCE_o *__this,JMIFGHKOLCL_o *LDOOMGABFME,MethodInfo *method)
+
+{
+  return true;
+}
+

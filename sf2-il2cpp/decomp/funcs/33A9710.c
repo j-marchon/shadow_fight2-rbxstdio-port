@@ -1,0 +1,8 @@
+// NKDMOOEFPHJ$$BBGBNLKMBMG @ RVA 0x33A9710
+
+OLKKAIFGGAK_o * NKDMOOEFPHJ__BBGBNLKMBMG(NKDMOOEFPHJ_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).PDKOKGEECDC;
+}
+

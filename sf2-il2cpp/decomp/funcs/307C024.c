@@ -1,0 +1,9 @@
+// CNDPAJOLKFN$$DPAFBGIJBDL @ RVA 0x307C024
+
+void CNDPAJOLKFN__DPAFBGIJBDL(CNDPAJOLKFN_o *__this,float CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).PPOPAMHBMGG = CJNHFNHJHPE;
+  return;
+}
+

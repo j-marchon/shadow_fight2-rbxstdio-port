@@ -1,0 +1,9 @@
+// HDKIINEJFCF$$NDJAJHFFPKP @ RVA 0x30A2440
+
+void HDKIINEJFCF__NDJAJHFFPKP(HDKIINEJFCF_o *__this,MethodInfo *method)
+
+{
+  BOFEMGGNODC__FGNINNOOCCL((BOFEMGGNODC_o *)__this,(MethodInfo *)0x0);
+  return;
+}
+

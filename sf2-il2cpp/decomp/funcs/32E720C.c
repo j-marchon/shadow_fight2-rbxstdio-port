@@ -1,0 +1,169 @@
+// LGFLCMBIFCN$$.ctor @ RVA 0x32E720C
+
+/* WARNING: Removing unreachable block (ram,0x033e7598) */
+
+void LGFLCMBIFCN___ctor(LGFLCMBIFCN_o *__this,System_Xml_XmlNode_o *JHMENEKPIBO,MethodInfo *method)
+
+{
+  byte bVar1;
+  uint uVar2;
+  System_Collections_Generic_List_BFBONKPKBNL__o *pSVar3;
+  System_Xml_XmlAttributeCollection_o *__this_00;
+  System_Xml_XmlAttribute_o *LBJNDMNEJJB;
+  System_String_o *pSVar4;
+  long *plVar5;
+  undefined8 *puVar6;
+  System_Xml_XmlNode_o *JHMENEKPIBO_00;
+  BFBONKPKBNL_o *__this_01;
+  long lVar7;
+  BFBONKPKBNL_array *pBVar8;
+  ulong uVar9;
+  int *piVar10;
+  System_Collections_Generic_List_BFBONKPKBNL__o **ppSVar11;
+  
+  if ((DAT_04567619 & 1) == 0) {
+    FUN_01bab630(&BFBONKPKBNL_TypeInfo);
+    FUN_01bab630(&System_IDisposable_TypeInfo);
+    FUN_01bab630(&System_Collections_IEnumerator_TypeInfo);
+    FUN_01bab630(&Method_System_Collections_Generic_List<BFBONKPKBNL>_Add__);
+    FUN_01bab630(&Method_System_Collections_Generic_List<BFBONKPKBNL>__ctor__);
+    FUN_01bab630(&System_Collections_Generic_List<BFBONKPKBNL>_TypeInfo);
+    FUN_01bab630(&System_Xml_XmlNode_TypeInfo);
+    FUN_01bab630(&StringLiteral_9327);
+    DAT_04567619 = 1;
+  }
+  pSVar3 = (System_Collections_Generic_List_BFBONKPKBNL__o *)
+           thunk_FUN_01bda818(System_Collections_Generic_List<BFBONKPKBNL>_TypeInfo);
+  System_Collections_Generic_List<object>___ctor
+            ((System_Collections_Generic_List_object__o *)pSVar3,
+             Method_System_Collections_Generic_List<BFBONKPKBNL>__ctor__);
+  ppSVar11 = &(__this->fields).PJGPKMDGOIE;
+  *ppSVar11 = pSVar3;
+  thunk_FUN_01c20e04(ppSVar11,pSVar3);
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  if ((JHMENEKPIBO != (System_Xml_XmlNode_o *)0x0) &&
+     (__this_00 = (System_Xml_XmlAttributeCollection_o *)
+                  (*(JHMENEKPIBO->klass->vtable)._16_get_Attributes.methodPtr)
+                            (JHMENEKPIBO,(JHMENEKPIBO->klass->vtable)._16_get_Attributes.method),
+     __this_00 != (System_Xml_XmlAttributeCollection_o *)0x0)) {
+    LBJNDMNEJJB = System_Xml_XmlAttributeCollection__get_ItemOf
+                            (__this_00,StringLiteral_9327,(MethodInfo *)0x0);
+    pSVar4 = EIABCPKDEBD__JPKEHIBGOEM(LBJNDMNEJJB,(System_String_o *)0x0,(MethodInfo *)0x0);
+    (__this->fields)._COIPKAKHDFP_k__BackingField = pSVar4;
+    thunk_FUN_01c20e04(&__this->fields,pSVar4);
+    plVar5 = (long *)(*(JHMENEKPIBO->klass->vtable)._13_get_ChildNodes.methodPtr)
+                               (JHMENEKPIBO,(JHMENEKPIBO->klass->vtable)._13_get_ChildNodes.method);
+    if (plVar5 != (long *)0x0) {
+      plVar5 = (long *)(**(code **)(*plVar5 + 0x1b8))(plVar5,*(undefined8 *)(*plVar5 + 0x1c0));
+      if (plVar5 == (long *)0x0) {
+                    /* WARNING: Subroutine does not return */
+        FUN_01bab8c8();
+      }
+      do {
+        lVar7 = *plVar5;
+        uVar9 = (ulong)*(ushort *)(lVar7 + 0x12e);
+        if (uVar9 != 0) {
+          piVar10 = (int *)(*(long *)(lVar7 + 0xb0) + 8);
+          do {
+            if (*(System_Collections_IEnumerator_c **)(piVar10 + -2) ==
+                System_Collections_IEnumerator_TypeInfo) {
+              puVar6 = (undefined8 *)(lVar7 + (long)*piVar10 * 0x10 + 0x138);
+              goto LAB_033e73d0;
+            }
+            uVar9 = uVar9 - 1;
+            piVar10 = piVar10 + 4;
+          } while (uVar9 != 0);
+        }
+        puVar6 = (undefined8 *)FUN_01b81914(plVar5,System_Collections_IEnumerator_TypeInfo,0);
+LAB_033e73d0:
+        uVar9 = (*(code *)*puVar6)(plVar5,puVar6[1]);
+        if ((uVar9 & 1) == 0) {
+          plVar5 = (long *)thunk_FUN_01bda71c(plVar5,System_IDisposable_TypeInfo);
+          if (plVar5 == (long *)0x0) {
+            return;
+          }
+          lVar7 = *plVar5;
+          uVar9 = (ulong)*(ushort *)(lVar7 + 0x12e);
+          if (uVar9 == 0) goto LAB_033e7538;
+          piVar10 = (int *)(*(long *)(lVar7 + 0xb0) + 8);
+          goto LAB_033e7520;
+        }
+        lVar7 = *plVar5;
+        uVar9 = (ulong)*(ushort *)(lVar7 + 0x12e);
+        if (uVar9 != 0) {
+          piVar10 = (int *)(*(long *)(lVar7 + 0xb0) + 8);
+          do {
+            if (*(System_Collections_IEnumerator_c **)(piVar10 + -2) ==
+                System_Collections_IEnumerator_TypeInfo) {
+              puVar6 = (undefined8 *)(lVar7 + (long)(*piVar10 + 1) * 0x10 + 0x138);
+              goto LAB_033e7430;
+            }
+            uVar9 = uVar9 - 1;
+            piVar10 = piVar10 + 4;
+          } while (uVar9 != 0);
+        }
+        puVar6 = (undefined8 *)FUN_01b81914(plVar5,System_Collections_IEnumerator_TypeInfo,1);
+LAB_033e7430:
+        JHMENEKPIBO_00 = (System_Xml_XmlNode_o *)(*(code *)*puVar6)(plVar5,puVar6[1]);
+        if (JHMENEKPIBO_00 != (System_Xml_XmlNode_o *)0x0) {
+          bVar1 = (System_Xml_XmlNode_TypeInfo->_2).naturalAligment;
+                    /* try { // try from 033e746c to 034e7473 has its CatchHandler @ 033e7628 */
+          if (((JHMENEKPIBO_00->klass->_2).naturalAligment < bVar1) ||
+             ((JHMENEKPIBO_00->klass->_2).typeHierarchy[(ulong)bVar1 - 1] !=
+              (Il2CppClass *)System_Xml_XmlNode_TypeInfo)) {
+                    /* WARNING: Subroutine does not return */
+            FUN_01babc64(JHMENEKPIBO_00);
+          }
+        }
+        pSVar3 = *ppSVar11;
+        __this_01 = (BFBONKPKBNL_o *)thunk_FUN_01bda818(BFBONKPKBNL_TypeInfo);
+                    /* try { // try from 033e7480 to 034e748b has its CatchHandler @ 033e7624 */
+        BFBONKPKBNL___ctor(__this_01,JHMENEKPIBO_00,(MethodInfo *)0x0);
+        lVar7 = Method_System_Collections_Generic_List<BFBONKPKBNL>_Add__;
+        if (pSVar3 == (System_Collections_Generic_List_BFBONKPKBNL__o *)0x0) {
+                    /* WARNING: Subroutine does not return */
+          FUN_01bab8c8();
+        }
+        pBVar8 = (pSVar3->fields)._items;
+                    /* try { // try from 033e749c to 034e74a7 has its CatchHandler @ 033e7618 */
+        (pSVar3->fields)._version = (pSVar3->fields)._version + 1;
+        if (pBVar8 == (BFBONKPKBNL_array *)0x0) {
+                    /* WARNING: Subroutine does not return */
+          FUN_01bab8c8();
+        }
+        uVar2 = (pSVar3->fields)._size;
+                    /* try { // try from 033e74b4 to 034e74bf has its CatchHandler @ 033e7620 */
+        if (uVar2 < (uint)pBVar8->max_length) {
+          (pSVar3->fields)._size = uVar2 + 1;
+          pBVar8->m_Items[(int)uVar2] = __this_01;
+          thunk_FUN_01c20e04(pBVar8->m_Items + (int)uVar2,__this_01);
+        }
+        else {
+                    /* try { // try from 033e74d4 to 034e74df has its CatchHandler @ 033e7614 */
+                    /* try { // try from 033e74e0 to 034e760b has its CatchHandler @ 033e70e4 */
+          System_Collections_Generic_List<object>__AddWithResize
+                    ((System_Collections_Generic_List_object__o *)pSVar3,(Il2CppObject *)__this_01,
+                     *(MethodInfo_26E4DAC **)(*(long *)(*(long *)(lVar7 + 0x20) + 0xc0) + 0x70));
+        }
+      } while( true );
+    }
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+  while( true ) {
+    uVar9 = uVar9 - 1;
+    piVar10 = piVar10 + 4;
+    if (uVar9 == 0) break;
+LAB_033e7520:
+    if (*(System_IDisposable_c **)(piVar10 + -2) == System_IDisposable_TypeInfo) {
+      puVar6 = (undefined8 *)(lVar7 + (long)*piVar10 * 0x10 + 0x138);
+      goto LAB_033e7554;
+    }
+  }
+LAB_033e7538:
+  puVar6 = (undefined8 *)FUN_01b81914(plVar5,System_IDisposable_TypeInfo,0);
+LAB_033e7554:
+  (*(code *)*puVar6)(plVar5,puVar6[1]);
+  return;
+}
+

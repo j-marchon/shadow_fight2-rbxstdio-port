@@ -1,0 +1,9 @@
+// PJKHAJKEHEL$$GEDPAFCOLAC @ RVA 0x30452E4
+
+void PJKHAJKEHEL__GEDPAFCOLAC(PJKHAJKEHEL_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).HMDADENHOFD = CJNHFNHJHPE;
+  return;
+}
+

@@ -1,0 +1,8 @@
+// KJKIPGGDKLG$$KGGGBHEMAOO @ RVA 0x32CB0D4
+
+int32_t KJKIPGGDKLG__KGGGBHEMAOO(KJKIPGGDKLG_o *__this,MethodInfo *method)
+
+{
+  return 0xc;
+}
+

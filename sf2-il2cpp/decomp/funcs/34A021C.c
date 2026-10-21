@@ -1,0 +1,9 @@
+// MADFGOOGMDP$$NDJAJHFFPKP @ RVA 0x34A021C
+
+void MADFGOOGMDP__NDJAJHFFPKP(MADFGOOGMDP_o *__this,MethodInfo *method)
+
+{
+  BOFEMGGNODC__FGNINNOOCCL((BOFEMGGNODC_o *)__this,(MethodInfo *)0x0);
+  return;
+}
+

@@ -1,0 +1,10 @@
+// OJHLANCHFPC$$EOAPIKJCIMD @ RVA 0x34D8E40
+
+void OJHLANCHFPC__EOAPIKJCIMD(OJHLANCHFPC_o *__this,PGICCMFLDPI_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).OBKCJGGIEMF = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

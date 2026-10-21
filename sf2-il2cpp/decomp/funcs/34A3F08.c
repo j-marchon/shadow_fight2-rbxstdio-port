@@ -1,0 +1,9 @@
+// MGDJPGGPDJI$$KHICGIIIKOL @ RVA 0x34A3F08
+
+void MGDJPGGPDJI__KHICGIIIKOL(MGDJPGGPDJI_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).BDPMJNBHKIJ = CJNHFNHJHPE;
+  return;
+}
+

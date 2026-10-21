@@ -1,0 +1,9 @@
+// KAMBBJFPLGM$$PGOIFJBNJCE @ RVA 0x311A4E4
+
+void KAMBBJFPLGM__PGOIFJBNJCE(KAMBBJFPLGM_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).EMOLIBOCKJK = CJNHFNHJHPE;
+  return;
+}
+

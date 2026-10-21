@@ -1,0 +1,9 @@
+// ECENNHNBAME$$NPBOBIHOOBN @ RVA 0x30162D4
+
+void ECENNHNBAME__NPBOBIHOOBN(ECENNHNBAME_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).BNLDAAPGEHO = CJNHFNHJHPE;
+  return;
+}
+

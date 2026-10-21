@@ -1,0 +1,8 @@
+// FLPGGMKDJIE$$KCBILPIAPHN @ RVA 0x31BB694
+
+int32_t FLPGGMKDJIE__KCBILPIAPHN(FLPGGMKDJIE_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

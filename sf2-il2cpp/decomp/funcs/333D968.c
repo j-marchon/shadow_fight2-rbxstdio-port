@@ -1,0 +1,8 @@
+// EDCPLIPMJOH$$KCBILPIAPHN @ RVA 0x333D968
+
+int32_t EDCPLIPMJOH__KCBILPIAPHN(EDCPLIPMJOH_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

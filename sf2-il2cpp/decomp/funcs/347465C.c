@@ -1,0 +1,8 @@
+// IFAMAAGNCBJ$$GIMAJOGGBHM @ RVA 0x347465C
+
+void IFAMAAGNCBJ__GIMAJOGGBHM(IFAMAAGNCBJ_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

@@ -1,0 +1,8 @@
+// PKNBJJPHAKI$$CKCPEBFBCNL @ RVA 0x30E14B0
+
+GBJGJEGPHKD_o * PKNBJJPHAKI__CKCPEBFBCNL(PKNBJJPHAKI_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).JBPKNAKOHLP;
+}
+

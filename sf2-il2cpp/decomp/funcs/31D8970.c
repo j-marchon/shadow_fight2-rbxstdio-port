@@ -1,0 +1,8 @@
+// EDIHAKCJAMI$$PEBKOLDMALK @ RVA 0x31D8970
+
+FFJHOBJFOLI_o * EDIHAKCJAMI__PEBKOLDMALK(EDIHAKCJAMI_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).KGDFAPCDMPE;
+}
+

@@ -1,0 +1,8 @@
+// CADIGFIBFEN$$MLFJHBIJMAA @ RVA 0x3565A28
+
+PGICCMFLDPI_o * CADIGFIBFEN__MLFJHBIJMAA(CADIGFIBFEN_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).MIINPPOCPCN;
+}
+

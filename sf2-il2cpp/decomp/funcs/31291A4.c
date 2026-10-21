@@ -1,0 +1,10 @@
+// JMCDPBKILIN$$IIBFFDJAKFB @ RVA 0x31291A4
+
+void JMCDPBKILIN__IIBFFDJAKFB(JMCDPBKILIN_o *__this,KAMBBJFPLGM_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).OPHCNELIOLD = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

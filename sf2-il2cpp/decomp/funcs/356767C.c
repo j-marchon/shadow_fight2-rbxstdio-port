@@ -1,0 +1,8 @@
+// AGJLPAAEJEF$$JFGBPBOCOIC @ RVA 0x356767C
+
+bool AGJLPAAEJEF__JFGBPBOCOIC(AGJLPAAEJEF_o *__this,int32_t HJDMBDBJEFL,MethodInfo *method)
+
+{
+  return true;
+}
+

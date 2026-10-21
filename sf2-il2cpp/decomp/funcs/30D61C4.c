@@ -1,0 +1,8 @@
+// GPGJPJNJMBP$$KCBILPIAPHN @ RVA 0x30D61C4
+
+int32_t GPGJPJNJMBP__KCBILPIAPHN(GPGJPJNJMBP_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

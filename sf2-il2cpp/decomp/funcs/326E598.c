@@ -1,0 +1,8 @@
+// ECNCJPCKOLN$$MJGNIHLBKJJ @ RVA 0x326E598
+
+bool ECNCJPCKOLN__MJGNIHLBKJJ(int32_t OHLKNCPBCBL,MethodInfo *method)
+
+{
+  return (OHLKNCPBCBL & 0xfffffffeU) == 500;
+}
+

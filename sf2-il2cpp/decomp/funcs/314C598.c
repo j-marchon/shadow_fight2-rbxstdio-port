@@ -1,0 +1,13 @@
+// BKIEPGOFNHA$$NFOKEJDBDPI @ RVA 0x314C598
+
+double BKIEPGOFNHA__NFOKEJDBDPI(BKIEPGOFNHA_o *__this,int32_t OGPGLGPMEPD,MethodInfo *method)
+
+{
+  System_String_o *ODAMFBHJKIH;
+  double dVar1;
+  
+  ODAMFBHJKIH = HPEENDCCJND__FECLPLFHJAL((HPEENDCCJND_o *)__this,OGPGLGPMEPD,(MethodInfo *)0x0);
+  dVar1 = BKOHHDBBJML__HNIHOIAMDPC(ODAMFBHJKIH,(MethodInfo *)0x0);
+  return dVar1;
+}
+

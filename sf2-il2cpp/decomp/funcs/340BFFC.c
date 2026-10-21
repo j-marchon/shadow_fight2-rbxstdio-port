@@ -1,0 +1,9 @@
+// MGNPHCAAEIO$$DJNLKDGCHIO @ RVA 0x340BFFC
+
+void MGNPHCAAEIO__DJNLKDGCHIO(MethodInfo *method)
+
+{
+  FUN_03f93688(DAT_04568039);
+  return;
+}
+

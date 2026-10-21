@@ -1,0 +1,132 @@
+// TypeDefIndex 2811
+// Namespace: 
+// [Serializable]
+// private sealed class PerkInfoItem.<>c
+// Fields:
+//   public static readonly PerkInfoItem.<>c <>9; // 0x0
+//   public static Func<Vector3f, float> <>9__70_0; // 0x8
+//   public static Func<Vector3f, float> <>9__71_0; // 0x10
+//   public static Func<Vector3f, float> <>9__72_0; // 0x18
+//   public static Action<ObscuredString> <>9__86_0; // 0x20
+//   public static Action<ACCKJOAAEKB> <>9__86_1; // 0x28
+//   public static Action<NJPBBPOABKP> <>9__86_2; // 0x30
+
+// ===== public void .ctor()  [RVA 0x3423004]
+// PerkInfoItem.<>c$$.ctor @ RVA 0x3423004
+
+void PerkInfoItem_<>c___ctor(PerkInfoItem___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== internal void FIGOGJKPHGM(ObscuredString x)  [RVA 0x342300C]
+// PerkInfoItem.<>c$$FIGOGJKPHGM @ RVA 0x342300C
+
+void PerkInfoItem_<>c__FIGOGJKPHGM
+               (PerkInfoItem___c_o *__this,CodeStage_AntiCheat_ObscuredTypes_ObscuredString_o *x,
+               MethodInfo *method)
+
+{
+  if (x != (CodeStage_AntiCheat_ObscuredTypes_ObscuredString_o *)0x0) {
+    CodeStage_AntiCheat_ObscuredTypes_ObscuredString__GPJJDLBJOAL(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== private static void .cctor()  [RVA 0x3423024]
+// PerkInfoItem.<>c$$.cctor @ RVA 0x3423024
+
+void PerkInfoItem_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_045680f0 & 1) == 0) {
+    FUN_01bab630(&PerkInfoItem_<>c_TypeInfo);
+    DAT_045680f0 = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(PerkInfoItem_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  PerkInfoItem_<>c_TypeInfo->static_fields->__9 = (PerkInfoItem___c_o *)__this;
+  thunk_FUN_01c20e04(PerkInfoItem_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== internal float KOFMAKGKBKK(Vector3f v)  [RVA 0x342308C]
+// PerkInfoItem.<>c$$KOFMAKGKBKK @ RVA 0x342308C
+
+float PerkInfoItem_<>c__KOFMAKGKBKK(PerkInfoItem___c_o *__this,Vector3f_o *v,MethodInfo *method)
+
+{
+  if (v != (Vector3f_o *)0x0) {
+    return (v->fields).PPOPAMHBMGG;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal void PCNLMANCIDF(ACCKJOAAEKB x)  [RVA 0x34230A4]
+// PerkInfoItem.<>c$$PCNLMANCIDF @ RVA 0x34230A4
+
+void PerkInfoItem_<>c__PCNLMANCIDF(PerkInfoItem___c_o *__this,ACCKJOAAEKB_o *x,MethodInfo *method)
+
+{
+  if (x != (ACCKJOAAEKB_o *)0x0) {
+    ACCKJOAAEKB__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal float BIBIKIEFNPF(Vector3f v)  [RVA 0x34230BC]
+// PerkInfoItem.<>c$$BIBIKIEFNPF @ RVA 0x34230BC
+
+float PerkInfoItem_<>c__BIBIKIEFNPF(PerkInfoItem___c_o *__this,Vector3f_o *v,MethodInfo *method)
+
+{
+  if (v != (Vector3f_o *)0x0) {
+    return (v->fields).super.OHHDBINAJCB;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal void JOAFJDKEKGN(NJPBBPOABKP x)  [RVA 0x34230D4]
+// PerkInfoItem.<>c$$JOAFJDKEKGN @ RVA 0x34230D4
+
+void PerkInfoItem_<>c__JOAFJDKEKGN(PerkInfoItem___c_o *__this,NJPBBPOABKP_o *x,MethodInfo *method)
+
+{
+  if (x != (NJPBBPOABKP_o *)0x0) {
+    NJPBBPOABKP__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal float FJEOFNGDDFG(Vector3f v)  [RVA 0x34230EC]
+// PerkInfoItem.<>c$$FJEOFNGDDFG @ RVA 0x34230EC
+
+float PerkInfoItem_<>c__FJEOFNGDDFG(PerkInfoItem___c_o *__this,Vector3f_o *v,MethodInfo *method)
+
+{
+  if (v != (Vector3f_o *)0x0) {
+    return (v->fields).super.JOLEIODMLFL;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

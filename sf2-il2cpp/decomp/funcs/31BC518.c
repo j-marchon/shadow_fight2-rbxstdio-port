@@ -1,0 +1,9 @@
+// FAACNCKMEJM$$HKEFFKGODCC @ RVA 0x31BC518
+
+void FAACNCKMEJM__HKEFFKGODCC(FAACNCKMEJM_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).FAJBKFIAOPL = CJNHFNHJHPE;
+  return;
+}
+

@@ -1,0 +1,8 @@
+// FHHIGHMFNAC$$JFGBPBOCOIC @ RVA 0x32CDE6C
+
+bool FHHIGHMFNAC__JFGBPBOCOIC(FHHIGHMFNAC_o *__this,int32_t HJDMBDBJEFL,MethodInfo *method)
+
+{
+  return true;
+}
+

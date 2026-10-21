@@ -1,0 +1,11 @@
+// NFNBHPOJFNJ$$CGMCAEFAILP @ RVA 0x335F1C4
+
+void NFNBHPOJFNJ__CGMCAEFAILP
+               (NFNBHPOJFNJ_o *__this,bool LKFALEIFDIO,System_String_o *OCMMDIHLKMH,
+               Il2CppObject *EHPEBANNEAC,System_String_o *BLKCDEOHIDK,MethodInfo *method)
+
+{
+  NFNBHPOJFNJ__OJNHHOGCKAM(__this,LKFALEIFDIO,OCMMDIHLKMH,EHPEBANNEAC,BLKCDEOHIDK,method);
+  return;
+}
+

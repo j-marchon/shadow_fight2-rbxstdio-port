@@ -1,0 +1,9 @@
+// AFLJMCMKCIG$$GNLPNKGBAFL @ RVA 0x3132D24
+
+void AFLJMCMKCIG__GNLPNKGBAFL(AFLJMCMKCIG_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).EMDNDLOODLG = CJNHFNHJHPE;
+  return;
+}
+

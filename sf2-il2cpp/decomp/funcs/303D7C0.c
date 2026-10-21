@@ -1,0 +1,9 @@
+// PJKHAJKEHEL$$FEGMKOKOLBF @ RVA 0x303D7C0
+
+void PJKHAJKEHEL__FEGMKOKOLBF(PJKHAJKEHEL_o *__this,float CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).CCJBMOPCHCN = CJNHFNHJHPE;
+  return;
+}
+

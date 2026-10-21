@@ -1,0 +1,8 @@
+// JMCDPBKILIN$$JCKINNMKHBA @ RVA 0x31296F0
+
+KAMBBJFPLGM_o * JMCDPBKILIN__JCKINNMKHBA(JMCDPBKILIN_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).OPHCNELIOLD;
+}
+

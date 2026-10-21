@@ -1,0 +1,53 @@
+// TypeDefIndex 720
+// Namespace: 
+// [Serializable]
+// private sealed class ModelParameters.<>c
+// Fields:
+//   public static readonly ModelParameters.<>c <>9; // 0x0
+//   public static Action<NHPEALHAHOA> <>9__96_0; // 0x8
+
+// ===== private static void .cctor()  [RVA 0x30459C0]
+// ModelParameters.<>c$$.cctor @ RVA 0x30459C0
+
+void ModelParameters_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_04565dd0 & 1) == 0) {
+    FUN_01bab630(&ModelParameters_<>c_TypeInfo);
+    DAT_04565dd0 = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(ModelParameters_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  ModelParameters_<>c_TypeInfo->static_fields->__9 = (ModelParameters___c_o *)__this;
+  thunk_FUN_01c20e04(ModelParameters_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== public void .ctor()  [RVA 0x3045A28]
+// ModelParameters.<>c$$.ctor @ RVA 0x3045A28
+
+void ModelParameters_<>c___ctor(ModelParameters___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== internal void DOHDALCFILO(NHPEALHAHOA x)  [RVA 0x3045A30]
+// ModelParameters.<>c$$DOHDALCFILO @ RVA 0x3045A30
+
+void ModelParameters_<>c__DOHDALCFILO(ModelParameters___c_o *__this,NHPEALHAHOA_o *x,MethodInfo *method)
+
+{
+  if (x != (NHPEALHAHOA_o *)0x0) {
+    NHPEALHAHOA__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

@@ -1,0 +1,9 @@
+// IHMIMECHIAN$$HFEFIDJNHAK @ RVA 0x343D2F4
+
+void IHMIMECHIAN__HFEFIDJNHAK(IHMIMECHIAN_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).KFBIHGFDAOL = CJNHFNHJHPE;
+  return;
+}
+

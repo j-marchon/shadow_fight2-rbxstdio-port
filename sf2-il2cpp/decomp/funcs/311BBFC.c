@@ -1,0 +1,9 @@
+// KAMBBJFPLGM$$BHLEJMIAPEE @ RVA 0x311BBFC
+
+void KAMBBJFPLGM__BHLEJMIAPEE(KAMBBJFPLGM_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).FLFGAIPCCJK = CJNHFNHJHPE;
+  return;
+}
+

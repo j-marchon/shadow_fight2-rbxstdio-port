@@ -1,0 +1,8 @@
+// AGGMBMDDJIO$$KGGGBHEMAOO @ RVA 0x343BAF4
+
+int32_t AGGMBMDDJIO__KGGGBHEMAOO(AGGMBMDDJIO_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

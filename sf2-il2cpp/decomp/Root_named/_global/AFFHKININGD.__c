@@ -1,0 +1,143 @@
+// TypeDefIndex 2426
+// Namespace: 
+// [Serializable]
+// private sealed class FightList.<>c
+// Fields:
+//   public static readonly FightList.<>c <>9; // 0x0
+//   public static Action<JBCGDIEHOHH> <>9__59_0; // 0x8
+//   public static Action<ModelParameters> <>9__59_1; // 0x10
+//   public static Func<NIAFDKHDBMA, bool> <>9__63_0; // 0x18
+//   public static Func<NIAFDKHDBMA, int> <>9__64_1; // 0x20
+//   public static Func<ModelParameters, int> <>9__72_0; // 0x28
+//   public static Func<Rule, bool> <>9__90_0; // 0x30
+
+// ===== internal int IGNCEDGNDPM(ModelParameters model)  [RVA 0x3343260]
+// FightList.<>c$$IGNCEDGNDPM @ RVA 0x3343260
+
+int32_t FightList_<>c__IGNCEDGNDPM
+                  (FightList___c_o *__this,ModelParameters_o *model,MethodInfo *method)
+
+{
+  if (model != (ModelParameters_o *)0x0) {
+    return (model->fields).MGDHGEHGKBA;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal bool FACLHKKNINP(Rule rule)  [RVA 0x3343278]
+// FightList.<>c$$FACLHKKNINP @ RVA 0x3343278
+
+bool FightList_<>c__FACLHKKNINP(FightList___c_o *__this,Rule_o *rule,MethodInfo *method)
+
+{
+  int32_t iVar1;
+  
+  if (rule != (Rule_o *)0x0) {
+    iVar1 = Rule__NHGGBEACKBD(rule,(MethodInfo *)0x0);
+    return iVar1 == 0x23;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== private static void .cctor()  [RVA 0x33432A0]
+// FightList.<>c$$.cctor @ RVA 0x33432A0
+
+void FightList_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_045679a9 & 1) == 0) {
+    FUN_01bab630(&FightList_<>c_TypeInfo);
+    DAT_045679a9 = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(FightList_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  FightList_<>c_TypeInfo->static_fields->__9 = (FightList___c_o *)__this;
+  thunk_FUN_01c20e04(FightList_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== internal int GBMHBCFCNEF(NIAFDKHDBMA rule)  [RVA 0x3343310]
+// FightList.<>c$$GBMHBCFCNEF @ RVA 0x3343310
+
+int32_t FightList_<>c__GBMHBCFCNEF
+                  (FightList___c_o *__this,NIAFDKHDBMA_o *rule,MethodInfo *method)
+
+{
+  if (rule != (NIAFDKHDBMA_o *)0x0) {
+    return (rule->fields).DKOHFAHBPPE;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal void APMADPDPANM(JBCGDIEHOHH x)  [RVA 0x3343328]
+// FightList.<>c$$APMADPDPANM @ RVA 0x3343328
+
+void FightList_<>c__APMADPDPANM(FightList___c_o *__this,JBCGDIEHOHH_o *x,MethodInfo *method)
+
+{
+  if (x != (JBCGDIEHOHH_o *)0x0) {
+    JBCGDIEHOHH__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal void LHJKOBAJHBB(ModelParameters x)  [RVA 0x3343340]
+// FightList.<>c$$LHJKOBAJHBB @ RVA 0x3343340
+
+void FightList_<>c__LHJKOBAJHBB(FightList___c_o *__this,ModelParameters_o *x,MethodInfo *method)
+
+{
+  if (x != (ModelParameters_o *)0x0) {
+    ModelParameters__RandomizeObscuredVars(x,(MethodInfo *)0x0);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== internal bool MPDHKEFMGFL(NIAFDKHDBMA rule)  [RVA 0x3343358]
+// FightList.<>c$$MPDHKEFMGFL @ RVA 0x3343358
+
+bool FightList_<>c__MPDHKEFMGFL(FightList___c_o *__this,NIAFDKHDBMA_o *rule,MethodInfo *method)
+
+{
+  bool bVar1;
+  
+  if (rule != (NIAFDKHDBMA_o *)0x0) {
+    bVar1 = System_String__IsNullOrEmpty((rule->fields).MLNFANFAMOO,(MethodInfo *)0x0);
+    if (bVar1) {
+      bVar1 = false;
+    }
+    else {
+      bVar1 = 0 < (rule->fields).DKOHFAHBPPE;
+    }
+    return bVar1;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+
+
+// ===== public void .ctor()  [RVA 0x3343308]
+// FightList.<>c$$.ctor @ RVA 0x3343308
+
+void FightList_<>c___ctor(FightList___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+

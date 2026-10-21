@@ -1,0 +1,9 @@
+// BECIPDJBAOG$$OFJLHAKNDGH @ RVA 0x30D264C
+
+void BECIPDJBAOG__OFJLHAKNDGH(BECIPDJBAOG_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).NLLKMEMKBAF = CJNHFNHJHPE;
+  return;
+}
+

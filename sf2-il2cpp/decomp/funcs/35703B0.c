@@ -1,0 +1,8 @@
+// NLDPAHFABGL$$MLFJHBIJMAA @ RVA 0x35703B0
+
+PGICCMFLDPI_o * NLDPAHFABGL__MLFJHBIJMAA(NLDPAHFABGL_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).MIINPPOCPCN;
+}
+

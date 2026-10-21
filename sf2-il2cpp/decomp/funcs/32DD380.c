@@ -1,0 +1,8 @@
+// LJBDMDHNKFM$$KGGGBHEMAOO @ RVA 0x32DD380
+
+int32_t LJBDMDHNKFM__KGGGBHEMAOO(LJBDMDHNKFM_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

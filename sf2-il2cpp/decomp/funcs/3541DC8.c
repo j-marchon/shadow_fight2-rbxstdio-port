@@ -1,0 +1,21 @@
+// LKJJCAEOJBG$$.ctor @ RVA 0x3541DC8
+
+void LKJJCAEOJBG___ctor(LKJJCAEOJBG_o *__this,LKJJCAEOJBG_o *IBKIPBJJCPG,MethodInfo *method)
+
+{
+  Google_Protobuf_UnknownFieldSet_o *pGVar1;
+  
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  if (IBKIPBJJCPG != (LKJJCAEOJBG_o *)0x0) {
+    (__this->fields).MKGNDFBBANC = (IBKIPBJJCPG->fields).MKGNDFBBANC;
+    (__this->fields).IGBAAAHPLAA = (IBKIPBJJCPG->fields).IGBAAAHPLAA;
+    pGVar1 = Google_Protobuf_UnknownFieldSet__Clone
+                       ((IBKIPBJJCPG->fields).CKFPENBPNML,(MethodInfo *)0x0);
+    (__this->fields).CKFPENBPNML = pGVar1;
+    thunk_FUN_01c20e04(&__this->fields,pGVar1);
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

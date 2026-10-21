@@ -1,0 +1,9 @@
+// KGBIBHEFBHA$$EMHKPHMPCGB @ RVA 0x330456C
+
+void KGBIBHEFBHA__EMHKPHMPCGB(KGBIBHEFBHA_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).NCDPJGNAKPN = CJNHFNHJHPE;
+  return;
+}
+

@@ -1,0 +1,9 @@
+// KMDOLFBIGNC$$EMKELMJKKLO @ RVA 0x312306C
+
+void KMDOLFBIGNC__EMKELMJKKLO(KMDOLFBIGNC_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).PDOMCPONBNB = CJNHFNHJHPE;
+  return;
+}
+

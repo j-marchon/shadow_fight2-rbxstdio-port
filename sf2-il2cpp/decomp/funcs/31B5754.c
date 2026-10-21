@@ -1,0 +1,8 @@
+// CNIGOFCKBGI$$EABJNHKPJOM @ RVA 0x31B5754
+
+void CNIGOFCKBGI__EABJNHKPJOM(CNIGOFCKBGI_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

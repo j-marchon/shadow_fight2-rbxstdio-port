@@ -1,0 +1,11 @@
+// JMDPBFOCHHP$$ONKKKOBNNHD @ RVA 0x2FF93EC
+
+void JMDPBFOCHHP__ONKKKOBNNHD
+               (JMDPBFOCHHP_o *__this,JMDPBFOCHHP_KJLILNPHJHI_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).OGPANCKIAED = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

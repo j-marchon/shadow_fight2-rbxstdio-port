@@ -1,0 +1,9 @@
+// PJKHAJKEHEL$$KAAMDPOIDBB @ RVA 0x3041A4C
+
+void PJKHAJKEHEL__KAAMDPOIDBB(PJKHAJKEHEL_o *__this,float CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).FPMOPBGHILF = CJNHFNHJHPE;
+  return;
+}
+

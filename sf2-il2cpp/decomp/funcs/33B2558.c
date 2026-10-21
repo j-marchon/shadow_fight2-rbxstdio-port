@@ -1,0 +1,8 @@
+// OPMDFMOAMKB$$NODBECJPBDC @ RVA 0x33B2558
+
+JMDPBFOCHHP_BFPCOCFHFHF_o * OPMDFMOAMKB__NODBECJPBDC(OPMDFMOAMKB_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields)._GOPKIGPPKCB_k__BackingField;
+}
+

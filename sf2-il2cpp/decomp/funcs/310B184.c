@@ -1,0 +1,8 @@
+// OPNFCOGALLI$$NDHGJPKIHIG @ RVA 0x310B184
+
+OPNFCOGALLI_o * OPNFCOGALLI__NDHGJPKIHIG(OPNFCOGALLI_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).DPNACGKHLGD;
+}
+

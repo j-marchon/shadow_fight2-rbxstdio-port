@@ -1,0 +1,9 @@
+// HCFOFHGNBKP$$EICBDNKIGAG @ RVA 0x314BADC
+
+void HCFOFHGNBKP__EICBDNKIGAG(HCFOFHGNBKP_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MKEPFPAHEFK = CJNHFNHJHPE;
+  return;
+}
+

@@ -1,0 +1,9 @@
+// IHMIMECHIAN$$JKHPDMBACHC @ RVA 0x343C81C
+
+void IHMIMECHIAN__JKHPDMBACHC(IHMIMECHIAN_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).POHDGAPDBGK = CJNHFNHJHPE;
+  return;
+}
+

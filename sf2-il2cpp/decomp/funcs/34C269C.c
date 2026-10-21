@@ -1,0 +1,9 @@
+// KAHMAJKJMBK$$FPCMFPEOABH @ RVA 0x34C269C
+
+void KAHMAJKJMBK__FPCMFPEOABH(KAHMAJKJMBK_o *__this,int32_t PKLFFPEBBDA,MethodInfo *method)
+
+{
+  (__this->fields).KOANEAEMOOP = PKLFFPEBBDA;
+  return;
+}
+

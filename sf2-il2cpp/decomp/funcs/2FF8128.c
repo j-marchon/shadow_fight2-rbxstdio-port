@@ -1,0 +1,8 @@
+// JMDPBFOCHHP$$DEKIMGDLODF @ RVA 0x2FF8128
+
+JMDPBFOCHHP_DBNJFPILODG_o * JMDPBFOCHHP__DEKIMGDLODF(JMDPBFOCHHP_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields)._LGFNDLOCGPB_k__BackingField;
+}
+

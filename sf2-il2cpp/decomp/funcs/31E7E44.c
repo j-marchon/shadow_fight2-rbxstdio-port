@@ -1,0 +1,9 @@
+// MNLIBPAOCLG$$CPCOIOEJINK @ RVA 0x31E7E44
+
+void MNLIBPAOCLG__CPCOIOEJINK(MNLIBPAOCLG_o *__this,float CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).EIKNANMFNBJ = CJNHFNHJHPE;
+  return;
+}
+

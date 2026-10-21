@@ -1,0 +1,8 @@
+// HDBPKHNKOGI$$OFDDJINNMNE @ RVA 0x3194244
+
+PNGKLCHKPEO_o * HDBPKHNKOGI__OFDDJINNMNE(HDBPKHNKOGI_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).NDOAINJDMIH;
+}
+

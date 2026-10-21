@@ -1,0 +1,8 @@
+// JLGNBOILFLN$$LNNIHAKPANA @ RVA 0x32489BC
+
+HEFOANCOHDC_o * JLGNBOILFLN__LNNIHAKPANA(JLGNBOILFLN_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).LENFGEAJDMN;
+}
+

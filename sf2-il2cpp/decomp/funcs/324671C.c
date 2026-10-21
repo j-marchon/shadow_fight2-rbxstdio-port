@@ -1,0 +1,8 @@
+// CHDGOFBHAFI$$GPBDJJFMIPF @ RVA 0x324671C
+
+AADKBCFCLKK_o * CHDGOFBHAFI__GPBDJJFMIPF(CHDGOFBHAFI_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).AABMLCNHHPN;
+}
+

@@ -1,0 +1,9 @@
+// AFFHKININGD$$GNLPNKGBAFL @ RVA 0x333EFAC
+
+void AFFHKININGD__GNLPNKGBAFL(AFFHKININGD_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).JDNKKGPNHPB = CJNHFNHJHPE;
+  return;
+}
+

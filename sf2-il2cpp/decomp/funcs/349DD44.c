@@ -1,0 +1,10 @@
+// NGKBNOEJLPH$$AKMFFJJPKEO @ RVA 0x349DD44
+
+bool NGKBNOEJLPH__AKMFFJJPKEO
+               (NGKBNOEJLPH_o *__this,ECENNHNBAME_o *NLEBDPHNIDI,OLKKAIFGGAK_o *BCKBBGCOMJD,
+               int32_t PAIECLCNOBO,MethodInfo *method)
+
+{
+  return false;
+}
+

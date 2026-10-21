@@ -1,0 +1,53 @@
+INFO  Using log config file: jar:file:/D:/Tools/ghidra_12.1.4_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: D:\Tools\work\sf2-il2cpp\logs\decomp2_headless.log (LoggingInitialization)  
+INFO  Loading user preferences: C:\Users\João Marchon\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (1251 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: SHA1PRNG (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (3287 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 59 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\SystemEmulation\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Debug\Debugger\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Debug\Debugger-rmi-trace\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Processors\8051\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Processors\PIC\ghidra_scripts
+    D:\Tools\work\sf2-il2cpp\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\VersionTracking\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\BSim\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\SwiftDemangler\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\GnuDemangler\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\PDB\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Processors\Atmel\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\BytePatterns\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\FileFormats\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\FunctionID\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\MicrosoftCodeAnalyzer\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\PyGhidra\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\Decompiler\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\DecompilerDependent\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Processors\DATA\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\Base\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Processors\JVM\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\WildcardAssembler\ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: D:\Tools\work\sf2-il2cpp\ghidra_proj\SF2 (HeadlessAnalyzer)  
+INFO  Opening project: D:\Tools\work\sf2-il2cpp\ghidra_proj\SF2 (HeadlessProject)  
+INFO  REPORT: Processing read-only project file: /libil2cpp.so (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: ExportDecompiled.java 'D:\Tools\work\sf2-il2cpp\index\rvas.txt' 'D:\Tools\work\sf2-il2cpp\decomp\funcs' '120'  (HeadlessAnalyzer)  
+INFO  SCRIPT: D:\Tools\work\sf2-il2cpp\ghidra_scripts\ExportDecompiled.java (HeadlessAnalyzer)  
+INFO  ExportDecompiled.java> to decompile: 5383, no function at RVA: 0 (GhidraScript)  
+INFO  ExportDecompiled.java> 500/5383 decompiled, 0 failed, 42s (GhidraScript)  
+INFO  ExportDecompiled.java> 1000/5383 decompiled, 0 failed, 64s (GhidraScript)  
+INFO  ExportDecompiled.java> 1500/5383 decompiled, 0 failed, 84s (GhidraScript)  
+INFO  ExportDecompiled.java> 2000/5383 decompiled, 0 failed, 104s (GhidraScript)  
+INFO  ExportDecompiled.java> 2500/5383 decompiled, 0 failed, 118s (GhidraScript)  
+INFO  ExportDecompiled.java> 3000/5383 decompiled, 0 failed, 136s (GhidraScript)  
+INFO  ExportDecompiled.java> 3500/5383 decompiled, 0 failed, 155s (GhidraScript)  
+INFO  ExportDecompiled.java> 4000/5383 decompiled, 0 failed, 174s (GhidraScript)  
+INFO  ExportDecompiled.java> 4500/5383 decompiled, 0 failed, 196s (GhidraScript)  
+INFO  ExportDecompiled.java> 5000/5383 decompiled, 0 failed, 208s (GhidraScript)  
+INFO  ExportDecompiled.java> finished: 5383 written, 0 failed (GhidraScript)  

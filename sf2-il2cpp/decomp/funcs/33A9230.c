@@ -1,0 +1,13 @@
+// NJPBHDMCLIN.KLLGIFHMMIP$$NDNPGAKJLHM @ RVA 0x33A9230
+
+void NJPBHDMCLIN_KLLGIFHMMIP__NDNPGAKJLHM(NJPBHDMCLIN_KLLGIFHMMIP_o *__this,MethodInfo *method)
+
+{
+  GBJGJEGPHKD_o **ppGVar1;
+  
+  ppGVar1 = &(__this->fields).DBFCHBBKIHK;
+  *ppGVar1 = (GBJGJEGPHKD_o *)0x0;
+  thunk_FUN_01c20e04(ppGVar1,0);
+  return;
+}
+

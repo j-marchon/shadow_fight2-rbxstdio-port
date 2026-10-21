@@ -1,0 +1,8 @@
+// IEJGMGHPING$$GAMLPCDJHIA @ RVA 0x357F628
+
+DNELIPCHKLK_o * IEJGMGHPING__GAMLPCDJHIA(IEJGMGHPING_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).NEEIBKGPKBK;
+}
+

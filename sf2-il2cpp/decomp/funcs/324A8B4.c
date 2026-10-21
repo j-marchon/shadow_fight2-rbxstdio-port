@@ -1,0 +1,9 @@
+// JLHAELMHHJL$$NDJAJHFFPKP @ RVA 0x324A8B4
+
+void JLHAELMHHJL__NDJAJHFFPKP(JLHAELMHHJL_o *__this,MethodInfo *method)
+
+{
+  BOFEMGGNODC__FGNINNOOCCL((BOFEMGGNODC_o *)__this,(MethodInfo *)0x0);
+  return;
+}
+

@@ -1,0 +1,8 @@
+// BIDBHCDLLHH$$LDNLMFODLOG @ RVA 0x34B3880
+
+void BIDBHCDLLHH__LDNLMFODLOG(BIDBHCDLLHH_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

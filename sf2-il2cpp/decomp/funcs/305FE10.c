@@ -1,0 +1,8 @@
+// ACHLOMELAJE$$CIKBAKGAHDE @ RVA 0x305FE10
+
+PJKHAJKEHEL_o * ACHLOMELAJE__CIKBAKGAHDE(ACHLOMELAJE_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).MFLNIMCFPDK;
+}
+

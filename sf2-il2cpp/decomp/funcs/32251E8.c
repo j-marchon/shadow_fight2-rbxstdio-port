@@ -1,0 +1,9 @@
+// GLPEFEEGCPM$$POKHPKMPIKB @ RVA 0x32251E8
+
+void GLPEFEEGCPM__POKHPKMPIKB(GLPEFEEGCPM_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).LAEGCKIFDOC = CJNHFNHJHPE;
+  return;
+}
+

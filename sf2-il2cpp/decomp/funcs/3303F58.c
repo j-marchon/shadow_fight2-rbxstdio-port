@@ -1,0 +1,9 @@
+// KGBIBHEFBHA$$HHDBPBCFLOK @ RVA 0x3303F58
+
+void KGBIBHEFBHA__HHDBPBCFLOK(KGBIBHEFBHA_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).HCBJCMDLODI = CJNHFNHJHPE;
+  return;
+}
+

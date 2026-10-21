@@ -1,0 +1,9 @@
+// GGDHPLABCGI$$GNLPNKGBAFL @ RVA 0x30720F0
+
+void GGDHPLABCGI__GNLPNKGBAFL(GGDHPLABCGI_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).EMDNDLOODLG = CJNHFNHJHPE;
+  return;
+}
+

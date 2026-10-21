@@ -1,0 +1,8 @@
+// OHDDKGHEEPA.NHCNEOLLGHG$$LDJKOMBDING @ RVA 0x3337B98
+
+float OHDDKGHEEPA_NHCNEOLLGHG__LDJKOMBDING(OHDDKGHEEPA_NHCNEOLLGHG_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields)._DAJMKNDILJA_k__BackingField;
+}
+

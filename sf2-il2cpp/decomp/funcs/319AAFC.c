@@ -1,0 +1,8 @@
+// DGCPNJOFKON$$DFBPBPPNIBC @ RVA 0x319AAFC
+
+bool DGCPNJOFKON__DFBPBPPNIBC(DGCPNJOFKON_o *__this,JMIFGHKOLCL_o *LDOOMGABFME,MethodInfo *method)
+
+{
+  return false;
+}
+

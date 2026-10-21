@@ -1,0 +1,8 @@
+// ACHLOMELAJE$$CFNEFEDMOJN @ RVA 0x305B080
+
+NFGLEDADCGL_o * ACHLOMELAJE__CFNEFEDMOJN(ACHLOMELAJE_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).CKJAGLDEMAE;
+}
+

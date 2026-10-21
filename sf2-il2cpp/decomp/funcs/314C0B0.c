@@ -1,0 +1,8 @@
+// HCFOFHGNBKP$$NNAKKCHDFAN @ RVA 0x314C0B0
+
+BECIPDJBAOG_o * HCFOFHGNBKP__NNAKKCHDFAN(HCFOFHGNBKP_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).MJIIHOLHNCK;
+}
+

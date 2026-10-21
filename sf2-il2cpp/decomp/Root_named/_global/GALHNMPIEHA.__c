@@ -1,0 +1,88 @@
+// TypeDefIndex 1353
+// Namespace: 
+// [Serializable]
+// private sealed class RaidQuestsManager.<>c
+// Fields:
+//   public static readonly RaidQuestsManager.<>c <>9; // 0x0
+//   public static Func<BDMABHJEEGD, bool> <>9__9_0; // 0x8
+//   public static Action <>9__23_0; // 0x10
+//   public static Action <>9__23_1; // 0x18
+//   public static Func<BDMABHJEEGD, bool> <>9__32_1; // 0x20
+
+// ===== internal void OMOJOECIDBN()  [RVA 0x31675E4]
+// RaidQuestsManager.<>c$$OMOJOECIDBN @ RVA 0x31675E4
+
+void RaidQuestsManager_<>c__OMOJOECIDBN(RaidQuestsManager___c_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== internal void AAPGKNAKKLH()  [RVA 0x31675E8]
+// RaidQuestsManager.<>c$$AAPGKNAKKLH @ RVA 0x31675E8
+
+void RaidQuestsManager_<>c__AAPGKNAKKLH(RaidQuestsManager___c_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+
+
+// ===== public void .ctor()  [RVA 0x31675EC]
+// RaidQuestsManager.<>c$$.ctor @ RVA 0x31675EC
+
+void RaidQuestsManager_<>c___ctor(RaidQuestsManager___c_o *__this,MethodInfo *method)
+
+{
+  System_Object___ctor((Il2CppObject *)__this,(MethodInfo *)0x0);
+  return;
+}
+
+
+// ===== private static void .cctor()  [RVA 0x31675F4]
+// RaidQuestsManager.<>c$$.cctor @ RVA 0x31675F4
+
+void RaidQuestsManager_<>c___cctor(MethodInfo *method)
+
+{
+  Il2CppObject *__this;
+  
+  if ((DAT_045668c8 & 1) == 0) {
+    FUN_01bab630(&RaidQuestsManager_<>c_TypeInfo);
+    DAT_045668c8 = 1;
+  }
+  __this = (Il2CppObject *)thunk_FUN_01bda818(RaidQuestsManager_<>c_TypeInfo);
+  System_Object___ctor(__this,(MethodInfo *)0x0);
+  RaidQuestsManager_<>c_TypeInfo->static_fields->__9 = (RaidQuestsManager___c_o *)__this;
+  thunk_FUN_01c20e04(RaidQuestsManager_<>c_TypeInfo->static_fields,__this);
+  return;
+}
+
+
+// ===== internal bool OAMILOOFILJ(BDMABHJEEGD q)  [RVA 0x316765C]
+// RaidQuestsManager.<>c$$OAMILOOFILJ @ RVA 0x316765C
+
+bool RaidQuestsManager_<>c__OAMILOOFILJ(RaidQuestsManager___c_o *__this,BDMABHJEEGD_o *q,MethodInfo *method)
+
+{
+  bool bVar1;
+  
+  bVar1 = JAIJCEMCHEK__HHDBIGKBMEC(q,(MethodInfo *)0x0);
+  return (bool)(~bVar1 & 1);
+}
+
+
+// ===== internal bool IAFNHPMFACJ(BDMABHJEEGD q)  [RVA 0x316767C]
+// RaidQuestsManager.<>c$$IAFNHPMFACJ @ RVA 0x316767C
+
+bool RaidQuestsManager_<>c__IAFNHPMFACJ(RaidQuestsManager___c_o *__this,BDMABHJEEGD_o *q,MethodInfo *method)
+
+{
+  if (q != (BDMABHJEEGD_o *)0x0) {
+    return (q->fields).IMNALGKNMNP == (PGICCMFLDPI_o *)0x0;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

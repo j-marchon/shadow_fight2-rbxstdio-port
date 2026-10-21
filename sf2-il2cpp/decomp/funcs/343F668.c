@@ -1,0 +1,10 @@
+// OMFJHNMDIBF$$HBLNDPNDOMF @ RVA 0x343F668
+
+void OMFJHNMDIBF__HBLNDPNDOMF(OMFJHNMDIBF_o *__this,PIADCKMDDAK_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).JMACIOLHEOF = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

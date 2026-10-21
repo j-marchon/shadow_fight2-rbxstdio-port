@@ -1,0 +1,8 @@
+// IDDIHIFIGNL$$KCBILPIAPHN @ RVA 0x3290584
+
+int32_t IDDIHIFIGNL__KCBILPIAPHN(IDDIHIFIGNL_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

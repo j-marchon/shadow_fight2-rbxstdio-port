@@ -1,0 +1,8 @@
+// OKKPDLAJBFD$$LPLEAOHPCKB @ RVA 0x3022484
+
+PGICCMFLDPI_o * OKKPDLAJBFD__LPLEAOHPCKB(OKKPDLAJBFD_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).IPIKAEDIBOD;
+}
+

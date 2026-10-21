@@ -1,0 +1,8 @@
+// ACHLOMELAJE$$NFBEEKJBPOL @ RVA 0x305B844
+
+DNELIPCHKLK_o * ACHLOMELAJE__NFBEEKJBPOL(ACHLOMELAJE_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).DHDPPCNPAIE;
+}
+

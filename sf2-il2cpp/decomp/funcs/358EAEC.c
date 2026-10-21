@@ -1,0 +1,8 @@
+// AEBBCOILLIA$$KCBILPIAPHN @ RVA 0x358EAEC
+
+int32_t AEBBCOILLIA__KCBILPIAPHN(AEBBCOILLIA_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

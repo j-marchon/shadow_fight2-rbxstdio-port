@@ -1,0 +1,8 @@
+// FCPAHDIGJGN$$MEHFGJDCBDP @ RVA 0x33CAF64
+
+int32_t FCPAHDIGJGN__MEHFGJDCBDP(FCPAHDIGJGN_o *__this,MethodInfo *method)
+
+{
+  return 2;
+}
+

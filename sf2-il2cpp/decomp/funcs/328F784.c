@@ -1,0 +1,8 @@
+// BKKENCMPLLF$$HOFBHBCLOEO @ RVA 0x328F784
+
+int32_t BKKENCMPLLF__HOFBHBCLOEO(BKKENCMPLLF_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

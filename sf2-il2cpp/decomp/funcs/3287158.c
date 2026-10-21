@@ -1,0 +1,8 @@
+// OOMHDDBCBJP$$ILEIHMELPNH @ RVA 0x3287158
+
+OLKPEJMEBPJ_o * OOMHDDBCBJP__ILEIHMELPNH(OOMHDDBCBJP_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).LFJPDELEIHG;
+}
+

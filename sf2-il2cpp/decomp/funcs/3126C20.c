@@ -1,0 +1,8 @@
+// PHFNOECCEGK$$KCBILPIAPHN @ RVA 0x3126C20
+
+int32_t PHFNOECCEGK__KCBILPIAPHN(PHFNOECCEGK_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

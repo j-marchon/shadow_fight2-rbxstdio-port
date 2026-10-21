@@ -1,0 +1,11 @@
+// OLKKAIFGGAK$$NIPKLJCMANM @ RVA 0x34ED658
+
+bool OLKKAIFGGAK__NIPKLJCMANM(OLKKAIFGGAK_o *__this,MethodInfo *method)
+
+{
+  JADGCGOJLJB_o *pJVar1;
+  
+  pJVar1 = OLKKAIFGGAK__LPGGKBBGIBK(__this,method);
+  return pJVar1 != (JADGCGOJLJB_o *)0x0;
+}
+

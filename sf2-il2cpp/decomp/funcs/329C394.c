@@ -1,0 +1,9 @@
+// EEHFEPPDBHL$$BPIBLPAPJOL @ RVA 0x329C394
+
+void EEHFEPPDBHL__BPIBLPAPJOL(EEHFEPPDBHL_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).IFICKDAKCHN = CJNHFNHJHPE;
+  return;
+}
+

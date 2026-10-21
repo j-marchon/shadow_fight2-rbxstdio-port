@@ -1,0 +1,9 @@
+// NCNJEIBHGBH$$DFBAIPNBPLB @ RVA 0x32F5CB4
+
+void NCNJEIBHGBH__DFBAIPNBPLB(NCNJEIBHGBH_o *__this,MethodInfo *method)
+
+{
+  JJPNLEPEAFM__KLBIPGNFIFM((MethodInfo *)0x0);
+  return;
+}
+

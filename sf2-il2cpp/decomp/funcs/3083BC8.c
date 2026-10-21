@@ -1,0 +1,14 @@
+// KFCFGKEHPNK$$ECJLKNEAMKH @ RVA 0x3083BC8
+
+bool KFCFGKEHPNK__ECJLKNEAMKH(System_String_o *JJDMDJPNINC,MethodInfo *method)
+
+{
+  bool bVar1;
+  int32_t AIJPKOCFDJP;
+  MethodInfo *method_00;
+  
+  AIJPKOCFDJP = BFKOGEBDAEH__CCIALCAAHKG(JJDMDJPNINC,(MethodInfo *)0x0);
+  bVar1 = KFCFGKEHPNK__ECJLKNEAMKH(AIJPKOCFDJP,method_00);
+  return bVar1;
+}
+

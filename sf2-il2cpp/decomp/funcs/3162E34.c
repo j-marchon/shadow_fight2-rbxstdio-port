@@ -1,0 +1,8 @@
+// BMLCPHHHCLD$$KCBILPIAPHN @ RVA 0x3162E34
+
+int32_t BMLCPHHHCLD__KCBILPIAPHN(BMLCPHHHCLD_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

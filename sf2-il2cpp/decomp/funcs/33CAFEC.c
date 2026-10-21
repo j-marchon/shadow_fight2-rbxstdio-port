@@ -1,0 +1,8 @@
+// FCPAHDIGJGN$$FOGOMNAOMBD @ RVA 0x33CAFEC
+
+void FCPAHDIGJGN__FOGOMNAOMBD(FCPAHDIGJGN_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

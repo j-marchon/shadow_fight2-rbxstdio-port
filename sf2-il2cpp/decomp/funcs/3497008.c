@@ -1,0 +1,8 @@
+// NGKBNOEJLPH$$BBGBNLKMBMG @ RVA 0x3497008
+
+OLKKAIFGGAK_o * NGKBNOEJLPH__BBGBNLKMBMG(NGKBNOEJLPH_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).KOHECBJAFKG;
+}
+

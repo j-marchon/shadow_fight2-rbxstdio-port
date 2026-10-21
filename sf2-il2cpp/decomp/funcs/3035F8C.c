@@ -1,0 +1,8 @@
+// EAAHMDAMHNI$$APIJKKBLEPM @ RVA 0x3035F8C
+
+OLKKAIFGGAK_o * EAAHMDAMHNI__APIJKKBLEPM(EAAHMDAMHNI_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).HMMEFNNMBJK;
+}
+

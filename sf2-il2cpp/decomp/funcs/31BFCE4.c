@@ -1,0 +1,8 @@
+// AACDHACBIPI$$KCBILPIAPHN @ RVA 0x31BFCE4
+
+int32_t AACDHACBIPI__KCBILPIAPHN(AACDHACBIPI_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

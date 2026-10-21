@@ -1,0 +1,10 @@
+// Nekki.SF2.GUI.Profile.ProfileScene.ADBKDCAJPFM$$System.Collections.IEnumerator.get_Current @ RVA 0x33975D8
+
+Il2CppObject *
+Nekki_SF2_GUI_Profile_ProfileScene_ADBKDCAJPFM__System_Collections_IEnumerator_get_Current
+          (Nekki_SF2_GUI_Profile_ProfileScene_ADBKDCAJPFM_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).__2__current;
+}
+

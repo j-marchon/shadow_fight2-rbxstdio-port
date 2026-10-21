@@ -1,0 +1,9 @@
+// FFNHCBACKPN$$NKGIJKODGAN @ RVA 0x30F4874
+
+void FFNHCBACKPN__NKGIJKODGAN(FFNHCBACKPN_o *__this,MethodInfo *method)
+
+{
+  BOFEMGGNODC__FGNINNOOCCL((BOFEMGGNODC_o *)__this,(MethodInfo *)0x0);
+  return;
+}
+

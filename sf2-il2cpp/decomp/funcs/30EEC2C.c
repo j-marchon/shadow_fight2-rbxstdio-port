@@ -1,0 +1,10 @@
+// HOOAAGABMBL$$GLBFHLKBHMN @ RVA 0x30EEC2C
+
+void HOOAAGABMBL__GLBFHLKBHMN(HOOAAGABMBL_o *__this,NMAHEBEALAB_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).LDIJKGOHMPG = CJNHFNHJHPE;
+  thunk_FUN_01c20e04(&(__this->fields).LDIJKGOHMPG);
+  return;
+}
+

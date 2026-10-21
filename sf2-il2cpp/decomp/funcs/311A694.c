@@ -1,0 +1,9 @@
+// KAMBBJFPLGM$$KDLCDMKAPCP @ RVA 0x311A694
+
+void KAMBBJFPLGM__KDLCDMKAPCP(KAMBBJFPLGM_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).GFIFLFPODAE = CJNHFNHJHPE;
+  return;
+}
+

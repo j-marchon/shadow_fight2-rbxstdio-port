@@ -1,0 +1,10 @@
+// NGKBNOEJLPH$$CJHGBHKNDHN @ RVA 0x349CBC8
+
+void NGKBNOEJLPH__CJHGBHKNDHN(NGKBNOEJLPH_o *__this,OLKKAIFGGAK_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).KOHECBJAFKG = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

@@ -1,0 +1,8 @@
+// OLKKAIFGGAK$$CIEJKGODEBE @ RVA 0x34EE79C
+
+OLKKAIFGGAK_o * OLKKAIFGGAK__CIEJKGODEBE(OLKKAIFGGAK_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).NFMBPIPEKGF;
+}
+

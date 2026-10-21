@@ -1,0 +1,54 @@
+2026-10-20 04:54:11 INFO  (LoggingInitialization) Using log config file: jar:file:/D:/Tools/ghidra_12.1.4_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2026-10-20 04:54:11 INFO  (LoggingInitialization) Using log file: D:\Tools\work\sf2-il2cpp\logs\decomp2_headless.log  
+2026-10-20 04:54:11 DEBUG (GhidraObjectInputFilter) Including serial input filter: FileSystem/data/client.rmi.serial.filter  
+2026-10-20 04:54:11 INFO  (Preferences) Loading user preferences: C:\Users\João Marchon\AppData\Roaming\ghidra\ghidra_12.1.4_PUBLIC\preferences  
+2026-10-20 04:54:11 INFO  (ClassSearcher) Searching for classes...  
+2026-10-20 04:54:12 INFO  (ClassSearcher) Class search complete (1251 ms)  
+2026-10-20 04:54:12 INFO  (DefaultSSLContextInitializer) Initializing SSL Context  
+2026-10-20 04:54:13 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2026-10-20 04:54:13 INFO  (SecureRandomFactory) Random Number Generator initialization complete: SHA1PRNG  
+2026-10-20 04:54:13 INFO  (DefaultTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2026-10-20 04:54:13 INFO  (AnalyzeHeadless) Headless startup complete (3287 ms)  
+2026-10-20 04:54:13 INFO  (ClassSearcher) Class searcher loaded 59 extension points (20 false positives)  
+2026-10-20 04:54:14 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\SystemEmulation\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Debug\Debugger\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Debug\Debugger-rmi-trace\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Processors\8051\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Processors\PIC\ghidra_scripts
+    D:\Tools\work\sf2-il2cpp\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\VersionTracking\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\BSim\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\SwiftDemangler\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\GnuDemangler\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\PDB\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Processors\Atmel\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\BytePatterns\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\FileFormats\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\FunctionID\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\MicrosoftCodeAnalyzer\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\PyGhidra\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\Decompiler\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\DecompilerDependent\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Processors\DATA\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\Base\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Processors\JVM\ghidra_scripts
+    D:\Tools\ghidra_12.1.4_PUBLIC\Ghidra\Features\WildcardAssembler\ghidra_scripts  
+2026-10-20 04:54:14 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2026-10-20 04:54:14 INFO  (HeadlessAnalyzer) Opening existing project: D:\Tools\work\sf2-il2cpp\ghidra_proj\SF2  
+2026-10-20 04:54:14 INFO  (HeadlessProject) Opening project: D:\Tools\work\sf2-il2cpp\ghidra_proj\SF2  
+2026-10-20 04:54:29 INFO  (HeadlessAnalyzer) REPORT: Processing read-only project file: /libil2cpp.so  
+2026-10-20 04:54:31 INFO  (HeadlessAnalyzer) REPORT: Execute script: ExportDecompiled.java 'D:\Tools\work\sf2-il2cpp\index\rvas.txt' 'D:\Tools\work\sf2-il2cpp\decomp\funcs' '120'   
+2026-10-20 04:54:31 INFO  (HeadlessAnalyzer) SCRIPT: D:\Tools\work\sf2-il2cpp\ghidra_scripts\ExportDecompiled.java  
+2026-10-20 04:54:32 INFO  (GhidraScript) ExportDecompiled.java> to decompile: 5383, no function at RVA: 0  
+2026-10-20 04:55:15 INFO  (GhidraScript) ExportDecompiled.java> 500/5383 decompiled, 0 failed, 42s  
+2026-10-20 04:55:36 INFO  (GhidraScript) ExportDecompiled.java> 1000/5383 decompiled, 0 failed, 64s  
+2026-10-20 04:55:56 INFO  (GhidraScript) ExportDecompiled.java> 1500/5383 decompiled, 0 failed, 84s  
+2026-10-20 04:56:17 INFO  (GhidraScript) ExportDecompiled.java> 2000/5383 decompiled, 0 failed, 104s  
+2026-10-20 04:56:30 INFO  (GhidraScript) ExportDecompiled.java> 2500/5383 decompiled, 0 failed, 118s  
+2026-10-20 04:56:48 INFO  (GhidraScript) ExportDecompiled.java> 3000/5383 decompiled, 0 failed, 136s  
+2026-10-20 04:57:07 INFO  (GhidraScript) ExportDecompiled.java> 3500/5383 decompiled, 0 failed, 155s  
+2026-10-20 04:57:26 INFO  (GhidraScript) ExportDecompiled.java> 4000/5383 decompiled, 0 failed, 174s  
+2026-10-20 04:57:48 INFO  (GhidraScript) ExportDecompiled.java> 4500/5383 decompiled, 0 failed, 196s  
+2026-10-20 04:58:01 INFO  (GhidraScript) ExportDecompiled.java> 5000/5383 decompiled, 0 failed, 208s  
+2026-10-20 04:58:09 INFO  (GhidraScript) ExportDecompiled.java> finished: 5383 written, 0 failed  

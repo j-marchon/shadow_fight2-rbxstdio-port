@@ -1,0 +1,11 @@
+// NFNBHPOJFNJ$$EKACCJMPGIH @ RVA 0x335F1BC
+
+void NFNBHPOJFNJ__EKACCJMPGIH
+               (NFNBHPOJFNJ_o *__this,bool LKFALEIFDIO,System_String_o *OCMMDIHLKMH,
+               Il2CppObject *EHPEBANNEAC,System_String_o *BLKCDEOHIDK,MethodInfo *method)
+
+{
+  NFNBHPOJFNJ__ALHPEKDJCOJ(__this,LKFALEIFDIO,OCMMDIHLKMH,EHPEBANNEAC,BLKCDEOHIDK,method);
+  return;
+}
+

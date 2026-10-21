@@ -1,0 +1,8 @@
+// IMIGIINBGPF$$JFGBPBOCOIC @ RVA 0x3082B88
+
+bool IMIGIINBGPF__JFGBPBOCOIC(IMIGIINBGPF_o *__this,int32_t HJDMBDBJEFL,MethodInfo *method)
+
+{
+  return true;
+}
+

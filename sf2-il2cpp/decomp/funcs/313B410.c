@@ -1,0 +1,10 @@
+// GKLDDAPBAGG$$NDJAJHFFPKP @ RVA 0x313B410
+
+void GKLDDAPBAGG__NDJAJHFFPKP(GKLDDAPBAGG_o *__this,MethodInfo *method)
+
+{
+  GKLDDAPBAGG__DEILJOGCJJK(__this,method);
+  BOFEMGGNODC__FGNINNOOCCL((BOFEMGGNODC_o *)__this,(MethodInfo *)0x0);
+  return;
+}
+

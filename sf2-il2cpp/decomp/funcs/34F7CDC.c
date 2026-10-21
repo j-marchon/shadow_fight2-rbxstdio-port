@@ -1,0 +1,8 @@
+// OLKKAIFGGAK$$ONHFJOCLBNC @ RVA 0x34F7CDC
+
+GBJGJEGPHKD_o * OLKKAIFGGAK__ONHFJOCLBNC(OLKKAIFGGAK_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).HMIAFJALFCJ;
+}
+

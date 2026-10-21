@@ -1,0 +1,15 @@
+// EPFMFHDGMCE$$DGCODECJJCC @ RVA 0x3536840
+
+bool EPFMFHDGMCE__DGCODECJJCC
+               (EPFMFHDGMCE_JGKNDMCIPBN_o *IMJHEANBDDA,EPFMFHDGMCE_JGKNDMCIPBN_o *DFEGBKMFBMM,
+               MethodInfo *method)
+
+{
+  if ((IMJHEANBDDA != (EPFMFHDGMCE_JGKNDMCIPBN_o *)0x0) &&
+     (DFEGBKMFBMM != (EPFMFHDGMCE_JGKNDMCIPBN_o *)0x0)) {
+    return (IMJHEANBDDA->fields).NOPGBJNLFHM < (DFEGBKMFBMM->fields).NOPGBJNLFHM;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_01bab8c8();
+}
+

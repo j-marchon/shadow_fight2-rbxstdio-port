@@ -1,0 +1,8 @@
+// PBGDDCFGPJI$$NEHMMPDFBOK @ RVA 0x34BCA1C
+
+GLPEFEEGCPM_o * PBGDDCFGPJI__NEHMMPDFBOK(PBGDDCFGPJI_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).KEIBPDJHHBB;
+}
+

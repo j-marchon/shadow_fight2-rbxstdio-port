@@ -1,0 +1,8 @@
+// FCJBEKHDLAF$$PMMPLEEMENH @ RVA 0x33E4370
+
+PJKHAJKEHEL_o * FCJBEKHDLAF__PMMPLEEMENH(FCJBEKHDLAF_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).KCHOEJOHIMM;
+}
+

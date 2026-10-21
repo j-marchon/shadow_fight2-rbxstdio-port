@@ -1,0 +1,8 @@
+// IEPJHKEBFEB$$AJNFGBDLIIP @ RVA 0x3563D48
+
+bool IEPJHKEBFEB__AJNFGBDLIIP(int32_t CGLFKKMBHCN,MethodInfo *method)
+
+{
+  return (uint)CGLFKKMBHCN < 2;
+}
+

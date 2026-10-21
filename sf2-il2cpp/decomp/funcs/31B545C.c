@@ -1,0 +1,8 @@
+// CNIGOFCKBGI$$DGLJCGNHLIG @ RVA 0x31B545C
+
+void CNIGOFCKBGI__DGLJCGNHLIG(CNIGOFCKBGI_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

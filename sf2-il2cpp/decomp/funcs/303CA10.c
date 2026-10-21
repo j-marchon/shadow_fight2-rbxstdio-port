@@ -1,0 +1,8 @@
+// KKICACIIOBD$$KCBILPIAPHN @ RVA 0x303CA10
+
+int32_t KKICACIIOBD__KCBILPIAPHN(KKICACIIOBD_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

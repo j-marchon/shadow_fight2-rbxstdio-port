@@ -1,0 +1,9 @@
+// ELBBEAGGAOH$$KNFMKNJLEIP @ RVA 0x324BF3C
+
+void ELBBEAGGAOH__KNFMKNJLEIP(ELBBEAGGAOH_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).EMNNAEAIMNH = CJNHFNHJHPE;
+  return;
+}
+

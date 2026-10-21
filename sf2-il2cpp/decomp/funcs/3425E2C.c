@@ -1,0 +1,8 @@
+// FIMAAAOEIGM$$GJAMLPCIDGC @ RVA 0x3425E2C
+
+PGICCMFLDPI_o * FIMAAAOEIGM__GJAMLPCIDGC(FIMAAAOEIGM_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).OBKCJGGIEMF;
+}
+

@@ -1,0 +1,10 @@
+// GBJGJEGPHKD$$CJHGBHKNDHN @ RVA 0x342ECB0
+
+void GBJGJEGPHKD__CJHGBHKNDHN(GBJGJEGPHKD_o *__this,OLKKAIFGGAK_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).KOHECBJAFKG = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

@@ -1,0 +1,8 @@
+// IJIPGGOAGBO$$EPBENPDCBFE @ RVA 0x33E0DD0
+
+bool IJIPGGOAGBO__EPBENPDCBFE(IJIPGGOAGBO_o *__this,NJPBHDMCLIN_o *AHEFOIOKDOK,MethodInfo *method)
+
+{
+  return (__this->fields).super.GBBHFPBFOPI;
+}
+

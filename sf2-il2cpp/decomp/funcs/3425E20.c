@@ -1,0 +1,9 @@
+// FIMAAAOEIGM$$KMCLBIGPCDD @ RVA 0x3425E20
+
+void FIMAAAOEIGM__KMCLBIGPCDD(FIMAAAOEIGM_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).AFIPKDNMBKJ = CJNHFNHJHPE;
+  return;
+}
+

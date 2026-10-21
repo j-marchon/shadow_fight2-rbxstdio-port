@@ -1,0 +1,24 @@
+2026-10-20 03:16:51 INFO  ApplyIl2CppDump.java> [il2cpp      0s] parsing il2cpp_ghidra.h  
+2026-10-20 03:19:47 INFO  ApplyIl2CppDump.java> [il2cpp    176s] header parsed, composites in DTM: 300294  
+2026-10-20 03:19:47 INFO  ApplyIl2CppDump.java> [il2cpp    176s] ScriptMethod  
+2026-10-20 03:19:52 INFO  ApplyIl2CppDump.java> [il2cpp    180s]   ScriptMethod: 170589  
+2026-10-20 03:19:52 INFO  ApplyIl2CppDump.java> [il2cpp    180s] ScriptString  
+2026-10-20 03:19:53 INFO  ApplyIl2CppDump.java> [il2cpp    181s]   ScriptString: 22718  
+2026-10-20 03:19:53 INFO  ApplyIl2CppDump.java> [il2cpp    181s] ScriptMetadata  
+2026-10-20 03:19:55 INFO  ApplyIl2CppDump.java> [il2cpp    183s]   ScriptMetadata: 22315  
+2026-10-20 03:19:55 INFO  ApplyIl2CppDump.java> [il2cpp    183s] ScriptMetadataMethod  
+2026-10-20 03:19:56 INFO  ApplyIl2CppDump.java> [il2cpp    184s]   ScriptMetadataMethod: 25815  
+2026-10-20 03:19:56 INFO  ApplyIl2CppDump.java> [il2cpp    184s] Addresses  
+2026-10-20 03:20:12 INFO  ApplyIl2CppDump.java> [il2cpp    201s]   Addresses: 186744  
+2026-10-20 03:20:12 INFO  ApplyIl2CppDump.java> [il2cpp    201s] signatures: ScriptMethod  
+2026-10-20 03:21:03 INFO  ApplyIl2CppDump.java> [il2cpp    251s] sig parse failed: bool System_Security_Cryptography_X509Certificates_X509ChainImplMono__IsSignedWith (System_Security_Cryptography_X509Certificates_X509ChainImplMono_o* __this, System_Security_Cryptography_X509Certificates_X509Certificate2_o* _signed, System_Security_Cryptography_AsymmetricAlgorithm_o* pubkey, const MethodInfo* method)  
+2026-10-20 03:21:35 INFO  ApplyIl2CppDump.java> [il2cpp    283s]   ScriptMethod: 170589  
+2026-10-20 03:21:35 INFO  ApplyIl2CppDump.java> [il2cpp    283s] signatures: ScriptString  
+2026-10-20 03:21:35 INFO  ApplyIl2CppDump.java> [il2cpp    283s]   ScriptString: 22718  
+2026-10-20 03:21:35 INFO  ApplyIl2CppDump.java> [il2cpp    283s] signatures: ScriptMetadata  
+2026-10-20 03:21:35 INFO  ApplyIl2CppDump.java> [il2cpp    283s]   ScriptMetadata: 22315  
+2026-10-20 03:21:35 INFO  ApplyIl2CppDump.java> [il2cpp    283s] signatures: ScriptMetadataMethod  
+2026-10-20 03:21:35 INFO  ApplyIl2CppDump.java> [il2cpp    283s]   ScriptMetadataMethod: 25815  
+2026-10-20 03:21:35 INFO  ApplyIl2CppDump.java> [il2cpp    283s] signatures: Addresses  
+2026-10-20 03:21:35 INFO  ApplyIl2CppDump.java> [il2cpp    283s]   Addresses: 186744  
+2026-10-20 03:21:35 INFO  ApplyIl2CppDump.java> [il2cpp    283s] done  

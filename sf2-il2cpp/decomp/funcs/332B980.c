@@ -1,0 +1,9 @@
+// JGMAPPPOEOF$$JEGLOKEBHBM @ RVA 0x332B980
+
+void JGMAPPPOEOF__JEGLOKEBHBM(IJIHLBLCJMG_o *__this)
+
+{
+  IJIHLBLCJMG__FGNINNOOCCL(__this,true,(MethodInfo *)0x0);
+  return;
+}
+

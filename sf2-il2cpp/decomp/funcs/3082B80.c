@@ -1,0 +1,8 @@
+// IMIGIINBGPF$$KGGGBHEMAOO @ RVA 0x3082B80
+
+int32_t IMIGIINBGPF__KGGGBHEMAOO(IMIGIINBGPF_o *__this,MethodInfo *method)
+
+{
+  return 3;
+}
+

@@ -1,0 +1,13 @@
+// HMKNNONIOGK$$.ctor @ RVA 0x316769C
+
+void HMKNNONIOGK___ctor(HMKNNONIOGK_o *__this,System_Xml_XmlNode_o *AHDGNOJPPIB,MethodInfo *method)
+
+{
+  IIMNGGHGKOD___ctor((IIMNGGHGKOD_o *)__this,8,(MethodInfo *)0x0);
+                    /* WARNING: Could not recover jumptable at 0x032676d0. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(__this->klass->vtable)._5_HNIHOIAMDPC.methodPtr)
+            (__this,AHDGNOJPPIB,(__this->klass->vtable)._5_HNIHOIAMDPC.method);
+  return;
+}
+

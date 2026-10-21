@@ -1,0 +1,10 @@
+// NODLJPNGNBG$$INOKKGKNDAH @ RVA 0x3090C1C
+
+void NODLJPNGNBG__INOKKGKNDAH(NODLJPNGNBG_o *__this,ICBMOMGINFH_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).PMMFPJJOPKE = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

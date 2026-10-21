@@ -1,0 +1,8 @@
+// NFJNEIFINHA$$KGGGBHEMAOO @ RVA 0x317FAB8
+
+int32_t NFJNEIFINHA__KGGGBHEMAOO(NFJNEIFINHA_o *__this,MethodInfo *method)
+
+{
+  return 0xb;
+}
+

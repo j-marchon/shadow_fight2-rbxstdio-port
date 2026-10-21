@@ -1,0 +1,8 @@
+// POFFJOJIHAF$$NIINLDECJDE @ RVA 0x304E774
+
+MEMHIINCGGE_o * POFFJOJIHAF__NIINLDECJDE(POFFJOJIHAF_o *__this,MethodInfo *method)
+
+{
+  return (MEMHIINCGGE_o *)(__this->fields).KEIPGNFOHND;
+}
+

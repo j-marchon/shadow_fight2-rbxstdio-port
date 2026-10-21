@@ -1,0 +1,8 @@
+// IAMGDDPDCIO$$KCBILPIAPHN @ RVA 0x317CEF0
+
+int32_t IAMGDDPDCIO__KCBILPIAPHN(IAMGDDPDCIO_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

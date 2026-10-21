@@ -1,0 +1,8 @@
+// MJBDKEOEJEC$$KCBILPIAPHN @ RVA 0x33383B8
+
+int32_t MJBDKEOEJEC__KCBILPIAPHN(MJBDKEOEJEC_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

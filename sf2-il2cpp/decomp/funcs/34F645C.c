@@ -1,0 +1,8 @@
+// OLKKAIFGGAK$$FGCOPOEHPEB @ RVA 0x34F645C
+
+NKDMOOEFPHJ_o * OLKKAIFGGAK__FGCOPOEHPEB(OLKKAIFGGAK_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).LLMNNPKEGMB;
+}
+

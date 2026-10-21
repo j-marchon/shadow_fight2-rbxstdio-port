@@ -1,0 +1,9 @@
+// MGDJPGGPDJI$$EHMLCEKLCDD @ RVA 0x34A4464
+
+void MGDJPGGPDJI__EHMLCEKLCDD(MGDJPGGPDJI_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).ANAJGHJEEOC = CJNHFNHJHPE;
+  return;
+}
+

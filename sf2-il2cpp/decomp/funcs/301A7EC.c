@@ -1,0 +1,8 @@
+// ECENNHNBAME.MNDFKOHIAHI$$KGGGJNCEPLF @ RVA 0x301A7EC
+
+bool ECENNHNBAME_MNDFKOHIAHI__KGGGJNCEPLF(ECENNHNBAME_MNDFKOHIAHI_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields)._FCHBJLJDDOH_k__BackingField;
+}
+

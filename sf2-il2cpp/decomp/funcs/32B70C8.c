@@ -1,0 +1,8 @@
+// KHEDNGODOIC$$KLOHNEKNDBL @ RVA 0x32B70C8
+
+PKNBJJPHAKI_o * KHEDNGODOIC__KLOHNEKNDBL(KHEDNGODOIC_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).BAFJNPPPBMK;
+}
+

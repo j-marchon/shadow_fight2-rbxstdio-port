@@ -1,0 +1,43 @@
+// Nekki.SF2.GUI.StrikeThroughTextLine$$.ctor @ RVA 0x3271310
+
+void Nekki_SF2_GUI_StrikeThroughTextLine___ctor
+               (Nekki_SF2_GUI_StrikeThroughTextLine_o *__this,MethodInfo *method)
+
+{
+  UnityEngine_Vector3_array *__this_00;
+  UnityEngine_Vector3_array **ppUVar1;
+  System_Collections_Generic_List_StrikeThroughTextLine_NLGMBKIAOPD__o *__this_01;
+  System_Collections_Generic_List_StrikeThroughTextLine_NLGMBKIAOPD__o **ppSVar2;
+  MethodInfo *extraout_x1;
+  
+  if ((DAT_04567229 & 1) == 0) {
+    FUN_01bab630(&Method_System_Collections_Generic_List<StrikeThroughTextLine_NLGMBKIAOPD>__ctor__)
+    ;
+    FUN_01bab630(&System_Collections_Generic_List<StrikeThroughTextLine_NLGMBKIAOPD>_TypeInfo);
+    DAT_04567229 = 1;
+    method = extraout_x1;
+  }
+  __this_00 = (UnityEngine_Vector3_array *)
+              thunk_FUN_01bda818(System_Collections_Generic_List<StrikeThroughTextLine_NLGMBKIAOPD>_TypeInfo
+                                 ,method);
+  System_Collections_Generic_List<object>___ctor
+            ((System_Collections_Generic_List_object__o *)__this_00,
+             Method_System_Collections_Generic_List<StrikeThroughTextLine_NLGMBKIAOPD>__ctor__);
+  ppUVar1 = &(__this->fields).super.m_Corners;
+  *ppUVar1 = __this_00;
+  thunk_FUN_01c20e04(ppUVar1,__this_00);
+  __this_01 = (System_Collections_Generic_List_StrikeThroughTextLine_NLGMBKIAOPD__o *)
+              thunk_FUN_01bda818(
+                                System_Collections_Generic_List<StrikeThroughTextLine_NLGMBKIAOPD>_TypeInfo
+                                );
+  System_Collections_Generic_List<object>___ctor
+            ((System_Collections_Generic_List_object__o *)__this_01,
+             Method_System_Collections_Generic_List<StrikeThroughTextLine_NLGMBKIAOPD>__ctor__);
+  ppSVar2 = &(__this->fields)._KHPCAICPJCK_k__BackingField;
+  *ppSVar2 = __this_01;
+  thunk_FUN_01c20e04(ppSVar2,__this_01);
+  UnityEngine_UI_MaskableGraphic___ctor
+            ((UnityEngine_UI_MaskableGraphic_o *)__this,(MethodInfo *)0x0);
+  return;
+}
+

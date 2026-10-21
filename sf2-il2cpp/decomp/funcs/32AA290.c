@@ -1,0 +1,8 @@
+// JAGEKDLCCHP$$KCBILPIAPHN @ RVA 0x32AA290
+
+int32_t JAGEKDLCCHP__KCBILPIAPHN(JAGEKDLCCHP_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

@@ -1,0 +1,8 @@
+// ENKJOBOMOOB$$KCBILPIAPHN @ RVA 0x326D640
+
+int32_t ENKJOBOMOOB__KCBILPIAPHN(ENKJOBOMOOB_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

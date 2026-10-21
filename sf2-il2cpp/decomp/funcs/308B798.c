@@ -1,0 +1,9 @@
+// IEFEBEDLHNN$$IOMDKAABKDL @ RVA 0x308B798
+
+void IEFEBEDLHNN__IOMDKAABKDL(IEFEBEDLHNN_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).ENFFPGHABFD = CJNHFNHJHPE;
+  return;
+}
+

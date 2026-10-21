@@ -1,0 +1,17 @@
+// EGMONPGHHDP$$JEPAEBOBBMA @ RVA 0x304ACF0
+
+int32_t EGMONPGHHDP__JEPAEBOBBMA(EGMONPGHHDP_o *__this,MethodInfo *method)
+
+{
+  bool ABCLFEHMBJD;
+  int32_t iVar1;
+  JMDPBFOCHHP_CKEMIAEPGKD_o *CLDEGLBDGGE;
+  MethodInfo *method_00;
+  MethodInfo *in_x3;
+  
+  ABCLFEHMBJD = EGMONPGHHDP__PJKNOEOGFNM(__this,method);
+  CLDEGLBDGGE = EGMONPGHHDP__OKBKFJKEAAG(__this,method_00);
+  iVar1 = EGMONPGHHDP__JEPAEBOBBMA(__this,ABCLFEHMBJD,CLDEGLBDGGE,in_x3);
+  return iVar1;
+}
+

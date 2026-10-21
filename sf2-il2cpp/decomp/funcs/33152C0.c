@@ -1,0 +1,8 @@
+// MKFAKELPPAC$$DOKOFJGNJBL @ RVA 0x33152C0
+
+void MKFAKELPPAC__DOKOFJGNJBL(MKFAKELPPAC_o *__this,MethodInfo *method)
+
+{
+  return;
+}
+

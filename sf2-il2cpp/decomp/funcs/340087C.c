@@ -1,0 +1,8 @@
+// MGNPHCAAEIO$$CCANMOPIFEC @ RVA 0x340087C
+
+void MGNPHCAAEIO__CCANMOPIFEC(MethodInfo *method)
+
+{
+  return;
+}
+

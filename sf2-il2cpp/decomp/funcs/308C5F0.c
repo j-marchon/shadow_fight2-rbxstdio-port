@@ -1,0 +1,8 @@
+// OCJNPDKKKCM$$KCBILPIAPHN @ RVA 0x308C5F0
+
+int32_t OCJNPDKKKCM__KCBILPIAPHN(OCJNPDKKKCM_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

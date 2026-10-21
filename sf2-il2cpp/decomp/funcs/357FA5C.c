@@ -1,0 +1,9 @@
+// EOLFEKNCPLM$$CFBDBDPBJEI @ RVA 0x357FA5C
+
+void EOLFEKNCPLM__CFBDBDPBJEI(EOLFEKNCPLM_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).LEEKCALJFJN = CJNHFNHJHPE;
+  return;
+}
+

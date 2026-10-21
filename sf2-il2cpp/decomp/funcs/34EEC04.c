@@ -1,0 +1,8 @@
+// OLKKAIFGGAK$$CNNCFKBNFHE @ RVA 0x34EEC04
+
+BKHDDKOEEKP_o * OLKKAIFGGAK__CNNCFKBNFHE(OLKKAIFGGAK_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).NLMAHDLOKAJ;
+}
+

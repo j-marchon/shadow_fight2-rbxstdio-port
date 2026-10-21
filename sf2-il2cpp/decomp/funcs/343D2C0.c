@@ -1,0 +1,9 @@
+// IHMIMECHIAN$$ELIEPBPLOKE @ RVA 0x343D2C0
+
+void IHMIMECHIAN__ELIEPBPLOKE(IHMIMECHIAN_o *__this,bool CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).PJMOADBJNKH = CJNHFNHJHPE;
+  return;
+}
+

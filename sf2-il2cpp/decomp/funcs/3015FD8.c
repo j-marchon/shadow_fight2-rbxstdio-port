@@ -1,0 +1,10 @@
+// ECENNHNBAME$$HIEPPOOBIDI @ RVA 0x3015FD8
+
+void ECENNHNBAME__HIEPPOOBIDI(ECENNHNBAME_o *__this,PNGKLCHKPEO_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).JCKNGNJBIIF = CJNHFNHJHPE;
+  thunk_FUN_01c20e04(&(__this->fields).JCKNGNJBIIF);
+  return;
+}
+

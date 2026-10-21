@@ -1,0 +1,10 @@
+// KAMBBJFPLGM$$CAOLCIPLNBK @ RVA 0x311ACDC
+
+void KAMBBJFPLGM__CAOLCIPLNBK(KAMBBJFPLGM_o *__this,BPBGAAHBFKH_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).IGPJEDLPAGI = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

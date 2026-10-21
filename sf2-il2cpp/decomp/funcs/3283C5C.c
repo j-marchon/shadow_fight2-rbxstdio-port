@@ -1,0 +1,8 @@
+// GCGLGALIFGP$$KCBILPIAPHN @ RVA 0x3283C5C
+
+int32_t GCGLGALIFGP__KCBILPIAPHN(GCGLGALIFGP_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

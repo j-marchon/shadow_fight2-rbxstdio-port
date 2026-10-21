@@ -1,0 +1,8 @@
+// BDMABHJEEGD$$EGCHPOOCGPG @ RVA 0x310C6D0
+
+PGICCMFLDPI_o * BDMABHJEEGD__EGCHPOOCGPG(BDMABHJEEGD_o *__this,MethodInfo *method)
+
+{
+  return (__this->fields).LBKLNIPHGMM;
+}
+

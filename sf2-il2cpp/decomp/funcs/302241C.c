@@ -1,0 +1,10 @@
+// OKKPDLAJBFD$$DEMMEBNPAGL @ RVA 0x302241C
+
+void OKKPDLAJBFD__DEMMEBNPAGL(OKKPDLAJBFD_o *__this,PGICCMFLDPI_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).IPIKAEDIBOD = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

@@ -1,0 +1,15 @@
+// LFOMNKEACBL$$BOEFGIBCIIL @ RVA 0x30FBD84
+
+void LFOMNKEACBL__BOEFGIBCIIL
+               (LFOMNKEACBL_o *__this,MMDDDDFHOLG_DOCBHLNBECF_o *CPECAEHDDDB,bool LOPENELMPML,
+               MethodInfo *method)
+
+{
+  if (LOPENELMPML) {
+    LFOMNKEACBL__DGLJCGNHLIG(__this,CPECAEHDDDB,(MethodInfo *)0x1);
+    return;
+  }
+  LFOMNKEACBL__PDIAFGHECLE(__this,CPECAEHDDDB,(MethodInfo *)0x0);
+  return;
+}
+

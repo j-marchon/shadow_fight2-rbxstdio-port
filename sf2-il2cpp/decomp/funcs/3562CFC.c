@@ -1,0 +1,8 @@
+// GGCBKENAMPJ$$KCBILPIAPHN @ RVA 0x3562CFC
+
+int32_t GGCBKENAMPJ__KCBILPIAPHN(GGCBKENAMPJ_o *__this,MethodInfo *method)
+
+{
+  return 1;
+}
+

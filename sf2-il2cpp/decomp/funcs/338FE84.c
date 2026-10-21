@@ -1,0 +1,9 @@
+// HBHFOKIPAHA$$DPNGBFACKOL @ RVA 0x338FE84
+
+void HBHFOKIPAHA__DPNGBFACKOL(HBHFOKIPAHA_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MKGNDFBBANC = CJNHFNHJHPE;
+  return;
+}
+

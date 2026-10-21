@@ -1,0 +1,8 @@
+// OPNMPAJKDMI$$NHGGBEACKBD @ RVA 0x343E840
+
+int32_t OPNMPAJKDMI__NHGGBEACKBD(OPNMPAJKDMI_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

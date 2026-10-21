@@ -1,0 +1,8 @@
+// DFFNJKLBMEG$$KCBILPIAPHN @ RVA 0x3099D10
+
+int32_t DFFNJKLBMEG__KCBILPIAPHN(DFFNJKLBMEG_o *__this,MethodInfo *method)
+
+{
+  return 0;
+}
+

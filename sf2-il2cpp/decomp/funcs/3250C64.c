@@ -1,0 +1,9 @@
+// ICPMLKOEANF$$OFJLHAKNDGH @ RVA 0x3250C64
+
+void ICPMLKOEANF__OFJLHAKNDGH(ICPMLKOEANF_o *__this,int32_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).NLLKMEMKBAF = CJNHFNHJHPE;
+  return;
+}
+

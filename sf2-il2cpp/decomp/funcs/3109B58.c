@@ -1,0 +1,10 @@
+// OPNFCOGALLI$$CLJDNOHAAND @ RVA 0x3109B58
+
+void OPNFCOGALLI__CLJDNOHAAND(OPNFCOGALLI_o *__this,OPNFCOGALLI_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MLANKGMLJBF = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+

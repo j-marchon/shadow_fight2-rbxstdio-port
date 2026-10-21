@@ -1,0 +1,10 @@
+// LMPGMKLOHAH$$.ctor @ RVA 0x3594044
+
+void LMPGMKLOHAH___ctor(LMPGMKLOHAH_o *__this,HOOAAGABMBL_o *PLJKGEJHILJ,ACHLOMELAJE_o *BHENDAGDGME,
+                       NCNJEIBHGBH_o *GMFEBFOGDAA,MethodInfo *method)
+
+{
+  OPNMPAJKDMI___ctor((OPNMPAJKDMI_o *)__this,PLJKGEJHILJ,BHENDAGDGME,GMFEBFOGDAA,(MethodInfo *)0x0);
+  return;
+}
+

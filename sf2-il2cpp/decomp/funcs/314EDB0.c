@@ -1,0 +1,9 @@
+// KBLFOOJFIIG$$PKPLAKAMOPO @ RVA 0x314EDB0
+
+void KBLFOOJFIIG__PKPLAKAMOPO(KBLFOOJFIIG_o *__this,int64_t CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).GDKPGIBMFPA = CJNHFNHJHPE;
+  return;
+}
+

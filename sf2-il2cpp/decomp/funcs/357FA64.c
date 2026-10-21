@@ -1,0 +1,10 @@
+// EOLFEKNCPLM$$LHHFEAFBNMI @ RVA 0x357FA64
+
+void EOLFEKNCPLM__LHHFEAFBNMI(EOLFEKNCPLM_o *__this,GKLPDMLELJF_o *CJNHFNHJHPE,MethodInfo *method)
+
+{
+  (__this->fields).MCOPPCNPAHF = CJNHFNHJHPE;
+  thunk_FUN_01c20e04();
+  return;
+}
+
