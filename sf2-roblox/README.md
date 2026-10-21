@@ -51,6 +51,7 @@ Then in Studio (command bar, or via the MCP): pull `src/…` and `out/…` from 
   - start frame: the first `<Transition>` whose conditions pass sets it (`FrameShift` = old move's current keyframe + shift + 1, so HeavyPunch → DoublePunch carries on mid-punch); otherwise FirstFrame. One-keyframe blend-in unless NoInterpolationFrames.
   - Forward/Back: the buffer holds screen directions (Right, Up-Left, ...). Each candidate reads them relative to the facing it *would* have after its SetDirection (`InfoAnimation.BAHFNIPBBHD`), which for most moves means "Forward = towards the opponent". Holding Right past the opponent therefore turns StepForward into StepBack and keeps moving right.
   - AnimationEnd fires after the last keyframe segment
+  - **Conditions ask about the right model.** `ModExists`, `Player` and `Name` carry a `Player` attribute in the data, which the compiler dropped and the engine ignored, so all three were evaluated against *me*. Fixed: `cond()` emits `player=` for them and `MoveEngine.check` resolves it through `who()`, like the other conditions already did. In the data that is 36 `ModExists Player="Enemy"` (CurseBomb, MOD_TITAN, ShieldNoDamage, ThrowFallBlock, WhirlEffectPhysicalFall), one on `Parent`, 8 `Name` and 4 `Player` — the last twelve all inside the throws, where a wrong answer happened to be absorbed by a `Not="1"` wrapper. It now matters more, since perk mods go in the same table. Rerun `tools\build_arsenal.py` after changing `cond()`: it owns `out\MoveLib`, and `MoveSet_Shadow.lua` is no longer used.
 - Controls: A/D move (relative to facing), W up, S down, J/Z punch, K/X kick.
   - Keyboard → stick adapter (in `SF2Fight`): a lone direction waits 3 ticks (50 ms) in case a second key turns it into a diagonal
   - letting go of one key of a diagonal slides to the remaining direction without a new tap
@@ -73,7 +74,7 @@ Ported from `Model.DJIFEKKEMGN` → `ModelCollision` → `Model.HKFEABKNICO`:
   - an unblocked **head hit** (target edge BodyPart "Head": EHead, ENeck), with chance 0.0001 × ShockHeadHitChance (2500) × r. A 0.12 kick gives 3%. The HUD shows these hits as "HEAD HIT", like the game's banner.
   - a crit, with chance 0.0001 × ShockCriticalHitChance (starting value 0) × r.
   - accumulated damage past `<Shock><Treshold Value="999"/>`, which only perks reach. Not ported.
-  - The Shock state's other effects (`FrameReduction`, `LooseningDelay`, `Impulse`) are not ported.
+  - The Shock state's other effects from `internalSettings` `<Shock>` are **not ported**: `FrameReduction 0.001`, `LooseningDelay Frames="12"`, `Impulse Y="-0.5"`, and the pair `<Weapon Name="Fists"/>` + `<SetAttribute Name="WeaponDamage" Value="0"/>`, which reads as a shocked fighter losing their weapon (fists, no weapon damage) while the state lasts. Which field holds the state was not traced out of `Model.LMGIFKHIHJD`'s caller, so this is a reading of the data, not of the code.
   - Head hits will also hurt more once the damage curve exists (HeadDefense starts at 0, BodyDefense at 5).
 - **Damage** (`Model.NACPMGNAODH`) = interval Damage × 2^(0.0001 × CriticalDamage) on a crit (≈1.5×) × 2^(0.0001 × BlockDamageFactor) when blocked (≈0.2×). Attributes are `CharacterProgress.xml` `<StartingAttributes>`. The attack-vs-defense curve from items and levels (`GameUtils.NADKBDJLFIL`) is taken as 1, i.e. evenly matched fighters, until equipment/progression is ported.
 - **Ragdoll.** `Physics="1"` moves have no animation file.
@@ -88,6 +89,10 @@ Ported from `Model.DJIFEKKEMGN` → `ModelCollision` → `Model.HKFEABKNICO`:
 - **Sparring dummy** in `SF2Fight`: keys 1 = stand, 2 = punch, 3 = kick, 4 = sweep, 5 = rush.
 - `tools\convert.py` now exports `edgeInfo` per edge (Collisible, Radius, Margins, BodyPart).
 - **No body-vs-body push**, as in the original: no code was found for it (tick, physics, moves, strings), and the phone confirms you walk through the opponent. Point-blank heavy attacks can pass through the target before their attack window opens.
+- **Throws.** Also data-driven, and no engine work was needed beyond the condition-target fix above. The thrower's move (`ThrowForward` / `ThrowThroughTheBack` / `ThrowSuplex`, each with a `V`/`Profile` variant, priority 220) needs Punch tapped with Forward or Back held, the enemy within 100 on X, the enemy inside a `Throwable` interval (every hit reaction opens one once its recoil is over), and no `NoThrows` / `ThrowBlock` / `ThrowFallBlock` mod. It then throws by acting on the victim: `<PlayAnimation Player="Enemy" Animation="ThrowForwardV" Frame="2"/>`. The victim's move (`ThrowForwardV`, priority 550, label `ThrowFall`) has empty `<Events/>` and `<Conditions/>` on purpose — nothing selects it, the thrower starts it — and it aligns its animation origin onto the thrower's, taking its facing from the enemy's back wall towards the enemy's front wall. `StandupAfterThrowFall` follows, `LossThrowForward` / `LossThrowBack` are the end-stance variants, and the Attack interval at frame 26 carries the 0.35 UnarmedDamage. The AI never throws (`ThrowTactics` is not ported), so only the player does. **Unverified:** believed complete from a static read of the chain against the engine; no throw has been performed in Studio.
+- **Wall hits.** `WallHit` (priority 505) and `WallHitFall` (515) are ordinary data-driven moves, not engine code: each is an `EveryFrame` move whose conditions are a `CanWallHit` / `CanWallHitFall` interval on the reaction the victim is playing (the first 13 frames of HighHit/MiddleHit/SweepHit, the first 6–8 of the HitFalls), the right `CurrentAnimation` label (`Recoil` / `Fall`), and a `Distance` from `Object="Wall" Part="Back"` to NNeck (≤ 20) or NPivot (≤ 35). They align their animation origin to the back wall + 480, carry `NoWallRepulsion="1"`, and play `snd_wall3`. The wall anchors, the intervals and the align were already generic, so what was missing was only that nothing stopped a fighter at the wall:
+  - **Wall repulsion** (`MoveEngine.repulseWall`, new): each tick an animated model whose move lacks `NoWallRepulsion` is translated back inside the arena by however far its pivot passed a wall. Children are exempt, so `DeleteOnWall` missiles still leave. **Approximated:** the original carries `WallRepulsion` / `NoWallRepulsion` / `AlignOnParentWallCollision` per move and pushes with the collision code; here only the pivot is bounded, so a weapon or a limb can still cross the wall line. Ragdoll nodes were already clamped in `Fighter._floor`.
+  - Not verified in Studio yet: no fight has been run since it was added.
 
 ## Weapons (the whole arsenal)
 - **Every weapon item in `list.xml` that has a model: 218** (Fists included). Items without a model (`WEAPON_UNKNOWN`, blaster bullets, `SkeletonTonfa`, `SkeletonCircularSaw`) are internal and left out.
@@ -107,11 +112,12 @@ Ported from `Model.DJIFEKKEMGN` → `ModelCollision` → `Model.HKFEABKNICO`:
 - **Known gaps:** the super slash of the guns and bows (Tonfa Guns, Rifle, Musket, both Glaivebows) fires a projectile, and projectiles aren't ported yet; their melee moves work. Light tassels and ribbons hung on even lighter macros (Moon Sabers, Dynasty Sword, Super Fans, Wanderer Staff…) can stretch for a moment in fast moves. That follows from the game's own constraint and masses, but it hasn't been compared against the phone. The Fire Batons' 4 loose nodes have no edges, so they fall forever; nothing draws them.
 - WeaponDamage (list.xml) only feeds the attack-vs-defense curve, which is still taken as 1, so weapons currently hit with their moves' own Damage values.
 
-**Not yet (Phase 4+):**
-- the attack-vs-defense damage curve (needs items/levels), Shock's threshold and state effects, perks and mods
-- throws, wall hits (CanWallHit), Loss/round end (RoundResult, RoundStage EndStance)
-- Velocity/Rotation, Transitions with FrameShift
-- RoundResult/Health conditions, sounds and effects
+**Was "not yet" when this section was written, and has since been done** (kept so the list isn't read as current): the attack-vs-defense damage curve, perks and mods, throws, wall hits, Loss and round end (RoundResult, EndStance), Velocity, Transitions with FrameShift, the RoundResult/Health conditions, sounds and effects.
+
+**Still open in combat:**
+- Shock's threshold and state effects (see the Shock bullets above); the attack curve leaves out the enchantment-aspect blend of `CGOAEEIACCA`
+- missiles and projectiles are only as complete as the gun and bow supers need; check a move's `Fight` children before assuming either way
+- perk visuals (the "Not ported" list in `Perks.lua`) and the AI's BeginnerCheat, dodge lists, ThrowTactics and BossAbility
 
 ## Viewer controls (Play in Studio; `SF2Viewer` is disabled now, re-enable it to browse animations)
 - Right / Left: next / previous move (36 fists moves)
@@ -174,9 +180,50 @@ With no tactic name it takes `build.def.tactic`, then "Standard"; an unknown nam
 - **Table weapon:** the weapon SubType if it has tables; else the first `TacticWeapon` on its weapon moves that has tables (Keris → Knives, Katana → NinjaSword); else shared moves only.
 - **Fallback:** Random tactics, and Tabular tactics facing an enemy animation with no tables at all, pick any move that could start now, by weight. For Tabular this is graceful degradation; the original would just wait.
 - **Random Delays** (`<Random><Delays>`) are used as reaction delays after seeing those enemy animations.
+- **Engagement floor** (`AI.ENGAGE`, `engageFloor`, `lastAttack`): **a deliberate deviation, not in the original.** Two Tabular AIs are cautious enough against each other to stall in ExpectedWait for a whole round (88% of free ticks), which the original avoids through the wait bookkeeping this port approximates. The floor lets a table attack or safe-attack candidate through with a probability rising from 0 to `max` between `delay` and `delay + ramp` ticks after this fighter's own last attack (`AI.ENGAGE = {delay = 20, ramp = 60, max = 1}`), so fights progress. `AI.new(..., {engage = false})` turns it off and gives the untouched table behaviour; a table in place of `false` overrides the three numbers.
 - **Not ported:** BeginnerCheat, the EmergencyDodges/SafeDodges/EvadeUnsafeDodges lists, TacticWallShift, ThrowTactics and BossAbility logic, the "SetWait" timing modes.
 
 **Test:** `tools\tests\ai_test.luau` (Studio command bar, with `ServerStorage.SF2Test` = a clone of `ReplicatedStorage.SF2` with Data.Tactics and AI installed). It runs 6000 ticks of knives vs knives, Standard on both sides, and reports rounds, winner, attacks started, AI decision kinds, per-tick flow counters and errors.
 - **Measured** (seeds 1001/1002): 0 errors, ~0.34 ms/tick including both engines. In 100 s both sides walk in, block and land table attacks (7-10 attacks each); the round ends on time at 0.71 / 0.90 health.
 - **Tabular tactics are cautious against each other:** 88% of the free ticks end in ExpectedWait, and the table/cautious chances start near 0 and grow with the enemy's frames and memory.
 - **Beginner** (Random) with a katana won 2-0 by KO against Aggressive knives, in 2228 ticks.
+
+## Perks (`src\SF2\Perks.lua`)
+
+Each fighter's perks (from the stage's `<Perks>`, and the player's own) are trigger lists from `perks.xml`
+that run on fight events. A perk inherits its template's triggers (`Template=`, e.g. `EndStanceClear`) and
+takes its variables from `<Set>`, overridden by the player's upgrade level
+(`CharacterProgress <Perks><UpgradeLevel><Set>`).
+
+**Build:** nothing to build. `perks.xml` is already in `out\Xml\perks*.lua` from `build_game.py`; install
+`src\SF2\Perks.lua` as `ReplicatedStorage.SF2.Perks`.
+
+**Wiring:** `Fight.new` creates `fight.perks = Perks.new(fight)`, and the events reach it from where they
+happen:
+
+| Event | Fired from |
+|---|---|
+| `RoundStageStart` | `Fight.setStage` |
+| `HitPreCrit` / `HitPostCrit` / `PostHit` | `Combat.strike`, around the crit roll and the health change |
+| `EveryFrame`, `ModExpires` | `Perks.tick`, once per `Fight.tick` |
+| `AnimationStart` / `AnimationEnd` | `MoveEngine.start` / `startPhysics` / the end of the last keyframe |
+| `MagicCharged` | `Fight.onHit`, when the bar first fills |
+
+**Mods** are named timed states on a fighter (`e.mods[name] = {frames, attrs, vars, icon}`). The moves
+engine's `ModExists` conditions read the same table, so a perk's `ModFlag` gates moves exactly as the rules'
+and stuns' mods do. A mod with `ModAttributes` adds its attributes to the fighter's while it lasts
+(`e.baseAttributes` keeps the unmodified set, and `Fight.new` clones the build's attributes so a fight never
+writes back into it).
+
+**Hit edits:** `SetHit` and `ChangeImpulse` leave `blocked` / `forceCritical` / `forceShock` / `setDamage` /
+`impulseMulX` / `impulseMulY` on the hit record, and `Combat.strike` consumes each one at the stage it
+belongs to: a `Block` set at `HitPreCrit` still changes the block damage factor, while `Critical`, `Shock`
+and `Damage` set at `HitPostCrit` apply to the finished hit before the health comes off.
+
+**Not ported** (visual or special-arena actions, listed at the top of the file): `ApplyModEffect`,
+`PerkArea`, `SlowModel`, `SetDarkness`, `ChangeModelColor`, `MoveModel`, `ShowDebugLine`,
+`SetMovesVariable`, `SetTactic`, `StealMagicMod`, `TurnOffCollision`, `ModInvisibility`. Perk upgrade levels
+default to 1: `Fight.new` fills `e.perks[name] = true` from the stage definition, so the player's own levels
+are not read from the profile yet.
+
+**Not verified in Studio yet.**

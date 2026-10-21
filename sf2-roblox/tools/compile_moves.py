@@ -108,7 +108,8 @@ def cond(el):
     if tag == 'RoundStage':
         return f"{{t=\"stage\",nt={nt},name={s(el.get('Name') or '')}}}"
     if tag == 'ModExists':
-        return f"{{t=\"mod\",nt={nt},name={s(el.get('Name') or '')}}}"
+        return (f"{{t=\"mod\",nt={nt},name={s(el.get('Name') or '')},"
+                f"player={s(el.get('Player') or 'Me')}}}")
     if tag == 'Item':
         return (f"{{t=\"item\",nt={nt},type={s(el.get('Type') or '')},sub={s(el.get('SubType') or '')},"
                 f"name={s(el.get('Name') or '')},player={s(el.get('Player') or 'Me')}}}")
@@ -116,9 +117,11 @@ def cond(el):
         return (f"{{t=\"dist\",nt={nt},axis={s(el.get('Axis') or 'X')},min={num(el.get('Min'), -1e9)},"
                 f"max={num(el.get('Max'), 1e9)},from={anchor(el.find('From'))},to={anchor(el.find('To'))}}}")
     if tag == 'Player':
-        return f"{{t=\"player\",nt={nt},number={num(el.get('Number'), 1)}}}"
+        return (f"{{t=\"player\",nt={nt},number={num(el.get('Number'), 1)},"
+                f"player={s(el.get('Player') or 'Me')}}}")
     if tag == 'Name':
-        return f"{{t=\"name\",nt={nt},value={s(el.get('Value') or '')}}}"
+        return (f"{{t=\"name\",nt={nt},value={s(el.get('Value') or '')},"
+                f"player={s(el.get('Player') or 'Me')}}}")
     if tag == 'Hit':  # ConditionHit: the hit just taken (name, and Critical/Shock type)
         return f"{{t=\"hit\",nt={nt},name={s(el.get('Name') or '')},type={s(el.get('Type') or '')}}}"
     if tag == 'Health':  # own health (fraction of life)

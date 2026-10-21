@@ -128,6 +128,26 @@ function MoveEngine.walls(self: MoveEngine): (number, number)
 	return -ARENA_HALF, ARENA_HALF
 end
 
+-- Wall repulsion: an animated model is pushed back into the arena by however far its pivot went past a
+-- wall, so a fighter knocked into a wall stops there instead of sliding through it. That is what lets the
+-- WallHit / WallHitFall moves fire: both are ordinary EveryFrame moves whose conditions are a CanWallHit /
+-- CanWallHitFall interval plus a Distance from Object="Wall" Part="Back" to NNeck (20) or NPivot (35).
+-- Moves with NoWallRepulsion="1" (the WallHit pair itself, the missiles, magic and shop moves) are exempt,
+-- and children are left alone so DeleteOnWall still works.
+-- Approximated: the original has WallRepulsion / NoWallRepulsion / AlignOnParentWallCollision per move
+-- (MovesCompiler) and pushes the model with the collision code; only the pivot is bounded here, so a
+-- weapon or a limb can still cross the wall line.
+function MoveEngine.repulseWall(self: MoveEngine)
+	if self.parent or (self.move and self.move.noWallRepulsion) then return end
+	local lo, hi = self:walls()
+	local x = self:nodePos(self.pivotSlot)
+	local dx = (x < lo and lo - x) or (x > hi and hi - x) or 0
+	if dx ~= 0 then
+		self.fighter:translate(dx, 0)
+		self.offsetX += dx
+	end
+end
+
 -- DistancePoint: Player Me/Enemy/Parent/Child, Object Nodes/Pivot/Wall/Floor/MapCenter/COM/Animation
 function MoveEngine.anchor(self: MoveEngine, a: any): (number, number)
 	if not a then
@@ -236,7 +256,10 @@ function MoveEngine.check(self: MoveEngine, c: any, candidate: any): boolean
 	elseif t == "stage" then
 		v = (c.name == self:roundStage())
 	elseif t == "mod" then
-		v = self.mods[c.name] ~= nil -- ModExists: modifiers from rules, perks and stuns (Fight.addMod)
+		-- ModExists: modifiers from rules, perks and stuns (Fight.addMod, SF2.Perks). Player="Enemy"
+		-- asks about the other fighter's mods (ThrowFallBlock, CurseBomb, MOD_TITAN, the hit effects)
+		local who = self:who(c.player)
+		v = who ~= nil and who:root().mods[c.name] ~= nil
 	elseif t == "item" then
 		local who = self:who(c.player)
 		v = who ~= nil and itemMatches(who.loadout, c)
@@ -246,7 +269,8 @@ function MoveEngine.check(self: MoveEngine, c: any, candidate: any): boolean
 		local d = (c.axis == "Y") and math.abs(ty - fy) or math.abs(tx - fx)
 		v = d >= c.min and d <= c.max
 	elseif t == "player" then
-		v = (c.number == self.player)
+		local who = self:who(c.player)
+		v = who ~= nil and (c.number == who:root().player)
 	elseif t == "health" then
 		v = self.health >= c.min and self.health <= c.max
 	elseif t == "physframes" then
@@ -259,7 +283,9 @@ function MoveEngine.check(self: MoveEngine, c: any, candidate: any): boolean
 	elseif t == "bullets" then
 		v = (self:root().bullets.MagicBullet or 0) >= c.min
 	elseif t == "name" then
-		v = (self.name == c.value)
+		-- the model's own name: Player="EnemyChild" asks about the enemy's summon (Assistant)
+		local who = self:who(c.player)
+		v = who ~= nil and (who.name == c.value)
 	elseif t == "x" then
 		v = self:checkRaw(c.tag, c.el)
 	else
@@ -276,6 +302,12 @@ function MoveEngine.root(self: MoveEngine): any
 	local r = self
 	while r.parent do r = r.parent end
 	return r
+end
+
+-- Perk AnimationStart / AnimationEnd triggers (SF2.Perks); a lone engine has no fight and no perks
+local function perkAnim(self: any, event: string, m: any)
+	local fight = self.fight or self:root().fight
+	if fight and fight.perks then fight.perks:animation(event, self, m) end
 end
 
 -- RoundStage of the fight (StartStance, Fight, EndStance); a lone engine is always in Fight
@@ -525,6 +557,7 @@ function MoveEngine.start(self: MoveEngine, m: any)
 	self.justBorn = false
 	self:runActions(first, nil, true)
 	self:runActions(nil, "AnimationStart")
+	perkAnim(self, "AnimationStart", m)
 end
 
 -- Physics="1" moves (PhysicalFall, PhysicalGroundHit, PhysicalLying): no animation, the whole body is
@@ -549,6 +582,7 @@ function MoveEngine.startPhysics(self: MoveEngine, m: any)
 	self.remap = nil
 	self:runActions(0, nil, true)
 	self:runActions(nil, "AnimationStart")
+	perkAnim(self, "AnimationStart", m)
 	table.insert(self.log, m.name)
 	if #self.log > 6 then table.remove(self.log, 1) end
 end
@@ -591,6 +625,7 @@ function MoveEngine.advance(self: MoveEngine)
 			end
 			self:fire("AnimationEnd", self.move.name)
 			self:runActions(nil, "AnimationEnd")
+			perkAnim(self, "AnimationEnd", self.move)
 		end
 		return
 	end
@@ -667,6 +702,7 @@ function MoveEngine.tick(self: MoveEngine)
 	end
 	if self.clip then
 		self:writePose()
+		self:repulseWall()
 	else
 		self.physFrames += 1
 	end
