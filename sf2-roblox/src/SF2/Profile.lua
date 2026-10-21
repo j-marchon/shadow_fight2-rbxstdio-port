@@ -104,6 +104,37 @@ function Profile.expToNext(level: number): number
 	return (thresholds :: any)[level] or math.huge
 end
 
+-- The last level the Thresholds list still has an entry for, plus one: the level cap
+function Profile.maxLevel(): number
+	Profile.expToNext(1)
+	local best = 1
+	for level in (thresholds :: any) or {} do
+		if level > best then best = level end
+	end
+	return best + 1
+end
+
+-- DEV ONLY, and temporary: unlock everything so any act, boss or mode can be opened for testing.
+-- Every battle is marked fully won, which Game.playBattle treats as "replay a random fight", so they all
+-- stay playable. Remove this and the Settings button it hangs off once the progression is being tested
+-- for real.
+function Profile.maxOut()
+	local Stages = require(script.Parent.Stages)
+	local d = Profile.get()
+	d.money = 99999999
+	d.bonus = 999999
+	d.level = Profile.maxLevel()
+	d.exp = 0
+	for _, z in Stages.zones() do
+		local zn = Xml.attr(z, "Name") :: string
+		d.flags["zone_" .. zn] = true
+		for _, b in Stages.battles(z) do
+			d.battles[zn .. "|" .. (Xml.attr(b, "Name") :: string)] = #Stages.fights(b)
+		end
+	end
+	Profile.save()
+end
+
 -- Add experience; returns the number of levels gained
 function Profile.addExp(n: number): number
 	local d = Profile.get()

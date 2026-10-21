@@ -217,14 +217,19 @@ function UI.setFill(label: any, amount: number)
 	if not g then
 		g = Instance.new("UIGradient")
 		g.Name = "Fill"
-		local method = label:GetAttribute("fillMethod") or "Horizontal"
+		-- dump_ui writes Unity's m_FillMethod as a lower-case name (horizontal, vertical, radial90,
+		-- radial180, radial360), so compare in lower case: matching "Horizontal" never hit, and every
+		-- filled image fell through to the radial default and drained bottom-to-top. That is what made
+		-- the fight's health bars fill vertically.
+		local method = string.lower(tostring(label:GetAttribute("fillMethod") or "horizontal"))
 		local origin = label:GetAttribute("fillOrigin") or 0
-		if method == "Horizontal" then
-			g.Rotation = origin == 1 and 180 or 0
-		elseif method == "Vertical" then
+		if method == "vertical" then
+			-- Unity vertical origin: 0 = Bottom, 1 = Top
 			g.Rotation = origin == 1 and 90 or -90
 		else
-			g.Rotation = -90
+			-- horizontal (0 = Left, 1 = Right); a gradient cannot do the radial methods, so they take
+			-- the horizontal approximation rather than a wrong axis
+			g.Rotation = origin == 1 and 180 or 0
 		end
 		g.Parent = label
 	end

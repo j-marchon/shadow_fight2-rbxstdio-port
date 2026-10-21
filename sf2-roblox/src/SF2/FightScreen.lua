@@ -81,6 +81,23 @@ function FightScreen.run(config: any): any
 	local canvas = UI.canvas(gui)
 	local hud = UI.build("ViewerFight", canvas) :: any
 	local controls = UI.build("GameController", canvas) :: any
+	-- The touch controls are a phone layout: on a desktop (keyboard, no touchscreen) the game plays on
+	-- the keys and the pad is only in the way, so hide it; on touch keep it, a little smaller than the
+	-- phone layout's own size, which is scaled for a hand-held screen.
+	if UserInputService.TouchEnabled then
+		-- scale each group at its own corner: a UIScale on the full-screen container would pull both
+		-- of them in towards its origin instead of just making them smaller
+		for _, group in { "ActionButtons", "LeftContainer" } do
+			local g = controls:FindFirstChild(group)
+			if g then
+				local shrink = Instance.new("UIScale")
+				shrink.Scale = 0.75
+				shrink.Parent = g
+			end
+		end
+	else
+		controls.Visible = false
+	end
 	local banner = Instance.new("ImageLabel")
 	banner.Name = "Announcement"
 	banner.BackgroundTransparency = 1
@@ -136,7 +153,10 @@ function FightScreen.run(config: any): any
 		local health = find(hud, "Models/PlayerLifeBar_" .. side .. "/BarPanel/HealthBar")
 		local hit = find(hud, "Models/PlayerLifeBar_" .. side .. "/BarPanel/HitBar")
 		for _, b in { health, hit } do
-			if b and side == "right" then b:SetAttribute("fillOrigin", 1) end
+			-- each bar drains towards its own avatar, so the fill is anchored on the outer edge: left
+			-- bar from the left, right bar from the right. The prefab says Right for both because the
+			-- game mirrors the right one by scale; set it per side instead of inheriting that.
+			if b then b:SetAttribute("fillOrigin", side == "right" and 1 or 0) end
 		end
 		bars[i] = { health = health, hit = hit, shown = 1 }
 	end
@@ -392,9 +412,24 @@ function FightScreen.run(config: any): any
 	if pauseBtn and pauseBtn:IsA("GuiButton") then
 		table.insert(conns, pauseBtn.Activated:Connect(function() setPaused(not paused) end))
 	end
-	-- stick: drag inside the left container; the knob follows within its ring, 8 directions
+	-- stick: drag inside the left container; the knob follows within its ring, 8 directions.
+	-- The prefab carries a Normal/Pressed pair for both the knob and its ring, and the game shows one of
+	-- each at a time. Moving only StickNormal left the Pressed copy sitting at the centre, which read as
+	-- the stick duplicating itself as soon as you dragged.
 	local stick = find(controls, "LeftContainer/Stick")
 	local knob = find(controls, "LeftContainer/Stick/StickNormal")
+	local knobPressed = find(controls, "LeftContainer/Stick/StickPressed")
+	local ringNormal = find(controls, "LeftContainer/Stick/BackgroundNormal")
+	local ringPressed = find(controls, "LeftContainer/Stick/BackgroundPressed")
+	local flashing = find(controls, "LeftContainer/Stick/BackgroundFlashing")
+	if flashing then flashing.Visible = false end
+	local function stickPressedLook(down: boolean)
+		if knob then knob.Visible = not down end
+		if knobPressed then knobPressed.Visible = down end
+		if ringNormal then ringNormal.Visible = not down end
+		if ringPressed then ringPressed.Visible = down end
+	end
+	stickPressedLook(false)
 	local stickInput: InputObject? = nil
 	local stickCenter = Vector2.zero
 	local function stickUpdate(pos: Vector2)
@@ -409,10 +444,10 @@ function FightScreen.run(config: any): any
 			h, v = dirs[sector + 1][1], dirs[sector + 1][2]
 		end
 		stickDir = (h ~= 0 or v ~= 0) and { h, v } or nil
-		if knob then
-			local m = math.min(d.Magnitude, 160 * scale)
-			local off = d.Magnitude > 0 and d.Unit * m / scale or Vector2.zero
-			knob.Position = UDim2.new(0.5, off.X, 0.5, off.Y)
+		local m = math.min(d.Magnitude, 160 * scale)
+		local off = d.Magnitude > 0 and d.Unit * m / scale or Vector2.zero
+		for _, k in { knob, knobPressed } do
+			if k then k.Position = UDim2.new(0.5, off.X, 0.5, off.Y) end
 		end
 		updateDirection(true)
 	end
@@ -422,6 +457,7 @@ function FightScreen.run(config: any): any
 			if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseButton1 then
 				stickInput = input
 				stickCenter = stick.AbsolutePosition + stick.AbsoluteSize / 2
+				stickPressedLook(true)
 				stickUpdate(Vector2.new(input.Position.X, input.Position.Y))
 			end
 		end))
@@ -434,7 +470,10 @@ function FightScreen.run(config: any): any
 			if stickInput and (input == stickInput or input.UserInputType == Enum.UserInputType.MouseButton1) then
 				stickInput = nil
 				stickDir = nil
-				if knob then knob.Position = UDim2.fromScale(0.5, 0.5) end
+				for _, k in { knob, knobPressed } do
+					if k then k.Position = UDim2.fromScale(0.5, 0.5) end
+				end
+				stickPressedLook(false)
 				updateDirection(true)
 			end
 		end))

@@ -685,9 +685,15 @@ function MoveEngine.tick(self: MoveEngine)
 	self:fire("EveryFrame")
 	if not self:processEvents() and self.ended then
 		-- nothing took over at the end of the move: back to the idle stance (a child with nothing to
-		-- play next is finished and the fight removes it)
+		-- play next is finished and the fight removes it).
+		-- A fighter that lost the round is the exception: it must stay down. moves.xml already keeps it
+		-- there (Standup and StandupBack both require RoundResult Defeat Not="1"), but this fallback is
+		-- the port's own and was standing the loser up anyway once its Loss or fall move ran out.
+		local defeated = self.roundResult ~= nil and self.roundResult.name == "Defeat"
 		local idle = self.byName.StanceIdle
-		if idle and not self.parent then
+		if defeated then
+			-- hold the last pose until the next round respawns this fighter (Fight.startRound)
+		elseif idle and not self.parent then
 			self:start(idle)
 		else
 			self.finished = true

@@ -29,11 +29,16 @@ local Fight = {}
 Fight.__index = Fight
 
 local BASE = 0.0001
-local START_STANCE_MIN = 100 -- ticks the "Round N" banner shows before the fight starts
-local START_STANCE_MAX = 400
-local END_STANCE_MIN = 120
-local END_STANCE_MAX = 420
-local SPAWN_X = 100 -- location ModelsViewer: the fighters stand 100 units either side of the centre
+-- Stage floors and caps, in ticks (60 = 1 s). These are the port's own: the data gives no stage
+-- lengths, the stage really ends when both stance animations have played (the `done` / `busy` checks),
+-- and these only keep the banner up for a moment and cap a stance that never finishes. They started at
+-- 100/400 and 120/420, which added nearly two seconds of standing around to every round on top of the
+-- animations; dropped to roughly half a second, which matches the phone's pace.
+local START_STANCE_MIN = 30
+local START_STANCE_MAX = 240
+local END_STANCE_MIN = 45
+local END_STANCE_MAX = 300
+local SPAWN_X = 100 -- fallback: most locations put the fighters 100 units either side of the centre
 
 export type Hooks = { [string]: (...any) -> ...any }
 
@@ -42,17 +47,30 @@ local function settings(): any
 end
 
 -- Arena from a location layout (<Width>, <Wall>): walls at +-(Width/2 - Wall) around the centre
-local function arena(location: string?): (number, number, number)
+-- Walls, floor and the two spawn offsets of a location. The spawns come from the location's own
+-- <ModelsViewer PlayerPositionX EnemyPositionX>, measured from the middle of the map: most locations put
+-- the fighters 200 units apart, the dojos 283 and one raid map 330, which the fixed +/-100 ignored.
+local function arena(location: string?): (number, number, number, number, number)
 	local loc = location and Xml.location(location)
 	local width = Xml.num(loc, "Width", 1936) :: number
 	local wall = Xml.num(loc, "Wall", 200) :: number
 	local floor = Xml.num(loc, "Floor", 80) :: number
 	local half = width / 2 - wall
-	return -half, half, floor
+	local px, ex = -SPAWN_X, SPAWN_X
+	-- it sits inside the models layer (<Layer Type="2">), not at the root
+	local mv
+	for _, layer in Xml.all(loc, "Layer") do
+		mv = mv or Xml.first(layer, "ModelsViewer")
+	end
+	if mv then
+		local p, e = Xml.num(mv, "PlayerPositionX"), Xml.num(mv, "EnemyPositionX")
+		if p and e then px, ex = p - width / 2, e - width / 2 end
+	end
+	return -half, half, floor, px, ex
 end
 
 function Fight.new(opts: any)
-	local wallMin, wallMax, floor = arena(opts.location)
+	local wallMin, wallMax, floor, spawnP, spawnE = arena(opts.location)
 	local self = setmetatable({
 		opts = opts,
 		hooks = opts.hooks or {},
@@ -62,6 +80,7 @@ function Fight.new(opts: any)
 		battleType = opts.battleType or "",
 		location = opts.location,
 		wallMin = wallMin, wallMax = wallMax, floorOffset = floor,
+		spawnP = spawnP, spawnE = spawnE,
 		engines = {},
 		children = {},
 		stage = "StartStance",
@@ -138,7 +157,7 @@ function Fight.startRound(self: any)
 		if self.round == 1 or not self.noBulletsRefill[i] then
 			e.rangedLeft = e.attributes.RangedQuantity or math.huge
 		end
-		local x = i == 1 and -SPAWN_X or SPAWN_X
+		local x = i == 1 and self.spawnP or self.spawnE
 		e:spawn((self.wallMin + self.wallMax) / 2 + x, i == 1 and 1 or -1)
 	end
 	for _, mod in self.opts.mods or {} do
@@ -150,11 +169,18 @@ function Fight.startRound(self: any)
 	self:hook("roundStart", self.round)
 end
 
--- An engine's current move is a stance of the given stage (StartStance / StageStance labels)
+-- Is this engine still playing the stage's own stance animation?
+-- EndsStage="1" alone is not enough: the looping idles that *follow* a stance carry it too
+-- (KnivesStartStanceIdle is "StartIdleStance|Stance" with EndsStage="1"), and an idle loop never reports
+-- `ended`, so counting it kept every round's end stance busy until the cap -- which is what made the
+-- rounds take so long to turn over. The real stage animations are the ones labelled StageStance
+-- (StartStance / EndStance / Win_*) plus the Loss moves; the idles are not.
 local function inStageMove(e: any): boolean
 	local m = e.move
-	if not m then return false end
-	return m.endsStage and not e.ended
+	if not m or not m.endsStage or e.ended then return false end
+	local labels = m.labelSet
+	if labels and (labels.StartIdleStance or labels.IdleStance) then return false end
+	return true
 end
 
 function Fight.setStage(self: any, stage: string)
