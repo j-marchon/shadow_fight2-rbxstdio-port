@@ -19,7 +19,7 @@ Last updated: **2026-10-21** (reorganized everything into `D:\SF2-Port`; no code
 | Folder | Contents |
 |---|---|
 | `START_HERE.md` | this file |
-| `.git`, `.gitignore` | **one git repo for the whole folder**, remote `origin` = private GitHub `j-marchon/shadow_fight_2-rbxstdio-port` (branch `main`). `.gitignore` keeps `apk\`, `sf2-data\`, `sf2-assets\`, `sf2-il2cpp\`, `_archive\` and `tmp\` local (keys and copyrighted game content); never un-ignore them. `out\` is tracked, which is fine only while the repo is private |
+| `.git`, `.gitignore` | **one git repo for the whole folder**, remote `origin` = private GitHub `j-marchon/shadow_fight2-rbxstdio-port` (branch `main`). `.gitignore` keeps `apk\`, `sf2-data\`, `sf2-assets\`, `sf2-il2cpp\`, `_archive\` and `tmp\` local (keys and copyrighted game content); never un-ignore them. `out\` is tracked, which is fine only while the repo is private |
 | `sf2-roblox\` | **the port** (its old standalone history is merged into the root repo). `src\SF2\*.lua` = runtime, `tools\*.py` = generators, `tools\tests\*.luau` = Studio tests, `out\` = generated Luau (~85 MB), `README.md` = per-system faithfulness notes |
 | `sf2-data\` | decrypted game data. `combat\` (moves.xml, models, animations, tactics, config), `decrypted\`, `extracted_more\`, `apk_assets\`, `index\`. **`keys\`** holds the AES key and the Roblox Open Cloud key (local only; never print or commit them) |
 | `sf2-il2cpp\` | `decomp\` (Ghidra C: `Fights\`, `Root_named\`, `funcs\`, `funcs_extra\`), `dump\` (Il2CppDumper: `script.json`, `dump.cs`, `DummyDll\`), `ghidra_proj\`, `ghidra_scripts\ExportDecompiled.java`, `index\class_map.tsv` |
