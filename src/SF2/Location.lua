@@ -113,12 +113,21 @@ function Location.new(name: string?, parent: Instance)
 	return self
 end
 
--- Parallax for the camera's x (world units) and animated pictures
-function Location.update(self: any, cameraX: number, dt: number)
+-- Parallax for the camera's x (world units) and animated pictures. camDist (studs): the perspective
+-- camera's distance to the fighters' plane; a layer at depth z is scaled and placed by k = (D - z) / D so it
+-- looks exactly like the game's flat 2D layer.
+function Location.update(self: any, cameraX: number, dt: number, camDist: number?, camY: number?)
 	self.time += dt
 	local cy = (self.centerY or 176) * SCALE
+	local D = camDist or 1e6
+	local cY = camY or cy
+	local camXs = cameraX * SCALE
 	for _, l in self.layers do
-		l.part.CFrame = CFrame.new(cameraX * (1 - l.factor) * SCALE, cy, l.z)
+		local k = (D - l.z) / D
+		local want = cameraX * (1 - l.factor) * SCALE -- where the layer sits in the fighters' plane
+		if l.size == nil then l.size = l.part.Size end
+		l.part.Size = Vector3.new(l.size.X * k, l.size.Y * k, l.size.Z)
+		l.part.CFrame = CFrame.new(camXs + (want - camXs) * k, cY + (cy - cY) * k, l.z)
 	end
 	for _, a in self.anims do
 		local dy = a.oscAmp ~= 0 and math.sin(self.time * a.oscFreq * 2) * a.oscAmp or 0

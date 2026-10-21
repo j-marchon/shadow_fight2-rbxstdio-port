@@ -52,8 +52,25 @@ local function hideWorld()
 	end
 end
 
+-- SF2 is flat 2D art: no haze, blur, bloom or sun rays over it (the camera sits far away, see FightScreen)
+local function flatLighting()
+	local L = game:GetService("Lighting")
+	for _, c in L:GetChildren() do
+		if c:IsA("Atmosphere") then
+			c.Density = 0
+			c.Haze = 0
+			c.Glare = 0
+		elseif c:IsA("PostEffect") then
+			c.Enabled = false
+		end
+	end
+	L.FogEnd = 1e6
+	L.GlobalShadows = false
+end
+
 function Game.start()
 	hideWorld()
+	flatLighting()
 	local i = 1
 	local function nextFight()
 		local fights = Stages.fights(Stages.battle("ZONE_1", "Tournament"))
