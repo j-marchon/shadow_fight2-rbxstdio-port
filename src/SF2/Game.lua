@@ -40,7 +40,20 @@ function Game.playFight(zone: string, battle: string, index: number, done: (any)
 	})
 end
 
+-- The place's default baseplate and spawn are not part of the game
+local function hideWorld()
+	for _, d in workspace:GetChildren() do
+		if d:IsA("BasePart") and (d.Name == "Baseplate" or d:IsA("SpawnLocation")) then
+			d.Transparency = 1
+			for _, x in d:GetDescendants() do
+				if x:IsA("Decal") or x:IsA("Texture") then x.Transparency = 1 end
+			end
+		end
+	end
+end
+
 function Game.start()
+	hideWorld()
 	local i = 1
 	local function nextFight()
 		local fights = Stages.fights(Stages.battle("ZONE_1", "Tournament"))

@@ -2632,6 +2632,4 @@ return {["Tenebris_greetings_1"]="You are on the edge of reality, traveller. Thi
 ["zone1_guard4_defeated"]="My defeat only serves to strengthen Lynx. With each battle he learns more of your moves, your skill, and thus, how to defeat you.",
 ["zone1_guard4_greetings"]="I beat Lynx easily the first time I fought him. However, when I removed his mask I saw only a dummy.",
 ["zone1_guard4_greetings2"]="Then I felt his claws digging into the back of my neck. I have served him ever since.",
-["zone1_guard5_defeated"]="I've grown bored of this life, the Order. I wish to return to my true place, my seat of high power. But don't think that Lynx will be so easy. He will not fail!",
-["zone1_guard5_greetings"]="Honor and tradition? Ha! The Order is merely a playground for me, a minor amusement, a way to hone my already impressive sword skills.",
-["zone1_guard5_greetings2"]="And I am more than happy to show my skills to you now."}
+["zone1_guard5_defeated"]="I've grown bored of this life, the Order. I wish to return to my true place, my seat of high power. But don't think that Lynx will be so easy. He will not fail!"}

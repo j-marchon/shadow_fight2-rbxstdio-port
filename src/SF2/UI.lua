@@ -21,7 +21,7 @@ local REF_H = 1536
 
 local FONTS = {
 	AGOpusBold = Font.new("rbxasset://fonts/families/Oswald.json", Enum.FontWeight.Bold),
-	majallab = Font.new("rbxasset://fonts/families/Merriweather.json", Enum.FontWeight.Bold),
+	majallab = Font.new("rbxasset://fonts/families/Oswald.json", Enum.FontWeight.Regular),
 	CarterOne = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular),
 }
 local DEFAULT_FONT = FONTS.AGOpusBold

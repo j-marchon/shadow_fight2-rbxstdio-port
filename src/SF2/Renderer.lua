@@ -21,7 +21,7 @@ local function makePart(shape: Enum.PartType, parent: Instance): Part
 	p.CanQuery = false
 	p.CanTouch = false
 	p.CastShadow = false
-	p.Material = Enum.Material.SmoothPlastic
+	p.Material = Enum.Material.Neon -- flat, unlit: the game draws fighters as pure black silhouettes
 	p.Color = COLOR
 	p.TopSurface = Enum.SurfaceType.Smooth
 	p.BottomSurface = Enum.SurfaceType.Smooth
@@ -99,7 +99,7 @@ function Renderer.new(fighter: any, parent: Instance, depth: number?): Renderer
 		mp.CanQuery = false
 		mp.CanTouch = false
 		mp.CastShadow = false
-		mp.Material = Enum.Material.SmoothPlastic
+		mp.Material = Enum.Material.Neon
 		mp.Color = COLOR
 		mp.CFrame = CFrame.new(0, 0, self.depth)
 		mp.Parent = model

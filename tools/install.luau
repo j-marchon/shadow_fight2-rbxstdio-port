@@ -68,7 +68,11 @@ return function()
 			if not job then break end
 			local ok, src = pcall(Http.GetAsync, Http, BASE .. job.e.url .. bust())
 			if ok then
-				job.inst.Source = src
+				ok, src = pcall(function()
+					job.inst.Source = src
+				end)
+			end
+			if ok then
 				job.inst:SetAttribute("sha", job.e.sha)
 				done += 1
 			else

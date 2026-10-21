@@ -31,6 +31,7 @@ local TICK = 1 / 60
 local SCALE = Renderer.SCALE
 local ANNOUNCE_TICKS = 60
 local MAX_WIDTH = 1100
+local FOV = 2
 
 local KEYMAP = {
 	[Enum.KeyCode.A] = "left", [Enum.KeyCode.Left] = "left",
@@ -422,7 +423,9 @@ function FightScreen.run(config: any): any
 	local cam = workspace.CurrentCamera
 	local function updateCamera(dt: number)
 		cam.CameraType = Enum.CameraType.Scriptable
-		cam.FieldOfView = 20
+		-- SF2 draws in 2D: a narrow field of view from far away is close to orthographic, so the parallax
+		-- layers behind the fighters keep their size
+		cam.FieldOfView = FOV
 		local a, b = fight.engines[1], fight.engines[2]
 		local ax = a.fighter.px[a.slots.NPivot] or 0
 		local bx = b.fighter.px[b.slots.NPivot] or 0
@@ -440,7 +443,7 @@ function FightScreen.run(config: any): any
 		end
 		local cy = (loc.centerY or 176)
 		-- show the location's height (512 units) at FOV 20
-		local dist = (256 * SCALE) / math.tan(math.rad(10))
+		local dist = (256 * SCALE) / math.tan(math.rad(FOV / 2))
 		local cx = (camX + sx) * SCALE
 		cam.CFrame = CFrame.lookAt(Vector3.new(cx, (cy + sy) * SCALE, dist), Vector3.new(cx, (cy + sy) * SCALE, 0))
 		loc:update(camX, dt)
