@@ -13,7 +13,7 @@ import xml.etree.ElementTree as ET
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from pack import write_json
 
-MODELS = 'D:/Tools/work/sf2-data/combat/models'
+MODELS = 'D:/SF2-Port/sf2-data/combat/models'
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'out', 'Models')
 
 def f(v):

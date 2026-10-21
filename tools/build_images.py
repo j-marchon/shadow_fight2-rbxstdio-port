@@ -13,8 +13,8 @@ from concurrent.futures import ProcessPoolExecutor
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from pack import write_blob, write_json
 
-ASSETS = 'D:/Tools/work/sf2-assets'
-DATA = 'D:/Tools/work/sf2-data'
+ASSETS = 'D:/SF2-Port/sf2-assets'
+DATA = 'D:/SF2-Port/sf2-data'
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'out')
 MAX_SIZE = 1024
 PACK_ORDER = ['APK', 'ZONE_1', 'ZONE_2', 'ZONE_3', 'ZONE_4', 'ZONE_5', 'ZONE_6', 'ZONE_7', 'ZONE_7_2', 'ZONE_7_3']

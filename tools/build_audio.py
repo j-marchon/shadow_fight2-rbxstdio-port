@@ -1,7 +1,7 @@
 """Pack the game's sounds into a few long Ogg Vorbis files for upload (Roblox plays uploaded assets only):
   sfx_<n>.ogg     every short clip back to back (0.25 s of silence between), 44.1 kHz stereo, <= 3.5 min each
   music_<n>.ogg   music tracks back to back (1 s apart), <= 6.5 min each
-Writes D:/Tools/work/sf2-assets/audio_packs/*.ogg and audio_index.json:
+Writes D:/SF2-Port/sf2-assets/audio_packs/*.ogg and audio_index.json:
   {clip: [packFile, start, length]}  (seconds; the runtime plays the region with Sound.PlaybackRegion)
 Run with the UnityPy venv (numpy, soundfile): python -I tools/build_audio.py
 """
@@ -9,7 +9,7 @@ import json, os
 import numpy as np
 import soundfile as sf
 
-ASSETS = 'D:/Tools/work/sf2-assets'
+ASSETS = 'D:/SF2-Port/sf2-assets'
 OUT = os.path.join(ASSETS, 'audio_packs')
 RATE = 44100
 SFX_GAP, MUSIC_GAP = 0.25, 1.0

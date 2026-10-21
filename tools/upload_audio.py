@@ -6,8 +6,8 @@ Run: python -I tools/upload_audio.py
 """
 import json, os, sys, time, uuid, urllib.request, urllib.error
 
-ASSETS = 'D:/Tools/work/sf2-assets'
-KEY = open('D:/Tools/work/sf2-data/keys/roblox_api_key.txt', encoding='utf-8-sig').read().strip()
+ASSETS = 'D:/SF2-Port/sf2-assets'
+KEY = open('D:/SF2-Port/sf2-data/keys/roblox_api_key.txt', encoding='utf-8-sig').read().strip()
 USER_ID = 968421912
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'out')
 DONE = os.path.join(ASSETS, 'audio_uploads.json')

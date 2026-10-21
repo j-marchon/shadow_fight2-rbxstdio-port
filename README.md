@@ -14,7 +14,7 @@ Personal project. Uses the original game's data; keep the place private.
 
 ## Rebuild and install
 ```bash
-python -I tools/convert.py D:/Tools/work/sf2-data/combat D:/Tools/work/sf2-roblox/out
+python -I tools/convert.py D:/SF2-Port/sf2-data/combat D:/SF2-Port/sf2-roblox/out
 python -I -m http.server 8765 --bind 127.0.0.1
 ```
 Then in Studio (command bar, or via the MCP): pull `src/…` and `out/…` from `http://127.0.0.1:8765/` into ModuleScripts. The place has **HttpService.HttpEnabled = true** for this local import.
@@ -126,7 +126,7 @@ Ported from `Model.DJIFEKKEMGN` → `ModelCollision` → `Model.HKFEABKNICO`:
 ## AI
 Port of the computer opponent: `ModelAi` + `Tactic` / `TacticFactors` / `AiData` and the tactic tables.
 
-**Build:** `python -I tools/build_tactics.py D:/Tools/work/sf2-data/combat out` parses all 138 archives in `combat\tactics` (every pool count and EOF assert of the loader is checked) and writes `out\Tactics\<archive>.lua` (packed JSON, ~8.6 MB in total, big archives split into `.1`/`.2` parts) plus `out\Tactics\Settings.lua` (tacticSettings.xml with templates resolved, the ComputerSettings.xml lists, and an index of every archive's entries). Install as `ReplicatedStorage.SF2.Data.Tactics.<name>`, and `src\SF2\AI.lua` as `ReplicatedStorage.SF2.AI`.
+**Build:** `python -I tools/build_tactics.py D:/SF2-Port/sf2-data/combat out` parses all 138 archives in `combat\tactics` (every pool count and EOF assert of the loader is checked) and writes `out\Tactics\<archive>.lua` (packed JSON, ~8.6 MB in total, big archives split into `.1`/`.2` parts) plus `out\Tactics\Settings.lua` (tacticSettings.xml with templates resolved, the ComputerSettings.xml lists, and an index of every archive's entries). Install as `ReplicatedStorage.SF2.Data.Tactics.<name>`, and `src\SF2\AI.lua` as `ReplicatedStorage.SF2.AI`.
 
 **API:**
 ```lua

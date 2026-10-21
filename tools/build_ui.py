@@ -12,7 +12,7 @@ import json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from pack import write_json
 
-UI = 'D:/Tools/work/sf2-assets/ui'
+UI = 'D:/SF2-Port/sf2-assets/ui'
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'out', 'UI')
 
 def r4(v):

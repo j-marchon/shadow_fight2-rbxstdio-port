@@ -9,9 +9,9 @@ Run: python -I tools/build_game.py
 import os, re, sys
 import xml.etree.ElementTree as ET
 
-DEC = 'D:/Tools/work/sf2-data/decrypted'
-COMBAT = 'D:/Tools/work/sf2-data/combat/config'
-MORE = 'D:/Tools/work/sf2-data/extracted_more'
+DEC = 'D:/SF2-Port/sf2-data/decrypted'
+COMBAT = 'D:/SF2-Port/sf2-data/combat/config'
+MORE = 'D:/SF2-Port/sf2-data/extracted_more'
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'out')
 MAX_SOURCE = 170_000
 

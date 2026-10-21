@@ -7,7 +7,7 @@ Plan: `C:\Users\João Marchon\.claude\plans\breezy-discovering-glade.md`
   - Local git repo.
   - Hash-based installer: `tools/install.luau`, also in the place as `ServerStorage.SF2Installer`. Run it async with `task.spawn`, because big installs time out the MCP.
   - `tools/make_manifest.py` writes `out/install.txt`.
-- **Assets extracted** to `D:\Tools\work\sf2-assets`:
+- **Assets extracted** to `D:\SF2-Port\sf2-assets`:
   - every texture (`tex/`), the sprite index (`atlas.json`) and every sound clip (`audio/`)
   - fonts
   - UI layouts for 229 screens (`ui/`, via `tools/dump_ui.py`)

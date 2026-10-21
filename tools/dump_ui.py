@@ -1,6 +1,6 @@
 """Dump SF2's Unity UI (scenes + UI prefabs) to JSON for the Roblox UI builder.
 
-Output (OUT = D:/Tools/work/sf2-assets/ui):
+Output (OUT = D:/SF2-Port/sf2-assets/ui):
   scene__<levelN>_<Name>.json     every UI root (RectTransform hierarchy) of a scene
   prefab__<RootName>__<file>.json one per UI root GameObject in the non-scene serialized files
   index.json                      every exported root: source file, node count, MonoBehaviour classes
@@ -9,7 +9,7 @@ Output (OUT = D:/Tools/work/sf2-assets/ui):
 MonoBehaviours mostly ship without type trees; they are generated with TypeTreeGeneratorAPI
 from Il2CppDumper's DummyDll (the il2cpp backend of the generator fails on this binary).
 
-Run:  D:/Tools/venvs/unitypy/Scripts/python.exe -I D:/Tools/work/sf2-roblox/tools/dump_ui.py
+Run:  D:/Tools/venvs/unitypy/Scripts/python.exe -I D:/SF2-Port/sf2-roblox/tools/dump_ui.py
 """
 import collections
 import json
@@ -23,11 +23,11 @@ import UnityPy
 from UnityPy.classes import PPtr
 from UnityPy.helpers.TypeTreeGenerator import TypeTreeGenerator
 
-DATA = 'D:/Tools/work/sf2-data/apk_assets/assets/bin/Data'
-DLLS = 'D:/Tools/work/sf2-il2cpp/dump/DummyDll'
-OUT = 'D:/Tools/work/sf2-assets/ui'
-TEX_DIR = 'D:/Tools/work/sf2-assets/tex/APK'
-SPRITES_JSON = 'D:/Tools/work/sf2-assets/sprites.json'  # from extract_assets.py (APK + bundles)
+DATA = 'D:/SF2-Port/sf2-data/apk_assets/assets/bin/Data'
+DLLS = 'D:/SF2-Port/sf2-il2cpp/dump/DummyDll'
+OUT = 'D:/SF2-Port/sf2-assets/ui'
+TEX_DIR = 'D:/SF2-Port/sf2-assets/tex/APK'
+SPRITES_JSON = 'D:/SF2-Port/sf2-assets/sprites.json'  # from extract_assets.py (APK + bundles)
 UNITY = '2022.3.62f2'
 SCENES = ['GameLoader', 'GameSessionContext', 'Loader', 'Dojo', 'Shop', 'Map', 'Fight', 'Profile']
 MAX_ARR = 50

@@ -1,5 +1,5 @@
 """Extract every image, sprite rect, sound and font from SF2's Unity bundles.
-Output (OUT = D:/Tools/work/sf2-assets):
+Output (OUT = D:/SF2-Port/sf2-assets):
   tex/<pack>/<texture>.png       full-res Texture2D (the _low copies are skipped when a full one exists)
   sprites.json                   sprite name -> [pack, texture, x, y, w, h, pivotX, pivotY]  (y from the top)
   textures.json                  "<pack>/<texture>" -> [w, h]
@@ -11,8 +11,8 @@ Run with the UnityPy venv: python -I tools/extract_assets.py
 import json, os, sys, traceback
 from concurrent.futures import ProcessPoolExecutor
 
-DATA = 'D:/Tools/work/sf2-data'
-OUT = 'D:/Tools/work/sf2-assets'
+DATA = 'D:/SF2-Port/sf2-data'
+OUT = 'D:/SF2-Port/sf2-assets'
 
 def sources():
     """(pack, file) for every bundle/serialized file."""
