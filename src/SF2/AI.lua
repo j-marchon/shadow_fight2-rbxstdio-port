@@ -218,6 +218,24 @@ local function pivotX(e: any): number
 	return e.fighter.px[s] or e.offsetX or 0
 end
 
+-- The x the AI measures table distances from (ModelAnimation.BKDCNNOOIJH): where the animation was aligned, i.e.
+-- where its Align pivot node stood at the animation's first frame. (The port's raw offsetX is the clip's
+-- coordinate origin, which can sit far from the body.)
+local function alignX(e: any): number
+	local m, clip = e.move, e.clip
+	if not m or not clip then return pivotX(e) end
+	local cache = e._aiAlign
+	if cache and cache.m == m and cache.ox == e.offsetX and cache.f == e.facing then return cache.x end
+	local slot = e.pivotSlot or 1
+	if e.remap and e.remap[slot] then slot = e.remap[slot] end
+	local ok, ax = pcall(clip.getPosition, clip, math.clamp(m.first or 0, 0, clip.frames - 1), slot)
+	local x = e.offsetX + e.facing * (ok and ax or 0)
+	e._aiAlign = { m = m, ox = e.offsetX, f = e.facing, x = x }
+	return x
+end
+
+AI.alignX = alignX
+
 local function tacticName(m: any): string
 	if m.tacticEquivalent and m.tacticEquivalent ~= "" then return m.tacticEquivalent end
 	return m.name
@@ -498,7 +516,7 @@ end
 function AI.lookup(self: any, parts: any, frame: number, src: any, emit: (string, number) -> ())
 	if not parts then return end
 	local me = self.me
-	local ox, facing = src.offsetX or 0, src.facing or 1
+	local ox, facing = alignX(src), src.facing or 1
 	for _, part in parts do
 		local names = part.a
 		for _, tab in part.t do
@@ -728,6 +746,24 @@ end
 function AI.decide(self: any)
 	local me, en, t = self.me, self.enemy, self.tactic
 	local ctx = self:context()
+	-- BLFKPBELDKF / HBMGBBBLLJC: quick-attack and evade rolls are new on every decision call;
+	-- GEAOFEACDMA: while the enemy plays a RandomizingEnemyAnimation (Stance) the other rolls and the
+	-- distance/frame errors are new on every call too (otherwise once per enemy animation, see observe)
+	local r = self.rng
+	for k in self.rolls.quick do self.rolls.quick[k] = r:NextNumber() end
+	for k in self.rolls.evade do self.rolls.evade[k] = r:NextNumber() end
+	if en.move then
+		for _, l in self.s.randomizingEnemy or {} do
+			if en.move.labelSet[l] or en.move.name == l then
+				local def = self.rolls.defense
+				self:reroll()
+				self.rolls.defense = def
+				self.frameError = math.floor(minMax(r, t.frameError, ctx) + 0.5)
+				self.distError = minMax(r, t.distanceError, ctx)
+				break
+			end
+		end
+	end
 	local cands = {}
 	self:conditionalCandidates(cands)
 	local tabular = not self.random and self.tables.any

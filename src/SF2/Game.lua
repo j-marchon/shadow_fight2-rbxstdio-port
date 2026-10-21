@@ -158,6 +158,26 @@ function Game.playBattle(zone: string, battle: any)
 	fightAt(start)
 end
 
+-- Training in the dojo: you and the dummy with any weapon of the arsenal, no timer, the dummy can't lose
+function Game.training(mine: any, dummy: any)
+	local player = Profile.warrior()
+	player.items = table.clone(player.items)
+	player.items.Weapon = mine.item
+	local enemy = { name = "NAME_DUMMY", avatar = "avatar_hero", items = { Weapon = dummy.item }, level = player.level }
+	Menus.hide()
+	local screen
+	screen = FightScreen.run({
+		player = player, enemy = enemy, location = "dojo", music = "fight6_sparring",
+		rounds = 99, roundTime = 0, training = true, enemyTactic = "Standard",
+		onEnd = function()
+			task.defer(function()
+				screen.destroy()
+				Menus.arsenal()
+			end)
+		end,
+	})
+end
+
 function Game.start()
 	hideWorld()
 	flatLighting()
@@ -165,6 +185,7 @@ function Game.start()
 	Xml.setLanguage(d.settings.language or "eng")
 	Sound.setVolumes(d.settings.sound == 0 and 0 or 1, d.settings.music == 0 and 0 or 0.6)
 	Menus.onPlay = function(zone, battle) Game.playBattle(zone, battle) end
+	Menus.onTraining = function(mine, dummy) Game.training(mine, dummy) end
 	Menus.dojo()
 end
 

@@ -175,6 +175,7 @@ function FightScreen.run(config: any): any
 		warriors = { b1, b2 }, rounds = config.rounds or 2, roundTime = config.roundTime or 99,
 		location = config.location, battleType = config.battleType, mods = config.mods,
 		startHealth = config.startHealth, noBulletsRefill = config.noBulletsRefill, hooks = hooks,
+		immortal = config.training and { false, true } or nil,
 	})
 	self.fight = fight
 	for i, e in fight.engines do

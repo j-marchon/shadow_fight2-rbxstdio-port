@@ -101,6 +101,7 @@ local function topBar(parent: Frame)
 	local d = Profile.get()
 	local bar = W.image(parent, "TopPanel.Top_Panel", UDim2.new(0.5, 0, 0, 0), Vector2.new(2400, 150), Vector2.new(0.5, 0))
 	bar.ScaleType = Enum.ScaleType.Stretch
+	bar.Size = UDim2.new(1, 0, 0, 150)
 	-- level and experience
 	W.image(parent, "TopPanel.level", UDim2.new(0.5, -760, 0, 62), Vector2.new(110, 110))
 	W.label(parent, tostring(d.level), UDim2.new(0.5, -760, 0, 62), Vector2.new(100, 80), 56, Color3.new(1, 1, 1))
@@ -142,7 +143,62 @@ function Menus.dojo()
 	setScene("dojo", true)
 	topBar(s)
 	bottomMenu(s, "Dojo")
+	-- training: the punching bag opens the arsenal (every weapon in the game, for you and the dummy)
+	W.button(s, "MenuButtons.btn_punching_bag", nil, UDim2.new(1, -170, 0.5, 0), Vector2.new(240, 240), function()
+		Menus.arsenal()
+	end)
 	Sound.music("menu")
+end
+
+---------------------------------------------------------------- training (arsenal)
+
+Menus.onTraining = nil :: ((mine: any, dummy: any) -> ())?
+local picks = { me = "Fists", dummy = "Fists" }
+function Menus.arsenal(groupName: string?)
+	local Arsenal = require(script.Parent.Arsenal)
+	local s = clear()
+	setScene("dojo", false)
+	local group = Arsenal.groups[1]
+	for _, g in Arsenal.groups do if g.name == groupName then group = g end end
+	local panel = W.panel(s, UDim2.fromScale(0.5, 0.52), Vector2.new(1900, 1150))
+	-- group tabs
+	for i, g in Arsenal.groups do
+		local col, row = (i - 1) % 7, (i - 1) // 7
+		W.textButton(panel, g.name == group.name and "BtnGold" or "BtnWhite", string.format("%s (%d)", g.name, #g.weapons),
+			UDim2.new(0, 160 + col * 265, 0, 70 + row * 90), Vector2.new(255, 80), function() Menus.arsenal(g.name) end)
+	end
+	for col, who in { "me", "dummy" } do
+		W.label(panel, who == "me" and "YOU" or "DUMMY", UDim2.new(0, 480 + (col - 1) * 940, 0, 270), Vector2.new(400, 70), 56, W.DARK)
+		local list = Instance.new("ScrollingFrame")
+		list.ZIndex = W.nextZ()
+		list.BackgroundTransparency = 1
+		list.Position = UDim2.new(0, 60 + (col - 1) * 940, 0, 320)
+		list.Size = UDim2.new(0, 860, 0, 680)
+		list.ScrollBarThickness = 12
+		list.AutomaticCanvasSize = Enum.AutomaticSize.Y
+		list.CanvasSize = UDim2.new()
+		list.Parent = panel
+		local grid = Instance.new("UIGridLayout")
+		grid.CellSize = UDim2.fromOffset(420, 70)
+		grid.CellPadding = UDim2.fromOffset(8, 8)
+		grid.Parent = list
+		for _, w in group.weapons do
+			local b = W.textButton(list, picks[who] == w.id and "BtnGreen" or "btnBeige", w.name, UDim2.new(), Vector2.new(420, 70), function()
+				picks[who] = w.id
+				Menus.arsenal(group.name)
+			end)
+			local t = b:FindFirstChild("Text") :: TextLabel?
+			if t then t.TextSize = 32 end
+		end
+	end
+	W.textButton(panel, "BtnGreen", "TRAIN", UDim2.new(0.5, 0, 1, -70), Vector2.new(420, 110), function()
+		if Menus.onTraining then
+			Menus.onTraining(Arsenal.byId[picks.me], Arsenal.byId[picks.dummy])
+		end
+	end)
+	W.button(panel, "CommonButtons.ButtonQuit", nil, UDim2.new(1, -60, 0, 60), Vector2.new(100, 100), function()
+		Menus.dojo()
+	end)
 end
 
 ---------------------------------------------------------------- map
@@ -180,7 +236,14 @@ local function buttonSprite(b: any, state: string): string
 	local atlas = Xml.attr(b, "IconAtlas") or "BattleBtn"
 	local icon = Xml.attr(b, "Icon") or "tournament"
 	local word = ({ Base = "base", Active = "active", Lock = "locked", Pressed = "pressed" })[state]
-	return atlas .. state .. "." .. word .. "_" .. icon
+	local name = atlas .. state .. "." .. word .. "_" .. icon
+	if not Images.sprite(name) then
+		-- the plain tournament/duel art lives in the act 1 atlas (BattleBtnStart*)
+		local alt = "BattleBtnStart" .. state .. "." .. word .. "_" .. icon
+		if Images.sprite(alt) then return alt end
+		if state ~= "Active" then return buttonSprite(b, "Active") end
+	end
+	return name
 end
 
 function Menus.map(zoneName: string?)

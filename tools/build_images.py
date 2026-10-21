@@ -53,6 +53,10 @@ def wanted(textures):
     tokens = set()
     for t in sources():
         tokens.update(re.findall(r'[A-Za-z0-9_\-]+(?:\.[A-Za-z0-9_\-]+)?', t))
+    # names built at runtime: battle buttons (BattleBtn<state>), maps
+    for name in byname:
+        if name.startswith(('BattleBtn', 'Map', 'MapBtn')):
+            tokens.add(name)
     want = {}
     for tok in tokens:
         name = tok.split('.', 1)[0]
