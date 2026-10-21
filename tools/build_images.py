@@ -68,7 +68,9 @@ def convert(job):
     src = os.path.join(ASSETS, 'tex', pack, name + '.png')
     im = Image.open(src).convert('RGBA')
     sw, sh = im.size
-    s = min(1.0, MAX_SIZE / max(sw, sh))
+    # the main game (APK, act packs) at full EditableImage size; event, raid and offer art at half
+    limit = MAX_SIZE if (pack == 'APK' or pack.startswith('ZONE_') and pack != 'ZONE_RAID') else MAX_SIZE // 2
+    s = min(1.0, limit / max(sw, sh))
     if s < 1:
         im = im.resize((max(1, round(sw * s)), max(1, round(sh * s))), Image.LANCZOS)
     w, h = im.size
