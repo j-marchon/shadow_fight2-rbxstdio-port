@@ -205,17 +205,31 @@ end
 ---------------------------------------------------------------- map
 
 local SKIP_TYPES = { FAKE = true, TUTORIAL = true, HIDDEN = true }
-local function visibleBattles(zone: any): { any }
+-- The act's map battles: the story set, or with Eclipse on, the *_ECLIPSEMODE set (EclipseToggleName)
+local function visibleBattles(zone: any, eclipse: boolean?): { any }
 	local out = {}
 	for _, b in Stages.battles(zone) do
 		local name = Xml.attr(b, "Name") or ""
 		local t = Xml.attr(b, "Type") or ""
-		if not SKIP_TYPES[t] and not string.find(name, "_INTERMISSION") and not string.find(name, "_ECLIPSEMODE")
+		local isEclipse = string.find(name, "_ECLIPSEMODE") ~= nil
+		if not SKIP_TYPES[t] and not string.find(name, "_INTERMISSION") and isEclipse == (eclipse == true)
 			and not string.find(name, "_LOCKED") and Xml.attr(b, "X") then
 			table.insert(out, b)
 		end
 	end
 	return out
+end
+
+-- Eclipse mode opens once the act's boss is beaten
+function Menus.eclipseOpen(zoneName: string): boolean
+	local zone = Stages.zone(zoneName)
+	for _, b in Stages.battles(zone) do
+		if Xml.attr(b, "Type") == "BOSSES" then
+			local name = Xml.attr(b, "Name") :: string
+			if Profile.progress(zoneName, name) >= #Stages.fights(b) then return true end
+		end
+	end
+	return false
 end
 Menus.visibleBattles = visibleBattles
 
@@ -266,11 +280,12 @@ function Menus.map(zoneName: string?)
 	local k = mapH / srcH
 	local map = W.image(s, mapSprite, UDim2.fromScale(0.5, 0.5), Vector2.new((ms and ms.source.X * 1.5 or 2048) * k, mapH))
 	map.ScaleType = Enum.ScaleType.Stretch
-	for _, b in visibleBattles(zone) do
+	local eclipse = d.eclipse[zoneName :: string] == true and Menus.eclipseOpen(zoneName :: string)
+	for _, b in visibleBattles(zone, eclipse) do
 		local name = Xml.attr(b, "Name") :: string
 		local total = #Stages.fights(b)
 		local done = Profile.progress(zoneName :: string, name)
-		local bossLocked = Xml.attr(b, "Type") == "BOSSES" and not Menus.bossOpen(zoneName :: string)
+		local bossLocked = Xml.attr(b, "Type") == "BOSSES" and not eclipse and not Menus.bossOpen(zoneName :: string)
 		local state = bossLocked and "Lock" or (done >= total and total > 0 and Xml.attr(b, "Type") ~= "PERIODIC" and "Base" or "Active")
 		local x, y = (Xml.num(b, "X", 0) :: number) * 1.5 * k, (Xml.num(b, "Y", 0) :: number) * 1.5 * k
 		local btn = W.button(map, buttonSprite(b, state), buttonSprite(b, "Pressed"), UDim2.new(0.5, x, 0.5, -y), Vector2.new(240, 240), function()
@@ -294,6 +309,15 @@ function Menus.map(zoneName: string?)
 		end)
 	end
 	W.label(s, Xml.text("ACT_" .. idx) ~= "ACT_" .. idx and Xml.text("ACT_" .. idx) or ("ACT " .. idx), UDim2.new(0.5, 0, 0, 200), Vector2.new(800, 100), 80)
+	if Menus.eclipseOpen(zoneName :: string) then
+		local e = W.button(s, "MiscSprites.eclipse", nil, UDim2.new(1, -170, 0, 280), Vector2.new(170, 170), function()
+			d.eclipse[zoneName :: string] = not eclipse
+			Profile.save()
+			Menus.map(zoneName)
+		end)
+		e.ImageTransparency = eclipse and 0 or 0.45
+		W.label(s, "ECLIPSE", UDim2.new(1, -170, 0, 390), Vector2.new(260, 60), 44)
+	end
 	topBar(s)
 	bottomMenu(s, "Map")
 	Sound.music("act")

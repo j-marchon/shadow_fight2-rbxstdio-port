@@ -416,22 +416,21 @@ end
 
 ---------------------------------------------------------------- perception
 
--- Memory (ModelStatistics as used by TacticFactors): the last `Strikes` strikes of each enemy animation:
--- hit = it hit me unblocked, damage = damage it dealt, counter = I hit the enemy while he played it
+-- Memory (ModelStatistics, the "true" table of my model, keyed by the enemy's animation):
+--   counter = how many times the enemy played it into its Uninterrupt interval (Model.KBPBCOHJFHH ->
+--             ModelStatistics.FKCBGOIECHC, +1 per use), damage = damage it did to me, hit = times it hit me
+--             (KBBHCAAFDCO, committed by ADMAIMDJBLI). Accumulated over the fight (RoundFactor 1 keeps it).
 function AI.remember(self: any, m: any, hit: number, damage: number, counter: number)
 	if not m then return end
 	local l = self.memory[m.name]
-	if not l then l = { labels = m.labelSet, name = m.name, list = {} }; self.memory[m.name] = l end
-	table.insert(l.list, { hit = hit, damage = damage, counter = counter })
-	while #l.list > self.strikes do table.remove(l.list, 1) end
+	if not l then l = { labels = m.labelSet, name = m.name, counter = 0, damage = 0, hit = 0 }; self.memory[m.name] = l end
+	l.counter += counter; l.damage += damage; l.hit += hit
 end
 
 function AI.statsFor(self: any, name: string): (number, number, number)
 	local c, d, h = 0, 0, 0
 	for n, l in self.memory do
-		if n == name or l.labels[name] then
-			for _, r in l.list do c += r.counter; d += r.damage; h += r.hit end
-		end
+		if n == name or l.labels[name] then c += l.counter; d += l.damage; h += l.hit end
 	end
 	return c, d, h
 end
@@ -444,15 +443,7 @@ function AI.observe(self: any)
 		self.seenHit[1] = h
 		local att = h.attacker
 		if att and att:root() == en then
-			self:remember(att.move, h.blocked and 0 or 1, h.damage or 0, 0)
-		end
-	end
-	local g = en.lastHit
-	if g and g ~= self.seenHit[2] then
-		self.seenHit[2] = g
-		local att = g.attacker
-		if att and att:root() == me and not g.blocked then
-			self:remember(en.move, 0, 0, 1)
+			self:remember(att.move, 1, h.damage or 0, 0)
 		end
 	end
 	-- a new enemy animation: new rolls, response delay
@@ -480,6 +471,11 @@ function AI.observe(self: any)
 		self.enemyDelay = minMax(self.rng, self.tactic.enemyResponseDelay, ctx)
 	end
 	self.enemyFrame = frame
+	-- the enemy committed to this animation (its Uninterrupt interval began): one more use of it
+	if en.move and self.countedInst ~= self.inst and en:inInterval("Uninterrupt") then
+		self.countedInst = self.inst
+		self:remember(en.move, 0, 0, 1)
+	end
 end
 
 function AI.reroll(self: any)

@@ -122,3 +122,61 @@ Ported from `Model.DJIFEKKEMGN` → `ModelCollision` → `Model.HKFEABKNICO`:
 - Facing/mirroring, `Align`/root placement, and blending between moves (`FirstFrame`/`MidFrames`). The viewer just centers each move on NPivot.
 - Collision against the opponent, ragdoll, the moves state machine, AI.
 - Location backgrounds and effects.
+
+## AI
+Port of the computer opponent: `ModelAi` + `Tactic` / `TacticFactors` / `AiData` and the tactic tables.
+
+**Build:** `python -I tools/build_tactics.py D:/Tools/work/sf2-data/combat out` parses all 138 archives in `combat\tactics` (every pool count and EOF assert of the loader is checked) and writes `out\Tactics\<archive>.lua` (packed JSON, ~8.6 MB in total, big archives split into `.1`/`.2` parts) plus `out\Tactics\Settings.lua` (tacticSettings.xml with templates resolved, the ComputerSettings.xml lists, and an index of every archive's entries). Install as `ReplicatedStorage.SF2.Data.Tactics.<name>`, and `src\SF2\AI.lua` as `ReplicatedStorage.SF2.AI`.
+
+**API:**
+```lua
+local AI = require(SF2.AI)
+local ctl, ai = AI.new(fight, 2, "Standard", { seed = 1, debug = false })  -- tactic: stages.xml Warrior Tactic=
+fight.controllers[2] = ctl     -- called by Fight.tick before the engines; presses keys via fight:press/release
+-- ai.stats: decisions, started, attacks, blocks, dodges, byKind (table/cautious/quick/dodge/...), flow (per-tick exits)
+```
+With no tactic name it takes `build.def.tactic`, then "Standard"; an unknown name warns and uses Standard. Setup happens on the first tick: a JSON decode of 4-6 archives, merged per weapon pair and cached for the server's lifetime. After that, a tick costs a few comparisons unless the AI is free to decide.
+
+**Spec questions resolved** (details in the `build_tactics.py` docstring):
+- Entry `type` is the `AiData.HFDKHELIKGE` enum: 0 = attack (outcome) tables, 1 = movement tables, 2 = dodge tables, 7 = shift tables. The spec had 0/1 the other way round.
+- Matchup entry `(group, name)` = (enemy weapon part, my weapon part). Me vs enemy = the union of entries with group in {"", enemy} and name in {"", mine}, read from `_`, `_<mine>`, `_<enemy>` and `<a>_<b>`. Dodge tables are keyed by the attacker's weapon: `EMPTY` (a superset of `default`) plus the enemy weapon's base archive.
+- Table name = one of my nodes (NHeel_1/NHeel_2, the Align pivot of its responses). Table value = the enemy frame of the first row; frames are ticks since the animation's FirstFrame. Each IntervalNew has bucket edges plus one value per bucket. Distance = (my node x - the x where the enemy animation was aligned) x enemy facing.
+- Values:
+  - attack tables: the enemy frame at which my attack lands; an attack is kept when this is at most enemy frame + EnemyResponseDelay;
+  - dodge tables: the ticks left before the enemy's hit.
+- Shift table payload: u32 size, node names, then frames x nodes floats. It is parsed and validated but not emitted, because the port reads node positions directly.
+
+**Faithful:**
+- **Decision order** (`BDHAMOEKNNK`/`HMHLACOIDJI`):
+  1. Missile and magic dodges.
+  2. When the enemy is in its Uninterrupt interval: one UseDefense roll per enemy animation (`MNIODEEIJFC`: counter < counter+dodge < +block). CounterAttack → movement tables, Dodge → dodge tables, Block → hold Back.
+  3. Otherwise: QuickAttacks, Evades, ExpectedWait (act with probability 1/w), UseSafeAttack → movement tables, TableAttack → attack tables, CautiousMovements → Step moves.
+  4. ConditionalDecisions are added to the candidates: tacticSettings TacticConditions (Animation, AnimationFrame, Distance, ModelItem, Operator, Random), highest Priority wins.
+- **Pick:** weighted by AnimationWeights (the first entry matching the move's name or a label, else the unnamed default).
+- **TacticFactors formula** (`PPOKEOHAHFG`):
+  - s = Σ factor × context + Shift + AnimationFactors (memory) + ConditionalDesigionFactor;
+  - exponential: Limit + 2^-s(Base-Limit) for s ≥ 0, AntiLimit + 2^s(Base-AntiLimit) otherwise;
+  - missing attributes are 0, and names are case-sensitive, so the data's `Antilimit` typo is ignored as in the game.
+- **Rolls:** quick-attack and evade rolls are new on every call. The other rolls and the Distance/Frame errors are new per enemy animation, or on every call while the enemy plays a RandomizingEnemyAnimation (Stance) (`GEAOFEACDMA`).
+- **No decisions** inside my own Uninterrupt/SemiUninterrupt (Random tactics: Uninterrupt/SelfUninterrupt), during Physical moves or while ragdolled.
+- **Tactics:** templates (`Template=`), `Type=Random` (Beginner), Memory Strikes, ResponseDelay, EnemyResponseDelay, DistanceError, FrameError.
+- **Keys:** the original AI also acts by feeding the chosen animation's ConditionKeys to the controller (`Model` → `ModelAi.BDHAMOEKNNK` → `CBGCMJCJJKP`). The port does the same: it presses the first Keys condition of the move, with Forward/Back resolved by the move's own SetDirection. Before pressing it checks availability by evaluating the move's `<Conditions>` against a scratch KeyBuffer holding exactly those keys, plus its AI-only `<Tactics>` conditions.
+- **Evades** only happen when the enemy has an AI that could start the move. A human enemy has no ModelAi in the original either.
+- **Responses:** table names map to my moves by name or `TacticEquivalent` (KatanaStepBack answers for StepBack). The enemy animation is looked up by its name, then by its TacticEquivalent.
+
+**Approximated / guessed:**
+- **Frames:** rows are read at the enemy frame rounded up to the 5-tick step. The original extrapolates my node over that gap with the shift tables.
+- **Counter / safe-attack paths:** they use table values > 0 without the original's wait bookkeeping (`KNGDHCILNLD`, the SetWait* modes).
+- **After a decision:** the AI waits until the move has started (at most 4 ticks). `StanceIdle` answers stand still for value ticks (3-30).
+- **Block:** holds Back (away from the enemy) while the attack lasts, at most 45 ticks. StepBack and idle are Block intervals.
+- **Memory** (ModelStatistics): per enemy animation, the last Strikes records of hit (it landed unblocked on me), damage, and counter (I hit him during it). RoundFactor is not applied.
+- **AnimationFramesFactor context:** ticks the enemy has been in the same move, still counting while a stance loops. The game's counter (`FANDONIBLKC`) is reset by engine internals that were not fully traced. ChildFramesFactor uses the missile's frame.
+- **Table weapon:** the weapon SubType if it has tables; else the first `TacticWeapon` on its weapon moves that has tables (Keris → Knives, Katana → NinjaSword); else shared moves only.
+- **Fallback:** Random tactics, and Tabular tactics facing an enemy animation with no tables at all, pick any move that could start now, by weight. For Tabular this is graceful degradation; the original would just wait.
+- **Random Delays** (`<Random><Delays>`) are used as reaction delays after seeing those enemy animations.
+- **Not ported:** BeginnerCheat, the EmergencyDodges/SafeDodges/EvadeUnsafeDodges lists, TacticWallShift, ThrowTactics and BossAbility logic, the "SetWait" timing modes.
+
+**Test:** `tools\tests\ai_test.luau` (Studio command bar, with `ServerStorage.SF2Test` = a clone of `ReplicatedStorage.SF2` with Data.Tactics and AI installed). It runs 6000 ticks of knives vs knives, Standard on both sides, and reports rounds, winner, attacks started, AI decision kinds, per-tick flow counters and errors.
+- **Measured** (seeds 1001/1002): 0 errors, ~0.34 ms/tick including both engines. In 100 s both sides walk in, block and land table attacks (7-10 attacks each); the round ends on time at 0.71 / 0.90 health.
+- **Tabular tactics are cautious against each other:** 88% of the free ticks end in ExpectedWait, and the table/cautious chances start near 0 and grow with the enemy's frames and memory.
+- **Beginner** (Random) with a katana won 2-0 by KO against Aggressive knives, in 2228 ticks.

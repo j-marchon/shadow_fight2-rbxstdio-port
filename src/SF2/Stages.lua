@@ -51,6 +51,16 @@ function Stages.fights(battle: any): { any }
 	return Xml.all(battle, "Fight")
 end
 
+-- Eclipse battles (<name>_ECLIPSEMODE) replay the base battle's fights with their own rewards and rules:
+-- a fight without warriors takes them from the base battle's fight of the same number
+function Stages.baseFight(zoneName: string, battle: any, index: number): any
+	local name = Xml.attr(battle, "Name") or ""
+	local base = string.gsub(name, "_ECLIPSEMODE$", "")
+	if base == name then return nil end
+	local b = Stages.battle(zoneName, base)
+	return b and Stages.fights(b)[index]
+end
+
 local ATTR_SKIP = { Template = true, Tactic = true, Number = true, BeginnerCheat = true, WarriorPower = true }
 
 -- Template chain resolved: items by slot, name, avatar, voice

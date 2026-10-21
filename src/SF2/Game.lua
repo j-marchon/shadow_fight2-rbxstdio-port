@@ -54,13 +54,14 @@ local CHAIN = { TOURNAMENT = true, CHALLENGE = true, SURVIVAL = true }
 -- Play one fight; done(result, playerHealth)
 local function playOne(zone: string, battle: any, fight: any, enemy: any, startHealth: number?, done: (any) -> ())
 	local fightId = zone .. "|" .. (Xml.attr(battle, "Name") or "") .. "|" .. (Xml.attr(fight, "Name") or "1")
-	Quests.fire("FightEnter", { Fight = fightId })
-	local rules = Stages.rules(fight)
+	local eclipse = string.find(Xml.attr(battle, "Name") or "", "_ECLIPSEMODE") ~= nil
+	Quests.fire("FightEnter", { Fight = fightId, InEclipseMode = eclipse and 1 or 0 })
+	local rules = Stages.rules(fight, eclipse)
 	local player = Profile.warrior()
 	player.add = rules.player
 	enemy.add = rules.bot
 	enemy.alignTo = Warrior.build(player).attributes
-	local fightRules, overrides = Rules.prepare(rules.raw, { player, enemy })
+	local fightRules, overrides = Rules.prepare(rules.raw, { player, enemy }, eclipse)
 	Menus.vs(player, enemy, 2.2, function()
 		Menus.hide()
 		local screen
@@ -117,12 +118,17 @@ function Game.playBattle(zone: string, battle: any)
 	local function fightAt(i: number, health: number?)
 		local fight = fights[i]
 		local enemies = Stages.enemies(fight, d.level)
+		if #enemies == 0 then
+			local base = Stages.baseFight(zone, battle, i)
+			if base then enemies = Stages.enemies(base, d.level) end
+		end
+		if #enemies == 0 then finish(levels) return end
 		local enemyIdx = 1
 		local function nextEnemy(hp: number?)
 			local enemy = enemies[enemyIdx]
 			playOne(zone, battle, fight, enemy, hp, function(result, hpLeft)
 				if result.winner == 1 then
-					local r = Menus.reward(fight)
+					local r = Menus.reward(fight, string.find(name, "_ECLIPSEMODE") ~= nil)
 					if t == "SURVIVAL" then
 						local rewards = Xml.all(Xml.first(fight, "Rewards"), "Reward")
 						local rr = rewards[enemyIdx + 1]

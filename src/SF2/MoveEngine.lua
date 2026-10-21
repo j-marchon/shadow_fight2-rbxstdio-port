@@ -614,6 +614,13 @@ function MoveEngine.spawn(self: MoveEngine, x: number, facing: number)
 	for _, m in self.moves do
 		if m.name ~= "StanceIdle" and table.find(m.labels, "IdleStance") then idle = m break end
 	end
+	-- models without a stance (punching bags, summons): their first animated move
+	if not idle then
+		for _, m in self.moves do
+			if m.file then idle = m break end
+		end
+	end
+	if not idle then return end
 	self:start(idle)
 	local ax = self.clip:getPosition(self.c, self.pivotSlot)
 	self.offsetX = x - facing * ax
