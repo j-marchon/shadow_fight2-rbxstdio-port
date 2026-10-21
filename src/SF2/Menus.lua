@@ -59,6 +59,7 @@ local function clear(): Frame
 	local _, c = root()
 	;(gui :: ScreenGui).Enabled = true
 	if layer then layer:Destroy() end
+	Images.releaseScreen()
 	local f = Instance.new("Frame")
 	f.Name = "Screen"
 	f.BackgroundTransparency = 1

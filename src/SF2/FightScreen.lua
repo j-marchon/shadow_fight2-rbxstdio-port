@@ -59,6 +59,7 @@ end
 --          enemyTactic, rules/mods, startHealth, onEnd, title}
 function FightScreen.run(config: any): any
 	local player = Players.LocalPlayer
+	Images.releaseScreen()
 	local folder = Instance.new("Folder")
 	folder.Name = "SF2Fight"
 	folder.Parent = workspace

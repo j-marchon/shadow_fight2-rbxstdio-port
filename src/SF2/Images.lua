@@ -25,6 +25,7 @@ function Images.has(texture: string): boolean
 end
 
 local images: { [string]: any } = {}
+local contents: { [string]: Content } = {}
 
 -- The EditableImage of a texture (decoded once, kept until release)
 function Images.texture(name: string): any
@@ -63,9 +64,19 @@ function Images.release(name: string)
 	local img = images[name]
 	if img then img:Destroy() end
 	images[name] = nil
+	contents[name] = nil
 end
 
-local contents: { [string]: Content } = {}
+-- EditableImages count against a device memory budget: on a screen change, free every decoded texture
+-- except the shared UI atlases
+local KEEP = { TopPanel = true, MenuButtons = true, CommonButtons = true, CommonScrolls = true, MiscSprites = true,
+	FightUI = true, FightButtons = true, FightPause = true }
+function Images.releaseScreen()
+	for name, img in images do
+		if img and not KEEP[name] then Images.release(name) end
+	end
+end
+
 local function content(texture: string): Content?
 	local c = contents[texture]
 	if c then return c end
