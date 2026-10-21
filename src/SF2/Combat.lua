@@ -42,6 +42,19 @@ Combat.ATTRIBUTES = {
 local ATTRIBUTE_BASE = 0.0001
 local DAMAGE_DOUBLING = 10 -- internalSettings <DamageDoublingRange Value="10"/>
 
+-- Rule DamageFactor Animation=<label>: the attacker's moves with that label deal Factor x damage
+function Combat.labelFactor(att: any): number
+	local root = att.root and att:root() or att
+	local rule = root.rule
+	local f = 1
+	if rule and rule.damageFactor and att.move then
+		for label, k in rule.damageFactor do
+			if att.move.name == label or att.move.labelSet[label] then f *= k end
+		end
+	end
+	return f
+end
+
 -- The attack curve for interval iv from attacker attributes attr onto target attributes tattr
 function Combat.attackFactor(iv: any, attr: any, tattr: any, head: boolean): number
 	local types = iv.damageTypes
@@ -172,7 +185,7 @@ function Combat.strike(att: any, tgt: any, suppressed: boolean?): any
 					local critical = not blocked and not iv.noCritical
 						and Combat.random:NextNumber() < ATTRIBUTE_BASE * (attr.CriticalChance or 0)
 					local damage = iv.damage * Combat.attackFactor(iv, attr, tattr, head)
-						* 2 ^ (ATTRIBUTE_BASE * (attr.DamageFactor or 0))
+						* 2 ^ (ATTRIBUTE_BASE * (attr.DamageFactor or 0)) * Combat.labelFactor(att)
 					if critical then damage *= 2 ^ (ATTRIBUTE_BASE * (attr.CriticalDamage or 0)) end
 					if blocked then damage *= 2 ^ (ATTRIBUTE_BASE * (tattr.BlockDamageFactor or 0)) end
 					if not tgt.immortal then tgt.health = math.max(0, tgt.health - damage) end

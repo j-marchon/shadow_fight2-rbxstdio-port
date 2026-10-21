@@ -186,6 +186,8 @@ end
 function MoveEngine.inInterval(self: MoveEngine, name: string): boolean
 	local m = self.move
 	if not m then return false end
+	local removed = self.removedIntervals -- rule RemoveInterval
+	if removed and removed[name] then return false end
 	for _, iv in m.intervals do
 		if (iv.name == name or iv.type == name) and self.c >= iv.start and self.c <= iv.stop then
 			return true
@@ -394,6 +396,13 @@ function MoveEngine.select(self: MoveEngine, eventType: string, name: string): a
 	local best, bestPriority = nil, -math.huge
 	for _, sub in subs do
 		local m = sub.move
+		local banned = self.noAnimation -- rule NoAnimation: by move name or label
+		if banned and (banned[m.name] or (function()
+				for l in banned do if m.labelSet[l] then return true end end
+				return false
+			end)()) then
+			continue
+		end
 		-- event name filter: AnimationEnd/IntervalEnd/... Name must match what happened
 		if (sub.name == "" or sub.name == name or (eventType == "AnimationEnd" and self.move and self.move.labelSet[sub.name]))
 			and m.priority > bestPriority and self:conditionsPass(m) then

@@ -17,6 +17,7 @@ local Menus = require(script.Parent.Menus)
 local Warrior = require(script.Parent.Warrior)
 local Sound = require(script.Parent.Sound)
 local Quests = require(script.Parent.Quests)
+local Rules = require(script.Parent.Rules)
 
 local Game = {}
 
@@ -59,24 +60,18 @@ local function playOne(zone: string, battle: any, fight: any, enemy: any, startH
 	player.add = rules.player
 	enemy.add = rules.bot
 	enemy.alignTo = Warrior.build(player).attributes
-	local mods = {}
-	local noRefill = { false, false }
-	for _, r in rules.raw do
-		local to = Xml.attr(r, "ApplyTo") or "All"
-		if r.t == "NoBulletsReplenishment" then
-			if to ~= "Bot" then noRefill[1] = true end
-			if to ~= "Player" then noRefill[2] = true end
-		end
-	end
+	local fightRules, overrides = Rules.prepare(rules.raw, { player, enemy })
 	Menus.vs(player, enemy, 2.2, function()
 		Menus.hide()
 		local screen
 		screen = FightScreen.run({
 			player = player, enemy = enemy,
 			location = Xml.attr(battle, "Location"), music = Xml.attr(fight, "Music") or Xml.attr(battle, "Music"),
-			rounds = Xml.num(fight, "Rounds", 2), roundTime = Xml.num(fight, "RoundTime", 99),
-			enemyTactic = enemy.tactic, battleType = Xml.attr(battle, "Type"), mods = mods,
-			noBulletsRefill = noRefill,
+			rounds = overrides.rounds or Xml.num(fight, "Rounds", 2),
+			roundTime = overrides.roundTime or Xml.num(fight, "RoundTime", 99),
+			enemyTactic = enemy.tactic, battleType = Xml.attr(battle, "Type"),
+			rules = fightRules, timeoutWinner = overrides.timeoutWinner, invertJoystick = overrides.invertJoystick,
+			noHealthBar = overrides.noHealthBar, darkness = overrides.darkness,
 			startHealth = startHealth and { startHealth, 1 } or nil,
 			onEnd = function(result)
 				task.defer(function()

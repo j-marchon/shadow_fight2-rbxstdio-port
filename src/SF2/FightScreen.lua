@@ -164,6 +164,24 @@ function FightScreen.run(config: any): any
 		end
 	end
 	local timerLabel = find(hud, "RoundTimer")
+	if config.noHealthBar then -- rule NoHealthBar
+		for _, side in { "left", "right" } do
+			local b = find(hud, "Models/PlayerLifeBar_" .. side)
+			if b then b.Visible = false end
+		end
+	end
+	-- rule Darkness: the screen goes dark (DarkOn fade, DarkLasting) and light again (LightOn, LightLasting)
+	local dark: Frame? = nil
+	if config.darkness then
+		dark = Instance.new("Frame")
+		dark.Name = "Darkness"
+		dark.BackgroundColor3 = Color3.new(0, 0, 0)
+		dark.BackgroundTransparency = 1
+		dark.Size = UDim2.fromScale(1, 1)
+		dark.ZIndex = 0
+		dark.Parent = gui
+		gui.DisplayOrder = 1
+	end
 	local magicBtn, rangedBtn = find(controls, "ActionButtons/BtnMagic"), find(controls, "ActionButtons/BtnRanged")
 	local raidBtn = find(controls, "LeftContainer/BtnRaidCharge")
 	if raidBtn then raidBtn.Visible = false end
@@ -177,6 +195,7 @@ function FightScreen.run(config: any): any
 		location = config.location, battleType = config.battleType, mods = config.mods,
 		startHealth = config.startHealth, noBulletsRefill = config.noBulletsRefill, hooks = hooks,
 		immortal = config.training and { false, true } or nil,
+		rules = config.rules, timeoutWinner = config.timeoutWinner,
 	})
 	self.fight = fight
 	for i, e in fight.engines do
@@ -275,6 +294,7 @@ function FightScreen.run(config: any): any
 	end
 	local function directionName(): string?
 		local h = (held.right and 1 or 0) - (held.left and 1 or 0)
+		if config.invertJoystick then h = -h end -- rule InvertJoystick
 		local v = (held.up and 1 or 0) - (held.down and 1 or 0)
 		if stickDir then h, v = stickDir[1], stickDir[2] end
 		if h == 0 and v == 0 then return nil end
@@ -481,6 +501,17 @@ function FightScreen.run(config: any): any
 			if bar.hit then UI.setFill(bar.hit, bar.shown) end
 		end
 		if timerLabel then setText(timerLabel, tostring(fight:secondsLeft())) end
+		if dark and config.darkness then
+			local d = config.darkness
+			local cycle = d.darkOn + d.dark + d.lightOn + d.light
+			local t = fight.ticks % cycle
+			local a
+			if t < d.darkOn then a = t / d.darkOn
+			elseif t < d.darkOn + d.dark then a = 1
+			elseif t < d.darkOn + d.dark + d.lightOn then a = 1 - (t - d.darkOn - d.dark) / d.lightOn
+			else a = 0 end
+			dark.BackgroundTransparency = 1 - a * 0.97
+		end
 		local me = fight.engines[1]
 		if magicBtn then
 			local prog = magicBtn:FindFirstChild("Progress")

@@ -87,6 +87,10 @@ for i = 1, 2 do
 	if a then
 		for k, v in a.stats.byKind do table.insert(kinds, k .. "=" .. v) end
 		table.sort(kinds)
+		local fl = {}
+		for k, v in a.stats.flow or {} do table.insert(fl, k .. "=" .. v) end
+		table.sort(fl)
+		table.insert(kinds, "| ticks: " .. table.concat(fl, " "))
 	end
 	out(("P%d %s [%s vs %s tables]: attacks started %d, moves %d, hits %d, AI decisions %d (started %d, attacks %d, blocks %d, dodges %d) {%s}")
 		:format(i, TACTICS[i], a and a.myWeapon or "?", a and a.enemyWeapon or "?", attacks[i], moves[i], fight.stats.hits[i],

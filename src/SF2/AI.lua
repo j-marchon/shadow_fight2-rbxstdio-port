@@ -283,7 +283,7 @@ function AI.new(fight: any, index: number, tactic: string?, opts: any?)
 		wait = 0, block = 0, react = 0,
 		enemyMove = nil :: any, enemyFrame = -1, inst = 0, rolls = {},
 		memory = {}, seenHit = { nil, nil } :: { any },
-		stats = { decisions = 0, started = 0, attacks = 0, blocks = 0, dodges = 0, byKind = {} },
+		stats = { flow = {}, decisions = 0, started = 0, attacks = 0, blocks = 0, dodges = 0, byKind = {} },
 		debug = opts and opts.debug,
 	}, AI)
 	self.strikes = (t.memory and t.memory.strikes) or 3
@@ -748,6 +748,12 @@ local function roll(self: any, f: any, r: number): boolean
 	return f ~= nil and r < evalF(f, self.ctx)
 end
 
+-- counters of where decisions end (debug / tests)
+function AI.flow(self: any, k: string)
+	local f = self.stats.flow
+	f[k] = (f[k] or 0) + 1
+end
+
 function AI.decide(self: any)
 	local me, en, t = self.me, self.enemy, self.tactic
 	local ctx = self:context()
@@ -801,7 +807,7 @@ function AI.decide(self: any)
 	-- 2. the enemy is committed to his move
 	if tabular and en.move and en:inInterval("Uninterrupt") and self:hasTablesFor(en.move) then
 		local mode = self.rolls.defense
-		if mode == "done" then return end -- one defensive answer per enemy animation
+		if mode == "done" then self:flow("defended") return end -- one defensive answer per enemy animation
 		if not mode then
 			local r = self.rng:NextNumber()
 			local c, d, b = evalF(t.counter, ctx), evalF(t.dodge, ctx), evalF(t.block, ctx)
@@ -835,6 +841,7 @@ function AI.decide(self: any)
 			return
 		end
 		self.wait = 2 -- SetWaitRandAttack
+		self:flow("defense:" .. mode)
 		return
 	end
 
@@ -875,7 +882,7 @@ function AI.decide(self: any)
 	local we = self.waitOf[me.move] or entryFor(t.expectedWait, nil)
 	if we and not evade then
 		local w = math.max(evalF(we.f, ctx), 1)
-		if self.rng:NextNumber() <= 1 - 1 / w then return end
+		if self.rng:NextNumber() <= 1 - 1 / w then self:flow("expectedWait") return end
 	end
 
 	if tabular and self:hasTablesFor(en.move) then
@@ -895,6 +902,7 @@ function AI.decide(self: any)
 			local list = self:randomCandidates(self.cautiousLabels)
 			if #list > 0 and self:choose(list, "cautious") then return end
 		end
+		self:flow("nothing")
 		return -- SetWaitRandUnint: nothing this time
 	end
 
@@ -971,7 +979,8 @@ function AI.tick(self: any)
 		self.react -= 1
 		return
 	end
-	if not self:canDecide() then return end
+	if not self:canDecide() then self:flow("busy") return end
+	self:flow("decide")
 	self:decide()
 end
 

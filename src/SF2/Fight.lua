@@ -75,7 +75,10 @@ function Fight.new(opts: any)
 		pauseTicks = 0,
 		controllers = {},
 		stats = { hits = { 0, 0 }, damage = { 0, 0 }, perfect = { true, true } },
-		noBulletsRefill = opts.noBulletsRefill or { false, false },
+		noBulletsRefill = opts.noBulletsRefill or {
+			opts.rules and opts.rules[1] and opts.rules[1].noBulletsRefill or false,
+			opts.rules and opts.rules[2] and opts.rules[2].noBulletsRefill or false,
+		},
 	}, Fight)
 	for i = 1, 2 do
 		local b = self.builds[i]
@@ -89,7 +92,12 @@ function Fight.new(opts: any)
 		e.name = b.name or ""
 		e.perks = {}
 		for _, p in b.def.perks or {} do e.perks[p] = true end
-		e.immortal = opts.immortal and opts.immortal[i] or false
+		-- fight rules (SF2.Rules) for this side
+		local rule = (opts.rules and opts.rules[i]) or {}
+		e.rule = rule
+		e.immortal = (opts.immortal and opts.immortal[i]) or rule.immortal or false
+		e.removedIntervals = rule.removeIntervals
+		e.noAnimation = rule.noAnimation
 		e.magicCharge = math.clamp(BASE * (b.attributes.MagicInitialCharge or 0), 0, 1)
 		e.rangedLeft = b.attributes.RangedQuantity or math.huge -- no RangedQuantity (the player): no limit
 		self.engines[i] = e
@@ -121,7 +129,9 @@ function Fight.startRound(self: any)
 		e.mods = {}
 		e.children = {}
 		e.keys = e.keys.new()
+		if e.rule.rechargeMagic then e.magicCharge = 1 end
 		e.bullets.MagicBullet = e.magicCharge >= 1 and 1 or 0
+		e.sinceHit = 0
 		if self.round == 1 or not self.noBulletsRefill[i] then
 			e.rangedLeft = e.attributes.RangedQuantity or math.huge
 		end
@@ -186,6 +196,7 @@ end
 -- A key from a player or the AI. Ranged needs a throw left (the button greys out in the game).
 function Fight.press(self: any, i: number, key: string)
 	local e = self.engines[i]
+	if e.rule.noButton and e.rule.noButton[key] then return end
 	if key == "Ranged" and (e.rangedLeft or 0) <= 0 then return end
 	if self.cooldowns and self.cooldowns[i] and (self.cooldowns[i][key] or 0) > 0 then return end
 	e.keys:press(key)
@@ -394,6 +405,10 @@ function Fight.onHit(self: any, att: any, tgt: any, hit: any)
 	local ai, ti = a.player, t.player
 	self.stats.hits[ai] += 1
 	self.stats.damage[ai] += hit.damage
+	t.sinceHit = 0
+	if a.rule.lifesteal and not hit.blocked then
+		a.health = math.min(1, a.health + hit.damage * a.rule.lifesteal)
+	end
 	if not hit.blocked then self.stats.perfect[ti] = false end
 	-- magic charge
 	local mv = att.move
@@ -488,11 +503,37 @@ function Fight.tick(self: any)
 		end
 	elseif self.stage == "Fight" then
 		if self.roundTime > 0 then self.timer = math.max(0, self.timer - 1) end
+		-- rules that run every tick: regeneration, ring-out, losing by a fall
+		local out = 0
+		for i, e in self.engines do
+			local rule = e.rule
+			e.sinceHit = (e.sinceHit or 0) + 1
+			if rule.regeneration and e.health > 0 and e.sinceHit >= rule.regeneration.after then
+				e.health = math.min(1, e.health + rule.regeneration.rate)
+			end
+			local function nodeValue(spec: any): number
+				local x, y
+				if spec.node == "COM" then x, y = e.fighter:com() else x, y = e:nodePos(e.slots[spec.node] or e.pivotSlot) end
+				return spec.axis == "Y" and y or (x - (self.wallMin + self.wallMax) / 2)
+			end
+			if rule.ringout then
+				local v = nodeValue(rule.ringout)
+				if v < rule.ringout.min or v > rule.ringout.max then out = i end
+			end
+			if rule.loseFall and e.move then
+				local hit = rule.loseFall.anims[e.move.name]
+				for l in rule.loseFall.anims do if e.move.labelSet[l] then hit = true end end
+				if hit and nodeValue(rule.loseFall) <= rule.loseFall.max then out = i end
+			end
+		end
 		local ko1, ko2 = a.health <= 0, b.health <= 0
-		if ko1 or ko2 then
+		if out > 0 then
+			self:endRound(3 - out, "Ringout")
+		elseif ko1 or ko2 then
 			self:endRound((ko1 and ko2) and 0 or (ko1 and 2 or 1), "Lose")
 		elseif self.roundTime > 0 and self.timer <= 0 then
 			local w = (a.health > b.health) and 1 or ((b.health > a.health) and 2 or 0)
+			if self.opts.timeoutWinner then w = self.opts.timeoutWinner end
 			self:endRound(w, "Timeout")
 		end
 	elseif self.stage == "EndStance" then
