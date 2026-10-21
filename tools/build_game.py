@@ -27,6 +27,7 @@ DOCS = {
     'usersDefault': f'{DEC}/apk/usersDefault.xml',
     'usersDefaultWarrior': f'{DEC}/apk/usersDefaultWarrior.xml',
     'story': f'{DEC}/apk/story.xml',
+    'story__1': f'{DEC}/apk/story__1.xml',
     'quests': f'{DEC}/apk/quests.xml',
     'battles': f'{DEC}/apk/battles.xml',
     'tutorial_quests': f'{DEC}/apk/tutorial_quests.xml',

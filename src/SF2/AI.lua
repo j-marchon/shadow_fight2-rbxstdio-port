@@ -306,6 +306,8 @@ function AI.new(fight: any, index: number, tactic: string?, opts: any?)
 	self.delays = {}
 	for _, d in s.random.delays or {} do self.delays[d.name] = d end
 	self:setupMoves()
+	fight._ai = fight._ai or {}
+	fight._ai[index] = self
 	-- tables are built lazily on the first tick: the enemy is known once the fight exists
 	return function(f: any, i: number)
 		self:tick()
@@ -455,6 +457,9 @@ function AI.observe(self: any)
 	end
 	-- a new enemy animation: new rolls, response delay
 	local frame = aiFrame(en)
+	-- the factor context's frame count (ModelAnimation.FANDONIBLKC) keeps counting while the same move loops
+	-- (an idle stance replaying itself); only a different move resets it
+	if en.move ~= self.enemyMove then self.enemySince = self.fight.ticks end
 	if en.move ~= self.enemyMove or frame < self.enemyFrame then
 		self.enemyMove = en.move
 		self.inst += 1
@@ -500,7 +505,7 @@ function AI.context(self: any, child: any?): any
 	end
 	ctx.counter, ctx.damage, ctx.hit = c, d, h
 	ctx.health, ctx.enemyHealth = me.health or 1, en.health or 1
-	ctx.frames = aiFrame(en)
+	ctx.frames = math.max(aiFrame(en), self.fight.ticks - (self.enemySince or self.fight.ticks))
 	ctx.childFrames = child and aiFrame(child) or 0
 	ctx.distance = math.abs(pivotX(me) - pivotX(en))
 	ctx.magic = (me.bullets and me.bullets.MagicBullet) or 0
@@ -846,19 +851,29 @@ function AI.decide(self: any)
 			end
 		end
 		if #quick > 0 and self:choose(quick, "quick") then return end
-		if ctx.distance <= 120 and en.move and not en:inInterval("SemiUninterrupt") then
-			for k, ev in t.evades or {} do
-				if self.rolls.evade[k] and self.rolls.evade[k] < evalF(ev.f, ctx) then
-					local list = self:randomCandidates(self.evadeThrow)
-					if #list > 0 and self:choose(list, "evade") then return end
+	end
+	-- Evades (MJAHINLIPIK): the roll passed and the enemy could start one of those moves on me now
+	-- (approximation of ModelAi.POOHKPDCICO on the enemy: throws need <= 100 between pivots and a free enemy)
+	-- (ModelAi.HMHLACOIDJI asks the ENEMY's ModelAi whether it could start the move: a human enemy has none,
+	-- so evades only happen against another AI, as in the original)
+	local evade = false
+	local eai = self.fight._ai and self.fight._ai[3 - self.index]
+	if tabular and eai and en.move then
+		for k, ev in t.evades or {} do
+			if self.rolls.evade[k] and self.rolls.evade[k] < evalF(ev.f, ctx) then
+				for _, m in eai.keyMoves do
+					if (m.name == ev.name or m.labelSet[ev.name]) and eai:available(m) then
+						evade = true
+						break
+					end
 				end
 			end
 		end
 	end
 
-	-- ExpectedWait (Tactic.DAMEJECEIOA): act with probability 1 / wait
+	-- ExpectedWait (Tactic.DAMEJECEIOA): act with probability 1 / wait (an evade is never delayed)
 	local we = self.waitOf[me.move] or entryFor(t.expectedWait, nil)
-	if we then
+	if we and not evade then
 		local w = math.max(evalF(we.f, ctx), 1)
 		if self.rng:NextNumber() <= 1 - 1 / w then return end
 	end
@@ -872,6 +887,10 @@ function AI.decide(self: any)
 			for _, c in self:fromTables("attack", en, function(_, v) return v <= limit end) do table.insert(cands, c) end
 		end
 		if #cands > 0 and self:choose(cands, "table") then return end
+		if evade then
+			local list = self:randomCandidates(self.evadeThrow)
+			if #list > 0 and self:choose(list, "evade") then return end
+		end
 		if roll(self, t.cautious, self.rolls.cautious) then
 			local list = self:randomCandidates(self.cautiousLabels)
 			if #list > 0 and self:choose(list, "cautious") then return end

@@ -16,6 +16,7 @@ local Profile = require(script.Parent.Profile)
 local Menus = require(script.Parent.Menus)
 local Warrior = require(script.Parent.Warrior)
 local Sound = require(script.Parent.Sound)
+local Quests = require(script.Parent.Quests)
 
 local Game = {}
 
@@ -51,6 +52,8 @@ local CHAIN = { TOURNAMENT = true, CHALLENGE = true, SURVIVAL = true }
 
 -- Play one fight; done(result, playerHealth)
 local function playOne(zone: string, battle: any, fight: any, enemy: any, startHealth: number?, done: (any) -> ())
+	local fightId = zone .. "|" .. (Xml.attr(battle, "Name") or "") .. "|" .. (Xml.attr(fight, "Name") or "1")
+	Quests.fire("FightEnter", { Fight = fightId })
 	local rules = Stages.rules(fight)
 	local player = Profile.warrior()
 	player.add = rules.player
@@ -79,6 +82,15 @@ local function playOne(zone: string, battle: any, fight: any, enemy: any, startH
 				task.defer(function()
 					local hp = screen.fight and screen.fight.engines[1].health or 1
 					screen.destroy()
+					if result.winner == 1 then
+						-- progress first: FightEnd scripts test ?Fight[...].WinCount
+						local bname = Xml.attr(battle, "Name") :: string
+						local n = tonumber(Xml.attr(fight, "Name")) or 0
+						if n > Profile.progress(zone, bname) and #Stages.enemies(fight, 1) <= 1 then
+							Profile.setProgress(zone, bname, n)
+						end
+					end
+					Quests.fire("FightEnd", { Fight = fightId, FightResult = result.winner == 1 and "Win" or "Loss" })
 					done(result, hp)
 				end)
 			end,
