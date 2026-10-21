@@ -85,7 +85,19 @@ function Warrior.build(def: Def): any
 			end
 		end
 	end
+	-- AttributesAlign (stages.xml): attack/defense follow the opponent's, Factor x theirs + Shift, for the
+	-- internalSettings <AlignTargetAttributes>
+	local align = (def :: any).align
+	local target = (def :: any).alignTo
+	if align and target then
+		for _, a in Xml.all(Xml.first(Xml.doc("internalSettings"), "AlignTargetAttributes"), "Attribute") do
+			local name = Xml.attr(a, "Name") :: string
+			if target[name] then attributes[name] = target[name] * (align.factor or 1) + (align.shift or 0) end
+		end
+	end
 	for k, v in def.attributes or {} do attributes[k] = v end
+	-- fight rules: <Attributes ... ApplyTo> add to the warrior's values (DamageFactor, ...)
+	for k, v in (def :: any).add or {} do attributes[k] = (attributes[k] or 0) + v end
 	return {
 		def = def,
 		items = items,

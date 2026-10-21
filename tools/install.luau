@@ -94,7 +94,7 @@ return function()
 		end
 	end
 	for _, d in game.ReplicatedStorage.SF2:GetDescendants() do
-		if d:IsA("Folder") and #d:GetDescendants() == 0 then d:Destroy() end
+		if d:IsA("Folder") and d.Parent and #d:GetChildren() == 0 then d:Destroy() end
 	end
 	return string.format("entries=%d updated=%d removed=%d failed=%d %s", #entries, done, removed, #failed,
 		table.concat(failed, "; "):sub(1, 500))

@@ -66,7 +66,12 @@ local function color(c: { number }?): (Color3, number)
 	return Color3.new(c[1], c[2], c[3]), 1 - (c[4] or 1)
 end
 
-local function applyRect(inst: GuiObject, r: { number }?)
+-- A 180 degree turn in the dump is Unity's Y-axis flip (mirrored HUD halves): mirror the contents instead
+local function flipped(r: { number }?): boolean
+	return r ~= nil and math.abs(math.abs(r[13] or 0) - 180) < 1
+end
+
+local function applyRect(inst: GuiObject, r: { number }?, mirror: boolean)
 	if not r then
 		inst.Size = UDim2.fromScale(1, 1)
 		return
@@ -74,11 +79,16 @@ local function applyRect(inst: GuiObject, r: { number }?)
 	local ax0, ay0, ax1, ay1 = r[1], r[2], r[3], r[4]
 	local x, y, w, h = r[5], r[6], r[7], r[8]
 	local px, py = r[9], r[10]
+	if mirror then
+		ax0, ax1 = 1 - ax1, 1 - ax0
+		px = 1 - px
+		x = -x
+	end
 	inst.AnchorPoint = Vector2.new(px, 1 - py)
 	inst.Size = UDim2.new(ax1 - ax0, w, ay1 - ay0, h)
 	inst.Position = UDim2.new(ax0 + (ax1 - ax0) * px, x, 1 - (ay0 + (ay1 - ay0) * py), -y)
-	inst.Rotation = -(r[13] or 0)
-	local sx = r[11] or 1
+	inst.Rotation = flipped(r) and 0 or -(r[13] or 0)
+	local sx = math.abs(r[11] or 1)
 	if math.abs(sx - 1) > 1e-3 then
 		local s = Instance.new("UIScale")
 		s.Scale = sx
@@ -91,6 +101,11 @@ function UI.setSprite(label: any, sprite: string?, img: any?)
 	if not Images.apply(label, sprite) then return end
 	label.ImageTransparency = label:GetAttribute("alpha") or 0
 	local s = Images.sprite(sprite)
+	if s and label:GetAttribute("mirror") then
+		-- a negative rect width shows the sprite mirrored
+		label.ImageRectOffset = s.offset + Vector2.new(s.size.X, 0)
+		label.ImageRectSize = Vector2.new(-s.size.X, s.size.Y)
+	end
 	if img and img.t == "sliced" and img.d and s then
 		local k = s.size.X / s.source.X
 		local l, b, r, t = img.d[1] * k, img.d[2] * k, img.d[3] * k, img.d[4] * k
@@ -100,7 +115,8 @@ function UI.setSprite(label: any, sprite: string?, img: any?)
 	end
 end
 
-local function build(node: any, parent: Instance, order: number, paths: { [string]: Instance }, prefix: string)
+local function build(node: any, parent: Instance, order: number, paths: { [string]: Instance }, prefix: string, mirror: boolean)
+	local inner = mirror ~= flipped(node.r)
 	local inst: GuiObject
 	local img, txt = node.i, node.x
 	if img then
@@ -111,8 +127,12 @@ local function build(node: any, parent: Instance, order: number, paths: { [strin
 		label:SetAttribute("alpha", a)
 		label.ImageTransparency = a
 		if img.p then label.ScaleType = Enum.ScaleType.Fit end
+		label:SetAttribute("mirror", inner)
 		UI.setSprite(label, img.s, img)
-		if img.t == "filled" and img.f then label:SetAttribute("fillMethod", img.f[1]); label:SetAttribute("fillOrigin", img.f[3]) end
+		if img.t == "filled" and img.f then
+			label:SetAttribute("fillMethod", img.f[1])
+			label:SetAttribute("fillOrigin", (inner and img.f[1] == "Horizontal") and (1 - (img.f[3] or 0)) or img.f[3])
+		end
 		if node.b then label.AutoButtonColor = false end
 		inst = label
 	elseif node.b then
@@ -126,7 +146,7 @@ local function build(node: any, parent: Instance, order: number, paths: { [strin
 		inst = f
 	end
 	inst.Name = node.n
-	applyRect(inst, node.r)
+	applyRect(inst, node.r, mirror)
 	inst.ZIndex = order
 	inst.Visible = node.a ~= 0
 	if node.g then inst:SetAttribute("groupAlpha", node.g) end
@@ -165,7 +185,7 @@ local function build(node: any, parent: Instance, order: number, paths: { [strin
 	if not paths[path] then paths[path] = inst end
 	if not paths[node.n] then paths[node.n] = inst end
 	for i, c in node.c or {} do
-		build(c, inst, i, paths, path)
+		build(c, inst, i, paths, path, inner)
 	end
 	inst.Parent = parent
 	return inst
@@ -178,7 +198,7 @@ function UI.build(name: string, parent: Instance): Built?
 	local layout = UI.layout(name)
 	if not layout then return nil end
 	local paths = {}
-	local root = build(layout, parent, 1, paths, "")
+	local root = build(layout, parent, 1, paths, "", false)
 	return {
 		root = root,
 		paths = paths,
