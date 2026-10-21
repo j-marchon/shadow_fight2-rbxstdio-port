@@ -52,6 +52,7 @@ Then in Studio (command bar, or via the MCP): pull `src/…` and `out/…` from 
   - Forward/Back: the buffer holds screen directions (Right, Up-Left, ...). Each candidate reads them relative to the facing it *would* have after its SetDirection (`InfoAnimation.BAHFNIPBBHD`), which for most moves means "Forward = towards the opponent". Holding Right past the opponent therefore turns StepForward into StepBack and keeps moving right.
   - AnimationEnd fires after the last keyframe segment
   - **Conditions ask about the right model.** `ModExists`, `Player` and `Name` carry a `Player` attribute in the data, which the compiler dropped and the engine ignored, so all three were evaluated against *me*. Fixed: `cond()` emits `player=` for them and `MoveEngine.check` resolves it through `who()`, like the other conditions already did. In the data that is 36 `ModExists Player="Enemy"` (CurseBomb, MOD_TITAN, ShieldNoDamage, ThrowFallBlock, WhirlEffectPhysicalFall), one on `Parent`, 8 `Name` and 4 `Player` — the last twelve all inside the throws, where a wrong answer happened to be absorbed by a `Not="1"` wrapper. It now matters more, since perk mods go in the same table. Rerun `tools\build_arsenal.py` after changing `cond()`: it owns `out\MoveLib`, and `MoveSet_Shadow.lua` is no longer used.
+  - `ModExists` also reads the **root** fighter's mods now, not the asking engine's own. Mods live on a fighter (rules, stuns, perks all set them there), so a child's own table was always empty and every `ModExists` inside a missile or summon answered false.
 - Controls: A/D move (relative to facing), W up, S down, J/Z punch, K/X kick.
   - Keyboard → stick adapter (in `SF2Fight`): a lone direction waits 3 ticks (50 ms) in case a second key turns it into a diagonal
   - letting go of one key of a diagonal slides to the remaining direction without a new tap
@@ -204,7 +205,7 @@ happen:
 | Event | Fired from |
 |---|---|
 | `RoundStageStart` | `Fight.setStage` |
-| `HitPreCrit` / `HitPostCrit` / `PostHit` | `Combat.strike`, around the crit roll and the health change |
+| `HitPreCrit` / `HitPostCrit` / `PostHit` | `Combat.strike`, around the crit roll; all three before the health change |
 | `EveryFrame`, `ModExpires` | `Perks.tick`, once per `Fight.tick` |
 | `AnimationStart` / `AnimationEnd` | `MoveEngine.start` / `startPhysics` / the end of the last keyframe |
 | `MagicCharged` | `Fight.onHit`, when the bar first fills |
@@ -218,7 +219,25 @@ writes back into it).
 **Hit edits:** `SetHit` and `ChangeImpulse` leave `blocked` / `forceCritical` / `forceShock` / `setDamage` /
 `impulseMulX` / `impulseMulY` on the hit record, and `Combat.strike` consumes each one at the stage it
 belongs to: a `Block` set at `HitPreCrit` still changes the block damage factor, while `Critical`, `Shock`
-and `Damage` set at `HitPostCrit` apply to the finished hit before the health comes off.
+and `Damage` apply to the finished hit.
+
+**All three stages run before the health comes off**, and before the target is told to react. The data
+settles the order: of the 28 `SetHit` actions in `perks.xml`, 23 fire at `PostHit` — 19 of them setting
+`Damage` — and `PERK_ENLIGHTENMENT` (survive a lethal hit) tests `?Hit[].Damage >= ?PlayerParameter[Me].Health`
+there and then sets the damage to `Health - _Health`, which only works while the health is still untouched.
+`PERK_ANTI_SHOCK`, the most common perk in `stages.xml` (149 uses), clears `Shock` at `PostHit`, so the
+stage has to come before the victim picks a reaction move too. The first wiring applied health before
+`PostHit` and consumed no edits from it, which silently disabled both perks; fixed, with `takeEdits` run
+after each stage.
+
+**Values** (`evalExpr`): numbers, `_Var`, `?Variable[...]`, `?Hit[].Damage` / `.BaseDamage`,
+`?PlayerParameter[Me|Enemy].Health` / `.MagicCharge` / `.DamageConverter` / `.MagicBullet`, `?Root[...]`
+and `+ - * /`. Everything else reads 0 rather than erroring, and the list is in the `Perks.lua` header:
+`?CurrentFight` (80 uses), `?CoordX` / `?CoordY` (63), `?PlayerAttribute` (51), `?Aspect` (37),
+`?MovesVariable` (26), `?Abs` (21, whose argument is almost always a `?CoordX` expression this bracket
+match cannot nest), and `PlayerParameter`'s `isPlayer` / `DefaultPerksAspect` / `Magic` / `Pain` /
+`Skeleton` / `RaidSphere`. So a perk that positions something in the arena does nothing, while the damage
+and mod perks work.
 
 **Not ported** (visual or special-arena actions, listed at the top of the file): `ApplyModEffect`,
 `PerkArea`, `SlowModel`, `SetDarkness`, `ChangeModelColor`, `MoveModel`, `ShowDebugLine`,

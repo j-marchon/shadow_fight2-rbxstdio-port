@@ -29,9 +29,11 @@
 --        (starting attribute 2500, so a 0.12 kick has a 3% chance)
 --      - a critical hit: 0.0001 x ShockCriticalHitChance x r (starting attribute 0)
 --      - damage accumulated past <Shock><Treshold Value="999"/>: perks only, not ported
---  * perks (SF2.Perks) see each hit at three stages: HitPreCrit (before the crit roll, so SetHit Block
---    still changes the block factor), HitPostCrit (damage known: SetHit Critical / Shock / Damage and
---    ChangeImpulse apply), PostHit (after the health is taken off)
+--  * perks (SF2.Perks) see each hit at three stages, all of them before the health comes off and before
+--    the target picks its reaction: HitPreCrit (before the crit roll, so SetHit Block still changes the
+--    block factor), HitPostCrit (damage known: SetHit Critical / Shock / Damage and ChangeImpulse apply),
+--    PostHit (the last word; most perks edit the damage here, and PERK_ENLIGHTENMENT reads the health
+--    that the hit has not yet taken off to survive a lethal hit)
 --  * Critical and Shock are separate flags on the hit (ConditionHit checks each on its own)
 --  * the hit edge and contact fraction are kept for the ragdoll impulse (Fighter.applyImpulse)
 
@@ -78,6 +80,15 @@ Combat.random = Random.new()
 local function perksOf(e: any): any
 	local fight = e.fight or (e.root and e:root().fight)
 	return fight and fight.perks
+end
+
+-- Take whatever a perk's SetHit left on the hit record (Perks.act) into the hit's own fields. Each is
+-- consumed, so the next stage sees only its own edits. Not ported: SetHit's Disarm flag, which goes with
+-- the unported shock state.
+local function takeEdits(hit: any)
+	if hit.setDamage then hit.damage, hit.setDamage = hit.setDamage, nil end
+	if hit.forceCritical ~= nil then hit.critical, hit.forceCritical = hit.forceCritical, nil end
+	if hit.forceShock ~= nil then hit.shock, hit.forceShock = hit.forceShock, nil end
 end
 
 local function edgeTables(rig: any)
@@ -204,7 +215,8 @@ function Combat.strike(att: any, tgt: any, suppressed: boolean?): any
 					local cd = math.sqrt((hx - n1x) ^ 2 + (hy - n1y) ^ 2)
 					local et = (elen > 1e-9 and cd <= elen) and cd / elen or 1
 					-- The hit record is filled in as the perk stages (SF2.Perks) run over it: HitPreCrit
-					-- before the crit roll, HitPostCrit once the damage is known, PostHit after it lands.
+					-- before the crit roll, HitPostCrit once the damage is known, PostHit last. All three
+					-- run before the health comes off and before the target is told to react.
 					-- A perk's SetHit leaves blocked / forceCritical / forceShock / setDamage on the record
 					-- and ChangeImpulse leaves impulseMulX / impulseMulY; each is consumed here.
 					local perks = perksOf(att)
@@ -225,17 +237,20 @@ function Combat.strike(att: any, tgt: any, suppressed: boolean?): any
 						weapon = weapon,
 						x = hx, y = hy,
 					}
-					if perks then perks:onHit("HitPreCrit", att, tgt, hit) end
-					local blocked = hit.blocked
+					-- the base damage is on the record before HitPreCrit runs, so a perk's conditions can
+					-- read ?Hit[].BaseDamage / .Damage there
 					local damage = iv.damage * Combat.attackFactor(iv, attr, tattr, head)
 						* 2 ^ (ATTRIBUTE_BASE * (attr.DamageFactor or 0)) * Combat.labelFactor(att)
-					hit.baseDamage = damage
+					hit.baseDamage, hit.damage = damage, damage
+					if perks then perks:onHit("HitPreCrit", att, tgt, hit) end
+					local blocked = hit.blocked
+					-- a Damage set this early is still multiplied by the crit and block factors below
+					if hit.setDamage then damage, hit.setDamage = hit.setDamage, nil end
 					local critical = not blocked and not iv.noCritical
 						and Combat.random:NextNumber() < ATTRIBUTE_BASE * (attr.CriticalChance or 0)
 					if hit.forceCritical ~= nil then critical, hit.forceCritical = hit.forceCritical, nil end
 					if critical then damage *= 2 ^ (ATTRIBUTE_BASE * (attr.CriticalDamage or 0)) end
 					if blocked then damage *= 2 ^ (ATTRIBUTE_BASE * (tattr.BlockDamageFactor or 0)) end
-					if hit.setDamage then damage, hit.setDamage = hit.setDamage, nil end
 					local r = damage / (att.damageConverter or 1)
 					local shock = (critical
 							and Combat.random:NextNumber() < ATTRIBUTE_BASE * (attr.ShockCriticalHitChance or 0) * r)
@@ -244,9 +259,13 @@ function Combat.strike(att: any, tgt: any, suppressed: boolean?): any
 					hit.critical, hit.shock, hit.damage = critical, shock, damage
 					if perks then
 						perks:onHit("HitPostCrit", att, tgt, hit)
-						if hit.setDamage then hit.damage, hit.setDamage = hit.setDamage, nil end
-						if hit.forceCritical ~= nil then hit.critical, hit.forceCritical = hit.forceCritical, nil end
-						if hit.forceShock ~= nil then hit.shock, hit.forceShock = hit.forceShock, nil end
+						takeEdits(hit)
+						-- PostHit has the last word on the hit and still runs before the health comes
+						-- off: PERK_ENLIGHTENMENT reads PlayerParameter[Me].Health here and sets the
+						-- damage from it to leave a sliver, PERK_ANTI_SHOCK clears Shock before the
+						-- target picks its reaction, and 19 other perks set Damage at this stage.
+						perks:onHit("PostHit", att, tgt, hit)
+						takeEdits(hit)
 						critical, shock = hit.critical, hit.shock
 					end
 					hit.type = (critical and "Critical" or "") .. ((critical and shock) and " " or "") .. (shock and "Shock" or "")
@@ -254,7 +273,6 @@ function Combat.strike(att: any, tgt: any, suppressed: boolean?): any
 					hit.impulseY *= hit.impulseMulY or 1
 					if not tgt.immortal then tgt.health = math.max(0, tgt.health - hit.damage) end
 					tgt.lastHit = hit
-					if perks then perks:onHit("PostHit", att, tgt, hit) end
 					tgt:fire("Hit", hit.name)
 					att:fire("Strike", "")
 					return hit

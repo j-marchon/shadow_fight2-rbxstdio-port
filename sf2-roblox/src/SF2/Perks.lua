@@ -152,7 +152,16 @@ local function evalExpr(self: any, inst: any, s: string?): any
 		local who = (string.find(arg, "Enemy") and enemyOf(inst.owner)) or inst.owner
 		if field == "Health" then return who and who.health or 0 end
 		if field == "MagicCharge" then return who and who.magicCharge or 0 end
+		-- raids scale damage by DamageConverter; it is 1 everywhere else, and 18 perks divide or
+		-- multiply by it (PERK_ITEM_SPECIAL_TIME_BOMB's damage is "0.23 * ?...DamageConverter * _Base")
+		if field == "DamageConverter" then return who and who.damageConverter or 1 end
+		if field == "MagicBullet" then return who and (who.bullets and who.bullets.MagicBullet or 0) or 0 end
 	end
+	-- Not ported: ?CurrentFight, ?CoordX / ?CoordY, ?PlayerAttribute, ?Aspect / ?RandomAspect,
+	-- ?MovesVariable, ?StringInArray, ?UniformFloatRandom, ?Player, ?Abs (its argument is almost always
+	-- a ?CoordX expression, and this bracket match does not nest), and PlayerParameter's isPlayer /
+	-- DefaultPerksAspect / Magic / Pain / Skeleton / RaidSphere. They fall through to num()'s default,
+	-- so such a perk reads 0 rather than erroring.
 	return s
 end
 

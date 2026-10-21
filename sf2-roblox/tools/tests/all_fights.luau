@@ -25,7 +25,15 @@ task.spawn(function()
 				total += 1
 				local ok, err = pcall(function()
 					local rules = Stages.rules(fight)
-					local enemy = Stages.enemies(fight, 10)[1]
+					local enemies = Stages.enemies(fight, 10)
+					if #enemies == 0 then
+						-- an Eclipse battle's fights carry rewards and rules but no warriors: they come
+						-- from the base battle's fight of the same number, the way Game.fightAt does it
+						local base = Stages.baseFight(zname, battle, fi)
+						if base then enemies = Stages.enemies(base, 10) end
+					end
+					local enemy = enemies[1]
+					if not enemy then error("no enemy (not an Eclipse fallback case either)") end
 					local player = { name = "NAME_SHADOW", level = 10, items = { Weapon = "WEAPON_KNIVES", Ranged = "RANGED_FISH" } }
 					player.add = rules.player
 					enemy.add = rules.bot
