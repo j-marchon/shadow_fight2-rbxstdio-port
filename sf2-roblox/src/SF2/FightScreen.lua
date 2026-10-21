@@ -236,8 +236,12 @@ function FightScreen.run(config: any): any
 		local x, y = e:nodePos(e.pivotSlot)
 		effects:play({ sequence = file, x = x, y = y + 120, facing = e.facing })
 	end
+	-- The hit and block sparks come from the fight code, not from a moves.xml <Effect>, so they carry no
+	-- TimeScale and were running at Effects' 30 fps base -- half the speed of the fight they belong to,
+	-- which read as the impacts lagging behind the hits. The authored effects cluster at TimeScale 2
+	-- (205 of them, against 43 at 1), i.e. 60 fps, so these play at the fight's own rate too.
 	hooks.hitPicture = function(pic, x, y, att)
-		effects:play({ sequence = pic, x = x, y = y, facing = att.facing })
+		effects:play({ sequence = pic, x = x, y = y, facing = att.facing, timeScale = 2 })
 	end
 	local shake = { t = 0, total = 0, ax = 0, ay = 0, fx = 1, fy = 1 }
 	hooks.shake = function(s)

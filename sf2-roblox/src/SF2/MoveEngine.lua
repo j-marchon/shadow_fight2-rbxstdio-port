@@ -171,7 +171,13 @@ function MoveEngine.anchor(self: MoveEngine, a: any, candidate: any?): (number, 
 		-- the origin of who's current animation (its Align offset): children start in their parent's frame
 		x, y = who.offsetX, who.offsetY
 	elseif obj == "Pivot" then
-		x, y = who:nodePos(who.pivotSlot)
+		-- the model's pivot node, not the current move's align pivot. They are different things: a move
+		-- aligns on whatever node its <Align><Pivot> names (StepBack uses NHeel_1), so reading
+		-- self.pivotSlot here measured from a heel, which sits about 78 units ahead of the body, and
+		-- every "Object=Pivot" range came out that much longer than the data intends -- the reason the
+		-- elbow started from too far away. 397 of the 405 Distances that start at Pivot end at
+		-- Nodes/NPivot, so the two are the same point.
+		x, y = who:nodePos(who.slots.NPivot or who.pivotSlot)
 	elseif obj == "COM" then
 		if a.previous then
 			x, y = who.prevComX or 0, who.prevComY or 0
