@@ -126,7 +126,11 @@ The user's standing priority, in their words: the UI was "the biggest problem", 
    - then the list under "Not verified yet".
 
    Fix what they report, then ask them to save the place (Ctrl+S).
-2. **Next section: economy** (FULL_GAME_PLAN step 9): item upgrades with their delivery times, the forge/enchantments (`forge.xml`, `forge_quests.xml`), item sets, energy (`energy.xml`), `ToggleItems` labels hiding/showing shop items, real-money items priced in gems. Then modes (hard mode, raids as solo bosses), then the UI deviations below.
+2. **Rest of section 3, economy** (energy and deliveries are done):
+   - The forge: `forge.xml` has 3 recipes (Simple/Medium/Complex, unlocked by `forge_quests.xml` GIVE_RECIPE_*), each with per-type `Variations` (random perk sets, `?RandomAspect[min,max]` deviation around the `AspectScale` value for the item's level) and `Prices` blocks (ForgeMaterial1/2/3 by item level, DeliveryTime 1200 s, BonusDeliveryPrice). Its UI is the shop's `ForgePanel` (decompile `Nekki.SF2.GUI.Shop.Forge`).
+   - Reward currencies: challenge/Eclipse rewards carry `<Currency Drop Name="ForgeMaterialN" ExpectedValue DeviationCoefficient DecayCoefficient>`; find the drop formula in the decompile before paying them.
+   - Item sets (`list.xml <ItemSets>`), shop item visibility (`ToggleItems` labels, `PackLabel` zone packs), real-money items priced in gems.
+   Then modes (hard mode, raids as solo bosses), then the UI deviations below.
    Ask the user for a screenshot of an act screen ("Act II Secret Path") to replace the placeholder, and to play a new game's tutorial (Settings → advanced → RESET PROGRESS).
 3. **Close the UI deviations worth closing**:
    - The real difficulty rating (decompile `Nekki.SF2.GUI.Map\DifficultyPanel__1117.c` / `InfoBattle__2796.c`).
