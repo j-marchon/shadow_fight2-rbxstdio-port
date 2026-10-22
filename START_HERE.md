@@ -42,6 +42,8 @@ Then (same day, later session) the user asked to finish the whole port, section 
 - `SF2.Quests` is a port of the QuestsManager (priority queue, event snapshots, FightEnter/ChangeTab interception, the value language, dialogs with their buttons and colours, ShowBattle/HideBattle, Activate, Run, AttachQuestFile, ...);
 - the map shows what the scripts put on it; acts open, bosses unlock and the tutorial runs as in the original. The save is version 2 (battle records, per-fight win/loss counts, tutorial step); old saves are migrated.
 
+**Section 3 (economy) is in progress:** energy and deliveries are in (README "Economy"); the forge/enchantments, item sets, shop item visibility (`ToggleItems`, pack labels) and the reward currencies are next.
+
 **Section 2 is done: the dojo** is the original's live punching-bag fight under the menu, with the disciple toggle and the tutorial's dojo steps (README "The dojo").
 
 All of it is committed and installed in the Studio place. **The place has not been saved to Roblox** (Ctrl+S in Studio), and the user has not re-checked the latest rounds.
@@ -219,4 +221,4 @@ The user's standing priority, in their words: the UI was "the biggest problem", 
   - Profile: real perk numbers from CharacterProgress `UpgradeLevel` descriptions, the left tile grid, faded unlearned perks, all tabs.
   - Settings and advanced settings as the original, with volume sliders and controller scale.
   - End screen: the bonus lines, backed by new `Fight.stats` counters and coins paid in `Game`.
-- 2026-10-22 (full port, section by section): section 1, the quest scripts. Found the 6 missing act stories in the APK (same-named TextAssets the old extraction overwrote; a CDN `CONFIGS` pack was fetched with the user's OK but didn't have them), ported the QuestsManager from the decompile, moved the map, act unlocks and the tutorial onto it, save v2 with migration, `story_test.luau` plays the whole campaign. Section 2, the dojo: the live punching-bag fight under the menu (`DojoScene`), the disciple toggle, the tutorial's dojo steps from their decompiled classes; keyboard injection now reaches the game.
+- 2026-10-22 (full port, section by section): section 1, the quest scripts. Found the 6 missing act stories in the APK (same-named TextAssets the old extraction overwrote; a CDN `CONFIGS` pack was fetched with the user's OK but didn't have them), ported the QuestsManager from the decompile, moved the map, act unlocks and the tutorial onto it, save v2 with migration, `story_test.luau` plays the whole campaign. Section 2, the dojo: the live punching-bag fight under the menu (`DojoScene`), the disciple toggle, the tutorial's dojo steps from their decompiled classes; keyboard injection now reaches the game. Section 3 started: energy (5 points, 600 s each, per-fight Power, energy.xml dialogs) and deliveries (DeliveryTime, finish-now gems, Delivery notifications).

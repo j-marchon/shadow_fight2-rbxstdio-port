@@ -86,6 +86,7 @@ task.spawn(function()
 		local steps, lastZone = 0, ""
 		while steps < MAX_STEPS do
 			steps += 1
+			d.power = 5 -- energy is not what this test is about
 			if d.zone ~= lastZone then
 				table.insert(log, "zone " .. d.zone .. " at step " .. steps)
 				lastZone = d.zone

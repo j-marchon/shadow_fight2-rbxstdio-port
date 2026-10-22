@@ -34,6 +34,9 @@ Menus.onDisciple = nil :: ((on: boolean) -> ())?
 Menus.discipleOn = nil :: (() -> boolean)?
 Menus.onLeaveScene = nil :: (() -> ())? -- a screen the game doesn't know about replaces the scene
 local menuRoot: any = nil -- the current scene's MainMenu
+Menus.onEnergyPress = nil :: (() -> ())?
+Menus.onPurchase = nil :: ((item: string) -> ())?
+Menus.onDeliveryDue = nil :: (() -> ())?
 
 local function root(): (ScreenGui, Frame)
 	if not gui then
@@ -257,13 +260,32 @@ local function mainMenu(parent: Instance, section: string): any
 		end
 	end
 
-	-- energy: off in the prefab, shown in every menu scene. The port has no energy (fights cost nothing),
-	-- so the bar stays full; the unlimited-energy icon is the original's for a paid state.
+	-- energy (MenuEnergyPanel): off in the prefab, shown in every menu scene. The StepBar shows the points
+	-- left of the 5 (Profile.power); tapping it fires EnergyBarPress (energy.xml's refill dialogs). The
+	-- unlimited-energy icon is the paid state, which the port has no way to buy.
 	local energy = m:find("Content/StaticPanel/EnergyPanel")
 	if energy then
 		energy.Visible = true
 		local maxIcon = m:find("Content/StaticPanel/EnergyPanel/EnergyMaxIcon")
 		if maxIcon then maxIcon.Visible = false end
+		local stripe = m:find("Content/StaticPanel/EnergyPanel/EnergyBar/BarStripe")
+		local function refreshPower()
+			local cur, max = Profile.power()
+			if stripe and stripe.Parent then
+				stripe:SetAttribute("fillMethod", "horizontal")
+				UI.setFill(stripe, cur / math.max(1, max))
+			end
+		end
+		refreshPower()
+		task.spawn(function()
+			while stripe and stripe.Parent do
+				task.wait(1)
+				refreshPower()
+			end
+		end)
+		onClick(m:find("Content/StaticPanel/EnergyPanel/DlgBtn"), function()
+			if Menus.onEnergyPress then Menus.onEnergyPress() end
+		end)
 	end
 
 	-- coins and gems
@@ -1470,8 +1492,40 @@ function Menus.shop(tab: string?, item: string?)
 			panelContent = fillParameters(infoFace, it, up, owned)
 			local buttons = panelContent and panelContent:find("ButtonPanel")
 			if buttons then
-				local function refresh() Menus.shop(tab) end
-				if owned then
+				local function refresh() Menus.shop(tab, name) end
+				local dl = Profile.delivery(name)
+				if dl then
+					-- being made (shopMaking) or upgraded: the time left, and finish now for gems
+					-- (InfoPanelContent's ImmediatelyDeliveryButton, "ShopUpgradeNow")
+					local label = panelContent:find("TimerLabel")
+					local function tick()
+						local left = math.max(0, dl.readyAt - os.time())
+						if label then
+							label.Visible = true
+							setText(label, string.upper(Xml.text("shopMaking")) .. "  " .. string.format("%d:%02d", left // 60, left % 60))
+						end
+						return left
+					end
+					tick()
+					task.spawn(function()
+						while label and label.Parent and Profile.delivery(name) == dl do
+							task.wait(1)
+							if tick() <= 0 then
+								if Menus.onDeliveryDue then Menus.onDeliveryDue() end
+								refresh()
+								break
+							end
+						end
+					end)
+					priceButton(buttons, 1, "BtnGreen", "MiscSprites.ruby", fmt(dl.price), function()
+						if d.bonus < dl.price then return end
+						d.bonus -= dl.price
+						if Profile.deliver(name) == "item" then Profile.equip(name) end
+						Profile.save()
+						Sound.play("snd_upgrade")
+						refresh()
+					end)
+				elseif owned then
 					local nextStep = Items.upgrades(it)[up + 1]
 					if nextStep then
 						local label = panelContent:find("TimerLabel")
@@ -1483,10 +1537,17 @@ function Menus.shop(tab: string?, item: string?)
 						local function pay(cost: number, field: string)
 							if d[field] < cost then return end
 							d[field] -= cost
-							d.items[name].upgrade = up + 1
+							-- an upgrade with a DeliveryTime is delivered later (quests.xml DeliveryUpgrade)
+							local wait = Xml.num(nextStep, "DeliveryTime", 0) :: number
+							if wait > 0 then
+								Profile.startDelivery(name, "upgrade", wait, Xml.num(nextStep, "BonusDeliveryPrice", 0) :: number)
+							else
+								d.items[name].upgrade = up + 1
+							end
 							Profile.save()
 							Sound.play("snd_upgrade")
 							refresh()
+							if Menus.onPurchase then Menus.onPurchase(name) end
 						end
 						if p then priceButton(buttons, 1, "BtnYellow", "MiscSprites.gold", fmt(p), function() pay(p, "money") end) end
 						if g then priceButton(buttons, 2, "BtnGold", "MiscSprites.ruby", fmt(g), function() pay(g, "bonus") end) end
@@ -1502,11 +1563,18 @@ function Menus.shop(tab: string?, item: string?)
 								if d.bonus < (gems :: number) then return end
 								d.bonus -= gems :: number
 							end
-							Profile.give(name)
-							Profile.equip(name)
+							-- an item with a DeliveryTime is made first (quests.xml Delivery)
+							local wait = Xml.num(it, "DeliveryTime", 0) :: number
+							if wait > 0 then
+								Profile.startDelivery(name, "item", wait, Xml.num(it, "BonusDeliveryPrice", 0) :: number)
+							else
+								Profile.give(name)
+								Profile.equip(name)
+							end
 							Profile.save()
 							Sound.play("snd_buy")
 							refresh()
+							if Menus.onPurchase then Menus.onPurchase(name) end
 						end)
 				else
 					priceButton(buttons, 1, "BtnDark", "MiscSprites.star", tostring(lvl), function() end)

@@ -344,6 +344,33 @@ right button pressed, every fight won at once): the tutorial ends, acts 1 to 6, 
 chapters 1 to 3 open in order with their act screens, every act's boss and the final Titan fall, 0 quest
 errors. In Play, a maxed-out save opens on the dojo with Act 7's Shroud greeting over it.
 
+## Economy (`Profile`, `Quests`, the shop in `Menus`)
+
+**Energy.** internalSettings `<Power Max="5" TimeMax="600"/>`: 5 points, one back every 600 s below the cap
+(usersDefault `Power`, `PowerSyncTime`). Every stages.xml `<Fight>` has its own `Power` cost (1 for story
+fights, 0 for the dojo and the tutorial). The map's FIGHT runs the FightEnter quests first -- `energy.xml`
+is a quest file, and its `EnergyChecker` takes over at 0 energy with the refill dialogs -- then
+`GameUtils.FLCIPICBNGD(-cost)` refuses a fight that would go below 0 (`Roster.AIIJFJLLIDB`). A quest's
+`Fight` spends the cost too. The top bar's StepBar shows the points; tapping it fires `EnergyBarPress`.
+`BuyItem Currency="Ruby"` buys `Energy_Refill` (5 gems, fills the bar); `Currency="Real"` (unlimited energy)
+does nothing.
+
+**Deliveries.** An item or an upgrade step with a `DeliveryTime` is paid for, then made: a bought item is not
+owned and an upgraded one keeps its old step until the time is up, or until its `BonusDeliveryPrice` in gems
+is paid. The shop fires `Purchase`; quests.xml's `Delivery` / `DeliveryUpgrade` show "Your order will be
+ready in:" with the time left (`DeliveryDelay`) and the finish-now button (`Deliver`). While making, the
+shop's info panel shows MAKING and the time left with the gem button (InfoPanelContent
+`ImmediatelyDeliveryButton`). When the time is up (checked every 5 s off the fight screen, and by the shop's
+own timer), `Delivery` fires and `NotificationGeneral`'s `Foreach DeliveryItems/DeliveryUpgrades` shows one
+notification per item ("Upgrade completed: Sai").
+
+**Texts** in the scripts are `key{arg0}{arg1}`: the localized key with `{0}`, `{1}` filled from the
+arguments (value expressions; `%{0}` localizes the argument, e.g. an item's name). `{img::...}` arguments
+are icons and are dropped.
+
+**Verified in Studio** (headless, 2026-10-22): energy spends and refills; an upgrade delivery shows its
+dialog lines, reports its Timeout, and when due is handed over with its notification.
+
 ## UI (menu screens, `src\SF2\UI.lua` + `src\SF2\Menus.lua`)
 
 `tools/build_ui.py` turns the dumped Unity layouts (`sf2-assets/ui`, 229 screens) into packed node trees in

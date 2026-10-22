@@ -157,6 +157,13 @@ local function bonuses(result: any): any
 		shock = n(st.shocks), style = n(st.bestStyle) }
 end
 
+-- The fight's energy (stages.xml Power): spent when it starts; false if there isn't enough
+local function spendPower(id: string): boolean
+	local fight = Quests.fightOf(id)
+	local cost = fight and Xml.num(fight, "Power", 0) or 0
+	return Profile.addPower(-(cost :: number))
+end
+
 -- Play one stages.xml fight by id ("ZONE|BATTLE|n")
 function Game.playFight(id: string)
 	local fight, battle, zone, bname = Quests.fightOf(id)
@@ -204,7 +211,9 @@ function Game.playFight(id: string)
 			Menus.endFight({ win = true }, total, levels, back)
 		else
 			Menus.endFight({ win = false, timeout = timeout }, total, levels, back, function()
-				Quests.fightEnter(id, eclipse, function() Game.playFight(id) end)
+				Quests.fightEnter(id, eclipse, function()
+					if spendPower(id) then Game.playFight(id) else back() end
+				end)
 			end)
 		end
 	end
@@ -281,12 +290,15 @@ function Game.playFight(id: string)
 	nextEnemy(nil)
 end
 
--- FIGHT on the map
+-- FIGHT on the map: the FightEnter quests first (energy.xml's EnergyChecker among them, at 0 energy);
+-- else the energy check, then the fight
 function Game.playBattle(zone: string, battle: any)
 	local id = nextFight(zone, battle)
 	if not id then return end
 	local eclipse = string.find(Xml.attr(battle, "Name") or "", "_ECLIPSEMODE") ~= nil
-	Quests.fightEnter(id, eclipse, function() Game.playFight(id) end)
+	Quests.fightEnter(id, eclipse, function()
+		if spendPower(id) then Game.playFight(id) end
+	end)
 end
 
 -- Training in the dojo: you and the dummy with any weapon of the arsenal, no timer, the dummy can't lose
@@ -322,7 +334,11 @@ Quests.host = {
 		if tab == "Helmet" then tab = "Helm" end
 		show("Shop", { tab = tab, item = item })
 	end,
-	fight = function(id: string) Game.playFight(id) end,
+	fight = function(id: string)
+		-- a quest's Fight costs its energy too, when there is some (EnergyChecker stops them at 0)
+		spendPower(id)
+		Game.playFight(id)
+	end,
 	mapFocus = function(battle: string)
 		local zone, name = string.match(battle, "^([^|]*)|([^|]*)")
 		if zone then
@@ -382,6 +398,18 @@ function Game.start()
 	end
 	Menus.discipleOn = function() return disciple end
 	Menus.onLeaveScene = function() stopDojo() end
+	Menus.onPurchase = function(item) Quests.purchase(item) end
+	Menus.onDeliveryDue = function() Quests.checkDeliveries() end
+	-- deliveries that come due while you play are handed over on the menu screens, not mid-fight
+	task.spawn(function()
+		while true do
+			task.wait(5)
+			if current ~= "Fight" and current ~= "Loader" then Quests.checkDeliveries() end
+		end
+	end)
+	Menus.onEnergyPress = function()
+		if Quests.fire("EnergyBarPress") then Quests.run() end
+	end
 	local function boot()
 		current = "Loader"
 		Quests.start(function()

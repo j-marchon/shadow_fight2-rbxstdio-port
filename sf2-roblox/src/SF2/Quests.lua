@@ -61,7 +61,7 @@ local FILES: { [string]: string } = {
 	["quest_extensions/zone_7/story.xml"] = "qx_zone_7_story",
 	["quest_extensions/intermission/story.xml"] = "qx_intermission_story",
 }
-local BASE = { "quests", "battles", "tutorial_quests", "forge_quests" }
+local BASE = { "quests", "battles", "tutorial_quests", "forge_quests", "energy" }
 
 type Quest = {
 	name: string, priority: number, seq: number, events: { [string]: boolean }, conditions: any,
@@ -251,6 +251,15 @@ local function func(kind: string, arg: string, field: string): string
 		local owned = d.items[id]
 		if field == "Quantity" then return tostring(owned and owned.count or 0) end
 		if field == "UpgradeLevel" then return tostring(upgradeLevel(id)) end
+		if field == "Timeout" then
+			local dl = Profile.delivery(id)
+			return tostring(dl and math.max(0, dl.readyAt - os.time()) or 0)
+		end
+		if field == "NextUpgradeDeliveryPrice" then
+			local step = def and Items.upgrades(def)[(owned and owned.upgrade or 0) + 1]
+			return step and (Xml.attr(step, "BonusDeliveryPrice") or "0") or "0"
+		end
+		if field == "Failure" then return "0" end
 		if field == "Name" then return id end
 		if SLOTS[field] then return d.equipped[field] or "" end
 		if not def then return "0" end
@@ -259,6 +268,7 @@ local function func(kind: string, arg: string, field: string): string
 		if field == "Level" then return tostring(d.level) end
 		if field == "Money" then return tostring(d.money) end
 		if field == "Bonus" then return tostring(d.bonus) end
+		if field == "Power" then return tostring((Profile.power())) end
 		if field == "Language" then return Xml.language() end
 		if field == "MapFocus" then return Quests.mapFocus or "" end
 		if SLOTS[field] then return d.equipped[field] or "" end
@@ -367,13 +377,29 @@ evaluate = function(expr: string?): string
 end
 Quests.value = evaluate
 
--- dialog text: localized key, {br} line breaks, {_Var} values, {img::...} icons dropped
-local function textOf(key: string?): string
-	local s = Xml.text(evaluate(key))
+-- dialog text: "key{arg0}{arg1}..." is the localized key with {0}, {1} filled from the arguments (each a
+-- value expression; "%{0}" localizes the argument, e.g. an item's name); "{img::...}" arguments are icons,
+-- which are dropped; {br} breaks the line. A bare key may itself be a variable (_Title_Assistant).
+local function localize(k: string): string
+	local s = Xml.text(k)
 	if string.sub(s, 1, 1) == "%" then s = Xml.text(string.sub(s, 2)) end
+	return s
+end
+
+local function textOf(key: string?): string
+	if not key then return "" end
+	local head, rest = string.match(key, "^([^{]*)(.*)$")
+	local args = {}
+	for a in string.gmatch(rest or "", "%b{}") do
+		local inner = string.sub(a, 2, -2)
+		table.insert(args, string.sub(inner, 1, 5) == "img::" and "" or evaluate(inner))
+	end
+	local s = localize(evaluate(head))
+	for i, v in args do
+		s = string.gsub(s, "%%{" .. (i - 1) .. "}", function() return localize(v) end)
+		s = string.gsub(s, "{" .. (i - 1) .. "}", function() return v end)
+	end
 	s = string.gsub(s, "{br}", "\n")
-	s = string.gsub(s, "{([_?][^}]*)}", function(v) return evaluate(v) end)
-	s = string.gsub(s, "{img::[^}]*}", "")
 	return s
 end
 Quests.text = textOf
@@ -508,7 +534,11 @@ local run: (actions: { any }) -> ()
 -- small scroll from the right with the speaker's icon, closed by its button or after ReadTime seconds.
 local function dialog(el: any)
 	local typ = Xml.attr(el, "Type") or "Regular"
-	local lines = Xml.all(el, "Line")
+	-- the lines, in order; a DeliveryDelay is a line showing the delivery's time left
+	local lines = {}
+	for _, k in el.c or {} do
+		if k.t == "Line" or k.t == "DeliveryDelay" then table.insert(lines, k) end
+	end
 	local buttons = Xml.all(el, "Button")
 	-- headless tests (tools/tests/story_test.luau) answer dialogs without drawing them
 	if Quests.auto then
@@ -556,7 +586,13 @@ local function dialog(el: any)
 		local function show()
 			setLabel(built:find("Header"), string.upper(textOf(Xml.attr(el, "Title"))))
 			local line = lines[index]
-			setLabel(built:find("Content/Text"), line and textOf(Xml.attr(line, "Text")) or "")
+			local text = line and textOf(Xml.attr(line, "Text")) or ""
+			if line and line.t == "DeliveryDelay" then
+				local dl = Profile.delivery(evaluate(Xml.attr(line, "Item")))
+				local left = dl and math.max(0, dl.readyAt - os.time()) or 0
+				text = string.format("%d:%02d", left // 60, left % 60)
+			end
+			setLabel(built:find("Content/Text"), text)
 			local av = built:find("Content/ImgAvatar")
 			if av then
 				local img = evaluate(Xml.attr(el, "Image"))
@@ -747,6 +783,50 @@ run = function(actions: { any })
 				owned.perks = owned.perks or {}
 				owned.perks[Xml.attr(perk, "Name") or ""] = true
 			end
+		elseif t == "BuyItem" then
+			-- Currency="Ruby": the item's BonusPrice in gems (Energy_Refill fills the energy);
+			-- Currency="Real" (real money) has nothing behind it here
+			local name = evaluate(Xml.attr(a, "Name"))
+			local def = Items.get(name)
+			local d = Profile.get()
+			if def and Xml.attr(a, "Currency") == "Ruby" then
+				local price = Xml.num(def, "BonusPrice", 0) :: number
+				if d.bonus >= price then
+					d.bonus -= price
+					if Xml.attr(def, "Type") == "Energy" then
+						local _, max = Profile.power()
+						Profile.addPower(max)
+					else
+						Profile.give(name)
+					end
+					Profile.changed:Fire()
+				end
+			end
+		elseif t == "Deliver" then
+			-- finish a delivery now for its gems (the dialog's FINISH / UPGRADE button)
+			local name = evaluate(Xml.attr(a, "Item"))
+			local dl = Profile.delivery(name)
+			local d = Profile.get()
+			if dl and d.bonus >= dl.price then
+				d.bonus -= dl.price
+				if Profile.deliver(name) == "item" then Profile.equip(name) end
+				Profile.changed:Fire()
+				if host then host.refresh() end
+			end
+		elseif t == "Foreach" then
+			-- Foreach Type="DeliveryItems|DeliveryUpgrades|DeliveryEnchantments" Name=quest: that quest once per
+			-- entry of the Delivery event's list, with _$Iterator set to it
+			local list = (params.lists or {})[Xml.attr(a, "Type") or ""] or {}
+			local q = byName[Xml.attr(a, "Name") or ""]
+			if q then
+				for _, v in list do
+					local saved = params
+					params = table.clone(params)
+					params.Iterator = v
+					enqueue(q)
+					params = saved
+				end
+			end
 		elseif t == "UnlockCharacter" then
 			Profile.get().unlocked[evaluate(Xml.attr(a, "Name"))] = true
 		elseif t == "SetStoryTutorialStep" then
@@ -863,6 +943,22 @@ function Quests.reset()
 	table.clear(globals)
 	pendingFight = nil
 	Quests.lastFight, Quests.lastResult, Quests.mapFocus = nil, nil, nil
+end
+
+-- A purchase in the shop (Purchase event: delivery dialogs, shop advice)
+function Quests.purchase(name: string)
+	if Quests.fire("Purchase", { Purchase = name }) then Quests.run() end
+end
+
+-- Hand over the deliveries whose time is up and fire Delivery for them (the notifications)
+function Quests.checkDeliveries()
+	if busy then return end
+	local due = Profile.deliverDue()
+	if #due.items + #due.upgrades == 0 then return end
+	if Quests.fire("Delivery", { lists = { DeliveryItems = due.items, DeliveryUpgrades = due.upgrades, DeliveryEnchantments = {} } }) then
+		Quests.run()
+	end
+	Profile.save()
 end
 
 -- Load the scripts and run ApplicationStart; after() shows the first scene, then SessionStart runs

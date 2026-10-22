@@ -27,6 +27,8 @@ export type Data = {
 	records: { [string]: { locked: boolean?, hidden: boolean?, off: boolean?, replay: number? } },
 	fightStats: { [string]: { w: number, l: number } },
 	tutorial: string, labels: { [string]: boolean }, unlocked: { [string]: boolean },
+	power: number, powerSync: number,
+	deliveries: { [string]: { kind: string, readyAt: number, price: number } },
 }
 
 local VERSION = 2
@@ -51,6 +53,7 @@ local function default(): Data
 		settings = { sound = 1, music = 1, language = "eng" },
 		eclipse = {},
 		records = {}, fightStats = {}, tutorial = "NotStarted", labels = {}, unlocked = {},
+		power = Xml.num(w, "Power", 5) :: number, powerSync = os.time(), deliveries = {},
 	}
 	for _, slot in { "Skeleton", "Armor", "Helm", "Weapon", "Ranged", "Magic" } do
 		d.equipped[slot] = Xml.attr(w, slot) or ""
@@ -253,6 +256,88 @@ function Profile.warrior(): any
 end
 
 ---------------------------------------------------------------- battles
+
+---------------------------------------------------------------- energy
+-- internalSettings <Power Max="5" TimeMax="600"/>: up to 5 points (usersDefault Power, PowerSyncTime); one
+-- comes back every 600 s while below the cap. A fight costs its stages.xml Power (Roster.AIIJFJLLIDB:
+-- refused when it would go below 0).
+
+local function powerSettings(): (number, number)
+	local p = Xml.first(Xml.doc("internalSettings"), "Power")
+	return (Xml.num(p, "Max", 5) :: number), (Xml.num(p, "TimeMax", 600) :: number)
+end
+
+function Profile.power(): (number, number, number)
+	local d = Profile.get()
+	local max, period = powerSettings()
+	d.power = d.power or max
+	d.powerSync = d.powerSync or os.time()
+	local now = os.time()
+	if d.power >= max then
+		d.powerSync = now
+	else
+		local gained = (now - d.powerSync) // period
+		if gained > 0 then
+			d.power = math.min(max, d.power + gained)
+			d.powerSync += gained * period
+		end
+	end
+	-- seconds until the next point
+	local left = d.power >= max and 0 or period - (now - d.powerSync)
+	return d.power, max, left
+end
+
+-- Add (or with a negative n, spend) energy; false if it would go below 0
+function Profile.addPower(n: number): boolean
+	local cur, max = Profile.power()
+	local v = math.min(max, cur + n)
+	if v < 0 then return false end
+	local d = Profile.get()
+	if cur >= max and v < max then d.powerSync = os.time() end
+	d.power = v
+	return true
+end
+
+---------------------------------------------------------------- deliveries
+-- An item or an upgrade with a DeliveryTime is made, not handed over: it is paid for, then ready
+-- DeliveryTime seconds later, or at once for its BonusDeliveryPrice in gems (quests.xml Delivery /
+-- DeliveryUpgrade). A bought item is not owned until then; an upgraded one keeps its old step until then.
+
+function Profile.startDelivery(name: string, kind: string, seconds: number, gemPrice: number)
+	Profile.get().deliveries[name] = { kind = kind, readyAt = os.time() + seconds, price = gemPrice }
+end
+
+function Profile.delivery(name: string): any
+	return Profile.get().deliveries[name]
+end
+
+-- Hand an item or upgrade over now; returns its kind
+function Profile.deliver(name: string): string?
+	local d = Profile.get()
+	local dl = d.deliveries[name]
+	if not dl then return nil end
+	d.deliveries[name] = nil
+	if dl.kind == "upgrade" then
+		local it = d.items[name]
+		if it then it.upgrade = (it.upgrade or 0) + 1 end
+	else
+		Profile.give(name)
+	end
+	return dl.kind
+end
+
+-- The deliveries whose time is up, handed over: {items = {...}, upgrades = {...}}
+function Profile.deliverDue(): { items: { string }, upgrades: { string } }
+	local out = { items = {}, upgrades = {} }
+	local now = os.time()
+	for name, dl in table.clone(Profile.get().deliveries) do
+		if dl.readyAt <= now then
+			local kind = Profile.deliver(name)
+			table.insert(kind == "upgrade" and out.upgrades or out.items, name)
+		end
+	end
+	return out
+end
 
 -- Progress of a battle: number of fights won (zone|battle key)
 function Profile.progress(zone: string, battle: string): number
