@@ -315,8 +315,29 @@ opening when the previous boss falls, and the fixed list of visible battles.
 - The `Notification` dialog's content (avatar, text, OK) is placed by hand inside `NotificationGame`'s
   scroll; its layout is built at runtime in the original.
 - `?Fight[id].Helm` (a challenge's required item) reads the fight's `EquipItem` rule for that slot.
-- The tutorial's dojo steps (`StoryTutorialMove`, `Punchbag`, `DoubleSweep`) wait for nothing yet; see the
-  dojo.
+- `StoryTutorialShowBlock`'s profile highlight is skipped; the step passes at once.
+
+### The dojo (`Game` startDojo, `FightScreen` `dojo` mode)
+`DojoScene` builds zone 0, battle 0, fight 0 of stages.xml -- `Punchbag|Training|1`, the punching bag
+(`NotAI`, `NotAnimation`, `SkeletonPunchingBag` + `PunchingBag`) -- and steps that fight every FixedUpdate
+under the scene's mounts, GameController and MainMenu. The port does the same: the dojo is a live fight in
+the dojo location with no health bars, names, timer, pause or round banners, nobody can lose, and the menu is
+drawn over it (built first: building a screen releases the previous screen's textures, so the fight keeps
+the menu's). The corner toggle (`btnDojoDisciple`, `Dojo_PunchbagOrDisciple`) swaps in fight 2, the
+disciple; it shows once `_DiscipleFlag` is 2 (quests.xml `DojoDiscipleGreetings`, which in the free build
+follows a real-money purchase).
+
+The story tutorial's dojo steps, from the action factory (`PFLBGCPNEIM`) and their classes: the menu is taken
+away (`MainMenu.IsEnabled`) until the player has done
+- `StoryTutorialMove` (`DCEFHLHFCFL`): 3 moves of moves.xml `Type="MOVE"` (the stick flashes);
+- `StoryTutorialPunchbag` (`JIALPJBDBEE`): 3 moves of `Type="ATTACK"` (punch and kick flash);
+- `StoryTutorialDoubleSweep` (`JHJLHLANACF`): the move named `DoubleSweep`.
+`StoryTutorialBuyItem` waits for the knives to be bought, `StoryTutorialLearnPerk` for a perk to be learned.
+Port deviation: the flashing highlights are not drawn. The port's own arsenal training (every weapon against
+a dummy) moved from the corner toggle to an `ARSENAL (DEV)` button in the advanced settings.
+
+**Verified in Studio** (2026-10-22, Play): the dojo opens with the bag and your warrior, the menu over the
+stick and buttons, no fight HUD; keyboard input (injected) walks the warrior to the bag and strikes it.
 
 **Verified in Studio** (2026-10-22): `tools/tests/story_test.luau` plays the whole story headless (dialogs'
 right button pressed, every fight won at once): the tutorial ends, acts 1 to 6, the Interlude, and Act 7
@@ -388,7 +409,7 @@ Every menu screen is now built from the prefabs its original scene mounts (the s
   (0 to 300 for aspect 1.23 to 2.0, InOutCirc) -- and the section scroll in the corner. The scroll is rolled
   up to its MENU wheel; tapping it unrolls the 1240-unit scroll in 0.3 s over a backdrop that rolls it back
   (`MenuScroll`). The current section shows its `_active` sprite and is not clickable. The dojo's corner
-  toggle is the punching bag (`MENU_BUTTON_DISCIPLE_ON`) and opens the port's training.
+  toggle switches between the punching bag and the disciple (section "The dojo").
 - **Map** (`StoryMapContainer`, `InfoBattle`, `MapButtonsPanel`): the act's map is a `StoryZoneScrollItem`
   (2730x1298) and each `BattleButton` sits at `localPosition = 2 x (X, Y)` from stages.xml
   (`ZoneScrollItem`). A tap picks a battle (pressed sprite) and fills InfoBattle with the matching

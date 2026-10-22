@@ -3,7 +3,7 @@
 > **For any model picking this up:** this is the only file you need to read before working. Read the other docs only when a task needs that detail (the "Deep reference" table says which one).
 > **Update this file with every change, in the same commit, not only at session end** (the rule is in [`CLAUDE.md`](CLAUDE.md)). Rewrite sections 3 and 4 and the "Last updated" line, keep one line per session in section 6, update `sf2-roblox\README.md` for any system that changed, and keep the same headings and format. Don't create new status files. Docs under `docs\` are history; leave them alone.
 
-Last updated: **2026-10-22** (the campaign now runs on the original's quest scripts: all 8 act stories recovered, map and acts driven by them)
+Last updated: **2026-10-22** (quest-driven campaign with all 8 act stories; the dojo is the original's live punching-bag fight)
 
 ---
 
@@ -42,6 +42,8 @@ Then (same day, later session) the user asked to finish the whole port, section 
 - `SF2.Quests` is a port of the QuestsManager (priority queue, event snapshots, FightEnter/ChangeTab interception, the value language, dialogs with their buttons and colours, ShowBattle/HideBattle, Activate, Run, AttachQuestFile, ...);
 - the map shows what the scripts put on it; acts open, bosses unlock and the tutorial runs as in the original. The save is version 2 (battle records, per-fight win/loss counts, tutorial step); old saves are migrated.
 
+**Section 2 is done: the dojo** is the original's live punching-bag fight under the menu, with the disciple toggle and the tutorial's dojo steps (README "The dojo").
+
 All of it is committed and installed in the Studio place. **The place has not been saved to Roblox** (Ctrl+S in Studio), and the user has not re-checked the latest rounds.
 
 **Done and committed:**
@@ -55,7 +57,7 @@ All of it is committed and installed in the Studio place. **The place has not be
   - **`UI.build` runs Unity's layout system**: Horizontal/Vertical/Grid layout groups, LayoutElement and ContentSizeFitter (UnityEngine.UI's own math), plus masks. It runs once built and again on resize; call `built:relayout()` after showing, hiding or retexting something a group arranges. `UI.setOrder` gives a runtime-instantiated prefab its sibling index, and `find` matches a full path or a path suffix.
   - `SF2.Menus` builds each screen from the prefabs its original scene mounts:
     - **MainMenu chrome on every menu screen:** the top bar (level/XP, coins, gems) and the rolled-up MENU scroll that unrolls in 0.3 s to Dojo/Map/Shop/Profile/Settings.
-    - **Dojo:** MainMenu over the 3D dojo. The punching-bag toggle opens the port's arsenal training.
+    - **Dojo:** MainMenu over the live dojo fight (the punching bag, the original's `DojoScene`). The corner toggle swaps bag and disciple once the disciple has joined; the arsenal training is a dev button in advanced settings.
     - **Map:** `StoryMapContainer` zone art, with `BattleButton`s at 2·(X, Y) from stages.xml and named underneath. `InfoBattle` shows a content block per battle type, with fight indicators. The lamps and the act name sit in the bottom strip; dragging changes act. The Eclipse sun/eclipse toggle is top right.
     - **Shop:** `scene_level4_Shop` + `ShopBottomPanel` + recycled `ShopTableViewCell` rows in a list that snaps a row to the centre and selects it. The info panel (right) holds `InfoPanelContent`. TRY ON / EQUIP / UNEQUIP sit on the left, and all eight tabs show.
     - **Profile:** `scene_level7_Profile` + `ProfileBottomPanel`, with the perk tree as `PerkCell`s and the learnable strikes as `TrickCell`s.
@@ -101,7 +103,7 @@ All of it is committed and installed in the Studio place. **The place has not be
   - The perk value expressions `?CurrentFight`, `?CoordX/Y`, `?PlayerAttribute`, `?Aspect`, `?MovesVariable` and `?Abs`, which read 0.
 
 **Known gaps:**
-- **Dojo gameplay:** the original's dojo is a fight (`Punchbag|Training|1`, the punching bag) running under GameController and MainMenu (`DojoScene`). The port's is the menu backdrop, with training behind the punching-bag toggle. So the tutorial's dojo steps (move 3 times, hit the bag 3 times, do a DoubleSweep) pass straight through for now.
+- Dojo: the tutorial's flashing highlights aren't drawn; the new-game tutorial has not been played through by hand in Studio (only headless).
 - Quest deviations (README "Quests and story"): `Place` doesn't switch scenes, offers/payments/raids/hand-holding do nothing, the act screen's look is a placeholder.
 - UI deviations listed above (README UI section).
 - The shock state's effects (`FrameReduction`, `LooseningDelay`, `Impulse Y`, the `Weapon Fists` + `WeaponDamage 0` pair in `internalSettings <Shock>`).
@@ -122,8 +124,8 @@ The user's standing priority, in their words: the UI was "the biggest problem", 
    - then the list under "Not verified yet".
 
    Fix what they report, then ask them to save the place (Ctrl+S).
-2. **Dojo** (next section): run `Punchbag|Training|1` as the dojo scene (no HUD bars or timer, GameController + MainMenu over it, `DojoScene`), the disciple toggle, and the tutorial actions from the decompile: `StoryTutorialMove` (`DCEFHLHFCFL`: menu off, stick flashing, done after 3 moves of moves.xml `Type="MOVE"`), `StoryTutorialPunchbag` (`JIALPJBDBEE`: punch/kick flashing, 3 `Type="ATTACK"` moves), `StoryTutorialDoubleSweep` (`JHJLHLANACF`: the move named `DoubleSweep`), BuyItem/LearnPerk waiting for the purchase/perk.
-   Ask the user for a screenshot of an act screen ("Act II Secret Path") to replace the placeholder.
+2. **Next section: economy** (FULL_GAME_PLAN step 9): item upgrades with their delivery times, the forge/enchantments (`forge.xml`, `forge_quests.xml`), item sets, energy (`energy.xml`), `ToggleItems` labels hiding/showing shop items, real-money items priced in gems. Then modes (hard mode, raids as solo bosses), then the UI deviations below.
+   Ask the user for a screenshot of an act screen ("Act II Secret Path") to replace the placeholder, and to play a new game's tutorial (Settings → advanced → RESET PROGRESS).
 3. **Close the UI deviations worth closing**:
    - The real difficulty rating (decompile `Nekki.SF2.GUI.Map\DifficultyPanel__1117.c` / `InfoBattle__2796.c`).
    - The fight HUD's style bar (`StylePanel` / `StyleBar`, `internalSettings <StyleLevels>`) and the real style meter rules from the decompile.
@@ -150,6 +152,7 @@ The user's standing priority, in their words: the UI was "the biggest problem", 
 - **Driving the live menus:** in Play (Client datamodel), call `game.Players.LocalPlayer.PlayerGui.SF2Debug:Invoke("map", "ZONE_1")`. It works for any `Menus.*` function (`profile`, `shop`, `settings`, `endFight`, …). `SF2Game.client.lua` creates the hook only when `RunService:IsStudio()`. Functions can't cross the BindableFunction, so callbacks (e.g. `endFight`'s OK/Retry) arrive as nil.
 - Don't `require(SF2.Menus)` inside `execute_luau`. It has its own require cache, so it builds a *second* menu that fights the real one for the EditableImage budget and renders blank.
 - `user_mouse_input` still does not reach the game: clicks by coordinates and by instance path both did nothing on 2026-10-22.
+- `user_keyboard_input` does reach it (2026-10-22): A/D walk, J punch, K kick in the dojo or a fight.
 - `screen_capture` **sometimes stops rendering 3D entirely**, while the UI still captures. On 2026-10-22 even a neon part in front of the camera came out blank.
   - Before concluding a 3D scene is broken, drop a bright test part in front of the camera.
   - Check 3D with script queries or `tools\preview_png.py`, or ask the user.
@@ -216,4 +219,4 @@ The user's standing priority, in their words: the UI was "the biggest problem", 
   - Profile: real perk numbers from CharacterProgress `UpgradeLevel` descriptions, the left tile grid, faded unlearned perks, all tabs.
   - Settings and advanced settings as the original, with volume sliders and controller scale.
   - End screen: the bonus lines, backed by new `Fight.stats` counters and coins paid in `Game`.
-- 2026-10-22 (full port, section by section): section 1, the quest scripts. Found the 6 missing act stories in the APK (same-named TextAssets the old extraction overwrote; a CDN `CONFIGS` pack was fetched with the user's OK but didn't have them), ported the QuestsManager from the decompile, moved the map, act unlocks and the tutorial onto it, save v2 with migration, `story_test.luau` plays the whole campaign.
+- 2026-10-22 (full port, section by section): section 1, the quest scripts. Found the 6 missing act stories in the APK (same-named TextAssets the old extraction overwrote; a CDN `CONFIGS` pack was fetched with the user's OK but didn't have them), ported the QuestsManager from the decompile, moved the map, act unlocks and the tutorial onto it, save v2 with migration, `story_test.luau` plays the whole campaign. Section 2, the dojo: the live punching-bag fight under the menu (`DojoScene`), the disciple toggle, the tutorial's dojo steps from their decompiled classes; keyboard injection now reaches the game.

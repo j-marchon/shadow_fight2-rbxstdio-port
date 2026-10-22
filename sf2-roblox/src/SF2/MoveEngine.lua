@@ -568,6 +568,8 @@ function MoveEngine.start(self: MoveEngine, m: any)
 	self.lastFrame = (m.endFrame and m.endFrame >= 0) and math.min(m.endFrame, clip.frames - 1) or (clip.frames - 1)
 	table.insert(self.log, m.name)
 	if #self.log > 6 then table.remove(self.log, 1) end
+	-- Model's move-changed event (the dojo tutorial counts MOVE and ATTACK moves, and DoubleSweep)
+	if self.fight then self.fight:hook("moveStart", self, m) end
 	for _, iv in m.intervals do
 		if iv.start == first then self:fire("IntervalStart", iv.name) end
 	end

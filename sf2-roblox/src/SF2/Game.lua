@@ -56,11 +56,71 @@ end
 local current = "Loader" -- the scene on screen (QuestCondition's _$CurrentScene)
 local returnTo = "Map" -- where a fight's end screen goes back to
 
+---------------------------------------------------------------- the dojo
+-- DojoScene builds zone 0, battle 0, fight 0 of stages.xml (Punchbag|Training|1: the punching bag, NotAI)
+-- and steps it every FixedUpdate under GameController and MainMenu: you move and strike freely, nothing
+-- ends. The disciple toggle swaps in fight 2 (the dojo disciple, who spars). The tutorial's dojo steps
+-- count the player's moves from the model's move-changed event.
+
+local dojo: any = nil
+local disciple = false
+local moveListeners: { (m: any) -> () } = {}
+
+local function stopDojo()
+	if dojo then
+		dojo.destroy()
+		dojo = nil
+	end
+end
+
+local function startDojo()
+	stopDojo()
+	local id = "Punchbag|Training|" .. (disciple and "2" or "1")
+	local fight = Quests.fightOf(id)
+	local enemy = fight and Stages.enemies(fight, Profile.get().level)[1]
+	if not enemy then return end
+	local player = Profile.warrior()
+	enemy.alignTo = Warrior.build(player).attributes
+	local screen
+	screen = FightScreen.run({
+		player = player, enemy = enemy, location = "dojo", rounds = 1, roundTime = 0, dojo = true,
+		enemyTactic = enemy.tactic, battleType = "DUMMY",
+		onMove = function(e, m)
+			if screen and screen.fight and e == screen.fight.engines[1] then
+				for _, f in table.clone(moveListeners) do f(m) end
+			end
+		end,
+	})
+	dojo = screen
+end
+
+-- Wait in the dojo until n of the player's moves pass test (StoryTutorialMove/Punchbag/DoubleSweep)
+local function waitMoves(n: number, test: (m: any) -> boolean)
+	local count = 0
+	local done = Instance.new("BindableEvent")
+	local function f(m: any)
+		if test(m) then
+			count += 1
+			if count >= n then done:Fire() end
+		end
+	end
+	table.insert(moveListeners, f)
+	Menus.setMenuEnabled(false)
+	done.Event:Wait()
+	Menus.setMenuEnabled(true)
+	local i = table.find(moveListeners, f)
+	if i then table.remove(moveListeners, i) end
+end
+
 -- Show a scene as it is, without asking the quests (ChangeScene, or a change they let through)
 local function show(scene: string, opts: any?)
 	opts = opts or {}
 	current = scene
-	if scene == "Dojo" then Menus.dojo()
+	stopDojo()
+	if scene == "Dojo" then
+		-- the menu first: building a screen releases the textures of the one before, the fight's included
+		Menus.dojo(true)
+		startDojo()
 	elseif scene == "Shop" then Menus.shop(opts.tab, opts.item)
 	elseif scene == "Profile" then Menus.profile()
 	else
@@ -116,6 +176,7 @@ function Game.playFight(id: string)
 		if base then enemies = Stages.enemies(base, d.level) end
 	end
 	if #enemies == 0 then show(current) return end
+	stopDojo()
 	if current ~= "Fight" then returnTo = current end
 	current = "Fight"
 	local total = { money = 0, exp = 0, bonus = 0, prize = 0,
@@ -274,7 +335,28 @@ Quests.host = {
 		Profile.get().zone = zone
 	end,
 	actScreen = function(text: string) Menus.actScreen(text) end,
-	tutorial = function(_step: string) end,
+	-- the story tutorial's own steps (decompiled action classes in the README's "Dojo" section)
+	tutorial = function(step: string)
+		if step == "StoryTutorialMove" then
+			waitMoves(3, function(m) return m.type == "MOVE" end)
+		elseif step == "StoryTutorialPunchbag" then
+			waitMoves(3, function(m) return m.type == "ATTACK" end)
+		elseif step == "StoryTutorialDoubleSweep" then
+			waitMoves(1, function(m) return m.name == "DoubleSweep" end)
+		elseif step == "StoryTutorialBuyItem" then
+			-- the shop points at the knives (OpenShop before it); the step ends once they are bought
+			while not Profile.owns("WEAPON_KNIVES") do task.wait(0.25) end
+		elseif step == "StoryTutorialLearnPerk" then
+			local before = 0
+			for _ in Profile.get().perks do before += 1 end
+			while true do
+				local n = 0
+				for _ in Profile.get().perks do n += 1 end
+				if n > before then break end
+				task.wait(0.25)
+			end
+		end
+	end,
 	refresh = function()
 		if refreshQueued then return end
 		refreshQueued = true
@@ -294,6 +376,12 @@ function Game.start()
 	Menus.onPlay = function(zone, battle) Game.playBattle(zone, battle) end
 	Menus.onTraining = function(mine, dummy) Game.training(mine, dummy) end
 	Menus.onNavigate = function(scene) Game.go(scene) end
+	Menus.onDisciple = function(on: boolean)
+		disciple = on
+		if current == "Dojo" then startDojo() end
+	end
+	Menus.discipleOn = function() return disciple end
+	Menus.onLeaveScene = function() stopDojo() end
 	local function boot()
 		current = "Loader"
 		Quests.start(function()

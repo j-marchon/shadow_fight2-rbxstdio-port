@@ -103,6 +103,9 @@ function Stages.warrior(el: any, playerLevel: number?): any
 		if not ATTR_SKIP[k] and tonumber(v) then def.attributes[k] = tonumber(v) end
 	end
 	def.tactic = Xml.attr(el, "Tactic") or "Standard"
+	-- the punching bag: no AI at all (NotAI)
+	def.notAI = Xml.attr(el, "NotAI") == "1"
+	def.name = def.name or Xml.attr(el, "FirstName")
 	def.power = Xml.num(el, "WarriorPower")
 	def.level = playerLevel or 1
 	local perks = Xml.first(el, "Perks")

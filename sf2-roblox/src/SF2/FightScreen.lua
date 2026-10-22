@@ -59,7 +59,8 @@ end
 --          enemyTactic, rules/mods, startHealth, onEnd, title}
 function FightScreen.run(config: any): any
 	local player = Players.LocalPlayer
-	Images.releaseScreen()
+	-- the dojo runs under the menu, which was just built: keep its textures
+	if not config.dojo then Images.releaseScreen() end
 	local folder = Instance.new("Folder")
 	folder.Name = "SF2Fight"
 	folder.Parent = workspace
@@ -81,6 +82,8 @@ function FightScreen.run(config: any): any
 	local canvas = UI.canvas(gui)
 	local hud = UI.build("ViewerFight", canvas, { layout = false }) :: any
 	local controls = UI.build("GameController", canvas, { layout = false }) :: any
+	-- the dojo (DojoScene) mounts GameController and MainMenu only: no bars, names, timer or pause
+	if config.dojo and hud then hud.root.Visible = false end
 	-- The touch controls are a phone layout: on a desktop (keyboard, no touchscreen) the game plays on
 	-- the keys and the pad is only in the way, so hide it; on touch keep it, a little smaller than the
 	-- phone layout's own size, which is scaled for a hand-held screen.
@@ -110,6 +113,7 @@ function FightScreen.run(config: any): any
 	banner.Parent = canvas
 	local bannerTicks = 0
 	local function announce(sprite: string, ticks: number?)
+		if config.dojo then return end
 		local s = Images.sprite(sprite)
 		if not s then return end
 		Images.apply(banner, sprite)
@@ -216,7 +220,7 @@ function FightScreen.run(config: any): any
 		warriors = { b1, b2 }, rounds = config.rounds or 2, roundTime = config.roundTime or 99,
 		location = config.location, battleType = config.battleType, mods = config.mods,
 		startHealth = config.startHealth, noBulletsRefill = config.noBulletsRefill, hooks = hooks,
-		immortal = config.training and { false, true } or nil,
+		immortal = config.dojo and { true, true } or (config.training and { false, true }) or nil,
 		rules = config.rules, timeoutWinner = config.timeoutWinner,
 	})
 	self.fight = fight
@@ -231,6 +235,9 @@ function FightScreen.run(config: any): any
 		if r then r:destroy(); renders[c] = nil end
 	end
 	hooks.sound = function(name, opts) Sound.play(name, opts) end
+	hooks.moveStart = function(e, m)
+		if config.onMove then config.onMove(e, m) end
+	end
 	hooks.stopSound = function(name) Sound.stop(name) end
 	hooks.effect = function(e, el) effects:fromAction(e, el) end
 	hooks.stopEffect = function(e, name) effects:stop(e, name) end
@@ -270,7 +277,7 @@ function FightScreen.run(config: any): any
 		if stage == "Fight" then
 			roundNumber.Text = ""
 			announce("FightUI.fight", 50)
-			Sound.play("snd_gong")
+			if not config.dojo then Sound.play("snd_gong") end
 		end
 	end
 	hooks.roundEnd = function(winner, reason, round)
@@ -298,7 +305,7 @@ function FightScreen.run(config: any): any
 
 	-- enemy controller: the AI when present
 	local okAI, AI = pcall(require, script.Parent:FindFirstChild("AI"))
-	if okAI and AI and AI.new then
+	if okAI and AI and AI.new and not config.enemy.notAI then
 		local ok, ctl = pcall(AI.new, fight, 2, config.enemyTactic or "Standard")
 		if ok and ctl then fight.controllers[2] = ctl end
 	end
@@ -349,6 +356,7 @@ function FightScreen.run(config: any): any
 	local paused = false
 	local pauseUI: any = nil
 	local function setPaused(on: boolean)
+		if config.dojo then return end
 		paused = on
 		if pauseUI then pauseUI.root:Destroy(); pauseUI = nil end
 		if on then

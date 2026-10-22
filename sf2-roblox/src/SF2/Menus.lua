@@ -30,6 +30,10 @@ local scene: any = nil -- {location, showcase, folder}
 Menus.onPlay = nil :: ((zone: string, battle: any) -> ())?
 Menus.onNavigate = nil :: ((scene: string) -> ())?
 Menus.onRestart = nil :: (() -> ())?
+Menus.onDisciple = nil :: ((on: boolean) -> ())?
+Menus.discipleOn = nil :: (() -> boolean)?
+Menus.onLeaveScene = nil :: (() -> ())? -- a screen the game doesn't know about replaces the scene
+local menuRoot: any = nil -- the current scene's MainMenu
 
 local function root(): (ScreenGui, Frame)
 	if not gui then
@@ -357,17 +361,25 @@ local function mainMenu(parent: Instance, section: string): any
 		end
 	end
 
-	-- the dojo's corner toggle: MENU_BUTTON_DISCIPLE_ON is the punching bag. The port's training
-	-- (every weapon, you and the dummy) sits behind it.
+	-- the dojo's corner toggle (MainMenu.btnDojoDisciple, Dojo_PunchbagOrDisciple): the punching bag or the
+	-- disciple to spar with. It shows once the disciple has joined (quests.xml DojoDiscipleGreetings sets
+	-- _DiscipleFlag 2; in the free build that follows a real-money purchase).
 	local disciple = m:find("Content/TgglDisciple")
 	if disciple then
-		disciple.Visible = section == "Dojo"
+		local vars = d.quests.vars or {}
+		disciple.Visible = section == "Dojo" and tostring(vars.DiscipleFlag) == "2"
+		local on = Menus.discipleOn and Menus.discipleOn() or false
 		local bg = disciple:FindFirstChild("Background")
-		if bg then UI.setSprite(bg, "MenuButtons.btn_punching_bag") end
+		if bg then UI.setSprite(bg, on and "MenuButtons.btn_disciple" or "MenuButtons.btn_punching_bag") end
 		local mark = bg and bg:FindFirstChild("Checkmark")
 		if mark then (mark :: any).Visible = false end
-		onClick(disciple, function() Menus.arsenal() end)
+		onClick(disciple, function()
+			on = not on
+			if bg then UI.setSprite(bg, on and "MenuButtons.btn_disciple" or "MenuButtons.btn_punching_bag") end
+			if Menus.onDisciple then Menus.onDisciple(on) end
+		end)
 	end
+	menuRoot = m
 	m:relayout()
 	return m
 end
@@ -375,21 +387,34 @@ Menus.mainMenu = mainMenu
 
 ---------------------------------------------------------------- dojo
 
--- The dojo scene: the dojo in 3D with your warrior, and the MainMenu over it (DojoScene mounts nothing
--- else). Port deviation: the original's dojo is a free-roam room; here it is the backdrop for the menu.
-function Menus.dojo()
+-- The dojo scene: MainMenu over the dojo. With live set, the room is SF2.Game's running dojo fight (the
+-- punching bag, GameController's stick and buttons) and the menu only draws over it; without, the dojo
+-- is a still backdrop with your warrior (used when no game is running).
+function Menus.dojo(live: boolean?)
 	local s = clear()
-	setScene("dojo", true)
+	setScene(not live and "dojo" or nil, not live)
 	mainMenu(s, "Dojo")
 	Sound.music("menu")
+end
+
+-- MainMenu.IsEnabled: the tutorial's dojo steps take the menu away until they are done
+function Menus.setMenuEnabled(on: boolean)
+	local m = menuRoot
+	if m and m.root and m.root.Parent then
+		local content = m:find("Content/ScrollParent")
+		if content then content.Visible = on end
+	end
 end
 
 ---------------------------------------------------------------- training (arsenal)
 
 Menus.onTraining = nil :: ((mine: any, dummy: any) -> ())?
 local picks = { me = "Fists", dummy = "Fists" }
+-- DEV ONLY (the port's own, behind Settings' ARSENAL (DEV) button): every weapon of the arsenal, you and a
+-- dummy that can't lose
 function Menus.arsenal(groupName: string?)
 	local Arsenal = require(script.Parent.Arsenal)
+	if Menus.onLeaveScene then Menus.onLeaveScene() end
 	local s = clear()
 	setScene("dojo", false)
 	local group = Arsenal.groups[1]
@@ -431,7 +456,7 @@ function Menus.arsenal(groupName: string?)
 		end
 	end)
 	W.button(panel, "CommonButtons.ButtonQuit", nil, UDim2.new(1, -60, 0, 60), Vector2.new(100, 100), function()
-		Menus.dojo()
+		if Menus.onNavigate then Menus.onNavigate("Dojo") else Menus.dojo() end
 	end)
 end
 
@@ -2139,6 +2164,12 @@ function Menus.settingsMore()
 		if Menus.onRestart then Menus.onRestart() else Menus.map(Profile.get().zone) end
 	end)
 	dev.ZIndex = 50
+	-- DEV ONLY: the port's arsenal training (every weapon against a dummy)
+	local arsenal = W.textButton(holder, "BtnGold", "ARSENAL (DEV)", UDim2.new(0.5, 700, 1, -80), Vector2.new(420, 80), function()
+		close()
+		Menus.arsenal()
+	end)
+	arsenal.ZIndex = 50
 	dlg:relayout()
 end
 
