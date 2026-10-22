@@ -262,10 +262,16 @@ game's own layout -- its rects, sprites, fonts, colours and nesting -- with only
 Scenes are stored as `scene_<level>_<Scene>` wrapping their roots; prefabs by root name.
 
 Three things in the Unity data do not survive a literal reading, and `UI.build` compensates:
-- **A `Canvas` has a zero rect and a ~1e-7 `localScale`.** The CanvasScaler gives it the screen's size at
-  runtime and the tiny scale is its world-units-per-pixel. Read literally the pair collapses the whole
-  screen into a corner, so a node carrying the `Canvas` component fills its parent at 1:1. `Canvas` is not
-  a MonoBehaviour, so `build_ui.py` has to record it specially.
+- **A root `Canvas` has a zero rect and a ~1e-7 `localScale`.** The CanvasScaler gives it the screen's size
+  at runtime and the tiny scale is its world-units-per-pixel. Read literally the pair collapses the whole
+  screen into a corner, so such a canvas fills its parent at 1:1. Only that degenerate rect is treated this
+  way: a *nested* `Canvas` (a sorting override -- the HUD's `StylePanel` and `BarPanel`) keeps its own rect;
+  filling the screen with `StylePanel` drew its bar as a dashed line across the whole top. `Canvas` is not a
+  MonoBehaviour, so `build_ui.py` has to record it specially.
+- **A 180-degree turn or a negative x scale mirrors a node about its pivot.** Its contents are mirrored, and
+  so is its own box: `PlayerLifeBar_right` is pivoted on its left edge at x=670 and reaches back towards
+  the centre (built literally, the enemy's health bar ran off to the right), and MenuWheel's right end is
+  `MenuRoll_left` at scale -1 (built literally, it sat detached from the wheel).
 - **Stacking is by sibling index**, as in Unity. Every `ScreenGui` the port creates must therefore set
   `ZIndexBehavior = Sibling`; left on the default `Global`, a layout's later top-level pieces paint over
   everything nested deeper.
@@ -278,6 +284,18 @@ Three things in the Unity data do not survive a literal reading, and `UI.build` 
   LayoutElement, else the image's sprite size (sliced: its border) or the text's width. The shop and the
   fight HUD were placed by hand before this existed and pass `{ layout = false }` to stay as verified.
 - **Text overflows a zero-width rect**, as Unity's default does (TextAndMoneyLine's label sits on one).
+- **The game's own fonts.** Roblox cannot load a TTF, so `tools/build_fonts.py` renders AGOpusBold, majallab
+  and CarterOne (`sf2-assets/fonts`) at 64 px/em into 8-bit alpha atlases (`out/Fonts`, two pages each: ASCII
+  and Latin-1, then Latin Extended-A and Cyrillic). `SF2.Text.attach` draws a TextLabel from them as
+  ImageLabel glyphs, laid out like Unity's Text (em-size font size, ascent+descent lines, wrap at spaces only,
+  best fit by shrinking). The label keeps its Text, colour, size and alignment as the source of truth and its
+  own glyphs are hidden; a string with a character the atlas lacks (CJK) falls back to the Roblox font.
+  Every text `UI.build` makes is attached, and `Widgets.label`. Rich-text tags are dropped and there is no
+  outline. Property signals are deferred, so `Text` ignores its own TextTransparency write coming back.
+- **9-slice.** Slice borders are screen pixels, so `SliceScale` includes the canvas's pixels per unit (it
+  used to ignore it). And Roblox draws a slice whose top and bottom borders are both 0 cropped -- the
+  CommonButtons hexagons (FIGHT!, OK, BACK) lost their lower edge -- so a side with no border slices a
+  2-pixel band through its middle instead, which looks the same.
 - `RectMask2D` / `Mask` become `ClipsDescendants`. `find` also matches a path suffix, so a node deep in a
   scene (`SidePanels/InfoPanel` under `scene_level7_Profile/[Profile]/ProfileUIGroup`) is found directly.
 
@@ -340,6 +358,10 @@ Every menu screen is now built from the prefabs its original scene mounts (the s
 - **End of a fight** (`EndFightScreen` + `EndFightContent`, `TextAndMoneyLine`, `ExpAndMoneyLine`): Win,
   Lose or Time-is-up header, the prize and exp/coins lines, OK on a win and Retry, OK and Store on a loss.
   It now shows after a loss too (it used to go straight back to the map).
+- **VS** (`VsScreen`): `VsScreen.Init`'s sequence with the prefab's values -- the avatars slide from
+  off-screen to (-650, -200) and (650, 200) in 0.6 s, pause 0.2; the VS sign drops from scale 100 to 0.78 while
+  fading in, 0.2 s, pause 0.2; the stripe halves fill 0.1 s each, pause 0.2; the names show; hold 2 s. The
+  avatars used to stay off-screen at x = +-2112, where the prefab parks them before the slide.
 
 **Deviations**, each because the behaviour behind it is not ported:
 - MenuWheel's `MenuButton` and `MenuWheelText` live in a nested prefab the dump lacks; the wheel itself is
@@ -348,9 +370,14 @@ Every menu screen is now built from the prefabs its original scene mounts (the s
 - InfoBattle's difficulty rating is approximated from the fight's `AttributesAlign` Factor (<0.95 easy,
   <1.05 normal, <1.15 hard, <1.3 insane, else impossible); the original rates it at runtime.
 - Battle buttons' `Name` labels are hidden; the map shows one act at a time (a drag moves to the next) rather
-  than a continuous strip, to keep one zone texture decoded.
-- The profile has no 3D dojo behind it: the original shows a dimmed 2D backdrop there, and with the
-  profile's atlases decoded the EditableImage budget leaves the 3D scene blank. Achievements, Seals and the
+  than a continuous strip, to keep one zone texture decoded. The 2730x1298 zone exactly fills a 16:9 screen;
+  on a wider one it is scaled up to cover the map panel instead of leaving black bands.
+- Counts past 99 999 are abbreviated with K, M, B and T (`Menus.fmt`, "123.4K", "11.4T"). The original
+  always prints the full grouped number (`"#,###0"`), but its int counters never get past ~2 billion and
+  the dev max-out profile's do, which overflowed and wrapped the labels.
+- The profile's backdrop is the original's `ShopBackground/Bg` at tint 0.64: here the 3D dojo without the
+  warrior under a 36% black veil. (An earlier note blamed the EditableImage budget for a blank 3D scene
+  here; that was Studio's screen capture, which at times stops rendering 3D entirely.) Achievements, Seals and the
   Battle Pass tabs are hidden (no system behind them). Where a level offers two perks the original makes you
   pick one; the port's fights grant both, so both show as learned. Perk descriptions show `?` for their
   `{n}` values, which the original fills from the perk's script.
@@ -360,6 +387,8 @@ Every menu screen is now built from the prefabs its original scene mounts (the s
 - The arsenal training panel (`Menus.arsenal`) is the port's own and stays hand-placed.
 
 **Verified in Studio**: dojo, map (zone 1, Eclipse on), profile (both tabs), shop, settings and the win and
-time-up end screens render from the layouts with no errors. Studio's mouse injection still does not reach the
+time-up end screens render from the layouts with no errors. After the 2026-10-22 playtest: the enemy health
+bar mirrors the player's, the VS avatars slide in, OK/FIGHT!/BACK draw whole, the MENU roll is joined, the map
+covers a 2:1 screen, all text is in AGOpusBold, and 11 455 401 774 600 shows as 11.4T. Studio's mouse injection still does not reach the
 game, so they were driven through a Studio-only hook (`PlayerGui.SF2Debug:Invoke("map", ...)`, created by
 `SF2Game.client.lua` only when `RunService:IsStudio()`), and no button has been clicked by hand.

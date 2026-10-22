@@ -5,6 +5,7 @@
 
 local Images = require(script.Parent.Images)
 local Sound = require(script.Parent.Sound)
+local Text = require(script.Parent.Text)
 
 local W = {}
 
@@ -69,6 +70,7 @@ function W.label(parent: Instance, text: string, pos: UDim2, size: Vector2, text
 	t.TextWrapped = true
 	t.TextXAlignment = align or Enum.TextXAlignment.Center
 	t.Parent = parent
+	Text.attach(t, "AGOpusBold")
 	return t
 end
 
@@ -100,7 +102,9 @@ end
 -- A coloured text button (CommonButtons.BtnGreen / BtnGold / BtnDark / ...)
 function W.textButton(parent: Instance, style: string, text: string, pos: UDim2, size: Vector2, onClick: () -> ()): ImageButton
 	local b = W.button(parent, "CommonButtons." .. style, nil, pos, size, onClick)
-	b.ScaleType = Enum.ScaleType.Stretch
+	-- sliced like the layouts' own buttons (CommonButtons borders: 99 left and right), not stretched
+	local UI = require(script.Parent.UI) :: any
+	UI.setSprite(b, "CommonButtons." .. style, { t = "sliced", d = { 99, 0, 99, 0 } })
 	local t = W.label(b, text, UDim2.fromScale(0.5, 0.5), size - Vector2.new(30, 10), math.min(64, size.Y * 0.5), Color3.new(1, 1, 1))
 	t.Name = "Text"
 	return b

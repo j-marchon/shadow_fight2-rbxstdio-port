@@ -149,13 +149,30 @@ local function hideAll(b: any, names: { string })
 end
 
 -- "1 000 000", the way the original's labels group digits
-local function fmt(n: number): string
+local function group(n: number): string
 	local s = tostring(math.floor(n))
 	local neg = string.sub(s, 1, 1) == "-"
 	if neg then s = string.sub(s, 2) end
 	local out = string.reverse((string.gsub(string.reverse(s), "(%d%d%d)", "%1 ")))
 	out = string.gsub(out, "^ ", "")
 	return (neg and "-" or "") .. out
+end
+
+-- A count the way the labels show it: grouped digits ("12 345"), as the original's "#,###0", up to
+-- 99 999; past that K, M, B and T with one decimal ("123.4K", "11.4T"). Port deviation: the original's
+-- int counters never get that big and it always prints the full number, which overflows the labels.
+local SUFFIXES = { { 1e12, "T" }, { 1e9, "B" }, { 1e6, "M" }, { 1e3, "K" } }
+local function fmt(n: number): string
+	n = math.floor(n)
+	if math.abs(n) < 100000 then return group(n) end
+	for _, u in SUFFIXES do
+		if math.abs(n) >= u[1] then
+			local v = math.floor(n / u[1] * 10) / 10
+			local s = math.abs(v) >= 100 and tostring(math.floor(v)) or string.format("%.1f", v)
+			return (string.gsub(s, "%.0$", "")) .. u[2]
+		end
+	end
+	return group(n)
 end
 Menus.fmt = fmt
 
@@ -700,6 +717,15 @@ function Menus.map(zoneName: string?)
 		UI.setSprite(root, Xml.attr(zone, "FileName"))
 		root.ScaleType = Enum.ScaleType.Stretch
 		root.AutoButtonColor = false
+		-- the zone is 2730x1298, exactly a 16:9 screen; on a wider one it would leave black bands at the
+		-- sides, so it is scaled up to cover the map panel (buttons and all), as the wide-screen build does
+		local area = UI.rectSize(view or s)
+		local cover = math.max(1, area.X / 2730, area.Y / 1298)
+		if cover > 1 then
+			local sc = root:FindFirstChildOfClass("UIScale") or Instance.new("UIScale")
+			sc.Scale = cover
+			sc.Parent = root
+		end
 		local toggles = item:find("BattleToggles") or root
 		for _, b in battles do
 			local bb = UI.build("BattleButton", toggles, { layout = false })
@@ -882,21 +908,59 @@ function Menus.vs(player: any, enemy: any, seconds: number, done: () -> ())
 	back.Size = UDim2.fromScale(1, 1)
 	back.Parent = s
 	local vs = UI.build("VsScreen", s)
-	if vs then
-		local la, ra = vs:find("LeftAvatar"), vs:find("RightAvatar")
-		if la and player.avatar then UI.setSprite(la, player.avatar) end
-		if ra and enemy.avatar then UI.setSprite(ra, enemy.avatar) end
-		for side, def in { LeftName = player, RightName = enemy } do
-			local n = vs:find(side)
-			if n then
-				n.Visible = true
-				local t = n:FindFirstChild("Text")
-				if t then t.Text = string.upper(Xml.text(def.name or "")) end
-			end
+	if not vs then
+		task.delay(seconds, done)
+		return
+	end
+	-- VsScreen.Init's sequence, with the prefab's own values: the avatars slide in from off-screen to
+	-- (-650, -200) and (650, 200) in 0.6 s, pause 0.2; the VS sign drops from scale 100 to 0.78 while it
+	-- fades in, 0.2 s, pause 0.2; the two stripe halves fill, 0.1 s each, pause 0.2; the names show, and
+	-- the screen holds 2 s
+	local la, ra = vs:find("LeftAvatar"), vs:find("RightAvatar")
+	if la and player.avatar then UI.setSprite(la, player.avatar) end
+	if ra and enemy.avatar then UI.setSprite(ra, enemy.avatar) end
+	local names = {}
+	for side, def in { LeftName = player, RightName = enemy } do
+		local n = vs:find(side)
+		if n then
+			n.Visible = false
+			setText(n, string.upper(Xml.text(def.name or "")))
+			table.insert(names, n)
 		end
 	end
+	local sign = vs:find("VSImage")
+	local signScale = sign and sign:FindFirstChildOfClass("UIScale")
+	if sign then sign.ImageTransparency = 1 end
+	local stripes = { vs:find("VSStripe/Left"), vs:find("VSStripe/Right") }
+	for _, st in stripes do
+		if st then UI.setFill(st, 0) end
+	end
+	local function tween(o: Instance?, t: number, goal: { [string]: any })
+		if o then TweenService:Create(o, TweenInfo.new(t, Enum.EasingStyle.Linear), goal):Play() end
+	end
+	local function fill(st: any, t: number)
+		if not st then return end
+		local v = Instance.new("NumberValue")
+		v.Changed:Connect(function(x) UI.setFill(st, x) end)
+		TweenService:Create(v, TweenInfo.new(t, Enum.EasingStyle.Linear), { Value = 1 }):Play()
+		task.delay(t + 0.05, function() v:Destroy() UI.setFill(st, 1) end)
+	end
 	Sound.play("snd_gong")
-	task.delay(seconds, done)
+	task.spawn(function()
+		tween(la, 0.6, { Position = UDim2.new(0.5, -650, 0.5, 200) })
+		tween(ra, 0.6, { Position = UDim2.new(0.5, 650, 0.5, -200) })
+		task.wait(0.6 + 0.2)
+		tween(signScale, 0.2, { Scale = 0.78 })
+		tween(sign, 0.2, { ImageTransparency = 0 })
+		task.wait(0.2 + 0.2)
+		fill(stripes[1], 0.1)
+		task.wait(0.1)
+		fill(stripes[2], 0.1)
+		task.wait(0.1 + 0.2)
+		for _, n in names do n.Visible = true end
+		task.wait(2)
+		if done then done() end
+	end)
 end
 
 -- The end of a fight (EndFightScreen + EndFightContent): FightUI.Label_Win / Label_Lose / Label_Timesup
@@ -1300,7 +1364,7 @@ function Menus.shop(tab: string?, selected: string?, showParams: boolean?)
 				local nextStep = Items.upgrades(it)[up + 1]
 				if nextStep then
 					local p, g = Xml.num(nextStep, "Price"), Xml.num(nextStep, "BonusPrice")
-					W.textButton(face, "BtnGold", "UPGRADE " .. (p and (p .. " coins") or ((g or 0) .. " gems")),
+					W.textButton(face, "BtnGold", "UPGRADE " .. (p and (fmt(p) .. " coins") or (fmt(g or 0) .. " gems")),
 						UDim2.new(0.5, 0, 1, -80), Vector2.new(520, 110), function()
 							if p and d.money >= p then d.money -= p
 							elseif g and d.bonus >= g then d.bonus -= g
@@ -1314,7 +1378,7 @@ function Menus.shop(tab: string?, selected: string?, showParams: boolean?)
 			elseif lvl <= d.level then
 				local afford = (price and d.money >= price) or (not price and gems and d.bonus >= gems)
 				W.textButton(face, afford and "BtnGreen" or "BtnDark",
-					"BUY  " .. (price and (price .. " coins") or ((gems or 0) .. " gems")),
+					"BUY  " .. (price and (fmt(price) .. " coins") or (fmt(gems or 0) .. " gems")),
 					UDim2.new(0.5, 0, 1, -110), Vector2.new(520, 120), function()
 						if not afford then return end
 						if price then d.money -= price else d.bonus -= gems :: number end
@@ -1416,12 +1480,12 @@ function Menus.profile(tab: string?, picked: string?)
 	tab = tab or "Perks"
 	local d = Profile.get()
 	local s = clear()
-	-- no 3D here: the original shows a dimmed 2D backdrop (ShopBackground/Bg, tinted 0.64), and the
-	-- profile's dozen atlases leave no EditableImage budget for the 3D dojo, which then renders blank
-	setScene(nil, false)
+	-- the original's backdrop here is ShopBackground/Bg tinted 0.64: the dojo, dimmed, with no warrior
+	setScene("dojo", false)
 	local backdrop = Instance.new("Frame")
 	backdrop.Name = "Backdrop"
-	backdrop.BackgroundColor3 = Color3.fromRGB(38, 24, 14)
+	backdrop.BackgroundColor3 = Color3.new(0, 0, 0)
+	backdrop.BackgroundTransparency = 0.64
 	backdrop.BorderSizePixel = 0
 	backdrop.Size = UDim2.fromScale(1, 1)
 	backdrop.Parent = s

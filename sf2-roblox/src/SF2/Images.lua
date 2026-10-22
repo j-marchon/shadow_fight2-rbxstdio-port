@@ -31,7 +31,9 @@ local contents: { [string]: Content } = {}
 function Images.texture(name: string): any
 	local img = images[name]
 	if img ~= nil then return img or nil end
-	local mod = Data.Images:FindFirstChild(name)
+	-- font atlases (tools/build_fonts.py) live beside the images in Data.Fonts
+	local fonts = Data:FindFirstChild("Fonts")
+	local mod = Data.Images:FindFirstChild(name) or (fonts and fonts:FindFirstChild(name))
 	if not mod then
 		images[name] = false
 		return nil
@@ -75,7 +77,7 @@ local KEEP = { TopPanel = true, MenuButtons = true, CommonButtons = true, Common
 	FightUI = true, FightButtons = true, FightPause = true }
 function Images.releaseScreen()
 	for name, img in images do
-		if img and not KEEP[name] then Images.release(name) end
+		if img and not KEEP[name] and string.sub(name, 1, 5) ~= "Font_" then Images.release(name) end
 	end
 end
 
@@ -88,6 +90,7 @@ local function content(texture: string): Content?
 	contents[texture] = c
 	return c
 end
+Images.content = content
 
 -- Find which texture holds a sprite: "Atlas.sprite" -> Atlas (sprite key is the full name in APK atlases)
 local spriteHome: { [string]: string }? = nil

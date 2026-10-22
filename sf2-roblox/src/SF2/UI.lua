@@ -6,14 +6,15 @@
 --    Roblox from the top-left, so y flips (anchor 1-y, offset -y, AnchorPoint 1-pivot.y)
 --  * Image -> ImageLabel (ImageButton for buttons) with the atlas sprite (SF2.Images); "sliced" = 9-slice
 --    from the sprite border; "filled" is driven by UI.setFill; colour and alpha as in the prefab
---  * Text -> TextLabel; text from the locKey (localization) when there is one. Port deviation: the game's
---    fonts (majallab, AGOpusBold, CarterOne) are mapped to Roblox fonts, custom fonts can't be loaded
+--  * Text -> TextLabel; text from the locKey (localization) when there is one, drawn in the game's own font
+--    (AGOpusBold, majallab, CarterOne) from its glyph atlas by SF2.Text; FONTS is the Roblox fallback
 --  * later siblings draw on top (ZIndex = sibling order)
 
 local Players = game:GetService("Players")
 local Pack = require(script.Parent.Pack)
 local Images = require(script.Parent.Images)
 local Xml = require(script.Parent.Xml)
+local Text = require(script.Parent.Text)
 
 local UI = {}
 
@@ -70,9 +71,13 @@ local function color(c: { number }?): (Color3, number)
 	return Color3.new(c[1], c[2], c[3]), 1 - (c[4] or 1)
 end
 
--- A 180 degree turn in the dump is Unity's Y-axis flip (mirrored HUD halves): mirror the contents instead
+-- A 180 degree turn in the dump is Unity's Y-axis flip (mirrored HUD halves), and a negative x scale is a
+-- plain mirror (MenuWheelRight is MenuRoll_left at scale -1): mirror the contents instead
 local function flipped(r: { number }?): boolean
 	return r ~= nil and math.abs(math.abs(r[13] or 0) - 180) < 1
+end
+local function negScale(r: { number }?): boolean
+	return r ~= nil and (r[11] or 1) < 0
 end
 
 local function applyRect(inst: GuiObject, r: { number }?, mirror: boolean)
@@ -87,6 +92,13 @@ local function applyRect(inst: GuiObject, r: { number }?, mirror: boolean)
 		ax0, ax1 = 1 - ax1, 1 - ax0
 		px = 1 - px
 		x = -x
+	end
+	-- a node turned 180 degrees about its pivot spans the other side of it: PlayerLifeBar_right is pivoted
+	-- on its left edge at x=670 and reaches back towards the centre. Its contents are mirrored (build).
+	-- A negative x scale does the same (InfoBattle's RollRight sits at the scroll's right edge + 89.5 and
+	-- reaches back over it)
+	if flipped(r) ~= negScale(r) then
+		px = 1 - px
 	end
 	inst.AnchorPoint = Vector2.new(px, 1 - py)
 	inst.Size = UDim2.new(ax1 - ax0, w, ay1 - ay0, h)
@@ -109,6 +121,8 @@ function UI.locText(key: string): string
 	return Xml.text(key)
 end
 
+local rectSize: (o: Instance) -> Vector2 -- defined with the layout groups below
+
 -- Show a sprite on a label, with 9-slice when the layout says "sliced"
 function UI.setSprite(label: any, sprite: string?, img: any?)
 	if not Images.apply(label, sprite) then return end
@@ -122,14 +136,36 @@ function UI.setSprite(label: any, sprite: string?, img: any?)
 	if img and img.t == "sliced" and img.d and s then
 		local k = s.size.X / s.source.X
 		local l, b, r, t = img.d[1] * k, img.d[2] * k, img.d[3] * k, img.d[4] * k
+		-- Roblox draws a 9-slice whose top and bottom (or left and right) borders are both 0 cropped -- the
+		-- CommonButtons hexagons lost their lower edge -- so a side with no border stretches a 2-pixel
+		-- band through its middle instead, which looks the same
+		if t + b < 1 then
+			t = math.floor(s.size.Y / 2) - 1
+			b = s.size.Y - t - 2
+		end
+		if l + r < 1 then
+			l = math.floor(s.size.X / 2) - 1
+			r = s.size.X - l - 2
+		end
 		label.ScaleType = Enum.ScaleType.Slice
 		label.SliceCenter = Rect.new(l, t, math.max(l + 1, s.size.X - r), math.max(t + 1, s.size.Y - b))
-		label.SliceScale = 1 / k
+		-- slice borders are in screen pixels: scale them by the texture's downscale and by the canvas's
+		-- pixels per unit, which the label's UIScale ancestors apply to everything else
+		local function fit()
+			local rs = rectSize(label)
+			local px = rs.X > 0 and label.AbsoluteSize.X / rs.X or 1
+			label.SliceScale = math.max(0.01, px / k)
+		end
+		fit()
+		if not label:GetAttribute("sliceFit") then
+			label:SetAttribute("sliceFit", true)
+			label:GetPropertyChangedSignal("AbsoluteSize"):Connect(fit)
+		end
 	end
 end
 
 local function build(node: any, parent: Instance, order: number, paths: { [string]: Instance }, prefix: string, mirror: boolean)
-	local inner = mirror ~= flipped(node.r)
+	local inner = mirror ~= (flipped(node.r) ~= negScale(node.r))
 	local inst: GuiObject
 	local img, txt = node.i, node.x
 	if img then
@@ -163,7 +199,9 @@ local function build(node: any, parent: Instance, order: number, paths: { [strin
 	-- A Unity Canvas keeps a zero rect and a ~1e-7 localScale in the scene: the CanvasScaler gives it the
 	-- screen's size at runtime, and the tiny scale is the world-units-per-pixel it draws at. Taken
 	-- literally the pair collapses the whole screen into a corner, so a canvas node fills its parent at 1:1.
-	if node.k and table.find(node.k, "Canvas") then
+	-- Only a root canvas has that degenerate rect; a nested Canvas (sorting override: the HUD's StylePanel and
+	-- BarPanel) keeps its own rect.
+	if node.k and table.find(node.k, "Canvas") and (not node.r or math.abs(node.r[11] or 1) < 1e-3) then
 		inst.AnchorPoint = Vector2.zero
 		inst.Position = UDim2.new()
 		inst.Size = UDim2.fromScale(1, 1)
@@ -217,6 +255,8 @@ local function build(node: any, parent: Instance, order: number, paths: { [strin
 			t.TextWrapped = false
 		end
 		t.Parent = inst
+		-- the game's own font, drawn from its glyph atlas (SF2.Text); an unknown font keeps the Roblox one
+		Text.attach(t, (txt.f ~= nil and txt.f ~= "") and txt.f or "AGOpusBold")
 	end
 	local path = prefix == "" and node.n or (prefix .. "/" .. node.n)
 	if not paths[path] then paths[path] = inst end
@@ -236,7 +276,7 @@ end
 -- layout does).
 
 -- The rect size of a GuiObject in canvas units, from its Size and its parents' (AbsoluteSize lags a frame)
-local function rectSize(o: Instance): Vector2
+rectSize = function(o: Instance): Vector2
 	if not o:IsA("GuiObject") then
 		local g = o:IsA("LayerCollector") and o or o:FindFirstAncestorWhichIsA("LayerCollector")
 		return g and (g :: any).AbsoluteSize or Vector2.zero
@@ -300,7 +340,7 @@ local function elementSizes(o: GuiObject, axis: number): (number, number, number
 	elseif n and n.x then
 		local t = o:FindFirstChild("Text") :: TextLabel?
 		if t then
-			local b = TextService:GetTextSize(t.Text, t.TextSize, Enum.Font.Oswald, Vector2.new(1e5, 1e5))
+			local b = Text.measure(t) or TextService:GetTextSize(t.Text, t.TextSize, Enum.Font.Oswald, Vector2.new(1e5, 1e5))
 			pf = axisOf(b, axis)
 		end
 	end

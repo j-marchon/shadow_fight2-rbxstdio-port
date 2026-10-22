@@ -3,7 +3,7 @@
 > **For any model picking this up:** this is the only file you need to read before working. Read the other docs only when a task needs that detail (the "Deep reference" table says which one).
 > **When you finish a session, update this file**: rewrite sections 3 and 4, add one line to section 6, and keep the same headings and format. Don't create new status files. Docs under `docs\` are history; leave them alone.
 
-Last updated: **2026-10-22** (every menu screen rebuilt one-to-one from the original layouts; docs rewritten as a handoff)
+Last updated: **2026-10-22** (menus one-to-one with the original layouts; first UI playtest fixed, game fonts drawn from glyph atlases)
 
 ---
 
@@ -33,7 +33,7 @@ Outside this folder, kept in place on purpose, since moving them breaks absolute
 
 ## 3. Current status
 
-**Where things stand (end of 2026-10-22):** the combat core, AI, perks and the full-game layer are in. Every menu screen was just rebuilt one-to-one from the original's own layouts (the user's top priority). It's committed (`3c2b3e80`, plus this docs commit) and installed in the Studio place. **The place has not been saved to Roblox** (Ctrl+S in Studio), and the user has not playtested the new menus yet.
+**Where things stand (end of 2026-10-22):** the combat core, AI, perks and the full-game layer are in. Every menu screen is rebuilt one-to-one from the original's own layouts (the user's top priority). The user's first playtest of them is fixed: enemy health bar, VS portraits, cropped buttons, MENU roll, map crop, fonts, K/M numbers. The menus and HUD now draw in the game's own fonts from glyph atlases. All of it is committed and installed in the Studio place. **The place has not been saved to Roblox** (Ctrl+S in Studio), and the user has not re-checked the fixes yet.
 
 **Done and committed:**
 - **Combat core:** rig, B-spline animation playback, moves engine (key matching, buffer, mirror, align, transitions), strikes, block, crit, shock, ragdoll and standup, all 218 weapons (`Data.Arsenal`/`WeaponRigs`/`MoveLib`), the real attack-vs-defense damage curve.
@@ -55,7 +55,7 @@ Outside this folder, kept in place on purpose, since moving them breaks absolute
     - **End of fight:** `EndFightScreen` + `EndFightContent`, after a win or a loss (Retry on a loss).
   - Deviations, each written up in that README section:
     - The map's difficulty rating is approximated, and the map shows one act at a time.
-    - The profile has no 3D backdrop, because its atlases exhaust the EditableImage budget. Its Achievements/Seals/Battle Pass tabs are hidden, and perk descriptions show `?` for their numbers.
+    - The profile's Achievements/Seals/Battle Pass tabs are hidden, and perk descriptions show `?` for their numbers. Its backdrop is the dojo dimmed to the original's 0.64 tint.
     - The end screen doesn't animate its count-up.
     - The shop and fight HUD still use hand placement (`{ layout = false }`).
 
@@ -63,6 +63,14 @@ Outside this folder, kept in place on purpose, since moving them breaks absolute
 - 2026-10-21: `ai_test.luau` 0 errors; `all_fights.luau` 761 fights / 0 errors / nan=0; perks fire, gate on conditions and expire; wall repulsion and `WallHit`.
 - 2026-10-22, after the regression fix: 0 drift in the start stance, no body movement at transitions.
 - 2026-10-22, UI: dojo, map (zone 1, Eclipse on), profile (both tabs), shop, settings, and the win and time-up end screens each rendered from the layouts with no console errors. They were opened through the Studio-only hook `PlayerGui.SF2Debug` (see the notes in section 4), because Studio's mouse injection does not reach the game. **No button has been clicked by hand.**
+- 2026-10-22, after the user's playtest (Studio screenshots; the training fight was started through the hook's `onTraining`):
+  - the enemy health bar mirrors the player's;
+  - the VS avatars slide in;
+  - OK/FIGHT!/BACK draw whole;
+  - the MENU roll is joined;
+  - the map covers a 2:1 screen;
+  - text is AGOpusBold from the atlases;
+  - 11 455 401 774 600 shows as 11.4T.
 
 **Not verified yet (needs the user, on the phone or with a real mouse):**
 - The new menus: the MENU scroll unrolling, map battle picking + FIGHT!, dragging between acts, the lamps, Eclipse, the profile tabs, settings toggles and language, the shop tabs/buy/attribute flag, a lost fight's Retry. Also placement against the phone.
@@ -85,13 +93,17 @@ Outside this folder, kept in place on purpose, since moving them breaks absolute
 - Elbow/knee hitboxes were to be widened backward; deferred until the trigger range is re-tested on the phone.
 - Arena start distance: the data says 200; the user wants it bigger, which would be a deviation (their call).
 - Untouched from the user's list: events, dialogue, lore, cutscenes, "special stuff".
-- **The EditableImage budget is tight.** A screen that decodes many textures has to recycle them (the shop does) or drop something (the profile dropped its 3D backdrop). Otherwise later atlases and the 3D scene render blank.
+- **The EditableImage budget is tight.** A screen that decodes many textures has to recycle them (the shop does), or later atlases render blank. The font atlases stay loaded across screens (six small pages, 1024 wide, 73–442 tall).
 
 ## 4. Next steps (in order)
 
 The user's standing priority, in their words: the UI was "the biggest problem", a "full rework completely based on the original, especially in the shop" (now done, pending their playtest). Then the dojo. Then "all the small details (events, dialogue, lore, cutscenes, special stuff)".
 
-1. **Ask the user to playtest the menus** in Studio Play and compare against their phone. Use the list under "Not verified yet". Fix what they report, then ask them to save the place (Ctrl+S).
+1. **Ask the user to re-check the playtest fixes and the rest of the menus** in Studio Play against their phone:
+   - the reported issues: enemy health bar, VS screen, button shapes, MENU roll, map crop, fonts, number abbreviations;
+   - then the list under "Not verified yet".
+
+   Fix what they report, then ask them to save the place (Ctrl+S).
 2. **Dojo**: free roam with a punching bag (gameplay, not UI). The dojo UI is already the original's: MainMenu over the room.
 3. **Close the UI deviations worth closing**:
    - The real difficulty rating (decompile `Nekki.SF2.GUI.Map\DifficultyPanel__1117.c` / `InfoBattle__2796.c`).
@@ -118,7 +130,10 @@ The user's standing priority, in their words: the UI was "the biggest problem", 
 - **Driving the live menus:** in Play (Client datamodel), call `game.Players.LocalPlayer.PlayerGui.SF2Debug:Invoke("map", "ZONE_1")`. It works for any `Menus.*` function (`profile`, `shop`, `settings`, `endFight`, …). `SF2Game.client.lua` creates the hook only when `RunService:IsStudio()`. Functions can't cross the BindableFunction, so callbacks (e.g. `endFight`'s OK/Retry) arrive as nil.
 - Don't `require(SF2.Menus)` inside `execute_luau`. It has its own require cache, so it builds a *second* menu that fights the real one for the EditableImage budget and renders blank.
 - `user_mouse_input` still does not reach the game: clicks by coordinates and by instance path both did nothing on 2026-10-22.
-- `screen_capture` does show the 3D scene. A location fades in, so wait 2–3 s after switching screens before capturing.
+- `screen_capture` **sometimes stops rendering 3D entirely**, while the UI still captures. On 2026-10-22 even a neon part in front of the camera came out blank.
+  - Before concluding a 3D scene is broken, drop a bright test part in front of the camera.
+  - Check 3D with script queries or `tools\preview_png.py`, or ask the user.
+  - A location also fades in over 1–3 s.
 - `all_fights.luau` blocks Studio's main thread for minutes and the MCP plugin disconnects while it runs. It writes to `ServerStorage.TestResult`, so poll that in a separate call.
 
 ## 5. How to work
@@ -126,7 +141,7 @@ The user's standing priority, in their words: the UI was "the biggest problem", 
 **Build** (from `sf2-roblox`, `python -I`):
 - `tools\convert.py` (rig/anims), `compile_moves.py`, `build_arsenal.py`, `build_game.py`, `build_models.py`, `build_images.py`, `build_ui.py`, `build_tactics.py`, `build_audio.py`
 - `tools\make_manifest.py` writes `out\install.txt`
-- UnityPy tools (`extract_assets.py`, `dump_ui.py`) run with `D:\Tools\venvs\unitypy\Scripts\python.exe -I`
+- Pillow/UnityPy tools run with `D:\Tools\venvs\unitypy\Scripts\python.exe -I`: `extract_assets.py`, `dump_ui.py`, `build_images.py`, and `build_fonts.py` (the game fonts as glyph atlases for `SF2.Text`).
 
 **Install into Studio:**
 1. Serve the port: `python -I -m http.server 8765 --bind 127.0.0.1 --directory D:/SF2-Port/sf2-roblox` (run it in the background).
@@ -136,7 +151,7 @@ The user's standing priority, in their words: the UI was "the biggest problem", 
 
 **Test:**
 - Headless: clone `ReplicatedStorage.SF2` into `ServerStorage.SF2Test` and run the `tools\tests\*.luau` code inline. `loadstring` is unavailable.
-- `screen_capture` shows the UI and the 3D scene (a location fades in over 1–3 s). For exact 3D checks use script queries or `tools\preview_png.py`.
+- `screen_capture` shows the UI. It does not always render the 3D scene (see the notes in section 4); for 3D checks use script queries or `tools\preview_png.py`.
 
 **Decompile lookup:**
 - `docs\DECOMPILE_INDEX.md` and `sf2-il2cpp\index\class_map.tsv` map obfuscated names to roles.
@@ -167,3 +182,9 @@ The user's standing priority, in their words: the UI was "the biggest problem", 
 - 2026-10-22 (playtest round 1): worked through the user's 13-item report — elbow/knee range, hit-spark frame rate, the loser staying down, round pacing, wall-jump teleport, 24 separate tournament fights, learnable moves off the `<PerkTree>`, the fight HUD and touch controls, and a dev max-out button. Then fixed the regression that came out of it: `Object="Pivot"` is the body pivot for a condition but the move's own pivot node for an `Align`, and collapsing the two made fighters slide and jump on every transition.
 - 2026-10-22 (shop): rebuilt `Menus.shop` from `scene_level4_Shop`, `ShopBottomPanel` and `ShopTableViewCell`. Four bugs blocked it: the Canvas zero-rect/1e-7-scale pair, `ZIndexBehavior` left on Global while `UI.build` stacks by sibling index (this one also affected every other menu screen), a failed EditableImage caching as a permanently missing texture, and all 81 rows decoding at once exhausting that budget so the tab atlas came back blank. Wrote the port README's UI section as the template for the remaining screens. The tab buttons, the purchase and the attribute flag are wired but were never clicked — `user_mouse_input` stopped responding.
 - 2026-10-22 (full UI): `UI.build` now runs Unity's layout groups (HorizontalOrVerticalLayoutGroup math, Grid, LayoutElement, ContentSizeFitter; masks; suffix `find`). Rebuilt the MainMenu chrome (top bar, roll-down MENU scroll), dojo, map (StoryMapContainer zones with BattleButtons at 2·(X,Y), InfoBattle contents per battle type, lamps, drag between acts), profile (PerkCell/TrickCell, InfoPanel, UserPerksPanel), settings dialog and the end-of-fight screen (also after a loss, with Retry). All rendered in Studio with no errors through a Studio-only `SF2Debug` hook; the profile dropped its 3D backdrop because its atlases exhaust the EditableImage budget.
+- 2026-10-22 (UI playtest fixes): fixed the user's reported UI issues.
+  - Enemy health bar: a 180-degree or negative-scale node now spans the other side of its pivot, and nested Canvases keep their rect.
+  - VS screen: ported the original's slide-in sequence.
+  - Cropped 9-slice buttons: Roblox crops a slice with zero top/bottom borders, and SliceScale now includes the canvas scale.
+  - Also fixed: the detached MENU roll end, black bands on the map on wide screens, the game fonts (`tools/build_fonts.py` atlases + the `SF2.Text` renderer), and K/M/B/T number abbreviations.
+  - Found that Studio's capture can stop rendering 3D. That had been misread as an EditableImage-budget problem on the profile.
