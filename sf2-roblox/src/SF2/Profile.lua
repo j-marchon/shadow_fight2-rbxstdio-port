@@ -11,6 +11,12 @@ local Items = require(script.Parent.Items)
 
 local Profile = {}
 
+-- Map battles and fight counters follow the game's Roster:
+--  * records["ZONE|BATTLE"]: the battle is on the map (users.xml <Battles><Battle Name Locked Hidden
+--    ReplayCount>); quest scripts add and remove them (ShowBattle / HideBattle / ToggleBattle)
+--  * fightStats["ZONE|BATTLE|n"] = {w = wins, l = losses}: ?Fight[...].WinCount / .LossCount
+--  * tutorial: the story tutorial's step (_$StoryTutorialStep), NotStarted .. END
+--  * labels: shop item labels switched by ToggleItems
 export type Data = {
 	version: number, name: string, avatar: string, voice: string,
 	money: number, bonus: number, level: number, exp: number,
@@ -18,7 +24,12 @@ export type Data = {
 	battles: { [string]: number }, currencies: { [string]: number }, perks: { [string]: number },
 	quests: { [string]: any }, flags: { [string]: any }, zone: string, settings: { [string]: any },
 	eclipse: { [string]: boolean },
+	records: { [string]: { locked: boolean?, hidden: boolean?, off: boolean?, replay: number? } },
+	fightStats: { [string]: { w: number, l: number } },
+	tutorial: string, labels: { [string]: boolean }, unlocked: { [string]: boolean },
 }
+
+local VERSION = 2
 
 local data: Data? = nil
 Profile.changed = Instance.new("BindableEvent")
@@ -27,7 +38,7 @@ local function default(): Data
 	local u = Xml.doc("usersDefault")
 	local w = Xml.path(u, "Warriors", "Warrior")
 	local d: Data = {
-		version = 1,
+		version = VERSION,
 		name = Xml.attr(w, "FirstName") or "NAME_SHADOW",
 		avatar = Xml.attr(w, "Avatar") or "avatar_hero",
 		voice = Xml.attr(w, "Voice") or "Male",
@@ -39,6 +50,7 @@ local function default(): Data
 		zone = Xml.attr(w, "CurrentZone") or "ZONE_1",
 		settings = { sound = 1, music = 1, language = "eng" },
 		eclipse = {},
+		records = {}, fightStats = {}, tutorial = "NotStarted", labels = {}, unlocked = {},
 	}
 	for _, slot in { "Skeleton", "Armor", "Helm", "Weapon", "Ranged", "Magic" } do
 		d.equipped[slot] = Xml.attr(w, slot) or ""
@@ -46,7 +58,49 @@ local function default(): Data
 	for _, it in Xml.all(Xml.first(w, "Items"), "Item") do
 		d.items[Xml.attr(it, "Name") :: string] = { count = Xml.num(it, "Count", 1) :: number, upgrade = 0 }
 	end
+	-- the map starts with the battles usersDefault lists (ZONE_1|BOSS_LYNX|)
+	for _, b in Xml.all(Xml.first(w, "Battles"), "Battle") do
+		d.records[Profile.key(Xml.attr(b, "Name") or "")] = {}
+	end
 	return d
+end
+
+-- "ZONE_1|Survival|" and "ZONE_1|Survival" name the same battle
+function Profile.key(name: string): string
+	local z, b = string.match(name, "^([^|]*)|([^|]*)")
+	return z and (z .. "|" .. b) or name
+end
+
+-- Saves from before the quest-driven map (version 1) kept progress only; rebuild what the scripts would
+-- have recorded by now: a win per fight already beaten, the tutorial done, and every battle the old map
+-- showed for the acts that were open.
+local function migrate(d: Data, old: any)
+	if (old.version or 1) >= VERSION then return end
+	d.version = VERSION
+	local Stages = require(script.Parent.Stages)
+	local any = false
+	for key, n in d.battles do
+		for i = 1, n do
+			d.fightStats[key .. "|" .. i] = { w = 1, l = 0 }
+			any = true
+		end
+	end
+	if not any then return end
+	d.tutorial = "END"
+	d.records = {}
+	local SKIP = { FAKE = true, TUTORIAL = true, HIDDEN = true, DUMMY = true }
+	for _, z in Stages.zones() do
+		local zn = Xml.attr(z, "Name") :: string
+		if zn == "ZONE_1" or d.flags["zone_" .. zn] then
+			for _, b in Stages.battles(z) do
+				local bn = Xml.attr(b, "Name") or ""
+				if not SKIP[Xml.attr(b, "Type") or ""] and Xml.attr(b, "X") and not string.find(bn, "_INTERMISSION")
+					and not string.find(bn, "_LOCKED") then
+					d.records[zn .. "|" .. bn] = {}
+				end
+			end
+		end
+	end
 end
 
 local remote: RemoteFunction? = nil
@@ -65,6 +119,7 @@ function Profile.load(): Data
 		local ok, v = pcall(function() return HttpService:JSONDecode(saved) end)
 		if ok and type(v) == "table" then
 			for k, val in v do (d :: any)[k] = val end
+			migrate(d, v)
 		end
 	end
 	data = d
@@ -125,11 +180,22 @@ function Profile.maxOut()
 	d.bonus = 999999
 	d.level = Profile.maxLevel()
 	d.exp = 0
+	d.tutorial = "END"
 	for _, z in Stages.zones() do
 		local zn = Xml.attr(z, "Name") :: string
 		d.flags["zone_" .. zn] = true
 		for _, b in Stages.battles(z) do
-			d.battles[zn .. "|" .. (Xml.attr(b, "Name") :: string)] = #Stages.fights(b)
+			local bn = Xml.attr(b, "Name") :: string
+			local fights = Stages.fights(b)
+			d.battles[zn .. "|" .. bn] = #fights
+			for _, f in fights do
+				d.fightStats[zn .. "|" .. bn .. "|" .. (Xml.attr(f, "Name") or "")] = { w = 1, l = 0 }
+			end
+			local t = Xml.attr(b, "Type") or ""
+			if Xml.attr(b, "X") and t ~= "FAKE" and t ~= "TUTORIAL" and t ~= "DUMMY" and not string.find(bn, "_INTERMISSION")
+				and not string.find(bn, "_LOCKED") then
+				d.records[zn .. "|" .. bn] = {}
+			end
 		end
 	end
 	Profile.save()
@@ -195,6 +261,37 @@ end
 
 function Profile.setProgress(zone: string, battle: string, n: number)
 	Profile.get().battles[zone .. "|" .. battle] = n
+end
+
+-- The battle's map record (nil: not on the map)
+function Profile.record(name: string): any
+	return Profile.get().records[Profile.key(name)]
+end
+
+function Profile.showBattle(name: string, locked: boolean?, hidden: boolean?, replay: number?)
+	local d = Profile.get()
+	local k = Profile.key(name)
+	local r = d.records[k] or {}
+	if locked ~= nil then r.locked = locked or nil end
+	if hidden ~= nil then r.hidden = hidden or nil end
+	if replay then r.replay = replay end
+	d.records[k] = r
+end
+
+function Profile.hideBattle(name: string)
+	Profile.get().records[Profile.key(name)] = nil
+end
+
+-- Wins and losses of one fight ("ZONE|BATTLE|n")
+function Profile.fightStat(id: string): { w: number, l: number }
+	return Profile.get().fightStats[id] or { w = 0, l = 0 }
+end
+
+function Profile.countFight(id: string, won: boolean)
+	local d = Profile.get()
+	local s = d.fightStats[id] or { w = 0, l = 0 }
+	if won then s.w += 1 else s.l += 1 end
+	d.fightStats[id] = s
 end
 
 return Profile

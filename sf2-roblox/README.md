@@ -256,6 +256,73 @@ case — so event filters, the template chain, `<Set>` variables, value expressi
 work. A `ModAttributes` mod moved its owner's DamageFactor from −2000 to 3850 and back when it expired two
 ticks later, and a `RoundStageStart EndStance` cleared a mod through the `EndStanceClear` template.
 
+## Quests and story (`src\SF2\Quests.lua`, `src\SF2\Game.lua`)
+
+The original drives its whole campaign from quest scripts (`Nekki.SF2.Core.Quests.QuestsManager`): the
+tutorial, every dialog, which battles the map shows and which are locked, when an act opens, act screens,
+strangers, challenges' entry checks, level-up and shop advice. The port runs those scripts instead of rules
+of its own.
+
+**Data.** `quests.xml`, `battles.xml`, `tutorial_quests.xml` and `forge_quests.xml` load at start. The act
+stories are `quest_extensions/zone_1..7/story.xml`, `intermission/story.xml` and `zone_1|2/core.xml`, which
+quests attach with `AttachQuestFile` once the right fights are won. They are TextAssets in the APK's own
+Unity data, eight of them named `story` and two `core`; the old extraction kept only the last of each name,
+so acts 1, 3, 5, 6, 7 and the intermission were missing until 2026-10-22. `tools/extract_quests.py` (UnityPy)
+pulls every quest-like TextAsset apart by path id, `tools/decrypt_text.ps1` decrypts them with the key in
+`sf2-data\keys`, and they are filed under `sf2-data\decrypted\quest_extensions\` by the zone their fights
+name; `build_game.py` turns them into `out/Xml/qx_*`.
+
+**Engine, as decompiled** (`QuestsManager__2284.c`, `FPPKHNNABAD__1827.c` = the quest,
+`QuestCondition__3395.c`, `PFLBGCPNEIM__2295.c` = the action factory):
+- An event (`ScheduleQuests`) queues every quest listening for it whose conditions hold, unless it is already
+  queued or running (`AllowDoubles` lifts that), with a snapshot of the event's parameters. The queue is
+  sorted by `Priority`, highest first, and runs one quest at a time, the next on a later frame.
+- **Interception.** FIGHT on the map fires `FightEnter`; if any quest is queued the fight does not start by
+  itself, only a `Fight` action starts it (`MGNPHCAAEIO.GJEPNOIHFEH`, then the energy check). A scene change
+  fires `ChangeTab` the same way: almost every ChangeTab quest navigates itself (`ChangeScene _$SceneTo`,
+  `OpenShop`), and the tutorial's "go to the dojo" step deliberately does not. A guard's greeting with
+  FIGHT starts the fight; LEAVE cancels it.
+- Values: unset `_Name` variables read `"0"`; `_$Name` falls back to a user variable of that name.
+  `?Fight[id].WinCount/LossCount` are per-fight counters in the save; `?Battle[id].Available` is "on the map",
+  `.Locked` is "not on the map, or shown locked", `.Hidden` its hidden flag. `+ - * / %`, parentheses and
+  `Or`/`And` are evaluated; `CompareType="Versions"` compares dotted versions.
+- `?SysInfo[]`: the free Android build (`F2P`, `AnyF2P` = 1), not Switch, Steam or China.
+- Dialog buttons: `LabelButton.GetBtnColor` maps Red to BtnDark, Green to BtnGreen, Gold to BtnGold and
+  White, Beige or anything else to BtnWhite.
+
+**The save** (`Profile`, version 2) now keeps the map's battle records (`ShowBattle` / `HideBattle` /
+`ToggleBattle`, as users.xml `<Battles>`), per-fight win/loss counts, the story tutorial step, shop label
+toggles (`ToggleItems`) and unlocked characters. A new game's map has only `ZONE_1|BOSS_LYNX` (usersDefault).
+Version-1 saves are migrated: a win per fight already beaten, the tutorial marked done, and the battles the
+old map showed.
+
+**Flow** (`Game`): one FIGHT plays one `<Fight>` by id (`ZONE|BATTLE|n`): the battle's next one not yet won, or
+a random one once all are. After it the fight is counted, `FightEnd` fires (`_$LevelUp`, `_$InEclipseMode`
+with it), the end screen shows, and its OK goes back to the scene the fight came from through `ChangeTab`
+(from `Fight`), where the queued quests run. The tutorial's practice fights (`TUTORIAL`, `DUMMY`) skip the end
+screen. The game opens on the dojo: `ApplicationStart`, then `ChangeTab Loader -> Dojo`, then `SessionStart`.
+The port's own rules for the map are gone: the boss unlocking when the act's tournaments are won, acts
+opening when the previous boss falls, and the fixed list of visible battles.
+
+**Deviations:**
+- `Place` (an action list's scene, default Map) does not switch scenes; FightEnd quests run once the end
+  screen returns to the map, which is where they belong anyway.
+- Offers, promotions, payments, ads, raids, server calls, video replays and the tutorial's hand-holding
+  (arrows, flashing buttons, touch blocking, `ClickButton`) do nothing. `Checkpoint`/`ResumeQuests` (resuming
+  after a restart) and `SetDataVersion` (save migrations) are skipped.
+- `ActScreen` is drawn as the localized title on black, faded in and out, until a screenshot of the
+  original's act screen shows its real look.
+- The `Notification` dialog's content (avatar, text, OK) is placed by hand inside `NotificationGame`'s
+  scroll; its layout is built at runtime in the original.
+- `?Fight[id].Helm` (a challenge's required item) reads the fight's `EquipItem` rule for that slot.
+- The tutorial's dojo steps (`StoryTutorialMove`, `Punchbag`, `DoubleSweep`) wait for nothing yet; see the
+  dojo.
+
+**Verified in Studio** (2026-10-22): `tools/tests/story_test.luau` plays the whole story headless (dialogs'
+right button pressed, every fight won at once): the tutorial ends, acts 1 to 6, the Interlude, and Act 7
+chapters 1 to 3 open in order with their act screens, every act's boss and the final Titan fall, 0 quest
+errors. In Play, a maxed-out save opens on the dojo with Act 7's Shroud greeting over it.
+
 ## UI (menu screens, `src\SF2\UI.lua` + `src\SF2\Menus.lua`)
 
 `tools/build_ui.py` turns the dumped Unity layouts (`sf2-assets/ui`, 229 screens) into packed node trees in
@@ -328,7 +395,9 @@ Every menu screen is now built from the prefabs its original scene mounts (the s
   Contents child: tournament/challenge (stage x/y, one brick per fight, difficulty, prize), bosses, duel,
   survival (min/max prize), closed or completed. Dragging the map past 300 units moves to the next or
   previous open act; the lamps under it (`LampsPanel`: 68 wide, 22 apart, at y -55) show and jump between
-  acts. The Eclipse toggle sits in MapButtonsPanel's actions row.
+  acts. The Eclipse toggle sits in MapButtonsPanel's actions row. Which battles show, which are locked and
+  which acts are open come from the quest scripts (section "Quests and story"); an act is open once it has
+  a battle on the map.
 - **Profile** (`scene_level7_Profile`, `ProfileBottomPanel`): the perk tree as `PerkCell` rows (two perks
   side by side with the joining line where a level offers two), the learnable strikes as `TrickCell` rows,
   the picked one described in `InfoPanel`, your perks listed in `UserPerksPanel`.

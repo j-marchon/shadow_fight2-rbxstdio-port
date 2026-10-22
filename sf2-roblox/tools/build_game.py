@@ -26,8 +26,6 @@ DOCS = {
     'internalSettings': f'{DEC}/apk/internalSettings.xml',
     'usersDefault': f'{DEC}/apk/usersDefault.xml',
     'usersDefaultWarrior': f'{DEC}/apk/usersDefaultWarrior.xml',
-    'story': f'{DEC}/apk/story.xml',
-    'story__1': f'{DEC}/apk/story__1.xml',
     'quests': f'{DEC}/apk/quests.xml',
     'battles': f'{DEC}/apk/battles.xml',
     'tutorial_quests': f'{DEC}/apk/tutorial_quests.xml',
@@ -45,8 +43,19 @@ DOCS = {
     'item_restore_quests': f'{DEC}/apk/item_restore_quests.xml',
     'packs': f'{DEC}/bundles/packs.xml',
     'loaderScreenSettings': f'{DEC}/apk/loaderScreenSettings.xml',
-    'core': f'{DEC}/apk/core.xml',
     'utils': f'{DEC}/apk/utils.xml',
+    # the act stories (AttachQuestFile paths under quest_extensions/), extracted from the APK's eight
+    # same-named 'story' TextAssets and two 'core' ones
+    'qx_zone_1_core': f'{DEC}/quest_extensions/zone_1/core.xml',
+    'qx_zone_1_story': f'{DEC}/quest_extensions/zone_1/story.xml',
+    'qx_zone_2_core': f'{DEC}/quest_extensions/zone_2/core.xml',
+    'qx_zone_2_story': f'{DEC}/quest_extensions/zone_2/story.xml',
+    'qx_zone_3_story': f'{DEC}/quest_extensions/zone_3/story.xml',
+    'qx_zone_4_story': f'{DEC}/quest_extensions/zone_4/story.xml',
+    'qx_zone_5_story': f'{DEC}/quest_extensions/zone_5/story.xml',
+    'qx_zone_6_story': f'{DEC}/quest_extensions/zone_6/story.xml',
+    'qx_zone_7_story': f'{DEC}/quest_extensions/zone_7/story.xml',
+    'qx_intermission_story': f'{DEC}/quest_extensions/intermission/story.xml',
 }
 LANGS = ['eng', 'rus', 'ger', 'fra', 'ita', 'spa', 'por', 'tur', 'chn', 'chn_tr', 'jpn', 'kor']
 

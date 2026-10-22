@@ -28,6 +28,8 @@ local canvas: Frame? = nil
 local layer: Frame? = nil -- the current screen's widgets
 local scene: any = nil -- {location, showcase, folder}
 Menus.onPlay = nil :: ((zone: string, battle: any) -> ())?
+Menus.onNavigate = nil :: ((scene: string) -> ())?
+Menus.onRestart = nil :: (() -> ())?
 
 local function root(): (ScreenGui, Frame)
 	if not gui then
@@ -263,8 +265,11 @@ local function mainMenu(parent: Instance, section: string): any
 	-- coins and gems
 	setText(m:find("Content/StaticPanel/MoneyPanel/CoinInfoGroup/CoinsLabel"), fmt(d.money))
 	setText(m:find("Content/StaticPanel/MoneyPanel/BonusInfoGroup/RubyLabel"), fmt(d.bonus))
-	onClick(m:find("Content/StaticPanel/MoneyPanel/GoToShopBtn"), function() Menus.shop() end)
-	onClick(m:find("Content/StaticPanel/MoneyPanel/BtnRubyInfo/BtnRuby"), function() Menus.shop() end)
+	local function toShop()
+		if Menus.onNavigate then Menus.onNavigate("Shop") else Menus.shop() end
+	end
+	onClick(m:find("Content/StaticPanel/MoneyPanel/GoToShopBtn"), toShop)
+	onClick(m:find("Content/StaticPanel/MoneyPanel/BtnRubyInfo/BtnRuby"), toShop)
 
 	-- F2P spacers: MainMenu lerps their width from 0 to 300 as the aspect goes from 1.23 to 2.0
 	local cam = workspace.CurrentCamera
@@ -327,7 +332,12 @@ local function mainMenu(parent: Instance, section: string): any
 				local function go()
 					open = false
 					setLength(0, 0)
-					local f = ({ Dojo = Menus.dojo, Map = Menus.map, Shop = Menus.shop, Profile = Menus.profile,
+					-- a scene change goes through the quests (ChangeTab); Settings is a dialog over the scene
+					if name ~= "Settings" and Menus.onNavigate then
+						Menus.onNavigate(name)
+						return
+					end
+					local f =({ Dojo = Menus.dojo, Map = Menus.map, Shop = Menus.shop, Profile = Menus.profile,
 						Settings = Menus.settings }) [name]
 					f()
 				end
@@ -427,17 +437,22 @@ end
 
 ---------------------------------------------------------------- map
 
-local SKIP_TYPES = { FAKE = true, TUTORIAL = true, HIDDEN = true }
--- The act's map battles: the story set, or with Eclipse on, the *_ECLIPSEMODE set (EclipseToggleName)
+-- The act's map battles: the ones the quest scripts put on the map (Profile records, ShowBattle) and did
+-- not hide, or with Eclipse on, the *_ECLIPSEMODE set (EclipseToggleName) of the shown story battles
 local function visibleBattles(zone: any, eclipse: boolean?): { any }
 	local out = {}
+	local zn = Xml.attr(zone, "Name") or ""
 	for _, b in Stages.battles(zone) do
 		local name = Xml.attr(b, "Name") or ""
-		local t = Xml.attr(b, "Type") or ""
-		local isEclipse = string.find(name, "_ECLIPSEMODE") ~= nil
-		if not SKIP_TYPES[t] and not string.find(name, "_INTERMISSION") and isEclipse == (eclipse == true)
-			and not string.find(name, "_LOCKED") and Xml.attr(b, "X") then
-			table.insert(out, b)
+		local r = Profile.record(zn .. "|" .. name)
+		if Xml.attr(b, "X") then
+			if eclipse then
+				local base = string.match(name, "^(.*)_ECLIPSEMODE$")
+				local rb = base and Profile.record(zn .. "|" .. base)
+				if rb and not rb.hidden then table.insert(out, b) end
+			elseif r and not r.hidden and not string.find(name, "_ECLIPSEMODE") then
+				table.insert(out, b)
+			end
 		end
 	end
 	return out
@@ -465,9 +480,14 @@ local function acts(): { any }
 	return out
 end
 
+-- An act is open once the scripts have put any of its battles on the map
 function Menus.zoneUnlocked(zoneName: string): boolean
 	if zoneName == "ZONE_1" then return true end
-	return Profile.get().flags["zone_" .. zoneName] == true
+	local prefix = zoneName .. "|"
+	for k in Profile.get().records do
+		if string.sub(k, 1, #prefix) == prefix then return true end
+	end
+	return false
 end
 
 local function buttonSprite(b: any, state: string): string
@@ -708,7 +728,9 @@ function Menus.map(zoneName: string?)
 		local name = Xml.attr(b, "Name") :: string
 		local total = #Stages.fights(b)
 		local done = Profile.progress(zn, name)
-		local bossLocked = Xml.attr(b, "Type") == "BOSSES" and not eclipse and not Menus.bossOpen(zn)
+		-- ShowBattle Locked="1" / ToggleBattle "off": on the map, but closed
+		local r = Profile.record(zn .. "|" .. name)
+		local bossLocked = not eclipse and r ~= nil and (r.locked == true or r.off == true)
 		local st = bossLocked and "Lock" or (done >= total and total > 0 and Xml.attr(b, "Type") ~= "PERIODIC" and "Base" or "Active")
 		return st, bossLocked
 	end
@@ -898,16 +920,36 @@ function Menus.map(zoneName: string?)
 	Sound.music("act")
 end
 
--- The act's boss opens once every other story battle of the act has been won at least once
-function Menus.bossOpen(zoneName: string): boolean
-	local zone = Stages.zone(zoneName)
-	for _, b in visibleBattles(zone) do
-		local t = Xml.attr(b, "Type")
-		if t == "TOURNAMENT" or t == "CHALLENGE" then
-			if Profile.progress(zoneName, Xml.attr(b, "Name") :: string) < 1 then return false end
-		end
-	end
-	return true
+-- SetMapFocus: the battle the act's map picks next time it is shown
+function Menus.focus(zoneName: string, battleName: string)
+	pickedBattle[zoneName] = battleName
+end
+
+-- ActScreen: the act's title ("Act II{br}Secret Path") over the scene, held, then gone.
+-- Port deviation, pending a screenshot of the original: a black screen with the title centred in the
+-- game's colours, faded in and out.
+function Menus.actScreen(key: string)
+	local _, c = root()
+	local f = Instance.new("TextButton")
+	f.Name = "ActScreen"
+	f.Text = ""
+	f.AutoButtonColor = false
+	f.BackgroundColor3 = Color3.new(0, 0, 0)
+	f.BackgroundTransparency = 1
+	f.Size = UDim2.fromScale(1, 1)
+	f.ZIndex = 1000
+	f.Parent = c
+	local text = string.gsub(Xml.text(key), "{br}", "\n")
+	local t = W.label(f, text, UDim2.fromScale(0.5, 0.5), Vector2.new(1800, 600), 120, W.GOLD)
+	t.ZIndex = 1001
+	t.TextTransparency = 1
+	TweenService:Create(f, TweenInfo.new(0.5), { BackgroundTransparency = 0 }):Play()
+	TweenService:Create(t, TweenInfo.new(0.5), { TextTransparency = 0 }):Play()
+	task.wait(3)
+	TweenService:Create(f, TweenInfo.new(0.5), { BackgroundTransparency = 1 }):Play()
+	TweenService:Create(t, TweenInfo.new(0.5), { TextTransparency = 1 }):Play()
+	task.wait(0.5)
+	f:Destroy()
 end
 
 local TYPE_TEXT = {
@@ -1221,7 +1263,7 @@ end
 --    for one you do. The forge's ENCHANT has nothing behind it here and stays hidden.
 --  * The two flags on the scroll's left edge are the side panels: attributes (opens the full list to the
 --    left of the scroll) and item perks (none here).
-function Menus.shop(tab: string?)
+function Menus.shop(tab: string?, item: string?)
 	tab = tab or "Weapon"
 	local d = Profile.get()
 	local s = clear()
@@ -1229,6 +1271,10 @@ function Menus.shop(tab: string?)
 	local selected = 1
 	for i, it in items do
 		if d.equipped[tab :: string] == Xml.attr(it, "Name") then selected = i end
+	end
+	-- OpenShop Item=...: the scripts point at one item
+	for i, it in items do
+		if item and Xml.attr(it, "Name") == item then selected = i end
 	end
 	local tryOn = false
 	local function previewDef(): any
@@ -2081,14 +2127,16 @@ function Menus.settingsMore()
 	local reset = W.textButton(holder, "BtnDark", "RESET PROGRESS", UDim2.new(0.5, -260, 1, -80), Vector2.new(420, 80), function()
 		close()
 		Profile.reset()
-		Menus.dojo()
+		-- a new game: the scripts start over from the tutorial
+		if Menus.onRestart then Menus.onRestart() else Menus.dojo() end
 	end)
 	reset.ZIndex = 50
 	-- DEV ONLY, temporary: unlock every act, boss and mode for testing (Profile.maxOut)
 	local dev = W.textButton(holder, "BtnGreen", "MAX OUT (DEV)", UDim2.new(0.5, 260, 1, -80), Vector2.new(420, 80), function()
 		close()
 		Profile.maxOut()
-		Menus.map(Profile.get().zone)
+		-- start the scripts over, so the act stories the wins now call for get attached
+		if Menus.onRestart then Menus.onRestart() else Menus.map(Profile.get().zone) end
 	end)
 	dev.ZIndex = 50
 	dlg:relayout()

@@ -3,7 +3,7 @@
 > **For any model picking this up:** this is the only file you need to read before working. Read the other docs only when a task needs that detail (the "Deep reference" table says which one).
 > **Update this file with every change, in the same commit, not only at session end** (the rule is in [`CLAUDE.md`](CLAUDE.md)). Rewrite sections 3 and 4 and the "Last updated" line, keep one line per session in section 6, update `sf2-roblox\README.md` for any system that changed, and keep the same headings and format. Don't create new status files. Docs under `docs\` are history; leave them alone.
 
-Last updated: **2026-10-22** (menus matched against screenshots of the real game: text sizing, shop snapping, map, profile, settings, end screen)
+Last updated: **2026-10-22** (the campaign now runs on the original's quest scripts: all 8 act stories recovered, map and acts driven by them)
 
 ---
 
@@ -37,7 +37,12 @@ Outside this folder, kept in place on purpose, since moving them breaks absolute
 - the first playtest: enemy health bar, VS portraits, cropped buttons, MENU roll, map crop, fonts, K/M numbers;
 - a pass against ~20 screenshots of the real game: text sizing, top-bar energy, map details and Eclipse sun, a snapping shop with the original's panels, profile grid and real perk numbers, the settings and advanced-settings layouts, and the end screen's bonus lines.
 
-All of it is committed and installed in the Studio place. **The place has not been saved to Roblox** (Ctrl+S in Studio), and the user has not re-checked the latest round.
+Then (same day, later session) the user asked to finish the whole port, section by section. **Section 1 is done: the campaign runs on the original's quest scripts** (port README "Quests and story"):
+- the eight act stories were in the APK all along (eight TextAssets named `story`, two `core`; the old extraction kept one per name). Now extracted, decrypted and built into `out\Xml\qx_*`;
+- `SF2.Quests` is a port of the QuestsManager (priority queue, event snapshots, FightEnter/ChangeTab interception, the value language, dialogs with their buttons and colours, ShowBattle/HideBattle, Activate, Run, AttachQuestFile, ...);
+- the map shows what the scripts put on it; acts open, bosses unlock and the tutorial runs as in the original. The save is version 2 (battle records, per-fight win/loss counts, tutorial step); old saves are migrated.
+
+All of it is committed and installed in the Studio place. **The place has not been saved to Roblox** (Ctrl+S in Studio), and the user has not re-checked the latest rounds.
 
 **Done and committed:**
 - **Combat core:** rig, B-spline animation playback, moves engine (key matching, buffer, mirror, align, transitions), strikes, block, crit, shock, ragdoll and standup, all 218 weapons (`Data.Arsenal`/`WeaponRigs`/`MoveLib`), the real attack-vs-defense damage curve.
@@ -64,7 +69,8 @@ All of it is committed and installed in the Studio place. **The place has not be
     - The fight HUD's style bar ("FANTASTIC!" / "HARD!" under the health bars) is not drawn.
     - The fight HUD and the shop rows still use hand placement (`{ layout = false }`).
 
-**Verified in Studio** (install: 3042 entries, 0 failed):
+**Verified in Studio** (install: 3059 entries, 0 failed):
+- 2026-10-22, quests: `tools\tests\story_test.luau` plays the story headless (dialogs answered, fights won at once) from a new game to the end of Act 7 chapter 3: every act and act screen in order, all bosses, 0 quest errors. In Play, the dev save opens on the dojo with Act 7's Shroud dialog drawn over it. **Dialog buttons have not been clicked by hand.**
 - 2026-10-21: `ai_test.luau` 0 errors; `all_fights.luau` 761 fights / 0 errors / nan=0; perks fire, gate on conditions and expire; wall repulsion and `WallHit`.
 - 2026-10-22, after the regression fix: 0 drift in the start stance, no body movement at transitions.
 - 2026-10-22, UI: dojo, map (zone 1, Eclipse on), profile (both tabs), shop, settings, and the win and time-up end screens each rendered from the layouts with no console errors. They were opened through the Studio-only hook `PlayerGui.SF2Debug` (see the notes in section 4), because Studio's mouse injection does not reach the game. **No button has been clicked by hand.**
@@ -95,7 +101,8 @@ All of it is committed and installed in the Studio place. **The place has not be
   - The perk value expressions `?CurrentFight`, `?CoordX/Y`, `?PlayerAttribute`, `?Aspect`, `?MovesVariable` and `?Abs`, which read 0.
 
 **Known gaps:**
-- **Dojo gameplay:** the original's dojo is a free-roam room with a punching bag. The port's is the menu backdrop, with training behind the punching-bag toggle.
+- **Dojo gameplay:** the original's dojo is a fight (`Punchbag|Training|1`, the punching bag) running under GameController and MainMenu (`DojoScene`). The port's is the menu backdrop, with training behind the punching-bag toggle. So the tutorial's dojo steps (move 3 times, hit the bag 3 times, do a DoubleSweep) pass straight through for now.
+- Quest deviations (README "Quests and story"): `Place` doesn't switch scenes, offers/payments/raids/hand-holding do nothing, the act screen's look is a placeholder.
 - UI deviations listed above (README UI section).
 - The shock state's effects (`FrameReduction`, `LooseningDelay`, `Impulse Y`, the `Weapon Fists` + `WeaponDamage 0` pair in `internalSettings <Shock>`).
 - Missile/projectile completeness for gun and bow supers. Check `Fight` children before assuming either way.
@@ -103,7 +110,7 @@ All of it is committed and installed in the Studio place. **The place has not be
 - AI: BeginnerCheat, emergency/safe dodges, ThrowTactics, BossAbility, the SetWait modes.
 - Elbow/knee hitboxes were to be widened backward; deferred until the trigger range is re-tested on the phone.
 - Arena start distance: the data says 200; the user wants it bigger, which would be a deviation (their call).
-- Untouched from the user's list: events, dialogue, lore, cutscenes, "special stuff".
+- Untouched from the user's list: events, cutscenes (the 2 videos: `ShowVideo` plays nothing), "special stuff". Story dialogue now comes from the scripts.
 - **The EditableImage budget is tight.** A screen that decodes many textures has to recycle them (the shop does), or later atlases render blank. The font atlases stay loaded across screens (six small pages, 1024 wide, 73–442 tall).
 
 ## 4. Next steps (in order)
@@ -115,7 +122,8 @@ The user's standing priority, in their words: the UI was "the biggest problem", 
    - then the list under "Not verified yet".
 
    Fix what they report, then ask them to save the place (Ctrl+S).
-2. **Dojo**: free roam with a punching bag (gameplay, not UI). The dojo UI is already the original's: MainMenu over the room.
+2. **Dojo** (next section): run `Punchbag|Training|1` as the dojo scene (no HUD bars or timer, GameController + MainMenu over it, `DojoScene`), the disciple toggle, and the tutorial actions from the decompile: `StoryTutorialMove` (`DCEFHLHFCFL`: menu off, stick flashing, done after 3 moves of moves.xml `Type="MOVE"`), `StoryTutorialPunchbag` (`JIALPJBDBEE`: punch/kick flashing, 3 `Type="ATTACK"` moves), `StoryTutorialDoubleSweep` (`JHJLHLANACF`: the move named `DoubleSweep`), BuyItem/LearnPerk waiting for the purchase/perk.
+   Ask the user for a screenshot of an act screen ("Act II Secret Path") to replace the placeholder.
 3. **Close the UI deviations worth closing**:
    - The real difficulty rating (decompile `Nekki.SF2.GUI.Map\DifficultyPanel__1117.c` / `InfoBattle__2796.c`).
    - The fight HUD's style bar (`StylePanel` / `StyleBar`, `internalSettings <StyleLevels>`) and the real style meter rules from the decompile.
@@ -208,3 +216,4 @@ The user's standing priority, in their words: the UI was "the biggest problem", 
   - Profile: real perk numbers from CharacterProgress `UpgradeLevel` descriptions, the left tile grid, faded unlearned perks, all tabs.
   - Settings and advanced settings as the original, with volume sliders and controller scale.
   - End screen: the bonus lines, backed by new `Fight.stats` counters and coins paid in `Game`.
+- 2026-10-22 (full port, section by section): section 1, the quest scripts. Found the 6 missing act stories in the APK (same-named TextAssets the old extraction overwrote; a CDN `CONFIGS` pack was fetched with the user's OK but didn't have them), ported the QuestsManager from the decompile, moved the map, act unlocks and the tutorial onto it, save v2 with migration, `story_test.luau` plays the whole campaign.

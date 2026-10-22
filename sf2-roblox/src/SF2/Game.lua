@@ -1,13 +1,16 @@
 --!strict
--- The game flow: dojo / map / shop / profile menus (SF2.Menus) -> VS screen -> fights (SF2.FightScreen)
--- -> rewards and progress (SF2.Profile).
--- Battle rules (stages.xml battle types):
---  * TOURNAMENT, CHALLENGE, SURVIVAL: the fights in a row from the first not yet won, until one is lost;
---    SURVIVAL carries health between fights with the fight's HealthRecovery
---  * BOSSES: the next fight only (bodyguards one at a time, then the boss)
---  * PERIODIC (duel) and REPLAYABLE: one fight, picked at random once all are won
---  * a won fight pays its <Reward> (Money, Exp, Bonus, Items) and advances the battle; beating the act's
---    boss opens the next act (port rule: the game's map unlocks come from story quests)
+-- The game flow: the menu scenes (SF2.Menus), fights (SF2.FightScreen), rewards and progress (SF2.Profile),
+-- all steered by the game's quest scripts (SF2.Quests), as in the original:
+--  * a scene change the player asks for fires ChangeTab; FIGHT on the map fires FightEnter. When a quest
+--    takes either over, the quests decide where to go and which fight starts (Quests header)
+--  * one FIGHT plays one stages.xml <Fight>: the battle's next one not yet won, or a random one once all
+--    are; SURVIVAL plays the several enemies of its single <Fight> in a row, carrying health over with
+--    the fight's HealthRecovery
+--  * a won fight pays its <Reward> (Money, Exp, Bonus, Items) plus the end screen's bonuses; then the
+--    fight is counted (?Fight[...].WinCount / LossCount), FightEnd fires, and the end screen shows. Its
+--    OK goes back to the scene the fight started from, where the FightEnd quests run
+--  * which battles the map shows, which are locked and which acts are open all come from the scripts
+--    (ShowBattle / HideBattle), not from rules of the port's own
 
 local FightScreen = require(script.Parent.FightScreen)
 local Stages = require(script.Parent.Stages)
@@ -15,7 +18,6 @@ local Xml = require(script.Parent.Xml)
 local Profile = require(script.Parent.Profile)
 local Menus = require(script.Parent.Menus)
 local Warrior = require(script.Parent.Warrior)
-local Sound = require(script.Parent.Sound)
 local Quests = require(script.Parent.Quests)
 local Rules = require(script.Parent.Rules)
 
@@ -49,152 +51,181 @@ local function flatLighting()
 	L.GlobalShadows = false
 end
 
--- Battle types whose <Fight> entries are played back to back in one visit, instead of one per entry.
--- A tournament is not one of them: stages.xml gives it 8 to 24 <Fight> entries with a single <Warrior>
--- each, which is the ladder of separate opponents you come back to the map between, and chaining them
--- turned a tournament into one long wave. The same goes for a challenge. Survival does chain, but
--- through the several enemies inside its single <Fight> (Stages.enemies draws them from the groups and
--- nextEnemy carries the health over), not through this table.
-local CHAIN: { [string]: boolean } = {}
+---------------------------------------------------------------- scenes
 
--- Play one fight; done(result, playerHealth)
-local function playOne(zone: string, battle: any, fight: any, enemy: any, startHealth: number?, done: (any) -> ())
-	local fightId = zone .. "|" .. (Xml.attr(battle, "Name") or "") .. "|" .. (Xml.attr(fight, "Name") or "1")
-	local eclipse = string.find(Xml.attr(battle, "Name") or "", "_ECLIPSEMODE") ~= nil
-	Quests.fire("FightEnter", { Fight = fightId, InEclipseMode = eclipse and 1 or 0 })
-	local rules = Stages.rules(fight, eclipse)
-	local player = Profile.warrior()
-	player.add = rules.player
-	enemy.add = rules.bot
-	enemy.alignTo = Warrior.build(player).attributes
-	local fightRules, overrides = Rules.prepare(rules.raw, { player, enemy }, eclipse)
-	Menus.vs(player, enemy, 2.2, function()
-		Menus.hide()
-		local screen
-		screen = FightScreen.run({
-			player = player, enemy = enemy,
-			location = Xml.attr(battle, "Location"), music = Xml.attr(fight, "Music") or Xml.attr(battle, "Music"),
-			rounds = overrides.rounds or Xml.num(fight, "Rounds", 2),
-			roundTime = overrides.roundTime or Xml.num(fight, "RoundTime", 99),
-			enemyTactic = enemy.tactic, battleType = Xml.attr(battle, "Type"),
-			rules = fightRules, timeoutWinner = overrides.timeoutWinner, invertJoystick = overrides.invertJoystick,
-			noHealthBar = overrides.noHealthBar, darkness = overrides.darkness,
-			startHealth = startHealth and { startHealth, 1 } or nil,
-			onEnd = function(result)
-				task.defer(function()
-					local hp = screen.fight and screen.fight.engines[1].health or 1
-					screen.destroy()
-					if result.winner == 1 then
-						-- progress first: FightEnd scripts test ?Fight[...].WinCount
-						local bname = Xml.attr(battle, "Name") :: string
-						local n = tonumber(Xml.attr(fight, "Name")) or 0
-						if n > Profile.progress(zone, bname) and #Stages.enemies(fight, 1) <= 1 then
-							Profile.setProgress(zone, bname, n)
-						end
-					end
-					Quests.fire("FightEnd", { Fight = fightId, FightResult = result.winner == 1 and "Win" or "Loss" })
-					done(result, hp)
-				end)
-			end,
-		})
-	end)
+local current = "Loader" -- the scene on screen (QuestCondition's _$CurrentScene)
+local returnTo = "Map" -- where a fight's end screen goes back to
+
+-- Show a scene as it is, without asking the quests (ChangeScene, or a change they let through)
+local function show(scene: string, opts: any?)
+	opts = opts or {}
+	current = scene
+	if scene == "Dojo" then Menus.dojo()
+	elseif scene == "Shop" then Menus.shop(opts.tab, opts.item)
+	elseif scene == "Profile" then Menus.profile()
+	else
+		current = "Map"
+		Menus.map(opts.zone)
+	end
+	Quests.sceneLoaded(current)
+	Quests.run()
 end
 
-function Game.playBattle(zone: string, battle: any)
-	local name = Xml.attr(battle, "Name") :: string
-	local t = Xml.attr(battle, "Type") or ""
+-- A scene change the player asked for: ChangeTab first
+function Game.go(scene: string)
+	Quests.changeTab(current, scene, function() show(scene) end)
+end
+
+---------------------------------------------------------------- fights
+
+-- The fight id the map's FIGHT plays for a battle: its next fight not yet won, else a random one
+local function nextFight(zone: string, battle: any): string?
 	local fights = Stages.fights(battle)
-	if #fights == 0 then return end
-	local d = Profile.get()
-	local progress = Profile.progress(zone, name)
-	local start = progress + 1
-	if start > #fights then
-		start = math.random(1, #fights) -- all won: replay one
+	if #fights == 0 then return nil end
+	local name = Xml.attr(battle, "Name") :: string
+	local i = Profile.progress(zone, name) + 1
+	if i > #fights then i = math.random(1, #fights) end
+	return zone .. "|" .. name .. "|" .. (Xml.attr(fights[i], "Name") or tostring(i))
+end
+
+-- The end screen's bonuses, paid in coins (internalSettings: Perfect 5, FirstStrike 2, ComboCount 1 per
+-- hit of the longest combo, Shock 3; style 3 per level reached)
+local function bonuses(result: any): any
+	local st = result.stats or {}
+	local function n(t: any): number return t and t[1] or 0 end
+	return { perfect = n(st.perfectRounds), firstStrike = n(st.firstStrikes), maxCombo = n(st.maxCombo),
+		shock = n(st.shocks), style = n(st.bestStyle) }
+end
+
+-- Play one stages.xml fight by id ("ZONE|BATTLE|n")
+function Game.playFight(id: string)
+	local fight, battle, zone, bname = Quests.fightOf(id)
+	if not fight or not battle then
+		warn("SF2: no fight " .. id)
+		show(current)
+		return
 	end
+	local zn, bn = zone :: string, bname :: string
+	local t = Xml.attr(battle, "Type") or ""
+	local eclipse = string.find(bn, "_ECLIPSEMODE") ~= nil
+	local d = Profile.get()
+	local enemies = Stages.enemies(fight, d.level)
+	if #enemies == 0 then
+		local fights = Stages.fights(battle)
+		local base = Stages.baseFight(zn, battle, table.find(fights, fight) or 1)
+		if base then enemies = Stages.enemies(base, d.level) end
+	end
+	if #enemies == 0 then show(current) return end
+	if current ~= "Fight" then returnTo = current end
+	current = "Fight"
 	local total = { money = 0, exp = 0, bonus = 0, prize = 0,
 		perfect = 0, firstStrike = 0, maxCombo = 0, shock = 0, style = 0, styleCoins = 0 }
-	-- the end-of-fight screen after a win, or after a loss with Retry (EndFightContent's RetryButton)
-	local function finish(levels: number, lost: { timeout: boolean? }?)
-		Profile.save()
-		if lost then
-			Menus.endFight({ win = false, timeout = lost.timeout }, total, levels, function() Menus.map(zone) end,
-				function() Game.playBattle(zone, battle) end)
-		else
-			Menus.rewards(total, levels, function() Menus.map(zone) end)
-		end
-	end
 	local levels = 0
-	local function fightAt(i: number, health: number?)
-		local fight = fights[i]
-		local enemies = Stages.enemies(fight, d.level)
-		if #enemies == 0 then
-			local base = Stages.baseFight(zone, battle, i)
-			if base then enemies = Stages.enemies(base, d.level) end
+	local enemyIdx = 1
+
+	local function back()
+		Quests.changeTab("Fight", returnTo, function() show(returnTo) end)
+	end
+
+	local function finish(won: boolean, timeout: boolean?)
+		if won then
+			local n = table.find(Stages.fights(battle), fight) or 0
+			if n > Profile.progress(zn, bn) then Profile.setProgress(zn, bn, n) end
 		end
-		if #enemies == 0 then finish(levels) return end
-		local enemyIdx = 1
-		local function nextEnemy(hp: number?)
-			local enemy = enemies[enemyIdx]
-			playOne(zone, battle, fight, enemy, hp, function(result, hpLeft)
-				if result.winner == 1 then
-					local r = Menus.reward(fight, string.find(name, "_ECLIPSEMODE") ~= nil)
-					if t == "SURVIVAL" then
-						local rewards = Xml.all(Xml.first(fight, "Rewards"), "Reward")
-						local rr = rewards[enemyIdx + 1]
-						if rr then r = { money = Xml.num(rr, "Money", 0), exp = Xml.num(rr, "Exp", 0), bonus = 0, items = {} } end
-					end
-					-- the end screen's bonuses, paid in coins (internalSettings: Perfect 5, FirstStrike 2,
-					-- ComboCount 1 per hit of the longest combo, Shock 3; style 3 per level reached)
-					local st = result.stats or {}
-					local function n(t: any): number return t and t[1] or 0 end
-					local b = { perfect = n(st.perfectRounds), firstStrike = n(st.firstStrikes), maxCombo = n(st.maxCombo),
-						shock = n(st.shocks), style = n(st.bestStyle) }
-					total.prize += r.money or 0
-					total.perfect += b.perfect
-					total.firstStrike += b.firstStrike
-					total.maxCombo = math.max(total.maxCombo, b.maxCombo)
-					total.shock += b.shock
-					total.style = math.max(total.style, b.style)
-					total.styleCoins += b.style * 3
-					r = table.clone(r)
-					r.money = (r.money or 0) + b.perfect * 5 + b.firstStrike * 2 + b.maxCombo + b.shock * 3 + b.style * 3
-					d.money += r.money or 0
-					d.bonus += r.bonus or 0
-					total.money += r.money or 0
-					total.exp += r.exp or 0
-					total.bonus += r.bonus or 0
-					for _, it in r.items or {} do Profile.give(it) end
-					levels += Profile.addExp(r.exp or 0)
-					if enemyIdx < #enemies then
-						enemyIdx += 1
-						local rec = Xml.num(fight, "HealthRecovery", 0) :: number
-						nextEnemy(math.min(1, hpLeft + rec))
-						return
-					end
-					if i > Profile.progress(zone, name) then Profile.setProgress(zone, name, i) end
-					if (t == "BOSSES") and i == #fights then
-						-- the act's boss beaten: next act opens
-						local acts = {}
-						for _, z in Stages.zones() do if Xml.attr(z, "FileName") then table.insert(acts, Xml.attr(z, "Name")) end end
-						local at = table.find(acts, zone)
-						if at and acts[at + 1] then d.flags["zone_" .. acts[at + 1]] = true end
-					end
-					if CHAIN[t] and i < #fights then
-						Profile.save()
-						fightAt(i + 1)
-						return
-					end
-					finish(levels)
-				else
-					-- nobody knocked out: the round clock decided it (Label_Timesup)
-					local h = result.health
-					finish(levels, { timeout = h ~= nil and h[1] > 0 and h[2] > 0 })
-				end
+		Quests.fightEnd(id, won, levels > 0)
+		Profile.save()
+		-- the tutorial's practice fights end straight back in the scene they came from
+		if t == "TUTORIAL" or t == "DUMMY" then
+			back()
+			return
+		end
+		if won then
+			Menus.endFight({ win = true }, total, levels, back)
+		else
+			Menus.endFight({ win = false, timeout = timeout }, total, levels, back, function()
+				Quests.fightEnter(id, eclipse, function() Game.playFight(id) end)
 			end)
 		end
-		nextEnemy(health)
 	end
-	fightAt(start)
+
+	local function nextEnemy(startHealth: number?)
+		local enemy = enemies[enemyIdx]
+		local rules = Stages.rules(fight, eclipse)
+		local player = Profile.warrior()
+		player.add = rules.player
+		enemy.add = rules.bot
+		enemy.alignTo = Warrior.build(player).attributes
+		local fightRules, overrides = Rules.prepare(rules.raw, { player, enemy }, eclipse)
+		local function start()
+			Menus.hide()
+			local screen
+			screen = FightScreen.run({
+				player = player, enemy = enemy,
+				location = Xml.attr(battle, "Location"), music = Xml.attr(fight, "Music") or Xml.attr(battle, "Music"),
+				rounds = overrides.rounds or Xml.num(fight, "Rounds", 2),
+				roundTime = overrides.roundTime or Xml.num(fight, "RoundTime", 99),
+				enemyTactic = enemy.tactic, battleType = t,
+				rules = fightRules, timeoutWinner = overrides.timeoutWinner, invertJoystick = overrides.invertJoystick,
+				noHealthBar = overrides.noHealthBar, darkness = overrides.darkness,
+				startHealth = startHealth and { startHealth, 1 } or nil,
+				onEnd = function(result)
+					task.defer(function()
+						local hpLeft = screen.fight and screen.fight.engines[1].health or 1
+						screen.destroy()
+						if result.winner ~= 1 then
+							-- nobody knocked out: the round clock decided it (Label_Timesup)
+							local h = result.health
+							finish(false, h ~= nil and h[1] > 0 and h[2] > 0)
+							return
+						end
+						local r = Menus.reward(fight, eclipse)
+						if t == "SURVIVAL" then
+							local rewards = Xml.all(Xml.first(fight, "Rewards"), "Reward")
+							local rr = rewards[enemyIdx + 1]
+							if rr then r = { money = Xml.num(rr, "Money", 0), exp = Xml.num(rr, "Exp", 0), bonus = 0, items = {} } end
+						end
+						local b = bonuses(result)
+						total.prize += r.money or 0
+						total.perfect += b.perfect
+						total.firstStrike += b.firstStrike
+						total.maxCombo = math.max(total.maxCombo, b.maxCombo)
+						total.shock += b.shock
+						total.style = math.max(total.style, b.style)
+						total.styleCoins += b.style * 3
+						local money = (r.money or 0) + b.perfect * 5 + b.firstStrike * 2 + b.maxCombo + b.shock * 3 + b.style * 3
+						d.money += money
+						d.bonus += r.bonus or 0
+						total.money += money
+						total.exp += r.exp or 0
+						total.bonus += r.bonus or 0
+						for _, it in r.items or {} do Profile.give(it) end
+						levels += Profile.addExp(r.exp or 0)
+						if enemyIdx < #enemies then
+							enemyIdx += 1
+							local rec = Xml.num(fight, "HealthRecovery", 0) :: number
+							nextEnemy(math.min(1, hpLeft + rec))
+							return
+						end
+						finish(true)
+					end)
+				end,
+			})
+		end
+		if enemyIdx == 1 and t ~= "DUMMY" then
+			Menus.vs(player, enemy, 2.2, start)
+		else
+			start()
+		end
+	end
+	nextEnemy(nil)
+end
+
+-- FIGHT on the map
+function Game.playBattle(zone: string, battle: any)
+	local id = nextFight(zone, battle)
+	if not id then return end
+	local eclipse = string.find(Xml.attr(battle, "Name") or "", "_ECLIPSEMODE") ~= nil
+	Quests.fightEnter(id, eclipse, function() Game.playFight(id) end)
 end
 
 -- Training in the dojo: you and the dummy with any weapon of the arsenal, no timer, the dummy can't lose
@@ -217,6 +248,43 @@ function Game.training(mine: any, dummy: any)
 	})
 end
 
+---------------------------------------------------------------- what the quests drive
+
+local refreshQueued = false
+Quests.host = {
+	scene = function() return current end,
+	changeScene = function(dest: string)
+		if dest == "Fight" or dest == "" or dest == "0" then return end
+		show(dest)
+	end,
+	openShop = function(tab: string?, item: string?)
+		if tab == "Helmet" then tab = "Helm" end
+		show("Shop", { tab = tab, item = item })
+	end,
+	fight = function(id: string) Game.playFight(id) end,
+	mapFocus = function(battle: string)
+		local zone, name = string.match(battle, "^([^|]*)|([^|]*)")
+		if zone then
+			Profile.get().zone = zone
+			Menus.focus(zone, name :: string)
+			if current == "Map" then Menus.map(zone) end
+		end
+	end,
+	setZone = function(zone: string)
+		Profile.get().zone = zone
+	end,
+	actScreen = function(text: string) Menus.actScreen(text) end,
+	tutorial = function(_step: string) end,
+	refresh = function()
+		if refreshQueued then return end
+		refreshQueued = true
+		task.defer(function()
+			refreshQueued = false
+			if current == "Map" then Menus.map(Profile.get().zone) end
+		end)
+	end,
+}
+
 function Game.start()
 	hideWorld()
 	flatLighting()
@@ -225,7 +293,19 @@ function Game.start()
 	Menus.applyVolumes()
 	Menus.onPlay = function(zone, battle) Game.playBattle(zone, battle) end
 	Menus.onTraining = function(mine, dummy) Game.training(mine, dummy) end
-	Menus.dojo()
+	Menus.onNavigate = function(scene) Game.go(scene) end
+	local function boot()
+		current = "Loader"
+		Quests.start(function()
+			-- the game opens on the dojo; the first scene change comes from the loader
+			Quests.changeTab("Loader", "Dojo", function() show("Dojo") end)
+		end)
+	end
+	Menus.onRestart = function()
+		Quests.reset()
+		boot()
+	end
+	boot()
 end
 
 return Game
