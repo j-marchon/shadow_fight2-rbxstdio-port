@@ -91,7 +91,9 @@ function FightScreen.run(config: any): any
 			local g = controls:FindFirstChild(group)
 			if g then
 				local shrink = Instance.new("UIScale")
-				shrink.Scale = 0.75
+				-- Controller Scale in the advanced settings: Large is this size, Small a step down
+				local st = require(script.Parent.Profile).get().settings
+				shrink.Scale = st.controllerScale == "Small" and 0.6 or 0.75
 				shrink.Parent = g
 			end
 		end

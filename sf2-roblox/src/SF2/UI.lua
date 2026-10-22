@@ -244,6 +244,9 @@ local function build(node: any, parent: Instance, order: number, paths: { [strin
 		t.TextXAlignment = ALIGN_X[h or "Center"] or Enum.TextXAlignment.Center
 		t.TextYAlignment = ALIGN_Y[v or "Middle"] or Enum.TextYAlignment.Center
 		if txt.k then t:SetAttribute("locKey", txt.k) end
+		-- best fit's lower bound and Unity's line spacing, read by SF2.Text
+		if txt.m then t:SetAttribute("minTextSize", txt.m) end
+		if txt.s then t:SetAttribute("lineSpacing", txt.s) end
 		-- Unity text overflows its rect by default; a label on a zero-width rect (TextAndMoneyLine's) still
 		-- shows, spreading from the pivot the way its alignment says
 		local r = node.r

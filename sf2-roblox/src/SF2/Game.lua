@@ -111,7 +111,8 @@ function Game.playBattle(zone: string, battle: any)
 	if start > #fights then
 		start = math.random(1, #fights) -- all won: replay one
 	end
-	local total = { money = 0, exp = 0, bonus = 0 }
+	local total = { money = 0, exp = 0, bonus = 0, prize = 0,
+		perfect = 0, firstStrike = 0, maxCombo = 0, shock = 0, style = 0, styleCoins = 0 }
 	-- the end-of-fight screen after a win, or after a loss with Retry (EndFightContent's RetryButton)
 	local function finish(levels: number, lost: { timeout: boolean? }?)
 		Profile.save()
@@ -142,6 +143,21 @@ function Game.playBattle(zone: string, battle: any)
 						local rr = rewards[enemyIdx + 1]
 						if rr then r = { money = Xml.num(rr, "Money", 0), exp = Xml.num(rr, "Exp", 0), bonus = 0, items = {} } end
 					end
+					-- the end screen's bonuses, paid in coins (internalSettings: Perfect 5, FirstStrike 2,
+					-- ComboCount 1 per hit of the longest combo, Shock 3; style 3 per level reached)
+					local st = result.stats or {}
+					local function n(t: any): number return t and t[1] or 0 end
+					local b = { perfect = n(st.perfectRounds), firstStrike = n(st.firstStrikes), maxCombo = n(st.maxCombo),
+						shock = n(st.shocks), style = n(st.bestStyle) }
+					total.prize += r.money or 0
+					total.perfect += b.perfect
+					total.firstStrike += b.firstStrike
+					total.maxCombo = math.max(total.maxCombo, b.maxCombo)
+					total.shock += b.shock
+					total.style = math.max(total.style, b.style)
+					total.styleCoins += b.style * 3
+					r = table.clone(r)
+					r.money = (r.money or 0) + b.perfect * 5 + b.firstStrike * 2 + b.maxCombo + b.shock * 3 + b.style * 3
 					d.money += r.money or 0
 					d.bonus += r.bonus or 0
 					total.money += r.money or 0
@@ -206,7 +222,7 @@ function Game.start()
 	flatLighting()
 	local d = Profile.load()
 	Xml.setLanguage(d.settings.language or "eng")
-	Sound.setVolumes(d.settings.sound == 0 and 0 or 1, d.settings.music == 0 and 0 or 0.6)
+	Menus.applyVolumes()
 	Menus.onPlay = function(zone, battle) Game.playBattle(zone, battle) end
 	Menus.onTraining = function(mine, dummy) Game.training(mine, dummy) end
 	Menus.dojo()

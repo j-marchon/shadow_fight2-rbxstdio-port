@@ -94,7 +94,14 @@ function Fight.new(opts: any)
 		paused = false,
 		pauseTicks = 0,
 		controllers = {},
-		stats = { hits = { 0, 0 }, damage = { 0, 0 }, perfect = { true, true } },
+		-- the end screen's counters (EndFightContent): perfect rounds, first strikes, the longest combo
+		-- (internalSettings <Combo MinHits="3" Time="90">), shocks, and the best style level reached
+		-- (<StyleLevels StylePerHit="0.5" DecreaseSpeed="0.08" Penalty="2">, Hard..Fantastic)
+		stats = { hits = { 0, 0 }, damage = { 0, 0 }, perfect = { true, true },
+			perfectRounds = { 0, 0 }, firstStrikes = { 0, 0 }, maxCombo = { 0, 0 }, shocks = { 0, 0 },
+			style = { 0, 0 }, bestStyle = { 0, 0 } },
+		combo = { count = { 0, 0 }, last = { -1e9, -1e9 } },
+		firstStruck = false,
 		noBulletsRefill = opts.noBulletsRefill or {
 			opts.rules and opts.rules[1] and opts.rules[1].noBulletsRefill or false,
 			opts.rules and opts.rules[2] and opts.rules[2].noBulletsRefill or false,
@@ -138,6 +145,7 @@ end
 
 function Fight.startRound(self: any)
 	self.round += 1
+	self.firstStruck = false
 	for _, c in table.clone(self.children) do self:removeChild(c) end
 	self.stage = "StartStance"
 	self.stageTicks = 0
@@ -203,6 +211,9 @@ function Fight.endRound(self: any, winner: number, reason: string)
 		end
 	end
 	if winner > 0 then self.wins[winner] += 1 end
+	if winner > 0 and self.engines[winner].health >= 1 then
+		self.stats.perfectRounds[winner] += 1
+	end
 	self.lastRound = { winner = winner, reason = reason }
 	self:setStage("EndStance")
 	self:hook("roundEnd", winner, reason, self.round)
@@ -439,7 +450,24 @@ function Fight.onHit(self: any, att: any, tgt: any, hit: any)
 	if a.rule.lifesteal and not hit.blocked then
 		a.health = math.min(1, a.health + hit.damage * a.rule.lifesteal)
 	end
-	if not hit.blocked then self.stats.perfect[ti] = false end
+	if not hit.blocked then
+		self.stats.perfect[ti] = false
+		local st = self.stats
+		if not self.firstStruck then
+			self.firstStruck = true
+			st.firstStrikes[ai] += 1
+		end
+		if hit.shock then st.shocks[ai] += 1 end
+		-- a combo: unblocked hits by one side, each within 90 ticks of the last, counting from 3
+		local c = self.combo
+		c.count[ai] = (self.ticks - c.last[ai] <= 90) and c.count[ai] + 1 or 1
+		c.last[ai] = self.ticks
+		c.count[ti] = 0
+		if c.count[ai] >= 3 then st.maxCombo[ai] = math.max(st.maxCombo[ai], c.count[ai]) end
+		st.style[ai] = math.min(5.99, st.style[ai] + 0.5)
+		st.style[ti] = math.max(0, st.style[ti] - 2)
+		st.bestStyle[ai] = math.max(st.bestStyle[ai], math.floor(st.style[ai]))
+	end
 	-- magic charge
 	local mv = att.move
 	if not (mv and mv.noMagicRecharge) then
@@ -479,6 +507,9 @@ function Fight.tick(self: any)
 	end
 	self.ticks += 1
 	self.stageTicks += 1
+	for i = 1, 2 do
+		self.stats.style[i] = math.max(0, self.stats.style[i] - 0.08 / 60)
+	end
 	for i, ctl in self.controllers do
 		ctl(self, i)
 	end

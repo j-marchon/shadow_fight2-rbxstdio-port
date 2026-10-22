@@ -93,10 +93,10 @@ local function lineWidth(m: Metrics, line: { number }, scale: number): number
 	return w
 end
 
-local function fits(m: Metrics, cps: { number }, size: number, box: Vector2, wrap: boolean): boolean
+local function fits(m: Metrics, cps: { number }, size: number, box: Vector2, wrap: boolean, spacing: number): boolean
 	local scale = size / m.px
 	local ls = lines(m, cps, scale, wrap and box.X or nil)
-	if #ls * (m.ascent + m.descent) * scale > box.Y + 0.5 then return false end
+	if #ls * (m.ascent + m.descent) * scale * spacing > box.Y + 0.5 then return false end
 	for _, l in ls do
 		if lineWidth(m, l, scale) > box.X + 0.5 then return false end
 	end
@@ -172,26 +172,40 @@ function Text.attach(label: TextLabel, font: string): boolean
 		if #cps == 0 or alpha >= 1 then return end
 		local box = boxOf(label)
 		local size = label.TextSize
+		local spacing = label:GetAttribute("lineSpacing") or 1
 		if label.TextScaled then
 			local lim = label:FindFirstChildOfClass("UITextSizeConstraint")
 			local hi = math.floor(lim and lim.MaxTextSize or size)
-			local lo = 1
+			-- Unity's best fit stops at minSize even when the text still doesn't fit
+			local lo = math.max(1, math.floor(label:GetAttribute("minTextSize") or 1))
 			if box.X > 0 and box.Y > 0 then
 				while lo < hi do
 					local mid = (lo + hi + 1) // 2
-					if fits(fm, cps, mid, box, label.TextWrapped) then lo = mid else hi = mid - 1 end
+					if fits(fm, cps, mid, box, label.TextWrapped, spacing) then lo = mid else hi = mid - 1 end
 				end
 			end
-			size = lo
+			size = math.max(lo, 1)
 		end
 		local scale = size / fm.px
-		local lineH = (fm.ascent + fm.descent) * scale
+		local lineH = (fm.ascent + fm.descent) * scale * spacing
 		local ls = lines(fm, cps, scale, label.TextWrapped and box.X or nil)
 		local ax = X_ALIGN[label.TextXAlignment] or 0.5
 		local ay = Y_ALIGN[label.TextYAlignment] or 0.5
 		local top = (box.Y - #ls * lineH) * ay
 		local colour = label.TextColor3
 		local z = label.ZIndex
+		-- an outline (glyphOutline attribute: the map's battle names have a pale halo) is the same glyphs
+		-- drawn underneath at eight offsets
+		local outline = label:GetAttribute("glyphOutline")
+		local thick = math.max(2, size * 0.05)
+		local offsets = { Vector2.zero }
+		if typeof(outline) == "Color3" then
+			offsets = {}
+			for a = 0, 7 do
+				table.insert(offsets, Vector2.new(math.cos(a * math.pi / 4), math.sin(a * math.pi / 4)) * thick)
+			end
+			table.insert(offsets, Vector2.zero)
+		end
 		for i, l in ls do
 			local x = (box.X - lineWidth(fm, l, scale)) * ax
 			local baseline = top + (i - 1) * lineH + fm.ascent * scale
@@ -201,17 +215,20 @@ function Text.attach(label: TextLabel, font: string): boolean
 					local tex = "Font_" .. (label:GetAttribute("glyphFont") or font) .. "_" .. g[1]
 					local content = Images.content(tex)
 					if content then
-						local img = Instance.new("ImageLabel")
-						img.BackgroundTransparency = 1
-						img.ImageContent = content
-						img.ImageRectOffset = Vector2.new(g[2], g[3])
-						img.ImageRectSize = Vector2.new(g[4], g[5])
-						img.ImageColor3 = colour
-						img.ImageTransparency = alpha
-						img.Position = UDim2.fromOffset(x + g[6] * scale, baseline + g[7] * scale)
-						img.Size = UDim2.fromOffset(g[4] * scale, g[5] * scale)
-						img.ZIndex = z
-						img.Parent = holder
+						for k, off in offsets do
+							local main = k == #offsets
+							local img = Instance.new("ImageLabel")
+							img.BackgroundTransparency = 1
+							img.ImageContent = content
+							img.ImageRectOffset = Vector2.new(g[2], g[3])
+							img.ImageRectSize = Vector2.new(g[4], g[5])
+							img.ImageColor3 = main and colour or outline
+							img.ImageTransparency = alpha
+							img.Position = UDim2.fromOffset(x + g[6] * scale + off.X, baseline + g[7] * scale + off.Y)
+							img.Size = UDim2.fromOffset(g[4] * scale, g[5] * scale)
+							img.ZIndex = z
+							img.Parent = holder
+						end
 					end
 				end
 				x += g[8] * scale
@@ -223,6 +240,7 @@ function Text.attach(label: TextLabel, font: string): boolean
 		pending = true
 		task.defer(render)
 	end
+	label:GetAttributeChangedSignal("glyphOutline"):Connect(function() schedule() end)
 	for _, p in { "Text", "TextSize", "TextColor3", "TextXAlignment", "TextYAlignment", "TextScaled", "TextWrapped", "AbsoluteSize", "ZIndex" } do
 		label:GetPropertyChangedSignal(p):Connect(function()
 			holder.ZIndex = label.ZIndex

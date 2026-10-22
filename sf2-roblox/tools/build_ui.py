@@ -6,7 +6,8 @@ Node: {n=name, a=active, r=[anchorMin x,y, anchorMax x,y, anchoredPosition x,y, 
   lg: {t=H/V/G, p=[padding L,R,T,B], a=childAlignment (0..8), s=spacing, c=[controlW,H], e=[expandW,H], r=reverse}
       grid: {t=G, p, a, cs=[cell w,h], sp=[spacing x,y], k=[constraint, count]}
   image: {s=sprite, t=type, c=[r,g,b,a], f=[fillMethod, fillAmount, fillOrigin], d=[border L,B,R,T], p=preserveAspect}
-  text:  {t=text, k=locKey, z=fontSize, l=alignment, c=[r,g,b,a], f=font, u=upper, w=bestFit}
+  text:  {t=text, k=locKey, z=fontSize (best fit: its max), l=alignment, c=[r,g,b,a], f=font, u=upper, w=bestFit,
+          m=best-fit min size, s=line spacing}
 Run: python -I tools/build_ui.py
 """
 import json, os, re, sys
@@ -60,8 +61,12 @@ def node(n):
                          'k': [f.get('m_Constraint', 0), f.get('m_ConstraintCount', 1)]}
         elif cls == 'LayoutElement' and f:
             # [ignore, minW, minH, prefW, prefH, flexW, flexH]; -1 = unset, as in Unity
-            out['le'] = [f.get('m_IgnoreLayout', 0)] + [r4(f.get(k, -1)) for k in (
+            le = [f.get('m_IgnoreLayout', 0)] + [r4(f.get(k, -1)) for k in (
                 'm_MinWidth', 'm_MinHeight', 'm_PreferredWidth', 'm_PreferredHeight', 'm_FlexibleWidth', 'm_FlexibleHeight')]
+            # a node may carry two LayoutElements: each value comes from whichever sets it
+            if 'le' in out:
+                le = [max(out['le'][0], le[0])] + [b if b >= 0 else a for a, b in zip(out['le'][1:], le[1:])]
+            out['le'] = le
         elif cls == 'ContentSizeFitter' and f:
             out['cf'] = [f.get('m_HorizontalFit', 0), f.get('m_VerticalFit', 0)]
         elif cls in ('RectMask2D', 'Mask'):
@@ -84,9 +89,26 @@ def node(n):
         elif kind == 'RawImage' and 'i' not in out:
             out['i'] = {'s': ui.get('texture') or '', 'c': [1, 1, 1, 1]}
         elif kind in ('Text', 'TextMeshProUGUI') and 'x' not in out:
-            txt = {'t': ui.get('text') or '', 'z': ui.get('labelFontSize') or ui.get('fontSize') or 30,
+            # Best fit sizes the text between minSize and maxSize, whatever fontSize says (LabelAlias's
+            # labelFontSize -- 150 on InfoBattle's title -- only applies without it)
+            if ui.get('bestFit'):
+                size = ui.get('maxSize') or ui.get('fontSize') or 30
+            elif (comp.get('fields') or {}).get('_useLabelFontSize', 1):
+                size = ui.get('labelFontSize') or ui.get('fontSize') or 30
+            else:
+                size = ui.get('fontSize') or 30
+            font = ui.get('font') or ''
+            # with useLocalizationFont the label takes the language's font (AGOpusBold for the Latin and
+            # Cyrillic languages) over its own -- the original's coin counts and battle names are AGOpusBold
+            if ui.get('useLocalizationFont'):
+                font = ''
+            txt = {'t': ui.get('text') or '', 'z': size,
                    'l': ui.get('alignment') or 'MiddleCenter', 'c': [r4(x) for x in ui.get('color', [1, 1, 1, 1])],
-                   'f': ui.get('font') or ''}
+                   'f': font}
+            if ui.get('bestFit') and ui.get('minSize'):
+                txt['m'] = ui['minSize']
+            if ui.get('lineSpacing') not in (None, 1, 1.0):
+                txt['s'] = r4(ui['lineSpacing'])
             if ui.get('locKey'):
                 txt['k'] = ui['locKey']
             if ui.get('toUpperCase'):

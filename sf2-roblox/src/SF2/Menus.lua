@@ -73,7 +73,11 @@ local function clear(): Frame
 end
 
 -- 3D backdrop: a location with the player's warrior in the middle, camera fixed on it
-local function setScene(locationName: string?, showWarrior: boolean, def: any?)
+-- where the shop stands the warrior: left of the scroll, as in the original (game units; 1 canvas unit is
+-- a third of one at the menu camera)
+local SHOP_WARRIOR_X = -260
+
+local function setScene(locationName: string?, showWarrior: boolean, def: any?, warriorX: number?)
 	if scene then
 		if scene.showcase then scene.showcase.destroy() end
 		if scene.location then scene.location:destroy() end
@@ -92,7 +96,7 @@ local function setScene(locationName: string?, showWarrior: boolean, def: any?)
 	folder.Name = "SF2MenuScene"
 	folder.Parent = workspace
 	local loc = Location.new(locationName, folder)
-	local sc = showWarrior and Showcase.new(def or Profile.warrior(), folder, 0, 1) or nil
+	local sc = showWarrior and Showcase.new(def or Profile.warrior(), folder, warriorX or 0, 1) or nil
 	local cam = workspace.CurrentCamera
 	local dist = (256 / 40) / math.tan(math.rad(10))
 	local conn = game:GetService("RunService").RenderStepped:Connect(function(dt)
@@ -208,7 +212,7 @@ local function mainMenu(parent: Instance, section: string): any
 	-- pieces with nothing behind them here: energy (raid/event modes), the raid rating, the forge
 	-- materials, the tutorial's skip button and input blocker, the ruby sale badge and the server value
 	hideAll(m, {
-		"Content/StaticPanel/EnergyPanel", "Content/StaticPanel/RaidRaiting", "Content/MaterialsPanel",
+		"Content/StaticPanel/RaidRaiting", "Content/MaterialsPanel",
 		"SkipTutBtn", "MenuBlocker", "Content/SceneTitlePanel",
 		"Content/StaticPanel/MoneyPanel/BonusInfoGroup/RubyServerValue",
 		"Content/StaticPanel/MoneyPanel/BtnRubyInfo/RubySale",
@@ -245,6 +249,15 @@ local function mainMenu(parent: Instance, section: string): any
 			t.ZIndex = host.ZIndex
 			t.Parent = host
 		end
+	end
+
+	-- energy: off in the prefab, shown in every menu scene. The port has no energy (fights cost nothing),
+	-- so the bar stays full; the unlimited-energy icon is the original's for a paid state.
+	local energy = m:find("Content/StaticPanel/EnergyPanel")
+	if energy then
+		energy.Visible = true
+		local maxIcon = m:find("Content/StaticPanel/EnergyPanel/EnergyMaxIcon")
+		if maxIcon then maxIcon.Visible = false end
 	end
 
 	-- coins and gems
@@ -545,7 +558,7 @@ local function fillInfoBattle(info: any, zoneName: string, b: any, eclipse: bool
 	end
 	if panel then panel.Visible = true end
 	hideAll(info, { "Panel/btnSkipFight", "Panel/btnRemoveFight" })
-	setText(info:find("Panel/lblBattleName"), string.upper(loc(Xml.attr(b, "Title"))))
+	setText(info:find("Panel/lblBattleName"), loc(Xml.attr(b, "Title")))
 	local img = info:find("Panel/imgBattle")
 	if img then
 		UI.setSprite(img, Xml.attr(b, "Preview"))
@@ -617,23 +630,32 @@ local function fillInfoBattle(info: any, zoneName: string, b: any, eclipse: bool
 				local fmtS = Xml.text("stage")
 				setText(tour, (string.gsub(string.gsub(fmtS, "{0}", tostring(nextIdx)), "{1}", tostring(#fights))))
 			end
-			-- ProgressBricksPanel: one brick per fight, lit once won
+			-- ProgressBricksPanel: one IndicatorFight (96x96, indicatorOn / Off) per fight in centred rows,
+			-- overlapping by 5; scale 0.71 from six fights up. The original's references show rows of 8.
 			local bricks = c:FindFirstChild("Bricks")
 			if bricks and #fights > 0 then
-				local row = Instance.new("Frame")
-				row.Name = "BrickRow"
-				row.BackgroundTransparency = 1
-				row.AnchorPoint = Vector2.new(0.5, 0.5)
-				row.Position = UDim2.fromScale(0.5, 0.5)
-				row.Size = UDim2.new(0, 480, 0, 60)
-				row.ZIndex = 5
-				row.Parent = bricks
 				local n = #fights
-				local w = math.min(60, 480 / n)
+				local k = n < 6 and 1 or 0.71
+				local cell = 96 * k
+				local perRow = math.min(n, 8)
+				local rows = math.ceil(n / perRow)
+				local grid = Instance.new("Frame")
+				grid.Name = "Indicators"
+				grid.BackgroundTransparency = 1
+				grid.AnchorPoint = Vector2.new(0.5, 0)
+				grid.Position = UDim2.fromScale(0.5, 0)
+				grid.Size = UDim2.new(1, 0, 0, cell * rows)
+				grid.ZIndex = 5
+				grid.Parent = bricks
 				for i = 1, n do
-					local brick = W.image(row, "MiscSprites.brick", UDim2.new(0.5, (i - (n + 1) / 2) * w, 0.5, 0), Vector2.new(w - 4, 44))
-					brick.ScaleType = Enum.ScaleType.Stretch
-					brick.ImageTransparency = i <= done and 0 or 0.65
+					local row = (i - 1) // perRow
+					local inRow = (row == rows - 1) and (n - row * perRow) or perRow
+					local col = (i - 1) % perRow
+					local width = cell * inRow - 5 * k * (inRow - 1)
+					local x = -width / 2 + cell / 2 + col * (cell - 5 * k)
+					local ind = W.image(grid, i <= done and "MiscSprites.indicatorOn" or "MiscSprites.indicatorOff",
+						UDim2.new(0.5, x, 0, cell / 2 + row * cell), Vector2.new(cell, cell))
+					ind.ScaleType = Enum.ScaleType.Fit
 				end
 			end
 			fillDifficulty(c:FindFirstChild("Difficulty"), fight)
@@ -669,7 +691,8 @@ function Menus.map(zoneName: string?)
 	setScene(nil, false)
 	local backdrop = Instance.new("Frame")
 	backdrop.Name = "Backdrop"
-	backdrop.BackgroundColor3 = Color3.new(0, 0, 0)
+	-- the [Map] scene's own Image: the dark brown under the strip below the map
+	backdrop.BackgroundColor3 = Color3.new(0.0627, 0.0275, 0.0118)
 	backdrop.BorderSizePixel = 0
 	backdrop.Size = UDim2.fromScale(1, 1)
 	backdrop.Parent = s
@@ -734,8 +757,13 @@ function Menus.map(zoneName: string?)
 				local x, y = Xml.num(b, "X", 0) :: number, Xml.num(b, "Y", 0) :: number
 				btn.Position = UDim2.new(0.5, 2 * x, 0.5, -2 * y)
 				btn.ScaleType = Enum.ScaleType.Fit
+				-- the battle's name under its button, in capitals, dark with a pale halo
 				local nm = bb:find("Name")
-				if nm then nm.Visible = false end
+				if nm then
+					setText(nm, string.upper(loc(Xml.attr(b, "Title"))))
+					local t = textOf(nm)
+					if t then t:SetAttribute("glyphOutline", Color3.fromRGB(236, 222, 190)) end
+				end
 				buttons[b] = btn
 			end
 		end
@@ -849,18 +877,23 @@ function Menus.map(zoneName: string?)
 		for _, c in conns do c:Disconnect() end
 	end)
 
-	---------------- MapButtonsPanel: the act's Eclipse toggle sits in its actions row
+	---------------- the act's Eclipse toggle: a sun (off) or the eclipse (on), top right of the map just
+	-- under the top bar's + and left of the battle scroll, as in the original. With Eclipse on the map is
+	-- darkened. MapButtonsPanel's actions row (bottom left) holds video/offer buttons with nothing behind them.
 	local row = actions and actions:find("ActionsPanel")
-	if row then
-		row.Visible = Menus.eclipseOpen(zn)
-		if row.Visible then
-			local e = W.button(row, "MiscSprites.eclipse", nil, UDim2.fromScale(0.5, 0.5), Vector2.new(200, 200), function()
+	if row then row.Visible = false end
+	if Menus.eclipseOpen(zn) then
+		local e = W.button(s, eclipse and "MiscSprites.eclipse" or "MiscSprites.sun_icon", nil,
+			UDim2.new(1, -840, 0, 330), Vector2.new(150, 150), function()
 				d.eclipse[zn] = not eclipse
 				Profile.save()
 				Menus.map(zn)
 			end)
-			e.ImageTransparency = eclipse and 0 or 0.45
-		end
+		e.ScaleType = Enum.ScaleType.Fit
+		e.ZIndex = 20
+	end
+	if eclipse and item then
+		(item.root :: any).ImageColor3 = Color3.fromRGB(150, 110, 80)
 	end
 	Sound.music("act")
 end
@@ -998,22 +1031,39 @@ function Menus.endFight(result: { win: boolean, timeout: boolean? }, r: any, lev
 			return b
 		end
 		if result.win then
-			-- TextAndMoneyLine: "PRIZE" with the fight's coins (and gems when it gives any)
-			local prize = line("TextAndMoneyLine")
-			if prize then
-				setText(prize:find("Text"), Xml.text("goldPrize"))
-				local ruby = prize:find("PrizePanel/RubyCount")
-				if ruby then ruby.Visible = (r.bonus or 0) > 0 end
-				setText(prize:find("PrizePanel/RubyCount/Text"), fmt(r.bonus or 0))
-				local icon = prize:find("PrizePanel/MoneyCount/Icon")
+			-- TextAndMoneyLine rows: PRIZE, PERFECT xN, FIRST STRIKE xN, MAX COMBO xN, SHOCK xN, then the style
+			-- reached (goldHardStyle ... goldFantasticStyle), each with its coins; ExpAndMoneyLine last
+			local function moneyLine(text: string, coins: number)
+				local l = line("TextAndMoneyLine")
+				if not l then return end
+				setText(l:find("Text"), text)
+				local ruby = l:find("PrizePanel/RubyCount")
+				if ruby then ruby.Visible = false end
+				local icon = l:find("PrizePanel/MoneyCount/Icon")
 				if icon then UI.setSprite(icon, "MiscSprites.gold") end
-				setText(prize:find("PrizePanel/MoneyCount/Text"), fmt(r.money or 0))
+				setText(l:find("PrizePanel/MoneyCount/Text"), fmt(coins))
+				l:relayout()
+			end
+			local function times(key: string, n: number): string
+				return (string.gsub(Xml.text(key), "{0}", tostring(n)))
+			end
+			moneyLine(Xml.text("goldPrize"), r.prize or r.money or 0)
+			if r.perfect then
+				moneyLine(times("goldPerfect", r.perfect), r.perfect * 5)
+				moneyLine(times("goldFirstStrike", r.firstStrike or 0), (r.firstStrike or 0) * 2)
+				moneyLine(times("goldCombo", r.maxCombo or 0), r.maxCombo or 0)
+				moneyLine(times("goldShock", r.shock or 0), (r.shock or 0) * 3)
+				-- level 0 (Start) reads PASSIVE STYLE; the strings spell Aggressive "Agressive"
+				local STYLES = { [0] = "goldTurtleStyle", "goldHardStyle", "goldBrutalStyle", "goldAgressiveStyle",
+					"goldCrazyStyle", "goldFantasticStyle" }
+				moneyLine(Xml.text(STYLES[math.clamp(r.style or 0, 0, 5)]), r.styleCoins or 0)
 			end
 			-- ExpAndMoneyLine: the experience gained and the coins total
 			local total = line("ExpAndMoneyLine")
 			if total then
 				setText(total:find("Exp/Text"), fmt(r.exp or 0))
 				setText(total:find("Prize/MoneyCount/Text"), fmt(r.money or 0))
+				total:relayout()
 			end
 		end
 		local buttons = c:find("ButtonLine")
@@ -1043,15 +1093,21 @@ end
 
 ---------------------------------------------------------------- shop
 
--- {item type, ShopBottomPanel node, ShopButtons1 sprite base}. The panel also carries Payment, Raid and
--- Free -- real-money and raid store tabs with nothing behind them here, so they are hidden, not shown dead.
+-- The bar's tabs in the order the original shows them, {ShopBottomPanel node, item type or nil for the
+-- store tabs, sprite base}. Payment (gems), Raid (the coin bag) and Free are real-money and offer stores
+-- with nothing behind them here: they are shown, as in the original, but do nothing.
 local SHOP_TABS = {
-	{ "Weapon", "Weapon", "Weapon" }, { "Armor", "Armor", "Armor" }, { "Helm", "Helmet", "Helmet" },
-	{ "Ranged", "Ranged", "Ranged_weapon" }, { "Magic", "Magic", "Magic" },
+	{ "Payment", nil, "ShopButtons2.Payment" }, { "Raid", nil, "ShopButtons2.meshok_2" }, { "Free", nil, "ShopButtons2.Free" },
+	{ "Weapon", "Weapon", "ShopButtons1.Weapon" }, { "Armor", "Armor", "ShopButtons1.Armor" },
+	{ "Helmet", "Helm", "ShopButtons1.Helmet" }, { "Ranged", "Ranged", "ShopButtons1.Ranged_weapon" },
+	{ "Magic", "Magic", "ShopButtons1.Magic" },
 }
-local SHOP_DEAD_TABS = { "Payment", "Raid", "Free" }
--- ShopTableViewCell is 800x400; the original leaves a little air between rows
-local CELL_STEP = 412
+-- ShopScene._<Type>ImageSize: the art box of a row; a row is that box plus the 120-high IconPanel
+local SHOP_ART = { Weapon = 302, Armor = 704, Helm = 706, Ranged = 302, Magic = 682 }
+local SHOP_ART_W = 778
+local ICON_STRIP = 120
+-- ItemsPanel._InactiveCellOpacity: every row but the centred one is drawn at half opacity
+local INACTIVE_ALPHA = 0.5
 
 -- Items.STATS -> the Attributes atlas icon the original shows beside each value
 local STAT_ICON: { [string]: string } = {
@@ -1079,7 +1135,7 @@ local function shopItems(t: string): { any }
 end
 Menus.shopItems = shopItems
 
--- The item's attributes in Items.STATS order (the order the original lists them in), each with its icon
+-- The item's attributes in Items.STATS order (the order the original lists them in)
 local function statRows(it: any, upgrade: number?): { { name: string, value: number } }
 	local stats = Items.stats(it, upgrade)
 	local out = {}
@@ -1090,120 +1146,136 @@ local function statRows(it: any, upgrade: number?): { { name: string, value: num
 	return out
 end
 
--- One row of the ItemParameterScrollItem kind: the attribute's icon, then its value
-local function statRow(parent: Instance, row: any, y: number)
-	local icon = STAT_ICON[row.name]
-	if icon then W.image(parent, "Attributes." .. icon, UDim2.new(0, 80, 0, y), Vector2.new(90, 90)) end
-	W.label(parent, (row.name:gsub("(%l)(%u)", "%1 %2")), UDim2.new(0, 145, 0, y), Vector2.new(280, 56), 34, W.GOLD, Enum.TextXAlignment.Left)
-		.AnchorPoint = Vector2.new(0, 0.5)
-	W.label(parent, tostring(row.value), UDim2.new(1, -40, 0, y), Vector2.new(150, 56), 42, Color3.new(1, 1, 1), Enum.TextXAlignment.Right)
-		.AnchorPoint = Vector2.new(1, 0.5)
-end
-
--- One item row, built from the game's own ShopTableViewCell. The prefab stacks its bands with Unity layout
--- groups the port does not run, so the art and the icon strip are placed here; the sprites, fonts, colours
--- and the equipped/owned marks are the prefab's own.
-local function shopCell(parent: Instance, it: any, owned: boolean, equipped: boolean, locked: boolean, selected: boolean, pick: () -> ()): any
+-- One item row from the game's ShopTableViewCell: the art in the type's box, then the IconPanel strip
+-- (level star and number on the left, equipped figure and owned tick on the right)
+local function shopCell(parent: Instance, it: any, tab: string, owned: boolean, equipped: boolean, locked: boolean): any
 	local b = UI.build("ShopTableViewCell", parent, { layout = false })
 	if not b then return nil end
 	local cell = b.root :: any
+	local artH = SHOP_ART[tab] or 302
 	cell.AnchorPoint = Vector2.new(0.5, 0)
-	cell.Position = UDim2.new()
-	-- the prefab row is 800 wide, a little wider than the scroll's 750: fit the width, keep the height
-	cell.Size = UDim2.new(1, -16, 0, 400)
-	if selected then
-		cell.BackgroundColor3 = Color3.fromRGB(120, 80, 40)
-		cell.BackgroundTransparency = 0.45
-	end
+	cell.Size = UDim2.fromOffset(800, artH + ICON_STRIP)
+	local content = b:find("Content")
 	local art = b:find("Content/Image")
 	if art then
 		art.AnchorPoint = Vector2.new(0.5, 0)
-		art.Position = UDim2.new(0.5, 0, 0, 24)
-		art.Size = UDim2.new(1, -80, 0, 240)
+		art.Position = UDim2.new(0.5, 0, 0, 0)
+		art.Size = UDim2.fromOffset(SHOP_ART_W, artH)
 		art.ScaleType = Enum.ScaleType.Fit
 		W.setImage(art, Xml.attr(it, "Image"))
 	end
-	-- CompositeImage layers a multi-part item's pieces, AddPercentImage and TicketLabel belong to the money
-	-- packs, DiscountIcon to a sale and PerksPanel to item perks; none of them applies to an equipment row
 	for _, n in { "Content/CompositeImage", "Content/AddPercentImage", "Content/TicketLabel",
 		"Content/IconPanel/DiscountIcon", "Content/IconPanel/PerksPanel" } do
 		local o = b:find(n)
 		if o then o.Visible = false end
 	end
-	-- the padlock the original puts over an item the warrior is not high enough level for
 	local lock = b:find("LockIcon")
-	if lock then lock.Visible = locked end
+	if lock then
+		lock.Visible = locked
+		lock.Position = UDim2.new(0.5, 0, 0, artH / 2)
+	end
 	local icons = b:find("Content/IconPanel")
 	if icons then
-		icons.AnchorPoint = Vector2.new(0.5, 1)
-		icons.Position = UDim2.new(0.5, 0, 1, -12)
-		icons.Size = UDim2.fromOffset(800, 120)
+		icons.AnchorPoint = Vector2.new(0.5, 0)
+		icons.Position = UDim2.new(0.5, 0, 0, artH)
+		icons.Size = UDim2.fromOffset(800, ICON_STRIP)
 	end
 	local eq = b:find("Content/IconPanel/EquippedIcon")
 	if eq then eq.Visible = equipped end
 	local jack = b:find("Content/IconPanel/JackdawIcon")
-	if jack then jack.Visible = owned and not equipped end
-	-- LevelLabel is "<quad name=MiscSprites.star ...> N" in the original; a quad is a sprite the text can't
-	-- carry here, so the star sits beside the number as its own image
+	if jack then jack.Visible = owned end
+	-- LevelLabel is "<quad name=MiscSprites.star ...> N"; a quad is a sprite the text can't carry here, so
+	-- the star sits beside the number as its own image
 	local lvl = b:find("Content/IconPanel/LevelLabel")
 	if lvl then
-		local t = lvl:FindFirstChild("Text") :: any
+		local t = textOf(lvl)
 		if t then
 			t.Text = "      " .. (Xml.num(it, "Level", 0) :: number)
 			t.TextXAlignment = Enum.TextXAlignment.Left
-			t.TextColor3 = locked and Color3.fromRGB(255, 90, 90) or W.GOLD
+			t.TextColor3 = locked and Color3.fromRGB(200, 60, 40) or Color3.fromRGB(58, 40, 26)
 		end
-		W.image(lvl, "MiscSprites.star", UDim2.new(0, 52, 0.5, 0), Vector2.new(84, 76))
+		local star = W.image(lvl, "MiscSprites.star", UDim2.new(0, 40, 0.5, 0), Vector2.new(70, 64))
+		star.ImageColor3 = Color3.fromRGB(58, 40, 26)
 	end
-	-- the original's row carries no name: the art identifies the item and ItemInfoPanel names the one picked
-	local hit = Instance.new("TextButton")
-	hit.Text = ""
-	hit.BackgroundTransparency = 1
-	hit.Size = UDim2.fromScale(1, 1)
-	hit.ZIndex = 50
-	hit.Parent = cell
-	hit.Activated:Connect(function()
-		Sound.play("snd_click_1")
-		pick()
-	end)
+	if content then content:SetAttribute("rowArt", true) end
 	return cell
 end
 
--- The shop, laid out as the original: scene_level4_Shop gives the parchment scroll in the middle, the side
--- panels and the left-hand buttons; ShopBottomPanel the category tabs along the bottom; ShopTableViewCell
--- each 800x400 item row. The three side panels sit on top of each other in the scene because SidePanel
--- slides them in and out at runtime and only one is ever on screen -- the port places them statically, so
--- the parameters panel waits behind its flag button instead. ItemPropertiesPanel (item perks) and
--- ForgePanel (forging) have nothing behind them here and stay hidden.
-function Menus.shop(tab: string?, selected: string?, showParams: boolean?)
+-- A row's opacity (ItemsPanel: the centred row full, the others at _InactiveCellOpacity)
+local function cellAlpha(cell: Instance, a: number)
+	for _, o in cell:GetDescendants() do
+		if o:IsA("ImageLabel") or o:IsA("ImageButton") then
+			local base = o:GetAttribute("alpha") or 0
+			o.ImageTransparency = 1 - (1 - base) * a
+		end
+	end
+end
+
+-- The shop, laid out as the original. scene_level4_Shop gives the parchment scroll in the middle, the side
+-- panels and the left-hand buttons; ShopBottomPanel the category bar; ShopTableViewCell each row.
+--  * The list snaps: when a scroll or drag settles, the nearest row slides to the centre and becomes the
+--    selected item (TableView.scrollToHighlighted), its info panel filled at once; tapping a row centres it.
+--  * ItemInfoPanel sits right of the scroll with InfoPanelContent: the name, one ItemParameterScrollItem
+--    per attribute (icon, value, next upgrade's gain, bar), then the price buttons (IconLabelButton).
+--  * ButtonsContainer, left: TRY ON for an item you don't own (puts it on the warrior), EQUIP or UNEQUIP
+--    for one you do. The forge's ENCHANT has nothing behind it here and stays hidden.
+--  * The two flags on the scroll's left edge are the side panels: attributes (opens the full list to the
+--    left of the scroll) and item perks (none here).
+function Menus.shop(tab: string?)
 	tab = tab or "Weapon"
 	local d = Profile.get()
 	local s = clear()
-	local preview = table.clone(Profile.warrior())
-	if selected then
-		preview.items = table.clone(preview.items)
-		preview.items[tab :: string] = selected
+	local items = shopItems(tab :: string)
+	local selected = 1
+	for i, it in items do
+		if d.equipped[tab :: string] == Xml.attr(it, "Name") then selected = i end
 	end
-	setScene("dojo", true, preview)
+	local tryOn = false
+	local function previewDef(): any
+		local def = table.clone(Profile.warrior())
+		local it = items[selected]
+		if tryOn and it then
+			def.items = table.clone(def.items)
+			def.items[tab :: string] = Xml.attr(it, "Name")
+		end
+		return def
+	end
+	setScene("dojo", true, previewDef(), SHOP_WARRIOR_X)
 
-	local shop = UI.build("scene_level4_Shop", s, { layout = false })
+	local shop = UI.build("scene_level4_Shop", s)
+	if not shop then return end
 	local function node(name: string): any
-		return shop and shop:find(name)
+		return shop:find(name)
 	end
-	for _, n in { "ItemPropertiesPanel", "ForgePanel", "BorderLeft", "BorderRight" } do
-		local o = node(n)
-		if o then o.Visible = false end
-	end
-	-- ShopBackground is the scene's 2D backdrop sprite; the port shows the dojo in 3D behind the canvas
-	local bg = node("ShopBackground")
-	if bg then bg.Visible = false end
+	hideAll(shop, { "ItemPropertiesPanel", "ForgePanel", "BorderLeft", "BorderRight", "ShopBackground",
+		"ButtonsContainer/ForgeButton", "ButtonsContainer/RestorePurchasesButton", "ItemsPanel/Slider",
+		"ItemsPanel/BtnLoadRaid", "ButtonsContainer/TryItemButton/Content/ButtonHint" })
 
-	-- A SidePanel sits centred in the scene and is slid into place at runtime, through a Panel child that
-	-- carries most of the offset. With nothing sliding them they would stack over the item scroll, so each
-	-- is given a place clear of it (the scroll is 850 wide and centred). The original slides both out on
-	-- the left one at a time; with both on screen at once here the attribute panel takes the right.
+	---------------- the category bar
+	local tabs = UI.build("ShopBottomPanel", s)
+	if tabs then
+		local strip = tabs:find("SimpleScroll")
+		if strip then strip.Visible = false end
+		for i, t in SHOP_TABS do
+			local btn = tabs:find("HorizontalLayout/" .. t[1])
+			if btn then
+				UI.setOrder(btn, i)
+				local active = t[2] == tab
+				UI.setSprite(btn, t[3] .. (active and (t[2] and "_active" or "") or ""))
+				local dot = btn:FindFirstChild("Indicator")
+				if dot then (dot :: any).Visible = false end
+				if t[2] and not active then
+					onClick(btn, function() Menus.shop(t[2]) end)
+				end
+			end
+		end
+		tabs:relayout()
+	end
+	mainMenu(s, "Shop")
+
+	---------------- side panels: info on the right; attributes behind the lower flag, opening on the left
 	local PANEL_X = 425 + 304 + 40
-	local function placePanel(panel: any, side: number)
+	local function placePanel(panel: any, side: number): any
 		if not panel then return nil end
 		panel.AnchorPoint = Vector2.new(0.5, 0.5)
 		panel.Position = UDim2.new(0.5, PANEL_X * side, 0.5, -40)
@@ -1213,75 +1285,236 @@ function Menus.shop(tab: string?, selected: string?, showParams: boolean?)
 		inner.AnchorPoint = Vector2.new(0.5, 0.5)
 		inner.Position = UDim2.fromScale(0.5, 0.5)
 		inner.Size = UDim2.fromScale(1, 1)
+		local flag = inner:FindFirstChild("MoveButton")
+		if flag then (flag :: any).Visible = false end
 		local art = inner:FindFirstChild("InfoPanel")
 		if art then
 			art.AnchorPoint = Vector2.new(0.5, 0.5)
 			art.Position = UDim2.fromScale(0.5, 0.5)
 			art.Size = UDim2.fromScale(1, 1)
 		end
-		-- the flag tab rides the edge facing the scroll, as it does in the original
-		local flag = inner:FindFirstChild("MoveButton")
-		if flag then
-			flag.AnchorPoint = Vector2.new(side < 0 and 0 or 1, 0.5)
-			flag.Position = UDim2.new(side < 0 and 1 or 0, -4 * side, 0.5, 0)
-		end
 		return art
 	end
+	local infoFace = placePanel(node("ItemInfoPanel"), 1)
+	local params = node("ItemParametersPanel")
+	local paramsFace = placePanel(params, -1)
+	if params then params.Visible = false end
+	local scroll = node("ItemsPanel")
+	local function flag(y: number, sprite: string): any
+		if not scroll then return nil end
+		local f = W.button(scroll, sprite, nil, UDim2.new(0, -40, 0.5, y), Vector2.new(110, 150), function() end)
+		f.ScaleType = Enum.ScaleType.Fit
+		f.ZIndex = 1
+		return f
+	end
+	flag(-89, "ShopPieces.Left_flag_properties_none")
+	local paramsFlag = flag(65, "ShopPieces.Left_flag")
 
-	-- the chrome is built before the item rows: its atlases are small and shared, and whatever is decoded
-	-- first wins the EditableImage budget
-	local tabs = UI.build("ShopBottomPanel", s, { layout = false })
-	if tabs then
-		local strip = tabs:find("SimpleScroll")
-		if strip then strip.Visible = false end -- the scrolling copy; the fixed row below is the one shown
-		for i, t in SHOP_TABS do
-			local btn = tabs:find("HorizontalLayout/" .. t[2]) or tabs:find(t[2])
-			if btn then
-				local active = t[1] == tab
-				btn.AnchorPoint = Vector2.new(0.5, 0.5)
-				btn.Position = UDim2.new(0.5, (i - (#SHOP_TABS + 1) / 2) * 252, 0.5, 0)
-				btn.Size = UDim2.fromOffset(247, 235)
-				UI.setSprite(btn, "ShopButtons1." .. t[3] .. (active and "_active" or ""))
-				-- Indicator is the "new item here" dot, driven by data the port has no counterpart for
-				local dot = btn:FindFirstChild("Indicator")
-				if dot then (dot :: any).Visible = false end
-				clickable(btn).Activated:Connect(function()
-					Sound.play("snd_click_1")
-					Menus.shop(t[1])
-				end)
-			end
-		end
-		for _, n in SHOP_DEAD_TABS do
-			local btn = tabs:find("HorizontalLayout/" .. n) or tabs:find(n)
-			if btn then btn.Visible = false end
+	---------------- the info panel's content and the buttons, refilled on every selection
+	local panelContent: any = nil
+	local paramsContent: any = nil
+	-- the bars measure against the strongest item of the tab you could buy at your level
+	local maxStat: { [string]: number } = {}
+	for _, it in items do
+		if (Xml.num(it, "Level", 0) :: number) <= d.level then
+			for _, r in statRows(it) do maxStat[r.name] = math.max(maxStat[r.name] or 0, r.value) end
 		end
 	end
-	mainMenu(s, "Shop")
+	local function fillParameters(holder: Instance, it: any, up: number, withNext: boolean): any
+		local c = UI.build("InfoPanelContent", holder)
+		if not c then return nil end
+		hideAll(c, { "Image", "DescriptionDonate", "TimerLabel" })
+		setText(c:find("Header"), Items.title(it))
+		local desc = Xml.attr(it, "Description")
+		setText(c:find("Description"), desc and Xml.text(desc) or "")
+		local list = c:find("ParametersPanel/ScrollContent")
+		local nextUp = withNext and Items.upgrades(it)[up + 1] and statRows(it, up + 1) or nil
+		local rows = statRows(it, up)
+		-- ParametersPanel sizes itself to its rows (ItemParameterScrollItem 100 high, ScrollContent 20 apart)
+		local panel = c:find("ParametersPanel")
+		if panel then UI.setPreferred(panel, nil, math.max(100, #rows * 100 + math.max(0, #rows - 1) * 20)) end
+		if list then
+			list.Size = UDim2.new(list.Size.X.Scale, list.Size.X.Offset, 0, #rows * 120)
+		end
+		for i, r in rows do
+			local row = list and UI.build("ItemParameterScrollItem", list)
+			if row then
+				UI.setOrder(row.root, i)
+				local icon = STAT_ICON[r.name]
+				if icon then UI.setSprite(row:find("HorizontalLayout/ParameterIcon"), "Attributes." .. icon) end
+				setText(row:find("HorizontalLayout/VerticalLayout/ParamNumbers/Value"), fmt(r.value))
+				local gain = 0
+				for _, n in nextUp or {} do
+					if n.name == r.name then gain = n.value - r.value end
+				end
+				local add = row:find("HorizontalLayout/VerticalLayout/ParamNumbers/AdditionalValue")
+				if add then
+					add.Visible = gain > 0
+					setText(add, "(+" .. fmt(gain) .. ")")
+				end
+				local max = math.max(1, maxStat[r.name] or r.value)
+				local bar = "HorizontalLayout/VerticalLayout/ParameterProgressBar/"
+				local bg = row:find(bar .. "Background")
+				if bg then UI.setFill(bg, 1) end
+				local red = row:find(bar .. "StripeRed")
+				if red then red.Visible = false end
+				local green = row:find(bar .. "StripeGreen")
+				if green then UI.setFill(green, math.clamp((r.value + gain) / max, 0, 1)) end
+				local orange = row:find(bar .. "StripeOrange")
+				if orange then UI.setFill(orange, math.clamp(r.value / max, 0, 1)) end
+				row:relayout()
+			end
+		end
+		c:relayout()
+		return c
+	end
+	local function priceButton(parent: Instance, order: number, style: string, icon: string, text: string, onBuy: () -> ()): any
+		local b = UI.build("IconLabelButton", parent)
+		if not b then return nil end
+		UI.setOrder(b.root, order)
+		UI.setSprite(b.root, "CommonButtons." .. style, { t = "sliced", d = { 99, 0, 99, 0 } })
+		hideAll(b, { "Content/ButtonHint" })
+		UI.setSprite(b:find("Content/Image"), icon)
+		setText(b:find("Content/Text"), text)
+		onClick(b.root, onBuy, "snd_click_2")
+		b:relayout()
+		return b
+	end
 
-	---------------- item rows
-	local items = shopItems(tab :: string)
+	local function select(i: number)
+		selected = i
+		local it = items[i]
+		if panelContent then panelContent.root:Destroy() panelContent = nil end
+		if paramsContent then paramsContent.root:Destroy() paramsContent = nil end
+		local info = node("ItemInfoPanel")
+		if info then info.Visible = it ~= nil end
+		local tryBtn = node("ButtonsContainer/TryItemButton")
+		if tryBtn then tryBtn.Visible = it ~= nil end
+		if not it then return end
+		local name = Xml.attr(it, "Name") :: string
+		local owned = Profile.owns(name)
+		local up = owned and d.items[name] and d.items[name].upgrade or 0
+		local lvl = Xml.num(it, "Level", 0) :: number
+		if infoFace then
+			panelContent = fillParameters(infoFace, it, up, owned)
+			local buttons = panelContent and panelContent:find("ButtonPanel")
+			if buttons then
+				local function refresh() Menus.shop(tab) end
+				if owned then
+					local nextStep = Items.upgrades(it)[up + 1]
+					if nextStep then
+						local label = panelContent:find("TimerLabel")
+						if label then
+							label.Visible = true
+							setText(label, string.upper(Xml.text("dlgUpgradeTitle")) .. " " .. (up + 1))
+						end
+						local p, g = Xml.num(nextStep, "Price"), Xml.num(nextStep, "BonusPrice")
+						local function pay(cost: number, field: string)
+							if d[field] < cost then return end
+							d[field] -= cost
+							d.items[name].upgrade = up + 1
+							Profile.save()
+							Sound.play("snd_upgrade")
+							refresh()
+						end
+						if p then priceButton(buttons, 1, "BtnYellow", "MiscSprites.gold", fmt(p), function() pay(p, "money") end) end
+						if g then priceButton(buttons, 2, "BtnGold", "MiscSprites.ruby", fmt(g), function() pay(g, "bonus") end) end
+					end
+				elseif lvl <= d.level then
+					local price, gems = Xml.num(it, "Price"), Xml.num(it, "BonusPrice")
+					priceButton(buttons, 1, "BtnGreen", price and "MiscSprites.gold" or "MiscSprites.ruby",
+						fmt(price or gems or 0), function()
+							if price then
+								if d.money < price then return end
+								d.money -= price
+							else
+								if d.bonus < (gems :: number) then return end
+								d.bonus -= gems :: number
+							end
+							Profile.give(name)
+							Profile.equip(name)
+							Profile.save()
+							Sound.play("snd_buy")
+							refresh()
+						end)
+				else
+					priceButton(buttons, 1, "BtnDark", "MiscSprites.star", tostring(lvl), function() end)
+				end
+				panelContent:relayout()
+			end
+		end
+		if paramsFace and params and params.Visible then
+			paramsContent = fillParameters(paramsFace, it, up, false)
+		end
+		-- TRY ON / EQUIP / UNEQUIP
+		local equipped = d.equipped[tab :: string] == name
+		local key = not owned and "TryOn_hint" or (equipped and "btnShopUnequip" or "btnShopEquip")
+		setText(node("ButtonsContainer/TryItemButton/Content/Text"), string.upper(Xml.text(key)))
+		local actions = node("ButtonsContainer")
+		if actions then shop:relayout() end
+		if scene and scene.showcase then
+			scene.showcase.destroy()
+			scene.showcase = Showcase.new(previewDef(), scene.folder, SHOP_WARRIOR_X, 1)
+		end
+	end
+	onClick(node("ButtonsContainer/TryItemButton"), function()
+		local it = items[selected]
+		if not it then return end
+		local name = Xml.attr(it, "Name") :: string
+		if not Profile.owns(name) then
+			tryOn = not tryOn
+			select(selected)
+		elseif d.equipped[tab :: string] == name then
+			d.equipped[tab :: string] = nil
+			Profile.save()
+			Menus.shop(tab)
+		else
+			Profile.equip(name)
+			Profile.save()
+			Menus.shop(tab)
+		end
+	end, "snd_click_2")
+	if paramsFlag then
+		paramsFlag.Activated:Connect(function()
+			if not params then return end
+			params.Visible = not params.Visible
+			W.setImage(paramsFlag, params.Visible and "ShopPieces.Right_flag" or "ShopPieces.Left_flag")
+			select(selected)
+		end)
+	end
+
+	---------------- the rows: a snapping list, only the rows near the view alive
+	local artH = SHOP_ART[tab :: string] or 302
+	local step = artH + ICON_STRIP
 	local view = node("TableView")
+	local viewH = view and UI.rectSize(view).Y or 946
+	local pad = math.max(0, viewH / 2 - step / 2)
 	local list = Instance.new("ScrollingFrame")
 	list.BackgroundTransparency = 1
 	list.BorderSizePixel = 0
 	list.ScrollBarThickness = 0
+	list.ScrollingDirection = Enum.ScrollingDirection.Y
+	list.ElasticBehavior = Enum.ElasticBehavior.Never
 	list.Size = UDim2.fromScale(1, 1)
-	list.CanvasSize = UDim2.fromOffset(0, #items * CELL_STEP)
+	list.CanvasSize = UDim2.fromOffset(0, #items * step + pad * 2)
 	list.Parent = view or s
-	-- The original's TableView keeps only the rows near the viewport alive, and here that is not just a
-	-- speed question: a tab's art spans up to 28 textures, each decoded into an EditableImage, and the
-	-- device's budget for those is finite. Building all 80-odd rows at once exhausted it, which left every
-	-- atlas asked for afterwards -- the category tabs among them -- silently blank. So rows outside the
-	-- window are destroyed and their art released once no live row still needs it.
+	-- CanvasPosition is in screen pixels while the rows are laid out in canvas units
+	local function px(): number
+		return math.max(UI.scaleOf(canvas :: Frame), 1e-3)
+	end
+	-- the CanvasPosition (pixels) that centres row i
+	local function centreOf(i: number): number
+		return (i - 1) * step * px()
+	end
 	local live: { [number]: any } = {}
 	local liveTex: { [number]: string } = {}
 	local shopTextures: { string } = {}
 	local function window()
-		local scale = math.max(UI.scaleOf(canvas :: Frame), 1e-3)
-		local top = list.CanvasPosition.Y
+		local scale = px()
+		local top = list.CanvasPosition.Y / scale
 		local height = list.AbsoluteWindowSize.Y / scale
-		local first = math.max(1, math.floor(top / CELL_STEP))
-		local last = math.min(#items, math.ceil((top + height) / CELL_STEP) + 1)
+		local first = math.max(1, math.floor((top - pad) / step))
+		local last = math.min(#items, math.ceil((top + height - pad) / step) + 1)
 		for i, cell in live do
 			if i < first or i > last then
 				cell:Destroy()
@@ -1292,20 +1525,25 @@ function Menus.shop(tab: string?, selected: string?, showParams: boolean?)
 			if not live[i] then
 				local it = items[i]
 				local name = Xml.attr(it, "Name") :: string
-				local lvl = Xml.num(it, "Level", 0) :: number
-				local cell = shopCell(list, it, Profile.owns(name), d.equipped[tab :: string] == name,
-					lvl > d.level, name == selected, function()
-						Menus.shop(tab, name, showParams)
-					end)
+				local cell = shopCell(list, it, tab :: string, Profile.owns(name), d.equipped[tab :: string] == name,
+					(Xml.num(it, "Level", 0) :: number) > d.level)
 				if cell then
-					cell.Position = UDim2.new(0.5, 0, 0, (i - 1) * CELL_STEP)
+					cell.Position = UDim2.new(0.5, 0, 0, pad + (i - 1) * step)
 					live[i] = cell
+					local hit = clickable(cell)
+					hit.ZIndex = 50
+					hit.Activated:Connect(function()
+						if i ~= selected then
+							Sound.play("snd_click_1")
+							TweenService:Create(list, TweenInfo.new(0.25, Enum.EasingStyle.Quad), { CanvasPosition = Vector2.new(0, centreOf(i)) }):Play()
+						end
+					end)
 					local sp = Images.sprite(Xml.attr(it, "Image"))
 					if sp then liveTex[i] = sp.texture end
 				end
 			end
 		end
-		-- free the art of every texture no row on screen is still using
+		for i, cell in live do cellAlpha(cell, i == selected and 1 or INACTIVE_ALPHA) end
 		local keep: { [string]: boolean } = {}
 		for _, t in liveTex do keep[t] = true end
 		for _, t in shopTextures do
@@ -1314,111 +1552,32 @@ function Menus.shop(tab: string?, selected: string?, showParams: boolean?)
 		table.clear(shopTextures)
 		for _, t in liveTex do table.insert(shopTextures, t) end
 	end
+	-- snapping: once the list has been still for a moment, slide the nearest row to the centre and select it
+	local settleToken = 0
+	local snapping = false
+	list:GetPropertyChangedSignal("CanvasPosition"):Connect(function()
+		window()
+		if snapping then return end
+		settleToken += 1
+		local token = settleToken
+		task.delay(0.15, function()
+			if token ~= settleToken or not list.Parent then return end
+			local i = math.clamp(math.floor(list.CanvasPosition.Y / px() / step + 0.5) + 1, 1, math.max(1, #items))
+			local target = centreOf(i)
+			if i ~= selected then select(i) end
+			if math.abs(list.CanvasPosition.Y - target) > 1 then
+				snapping = true
+				local tw = TweenService:Create(list, TweenInfo.new(0.2, Enum.EasingStyle.Quad), { CanvasPosition = Vector2.new(0, target) })
+				tw.Completed:Connect(function() snapping = false window() end)
+				tw:Play()
+			end
+		end)
+	end)
+	list.CanvasPosition = Vector2.new(0, centreOf(selected))
 	window()
-	list:GetPropertyChangedSignal("CanvasPosition"):Connect(window)
+	select(selected)
 	local none = node("NoItemsMessage")
 	if none then none.Visible = #items == 0 end
-
-	---------------- the selected item: name, price and what you can do with it
-	local info = node("ItemInfoPanel")
-	local panel = info and info:FindFirstChild("Panel")
-	local face = placePanel(info, -1)
-	if face then
-		if not selected then
-			info.Visible = false
-		else
-			local it = Items.get(selected)
-			local up = d.items[selected] and d.items[selected].upgrade or 0
-			local lvl = Xml.num(it, "Level", 0) :: number
-			W.label(face, Items.title(it), UDim2.new(0.5, 0, 0, 90), Vector2.new(520, 120), 52, W.GOLD)
-			local art = W.image(face, Xml.attr(it, "Image"), UDim2.new(0.5, 0, 0, 300), Vector2.new(440, 300))
-			art.ScaleType = Enum.ScaleType.Fit
-			local desc = Xml.attr(it, "Description")
-			if desc then
-				W.label(face, Xml.text(desc), UDim2.new(0.5, 0, 0, 500), Vector2.new(520, 140), 32, Color3.new(1, 1, 1))
-			end
-			local y = 600
-			for _, row in statRows(it, up) do
-				statRow(face, row, y)
-				y += 70
-			end
-			-- the flag button on the panel's edge pulls out the full attribute list, as in the original
-			local flag = panel:FindFirstChild("MoveButton") :: any
-			if flag then
-				clickable(flag).Activated:Connect(function()
-					Sound.play("snd_click_1")
-					Menus.shop(tab, selected, not showParams)
-				end)
-			end
-
-			local price, gems = Xml.num(it, "Price"), Xml.num(it, "BonusPrice")
-			if Profile.owns(selected) then
-				if d.equipped[tab :: string] ~= selected then
-					W.textButton(face, "BtnGreen", "EQUIP", UDim2.new(0.5, 0, 1, -200), Vector2.new(420, 110), function()
-						Profile.equip(selected)
-						Profile.save()
-						Sound.play("snd_click_2")
-						Menus.shop(tab, selected, showParams)
-					end)
-				end
-				local nextStep = Items.upgrades(it)[up + 1]
-				if nextStep then
-					local p, g = Xml.num(nextStep, "Price"), Xml.num(nextStep, "BonusPrice")
-					W.textButton(face, "BtnGold", "UPGRADE " .. (p and (fmt(p) .. " coins") or (fmt(g or 0) .. " gems")),
-						UDim2.new(0.5, 0, 1, -80), Vector2.new(520, 110), function()
-							if p and d.money >= p then d.money -= p
-							elseif g and d.bonus >= g then d.bonus -= g
-							else return end
-							d.items[selected].upgrade = up + 1
-							Profile.save()
-							Sound.play("snd_upgrade")
-							Menus.shop(tab, selected, showParams)
-						end)
-				end
-			elseif lvl <= d.level then
-				local afford = (price and d.money >= price) or (not price and gems and d.bonus >= gems)
-				W.textButton(face, afford and "BtnGreen" or "BtnDark",
-					"BUY  " .. (price and (fmt(price) .. " coins") or (fmt(gems or 0) .. " gems")),
-					UDim2.new(0.5, 0, 1, -110), Vector2.new(520, 120), function()
-						if not afford then return end
-						if price then d.money -= price else d.bonus -= gems :: number end
-						Profile.give(selected)
-						Profile.equip(selected)
-						Profile.save()
-						Sound.play("snd_buy")
-						Menus.shop(tab, selected, showParams)
-					end)
-			else
-				W.label(face, "Requires level " .. lvl, UDim2.new(0.5, 0, 1, -110), Vector2.new(520, 100), 44,
-					Color3.fromRGB(255, 90, 90))
-			end
-		end
-	end
-
-	---------------- the attribute panel behind the flag
-	local params = node("ItemParametersPanel")
-	if params then
-		params.Visible = showParams == true and selected ~= nil
-		local pface = placePanel(params, 1)
-		if pface and params.Visible then
-			local sel = selected :: string
-			local it = Items.get(sel)
-			local up = d.items[sel] and d.items[sel].upgrade or 0
-			W.label(pface, "ATTRIBUTES", UDim2.new(0.5, 0, 0, 90), Vector2.new(520, 100), 48, W.GOLD)
-			local y = 220
-			for _, row in statRows(it, up) do
-				statRow(pface, row, y)
-				y += 90
-			end
-		end
-	end
-
-	-- ButtonsContainer: "try on" puts the item on the warrior for a look, which selecting it already does
-	-- here, and the forge is not ported -- so the container has nothing left to show. It also sits under
-	-- ItemInfoPanel, which only clears it in the original because SidePanel slides the panel off-screen.
-	local buttons = node("ButtonsContainer")
-	if buttons then buttons.Visible = false end
-
 end
 
 ---------------------------------------------------------------- profile
@@ -1459,12 +1618,27 @@ local function isTrick(name: string): boolean
 	return string.sub(img, 1, 5) == "Trick"
 end
 
-local function perkDescription(name: string): string
-	local key = "PERKDESCRIPTION_" .. string.sub(name, 6)
+-- CharacterProgress <Perks>: each <UpgradeLevel Value="n" Description="KEY{a}{b}{c}"> names the sentence
+-- and the numbers to put in it at that level
+local function perkDescription(name: string, level: number): string
+	local text = nil
+	for _, p in Xml.all(Xml.first(Xml.doc("CharacterProgress"), "Perks"), "Perk") do
+		if Xml.attr(p, "Name") == name then
+			for _, u in Xml.all(p, "UpgradeLevel") do
+				if (Xml.num(u, "Value", 1) :: number) <= level or text == nil then
+					text = Xml.attr(u, "Description")
+				end
+			end
+		end
+	end
+	local key, args = string.match(text or "", "^([^{]+)(.*)$")
+	key = key or ("PERKDESCRIPTION_" .. string.sub(name, 6))
 	local t = Xml.text(key)
 	if t == key then return "" end
-	-- the {n} values come from the perk's script at runtime; the port shows the sentence without them
-	return (string.gsub(string.gsub(t, "{%d}", "?"), "%%%%", "%%"))
+	local vals = {}
+	for v in string.gmatch(args or "", "{([^}]*)}") do table.insert(vals, v) end
+	t = string.gsub(t, "{(%d+)}", function(i) return vals[tonumber(i) + 1] or "?" end)
+	return (string.gsub(t, "%%%%", "%%"))
 end
 
 local PROFILE_TABS = { "Perks", "Strikes", "Achievements", "Seals", "BattlePass" }
@@ -1480,15 +1654,8 @@ function Menus.profile(tab: string?, picked: string?)
 	tab = tab or "Perks"
 	local d = Profile.get()
 	local s = clear()
-	-- the original's backdrop here is ShopBackground/Bg tinted 0.64: the dojo, dimmed, with no warrior
-	setScene("dojo", false)
-	local backdrop = Instance.new("Frame")
-	backdrop.Name = "Backdrop"
-	backdrop.BackgroundColor3 = Color3.new(0, 0, 0)
-	backdrop.BackgroundTransparency = 0.64
-	backdrop.BorderSizePixel = 0
-	backdrop.Size = UDim2.fromScale(1, 1)
-	backdrop.Parent = s
+	-- the dojo with your warrior behind the panels, as the original's profile shows it
+	setScene("dojo", true)
 	local p = UI.build("scene_level7_Profile", s)
 	local bottom = UI.build("ProfileBottomPanel", s)
 	mainMenu(s, "Profile")
@@ -1503,8 +1670,10 @@ function Menus.profile(tab: string?, picked: string?)
 		for _, t in PROFILE_TABS do
 			local btn = bottom:find("HorizontalLayout/" .. t)
 			if btn then
+				-- all five tabs show, as in the original; Achievements, Seals and the Battle Pass have no
+				-- system behind them here and do nothing
 				local live = t == "Perks" or t == "Strikes"
-				btn.Visible = live
+				btn.Visible = true
 				UI.setSprite(btn, "ProfileButtons." .. (t == tab and "Active_" or "Inactive_") .. PROFILE_TAB_SPRITE[t])
 				local dot = btn:FindFirstChild("Indicator")
 				if dot then (dot :: any).Visible = false end
@@ -1550,6 +1719,12 @@ function Menus.profile(tab: string?, picked: string?)
 		if skipped then skipped.Visible = false end
 		local frame = sub:FindFirstChild("Frame")
 		if frame then frame.Visible = name == picked end
+		-- a perk not learned yet is drawn faded
+		if not learned[name] then
+			for _, o in sub:GetDescendants() do
+				if o:IsA("ImageLabel") and o.Name ~= "LockIcon" then o.ImageTransparency = 0.55 end
+			end
+		end
 		pickable(sub, name)
 	end
 	if tab == "Perks" then
@@ -1618,13 +1793,13 @@ function Menus.profile(tab: string?, picked: string?)
 		end
 		setText(p:find("SidePanels/InfoPanel/NoContentMessage"), "")
 		if picked then
-			setText(p:find("SidePanels/InfoPanel/Title"), string.upper(loc(picked)))
+			setText(p:find("SidePanels/InfoPanel/Title"), loc(picked))
 			local c = p:find("SidePanels/InfoPanel/Contents/" .. (tab == "Perks" and "PerkContent" or "TrickContent"))
 			if c then
 				c.Visible = true
 				local keys = c:FindFirstChild("Keys")
 				if keys then (keys :: any).Visible = false end
-				setText(c:FindFirstChild("DescriptionLabel"), perkDescription(picked))
+				setText(c:FindFirstChild("DescriptionLabel"), perkDescription(picked, (ups[picked] or 0) + 1))
 				-- learning is by level here (Warrior.perksForLevel), so the LEARN button has nothing to do
 				local improve, improved = c:FindFirstChild("ImproveButton"), c:FindFirstChild("ImprovedLabel")
 				if improve then (improve :: any).Visible = false end
@@ -1645,21 +1820,26 @@ function Menus.profile(tab: string?, picked: string?)
 	end
 	local none = p:find("SidePanels/UserPerksPanel/NoPerks")
 	if none then none.Visible = #mine == 0 end
+	-- two columns of perk tiles (back, icon, level badge), as the original's PerksController lists them
 	local table_ = p:find("SidePanels/UserPerksPanel/TableView")
 	if table_ and #mine > 0 then
+		local TILE, PITCH = 180, 205
 		local scroller = Instance.new("ScrollingFrame")
 		scroller.BackgroundTransparency = 1
 		scroller.BorderSizePixel = 0
 		scroller.ScrollBarThickness = 0
 		scroller.Size = UDim2.fromScale(1, 1)
-		scroller.CanvasSize = UDim2.fromOffset(0, 120 * #mine)
+		scroller.CanvasSize = UDim2.fromOffset(0, PITCH * math.ceil(#mine / 2) + 40)
 		scroller.Parent = table_
 		for i, n in mine do
-			local yy = 60 + (i - 1) * 120
-			local icon = W.image(scroller, Xml.attr(perkDef(n), "Image"), UDim2.new(0, 80, 0, yy), Vector2.new(100, 100))
-			icon.ScaleType = Enum.ScaleType.Fit
-			W.label(scroller, loc(n), UDim2.new(0, 150, 0, yy), Vector2.new(380, 90), 44, W.GOLD, Enum.TextXAlignment.Left)
-				.AnchorPoint = Vector2.new(0, 0.5)
+			local col, row = (i - 1) % 2, (i - 1) // 2
+			local pos = UDim2.new(0.5, (col - 0.5) * PITCH, 0, 30 + TILE / 2 + row * PITCH)
+			W.image(scroller, "ProfilePieces.perkback", pos, Vector2.new(TILE, TILE)).ScaleType = Enum.ScaleType.Fit
+			W.image(scroller, Xml.attr(perkDef(n), "Image"), pos, Vector2.new(TILE, TILE)).ScaleType = Enum.ScaleType.Fit
+			local lv = (ups[n] or 0) + 1
+			if Images.sprite("ProfilePieces.level" .. lv) then
+				W.image(scroller, "ProfilePieces.level" .. lv, pos + UDim2.fromOffset(TILE * 0.33, TILE * 0.33), Vector2.new(56, 55))
+			end
 		end
 	end
 	p:relayout()
@@ -1690,23 +1870,53 @@ local function dialogLayer(): Frame
 	return shade :: any
 end
 
--- The settings (SettingsDialog, opened from the menu over whatever screen is up, as in the original):
--- music, sound, language and the user id. Credits, support and the store/social buttons have nothing
--- behind them here and stay hidden. "More" opens SettingsAdvancedDialog, which here holds the port's
--- own reset and the temporary dev max-out instead of the graphics/controller settings it has there.
+-- Volumes: the on/off toggles (settings.sound / music) and the advanced dialog's sliders (soundVol /
+-- musicVol, 0..1). Game.start applies the same at launch.
+function Menus.applyVolumes()
+	local st = Profile.get().settings
+	local sv = st.soundVol or 1
+	local mv = st.musicVol or 1
+	Sound.setVolumes(st.sound == 0 and 0 or sv, st.music == 0 and 0 or 0.6 * mv)
+end
+
+-- The settings (SettingsDialog, opened from the menu over whatever screen is up, as in the original). The
+-- original's runtime layout, from its screenshots: Music, Sound, Credits and Support down the left;
+-- the language and Soundtrack down the right (where Facebook's slot is in the prefab); the user id under
+-- them. Credits, Support and Soundtrack open external pages or a credits roll the port doesn't have, so
+-- they are shown but do nothing; Facebook, Game Center and cloud saves stay hidden.
 function Menus.settings()
 	local d = Profile.get()
 	local holder = dialogLayer()
 	local dlg = UI.build("SettingsDialog", holder)
 	if not dlg then return end
-	hideAll(dlg, { "Content/btnCredits", "buttons/btnCloudSaves" })
-	local function close() holder:Destroy() end
-	local function applySound()
-		Sound.setVolumes(d.settings.sound == 1 and 1 or 0, d.settings.music == 1 and 0.6 or 0)
+	hideAll(dlg, { "buttons/btnCloudSaves", "Content/btnFacebook", "Content/btnGameCenter" })
+	local RIGHT_X = -35
+	for name, y in { btnLanguage = 200, btnItunes = 0 } do
+		local b = dlg:find("Content/" .. name)
+		if b then
+			b.Visible = true
+			b.Position = UDim2.new(0.5, RIGHT_X, 0.5, -y)
+		end
 	end
+	for _, name in { "btnCredits", "btnSupport" } do
+		local b = dlg:find("Content/" .. name)
+		if b then b.Visible = true end
+	end
+	-- the original draws every option label the size of Soundtrack's (the prefab's 69 is replaced at run time)
+	for _, name in { "btnMusic", "btnSound", "btnCredits", "btnSupport", "btnLanguage", "btnItunes" } do
+		local t = textOf(dlg:find("Content/" .. name .. "/Text"))
+		if t then
+			t.TextScaled = true
+			local lim = t:FindFirstChildOfClass("UITextSizeConstraint") or Instance.new("UITextSizeConstraint")
+			lim.MaxTextSize = 100
+			lim.Parent = t
+			t.TextXAlignment = Enum.TextXAlignment.Left
+		end
+	end
+	local function close() holder:Destroy() end
 	local function refresh()
-		UI.setSprite(dlg:find("Content/btnMusic/Icon"), "SettingsButtons." .. (d.settings.music == 1 and "music" or "music_off"))
-		UI.setSprite(dlg:find("Content/btnSound/Icon"), "SettingsButtons." .. (d.settings.sound == 1 and "sound" or "sound_off"))
+		UI.setSprite(dlg:find("Content/btnMusic/Icon"), "SettingsButtons." .. (d.settings.music == 0 and "music_off" or "music"))
+		UI.setSprite(dlg:find("Content/btnSound/Icon"), "SettingsButtons." .. (d.settings.sound == 0 and "sound_off" or "sound"))
 		local lang = d.settings.language or "eng"
 		for _, l in LANGS do
 			if l[1] == lang then
@@ -1717,20 +1927,23 @@ function Menus.settings()
 		setText(dlg:find("Header"), string.upper(Xml.text("Settings_Title")))
 		setText(dlg:find("Content/btnMusic/Text"), Xml.text("Settings_Music"))
 		setText(dlg:find("Content/btnSound/Text"), Xml.text("Settings_Sound"))
+		setText(dlg:find("Content/btnCredits/Text"), Xml.text("Settings_Credits"))
+		setText(dlg:find("Content/btnSupport/Text"), Xml.text("Settings_Support"))
+		setText(dlg:find("Content/btnItunes/Text"), Xml.text("Settings_Soundtack"))
 		setText(dlg:find("buttons/btnBack/Text"), Xml.text("Settings_Back"))
 		setText(dlg:find("buttons/btnMore/Text"), Xml.text("Settings_Advanced"))
 		setText(dlg:find("Content/userID"), Xml.text("Settings_UserID") .. ": " .. tostring(Players.LocalPlayer.UserId))
 	end
 	refresh()
 	onClick(dlg:find("Content/btnMusic"), function()
-		d.settings.music = d.settings.music == 1 and 0 or 1
-		applySound()
+		d.settings.music = d.settings.music == 0 and 1 or 0
+		Menus.applyVolumes()
 		Profile.save()
 		refresh()
 	end)
 	onClick(dlg:find("Content/btnSound"), function()
-		d.settings.sound = d.settings.sound == 1 and 0 or 1
-		applySound()
+		d.settings.sound = d.settings.sound == 0 and 1 or 0
+		Menus.applyVolumes()
 		Profile.save()
 		refresh()
 	end)
@@ -1750,29 +1963,134 @@ function Menus.settings()
 	dlg:relayout()
 end
 
+-- A Slider of the advanced dialog: Fill is a filled image, Handle UI rides the slide area; a press or
+-- drag on the track sets the value. onChange gets 0..1.
+local function slider(track: any, value: number, onChange: (number) -> ())
+	if not track then return end
+	local fill = track:FindFirstChild("Fill", true)
+	local area = track:FindFirstChild("Handle Slide Area")
+	local handle = area and area:FindFirstChild("Handle UI")
+	local function show(v: number)
+		if fill then
+			fill:SetAttribute("fillMethod", "horizontal")
+			UI.setFill(fill, v)
+		end
+		if handle then
+			handle.AnchorPoint = Vector2.new(0.5, 0.5)
+			handle.Position = UDim2.new(v, 0, 0.5, 0)
+		end
+	end
+	show(value)
+	local UIS = game:GetService("UserInputService")
+	local dragging = false
+	local function at(x: number)
+		local ref = area or track
+		local v = math.clamp((x - ref.AbsolutePosition.X) / math.max(1, ref.AbsoluteSize.X), 0, 1)
+		show(v)
+		onChange(v)
+	end
+	local hit = clickable(track)
+	hit.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			at(input.Position.X)
+		end
+	end)
+	local moved = UIS.InputChanged:Connect(function(input)
+		if dragging and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+			at(input.Position.X)
+		end
+	end)
+	local ended = UIS.InputEnded:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = false
+		end
+	end)
+	track.Destroying:Connect(function()
+		moved:Disconnect()
+		ended:Disconnect()
+	end)
+end
+
+-- SettingsAdvancedDialog, as the original shows it: Graphics Quality, Location Resolution and Controller
+-- Scale (each tap steps through its values), then the music and sound sliders, and BACK. The port renders
+-- one quality, so graphics and location resolution are remembered but change nothing; the controller scale
+-- sizes the touch controls. The port's own reset and the temporary dev max-out sit small under the rows.
+local GRAPHICS = { "Low", "Medium", "High" }
+local SCALES = { "Small", "Large" }
 function Menus.settingsMore()
+	local d = Profile.get()
+	local st = d.settings
 	local holder = dialogLayer()
 	local dlg = UI.build("SettingsAdvancedDialog", holder)
 	if not dlg then return end
-	hideAll(dlg, { "Content/Static", "Content/Scroll", "btnContainer/btnOk" })
+	hideAll(dlg, { "Content/Scroll", "btnContainer/btnOk", "Content/Static/btnWithdrawGDPRGroup", "Content/Static/userID" })
+	local static = dlg:find("Content/Static")
+	if static then static.Visible = true end
 	setText(dlg:find("Header"), string.upper(Xml.text("Settings_Advanced_Title")))
-	local function close() holder:Destroy() end
+	setText(dlg:find("btnContainer/btnCancel/Text"), Xml.text("Settings_Back"))
+	local function cycle(list: { string }, cur: string?): string
+		local i = table.find(list, cur or list[#list]) or #list
+		return list[i % #list + 1]
+	end
+	local function refresh()
+		setText(dlg:find("Content/Static/btnGraphics/Text"),
+			Xml.text("Settings_Graphics_Quality") .. Xml.text("Settings_Graphics_" .. (st.graphics or "High")))
+		setText(dlg:find("Content/Static/btnLocationRes/Text"),
+			Xml.text("Settings_Location_Resolution") .. Xml.text("Settings_Graphics_" .. (st.locationRes or "High")))
+		setText(dlg:find("Content/Static/btnController/Text"),
+			Xml.text("Settings_Controller_Scale") .. Xml.text("Settings_Controller_" .. (st.controllerScale or "Large")))
+		UI.setSprite(dlg:find("Content/Static/btnMusicGroup/btnMusic/Icon"), "SettingsButtons." .. (st.music == 0 and "music_off" or "music"))
+		UI.setSprite(dlg:find("Content/Static/btnSoundGroup/btnSound/Icon"), "SettingsButtons." .. (st.sound == 0 and "sound_off" or "sound"))
+	end
+	refresh()
+	local function save()
+		Profile.save()
+		refresh()
+	end
+	onClick(dlg:find("Content/Static/btnGraphics"), function() st.graphics = cycle(GRAPHICS, st.graphics) save() end)
+	onClick(dlg:find("Content/Static/btnLocationRes"), function() st.locationRes = cycle(GRAPHICS, st.locationRes) save() end)
+	onClick(dlg:find("Content/Static/btnController"), function() st.controllerScale = cycle(SCALES, st.controllerScale) save() end)
+	onClick(dlg:find("Content/Static/btnMusicGroup/btnMusic"), function()
+		st.music = st.music == 0 and 1 or 0
+		Menus.applyVolumes()
+		save()
+	end)
+	onClick(dlg:find("Content/Static/btnSoundGroup/btnSound"), function()
+		st.sound = st.sound == 0 and 1 or 0
+		Menus.applyVolumes()
+		save()
+	end)
+	slider(dlg:find("Content/Static/btnMusicGroup/trackMusic"), st.musicVol or 1, function(v)
+		st.musicVol = v
+		Menus.applyVolumes()
+	end)
+	slider(dlg:find("Content/Static/btnSoundGroup/trackSound"), st.soundVol or 1, function(v)
+		st.soundVol = v
+		Menus.applyVolumes()
+	end)
+	local function close()
+		Profile.save()
+		holder:Destroy()
+	end
 	onClick(dlg:find("btnContainer/btnCancel"), function()
 		close()
 		Menus.settings()
 	end)
-	local content = dlg:find("Content") or holder
-	W.textButton(content, "BtnDark", "RESET PROGRESS", UDim2.new(0.5, 0, 0.5, -90), Vector2.new(640, 120), function()
+	-- the port's own tools, small and out of the original's rows
+	local reset = W.textButton(holder, "BtnDark", "RESET PROGRESS", UDim2.new(0.5, -260, 1, -80), Vector2.new(420, 80), function()
 		close()
 		Profile.reset()
 		Menus.dojo()
 	end)
+	reset.ZIndex = 50
 	-- DEV ONLY, temporary: unlock every act, boss and mode for testing (Profile.maxOut)
-	W.textButton(content, "BtnGreen", "MAX OUT (DEV)", UDim2.new(0.5, 0, 0.5, 90), Vector2.new(640, 120), function()
+	local dev = W.textButton(holder, "BtnGreen", "MAX OUT (DEV)", UDim2.new(0.5, 260, 1, -80), Vector2.new(420, 80), function()
 		close()
 		Profile.maxOut()
 		Menus.map(Profile.get().zone)
 	end)
+	dev.ZIndex = 50
 	dlg:relayout()
 end
 

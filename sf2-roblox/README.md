@@ -304,35 +304,12 @@ Images the panel script listens on), so `Menus` puts a transparent button over a
 one rather than assuming `.Activated` exists.
 
 ### Shop (`Menus.shop`)
-Built from `scene_level4_Shop` (the parchment scroll, side panels, left-hand buttons), `ShopBottomPanel`
-(the category bar) and `ShopTableViewCell` (an 800x400 item row). The row's level star, equipped mark,
-owned tick and level padlock are the prefab's own nodes.
-
-**Row recycling is required, not an optimisation.** A tab's item art spans up to 28 textures, each decoded
-into an EditableImage, and the device's budget for those is finite. Building all ~81 rows at once exhausted
-it and left every atlas requested afterwards -- the category tabs among them -- silently blank. The list
-keeps only the rows near the viewport, as the original's `TableView` does, and releases the art no live row
-still needs. For the same reason the chrome (tabs, top bar) is built before the rows. Relatedly,
-`Images.texture` must not remember a budget failure as a missing texture: that is permanent, and the atlas
-would stay blank for the rest of the session even once a screen change frees the memory.
-
-**Deviations**, each because the behaviour behind it is not ported:
-- `SidePanel` slides the three side panels in and out, one at a time, so they sit stacked at the centre of
-  the scene. They are placed statically instead, where they slide to: item info left of the scroll,
-  attributes right. `ItemPropertiesPanel` (item perks) and `ForgePanel` are hidden.
-- The bar's `Payment`, `Raid` and `Free` tabs are store tabs with nothing behind them here, so they are
-  hidden rather than shown dead. So are the forge and `TryItemButton` -- "try on" puts the item on the
-  warrior for a look, which selecting it already does.
-- The row carries no item name, as in the original; `ItemInfoPanel` names the one picked.
-- The way out of the shop is the MainMenu scroll, as in every menu scene.
-- `LevelLabel` is `<quad name=MiscSprites.star ...> N` in the original. A quad is a sprite the text cannot
+Built from `scene_level4_Shop`, `ShopBottomPanel`, `ShopTableViewCell`, `InfoPanelContent`,
+`ItemParameterScrollItem` and `IconLabelButton`. The current behaviour is described under "Matched against
+the original's screenshots" below.
+- `LevelLabel` is `<quad name=MiscSprites.star ...> N` in the original. A quad is a sprite the text can't
   carry here, so the star sits beside the number as its own image.
-- The place's default `Baseplate` and `SpawnLocation` show past the edges of the 2D scene; `setScene` hides
-  them at runtime rather than deleting them from the place.
-
-**Verified in Studio**: the scroll, rows, art, level stars, equipped mark, side panel and all five category
-tabs draw, and selecting a row fills the panel and offers BUY with its price. The tab buttons, the purchase
-itself and the attribute flag are wired but have not been clicked end to end.
+- The place's default `Baseplate` and `SpawnLocation` are hidden at runtime by `setScene`.
 
 ### The other screens (2026-10-22)
 Every menu screen is now built from the prefabs its original scene mounts (the scene's `_MountOnStart`):
@@ -366,23 +343,17 @@ Every menu screen is now built from the prefabs its original scene mounts (the s
 **Deviations**, each because the behaviour behind it is not ported:
 - MenuWheel's `MenuButton` and `MenuWheelText` live in a nested prefab the dump lacks; the wheel itself is
   the tap target (its sprite carries the word MENU).
-- Energy, raid rating, forge materials, the tutorial skip and the ruby sale badge are hidden.
+- Raid rating, forge materials, the tutorial skip and the ruby sale badge are hidden.
 - InfoBattle's difficulty rating is approximated from the fight's `AttributesAlign` Factor (<0.95 easy,
   <1.05 normal, <1.15 hard, <1.3 insane, else impossible); the original rates it at runtime.
-- Battle buttons' `Name` labels are hidden; the map shows one act at a time (a drag moves to the next) rather
+- The map shows one act at a time (a drag moves to the next) rather
   than a continuous strip, to keep one zone texture decoded. The 2730x1298 zone exactly fills a 16:9 screen;
   on a wider one it is scaled up to cover the map panel instead of leaving black bands.
 - Counts past 99 999 are abbreviated with K, M, B and T (`Menus.fmt`, "123.4K", "11.4T"). The original
   always prints the full grouped number (`"#,###0"`), but its int counters never get past ~2 billion and
   the dev max-out profile's do, which overflowed and wrapped the labels.
-- The profile's backdrop is the original's `ShopBackground/Bg` at tint 0.64: here the 3D dojo without the
-  warrior under a 36% black veil. (An earlier note blamed the EditableImage budget for a blank 3D scene
-  here; that was Studio's screen capture, which at times stops rendering 3D entirely.) Achievements, Seals and the
-  Battle Pass tabs are hidden (no system behind them). Where a level offers two perks the original makes you
-  pick one; the port's fights grant both, so both show as learned. Perk descriptions show `?` for their
-  `{n}` values, which the original fills from the perk's script.
-- Settings: credits, support, the social/store buttons and cloud saves are hidden. The advanced dialog holds
-  the port's reset and the temporary `MAX OUT (DEV)` instead of graphics/controller options.
+- Where a perk tree level offers two perks, the original makes you pick one. The port's fights grant both,
+  so both show as learned.
 - The end screen's count-up animation is not played; the video-reward button is hidden.
 - The arsenal training panel (`Menus.arsenal`) is the port's own and stays hand-placed.
 
@@ -392,3 +363,114 @@ bar mirrors the player's, the VS avatars slide in, OK/FIGHT!/BACK draw whole, th
 covers a 2:1 screen, all text is in AGOpusBold, and 11 455 401 774 600 shows as 11.4T. Studio's mouse injection still does not reach the
 game, so they were driven through a Studio-only hook (`PlayerGui.SF2Debug:Invoke("map", ...)`, created by
 `SF2Game.client.lua` only when `RunService:IsStudio()`), and no button has been clicked by hand.
+
+### Matched against the original's screenshots (2026-10-22)
+The user supplied ~20 screenshots of the real game: map, shop, profile, settings, advanced settings, end
+screen and fight HUD. Each screen below was compared with them and with the data, and the fixes follow both.
+
+**Text.** Three generator rules decide a label's font and size, and the screenshots confirmed each one:
+- **Size.** With best fit, the size is the fit's `maxSize`. `labelFontSize` (LabelAlias) applies only without
+  best fit, and only when `_useLabelFontSize` is set. The battle title had been drawn at its override of 150
+  instead of best fit's 86; that was the "everything is too big".
+- **Best fit and spacing.** Best fit stops at `minSize`, and Unity's `lineSpacing` applies to the line height.
+- **Font.** `useLocalizationFont` makes a label take the language's font, AGOpusBold, over its own. That is
+  why the original's counts and battle names are AGOpusBold, not majallab.
+
+Two font details:
+- **AGOpusBold is a Cyrillic-hacked font.** U+00C0..U+00FF (the × included) hold cp1251 Cyrillic letters, so
+  `build_fonts.py` draws those characters from majallab, and draws the real Cyrillic letters from their cp1251
+  positions.
+- **Merged LayoutElements.** A node with two LayoutElements keeps each value from whichever one sets it.
+
+**Top bar.** The energy panel (lightning and segmented bar) shows in every menu, as in the original. The port
+has no energy system, so the bar stays full.
+
+**Map.**
+- **Strip below the map:** the [Map] scene's own Image paints it dark brown (0.063, 0.027, 0.012).
+- **Battle names:** each battle button carries its name in capitals, dark with a pale halo (`glyphOutline`).
+  Titles in the info scroll are in mixed case.
+- **Eclipse toggle:** a sun (off) or the eclipse (on), top right just under the +. With Eclipse on, the map
+  is darkened.
+- **Fight indicators:** a battle's fights show as `IndicatorFight` icons (96 units, scaled 0.71 from 6 fights
+  up, overlapping 5), lit (`indicatorOn`) once won, in centred rows of 8. The screenshots show rows of 8;
+  `ProgressBricksPanel` reads as 6 per row under 13 fights, which they contradict.
+
+**Shop (`Menus.shop`, rebuilt).**
+
+The list snaps:
+- Once a scroll or drag settles, the nearest row slides to the centre and becomes the selection.
+- The panels refill in place and the warrior preview is rebuilt; nothing else is torn down.
+- Tapping a row centres it.
+
+Each row is the type's art box from `ShopScene` plus the 120-unit `IconPanel` strip under it. The boxes are
+weapon and ranged 778x302, armour 778x704, helmet 778x706, magic 778x682. Rows other than the selected one
+draw at `_InactiveCellOpacity` 0.5.
+
+**ItemInfoPanel**, right of the scroll, holds `InfoPanelContent`:
+- the item's name;
+- one `ItemParameterScrollItem` per attribute: the value, the next upgrade's gain in green, and a bar
+  measured against the strongest item of the tab you can buy at your level;
+- the price buttons, as `IconLabelButton`s:
+  - a green price button to buy;
+  - for an item you own, "UPGRADE n" with a yellow coin button and an orange gem button;
+  - a dark star-and-level button when your level is too low.
+
+Around the scroll:
+- **ButtonsContainer**, left: TRY ON (puts the item on the warrior), EQUIP or UNEQUIP. ENCHANT (the forge) is
+  hidden.
+- **The scroll's left edge** carries the two side-panel flags. The lower one opens the full attribute list to
+  the left of the scroll.
+- **The tab bar** shows all eight tabs in the original's order: gems, coin bag, FREE, then weapon, armour,
+  helmet, ranged, magic. The three store tabs do nothing here.
+- **The warrior** stands left of the scroll (`SHOP_WARRIOR_X`).
+
+**`ScrollingFrame.CanvasPosition` is in screen pixels, not canvas units.** The old shop mixed the two, and
+the new list jumped near its end until they were converted.
+
+**Row recycling is still required.** A tab's art spans up to 28 textures and the EditableImage budget is
+finite. Only the rows near the view are alive, and their art is released when they scroll out.
+
+**Profile.**
+- **Descriptions** carry their real numbers, from CharacterProgress
+  `<Perks><Perk><UpgradeLevel Value="n" Description="KEY{a}{b}{c}">` at the perk's level.
+- **Left panel:** a two-column grid of perk tiles with level badges.
+- **Perk tree:** unlearned perks are faded, and titles are in mixed case.
+- **Tabs:** all five show; Achievements, Seals and Battle Pass do nothing.
+- **Backdrop:** the dojo with the warrior stands behind the panels.
+
+**Settings.** Music, Sound, Credits and Support down the left; the language and Soundtrack down the right; the
+user id below. All option labels are the same size. Credits, Support and Soundtrack are shown but have nothing
+behind them.
+
+**Advanced settings.** Laid out as the original: Graphics Quality, Location Resolution and Controller Scale
+(each tap steps its value), then the music and sound sliders, and BACK.
+- **Sliders:** they set `musicVol` / `soundVol`, applied by `Menus.applyVolumes`.
+- **Controller Scale:** sizes the touch controls, Large 0.75 and Small 0.6.
+- **Graphics and Location Resolution:** remembered, but they change nothing.
+- **Port extras:** the reset and the temporary dev max-out sit small at the scroll's foot.
+
+**End of a fight.** The original's rows, each with its coins:
+- PRIZE;
+- PERFECT ×n, FIRST STRIKE ×n, MAX COMBO ×n, SHOCK ×n;
+- the style reached (PASSIVE / HARD / ... / FANTASTIC STYLE);
+- the star-and-coins total.
+
+`Fight.stats` now counts:
+- perfect rounds;
+- first strikes (a round's first unblocked hit);
+- the longest combo: unblocked hits within 90 ticks of each other, counting from 3 (`<Combo MinHits="3"
+  Time="90">`);
+- shocks;
+- the best style level reached.
+
+`Game` pays the bonuses at internalSettings' rates: Perfect 5, FirstStrike 2, ComboCount 1 per hit, Shock 3.
+
+Approximated:
+- **The style meter:** +0.5 per own unblocked hit, -2 per hit taken, -0.08/s decay, from
+  `<StyleLevels StylePerHit="0.5" DecreaseSpeed="0.08" Penalty="2">`. How the original applies those values
+  wasn't read from its code.
+- **The style bonus:** 3 coins per level, taken from the screenshots' HARD STYLE = 3.
+- **The money multiplier:** the screenshots show bonuses doubled in some fights; the port pays them at 1x.
+
+**Not yet matched:** the fight HUD's style bar and its labels (the green bar with "FANTASTIC!" / "HARD!" under
+the health bars) are not drawn.

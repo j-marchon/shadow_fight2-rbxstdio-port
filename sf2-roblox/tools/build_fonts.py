@@ -18,6 +18,8 @@ FONTS_DIR = 'D:/SF2-Port/sf2-assets/fonts'
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'out', 'Fonts')
 FONTS = ['AGOpusBold', 'majallab', 'CarterOne']
 PX = 64
+CP1251_HACKED = {'AGOpusBold'}
+LATIN_FALLBACK = 'majallab'
 PAD = 2
 WIDTH = 1024
 EXTRA = '№×÷–—‘’‚“”„…•€™'
@@ -45,15 +47,23 @@ def main():
         for page, chars in enumerate(PAGES, 1):
             boxes = []
             for ch in dict.fromkeys(chars):
-                if not has_glyph(font, ch, notdef):
+                src, draw_ch = font, ch
+                # AGOpusBold is a Cyrillic-hacked font: U+00C0..U+00FF (the multiplication sign included)
+                # hold the cp1251 Cyrillic letters. Those characters come from majallab instead, and its real
+                # Cyrillic letters are drawn from the cp1251 positions they sit at.
+                if name in CP1251_HACKED and 0xC0 <= ord(ch) <= 0xFF:
+                    src = ImageFont.truetype(os.path.join(FONTS_DIR, LATIN_FALLBACK + '.ttf'), PX)
+                elif name in CP1251_HACKED and 0x410 <= ord(ch) <= 0x44F:
+                    draw_ch = ch.encode('cp1251').decode('latin-1')
+                elif not has_glyph(font, ch, notdef):
                     continue
-                x0, y0, x1, y1 = font.getbbox(ch, anchor='ls')
-                boxes.append((ch, x0, y0, max(0, x1 - x0), max(0, y1 - y0), font.getlength(ch)))
+                x0, y0, x1, y1 = src.getbbox(draw_ch, anchor='ls')
+                boxes.append((ch, x0, y0, max(0, x1 - x0), max(0, y1 - y0), src.getlength(draw_ch), src, draw_ch))
             # shelf packing, tallest first
             order = sorted(boxes, key=lambda b: -b[4])
             x = y = shelf = 0
             place = {}
-            for ch, x0, y0, w, h, adv in order:
+            for ch, x0, y0, w, h, adv, _, _ in order:
                 if x + w + PAD > WIDTH:
                     x, y, shelf = 0, y + shelf + PAD, 0
                 place[ch] = (x, y)
@@ -62,10 +72,10 @@ def main():
             height = y + shelf + PAD
             img = Image.new('L', (WIDTH, max(1, height)), 0)
             draw = ImageDraw.Draw(img)
-            for ch, x0, y0, w, h, adv in boxes:
+            for ch, x0, y0, w, h, adv, src, draw_ch in boxes:
                 px, py = place[ch]
                 if w and h:
-                    draw.text((px - x0, py - y0), ch, font=font, fill=255, anchor='ls')
+                    draw.text((px - x0, py - y0), draw_ch, font=src, fill=255, anchor="ls")
                 glyphs[str(ord(ch))] = [page, px, py, w, h, x0, y0, round(adv, 2)]
             pal = b''.join(bytes((255, 255, 255, a)) for a in range(256))
             blob = struct.pack('<HHH', img.width, img.height, 256) + pal + img.tobytes()

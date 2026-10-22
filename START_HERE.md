@@ -3,7 +3,7 @@
 > **For any model picking this up:** this is the only file you need to read before working. Read the other docs only when a task needs that detail (the "Deep reference" table says which one).
 > **When you finish a session, update this file**: rewrite sections 3 and 4, add one line to section 6, and keep the same headings and format. Don't create new status files. Docs under `docs\` are history; leave them alone.
 
-Last updated: **2026-10-22** (menus one-to-one with the original layouts; first UI playtest fixed, game fonts drawn from glyph atlases)
+Last updated: **2026-10-22** (menus matched against screenshots of the real game: text sizing, shop snapping, map, profile, settings, end screen)
 
 ---
 
@@ -33,7 +33,11 @@ Outside this folder, kept in place on purpose, since moving them breaks absolute
 
 ## 3. Current status
 
-**Where things stand (end of 2026-10-22):** the combat core, AI, perks and the full-game layer are in. Every menu screen is rebuilt one-to-one from the original's own layouts (the user's top priority). The user's first playtest of them is fixed: enemy health bar, VS portraits, cropped buttons, MENU roll, map crop, fonts, K/M numbers. The menus and HUD now draw in the game's own fonts from glyph atlases. All of it is committed and installed in the Studio place. **The place has not been saved to Roblox** (Ctrl+S in Studio), and the user has not re-checked the fixes yet.
+**Where things stand (end of 2026-10-22):** the combat core, AI, perks and the full-game layer are in. Every menu screen is built from the original's own layouts. Two rounds of the user's feedback are applied:
+- the first playtest: enemy health bar, VS portraits, cropped buttons, MENU roll, map crop, fonts, K/M numbers;
+- a pass against ~20 screenshots of the real game: text sizing, top-bar energy, map details and Eclipse sun, a snapping shop with the original's panels, profile grid and real perk numbers, the settings and advanced-settings layouts, and the end screen's bonus lines.
+
+All of it is committed and installed in the Studio place. **The place has not been saved to Roblox** (Ctrl+S in Studio), and the user has not re-checked the latest round.
 
 **Done and committed:**
 - **Combat core:** rig, B-spline animation playback, moves engine (key matching, buffer, mirror, align, transitions), strikes, block, crit, shock, ragdoll and standup, all 218 weapons (`Data.Arsenal`/`WeaponRigs`/`MoveLib`), the real attack-vs-defense damage curve.
@@ -47,17 +51,18 @@ Outside this folder, kept in place on purpose, since moving them breaks absolute
   - `SF2.Menus` builds each screen from the prefabs its original scene mounts:
     - **MainMenu chrome on every menu screen:** the top bar (level/XP, coins, gems) and the rolled-up MENU scroll that unrolls in 0.3 s to Dojo/Map/Shop/Profile/Settings.
     - **Dojo:** MainMenu over the 3D dojo. The punching-bag toggle opens the port's arsenal training.
-    - **Map:** `StoryMapContainer` zone art; `BattleButton`s at 2·(X, Y) from stages.xml; `InfoBattle` with a content block per battle type; lamps and the act name; drag to change act; Eclipse toggle in `MapButtonsPanel`.
-    - **Shop:** `scene_level4_Shop` + `ShopBottomPanel` + recycled `ShopTableViewCell` rows.
+    - **Map:** `StoryMapContainer` zone art, with `BattleButton`s at 2·(X, Y) from stages.xml and named underneath. `InfoBattle` shows a content block per battle type, with fight indicators. The lamps and the act name sit in the bottom strip; dragging changes act. The Eclipse sun/eclipse toggle is top right.
+    - **Shop:** `scene_level4_Shop` + `ShopBottomPanel` + recycled `ShopTableViewCell` rows in a list that snaps a row to the centre and selects it. The info panel (right) holds `InfoPanelContent`. TRY ON / EQUIP / UNEQUIP sit on the left, and all eight tabs show.
     - **Profile:** `scene_level7_Profile` + `ProfileBottomPanel`, with the perk tree as `PerkCell`s and the learnable strikes as `TrickCell`s.
-    - **Settings:** `SettingsDialog` over the current screen. Its "Advanced" button holds reset and `MAX OUT (DEV)`.
+    - **Settings:** `SettingsDialog` over the current screen, laid out as the original. "Advanced" opens graphics, location resolution, controller scale and the volume sliders; reset and `MAX OUT (DEV)` sit at the foot.
     - **VS:** `VsScreen`.
-    - **End of fight:** `EndFightScreen` + `EndFightContent`, after a win or a loss (Retry on a loss).
+    - **End of fight:** `EndFightScreen` + `EndFightContent`, after a win or a loss (Retry on a loss). A win lists the original's lines: PRIZE, PERFECT, FIRST STRIKE, MAX COMBO, SHOCK, style. `Fight.stats` counts them, and `Game` pays their coins.
   - Deviations, each written up in that README section:
     - The map's difficulty rating is approximated, and the map shows one act at a time.
-    - The profile's Achievements/Seals/Battle Pass tabs are hidden, and perk descriptions show `?` for their numbers. Its backdrop is the dojo dimmed to the original's 0.64 tint.
-    - The end screen doesn't animate its count-up.
-    - The shop and fight HUD still use hand placement (`{ layout = false }`).
+    - The profile's Achievements/Seals/Battle Pass tabs and the shop's gem/bag/FREE tabs are shown but do nothing.
+    - The end screen doesn't animate its count-up. The style meter and style bonus are approximated, and the fight's money multiplier isn't applied.
+    - The fight HUD's style bar ("FANTASTIC!" / "HARD!" under the health bars) is not drawn.
+    - The fight HUD and the shop rows still use hand placement (`{ layout = false }`).
 
 **Verified in Studio** (install: 3042 entries, 0 failed):
 - 2026-10-21: `ai_test.luau` 0 errors; `all_fights.luau` 761 fights / 0 errors / nan=0; perks fire, gate on conditions and expire; wall repulsion and `WallHit`.
@@ -71,9 +76,15 @@ Outside this folder, kept in place on purpose, since moving them breaks absolute
   - the map covers a 2:1 screen;
   - text is AGOpusBold from the atlases;
   - 11 455 401 774 600 shows as 11.4T.
+- 2026-10-22, against the user's screenshots of the real game, all with no console errors:
+  - map: names, sun toggle, brown strip, energy bar;
+  - shop: armour filling its row like "Old Leather Jacket"; a 330 px scroll snapped to row 2 and selected it;
+  - profile: grid, tree and "35% / 51% / 5 seconds" at level 9;
+  - settings and advanced settings;
+  - end screen: all six lines, × drawn correctly.
 
 **Not verified yet (needs the user, on the phone or with a real mouse):**
-- The new menus: the MENU scroll unrolling, map battle picking + FIGHT!, dragging between acts, the lamps, Eclipse, the profile tabs, settings toggles and language, the shop tabs/buy/attribute flag, a lost fight's Retry. Also placement against the phone.
+- The new menus: shop scrolling by hand (snap and auto-select), TRY ON / EQUIP / buy / upgrade, the advanced settings sliders, the MENU scroll unrolling, map battle picking + FIGHT!, dragging between acts, the lamps, Eclipse, the profile tabs, settings toggles and language, the shop tabs/buy/attribute flag, a lost fight's Retry. Also placement against the phone.
 - The 2026-10-20 standup-delay and head-hit fixes; jab height (HighPunch should hit chest, never head).
 - In-game audio (assets may still have been in moderation).
 - The elbow's trigger range end to end (it should start at ~130 units pivot-to-pivot up close, not ~208). The harness can't teleport a fighter.
@@ -99,15 +110,16 @@ Outside this folder, kept in place on purpose, since moving them breaks absolute
 
 The user's standing priority, in their words: the UI was "the biggest problem", a "full rework completely based on the original, especially in the shop" (now done, pending their playtest). Then the dojo. Then "all the small details (events, dialogue, lore, cutscenes, special stuff)".
 
-1. **Ask the user to re-check the playtest fixes and the rest of the menus** in Studio Play against their phone:
-   - the reported issues: enemy health bar, VS screen, button shapes, MENU roll, map crop, fonts, number abbreviations;
+1. **Ask the user to re-check the menus against their phone** in Studio Play:
+   - the latest round (shop snapping and panels, map names and Eclipse sun, profile, settings, end screen lines);
    - then the list under "Not verified yet".
 
    Fix what they report, then ask them to save the place (Ctrl+S).
 2. **Dojo**: free roam with a punching bag (gameplay, not UI). The dojo UI is already the original's: MainMenu over the room.
 3. **Close the UI deviations worth closing**:
    - The real difficulty rating (decompile `Nekki.SF2.GUI.Map\DifficultyPanel__1117.c` / `InfoBattle__2796.c`).
-   - The perk description numbers (from each perk's `<Set>` values).
+   - The fight HUD's style bar (`StylePanel` / `StyleBar`, `internalSettings <StyleLevels>`) and the real style meter rules from the decompile.
+   - The fight money multiplier for the end-screen bonuses.
    - The end screen's count-up (`EndFightContent`).
    - Moving the shop and fight HUD onto the real layout groups.
    - The Achievements tab (`AchievementCell`, `Achievements.xml` is in `out\Xml`).
@@ -188,3 +200,11 @@ The user's standing priority, in their words: the UI was "the biggest problem", 
   - Cropped 9-slice buttons: Roblox crops a slice with zero top/bottom borders, and SliceScale now includes the canvas scale.
   - Also fixed: the detached MENU roll end, black bands on the map on wide screens, the game fonts (`tools/build_fonts.py` atlases + the `SF2.Text` renderer), and K/M/B/T number abbreviations.
   - Found that Studio's capture can stop rendering 3D. That had been misread as an EditableImage-budget problem on the profile.
+- 2026-10-22 (screenshot pass): matched every menu against ~20 screenshots of the real game the user supplied.
+  - Text sizing: best fit's max size, `_useLabelFontSize`, the language font for localized labels, line spacing and best-fit minimums. AGOpusBold turned out to be Cyrillic-hacked, so U+00C0..FF come from majallab.
+  - Top-bar energy panel.
+  - Map: battle names, the sun/eclipse toggle top right, the brown strip, fight indicators.
+  - The shop rebuilt: snapping list with auto-select, the type art boxes from ShopScene, InfoPanelContent with stat bars and price buttons, TRY ON/EQUIP/UNEQUIP, all eight tabs. `CanvasPosition` is in pixels.
+  - Profile: real perk numbers from CharacterProgress `UpgradeLevel` descriptions, the left tile grid, faded unlearned perks, all tabs.
+  - Settings and advanced settings as the original, with volume sliders and controller scale.
+  - End screen: the bonus lines, backed by new `Fight.stats` counters and coins paid in `Game`.
