@@ -972,29 +972,63 @@ function Menus.focus(zoneName: string, battleName: string)
 	pickedBattle[zoneName] = battleName
 end
 
--- ActScreen: the act's title ("Act II{br}Secret Path") over the scene, held, then gone.
--- Port deviation, pending a screenshot of the original: a black screen with the title centred in the
--- game's colours, faded in and out.
+-- ActScreen: the act's title over the whole screen, held, then gone. Matched against the user's
+-- screenshots of the original ("Act V / The Greatest Temptation", "Act VII: Chapter 3"): a dark brown
+-- grainy backdrop, darker at the edges, with the title in pale gold, centred, one line per {br}.
+-- Port approximation: the backdrop's own texture is not among the extracted art, so it is the dialog
+-- scroll's paper (DialogScroll.Background_Center) darkened, with gradients darkening the edges.
+local ACT_GOLD = Color3.fromRGB(222, 190, 128)
 function Menus.actScreen(key: string)
 	local _, c = root()
 	local f = Instance.new("TextButton")
 	f.Name = "ActScreen"
 	f.Text = ""
 	f.AutoButtonColor = false
-	f.BackgroundColor3 = Color3.new(0, 0, 0)
-	f.BackgroundTransparency = 1
+	f.BackgroundColor3 = Color3.fromRGB(34, 22, 12)
+	f.BorderSizePixel = 0
 	f.Size = UDim2.fromScale(1, 1)
 	f.ZIndex = 1000
 	f.Parent = c
+	local paper = W.image(f, "DialogScroll.Background_Center", UDim2.fromScale(0.5, 0.5))
+	paper.Size = UDim2.fromScale(1, 1)
+	paper.ScaleType = Enum.ScaleType.Stretch
+	paper.ImageColor3 = Color3.fromRGB(70, 48, 28)
+	paper.ZIndex = 1001
+	-- the darker edges: black, fading out towards the middle across and down
+	local edges: { any } = {}
+	for i, rot in { 0, 90 } do
+		local e = Instance.new("Frame")
+		e.BackgroundColor3 = Color3.new(0, 0, 0)
+		e.BorderSizePixel = 0
+		e.Size = UDim2.fromScale(1, 1)
+		e.ZIndex = 1001 + i
+		local g = Instance.new("UIGradient")
+		g.Rotation = rot
+		g.Transparency = NumberSequence.new({
+			NumberSequenceKeypoint.new(0, 0.25), NumberSequenceKeypoint.new(0.3, 1),
+			NumberSequenceKeypoint.new(0.7, 1), NumberSequenceKeypoint.new(1, 0.25),
+		})
+		g.Parent = e
+		e.Parent = f
+		table.insert(edges, e)
+	end
 	local text = string.gsub(Xml.text(key), "{br}", "\n")
-	local t = W.label(f, text, UDim2.fromScale(0.5, 0.5), Vector2.new(1800, 600), 120, W.GOLD)
-	t.ZIndex = 1001
-	t.TextTransparency = 1
-	TweenService:Create(f, TweenInfo.new(0.5), { BackgroundTransparency = 0 }):Play()
-	TweenService:Create(t, TweenInfo.new(0.5), { TextTransparency = 0 }):Play()
+	local t = W.label(f, text, UDim2.fromScale(0.5, 0.5), Vector2.new(1800, 500), 110, ACT_GOLD)
+	t.ZIndex = 1003
+	local parts: { any } = { f, paper, edges[1], edges[2], t }
+	local function fade(alpha: number, time: number)
+		for _, p in parts do
+			local goal = p:IsA("TextLabel") and { TextTransparency = alpha }
+				or (p:IsA("ImageLabel") and { ImageTransparency = alpha } or { BackgroundTransparency = alpha })
+			TweenService:Create(p, TweenInfo.new(time), goal):Play()
+		end
+	end
+	for _, p in parts do
+		if p:IsA("TextLabel") then p.TextTransparency = 1 elseif p:IsA("ImageLabel") then p.ImageTransparency = 1 else p.BackgroundTransparency = 1 end
+	end
+	fade(0, 0.5)
 	task.wait(3)
-	TweenService:Create(f, TweenInfo.new(0.5), { BackgroundTransparency = 1 }):Play()
-	TweenService:Create(t, TweenInfo.new(0.5), { TextTransparency = 1 }):Play()
+	fade(1, 0.5)
 	task.wait(0.5)
 	f:Destroy()
 end
@@ -1207,11 +1241,40 @@ local STAT_ICON: { [string]: string } = {
 	CriticalChance = "critical_chance", CriticalRating = "critical_chance",
 }
 
+-- Which act packs the shop shows. An item's PackLabel names the pack it ships in (packs.xml
+-- ItemsPackLabel): an act's pack downloads, and its items reach the shop, when the previous act's boss
+-- falls; the builds without downloads switch the same labels on at the same fights with ToggleItems
+-- (Items_ZoneN_Toggle_For_Steam_and_Switch). So the shop has the acts reached so far and none later.
+-- Packs no fight opens (raid, clan and event packs) show only if a script switched their label on.
+local PACK_OPENS: { [string]: string } = {
+	ZONE_2 = "ZONE_1|BOSS_LYNX|6", ZONE_3 = "ZONE_2|BOSS_HERMIT|6", ZONE_4 = "ZONE_3|BOSS_BUTCHER|6",
+	ZONE_5 = "ZONE_4|BOSS_WASP|6", ZONE_6 = "ZONE_5|BOSS_HUNTRESS|6", ZONE_IM = "ZONE_6|FINAL_BATTLE|1",
+	ZONE_7 = "ZONE_6|BOSS_SAMURAI_INTERMISSION|1", ZONE_7_2 = "ZONE_6|BOSS_SAMURAI_INTERMISSION|1",
+	ZONE_7_3 = "ZONE_6|BOSS_SAMURAI_INTERMISSION|1",
+}
+local function packOpen(label: string?): boolean
+	if not label or label == "" or label == "ZONE_1" then return true end
+	if Profile.get().labels[label] then return true end
+	local fight = PACK_OPENS[label]
+	return fight ~= nil and Profile.fightStat(fight).w > 0
+end
+Menus.packOpen = packOpen
+
+-- The Ranged and Magic tabs stay empty, with the reason (shopRangedLocked "Defeat Lynx to unlock
+-- ranged weapons", shopMagicLocked "Defeat Hermit to unlock magic"), until those bosses fall
+local TAB_LOCK: { [string]: { fight: string, text: string } } = {
+	Ranged = { fight = "ZONE_1|BOSS_LYNX|6", text = "shopRangedLocked" },
+	Magic = { fight = "ZONE_2|BOSS_HERMIT|6", text = "shopMagicLocked" },
+}
+
 local function shopItems(t: string): { any }
 	local out = {}
+	local lock = TAB_LOCK[t]
+	if lock and Profile.fightStat(lock.fight).w == 0 then return out end
 	for name, it in Items.all() do
 		if Xml.attr(it, "Type") == t and Xml.attr(it, "Model") and Xml.attr(it, "ShopHide") ~= "1"
-			and Xml.attr(it, "Hidden") ~= "1" and (Xml.attr(it, "Price") or Xml.attr(it, "BonusPrice")) then
+			and Xml.attr(it, "Hidden") ~= "1" and (Xml.attr(it, "Price") or Xml.attr(it, "BonusPrice"))
+			and packOpen(Xml.attr(it, "PackLabel")) then
 			table.insert(out, it)
 		end
 	end
@@ -1716,7 +1779,11 @@ function Menus.shop(tab: string?, item: string?)
 	window()
 	select(selected)
 	local none = node("NoItemsMessage")
-	if none then none.Visible = #items == 0 end
+	if none then
+		none.Visible = #items == 0
+		local lock = TAB_LOCK[tab :: string]
+		if lock then setText(none, Xml.text(lock.text)) end
+	end
 end
 
 ---------------------------------------------------------------- profile

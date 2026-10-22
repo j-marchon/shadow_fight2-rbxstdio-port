@@ -1,9 +1,9 @@
 # SF2 → Roblox port: START HERE
 
-> **For any model picking this up:** this is the only file you need to read before working. Read the other docs only when a task needs that detail (the "Deep reference" table says which one).
-> **Update this file with every change, in the same commit, not only at session end** (the rule is in [`CLAUDE.md`](CLAUDE.md)). Rewrite sections 3 and 4 and the "Last updated" line, keep one line per session in section 6, update `sf2-roblox\README.md` for any system that changed, and keep the same headings and format. Don't create new status files. Docs under `docs\` are history; leave them alone.
+> **For any agent picking this up (Claude Code, Antigravity, Codex, ...):** this is the only file you need to read before working. Read the other docs only when a task needs that detail (the "Deep reference" table says which one).
+> **Update this file with every change, in the same commit, not only at session end** (the rules are in [`AGENTS.md`](AGENTS.md); `CLAUDE.md` and `GEMINI.md` point there). Rewrite sections 3 and 4 and the "Last updated" line, keep one line per session in section 6, update `sf2-roblox\README.md` for any system that changed, and keep the same headings and format. Don't create new status files. Docs under `docs\` are history; leave them alone.
 
-Last updated: **2026-10-22** (quest-driven campaign with all 8 act stories; the dojo is the original's live punching-bag fight)
+Last updated: **2026-10-22** (act screen matched to the user's screenshots; the shop shows only reached acts' items and locks Ranged/Magic; docs made agent-neutral)
 
 ---
 
@@ -19,6 +19,7 @@ Last updated: **2026-10-22** (quest-driven campaign with all 8 act stories; the 
 | Folder | Contents |
 |---|---|
 | `START_HERE.md` | this file |
+| `AGENTS.md` | the working rules for every agent (`CLAUDE.md`, `GEMINI.md` point to it) |
 | `.git`, `.gitignore` | **one git repo for the whole folder**, remote `origin` = private GitHub `j-marchon/shadow_fight2-rbxstdio-port` (branch `main`). Everything is tracked (APKs via Git LFS) except what `.gitignore` lists: `sf2-data\keys\` (secrets; never push), `sf2-il2cpp\ghidra_proj\` (2.3 GB database, over GitHub's limits; rebuild from `libil2cpp.so` if lost), the Ghidra installer zip in `_archive`, `tmp\`, and `sf2-standalone\` (the user's separate Antigravity copy). It holds copyrighted game content: **the repo must stay private**. Push big additions in batches under 2 GB |
 | `sf2-roblox\` | **the port** (its old standalone history is merged into the root repo). `src\SF2\*.lua` = runtime, `tools\*.py` = generators, `tools\tests\*.luau` = Studio tests, `out\` = generated Luau (~85 MB), `README.md` = per-system faithfulness notes |
 | `sf2-data\` | decrypted game data. `combat\` (moves.xml, models, animations, tactics, config), `decrypted\`, `extracted_more\`, `apk_assets\`, `index\`. **`keys\`** holds the AES key and the Roblox Open Cloud key (local only; never print or commit them) |
@@ -42,7 +43,9 @@ Then (same day, later session) the user asked to finish the whole port, section 
 - `SF2.Quests` is a port of the QuestsManager (priority queue, event snapshots, FightEnter/ChangeTab interception, the value language, dialogs with their buttons and colours, ShowBattle/HideBattle, Activate, Run, AttachQuestFile, ...);
 - the map shows what the scripts put on it; acts open, bosses unlock and the tutorial runs as in the original. The save is version 2 (battle records, per-fight win/loss counts, tutorial step); old saves are migrated.
 
-**Section 3 (economy) is in progress:** energy and deliveries are in (README "Economy"); the forge/enchantments, item sets, shop item visibility (`ToggleItems`, pack labels) and the reward currencies are next.
+**Section 3 (economy) is in progress:** energy, deliveries and shop item visibility are in (README "Economy"); the forge/enchantments, item sets and the reward currencies are next. The user stopped the session here on purpose, to continue with another agent.
+
+**The user's answers (2026-10-22), now in the code:** the game opens on the dojo (unchanged); the shop shows the acts reached so far and none later, and Ranged/Magic stay empty with "Defeat Lynx/Hermit to unlock ..." until then; items stay usable while being upgraded; the act screen is a dark brown grainy screen with the title in pale gold (matched to their two screenshots).
 
 **Section 2 is done: the dojo** is the original's live punching-bag fight under the menu, with the disciple toggle and the tutorial's dojo steps (README "The dojo").
 
@@ -106,7 +109,7 @@ All of it is committed and installed in the Studio place. **The place has not be
 
 **Known gaps:**
 - Dojo: the tutorial's flashing highlights aren't drawn; the new-game tutorial has not been played through by hand in Studio (only headless).
-- Quest deviations (README "Quests and story"): `Place` doesn't switch scenes, offers/payments/raids/hand-holding do nothing, the act screen's look is a placeholder.
+- Quest deviations (README "Quests and story"): `Place` doesn't switch scenes, offers/payments/raids/hand-holding do nothing, the act screen's backdrop texture is approximated (the look matches the user's screenshots).
 - UI deviations listed above (README UI section).
 - The shock state's effects (`FrameReduction`, `LooseningDelay`, `Impulse Y`, the `Weapon Fists` + `WeaponDamage 0` pair in `internalSettings <Shock>`).
 - Missile/projectile completeness for gun and bow supers. Check `Fight` children before assuming either way.
@@ -129,9 +132,9 @@ The user's standing priority, in their words: the UI was "the biggest problem", 
 2. **Rest of section 3, economy** (energy and deliveries are done):
    - The forge: `forge.xml` has 3 recipes (Simple/Medium/Complex, unlocked by `forge_quests.xml` GIVE_RECIPE_*), each with per-type `Variations` (random perk sets, `?RandomAspect[min,max]` deviation around the `AspectScale` value for the item's level) and `Prices` blocks (ForgeMaterial1/2/3 by item level, DeliveryTime 1200 s, BonusDeliveryPrice). Its UI is the shop's `ForgePanel` (decompile `Nekki.SF2.GUI.Shop.Forge`).
    - Reward currencies: challenge/Eclipse rewards carry `<Currency Drop Name="ForgeMaterialN" ExpectedValue DeviationCoefficient DecayCoefficient>`; find the drop formula in the decompile before paying them.
-   - Item sets (`list.xml <ItemSets>`), shop item visibility (`ToggleItems` labels, `PackLabel` zone packs), real-money items priced in gems.
+   - Item sets (`list.xml <ItemSets>`), real-money items priced in gems. (Shop item visibility is done.)
    Then modes (hard mode, raids as solo bosses), then the UI deviations below.
-   Ask the user for a screenshot of an act screen ("Act II Secret Path") to replace the placeholder, and to play a new game's tutorial (Settings → advanced → RESET PROGRESS).
+   Ask the user to play a new game's tutorial (Settings → advanced → RESET PROGRESS) and the act transitions on the phone side by side.
 3. **Close the UI deviations worth closing**:
    - The real difficulty rating (decompile `Nekki.SF2.GUI.Map\DifficultyPanel__1117.c` / `InfoBattle__2796.c`).
    - The fight HUD's style bar (`StylePanel` / `StyleBar`, `internalSettings <StyleLevels>`) and the real style meter rules from the decompile.
@@ -144,11 +147,12 @@ The user's standing priority, in their words: the UI was "the biggest problem", 
 
 **How to work on a UI screen** (the method this port's screens follow):
 1. Find what the original scene mounts. Each `sf2-assets\ui\scene__levelN_X.json` root's scene component has a `_MountOnStart` list of prefab names.
-2. Print a prefab's tree: `python -I sf2-roblox\tools\ui_tree.py sf2-assets\ui\prefab__<Name>__*.json [depth] [Root/sub/path]`. Set `PYTHONIOENCODING=utf-8` on Windows.
+2. Print a prefab's tree: `python -I sf2-roblox\tools\ui_tree.py sf2-assets\ui\prefab__<Name>__*.json [depth] [Root/sub/path]`. On Windows use `python -I -X utf8` (`-I` ignores `PYTHONIOENCODING`).
 3. Read the controlling script in `sf2-il2cpp\decomp\Root_named\Nekki.SF2.GUI.*\<Class>__N.c`. GUI class names are real, not obfuscated. A prefab's component `fields` in the JSON name which node each script field binds to.
 4. Build it with `UI.build`, then fill text and sprites and wire buttons in `Menus.lua` with its helpers: `onClick`, `setText`, `hideAll`, `fmt`, `loc`. Hide what has no system behind it, and write each deviation into the README UI section.
 
 **Notes for driving Studio:**
+- An agent drives Studio through the **Roblox Studio MCP server** (tools `list_roblox_studios`, `execute_luau`, `start_stop_play`, `get_studio_state`, `screen_capture`, `user_keyboard_input`, `get_console_output`). Any MCP-capable agent can use it; without it, paste the same Luau into Studio's command bar (Edit mode) or a temporary Script, and ask the user for screenshots.
 - Studio ids change per session: run `list_roblox_studios` first. Place: "SF2", placeId 86520858545174.
 - Install (Edit mode only; a Play-mode install is discarded):
   1. Regenerate `out\install.txt` with `python -I tools\make_manifest.py`.
@@ -170,11 +174,12 @@ The user's standing priority, in their words: the UI was "the biggest problem", 
 **Build** (from `sf2-roblox`, `python -I`):
 - `tools\convert.py` (rig/anims), `compile_moves.py`, `build_arsenal.py`, `build_game.py`, `build_models.py`, `build_images.py`, `build_ui.py`, `build_tactics.py`, `build_audio.py`
 - `tools\make_manifest.py` writes `out\install.txt`
+- Data extraction: `tools\extract_quests.py` (UnityPy: every quest/story TextAsset of the APK, apart by path id) and `tools\decrypt_text.ps1` (decrypts them with the key in `sf2-data\keys`, never printing it).
 - Pillow/UnityPy tools run with `D:\Tools\venvs\unitypy\Scripts\python.exe -I`: `extract_assets.py`, `dump_ui.py`, `build_images.py`, and `build_fonts.py` (the game fonts as glyph atlases for `SF2.Text`).
 
 **Install into Studio:**
 1. Serve the port: `python -I -m http.server 8765 --bind 127.0.0.1 --directory D:/SF2-Port/sf2-roblox` (run it in the background).
-2. In **Edit** mode, run `ServerStorage.SF2Installer` (`tools\install.luau`) with `task.spawn`, because a big install times out the MCP call.
+2. In **Edit** mode, run `ServerStorage.SF2Installer` (`tools\install.luau`) with `task.spawn` (from the MCP's `execute_luau` or the command bar), because a big install times out a single call.
 3. Place: the published "SF2" place, placeId **86520858545174**. It needs HttpEnabled and "Allow Mesh / Image APIs".
 4. Studio ids change per session, so list the studios first.
 
@@ -189,7 +194,7 @@ The user's standing priority, in their words: the UI was "the biggest problem", 
 **Quirks:**
 - File Y points down, port Y points up (impulse Y is negated). 40 units = 1 stud.
 - Git Bash needs `MSYS_NO_PATHCONV=1` for adb paths.
-- Edit tab-indented Lua with the Edit tool, not with Python string replacement.
+- Edit tab-indented Lua with exact-text edits (your agent's file-edit tool), not with regex/Python rewrites.
 - Generated modules are split at ≤180 KB, byte-safe.
 
 **Deep reference** (read only when needed):
@@ -225,4 +230,4 @@ The user's standing priority, in their words: the UI was "the biggest problem", 
   - Profile: real perk numbers from CharacterProgress `UpgradeLevel` descriptions, the left tile grid, faded unlearned perks, all tabs.
   - Settings and advanced settings as the original, with volume sliders and controller scale.
   - End screen: the bonus lines, backed by new `Fight.stats` counters and coins paid in `Game`.
-- 2026-10-22 (full port, section by section): section 1, the quest scripts. Found the 6 missing act stories in the APK (same-named TextAssets the old extraction overwrote; a CDN `CONFIGS` pack was fetched with the user's OK but didn't have them), ported the QuestsManager from the decompile, moved the map, act unlocks and the tutorial onto it, save v2 with migration, `story_test.luau` plays the whole campaign. Section 2, the dojo: the live punching-bag fight under the menu (`DojoScene`), the disciple toggle, the tutorial's dojo steps from their decompiled classes; keyboard injection now reaches the game. Section 3 started: energy (5 points, 600 s each, per-fight Power, energy.xml dialogs) and deliveries (DeliveryTime, finish-now gems, Delivery notifications).
+- 2026-10-22 (full port, section by section): section 1, the quest scripts. Found the 6 missing act stories in the APK (same-named TextAssets the old extraction overwrote; a CDN `CONFIGS` pack was fetched with the user's OK but didn't have them), ported the QuestsManager from the decompile, moved the map, act unlocks and the tutorial onto it, save v2 with migration, `story_test.luau` plays the whole campaign. Section 2, the dojo: the live punching-bag fight under the menu (`DojoScene`), the disciple toggle, the tutorial's dojo steps from their decompiled classes; keyboard injection now reaches the game. Section 3 started: energy (5 points, 600 s each, per-fight Power, energy.xml dialogs) and deliveries (DeliveryTime, finish-now gems, Delivery notifications). Then the user's answers: act screen matched to their screenshots, shop shows only reached acts' items with locked Ranged/Magic tabs, AGENTS.md made the docs agent-neutral; stopped there on the user's request.

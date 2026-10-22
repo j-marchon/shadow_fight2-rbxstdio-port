@@ -14,7 +14,7 @@ ModuleScript	ReplicatedStorage/SF2/Images	src/SF2/Images.lua	1ac22099e24bace2
 ModuleScript	ReplicatedStorage/SF2/Items	src/SF2/Items.lua	06d2659bf3cd2b5a
 ModuleScript	ReplicatedStorage/SF2/KeyBuffer	src/SF2/KeyBuffer.lua	218a8611d8870d94
 ModuleScript	ReplicatedStorage/SF2/Location	src/SF2/Location.lua	1c82c4a8c11e6a87
-ModuleScript	ReplicatedStorage/SF2/Menus	src/SF2/Menus.lua	7d818b3a0cd215e9
+ModuleScript	ReplicatedStorage/SF2/Menus	src/SF2/Menus.lua	5d8f652d4960dd92
 ModuleScript	ReplicatedStorage/SF2/MoveEngine	src/SF2/MoveEngine.lua	41d2619ccd3b45fb
 ModuleScript	ReplicatedStorage/SF2/Moves	src/SF2/Moves.lua	d4979357cbde549f
 ModuleScript	ReplicatedStorage/SF2/Pack	src/SF2/Pack.lua	af5e2db5af52a24a

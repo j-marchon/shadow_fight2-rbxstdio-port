@@ -310,8 +310,9 @@ opening when the previous boss falls, and the fixed list of visible battles.
 - Offers, promotions, payments, ads, raids, server calls, video replays and the tutorial's hand-holding
   (arrows, flashing buttons, touch blocking, `ClickButton`) do nothing. `Checkpoint`/`ResumeQuests` (resuming
   after a restart) and `SetDataVersion` (save migrations) are skipped.
-- `ActScreen` is drawn as the localized title on black, faded in and out, until a screenshot of the
-  original's act screen shows its real look.
+- `ActScreen` matches the user's screenshots (dark brown grainy screen, darker edges, the title in pale
+  gold, one line per `{br}`); its backdrop texture isn't in the extracted art, so it is the dialog paper
+  darkened with edge gradients.
 - The `Notification` dialog's content (avatar, text, OK) is placed by hand inside `NotificationGame`'s
   scroll; its layout is built at runtime in the original.
 - `?Fight[id].Helm` (a challenge's required item) reads the fight's `EquipItem` rule for that slot.
@@ -363,6 +364,13 @@ shop's info panel shows MAKING and the time left with the gem button (InfoPanelC
 `ImmediatelyDeliveryButton`). When the time is up (checked every 5 s off the fight screen, and by the shop's
 own timer), `Delivery` fires and `NotificationGeneral`'s `Foreach DeliveryItems/DeliveryUpgrades` shows one
 notification per item ("Upgrade completed: Sai").
+
+**Shop visibility.** An item's `PackLabel` names its act pack; a pack opens when the previous act's boss
+falls (the fights the Steam/Switch `Items_ZoneN_Toggle` quests use: Lynx 6 opens ZONE_2 ... the intermission
+Samurai opens ZONE_7/7_2/7_3), so the shop shows the acts reached and none later; other packs only if a
+script toggled their label. Ranged and Magic stay empty with `shopRangedLocked` / `shopMagicLocked` in
+`NoItemsMessage` until Lynx's / Hermit's 6th fight is won. Confirmed by the user: items stay usable while
+being upgraded.
 
 **Texts** in the scripts are `key{arg0}{arg1}`: the localized key with `{0}`, `{1}` filled from the
 arguments (value expressions; `%{0}` localizes the argument, e.g. an item's name). `{img::...}` arguments
