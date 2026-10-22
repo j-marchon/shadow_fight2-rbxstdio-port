@@ -253,3 +253,62 @@ event matched, its `?PlayerParameter[Enemy].Health <= _Health` condition passed 
 case — so event filters, the template chain, `<Set>` variables, value expressions and the hit edit all
 work. A `ModAttributes` mod moved its owner's DamageFactor from −2000 to 3850 and back when it expired two
 ticks later, and a `RoundStageStart EndStance` cleared a mod through the `EndStanceClear` template.
+
+## UI (menu screens, `src\SF2\UI.lua` + `src\SF2\Menus.lua`)
+
+`tools/build_ui.py` turns the dumped Unity layouts (`sf2-assets/ui`, 229 screens) into packed node trees in
+`out/UI`, and `UI.build(name, parent)` instantiates one as Roblox GUI objects. A screen is therefore the
+game's own layout -- its rects, sprites, fonts, colours and nesting -- with only the behaviour written here.
+Scenes are stored as `scene_<level>_<Scene>` wrapping their roots; prefabs by root name.
+
+Three things in the Unity data do not survive a literal reading, and `UI.build` compensates:
+- **A `Canvas` has a zero rect and a ~1e-7 `localScale`.** The CanvasScaler gives it the screen's size at
+  runtime and the tiny scale is its world-units-per-pixel. Read literally the pair collapses the whole
+  screen into a corner, so a node carrying the `Canvas` component fills its parent at 1:1. `Canvas` is not
+  a MonoBehaviour, so `build_ui.py` has to record it specially.
+- **Stacking is by sibling index**, as in Unity. Every `ScreenGui` the port creates must therefore set
+  `ZIndexBehavior = Sibling`; left on the default `Global`, a layout's later top-level pieces paint over
+  everything nested deeper.
+- **Layout groups are not run.** `VerticalLayoutGroup`, `HorizontalLayoutGroup` and `LayoutElement` drive
+  the size and position of many children, which in the dump are left at zero. Those children are placed by
+  hand where a screen needs them.
+
+Not every tappable thing in the original carries a `Button` component (the side panels' flag tabs are plain
+Images the panel script listens on), so `Menus` puts a transparent button over anything that is not already
+one rather than assuming `.Activated` exists.
+
+### Shop (`Menus.shop`)
+Built from `scene_level4_Shop` (the parchment scroll, side panels, left-hand buttons), `ShopBottomPanel`
+(the category bar) and `ShopTableViewCell` (an 800x400 item row). The row's level star, equipped mark,
+owned tick and level padlock are the prefab's own nodes.
+
+**Row recycling is required, not an optimisation.** A tab's item art spans up to 28 textures, each decoded
+into an EditableImage, and the device's budget for those is finite. Building all ~81 rows at once exhausted
+it and left every atlas requested afterwards -- the category tabs among them -- silently blank. The list
+keeps only the rows near the viewport, as the original's `TableView` does, and releases the art no live row
+still needs. For the same reason the chrome (tabs, top bar) is built before the rows. Relatedly,
+`Images.texture` must not remember a budget failure as a missing texture: that is permanent, and the atlas
+would stay blank for the rest of the session even once a screen change frees the memory.
+
+**Deviations**, each because the behaviour behind it is not ported:
+- `SidePanel` slides the three side panels in and out, one at a time, so they sit stacked at the centre of
+  the scene. They are placed statically instead, where they slide to: item info left of the scroll,
+  attributes right. `ItemPropertiesPanel` (item perks) and `ForgePanel` are hidden.
+- The bar's `Payment`, `Raid` and `Free` tabs are store tabs with nothing behind them here, so they are
+  hidden rather than shown dead. So are the forge and `TryItemButton` -- "try on" puts the item on the
+  warrior for a look, which selecting it already does.
+- The row carries no item name, as in the original; `ItemInfoPanel` names the one picked.
+- The tab bar takes the bottom, where the port's main menu normally sits, so the way out of the shop is
+  the original's quit button in the corner.
+- `LevelLabel` is `<quad name=MiscSprites.star ...> N` in the original. A quad is a sprite the text cannot
+  carry here, so the star sits beside the number as its own image.
+- The place's default `Baseplate` and `SpawnLocation` show past the edges of the 2D scene; `setScene` hides
+  them at runtime rather than deleting them from the place.
+
+**Verified in Studio**: the scroll, rows, art, level stars, equipped mark, side panel and all five category
+tabs draw, and selecting a row fills the panel and offers BUY with its price. The tab buttons, the purchase
+itself and the attribute flag are wired but have not been clicked end to end.
+
+### Still hand-placed
+`dojo`, `map`, `battleInfo`, `vs`, `rewards`, `profile` and `settings` are drawn with `Widgets` at invented
+coordinates, the way the shop was. Each has a layout in `out/UI` to rebuild from the same way.

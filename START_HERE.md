@@ -3,7 +3,7 @@
 > **For any model picking this up:** this is the only file you need to read before working. Read the other docs only when a task needs that detail (the "Deep reference" table says which one).
 > **When you finish a session, update this file**: rewrite sections 3 and 4, add one line to section 6, and keep the same headings and format. Don't create new status files. Docs under `docs\` are history; leave them alone.
 
-Last updated: **2026-10-21** (reorganized everything into `D:\SF2-Port`; no code changed)
+Last updated: **2026-10-22** (playtest fixes, then the shop rebuilt from the original's own layouts)
 
 ---
 
@@ -33,7 +33,7 @@ Outside this folder, kept in place on purpose, since moving them breaks absolute
 
 ## 3. Current status
 
-**Done and committed** (`git log` in `sf2-roblox`; the last commit is `43d2e3c`):
+**Done and committed** (`git log`; the last commit is `15005b3b`):
 - **Combat core:**
   - rig, B-spline animation playback, moves engine (key matching, buffer, mirror, align, transitions)
   - strikes, block, crit, shock, ragdoll and standup
@@ -44,11 +44,11 @@ Outside this folder, kept in place on purpose, since moving them breaks absolute
   - game data as Luau (configs, 594 models, 98 locations, 12 languages)
   - audio uploaded (16 Ogg packs, `AudioMap.lua`, `SF2.Sound`)
   - images as palette blobs drawn through EditableImage (`SF2.Images`)
-  - UI built from the original layouts (`SF2.UI`/`Widgets`)
+  - the UI builder: the original layouts instantiated as Roblox GUI (`SF2.UI`), plus `Widgets` for hand-placed pieces. The fight screen and the shop are built from the layouts; the other menus are still hand-placed (see "Known gaps")
   - fight loop (rounds, stages, timer, KO/timeout)
   - fight screen (HUD, controls, camera, effects, location parallax)
   - profile/save
-  - menus: dojo, map, battle info, VS, rewards, shop, profile, settings
+  - menus: dojo, map, battle info, VS, rewards, shop (rebuilt from the original layouts), profile, settings
   - game flow, training mode, quest scripts and story dialogs
   - fight rules (`SF2.Rules`), Eclipse mode
 - **AI** (`SF2.AI` + `tools\build_tactics.py` → `out\Tactics`):
@@ -73,9 +73,15 @@ Outside this folder, kept in place on purpose, since moving them breaks absolute
 - The perk value expressions `?CurrentFight`, `?CoordX/Y`, `?PlayerAttribute`, `?Aspect`, `?MovesVariable` and `?Abs` read 0, so a perk that positions something in the arena does nothing. The list is in the `Perks.lua` header.
 - **condition targets fixed** (not separately verified beyond the sweep): `ModExists`, `Player` and `Name` carry `Player="Enemy"` in the data and were all being asked about *me*. `compile_moves.cond()` now emits `player=` and `MoveEngine.check` resolves it, so `out\MoveLib` was rebuilt with `tools\build_arsenal.py`.
 
+**From the 2026-10-22 playtest round** (user report; all committed):
+- Fixed: elbow/knee trigger range, hit/block effect frame rate, the loser standing up at round end, round start/end pacing, the wall-jump teleport, tournaments running as 24 separate fights, the learnable moves (Double Sweep and friends, unlocked off `CharacterProgress <PerkTree>`), the fight HUD (vertical health bars, misplaced elements, control size, controls hidden on PC, the duplicating joystick), and a `MAX OUT (DEV)` button in settings.
+- One regression came out of that round and is fixed (`2a497a86`): `Object="Pivot"` means two different points. For a **condition** it is the body pivot (397 of the 405 `<Distance>` elements starting at Pivot end at `Nodes/NPivot`), but for **placing** a move it is the move's own pivot node — 793 of the 1080 `<Align>` blocks position on `Object="Pivot"` and 737 of those align a heel. Resolving both to NPivot snapped the body by the heel offset on every transition: fighters slid at round start and jumped mid-attack. `MoveEngine.anchor` now resolves it by context (NPivot only when a candidate move is passed). Verified: 0 drift in the start stance, no body movement at any transition, ai_test 0 errors / 0.337 ms/tick.
+- **The shop is rebuilt from the original's own layouts** (`15005b3b`): `scene_level4_Shop` + `ShopBottomPanel` + `ShopTableViewCell` through `UI.build`, replacing five tabs down the left edge and a grid of coloured boxes. Four bugs had to be fixed first, two of which affect **every** menu screen — see the port README's new "UI" section. Still only partly driven: the tab buttons, the purchase and the attribute flag are wired but unclicked.
+
 **Not verified by the user yet:**
 - The 2026-10-20 standup-delay and head-hit fixes, plus jab height (HighPunch hits chest, never head; check against the phone).
 - In-game audio (assets may still have been in moderation).
+- The elbow's new trigger range end to end: the harness cannot teleport a fighter (assigning `engine.x` does not move one — the engine re-derives position from the pose), so only the resolution semantics were checked, not the threshold. Up close the elbow should start at ~130 units pivot-to-pivot, not ~208.
 
 **Known gaps:**
 - The shock state's effects (`FrameReduction`, `LooseningDelay`, `Impulse Y`, and the `Weapon Fists` + `WeaponDamage 0` pair in `internalSettings <Shock>`). The 999 damage threshold is reachable only by perks, so it stays unported.
@@ -83,20 +89,27 @@ Outside this folder, kept in place on purpose, since moving them breaks absolute
 - Perk visuals (see the Perks.lua header).
 - AI: BeginnerCheat, emergency/safe dodges, ThrowTactics, BossAbility, the SetWait modes.
 - The old `SF2Fight.client.lua` may still be the Arsenal-only client. Check what `Game`/`FightScreen` wire up before rewriting it.
-- `sf2-roblox\PORT_STATUS.md` is **stale**: it predates most of the commits above. Ignore it.
+- **The rest of the menu screens are still hand-placed** at invented coordinates, the way the shop was: `dojo`, `map`, `battleInfo`, `vs`, `rewards`, `profile`, `settings`. Each has a layout in `out\UI` to rebuild from the same way the shop now is.
+- **The dojo is an AI-fight panel**, not the original's free-roam room with a punching bag. The user asked for this explicitly.
+- Elbow/knee hitboxes were to be widened backward; deliberately deferred until the trigger-range fix is re-tested on the phone.
+- Arena start distance: the data says 200 for the arena. The user wants it bigger, which would be a deviation — their call.
+- Still untouched from the user's list: events, dialogue, lore, cutscenes, "special stuff".
+- The EditableImage budget is tight on this place. Any new screen that decodes many textures at once has to recycle them (see the port README's UI section) or it will blank out atlases loaded after it.
 
 ## 4. Next steps (in order)
-1. Ask the user to playtest with the current install (it is up to date, and the place has **not been saved** — Ctrl+S in Studio to keep it). What to look at, since the headless tests cannot:
-   - a full flow: menu → map → fight → rewards, and the open combat checks below
-   - a throw: Punch tapped with Forward held, close in, right after the enemy's hit reaction
-   - a wall hit against a *moving* enemy (an idle one blocks and never wall-hits)
-   - whether perk icons and effects show in the HUD at all (perk visuals are not ported)
-2. Fix whatever the playtest reports.
-3. Then work through the known gaps: projectiles, boss abilities, the shock state. For anything left from `docs\FULL_GAME_PLAN.md` steps 9–12 (economy and forge, all modes, story coverage, polish), compare it against the commits first.
-4. Ask the user to save the place to Roblox (Ctrl+S in Studio).
 
-Note on the 8765 server: it is running again as of 2026-10-21 (section 5), but not as a service — it dies with the session. Start it before any install.
+The user's standing priority, in their words: the UI was "the biggest problem", a "full rework completely based on the original, especially in the shop"; then the dojo; then "all the small details (events, dialogue, lore, cutscenes, special stuff)". The shop is the first screen done that way and is the template for the rest.
+
+1. Ask the user to playtest the shop (installed, place **not saved** — Ctrl+S in Studio to keep it). What the headless checks could not cover: clicking a category tab, actually buying something, and the flag tab that opens the attribute panel. Also whether the row size and the side panel's placement feel right against the phone.
+2. **Dojo**: free roam with a punching bag, not the AI-fight panel. `scene_level3_Dojo` is already in `out\UI`.
+3. **The remaining menu screens**, rebuilt from their layouts the way the shop was: map, battleInfo, vs, rewards, profile, settings. Re-read the port README's UI section first — the Canvas, sibling-ZIndex and layout-group traps apply to every one of them, and the texture budget decides whether a screen with many icons needs recycling.
+4. Then the small details the user listed: events, dialogue, lore, cutscenes.
+5. Then the older known gaps: projectiles, boss abilities, the shock state. For anything left from `docs\FULL_GAME_PLAN.md` steps 9–12 (economy and forge, all modes, story coverage, polish), compare it against the commits first.
+6. Ask the user to save the place to Roblox (Ctrl+S in Studio).
+
+Note on the 8765 server: it is not a service — it dies with the session. Check it (`curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:8765/out/install.txt`) and start it before any install.
 Note on the headless tests: `all_fights.luau` blocks Studio's main thread for minutes and the MCP plugin disconnects while it runs. It writes to `ServerStorage.TestResult`, so poll that in a separate call once Studio answers again, rather than waiting inside the call.
+Note on driving the UI: install needs **Edit** mode (a Play-mode install is discarded), so stop Play first. `execute_luau` has its **own require cache**, so `require(SF2.Menus)` there builds a *second* `SF2Menu` ScreenGui beside the running game's instead of driving it — and the duplicate renders blank, because the two module copies fight over the EditableImage budget. To exercise a real screen, click it with `user_mouse_input`; to check structure only, build in a fresh instance and read the tree rather than the pixels. `user_mouse_input` stopped responding partway through the 2026-10-22 session and did not recover; restarting Play did not help.
 
 ## 5. How to work
 
@@ -141,3 +154,5 @@ Note on the headless tests: `all_fights.luau` blocks Studio's main thread for mi
 - 2026-10-21: reorganized everything into `D:\SF2-Port`, fixed hardcoded paths, wrote this file, moved the port folder after stopping the old servers. No code changed.
 - 2026-10-21: wired the perks interpreter into the fight (hit stages in `Combat.strike`, animation events in `MoveEngine`, stage/tick/MagicCharged in `Fight`), regenerated `out\install.txt`, documented Perks and the AI engagement floor in the port README. Nothing installed or run: no Studio instance was connected. Then wall repulsion (so `WallHit`/`WallHitFall` can fire), the `Player="Enemy"` fix for the ModExists/Player/Name conditions with `out\MoveLib` rebuilt, and a static audit of throws. Still nothing run in Studio.
 - 2026-10-21 (Studio session): installed into the SF2 place and verified for the first time. ai_test 0 errors; all_fights 761 fights / 0 errors (the 104 Eclipse failures were a harness gap, now fixed and covered); perks shown to fire, gate on conditions and expire; wall repulsion and WallHit confirmed. Fixed the hit-stage order so all three perk stages run before the health comes off, which the first wiring had broken for PERK_ENLIGHTENMENT and PERK_ANTI_SHOCK.
+- 2026-10-22 (playtest round 1): worked through the user's 13-item report — elbow/knee range, hit-spark frame rate, the loser staying down, round pacing, wall-jump teleport, 24 separate tournament fights, learnable moves off the `<PerkTree>`, the fight HUD and touch controls, and a dev max-out button. Then fixed the regression that came out of it: `Object="Pivot"` is the body pivot for a condition but the move's own pivot node for an `Align`, and collapsing the two made fighters slide and jump on every transition.
+- 2026-10-22 (shop): rebuilt `Menus.shop` from `scene_level4_Shop`, `ShopBottomPanel` and `ShopTableViewCell`. Four bugs blocked it: the Canvas zero-rect/1e-7-scale pair, `ZIndexBehavior` left on Global while `UI.build` stacks by sibling index (this one also affected every other menu screen), a failed EditableImage caching as a permanently missing texture, and all 81 rows decoding at once exhausting that budget so the tab atlas came back blank. Wrote the port README's UI section as the template for the remaining screens. The tab buttons, the purchase and the attribute flag are wired but were never clicked — `user_mouse_input` stopped responding.
