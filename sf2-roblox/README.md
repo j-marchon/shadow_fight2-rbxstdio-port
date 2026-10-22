@@ -2,6 +2,8 @@
 
 Personal project. Uses the original game's data; keep the place private.
 
+> **Keep this file current.** When a change alters a system's behaviour, layout or deviations from the original, update that system's section here in the same commit (see [`../CLAUDE.md`](../CLAUDE.md)).
+
 ## Layout
 | Path | What |
 |---|---|

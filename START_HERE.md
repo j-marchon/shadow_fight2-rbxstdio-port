@@ -1,7 +1,7 @@
 # SF2 → Roblox port: START HERE
 
 > **For any model picking this up:** this is the only file you need to read before working. Read the other docs only when a task needs that detail (the "Deep reference" table says which one).
-> **When you finish a session, update this file**: rewrite sections 3 and 4, add one line to section 6, and keep the same headings and format. Don't create new status files. Docs under `docs\` are history; leave them alone.
+> **Update this file with every change, in the same commit, not only at session end** (the rule is in [`CLAUDE.md`](CLAUDE.md)). Rewrite sections 3 and 4 and the "Last updated" line, keep one line per session in section 6, update `sf2-roblox\README.md` for any system that changed, and keep the same headings and format. Don't create new status files. Docs under `docs\` are history; leave them alone.
 
 Last updated: **2026-10-22** (menus matched against screenshots of the real game: text sizing, shop snapping, map, profile, settings, end screen)
 
