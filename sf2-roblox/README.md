@@ -269,9 +269,17 @@ Three things in the Unity data do not survive a literal reading, and `UI.build` 
 - **Stacking is by sibling index**, as in Unity. Every `ScreenGui` the port creates must therefore set
   `ZIndexBehavior = Sibling`; left on the default `Global`, a layout's later top-level pieces paint over
   everything nested deeper.
-- **Layout groups are not run.** `VerticalLayoutGroup`, `HorizontalLayoutGroup` and `LayoutElement` drive
-  the size and position of many children, which in the dump are left at zero. Those children are placed by
-  hand where a screen needs them.
+- **Layout groups are run by `UI.build`.** `VerticalLayoutGroup`, `HorizontalLayoutGroup`, `GridLayoutGroup`,
+  `LayoutElement` and `ContentSizeFitter` drive the size and position of many children, which the dump leaves
+  at zero. `build_ui.py` records their settings (`lg`, `le`, `cf`), and `UI.lua` runs UnityEngine.UI's own
+  `CalcAlongAxis` / `SetChildrenAlongAxis` on the built instances once built and again on resize. A screen
+  that hides, shows or retexts something a group arranges calls `built:relayout()`; a prefab instantiated
+  into a group at runtime gets its sibling index from `UI.setOrder`. Preferred sizes come from the
+  LayoutElement, else the image's sprite size (sliced: its border) or the text's width. The shop and the
+  fight HUD were placed by hand before this existed and pass `{ layout = false }` to stay as verified.
+- **Text overflows a zero-width rect**, as Unity's default does (TextAndMoneyLine's label sits on one).
+- `RectMask2D` / `Mask` become `ClipsDescendants`. `find` also matches a path suffix, so a node deep in a
+  scene (`SidePanels/InfoPanel` under `scene_level7_Profile/[Profile]/ProfileUIGroup`) is found directly.
 
 Not every tappable thing in the original carries a `Button` component (the side panels' flag tabs are plain
 Images the panel script listens on), so `Menus` puts a transparent button over anything that is not already
@@ -298,8 +306,7 @@ would stay blank for the rest of the session even once a screen change frees the
   hidden rather than shown dead. So are the forge and `TryItemButton` -- "try on" puts the item on the
   warrior for a look, which selecting it already does.
 - The row carries no item name, as in the original; `ItemInfoPanel` names the one picked.
-- The tab bar takes the bottom, where the port's main menu normally sits, so the way out of the shop is
-  the original's quit button in the corner.
+- The way out of the shop is the MainMenu scroll, as in every menu scene.
 - `LevelLabel` is `<quad name=MiscSprites.star ...> N` in the original. A quad is a sprite the text cannot
   carry here, so the star sits beside the number as its own image.
 - The place's default `Baseplate` and `SpawnLocation` show past the edges of the 2D scene; `setScene` hides
@@ -309,6 +316,50 @@ would stay blank for the rest of the session even once a screen change frees the
 tabs draw, and selecting a row fills the panel and offers BUY with its price. The tab buttons, the purchase
 itself and the attribute flag are wired but have not been clicked end to end.
 
-### Still hand-placed
-`dojo`, `map`, `battleInfo`, `vs`, `rewards`, `profile` and `settings` are drawn with `Widgets` at invented
-coordinates, the way the shop was. Each has a layout in `out/UI` to rebuild from the same way.
+### The other screens (2026-10-22)
+Every menu screen is now built from the prefabs its original scene mounts (the scene's `_MountOnStart`):
+
+- **MainMenu** (dojo, map, shop, profile): the top bar -- level and experience bar, coins, gems and the
+  `AddMoney` button, spaced by the bar's own layout groups and the F2P spacers MainMenu lerps by aspect
+  (0 to 300 for aspect 1.23 to 2.0, InOutCirc) -- and the section scroll in the corner. The scroll is rolled
+  up to its MENU wheel; tapping it unrolls the 1240-unit scroll in 0.3 s over a backdrop that rolls it back
+  (`MenuScroll`). The current section shows its `_active` sprite and is not clickable. The dojo's corner
+  toggle is the punching bag (`MENU_BUTTON_DISCIPLE_ON`) and opens the port's training.
+- **Map** (`StoryMapContainer`, `InfoBattle`, `MapButtonsPanel`): the act's map is a `StoryZoneScrollItem`
+  (2730x1298) and each `BattleButton` sits at `localPosition = 2 x (X, Y)` from stages.xml
+  (`ZoneScrollItem`). A tap picks a battle (pressed sprite) and fills InfoBattle with the matching
+  Contents child: tournament/challenge (stage x/y, one brick per fight, difficulty, prize), bosses, duel,
+  survival (min/max prize), closed or completed. Dragging the map past 300 units moves to the next or
+  previous open act; the lamps under it (`LampsPanel`: 68 wide, 22 apart, at y -55) show and jump between
+  acts. The Eclipse toggle sits in MapButtonsPanel's actions row.
+- **Profile** (`scene_level7_Profile`, `ProfileBottomPanel`): the perk tree as `PerkCell` rows (two perks
+  side by side with the joining line where a level offers two), the learnable strikes as `TrickCell` rows,
+  the picked one described in `InfoPanel`, your perks listed in `UserPerksPanel`.
+- **Settings** (`SettingsDialog`, over the current screen): music, sound and language with their
+  SettingsButtons icons, the user id; "Advanced" opens `SettingsAdvancedDialog`.
+- **End of a fight** (`EndFightScreen` + `EndFightContent`, `TextAndMoneyLine`, `ExpAndMoneyLine`): Win,
+  Lose or Time-is-up header, the prize and exp/coins lines, OK on a win and Retry, OK and Store on a loss.
+  It now shows after a loss too (it used to go straight back to the map).
+
+**Deviations**, each because the behaviour behind it is not ported:
+- MenuWheel's `MenuButton` and `MenuWheelText` live in a nested prefab the dump lacks; the wheel itself is
+  the tap target (its sprite carries the word MENU).
+- Energy, raid rating, forge materials, the tutorial skip and the ruby sale badge are hidden.
+- InfoBattle's difficulty rating is approximated from the fight's `AttributesAlign` Factor (<0.95 easy,
+  <1.05 normal, <1.15 hard, <1.3 insane, else impossible); the original rates it at runtime.
+- Battle buttons' `Name` labels are hidden; the map shows one act at a time (a drag moves to the next) rather
+  than a continuous strip, to keep one zone texture decoded.
+- The profile has no 3D dojo behind it: the original shows a dimmed 2D backdrop there, and with the
+  profile's atlases decoded the EditableImage budget leaves the 3D scene blank. Achievements, Seals and the
+  Battle Pass tabs are hidden (no system behind them). Where a level offers two perks the original makes you
+  pick one; the port's fights grant both, so both show as learned. Perk descriptions show `?` for their
+  `{n}` values, which the original fills from the perk's script.
+- Settings: credits, support, the social/store buttons and cloud saves are hidden. The advanced dialog holds
+  the port's reset and the temporary `MAX OUT (DEV)` instead of graphics/controller options.
+- The end screen's count-up animation is not played; the video-reward button is hidden.
+- The arsenal training panel (`Menus.arsenal`) is the port's own and stays hand-placed.
+
+**Verified in Studio**: dojo, map (zone 1, Eclipse on), profile (both tabs), shop, settings and the win and
+time-up end screens render from the layouts with no errors. Studio's mouse injection still does not reach the
+game, so they were driven through a Studio-only hook (`PlayerGui.SF2Debug:Invoke("map", ...)`, created by
+`SF2Game.client.lua` only when `RunService:IsStudio()`), and no button has been clicked by hand.

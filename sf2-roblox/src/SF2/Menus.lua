@@ -1,13 +1,12 @@
 --!strict
--- The menu screens, built from the game's own sprites and data:
---  * top bar (TopPanel: coins, gems, level and experience) and bottom menu (MenuButtons: Map, Shop, Profile,
---    Settings, Dojo) on a canvas over the 3D scene
---  * dojo: the dojo location with your warrior in the peaceful stance
---  * map: the act's map (stages.xml Zone FileName), battle buttons at the Battle X/Y with the game's button
---    art (BattleBtn<state>.<state>_<icon>), act arrows, the battle info scroll with progress and rewards
---  * shop: Weapon / Armor / Helmet / Ranged / Magic tabs, list.xml prices and levels, buy, equip, upgrade
---  * profile: equipment and attributes; settings: sound, music, language, reset
--- Port deviations: the scroll animations and the radial menu wheel are laid out statically.
+-- The menu screens, each built from the prefabs its original scene mounts (UI.build), with only the
+-- behaviour written here:
+--  * every menu scene: MainMenu (top bar, the roll-down section scroll in the corner)
+--  * dojo: the dojo in 3D with your warrior; map: StoryMapContainer + InfoBattle + MapButtonsPanel
+--  * shop: scene_level4_Shop + ShopBottomPanel + ShopTableViewCell rows
+--  * profile: scene_level7_Profile + ProfileBottomPanel, PerkCell / TrickCell rows
+--  * settings: SettingsDialog over the current screen; end of a fight: EndFightScreen + EndFightContent
+-- Deviations are noted at each screen and in the port README's UI section.
 
 local Players = game:GetService("Players")
 local UI = require(script.Parent.UI)
@@ -106,58 +105,242 @@ local function setScene(locationName: string?, showWarrior: boolean, def: any?)
 	scene = { folder = folder, location = loc, showcase = sc, conn = conn }
 end
 
----------------------------------------------------------------- top bar and bottom menu
+---------------------------------------------------------------- helpers for built layouts
 
-local function topBar(parent: Frame)
-	local d = Profile.get()
-	local bar = W.image(parent, "TopPanel.Top_Panel", UDim2.new(0.5, 0, 0, 0), Vector2.new(2400, 150), Vector2.new(0.5, 0))
-	bar.ScaleType = Enum.ScaleType.Stretch
-	bar.Size = UDim2.new(1, 0, 0, 150)
-	-- level and experience
-	W.image(parent, "TopPanel.level", UDim2.new(0.5, -760, 0, 62), Vector2.new(110, 110))
-	W.label(parent, tostring(d.level), UDim2.new(0.5, -760, 0, 62), Vector2.new(100, 80), 56, Color3.new(1, 1, 1))
-	local empty = W.image(parent, "TopPanel.Level_bar_Empty", UDim2.new(0.5, -690, 0, 62), Vector2.new(360, 40), Vector2.new(0, 0.5))
-	empty.ScaleType = Enum.ScaleType.Stretch
-	local fill = W.image(parent, "TopPanel.Level_bar", UDim2.new(0.5, -690, 0, 62), Vector2.new(360, 40), Vector2.new(0, 0.5))
-	fill.ScaleType = Enum.ScaleType.Stretch
-	fill:SetAttribute("fillMethod", "Horizontal")
-	UI.setFill(fill, math.clamp(d.exp / math.max(1, Profile.expToNext(d.level)), 0, 1))
-	-- coins and gems
-	W.image(parent, "TopPanel.gold", UDim2.new(0.5, 180, 0, 62), Vector2.new(90, 90))
-	W.label(parent, tostring(d.money), UDim2.new(0.5, 240, 0, 62), Vector2.new(300, 80), 60, W.GOLD, Enum.TextXAlignment.Left).AnchorPoint = Vector2.new(0, 0.5)
-	W.image(parent, "TopPanel.ruby", UDim2.new(0.5, 560, 0, 62), Vector2.new(90, 90))
-	W.label(parent, tostring(d.bonus), UDim2.new(0.5, 620, 0, 62), Vector2.new(250, 80), 60, Color3.fromRGB(255, 120, 120), Enum.TextXAlignment.Left).AnchorPoint = Vector2.new(0, 0.5)
+-- A node the layout marks as a button comes out as an ImageButton, but not every tappable thing in the
+-- original carries a Button component -- the side panels' flag tabs are plain Images the panel script
+-- listens on. Give anything that isn't already a button a transparent one over it.
+local function clickable(o: any): any
+	if o:IsA("GuiButton") then return o end
+	local hit = Instance.new("TextButton")
+	hit.Text = ""
+	hit.BackgroundTransparency = 1
+	hit.Size = UDim2.fromScale(1, 1)
+	hit.ZIndex = o.ZIndex + 1
+	hit.Parent = o
+	return hit
 end
 
-local function bottomMenu(parent: Frame, current: string)
-	local roll = W.image(parent, "CommonScrolls.MenuRoll_center", UDim2.new(0.5, 0, 1, 0), Vector2.new(1500, 230), Vector2.new(0.5, 1))
-	roll.ScaleType = Enum.ScaleType.Stretch
-	local entries = {
-		{ "Dojo", function() Menus.dojo() end },
-		{ "Map", function() Menus.map() end },
-		{ "Shop", function() Menus.shop() end },
-		{ "Profile", function() Menus.profile() end },
-		{ "Settings", function() Menus.settings() end },
-	}
-	for i, e in entries do
-		local name = e[1]
-		local state = name == current and "_active" or "_normal"
-		local x = (i - 3) * 270
-		W.button(parent, "MenuButtons." .. name .. state, "MenuButtons." .. name .. "_pushed", UDim2.new(0.5, x, 1, -110), Vector2.new(230, 200), e[2])
+local function onClick(o: any, fn: () -> (), sound: string?)
+	if not o then return end
+	clickable(o).Activated:Connect(function()
+		Sound.play(sound or "snd_click_1")
+		fn()
+	end)
+end
+
+-- the TextLabel of a built text node (a node named "Text" carries its own "Text" label)
+local function textOf(o: Instance?): TextLabel?
+	local t = o
+	while t and not t:IsA("TextLabel") do t = t:FindFirstChild("Text") end
+	return t :: TextLabel?
+end
+
+local function setText(o: Instance?, text: string)
+	local t = textOf(o)
+	if t then t.Text = text end
+end
+
+local function hideAll(b: any, names: { string })
+	for _, n in names do
+		local o = b and b:find(n)
+		if o then o.Visible = false end
 	end
 end
 
+-- "1 000 000", the way the original's labels group digits
+local function fmt(n: number): string
+	local s = tostring(math.floor(n))
+	local neg = string.sub(s, 1, 1) == "-"
+	if neg then s = string.sub(s, 2) end
+	local out = string.reverse((string.gsub(string.reverse(s), "(%d%d%d)", "%1 ")))
+	out = string.gsub(out, "^ ", "")
+	return (neg and "-" or "") .. out
+end
+Menus.fmt = fmt
+
+-- The localized text of a key whose value may point at another key ("%DoubleSweep")
+local function loc(key: string?): string
+	local t = Xml.text(key)
+	if string.sub(t, 1, 1) == "%" then t = Xml.text(string.sub(t, 2)) end
+	return t
+end
+
+---------------------------------------------------------------- main menu (MainMenu prefab)
+-- Every menu scene mounts the MainMenu prefab: the top bar (experience, coins, gems, laid out by the
+-- bar's own HorizontalLayoutGroups) and the section scroll in the top-left corner. The scroll is rolled
+-- up to its wheel; tapping the wheel unrolls it in 0.3 s (MenuScroll.OnMenuBtnClick) over a darkening
+-- backdrop that rolls it up again when tapped (OnBackgroundClick). The current section's button shows
+-- its _active sprite and is not interactable (MainMenu.SetCurrentButton).
+
+local TweenService = game:GetService("TweenService")
+local SECTIONS = { "Dojo", "Map", "Shop", "Profile", "Settings" }
+local SCROLL_LENGTH = 1240 -- the Scroll rect's height in the prefab, its fully unrolled length
+local SCROLL_TIME = 0.3 -- MenuScroll's tween duration
+
+-- DOTween Ease.InOutCirc (MainMenu._F2P_SpacerWidthLerpParams.Ease = 22)
+local function inOutCirc(t: number): number
+	if t < 0.5 then return (1 - math.sqrt(1 - (2 * t) ^ 2)) / 2 end
+	return (math.sqrt(1 - (-2 * t + 2) ^ 2) + 1) / 2
+end
+
+local function mainMenu(parent: Instance, section: string): any
+	local m = UI.build("MainMenu", parent)
+	if not m then return nil end
+	local d = Profile.get()
+	-- pieces with nothing behind them here: energy (raid/event modes), the raid rating, the forge
+	-- materials, the tutorial's skip button and input blocker, the ruby sale badge and the server value
+	hideAll(m, {
+		"Content/StaticPanel/EnergyPanel", "Content/StaticPanel/RaidRaiting", "Content/MaterialsPanel",
+		"SkipTutBtn", "MenuBlocker", "Content/SceneTitlePanel",
+		"Content/StaticPanel/MoneyPanel/BonusInfoGroup/RubyServerValue",
+		"Content/StaticPanel/MoneyPanel/BtnRubyInfo/RubySale",
+		"Content/StaticPanel/ExperiencePanel/BarExp/HintRoot",
+	})
+
+	-- experience: off in the prefab, MenuExpPanel shows it in every menu scene
+	local exp = m:find("Content/StaticPanel/ExperiencePanel")
+	if exp then
+		exp.Visible = true
+		local maxed = d.level >= Profile.maxLevel()
+		setText(m:find("Content/StaticPanel/ExperiencePanel/LabelLevel"), tostring(d.level))
+		local stripe = m:find("Content/StaticPanel/ExperiencePanel/BarExp/BarStripe")
+		if stripe then
+			stripe:SetAttribute("fillMethod", "horizontal")
+			UI.setFill(stripe, maxed and 1 or math.clamp(d.exp / math.max(1, Profile.expToNext(d.level)), 0, 1))
+		end
+		local maxIcon = m:find("Content/StaticPanel/ExperiencePanel/IconMaxLevel")
+		if maxIcon then maxIcon.Visible = maxed end
+	end
+	-- the LabelLevel node carries a Text component the dump records without its settings
+	local lvl = textOf(m:find("Content/StaticPanel/ExperiencePanel/LabelLevel"))
+	if not lvl then
+		local host = m:find("Content/StaticPanel/ExperiencePanel/LabelLevel")
+		if host then
+			local t = Instance.new("TextLabel")
+			t.Name = "Text"
+			t.BackgroundTransparency = 1
+			t.Size = UDim2.fromScale(1, 1)
+			t.FontFace = W.FONT
+			t.TextColor3 = Color3.new(1, 1, 1)
+			t.TextScaled = true
+			t.Text = tostring(d.level)
+			t.ZIndex = host.ZIndex
+			t.Parent = host
+		end
+	end
+
+	-- coins and gems
+	setText(m:find("Content/StaticPanel/MoneyPanel/CoinInfoGroup/CoinsLabel"), fmt(d.money))
+	setText(m:find("Content/StaticPanel/MoneyPanel/BonusInfoGroup/RubyLabel"), fmt(d.bonus))
+	onClick(m:find("Content/StaticPanel/MoneyPanel/GoToShopBtn"), function() Menus.shop() end)
+	onClick(m:find("Content/StaticPanel/MoneyPanel/BtnRubyInfo/BtnRuby"), function() Menus.shop() end)
+
+	-- F2P spacers: MainMenu lerps their width from 0 to 300 as the aspect goes from 1.23 to 2.0
+	local cam = workspace.CurrentCamera
+	local aspect = cam.ViewportSize.X / math.max(1, cam.ViewportSize.Y)
+	local spacer = 300 * inOutCirc(math.clamp((aspect - 1.23) / (2.0 - 1.23), 0, 1))
+	for _, n in { "Content/StaticPanel/F2P_LeftSpace", "Content/StaticPanel/F2P_RightSpace" } do
+		local o = m:find(n)
+		if o then UI.setPreferred(o, spacer, nil) end
+	end
+
+	-- the section scroll
+	local scroll = m:find("Content/ScrollParent/Scroll")
+	local back = m:find("Content/ScrollParent/ScrollBack")
+	-- ScrollBack's Image is recorded without its settings: a black backdrop MenuScroll fades in to half
+	local backAlpha = 0.5
+	if back then
+		back.BackgroundColor3 = Color3.new(0, 0, 0)
+		back.BorderSizePixel = 0
+	end
+	local open = false
+	local function setLength(len: number, time: number)
+		if not scroll then return end
+		local size = UDim2.new(scroll.Size.X.Scale, scroll.Size.X.Offset, 0, len)
+		local t = len / SCROLL_LENGTH
+		if back then
+			back.Visible = len > 0
+			local goal = { BackgroundTransparency = 1 - backAlpha * t }
+			if time > 0 then TweenService:Create(back, TweenInfo.new(time), goal):Play()
+			else back.BackgroundTransparency = goal.BackgroundTransparency end
+		end
+		if time > 0 then
+			TweenService:Create(scroll, TweenInfo.new(time, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { Size = size }):Play()
+		else
+			scroll.Size = size
+		end
+	end
+	setLength(0, 0)
+	local function toggle()
+		open = not open
+		setLength(open and SCROLL_LENGTH or 0, SCROLL_TIME)
+	end
+	if back then
+		onClick(back, function()
+			if open then toggle() end
+		end)
+	end
+	local wheel = m:find("Content/ScrollParent/Scroll/MenuWheel")
+	if wheel then
+		-- the MenuRoll_center sprite carries the word MENU itself; MenuButton (the tap target) lives in a
+		-- nested prefab the dump does not carry, so the wheel is made clickable directly
+		onClick(wheel, toggle)
+	end
+	for _, name in SECTIONS do
+		local btn = m:find("Content/ScrollParent/Scroll/ClippingSprite/Toggles/" .. name)
+		if btn then
+			local current = name == section
+			UI.setSprite(btn, "MenuButtons." .. name .. (current and "_active" or "_normal"))
+			if not current then
+				local pushed = "MenuButtons." .. name .. "_pushed"
+				local function go()
+					open = false
+					setLength(0, 0)
+					local f = ({ Dojo = Menus.dojo, Map = Menus.map, Shop = Menus.shop, Profile = Menus.profile,
+						Settings = Menus.settings }) [name]
+					f()
+				end
+				local hit = clickable(btn)
+				if Images.sprite(pushed) then
+					hit.MouseButton1Down:Connect(function() UI.setSprite(btn, pushed) end)
+					hit.MouseLeave:Connect(function() UI.setSprite(btn, "MenuButtons." .. name .. "_normal") end)
+				end
+				hit.Activated:Connect(function()
+					Sound.play("snd_click_1")
+					go()
+				end)
+				-- "Additional TouchZone" widens the tap target past the icon
+				local zone = btn:FindFirstChild("Additional TouchZone")
+				if zone then onClick(zone, go) end
+			end
+		end
+	end
+
+	-- the dojo's corner toggle: MENU_BUTTON_DISCIPLE_ON is the punching bag. The port's training
+	-- (every weapon, you and the dummy) sits behind it.
+	local disciple = m:find("Content/TgglDisciple")
+	if disciple then
+		disciple.Visible = section == "Dojo"
+		local bg = disciple:FindFirstChild("Background")
+		if bg then UI.setSprite(bg, "MenuButtons.btn_punching_bag") end
+		local mark = bg and bg:FindFirstChild("Checkmark")
+		if mark then (mark :: any).Visible = false end
+		onClick(disciple, function() Menus.arsenal() end)
+	end
+	m:relayout()
+	return m
+end
+Menus.mainMenu = mainMenu
+
 ---------------------------------------------------------------- dojo
 
+-- The dojo scene: the dojo in 3D with your warrior, and the MainMenu over it (DojoScene mounts nothing
+-- else). Port deviation: the original's dojo is a free-roam room; here it is the backdrop for the menu.
 function Menus.dojo()
 	local s = clear()
 	setScene("dojo", true)
-	topBar(s)
-	bottomMenu(s, "Dojo")
-	-- training: the punching bag opens the arsenal (every weapon in the game, for you and the dummy)
-	W.button(s, "MenuButtons.btn_punching_bag", nil, UDim2.new(1, -170, 0.5, 0), Vector2.new(240, 240), function()
-		Menus.arsenal()
-	end)
+	mainMenu(s, "Dojo")
 	Sound.music("menu")
 end
 
@@ -271,65 +454,388 @@ local function buttonSprite(b: any, state: string): string
 	return name
 end
 
+-- The battle picked on each act's map (ZoneScrollItem.SetLastBattle), kept while the session lasts
+local pickedBattle: { [string]: string } = {}
+
+-- DifficultyPanel: diff0..diff4 and the matching DifficultyBars stripe. Port approximation: the
+-- original rates the enemy against the player at runtime; here the rating comes from how far the
+-- fight's AttributesAlign pushes the enemy past the player (Factor), which is what makes it harder.
+local DIFF_BARS = { "very_easy", "easy", "middle", "hard", "very_hard" }
+local function difficulty(fight: any): number
+	local d = Profile.get()
+	local enemies = fight and Stages.enemies(fight, d.level) or {}
+	local e = enemies[1]
+	local f = e and e.align and e.align.factor or 1
+	if f < 0.95 then return 0 end
+	if f < 1.05 then return 1 end
+	if f < 1.15 then return 2 end
+	if f < 1.3 then return 3 end
+	return 4
+end
+
+local function fillDifficulty(panel: Instance?, fight: any)
+	if not panel then return end
+	local k = difficulty(fight)
+	for _, bar in panel:GetDescendants() do
+		if bar.Name == "BarStripe" or (bar.Name == "Bar" and bar:IsA("ImageLabel")) then
+			UI.setSprite(bar, "DifficultyBars." .. DIFF_BARS[k + 1])
+		end
+		if bar.Name == "lblDifficulty" or (bar.Name == "Label" and bar.Parent == panel) then
+			setText(bar, Xml.text("diff" .. k))
+		end
+	end
+end
+
+-- PrizePanel/BattlePrize: one BattlePrizeElement per currency or item, in the prize row's layout group
+local function fillPrize(prize: Instance?, r: any)
+	if not prize then return end
+	local row = prize:FindFirstChild("ElementsLayoutGroup", true)
+	if not row then return end
+	for _, c in row:GetChildren() do
+		if c:IsA("GuiObject") and c.Name == "BattlePrizeElement" then c:Destroy() end
+	end
+	local n = 0
+	local function add(icon: string?, value: string)
+		local e = UI.build("BattlePrizeElement", row, { layout = false })
+		if not e then return end
+		n += 1
+		UI.setOrder(e.root, n)
+		local ic = e:find("Icon")
+		if ic and icon then
+			UI.setSprite(ic, icon)
+			ic.ScaleType = Enum.ScaleType.Fit
+		end
+		setText(e:find("Value"), value)
+	end
+	if (r.money or 0) > 0 then add("MiscSprites.gold", fmt(r.money)) end
+	if (r.bonus or 0) > 0 then add("MiscSprites.ruby", fmt(r.bonus)) end
+	if (r.exp or 0) > 0 then add("MiscSprites.level", fmt(r.exp)) end
+	for _, name in r.items or {} do
+		local it = Items.get(name)
+		if it then add(Xml.attr(it, "Image"), "") end
+	end
+	UI.relayout(row)
+end
+
+-- InfoBattle: the scroll on the right of the map describing the picked battle. Each battle type has its
+-- own Contents child, as in the original (ContentChallTour for tournaments and challenges, ContentBosses,
+-- ContentDuel, ContentSurvival, ContentClosed for a locked one, ContentCompleteOrLocked once done).
+local function fillInfoBattle(info: any, zoneName: string, b: any, eclipse: boolean, bossLocked: boolean)
+	local panel = info:find("Panel")
+	if not b then
+		if panel then panel.Visible = false end
+		return
+	end
+	if panel then panel.Visible = true end
+	hideAll(info, { "Panel/btnSkipFight", "Panel/btnRemoveFight" })
+	setText(info:find("Panel/lblBattleName"), string.upper(loc(Xml.attr(b, "Title"))))
+	local img = info:find("Panel/imgBattle")
+	if img then
+		UI.setSprite(img, Xml.attr(b, "Preview"))
+		img.ScaleType = Enum.ScaleType.Fit
+	end
+	local contents = info:find("Panel/Contents")
+	if contents then
+		for _, c in contents:GetChildren() do
+			if c:IsA("GuiObject") then c.Visible = false end
+		end
+	end
+	local t = Xml.attr(b, "Type") or ""
+	local name = Xml.attr(b, "Name") :: string
+	local fights = Stages.fights(b)
+	local done = Profile.progress(zoneName, name)
+	local nextIdx = math.clamp(done + 1, 1, math.max(1, #fights))
+	local fight = fights[nextIdx]
+	local r = fight and Menus.reward(fight, eclipse) or { money = 0, exp = 0, bonus = 0, items = {} }
+	local complete = #fights > 0 and done >= #fights and t ~= "PERIODIC" and t ~= "SURVIVAL"
+	local function show(n: string): any
+		local o = contents and contents:FindFirstChild(n)
+		if o then o.Visible = true end
+		return o
+	end
+	local fightBtn = info:find("Panel/btnFight")
+	if fightBtn then fightBtn.Visible = not bossLocked end
+	if bossLocked then
+		local c = show("ContentClosed")
+		local msg = Xml.text("BOSS_LOCKED")
+		setText(c and c:FindFirstChild("lblDescription"), msg ~= "BOSS_LOCKED" and msg or Xml.text("LockedDuelDescription"))
+	elseif t == "SURVIVAL" then
+		local c = show("ContentSurvival")
+		if c then
+			local rewards = fight and Xml.all(Xml.first(fight, "Rewards"), "Reward") or {}
+			local lo, hi = rewards[2] or rewards[1], rewards[#rewards]
+			local function rr(x: any): any
+				return x and { money = Xml.num(x, "Money", 0), exp = Xml.num(x, "Exp", 0), bonus = Xml.num(x, "Bonus", 0), items = {} } or r
+			end
+			fillPrize(c:FindFirstChild("BattlePrizeMin"), rr(lo))
+			fillPrize(c:FindFirstChild("BattlePrizeMax"), rr(hi))
+		end
+	elseif t == "PERIODIC" then
+		local c = show("ContentDuel")
+		if c then
+			local desc = Xml.attr(b, "Description")
+			setText(c:FindFirstChild("lblDescription"), desc and loc(desc) or "")
+			fillDifficulty(c:FindFirstChild("Difficulty"), fight)
+			fillPrize(c:FindFirstChild("Reward"), r)
+			local reset = c:FindFirstChild("btnPeriodicReset")
+			if reset then (reset :: any).Visible = false end
+		end
+	elseif complete and t ~= "BOSSES" then
+		local c = show("ContentCompleteOrLocked")
+		if c then
+			setText(c:FindFirstChild("lblLocked", true), Xml.text("battleCompleted"))
+			for _, n in { "btnPlayVideo", "timer", "btnPeriodicReset" } do
+				local o = c:FindFirstChild(n)
+				if o then (o :: any).Visible = false end
+			end
+		end
+		if fightBtn then fightBtn.Visible = t == "REPLAYABLE" or t == "BOSSES_REPLAYABLE" end
+	else
+		local c = show(t == "BOSSES" and "ContentBosses" or "ContentChallTour")
+		if c then
+			local tour = c:FindFirstChild("lblTour", true)
+			if t == "BOSSES" then
+				setText(tour, Xml.text("bodyguards"))
+			else
+				local fmtS = Xml.text("stage")
+				setText(tour, (string.gsub(string.gsub(fmtS, "{0}", tostring(nextIdx)), "{1}", tostring(#fights))))
+			end
+			-- ProgressBricksPanel: one brick per fight, lit once won
+			local bricks = c:FindFirstChild("Bricks")
+			if bricks and #fights > 0 then
+				local row = Instance.new("Frame")
+				row.Name = "BrickRow"
+				row.BackgroundTransparency = 1
+				row.AnchorPoint = Vector2.new(0.5, 0.5)
+				row.Position = UDim2.fromScale(0.5, 0.5)
+				row.Size = UDim2.new(0, 480, 0, 60)
+				row.ZIndex = 5
+				row.Parent = bricks
+				local n = #fights
+				local w = math.min(60, 480 / n)
+				for i = 1, n do
+					local brick = W.image(row, "MiscSprites.brick", UDim2.new(0.5, (i - (n + 1) / 2) * w, 0.5, 0), Vector2.new(w - 4, 44))
+					brick.ScaleType = Enum.ScaleType.Stretch
+					brick.ImageTransparency = i <= done and 0 or 0.65
+				end
+			end
+			fillDifficulty(c:FindFirstChild("Difficulty"), fight)
+			fillPrize(c:FindFirstChild("Reward"), r)
+			local replays = c:FindFirstChild("lblReplays")
+			if replays then (replays :: any).Visible = false end
+		end
+	end
+	-- btnFight's FIGHT! label and the controller hint beside it
+	local hint = info:find("Panel/btnFight/Image/Content/ButtonHint")
+	if hint then hint.Visible = false end
+	info:relayout()
+end
+
+-- The map scene: MapScene mounts MainMenu, StoryMapContainer, InfoBattle and MapButtonsPanel
+-- (RaidMapUIModule and PaymentUI have nothing behind them here). StoryMapContainer holds the acts side by
+-- side, one StoryZoneScrollItem each (2730x1298, the act's map as its image), dragged left and right; the
+-- LampsPanel under it shows one bulb per act, the act's name, and lets you jump. ZoneScrollItem puts each
+-- BattleButton at localPosition = 2 x the battle's X/Y from stages.xml.
 function Menus.map(zoneName: string?)
 	local d = Profile.get()
-	zoneName = zoneName or d.zone or "ZONE_1"
-	local zone = Stages.zone(zoneName :: string)
-	if not zone then zoneName = "ZONE_1"; zone = Stages.zone("ZONE_1") end
-	d.zone = zoneName :: string
-	local s = clear()
-	setScene(nil, false)
-	local back = Instance.new("Frame")
-	back.BackgroundColor3 = Color3.new(0, 0, 0)
-	back.Size = UDim2.fromScale(1, 1)
-	back.Parent = s
-	local mapSprite = Xml.attr(zone, "FileName")
-	local ms = Images.sprite(mapSprite)
-	local mapH = 1536
-	local srcH = ms and ms.source.Y * 1.5 or 973.5 -- the atlas holds the map at 2/3 of its size
-	local k = mapH / srcH
-	local map = W.image(s, mapSprite, UDim2.fromScale(0.5, 0.5), Vector2.new((ms and ms.source.X * 1.5 or 2048) * k, mapH))
-	map.ScaleType = Enum.ScaleType.Stretch
-	local eclipse = d.eclipse[zoneName :: string] == true and Menus.eclipseOpen(zoneName :: string)
-	for _, b in visibleBattles(zone, eclipse) do
-		local name = Xml.attr(b, "Name") :: string
-		local total = #Stages.fights(b)
-		local done = Profile.progress(zoneName :: string, name)
-		local bossLocked = Xml.attr(b, "Type") == "BOSSES" and not eclipse and not Menus.bossOpen(zoneName :: string)
-		local state = bossLocked and "Lock" or (done >= total and total > 0 and Xml.attr(b, "Type") ~= "PERIODIC" and "Base" or "Active")
-		local x, y = (Xml.num(b, "X", 0) :: number) * 1.5 * k, (Xml.num(b, "Y", 0) :: number) * 1.5 * k
-		local btn = W.button(map, buttonSprite(b, state), buttonSprite(b, "Pressed"), UDim2.new(0.5, x, 0.5, -y), Vector2.new(240, 240), function()
-			Menus.battleInfo(zoneName :: string, b, bossLocked)
-		end)
-		btn.ScaleType = Enum.ScaleType.Fit
-	end
-	-- act arrows
 	local list = acts()
 	local idx = 1
-	for i, z in list do if Xml.attr(z, "Name") == zoneName then idx = i end end
-	if idx > 1 then
-		local arrow = W.button(s, "MiscSprites.Arrow", nil, UDim2.new(0, 120, 0.5, 0), Vector2.new(120, 160), function()
-			Menus.map(Xml.attr(list[idx - 1], "Name"))
-		end)
-		arrow.Rotation = 180
+	for i, z in list do
+		if Xml.attr(z, "Name") == (zoneName or d.zone) then idx = i end
 	end
-	if idx < #list and Menus.zoneUnlocked(Xml.attr(list[idx + 1], "Name") :: string) then
-		W.button(s, "MiscSprites.Arrow", nil, UDim2.new(1, -120, 0.5, 0), Vector2.new(120, 160), function()
-			Menus.map(Xml.attr(list[idx + 1], "Name"))
+	if not Menus.zoneUnlocked(Xml.attr(list[idx], "Name") :: string) then idx = 1 end
+	local zone = list[idx]
+	zoneName = Xml.attr(zone, "Name") :: string
+	d.zone = zoneName :: string
+	local zn = zoneName :: string
+	local s = clear()
+	setScene(nil, false)
+	local backdrop = Instance.new("Frame")
+	backdrop.Name = "Backdrop"
+	backdrop.BackgroundColor3 = Color3.new(0, 0, 0)
+	backdrop.BorderSizePixel = 0
+	backdrop.Size = UDim2.fromScale(1, 1)
+	backdrop.Parent = s
+
+	local sm = UI.build("StoryMapContainer", s)
+	local info = UI.build("InfoBattle", s)
+	local actions = UI.build("MapButtonsPanel", s)
+	mainMenu(s, "Map")
+
+	local eclipse = d.eclipse[zn] == true and Menus.eclipseOpen(zn)
+	local battles = visibleBattles(zone, eclipse)
+	local function stateOf(b: any): (string, boolean)
+		local name = Xml.attr(b, "Name") :: string
+		local total = #Stages.fights(b)
+		local done = Profile.progress(zn, name)
+		local bossLocked = Xml.attr(b, "Type") == "BOSSES" and not eclipse and not Menus.bossOpen(zn)
+		local st = bossLocked and "Lock" or (done >= total and total > 0 and Xml.attr(b, "Type") ~= "PERIODIC" and "Base" or "Active")
+		return st, bossLocked
+	end
+	-- the picked battle: the last one tapped, else the first one still to win (SelectFirstBattle)
+	local pick
+	for _, b in battles do
+		if Xml.attr(b, "Name") == pickedBattle[zn] then pick = b end
+	end
+	if not pick then
+		for _, b in battles do
+			if not pick and stateOf(b) == "Active" then pick = b end
+		end
+		pick = pick or battles[1]
+	end
+
+	---------------- the act's map and its battle buttons
+	local view = sm and sm:find("MoveableMapPanel/MapPanel/ItemsScrollObject")
+	local strip = Instance.new("Frame")
+	strip.Name = "Strip"
+	strip.BackgroundTransparency = 1
+	strip.Size = UDim2.fromScale(1, 1)
+	strip.Parent = view or s
+	local item = UI.build("StoryZoneScrollItem", strip)
+	local buttons: { [any]: any } = {}
+	if item then
+		local root = item.root :: any
+		root.AnchorPoint = Vector2.new(0.5, 0.5)
+		root.Position = UDim2.fromScale(0.5, 0.5)
+		UI.setSprite(root, Xml.attr(zone, "FileName"))
+		root.ScaleType = Enum.ScaleType.Stretch
+		root.AutoButtonColor = false
+		local toggles = item:find("BattleToggles") or root
+		for _, b in battles do
+			local bb = UI.build("BattleButton", toggles, { layout = false })
+			if bb then
+				local btn = bb.root :: any
+				local x, y = Xml.num(b, "X", 0) :: number, Xml.num(b, "Y", 0) :: number
+				btn.Position = UDim2.new(0.5, 2 * x, 0.5, -2 * y)
+				btn.ScaleType = Enum.ScaleType.Fit
+				local nm = bb:find("Name")
+				if nm then nm.Visible = false end
+				buttons[b] = btn
+			end
+		end
+	end
+	local dragged = false
+	local function refresh()
+		for b, btn in buttons do
+			local st = stateOf(b)
+			UI.setSprite(btn, buttonSprite(b, b == pick and st ~= "Lock" and "Pressed" or st))
+		end
+		if info then
+			local locked = false
+			if pick then
+				local _st, l = stateOf(pick)
+				locked = l
+			end
+			fillInfoBattle(info, zn, pick, eclipse, locked)
+		end
+	end
+	for b, btn in buttons do
+		btn.Activated:Connect(function()
+			if dragged then return end
+			Sound.play("snd_click_1")
+			pick = b
+			pickedBattle[zn] = Xml.attr(b, "Name") :: string
+			refresh()
 		end)
 	end
-	W.label(s, Xml.text("ACT_" .. idx) ~= "ACT_" .. idx and Xml.text("ACT_" .. idx) or ("ACT " .. idx), UDim2.new(0.5, 0, 0, 200), Vector2.new(800, 100), 80)
-	if Menus.eclipseOpen(zoneName :: string) then
-		local e = W.button(s, "MiscSprites.eclipse", nil, UDim2.new(1, -170, 0, 280), Vector2.new(170, 170), function()
-			d.eclipse[zoneName :: string] = not eclipse
-			Profile.save()
-			Menus.map(zoneName)
-		end)
-		e.ImageTransparency = eclipse and 0 or 0.45
-		W.label(s, "ECLIPSE", UDim2.new(1, -170, 0, 390), Vector2.new(260, 60), 44)
+	refresh()
+	if info then
+		onClick(info:find("Panel/btnFight"), function()
+			if not pick then return end
+			local _, locked = stateOf(pick)
+			if locked then return end
+			if Menus.onPlay then Menus.onPlay(zn, pick) end
+		end, "snd_click_2")
 	end
-	topBar(s)
-	bottomMenu(s, "Map")
+
+	---------------- lamps: one bulb per act (LampsPanel.AddLamps), the lit one marks this act
+	local lamps = sm and sm:find("Lamps")
+	if lamps then
+		setText(sm:find("Lamps/LocationName"), loc(zn))
+		local holder = sm:find("Lamps/LampsContainer") or lamps
+		local n = #list
+		local function lampX(i: number): number
+			return -(n * 68 + (n - 1) * 22) * 0.5 + (i - 1) * 90 + 34
+		end
+		for i, z in list do
+			local lb = UI.build("LampButton", holder, { layout = false })
+			if lb then
+				local r = lb.root :: any
+				r.Position = UDim2.new(0.5, lampX(i), 0.5, 55)
+				local zname = Xml.attr(z, "Name") :: string
+				if Menus.zoneUnlocked(zname) and i ~= idx then
+					onClick(r, function() Menus.map(zname) end)
+				end
+			end
+		end
+		local on = sm:find("Lamps/LampOn")
+		if on then
+			on.Position = UDim2.new(0.5, lampX(idx), 0.5, 55)
+			on.ZIndex = 50
+		end
+	end
+
+	---------------- swiping the map to the next or previous act (ItemsScroll drag)
+	local UIS = game:GetService("UserInputService")
+	local conns: { RBXScriptConnection } = {}
+	local startX: number? = nil
+	local function canvasDX(px: number): number
+		return px / math.max(UI.scaleOf(canvas :: Frame), 1e-3)
+	end
+	local function inView(pos: Vector3): boolean
+		if not view then return false end
+		local p, sz = view.AbsolutePosition, view.AbsoluteSize
+		return pos.X >= p.X and pos.X <= p.X + sz.X and pos.Y >= p.Y + 192 * UI.scaleOf(canvas :: Frame) and pos.Y <= p.Y + sz.Y
+	end
+	table.insert(conns, UIS.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			if inView(input.Position) then
+				startX = input.Position.X
+				dragged = false
+			end
+		end
+	end))
+	table.insert(conns, UIS.InputChanged:Connect(function(input)
+		if not startX then return end
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			local dx = canvasDX(input.Position.X - startX)
+			if math.abs(dx) > 30 then dragged = true end
+			strip.Position = UDim2.new(0, dx, 0, 0)
+		end
+	end))
+	table.insert(conns, UIS.InputEnded:Connect(function(input)
+		if not startX then return end
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			local dx = canvasDX(input.Position.X - startX)
+			startX = nil
+			local target = dx < -300 and idx + 1 or (dx > 300 and idx - 1 or idx)
+			local tz = list[target]
+			if target ~= idx and tz and Menus.zoneUnlocked(Xml.attr(tz, "Name") :: string) then
+				Sound.play("snd_click_1")
+				Menus.map(Xml.attr(tz, "Name"))
+			else
+				TweenService:Create(strip, TweenInfo.new(0.2), { Position = UDim2.new() }):Play()
+				task.defer(function() dragged = false end)
+			end
+		end
+	end))
+	s.Destroying:Connect(function()
+		for _, c in conns do c:Disconnect() end
+	end)
+
+	---------------- MapButtonsPanel: the act's Eclipse toggle sits in its actions row
+	local row = actions and actions:find("ActionsPanel")
+	if row then
+		row.Visible = Menus.eclipseOpen(zn)
+		if row.Visible then
+			local e = W.button(row, "MiscSprites.eclipse", nil, UDim2.fromScale(0.5, 0.5), Vector2.new(200, 200), function()
+				d.eclipse[zn] = not eclipse
+				Profile.save()
+				Menus.map(zn)
+			end)
+			e.ImageTransparency = eclipse and 0 or 0.45
+		end
+	end
 	Sound.music("act")
 end
 
@@ -365,42 +871,6 @@ function Menus.reward(fight: any, eclipse: boolean?): any
 	return { money = Xml.num(pick, "Money", 0), exp = Xml.num(pick, "Exp", 0), bonus = Xml.num(pick, "Bonus", 0), items = items }
 end
 
-function Menus.battleInfo(zoneName: string, b: any, locked: boolean)
-	local s = layer :: Frame
-	local shade = W.shade(s)
-	local panel = W.panel(shade, UDim2.fromScale(0.5, 0.5), Vector2.new(1100, 900))
-	local name = Xml.attr(b, "Name") :: string
-	local title = Xml.text(Xml.attr(b, "Title"))
-	W.label(panel, title, UDim2.new(0.5, 0, 0, 110), Vector2.new(900, 120), 80, W.DARK)
-	W.label(panel, TYPE_TEXT[Xml.attr(b, "Type") or ""] or "", UDim2.new(0.5, 0, 0, 200), Vector2.new(900, 70), 50, W.DARK)
-	local fights = Stages.fights(b)
-	local done = Profile.progress(zoneName, name)
-	local preview = Xml.attr(b, "Preview")
-	if preview then
-		W.image(panel, preview, UDim2.new(0.5, 0, 0, 430), Vector2.new(560, 320)).ScaleType = Enum.ScaleType.Fit
-	end
-	local nextIdx = math.min(done + 1, #fights)
-	local fight = fights[nextIdx]
-	local r = fight and Menus.reward(fight) or { money = 0, exp = 0 }
-	local info = string.format("%d / %d", math.min(done, #fights), #fights)
-	W.label(panel, info, UDim2.new(0.5, 0, 0, 630), Vector2.new(600, 70), 56, W.DARK)
-	W.image(panel, "TopPanel.gold", UDim2.new(0.5, -200, 0, 710), Vector2.new(70, 70))
-	W.label(panel, tostring(r.money or 0), UDim2.new(0.5, -110, 0, 710), Vector2.new(200, 70), 50, W.DARK)
-	W.label(panel, "XP " .. tostring(r.exp or 0), UDim2.new(0.5, 130, 0, 710), Vector2.new(260, 70), 50, W.DARK)
-	if locked then
-		W.label(panel, Xml.text("BOSS_LOCKED") ~= "BOSS_LOCKED" and Xml.text("BOSS_LOCKED") or "Win the tournament and challenge first",
-			UDim2.new(0.5, 0, 0, 810), Vector2.new(900, 80), 44, Color3.fromRGB(150, 20, 20))
-	else
-		W.textButton(panel, "BtnGreen", "FIGHT", UDim2.new(0.5, 0, 0, 820), Vector2.new(420, 130), function()
-			shade:Destroy()
-			if Menus.onPlay then Menus.onPlay(zoneName, b) end
-		end)
-	end
-	W.button(panel, "CommonButtons.ButtonQuit", nil, UDim2.new(1, -60, 0, 60), Vector2.new(100, 100), function()
-		shade:Destroy()
-	end)
-end
-
 ---------------------------------------------------------------- VS screen and rewards
 
 -- The VS screen (VsScreen layout) for seconds, then done()
@@ -429,25 +899,82 @@ function Menus.vs(player: any, enemy: any, seconds: number, done: () -> ())
 	task.delay(seconds, done)
 end
 
--- Rewards popup after a won fight
-function Menus.rewards(r: any, levels: number, done: () -> ())
+-- The end of a fight (EndFightScreen + EndFightContent): FightUI.Label_Win / Label_Lose / Label_Timesup
+-- over the shadow, then the prize lines (TextAndMoneyLine, ExpAndMoneyLine) and the button line, all
+-- stacked by the prefabs' own VerticalLayoutGroups. A win offers OK; a loss offers Retry, OK and Shop.
+-- Port deviation: the count-up animation (AnimationFinishButton skips it) is not played, the totals show
+-- at once; the video-reward button has nothing behind it and stays hidden.
+function Menus.endFight(result: { win: boolean, timeout: boolean? }, r: any, levels: number, onOk: () -> (), onRetry: (() -> ())?)
 	local s = clear()
-	setScene("dojo", true)
-	local shade = W.shade(s, 0.4)
-	local panel = W.panel(shade, UDim2.fromScale(0.5, 0.5), Vector2.new(1000, 760))
-	W.label(panel, Xml.text("VICTORY") ~= "VICTORY" and Xml.text("VICTORY") or "VICTORY", UDim2.new(0.5, 0, 0, 120), Vector2.new(800, 120), 90, W.DARK)
-	W.image(panel, "TopPanel.gold", UDim2.new(0.5, -150, 0, 300), Vector2.new(90, 90))
-	W.label(panel, "+" .. tostring(r.money or 0), UDim2.new(0.5, 30, 0, 300), Vector2.new(300, 90), 70, W.DARK)
-	W.label(panel, "XP +" .. tostring(r.exp or 0), UDim2.new(0.5, 0, 0, 410), Vector2.new(500, 90), 64, W.DARK)
-	if (r.bonus or 0) > 0 then
-		W.image(panel, "TopPanel.ruby", UDim2.new(0.5, -150, 0, 510), Vector2.new(80, 80))
-		W.label(panel, "+" .. tostring(r.bonus), UDim2.new(0.5, 30, 0, 510), Vector2.new(300, 90), 64, W.DARK)
+	setScene("dojo", false)
+	local scr = UI.build("EndFightScreen", s)
+	if not scr then onOk() return end
+	hideAll(scr, { "AnimationFinishButton" })
+	-- the shadow is at alpha 0 in the prefab; EndFightScreen fades it in over the scene
+	local shadow = scr:find("Background")
+	if shadow then
+		shadow:SetAttribute("alpha", 0)
+		TweenService:Create(shadow, TweenInfo.new(0.3), { ImageTransparency = 0 }):Play()
 	end
-	if levels > 0 then
-		W.label(panel, "LEVEL UP! " .. tostring(Profile.get().level), UDim2.new(0.5, 0, 0, 600), Vector2.new(800, 90), 70, Color3.fromRGB(160, 30, 10))
-		Sound.play("snd_upgrade")
+	local header = scr:find("Content/ResultHeader")
+	if header then
+		UI.setSprite(header, result.win and "FightUI.Label_Win" or (result.timeout and "FightUI.Label_Timesup" or "FightUI.Label_Lose"))
 	end
-	W.textButton(panel, "BtnGreen", "OK", UDim2.new(0.5, 0, 1, -90), Vector2.new(340, 120), done)
+	local content = scr:find("Content")
+	local c = content and UI.build("EndFightContent", content, { layout = false })
+	if c then
+		UI.setOrder(c.root, 2)
+		local order = 0
+		local function line(name: string): any
+			local b = UI.build(name, c.root, { layout = false })
+			if b then
+				order += 1
+				UI.setOrder(b.root, order)
+			end
+			return b
+		end
+		if result.win then
+			-- TextAndMoneyLine: "PRIZE" with the fight's coins (and gems when it gives any)
+			local prize = line("TextAndMoneyLine")
+			if prize then
+				setText(prize:find("Text"), Xml.text("goldPrize"))
+				local ruby = prize:find("PrizePanel/RubyCount")
+				if ruby then ruby.Visible = (r.bonus or 0) > 0 end
+				setText(prize:find("PrizePanel/RubyCount/Text"), fmt(r.bonus or 0))
+				local icon = prize:find("PrizePanel/MoneyCount/Icon")
+				if icon then UI.setSprite(icon, "MiscSprites.gold") end
+				setText(prize:find("PrizePanel/MoneyCount/Text"), fmt(r.money or 0))
+			end
+			-- ExpAndMoneyLine: the experience gained and the coins total
+			local total = line("ExpAndMoneyLine")
+			if total then
+				setText(total:find("Exp/Text"), fmt(r.exp or 0))
+				setText(total:find("Prize/MoneyCount/Text"), fmt(r.money or 0))
+			end
+		end
+		local buttons = c:find("ButtonLine")
+		if buttons then UI.setOrder(buttons, order + 1) end
+		for _, n in { "RetryButton", "LabelButton", "VideoRewardButton", "ShopButton" } do
+			local hint = c:find("ButtonLine/" .. n .. "/Content/ButtonHint")
+			if hint then hint.Visible = false end
+		end
+		hideAll(c, { "ButtonLine/VideoRewardButton" })
+		local retry, shop = c:find("ButtonLine/RetryButton"), c:find("ButtonLine/ShopButton")
+		if retry then retry.Visible = not result.win and onRetry ~= nil end
+		if shop then shop.Visible = not result.win end
+		onClick(c:find("ButtonLine/LabelButton"), onOk, "snd_click_2")
+		onClick(retry, function() if onRetry then onRetry() end end, "snd_click_2")
+		onClick(shop, function() Menus.shop() end, "snd_click_2")
+	end
+	scr:relayout()
+	if result.win then
+		Sound.play(levels > 0 and "snd_upgrade" or "snd_win")
+	end
+end
+
+-- After a won battle: the end screen with what it paid (kept for Game's call)
+function Menus.rewards(r: any, levels: number, done: () -> ())
+	Menus.endFight({ win = true }, r, levels, done)
 end
 
 ---------------------------------------------------------------- shop
@@ -461,20 +988,6 @@ local SHOP_TABS = {
 local SHOP_DEAD_TABS = { "Payment", "Raid", "Free" }
 -- ShopTableViewCell is 800x400; the original leaves a little air between rows
 local CELL_STEP = 412
-
--- A node the layout marks as a button comes out as an ImageButton, but not every tappable thing in the
--- original carries a Button component -- the side panels' flag tabs are plain Images the panel script
--- listens on. Give anything that isn't already a button a transparent one over it.
-local function clickable(o: any): any
-	if o:IsA("GuiButton") then return o end
-	local hit = Instance.new("TextButton")
-	hit.Text = ""
-	hit.BackgroundTransparency = 1
-	hit.Size = UDim2.fromScale(1, 1)
-	hit.ZIndex = o.ZIndex
-	hit.Parent = o
-	return hit
-end
 
 -- Items.STATS -> the Attributes atlas icon the original shows beside each value
 local STAT_ICON: { [string]: string } = {
@@ -527,7 +1040,7 @@ end
 -- groups the port does not run, so the art and the icon strip are placed here; the sprites, fonts, colours
 -- and the equipped/owned marks are the prefab's own.
 local function shopCell(parent: Instance, it: any, owned: boolean, equipped: boolean, locked: boolean, selected: boolean, pick: () -> ()): any
-	local b = UI.build("ShopTableViewCell", parent)
+	local b = UI.build("ShopTableViewCell", parent, { layout = false })
 	if not b then return nil end
 	local cell = b.root :: any
 	cell.AnchorPoint = Vector2.new(0.5, 0)
@@ -609,7 +1122,7 @@ function Menus.shop(tab: string?, selected: string?, showParams: boolean?)
 	end
 	setScene("dojo", true, preview)
 
-	local shop = UI.build("scene_level4_Shop", s)
+	local shop = UI.build("scene_level4_Shop", s, { layout = false })
 	local function node(name: string): any
 		return shop and shop:find(name)
 	end
@@ -653,7 +1166,7 @@ function Menus.shop(tab: string?, selected: string?, showParams: boolean?)
 
 	-- the chrome is built before the item rows: its atlases are small and shared, and whatever is decoded
 	-- first wins the EditableImage budget
-	local tabs = UI.build("ShopBottomPanel", s)
+	local tabs = UI.build("ShopBottomPanel", s, { layout = false })
 	if tabs then
 		local strip = tabs:find("SimpleScroll")
 		if strip then strip.Visible = false end -- the scrolling copy; the fixed row below is the one shown
@@ -679,11 +1192,7 @@ function Menus.shop(tab: string?, selected: string?, showParams: boolean?)
 			if btn then btn.Visible = false end
 		end
 	end
-	topBar(s)
-	-- the tab row takes the bottom, so the way out is the original's quit button in the corner
-	W.button(s, "CommonButtons.ButtonQuit", nil, UDim2.new(0, 110, 0, 230), Vector2.new(130, 130), function()
-		Menus.dojo()
-	end)
+	mainMenu(s, "Shop")
 
 	---------------- item rows
 	local items = shopItems(tab :: string)
@@ -850,70 +1359,357 @@ end
 
 ---------------------------------------------------------------- profile
 
-function Menus.profile()
+-- CharacterProgress <PerkTree> as rows: the perks a level opens, and how often each has been upgraded
+-- by the player's level (<Upgrade Name>)
+local function perkRows(level: number): ({ { level: number, perks: { string } } }, { [string]: number })
+	local rows, ups = {}, {}
+	for _, l in Xml.all(Xml.first(Xml.doc("CharacterProgress"), "PerkTree"), "Level") do
+		local lv = Xml.num(l, "Value", 1) :: number
+		local names = {}
+		for _, p in Xml.all(l, "Perk") do table.insert(names, Xml.attr(p, "Name") :: string) end
+		if #names > 0 then table.insert(rows, { level = lv, perks = names }) end
+		if lv <= level then
+			for _, u in Xml.all(l, "Upgrade") do
+				local n = Xml.attr(u, "Name") :: string
+				ups[n] = (ups[n] or 0) + 1
+			end
+		end
+	end
+	return rows, ups
+end
+
+local perkDefs: { [string]: any }? = nil
+local function perkDef(name: string): any
+	if not perkDefs then
+		perkDefs = {}
+		for _, p in Xml.all(Xml.doc("perks"), "Perk") do
+			(perkDefs :: any)[Xml.attr(p, "Name") or ""] = p
+		end
+	end
+	return (perkDefs :: any)[name]
+end
+
+-- the learnable moves are perks too; their art lives in the Trick atlases
+local function isTrick(name: string): boolean
+	local img = Xml.attr(perkDef(name), "Image") or ""
+	return string.sub(img, 1, 5) == "Trick"
+end
+
+local function perkDescription(name: string): string
+	local key = "PERKDESCRIPTION_" .. string.sub(name, 6)
+	local t = Xml.text(key)
+	if t == key then return "" end
+	-- the {n} values come from the perk's script at runtime; the port shows the sentence without them
+	return (string.gsub(string.gsub(t, "{%d}", "?"), "%%%%", "%%"))
+end
+
+local PROFILE_TABS = { "Perks", "Strikes", "Achievements", "Seals", "BattlePass" }
+local PROFILE_TAB_SPRITE = { Perks = "Progress", Strikes = "Strikes", Achievements = "Achiev", Seals = "Seal", BattlePass = "BattlePass" }
+
+-- The profile scene (ProfileScene mounts MainMenu and ProfileBottomPanel): the scroll in the middle lists
+-- the perk tree (PerkCell, one row per level, two perks side by side where the level offers two) or the
+-- learnable strikes (TrickCell); InfoPanel on the right describes the one picked and UserPerksPanel on the
+-- left lists the perks you have. Port deviations: Achievements, Seals and the Battle Pass have no system
+-- behind them here, so their tabs are hidden; where a level offers two perks the original makes you pick
+-- one (the other is "Skipped") -- the port's fights grant both, so both show as learned.
+function Menus.profile(tab: string?, picked: string?)
+	tab = tab or "Perks"
 	local d = Profile.get()
 	local s = clear()
-	setScene("dojo", true)
-	local panel = W.panel(s, UDim2.new(0, 560, 0.5, 20), Vector2.new(900, 1080))
-	W.label(panel, string.upper(Xml.text(d.name)) .. "   LEVEL " .. d.level, UDim2.new(0.5, 0, 0, 90), Vector2.new(820, 90), 60, W.DARK)
-	local y = 190
-	for _, slot in { "Weapon", "Armor", "Helm", "Ranged", "Magic" } do
-		local it = Items.get(d.equipped[slot])
-		if it then
-			W.image(panel, Xml.attr(it, "Image"), UDim2.new(0, 110, 0, y + 50), Vector2.new(120, 110)).ScaleType = Enum.ScaleType.Fit
-			W.label(panel, Items.title(it), UDim2.new(0, 470, 0, y + 50), Vector2.new(600, 80), 42, W.DARK, Enum.TextXAlignment.Left)
+	-- no 3D here: the original shows a dimmed 2D backdrop (ShopBackground/Bg, tinted 0.64), and the
+	-- profile's dozen atlases leave no EditableImage budget for the 3D dojo, which then renders blank
+	setScene(nil, false)
+	local backdrop = Instance.new("Frame")
+	backdrop.Name = "Backdrop"
+	backdrop.BackgroundColor3 = Color3.fromRGB(38, 24, 14)
+	backdrop.BorderSizePixel = 0
+	backdrop.Size = UDim2.fromScale(1, 1)
+	backdrop.Parent = s
+	local p = UI.build("scene_level7_Profile", s)
+	local bottom = UI.build("ProfileBottomPanel", s)
+	mainMenu(s, "Profile")
+	if not p then return end
+	hideAll(p, { "ShopBackground", "BorderLeft", "BorderRight", "BattlePassPanel", "ButtonsContainer", "LabelButton",
+		"AchievementsTableView", "SealsTableView" })
+	local rows, ups = perkRows(d.level)
+	local learned = Warrior.perksForLevel(d.level)
+
+	---------------- tabs
+	if bottom then
+		for _, t in PROFILE_TABS do
+			local btn = bottom:find("HorizontalLayout/" .. t)
+			if btn then
+				local live = t == "Perks" or t == "Strikes"
+				btn.Visible = live
+				UI.setSprite(btn, "ProfileButtons." .. (t == tab and "Active_" or "Inactive_") .. PROFILE_TAB_SPRITE[t])
+				local dot = btn:FindFirstChild("Indicator")
+				if dot then (dot :: any).Visible = false end
+				if live and t ~= tab then onClick(btn, function() Menus.profile(t) end) end
+			end
 		end
-		y += 120
+		bottom:relayout()
 	end
-	local b = Warrior.build(Profile.warrior())
-	local lines = {}
-	for _, k in { "WeaponDamage", "UnarmedDamage", "BodyDefense", "HeadDefense", "RangedDamage", "MagicDamage" } do
-		table.insert(lines, k:gsub("(%l)(%u)", "%1 %2") .. ": " .. math.floor(b.attributes[k] or 0))
+
+	---------------- the list in the middle
+	local view = p:find(tab == "Perks" and "ItemsPanel/PerksTableView" or "ItemsPanel/TricksTableView")
+	local other = p:find(tab == "Perks" and "ItemsPanel/TricksTableView" or "ItemsPanel/PerksTableView")
+	if other then other.Visible = false end
+	local list = Instance.new("ScrollingFrame")
+	list.BackgroundTransparency = 1
+	list.BorderSizePixel = 0
+	list.ScrollBarThickness = 0
+	list.Size = UDim2.fromScale(1, 1)
+	list.Parent = view or s
+	local CELL = 270
+	local y = 0
+	local first: string? = nil
+	local function pickable(sub: Instance, name: string)
+		onClick(sub, function() Menus.profile(tab, name) end)
 	end
-	W.label(panel, table.concat(lines, "\n"), UDim2.new(0.5, 0, 0, 940), Vector2.new(800, 260), 36, W.DARK)
-	topBar(s)
-	bottomMenu(s, "Profile")
+	local function subItem(sub: any, name: string, lv: number)
+		if not sub then return end
+		local def = perkDef(name)
+		local icon = sub:FindFirstChild("Icon")
+		if icon then
+			UI.setSprite(icon, Xml.attr(def, "Image"))
+			icon.ScaleType = Enum.ScaleType.Fit
+		end
+		local badge = sub:FindFirstChild("Level")
+		if badge then
+			local n = (ups[name] or 0) + 1
+			badge.Visible = learned[name] == true
+			if Images.sprite("ProfilePieces.level" .. n) then UI.setSprite(badge, "ProfilePieces.level" .. n) end
+		end
+		local lock = sub:FindFirstChild("LockIcon")
+		if lock then lock.Visible = lv > d.level end
+		local skipped = sub:FindFirstChild("Skipped")
+		if skipped then skipped.Visible = false end
+		local frame = sub:FindFirstChild("Frame")
+		if frame then frame.Visible = name == picked end
+		pickable(sub, name)
+	end
+	if tab == "Perks" then
+		for _, row in rows do
+			local perks = {}
+			for _, n in row.perks do
+				if not isTrick(n) then table.insert(perks, n) end
+			end
+			if #perks > 0 then
+				local cell = UI.build("PerkCell", list, { layout = false })
+				if cell then
+					local r = cell.root :: any
+					r.AnchorPoint = Vector2.new(0.5, 0)
+					r.Position = UDim2.new(0.5, 0, 0, y)
+					first = first or perks[1]
+					local two = #perks > 1
+					local right = cell:find("SubItems/RightPerkSubItem")
+					if right then right.Visible = two end
+					local lines = cell:find("Lines/LineForTwoPerks")
+					if lines then lines.Visible = two end
+					local top, bot = cell:find("Lines/Top"), cell:find("Lines/Bottom")
+					if top then top.Visible = y > 0 end
+					if bot then bot.Visible = true end
+					cell:relayout()
+					subItem(cell:find("SubItems/LeftPerkSubItem"), perks[1], row.level)
+					if two then subItem(right, perks[2], row.level) end
+					y += CELL
+				end
+			end
+		end
+		-- the last row's line has nothing below it
+		local last = list:GetChildren()[#list:GetChildren()]
+		local bot = last and last:FindFirstChild("Bottom", true)
+		if bot then (bot :: any).Visible = false end
+	else
+		for _, row in rows do
+			for _, n in row.perks do
+				if isTrick(n) then
+					local cell = UI.build("TrickCell", list)
+					if cell then
+						local r = cell.root :: any
+						r.AnchorPoint = Vector2.new(0.5, 0)
+						r.Position = UDim2.new(0.5, 0, 0, y)
+						first = first or n
+						local sub = cell:find("TrickSubtem")
+						-- the keys column hangs off the icon's right edge; TrickCell shifts the pair left
+						-- so both fit the 766-wide row
+						if sub then sub.Position = UDim2.new(0.5, -230, 0.5, 0) end
+						subItem(sub, n, row.level)
+						setText(cell:find("TrickSubtem/KeysLayout/KeysDescription"), loc(n))
+						y += CELL
+					end
+				end
+			end
+		end
+	end
+	list.CanvasSize = UDim2.fromOffset(0, y)
+	picked = picked or first
+
+	---------------- InfoPanel: the picked perk or strike
+	local info = p:find("SidePanels/InfoPanel")
+	if info then
+		for _, n in { "PerkContent", "TrickContent", "AchievmentContent", "SealsContent" } do
+			local o = p:find("SidePanels/InfoPanel/Contents/" .. n)
+			if o then o.Visible = false end
+		end
+		setText(p:find("SidePanels/InfoPanel/NoContentMessage"), "")
+		if picked then
+			setText(p:find("SidePanels/InfoPanel/Title"), string.upper(loc(picked)))
+			local c = p:find("SidePanels/InfoPanel/Contents/" .. (tab == "Perks" and "PerkContent" or "TrickContent"))
+			if c then
+				c.Visible = true
+				local keys = c:FindFirstChild("Keys")
+				if keys then (keys :: any).Visible = false end
+				setText(c:FindFirstChild("DescriptionLabel"), perkDescription(picked))
+				-- learning is by level here (Warrior.perksForLevel), so the LEARN button has nothing to do
+				local improve, improved = c:FindFirstChild("ImproveButton"), c:FindFirstChild("ImprovedLabel")
+				if improve then (improve :: any).Visible = false end
+				if improved then (improved :: any).Visible = learned[picked] == true end
+				local show = c:FindFirstChild("ShowButton")
+				if show then (show :: any).Visible = false end
+				setText(c:FindFirstChild("DamageLabel"), "")
+			end
+		end
+	end
+
+	---------------- UserPerksPanel: the perks you have
+	local mine = {}
+	for _, row in rows do
+		for _, n in row.perks do
+			if learned[n] and not isTrick(n) then table.insert(mine, n) end
+		end
+	end
+	local none = p:find("SidePanels/UserPerksPanel/NoPerks")
+	if none then none.Visible = #mine == 0 end
+	local table_ = p:find("SidePanels/UserPerksPanel/TableView")
+	if table_ and #mine > 0 then
+		local scroller = Instance.new("ScrollingFrame")
+		scroller.BackgroundTransparency = 1
+		scroller.BorderSizePixel = 0
+		scroller.ScrollBarThickness = 0
+		scroller.Size = UDim2.fromScale(1, 1)
+		scroller.CanvasSize = UDim2.fromOffset(0, 120 * #mine)
+		scroller.Parent = table_
+		for i, n in mine do
+			local yy = 60 + (i - 1) * 120
+			local icon = W.image(scroller, Xml.attr(perkDef(n), "Image"), UDim2.new(0, 80, 0, yy), Vector2.new(100, 100))
+			icon.ScaleType = Enum.ScaleType.Fit
+			W.label(scroller, loc(n), UDim2.new(0, 150, 0, yy), Vector2.new(380, 90), 44, W.GOLD, Enum.TextXAlignment.Left)
+				.AnchorPoint = Vector2.new(0, 0.5)
+		end
+	end
+	p:relayout()
 end
 
 ---------------------------------------------------------------- settings
 
+-- SettingsButtons sprite for each of the port's languages, and the string naming it
+local LANGS = {
+	{ "eng", "usbr", "English" }, { "rus", "rus", "Russian" }, { "ger", "ger", "German" }, { "fra", "fra", "French" },
+	{ "ita", "ita", "Italian" }, { "spa", "spa", "Spanish" }, { "por", "ptbr", "Portuguese" }, { "tur", "tur", "Turkish" },
+	{ "chn", "chn", "ChineseSimplified" }, { "chn_tr", "chn", "ChineseTraditional" }, { "jpn", "jpn", "Japanese" },
+	{ "kor", "kor", "Korean" },
+}
+
+-- A dialog over the current screen on a dark backdrop that swallows taps; returns the backdrop
+local function dialogLayer(): Frame
+	local _, c = root()
+	local shade = Instance.new("TextButton")
+	shade.Name = "Dialog"
+	shade.Text = ""
+	shade.AutoButtonColor = false
+	shade.BackgroundColor3 = Color3.new(0, 0, 0)
+	shade.BackgroundTransparency = 0.4
+	shade.Size = UDim2.fromScale(1, 1)
+	shade.ZIndex = 1000
+	shade.Parent = layer or c
+	return shade :: any
+end
+
+-- The settings (SettingsDialog, opened from the menu over whatever screen is up, as in the original):
+-- music, sound, language and the user id. Credits, support and the store/social buttons have nothing
+-- behind them here and stay hidden. "More" opens SettingsAdvancedDialog, which here holds the port's
+-- own reset and the temporary dev max-out instead of the graphics/controller settings it has there.
 function Menus.settings()
 	local d = Profile.get()
-	local s = clear()
-	setScene("dojo", false)
-	local panel = W.panel(s, UDim2.fromScale(0.5, 0.5), Vector2.new(1000, 1000))
-	W.label(panel, "SETTINGS", UDim2.new(0.5, 0, 0, 100), Vector2.new(800, 100), 80, W.DARK)
-	local function toggle(y: number, text: string, key: string, apply: () -> ())
-		W.textButton(panel, d.settings[key] == 1 and "BtnGreen" or "BtnDark", text .. ": " .. (d.settings[key] == 1 and "ON" or "OFF"),
-			UDim2.new(0.5, 0, 0, y), Vector2.new(560, 120), function()
-				d.settings[key] = d.settings[key] == 1 and 0 or 1
-				apply()
-				Profile.save()
-				Menus.settings()
-			end)
+	local holder = dialogLayer()
+	local dlg = UI.build("SettingsDialog", holder)
+	if not dlg then return end
+	hideAll(dlg, { "Content/btnCredits", "buttons/btnCloudSaves" })
+	local function close() holder:Destroy() end
+	local function applySound()
+		Sound.setVolumes(d.settings.sound == 1 and 1 or 0, d.settings.music == 1 and 0.6 or 0)
 	end
-	local function applySound() Sound.setVolumes(d.settings.sound == 1 and 1 or 0, d.settings.music == 1 and 0.6 or 0) end
-	toggle(260, "SOUND", "sound", applySound)
-	toggle(420, "MUSIC", "music", applySound)
-	local langs = { "eng", "rus", "ger", "fra", "ita", "spa", "por", "tur", "chn", "chn_tr", "jpn", "kor" }
-	W.textButton(panel, "BtnGold", "LANGUAGE: " .. string.upper(d.settings.language or "eng"), UDim2.new(0.5, 0, 0, 580), Vector2.new(560, 120), function()
-		local i = table.find(langs, d.settings.language or "eng") or 1
-		d.settings.language = langs[i % #langs + 1]
+	local function refresh()
+		UI.setSprite(dlg:find("Content/btnMusic/Icon"), "SettingsButtons." .. (d.settings.music == 1 and "music" or "music_off"))
+		UI.setSprite(dlg:find("Content/btnSound/Icon"), "SettingsButtons." .. (d.settings.sound == 1 and "sound" or "sound_off"))
+		local lang = d.settings.language or "eng"
+		for _, l in LANGS do
+			if l[1] == lang then
+				UI.setSprite(dlg:find("Content/btnLanguage/Icon"), "SettingsButtons." .. l[2])
+				setText(dlg:find("Content/btnLanguage/Text"), Xml.text(l[3]))
+			end
+		end
+		setText(dlg:find("Header"), string.upper(Xml.text("Settings_Title")))
+		setText(dlg:find("Content/btnMusic/Text"), Xml.text("Settings_Music"))
+		setText(dlg:find("Content/btnSound/Text"), Xml.text("Settings_Sound"))
+		setText(dlg:find("buttons/btnBack/Text"), Xml.text("Settings_Back"))
+		setText(dlg:find("buttons/btnMore/Text"), Xml.text("Settings_Advanced"))
+		setText(dlg:find("Content/userID"), Xml.text("Settings_UserID") .. ": " .. tostring(Players.LocalPlayer.UserId))
+	end
+	refresh()
+	onClick(dlg:find("Content/btnMusic"), function()
+		d.settings.music = d.settings.music == 1 and 0 or 1
+		applySound()
+		Profile.save()
+		refresh()
+	end)
+	onClick(dlg:find("Content/btnSound"), function()
+		d.settings.sound = d.settings.sound == 1 and 0 or 1
+		applySound()
+		Profile.save()
+		refresh()
+	end)
+	onClick(dlg:find("Content/btnLanguage"), function()
+		local i = 1
+		for k, l in LANGS do if l[1] == (d.settings.language or "eng") then i = k end end
+		d.settings.language = LANGS[i % #LANGS + 1][1]
 		Xml.setLanguage(d.settings.language)
 		Profile.save()
+		refresh()
+	end)
+	onClick(dlg:find("buttons/btnBack"), close)
+	onClick(dlg:find("buttons/btnMore"), function()
+		close()
+		Menus.settingsMore()
+	end)
+	dlg:relayout()
+end
+
+function Menus.settingsMore()
+	local holder = dialogLayer()
+	local dlg = UI.build("SettingsAdvancedDialog", holder)
+	if not dlg then return end
+	hideAll(dlg, { "Content/Static", "Content/Scroll", "btnContainer/btnOk" })
+	setText(dlg:find("Header"), string.upper(Xml.text("Settings_Advanced_Title")))
+	local function close() holder:Destroy() end
+	onClick(dlg:find("btnContainer/btnCancel"), function()
+		close()
 		Menus.settings()
 	end)
-	W.textButton(panel, "BtnDark", "RESET PROGRESS", UDim2.new(0.5, 0, 0, 740), Vector2.new(560, 110), function()
+	local content = dlg:find("Content") or holder
+	W.textButton(content, "BtnDark", "RESET PROGRESS", UDim2.new(0.5, 0, 0.5, -90), Vector2.new(640, 120), function()
+		close()
 		Profile.reset()
 		Menus.dojo()
 	end)
 	-- DEV ONLY, temporary: unlock every act, boss and mode for testing (Profile.maxOut)
-	W.textButton(panel, "BtnGreen", "MAX OUT (DEV)", UDim2.new(0.5, 0, 0, 860), Vector2.new(560, 110), function()
+	W.textButton(content, "BtnGreen", "MAX OUT (DEV)", UDim2.new(0.5, 0, 0.5, 90), Vector2.new(640, 120), function()
+		close()
 		Profile.maxOut()
 		Menus.map(Profile.get().zone)
 	end)
-	topBar(s)
-	bottomMenu(s, "Settings")
+	dlg:relayout()
 end
 
 return Menus

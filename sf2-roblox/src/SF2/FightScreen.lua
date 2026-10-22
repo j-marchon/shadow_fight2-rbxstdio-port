@@ -79,8 +79,8 @@ function FightScreen.run(config: any): any
 	gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	gui.Parent = player:WaitForChild("PlayerGui")
 	local canvas = UI.canvas(gui)
-	local hud = UI.build("ViewerFight", canvas) :: any
-	local controls = UI.build("GameController", canvas) :: any
+	local hud = UI.build("ViewerFight", canvas, { layout = false }) :: any
+	local controls = UI.build("GameController", canvas, { layout = false }) :: any
 	-- The touch controls are a phone layout: on a desktop (keyboard, no touchscreen) the game plays on
 	-- the keys and the pad is only in the way, so hide it; on touch keep it, a little smaller than the
 	-- phone layout's own size, which is scaled for a hand-held screen.

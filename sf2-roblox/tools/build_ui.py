@@ -2,7 +2,9 @@
 One module per root: out/UI/<Root> (prefabs by root name, scenes as scene_<level>_<Scene>).
 Node: {n=name, a=active, r=[anchorMin x,y, anchorMax x,y, anchoredPosition x,y, sizeDelta x,y, pivot x,y,
        scale x,y, rotationZ], i=image?, x=text?, b=button?, k=[MonoBehaviour classes], s={runtime sprite fields},
-       c=[children]}
+       c=[children], lg=layout group?, le=LayoutElement?, cf=ContentSizeFitter?, m=mask?}
+  lg: {t=H/V/G, p=[padding L,R,T,B], a=childAlignment (0..8), s=spacing, c=[controlW,H], e=[expandW,H], r=reverse}
+      grid: {t=G, p, a, cs=[cell w,h], sp=[spacing x,y], k=[constraint, count]}
   image: {s=sprite, t=type, c=[r,g,b,a], f=[fillMethod, fillAmount, fillOrigin], d=[border L,B,R,T], p=preserveAspect}
   text:  {t=text, k=locKey, z=fontSize, l=alignment, c=[r,g,b,a], f=font, u=upper, w=bestFit}
 Run: python -I tools/build_ui.py
@@ -39,6 +41,31 @@ def node(n):
         classes.append(comp.get('class'))
         ui = comp.get('ui') or {}
         kind = ui.get('kind')
+        cls = comp.get('class')
+        f = comp.get('fields') or {}
+        if cls in ('HorizontalLayoutGroup', 'VerticalLayoutGroup') and f:
+            p = f.get('m_Padding') or {}
+            out['lg'] = {'t': 'H' if cls[0] == 'H' else 'V',
+                         'p': [p.get('m_Left', 0), p.get('m_Right', 0), p.get('m_Top', 0), p.get('m_Bottom', 0)],
+                         'a': f.get('m_ChildAlignment', 0), 's': r4(f.get('m_Spacing', 0)),
+                         'c': [f.get('m_ChildControlWidth', 0), f.get('m_ChildControlHeight', 0)],
+                         'e': [f.get('m_ChildForceExpandWidth', 0), f.get('m_ChildForceExpandHeight', 0)],
+                         'r': f.get('m_ReverseArrangement', 0)}
+        elif cls == 'GridLayoutGroup' and f:
+            p = f.get('m_Padding') or {}
+            out['lg'] = {'t': 'G', 'p': [p.get('m_Left', 0), p.get('m_Right', 0), p.get('m_Top', 0), p.get('m_Bottom', 0)],
+                         'a': f.get('m_ChildAlignment', 0),
+                         'cs': [r4(f['m_CellSize']['x']), r4(f['m_CellSize']['y'])],
+                         'sp': [r4(f['m_Spacing']['x']), r4(f['m_Spacing']['y'])],
+                         'k': [f.get('m_Constraint', 0), f.get('m_ConstraintCount', 1)]}
+        elif cls == 'LayoutElement' and f:
+            # [ignore, minW, minH, prefW, prefH, flexW, flexH]; -1 = unset, as in Unity
+            out['le'] = [f.get('m_IgnoreLayout', 0)] + [r4(f.get(k, -1)) for k in (
+                'm_MinWidth', 'm_MinHeight', 'm_PreferredWidth', 'm_PreferredHeight', 'm_FlexibleWidth', 'm_FlexibleHeight')]
+        elif cls == 'ContentSizeFitter' and f:
+            out['cf'] = [f.get('m_HorizontalFit', 0), f.get('m_VerticalFit', 0)]
+        elif cls in ('RectMask2D', 'Mask'):
+            out['m'] = 1
         for k, v in (ui.get('runtimeSprites') or {}).items():
             if isinstance(v, dict) and v.get('name'):
                 sprites[k] = v['name']

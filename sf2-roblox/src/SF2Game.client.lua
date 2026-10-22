@@ -24,4 +24,16 @@ end
 if Players.LocalPlayer.Character then hideCharacter(Players.LocalPlayer.Character) end
 Players.LocalPlayer.CharacterAdded:Connect(hideCharacter)
 
+-- Studio-only test hook: Studio's MCP runs its own copy of every module, and its mouse injection does not
+-- reach the game, so tests drive the live menus through this (PlayerGui.SF2Debug:Invoke("map", ...)).
+if game:GetService("RunService"):IsStudio() then
+	local hook = Instance.new("BindableFunction")
+	hook.Name = "SF2Debug"
+	hook.OnInvoke = function(fn: string, ...)
+		local Menus = require(SF2:WaitForChild("Menus")) :: any
+		return Menus[fn](...)
+	end
+	hook.Parent = Players.LocalPlayer:WaitForChild("PlayerGui")
+end
+
 Game.start()

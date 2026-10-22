@@ -112,12 +112,14 @@ function Game.playBattle(zone: string, battle: any)
 		start = math.random(1, #fights) -- all won: replay one
 	end
 	local total = { money = 0, exp = 0, bonus = 0 }
-	local function finish(levels: number)
+	-- the end-of-fight screen after a win, or after a loss with Retry (EndFightContent's RetryButton)
+	local function finish(levels: number, lost: { timeout: boolean? }?)
 		Profile.save()
-		if total.money > 0 or total.exp > 0 then
-			Menus.rewards(total, levels, function() Menus.map(zone) end)
+		if lost then
+			Menus.endFight({ win = false, timeout = lost.timeout }, total, levels, function() Menus.map(zone) end,
+				function() Game.playBattle(zone, battle) end)
 		else
-			Menus.map(zone)
+			Menus.rewards(total, levels, function() Menus.map(zone) end)
 		end
 	end
 	local levels = 0
@@ -168,7 +170,9 @@ function Game.playBattle(zone: string, battle: any)
 					end
 					finish(levels)
 				else
-					finish(levels)
+					-- nobody knocked out: the round clock decided it (Label_Timesup)
+					local h = result.health
+					finish(levels, { timeout = h ~= nil and h[1] > 0 and h[2] > 0 })
 				end
 			end)
 		end
