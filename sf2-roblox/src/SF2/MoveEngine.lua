@@ -171,13 +171,16 @@ function MoveEngine.anchor(self: MoveEngine, a: any, candidate: any?): (number, 
 		-- the origin of who's current animation (its Align offset): children start in their parent's frame
 		x, y = who.offsetX, who.offsetY
 	elseif obj == "Pivot" then
-		-- the model's pivot node, not the current move's align pivot. They are different things: a move
-		-- aligns on whatever node its <Align><Pivot> names (StepBack uses NHeel_1), so reading
-		-- self.pivotSlot here measured from a heel, which sits about 78 units ahead of the body, and
-		-- every "Object=Pivot" range came out that much longer than the data intends -- the reason the
-		-- elbow started from too far away. 397 of the 405 Distances that start at Pivot end at
-		-- Nodes/NPivot, so the two are the same point.
-		x, y = who:nodePos(who.slots.NPivot or who.pivotSlot)
+		-- "Pivot" resolves differently depending on what is asking, and the two must not be mixed up.
+		--  * Testing a condition (a candidate is given): the model's pivot node. 397 of the 405
+		--    <Distance> elements that start at Pivot end at Nodes/NPivot, so there it is pivot-to-pivot.
+		--    Reading the align pivot instead measured from a heel, about 78 units ahead of the body, and
+		--    made every such range that much longer -- why the elbow started from too far away.
+		--  * Placing a move (Align, SetDirection, effects): where the move's OWN pivot node is right now.
+		--    793 of the 1080 <Align> blocks position on Object="Pivot" and 737 of those align a heel
+		--    (NHeel_2 or NHeel_1), so resolving to NPivot there snapped the body by a heel's width on
+		--    every transition -- the fighters sliding along the ground and jumping during attacks.
+		x, y = who:nodePos(candidate and (who.slots.NPivot or who.pivotSlot) or who.pivotSlot)
 	elseif obj == "COM" then
 		if a.previous then
 			x, y = who.prevComX or 0, who.prevComY or 0
