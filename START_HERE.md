@@ -3,7 +3,7 @@
 > **For any model picking this up:** this is the only file you need to read before working. Read the other docs only when a task needs that detail (the "Deep reference" table says which one).
 > **When you finish a session, update this file**: rewrite sections 3 and 4, add one line to section 6, and keep the same headings and format. Don't create new status files. Docs under `docs\` are history; leave them alone.
 
-Last updated: **2026-10-22** (every menu screen rebuilt from the original's layouts, with Unity's layout groups run)
+Last updated: **2026-10-22** (every menu screen rebuilt one-to-one from the original layouts; docs rewritten as a handoff)
 
 ---
 
@@ -33,86 +33,93 @@ Outside this folder, kept in place on purpose, since moving them breaks absolute
 
 ## 3. Current status
 
-**Done and committed** (`git log`; the last commit is `15005b3b`):
-- **Combat core:**
-  - rig, B-spline animation playback, moves engine (key matching, buffer, mirror, align, transitions)
-  - strikes, block, crit, shock, ragdoll and standup
-  - all 218 weapons (`Data.Arsenal`/`WeaponRigs`/`MoveLib`)
-  - the real attack-vs-defense damage curve
-- **Full-game layer:**
-  - hash-based installer
-  - game data as Luau (configs, 594 models, 98 locations, 12 languages)
-  - audio uploaded (16 Ogg packs, `AudioMap.lua`, `SF2.Sound`)
-  - images as palette blobs drawn through EditableImage (`SF2.Images`)
-  - the UI builder: the original layouts instantiated as Roblox GUI (`SF2.UI`), now running Unity's Horizontal/Vertical/Grid layout groups, LayoutElement and ContentSizeFitter. Every menu screen is built from the prefabs its original scene mounts (see the port README's UI section)
-  - fight loop (rounds, stages, timer, KO/timeout)
-  - fight screen (HUD, controls, camera, effects, location parallax)
-  - profile/save
-  - menus, all from the original layouts: MainMenu chrome (top bar + roll-down section scroll), dojo, map (StoryMapContainer + InfoBattle + lamps), shop, profile (perk tree, strikes), settings dialog, VS, end-of-fight screen (win and loss)
-  - game flow, training mode, quest scripts and story dialogs
-  - fight rules (`SF2.Rules`), Eclipse mode
-- **AI** (`SF2.AI` + `tools\build_tactics.py` → `out\Tactics`):
-  - ported from `ModelAi`; details in the README's "AI" section
-  - `tools\tests\ai_test.luau`: 0 errors, ~0.34 ms/tick
+**Where things stand (end of 2026-10-22):** the combat core, AI, perks and the full-game layer are in. Every menu screen was just rebuilt one-to-one from the original's own layouts (the user's top priority). It's committed (`3c2b3e80`, plus this docs commit) and installed in the Studio place. **The place has not been saved to Roblox** (Ctrl+S in Studio), and the user has not playtested the new menus yet.
 
-- **Perks** (`SF2.Perks`, a perks.xml interpreter: PerkEvent/Condition/Action, mods, value expressions):
-  - the AI engagement floor and the interpreter itself are committed (`342acc8`), and the interpreter is now wired into the fight — see the README's "Perks" section for the event table and the hit stages
-  - the engagement floor is a deliberate **non-faithful** tweak (`{engage = false}` turns it off), written up in the README's "Approximated / guessed" list
+**Done and committed:**
+- **Combat core:** rig, B-spline animation playback, moves engine (key matching, buffer, mirror, align, transitions), strikes, block, crit, shock, ragdoll and standup, all 218 weapons (`Data.Arsenal`/`WeaponRigs`/`MoveLib`), the real attack-vs-defense damage curve.
+- **Full-game layer:** hash-based installer; game data as Luau (configs, 594 models, 98 locations, 12 languages); audio (16 Ogg packs, `AudioMap.lua`, `SF2.Sound`); images as palette blobs drawn through EditableImage (`SF2.Images`); fight loop (rounds, stages, timer, KO/timeout); fight screen (HUD, controls, camera, effects, location parallax); profile/save; game flow, training mode, quest scripts and story dialogs; fight rules (`SF2.Rules`); Eclipse mode.
+- **AI** (`SF2.AI` + `tools\build_tactics.py` → `out\Tactics`): ported from `ModelAi` (README "AI" section). `tools\tests\ai_test.luau`: 0 errors, ~0.34 ms/tick.
+- **Perks** (`SF2.Perks`, a perks.xml interpreter) wired into the fight (README "Perks" section). The AI engagement floor is a deliberate **non-faithful** tweak (`{engage = false}` turns it off).
+- **2026-10-22 playtest round** (user report): elbow/knee trigger range, hit-spark frame rate, the loser staying down, round pacing, the wall-jump teleport, tournaments running as 24 separate fights, learnable moves off `CharacterProgress <PerkTree>`, the fight HUD and touch controls, a dev max-out button. Then the `Object="Pivot"` regression (`2a497a86`): body pivot for a condition, the move's own pivot node for an `Align`.
+- **The UI, now one-to-one with the original's layouts.** Read the port README's "UI" section before touching any screen.
+  - `tools\build_ui.py` turns the dumped Unity layouts (`sf2-assets\ui`, 229 screens) into `out\UI`. `SF2.UI.build(name, parent)` instantiates one as Roblox GUI.
+  - **`UI.build` runs Unity's layout system**: Horizontal/Vertical/Grid layout groups, LayoutElement and ContentSizeFitter (UnityEngine.UI's own math), plus masks. It runs once built and again on resize; call `built:relayout()` after showing, hiding or retexting something a group arranges. `UI.setOrder` gives a runtime-instantiated prefab its sibling index, and `find` matches a full path or a path suffix.
+  - `SF2.Menus` builds each screen from the prefabs its original scene mounts:
+    - **MainMenu chrome on every menu screen:** the top bar (level/XP, coins, gems) and the rolled-up MENU scroll that unrolls in 0.3 s to Dojo/Map/Shop/Profile/Settings.
+    - **Dojo:** MainMenu over the 3D dojo. The punching-bag toggle opens the port's arsenal training.
+    - **Map:** `StoryMapContainer` zone art; `BattleButton`s at 2·(X, Y) from stages.xml; `InfoBattle` with a content block per battle type; lamps and the act name; drag to change act; Eclipse toggle in `MapButtonsPanel`.
+    - **Shop:** `scene_level4_Shop` + `ShopBottomPanel` + recycled `ShopTableViewCell` rows.
+    - **Profile:** `scene_level7_Profile` + `ProfileBottomPanel`, with the perk tree as `PerkCell`s and the learnable strikes as `TrickCell`s.
+    - **Settings:** `SettingsDialog` over the current screen. Its "Advanced" button holds reset and `MAX OUT (DEV)`.
+    - **VS:** `VsScreen`.
+    - **End of fight:** `EndFightScreen` + `EndFightContent`, after a win or a loss (Retry on a loss).
+  - Deviations, each written up in that README section:
+    - The map's difficulty rating is approximated, and the map shows one act at a time.
+    - The profile has no 3D backdrop, because its atlases exhaust the EditableImage budget. Its Achievements/Seals/Battle Pass tabs are hidden, and perk descriptions show `?` for their numbers.
+    - The end screen doesn't animate its count-up.
+    - The shop and fight HUD still use hand placement (`{ layout = false }`).
 
-**Installed and verified in Studio on 2026-10-21** (install: 3042 entries, 0 failed):
-- `tools\tests\ai_test.luau`: **0 errors**, 0.445 ms/tick, 2-0 by knockout over 6000 ticks.
-- `tools\tests\all_fights.luau`: **761 fights, 0 errors, nan=0**, 575 decided, and 127 of them had perks attached. It used to fail 104 fights: an Eclipse battle's fights have no warriors of their own and the harness did not fall back to `Stages.baseFight` the way `Game.fightAt` does. Fixed in the harness, so those fights are now actually covered.
-- **perks fire**: `PERK_BEGINNER` driven end to end (event filter → `?PlayerParameter[Enemy].Health` condition → `SetHit Block="0"`, which applied only with the player at 0.30 health, not at 1.00), a `ModAttributes` mod applied and expired on its frame count, and `EndStance` cleared a mod through the `EndStanceClear` template. Details in the README's Perks section.
-- **wall repulsion and wall hits**: pivots stayed inside the arena, and `WallHit` played once two fighters traded unblocked hits at a wall. Note an idle fighter blocks (idle is a Block interval) and block reactions have no `CanWallHit`, so a victim standing still never wall-hits.
-- One fix came out of this: the first wiring applied the health change **before** `PostHit` and consumed no `SetHit` edits from it, which silently disabled `PERK_ENLIGHTENMENT` (survive a lethal hit) and `PERK_ANTI_SHOCK` (149 uses, the most common perk). All three hit stages now run before the health comes off.
+**Verified in Studio** (install: 3042 entries, 0 failed):
+- 2026-10-21: `ai_test.luau` 0 errors; `all_fights.luau` 761 fights / 0 errors / nan=0; perks fire, gate on conditions and expire; wall repulsion and `WallHit`.
+- 2026-10-22, after the regression fix: 0 drift in the start stance, no body movement at transitions.
+- 2026-10-22, UI: dojo, map (zone 1, Eclipse on), profile (both tabs), shop, settings, and the win and time-up end screens each rendered from the layouts with no console errors. They were opened through the Studio-only hook `PlayerGui.SF2Debug` (see the notes in section 4), because Studio's mouse injection does not reach the game. **No button has been clicked by hand.**
 
-**Written but still not verified:**
-- perk upgrade levels default to 1 (the player's own levels are not read from the profile).
-- **throws** were audited against the engine and look complete without new code (the thrower's `PlayAnimation Player="Enemy"` starts the victim's `ThrowForwardV`); nothing has been thrown in Studio.
-- `WallHitFall` has not been seen; its window is only 6–8 frames.
-- The perk value expressions `?CurrentFight`, `?CoordX/Y`, `?PlayerAttribute`, `?Aspect`, `?MovesVariable` and `?Abs` read 0, so a perk that positions something in the arena does nothing. The list is in the `Perks.lua` header.
-- **condition targets fixed** (not separately verified beyond the sweep): `ModExists`, `Player` and `Name` carry `Player="Enemy"` in the data and were all being asked about *me*. `compile_moves.cond()` now emits `player=` and `MoveEngine.check` resolves it, so `out\MoveLib` was rebuilt with `tools\build_arsenal.py`.
-
-**From the 2026-10-22 playtest round** (user report; all committed):
-- Fixed: elbow/knee trigger range, hit/block effect frame rate, the loser standing up at round end, round start/end pacing, the wall-jump teleport, tournaments running as 24 separate fights, the learnable moves (Double Sweep and friends, unlocked off `CharacterProgress <PerkTree>`), the fight HUD (vertical health bars, misplaced elements, control size, controls hidden on PC, the duplicating joystick), and a `MAX OUT (DEV)` button in settings.
-- One regression came out of that round and is fixed (`2a497a86`): `Object="Pivot"` means two different points. For a **condition** it is the body pivot (397 of the 405 `<Distance>` elements starting at Pivot end at `Nodes/NPivot`), but for **placing** a move it is the move's own pivot node — 793 of the 1080 `<Align>` blocks position on `Object="Pivot"` and 737 of those align a heel. Resolving both to NPivot snapped the body by the heel offset on every transition: fighters slid at round start and jumped mid-attack. `MoveEngine.anchor` now resolves it by context (NPivot only when a candidate move is passed). Verified: 0 drift in the start stance, no body movement at any transition, ai_test 0 errors / 0.337 ms/tick.
-- **The shop is rebuilt from the original's own layouts** (`15005b3b`): `scene_level4_Shop` + `ShopBottomPanel` + `ShopTableViewCell` through `UI.build`, replacing five tabs down the left edge and a grid of coloured boxes. Four bugs had to be fixed first, two of which affect **every** menu screen — see the port README's new "UI" section. Still only partly driven: the tab buttons, the purchase and the attribute flag are wired but unclicked.
-
-**The full menu UI port** (2026-10-22, after `15005b3b`): `UI.build` runs Unity's layout groups, and dojo, map, profile, settings and the end-of-fight screen are rebuilt from their prefabs; the shop now uses the MainMenu chrome. Installed (0 failed) and each screen rendered in Studio with no errors, driven through a Studio-only hook (`PlayerGui.SF2Debug`) because mouse injection still doesn't reach the game. Nothing was clicked by hand.
-
-**Not verified by the user yet:**
-- The new menus against the phone: the MENU scroll unrolling, map drag between acts, battle picking and FIGHT!, the profile tabs, settings toggles, and the loss screen's Retry.
-- The 2026-10-20 standup-delay and head-hit fixes, plus jab height (HighPunch hits chest, never head; check against the phone).
+**Not verified yet (needs the user, on the phone or with a real mouse):**
+- The new menus: the MENU scroll unrolling, map battle picking + FIGHT!, dragging between acts, the lamps, Eclipse, the profile tabs, settings toggles and language, the shop tabs/buy/attribute flag, a lost fight's Retry. Also placement against the phone.
+- The 2026-10-20 standup-delay and head-hit fixes; jab height (HighPunch should hit chest, never head).
 - In-game audio (assets may still have been in moderation).
-- The elbow's new trigger range end to end: the harness cannot teleport a fighter (assigning `engine.x` does not move one — the engine re-derives position from the pose), so only the resolution semantics were checked, not the threshold. Up close the elbow should start at ~130 units pivot-to-pivot, not ~208.
+- The elbow's trigger range end to end (it should start at ~130 units pivot-to-pivot up close, not ~208). The harness can't teleport a fighter.
+- Written but unexercised:
+  - Throws (audited, nothing thrown in Studio).
+  - `WallHitFall`.
+  - Perk upgrade levels, which default to 1.
+  - The perk value expressions `?CurrentFight`, `?CoordX/Y`, `?PlayerAttribute`, `?Aspect`, `?MovesVariable` and `?Abs`, which read 0.
 
 **Known gaps:**
-- The shock state's effects (`FrameReduction`, `LooseningDelay`, `Impulse Y`, and the `Weapon Fists` + `WeaponDamage 0` pair in `internalSettings <Shock>`). The 999 damage threshold is reachable only by perks, so it stays unported.
+- **Dojo gameplay:** the original's dojo is a free-roam room with a punching bag. The port's is the menu backdrop, with training behind the punching-bag toggle.
+- UI deviations listed above (README UI section).
+- The shock state's effects (`FrameReduction`, `LooseningDelay`, `Impulse Y`, the `Weapon Fists` + `WeaponDamage 0` pair in `internalSettings <Shock>`).
 - Missile/projectile completeness for gun and bow supers. Check `Fight` children before assuming either way.
-- Perk visuals (see the Perks.lua header).
+- Perk visuals (`Perks.lua` header).
 - AI: BeginnerCheat, emergency/safe dodges, ThrowTactics, BossAbility, the SetWait modes.
-- The old `SF2Fight.client.lua` may still be the Arsenal-only client. Check what `Game`/`FightScreen` wire up before rewriting it.
-- UI deviations still open (listed in the port README's UI section): InfoBattle's difficulty is approximated, the map shows one act at a time, the profile has no 3D backdrop and hides Achievements/Seals/Battle Pass, perk descriptions show `?` for their values, the end screen has no count-up. The shop and fight HUD still use their hand placement (`{ layout = false }`); they could move to the real layout groups.
-- **The dojo is an AI-fight panel**, not the original's free-roam room with a punching bag. The user asked for this explicitly.
-- Elbow/knee hitboxes were to be widened backward; deliberately deferred until the trigger-range fix is re-tested on the phone.
-- Arena start distance: the data says 200 for the arena. The user wants it bigger, which would be a deviation — their call.
-- Still untouched from the user's list: events, dialogue, lore, cutscenes, "special stuff".
-- The EditableImage budget is tight on this place. Any new screen that decodes many textures at once has to recycle them (see the port README's UI section) or it will blank out atlases loaded after it.
+- Elbow/knee hitboxes were to be widened backward; deferred until the trigger range is re-tested on the phone.
+- Arena start distance: the data says 200; the user wants it bigger, which would be a deviation (their call).
+- Untouched from the user's list: events, dialogue, lore, cutscenes, "special stuff".
+- **The EditableImage budget is tight.** A screen that decodes many textures has to recycle them (the shop does) or drop something (the profile dropped its 3D backdrop). Otherwise later atlases and the 3D scene render blank.
 
 ## 4. Next steps (in order)
 
-The user's standing priority, in their words: the UI was "the biggest problem", a "full rework completely based on the original, especially in the shop"; then the dojo; then "all the small details (events, dialogue, lore, cutscenes, special stuff)". The shop is the first screen done that way and is the template for the rest.
+The user's standing priority, in their words: the UI was "the biggest problem", a "full rework completely based on the original, especially in the shop" (now done, pending their playtest). Then the dojo. Then "all the small details (events, dialogue, lore, cutscenes, special stuff)".
 
-1. Ask the user to playtest the menus (installed, place **not saved** — Ctrl+S in Studio to keep it): the MENU scroll, map (pick a battle, FIGHT!, drag to the next act, lamps, Eclipse), profile tabs, settings, shop tabs/buy/flag, and lose a fight to see Retry. Compare placement against the phone.
-2. **Dojo**: free roam with a punching bag, not the AI-fight panel. The dojo UI is now just the MainMenu over the 3D room, as in the original.
-3. Close the UI deviations worth closing (README UI section): the real difficulty rating (find it in `DifficultyPanel`/`InfoBattle` decompile), perk description values, the end screen's count-up, and moving the shop/fight HUD onto the layout groups.
-4. Then the small details the user listed: events, dialogue, lore, cutscenes.
-5. Then the older known gaps: projectiles, boss abilities, the shock state. For anything left from `docs\FULL_GAME_PLAN.md` steps 9–12 (economy and forge, all modes, story coverage, polish), compare it against the commits first.
-6. Ask the user to save the place to Roblox (Ctrl+S in Studio).
+1. **Ask the user to playtest the menus** in Studio Play and compare against their phone. Use the list under "Not verified yet". Fix what they report, then ask them to save the place (Ctrl+S).
+2. **Dojo**: free roam with a punching bag (gameplay, not UI). The dojo UI is already the original's: MainMenu over the room.
+3. **Close the UI deviations worth closing**:
+   - The real difficulty rating (decompile `Nekki.SF2.GUI.Map\DifficultyPanel__1117.c` / `InfoBattle__2796.c`).
+   - The perk description numbers (from each perk's `<Set>` values).
+   - The end screen's count-up (`EndFightContent`).
+   - Moving the shop and fight HUD onto the real layout groups.
+   - The Achievements tab (`AchievementCell`, `Achievements.xml` is in `out\Xml`).
+4. The small details: events, dialogue, lore, cutscenes.
+5. Then the older gaps: projectiles, boss abilities, the shock state. For anything left from `docs\FULL_GAME_PLAN.md` steps 9–12 (economy and forge, all modes, story coverage, polish), compare it against the commits first.
 
-Note on the 8765 server: it is not a service — it dies with the session. Check it (`curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:8765/out/install.txt`) and start it before any install.
-Note on the headless tests: `all_fights.luau` blocks Studio's main thread for minutes and the MCP plugin disconnects while it runs. It writes to `ServerStorage.TestResult`, so poll that in a separate call once Studio answers again, rather than waiting inside the call.
-Note on driving the UI: in Play, `game.Players.LocalPlayer.PlayerGui.SF2Debug:Invoke("map", "ZONE_1")` (any `Menus.*` function, Studio only) drives the live menus; functions can't cross the BindableFunction, so callbacks such as `endFight`'s OK arrive as nil. Install needs **Edit** mode (a Play-mode install is discarded), so stop Play first. `execute_luau` has its **own require cache**, so `require(SF2.Menus)` there builds a *second* `SF2Menu` ScreenGui beside the running game's instead of driving it — and the duplicate renders blank, because the two module copies fight over the EditableImage budget. To exercise a real screen, click it with `user_mouse_input`; to check structure only, build in a fresh instance and read the tree rather than the pixels. `user_mouse_input` stopped responding partway through the 2026-10-22 session and did not recover; restarting Play did not help.
+**How to work on a UI screen** (the method this port's screens follow):
+1. Find what the original scene mounts. Each `sf2-assets\ui\scene__levelN_X.json` root's scene component has a `_MountOnStart` list of prefab names.
+2. Print a prefab's tree: `python -I sf2-roblox\tools\ui_tree.py sf2-assets\ui\prefab__<Name>__*.json [depth] [Root/sub/path]`. Set `PYTHONIOENCODING=utf-8` on Windows.
+3. Read the controlling script in `sf2-il2cpp\decomp\Root_named\Nekki.SF2.GUI.*\<Class>__N.c`. GUI class names are real, not obfuscated. A prefab's component `fields` in the JSON name which node each script field binds to.
+4. Build it with `UI.build`, then fill text and sprites and wire buttons in `Menus.lua` with its helpers: `onClick`, `setText`, `hideAll`, `fmt`, `loc`. Hide what has no system behind it, and write each deviation into the README UI section.
+
+**Notes for driving Studio:**
+- Studio ids change per session: run `list_roblox_studios` first. Place: "SF2", placeId 86520858545174.
+- Install (Edit mode only; a Play-mode install is discarded):
+  1. Regenerate `out\install.txt` with `python -I tools\make_manifest.py`.
+  2. Check that the 8765 server answers: `curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:8765/out/install.txt`. It dies with the session, so start it if needed (section 5).
+  3. In Edit, run: `task.spawn(function() _G.SF2InstallDone = tostring(require(game.ServerStorage.SF2Installer:Clone())()) end)`. `SF2Installer` is a ModuleScript that returns a function.
+  4. Poll `_G.SF2InstallDone` in a second call.
+- **Driving the live menus:** in Play (Client datamodel), call `game.Players.LocalPlayer.PlayerGui.SF2Debug:Invoke("map", "ZONE_1")`. It works for any `Menus.*` function (`profile`, `shop`, `settings`, `endFight`, …). `SF2Game.client.lua` creates the hook only when `RunService:IsStudio()`. Functions can't cross the BindableFunction, so callbacks (e.g. `endFight`'s OK/Retry) arrive as nil.
+- Don't `require(SF2.Menus)` inside `execute_luau`. It has its own require cache, so it builds a *second* menu that fights the real one for the EditableImage budget and renders blank.
+- `user_mouse_input` still does not reach the game: clicks by coordinates and by instance path both did nothing on 2026-10-22.
+- `screen_capture` does show the 3D scene. A location fades in, so wait 2–3 s after switching screens before capturing.
+- `all_fights.luau` blocks Studio's main thread for minutes and the MCP plugin disconnects while it runs. It writes to `ServerStorage.TestResult`, so poll that in a separate call.
 
 ## 5. How to work
 
@@ -129,7 +136,7 @@ Note on driving the UI: in Play, `game.Players.LocalPlayer.PlayerGui.SF2Debug:In
 
 **Test:**
 - Headless: clone `ReplicatedStorage.SF2` into `ServerStorage.SF2Test` and run the `tools\tests\*.luau` code inline. `loadstring` is unavailable.
-- `screen_capture` shows UI but not 3D. Check 3D with script queries or `tools\preview_png.py`.
+- `screen_capture` shows the UI and the 3D scene (a location fades in over 1–3 s). For exact 3D checks use script queries or `tools\preview_png.py`.
 
 **Decompile lookup:**
 - `docs\DECOMPILE_INDEX.md` and `sf2-il2cpp\index\class_map.tsv` map obfuscated names to roles.
