@@ -34,6 +34,10 @@ local function root(): (ScreenGui, Frame)
 	if not gui then
 		local g = Instance.new("ScreenGui")
 		g.Name = "SF2Menu"
+		-- UI.build gives a node its sibling index as ZIndex, the way Unity stacks children, so the whole
+		-- screen has to compare ZIndex within a parent. Left on Global, a layout's later top-level pieces
+		-- (a scroll's frame and rolls) painted over everything nested deeper, item rows included.
+		g.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 		g.ResetOnSpawn = false
 		g.IgnoreGuiInset = true
 		g.DisplayOrder = 5
@@ -79,6 +83,12 @@ local function setScene(locationName: string?, showWarrior: boolean, def: any?)
 	end
 	scene = nil
 	if not locationName then return end
+	-- the place's default Baseplate and SpawnLocation sit behind the 2D scene and show past its edges;
+	-- hide rather than delete them, since they belong to the place and not to the port
+	for _, n in { "Baseplate", "SpawnLocation" } do
+		local p = workspace:FindFirstChild(n)
+		if p and p:IsA("BasePart") then p.Transparency = 1 end
+	end
 	local folder = Instance.new("Folder")
 	folder.Name = "SF2MenuScene"
 	folder.Parent = workspace
@@ -442,9 +452,37 @@ end
 
 ---------------------------------------------------------------- shop
 
+-- {item type, ShopBottomPanel node, ShopButtons1 sprite base}. The panel also carries Payment, Raid and
+-- Free -- real-money and raid store tabs with nothing behind them here, so they are hidden, not shown dead.
 local SHOP_TABS = {
-	{ "Weapon", "ShopButtons1.Weapon" }, { "Armor", "ShopButtons1.Armor" }, { "Helm", "ShopButtons1.Helmet" },
-	{ "Ranged", "ShopButtons1.Ranged_weapon" }, { "Magic", "ShopButtons1.Magic" },
+	{ "Weapon", "Weapon", "Weapon" }, { "Armor", "Armor", "Armor" }, { "Helm", "Helmet", "Helmet" },
+	{ "Ranged", "Ranged", "Ranged_weapon" }, { "Magic", "Magic", "Magic" },
+}
+local SHOP_DEAD_TABS = { "Payment", "Raid", "Free" }
+-- ShopTableViewCell is 800x400; the original leaves a little air between rows
+local CELL_STEP = 412
+
+-- A node the layout marks as a button comes out as an ImageButton, but not every tappable thing in the
+-- original carries a Button component -- the side panels' flag tabs are plain Images the panel script
+-- listens on. Give anything that isn't already a button a transparent one over it.
+local function clickable(o: any): any
+	if o:IsA("GuiButton") then return o end
+	local hit = Instance.new("TextButton")
+	hit.Text = ""
+	hit.BackgroundTransparency = 1
+	hit.Size = UDim2.fromScale(1, 1)
+	hit.ZIndex = o.ZIndex
+	hit.Parent = o
+	return hit
+end
+
+-- Items.STATS -> the Attributes atlas icon the original shows beside each value
+local STAT_ICON: { [string]: string } = {
+	WeaponDamage = "weapon_attack", UnarmedDamage = "unarmed_attack",
+	BodyDefense = "body_armor", HeadDefense = "head_armor",
+	RangedDamage = "ranged_attack", RangedQuantity = "ranged_quantity",
+	MagicDamage = "magic_attack", EnchantmentResistance = "magic_resistance",
+	CriticalChance = "critical_chance", CriticalRating = "critical_chance",
 }
 
 local function shopItems(t: string): { any }
@@ -464,16 +502,103 @@ local function shopItems(t: string): { any }
 end
 Menus.shopItems = shopItems
 
-local function statLine(it: any, upgrade: number?): string
-	local parts = {}
-	for k, v in Items.stats(it, upgrade) do
-		if v ~= 0 then table.insert(parts, k:gsub("(%l)(%u)", "%1 %2") .. " " .. v) end
+-- The item's attributes in Items.STATS order (the order the original lists them in), each with its icon
+local function statRows(it: any, upgrade: number?): { { name: string, value: number } }
+	local stats = Items.stats(it, upgrade)
+	local out = {}
+	for _, k in Items.STATS do
+		local v = stats[k]
+		if v and v ~= 0 then table.insert(out, { name = k, value = v }) end
 	end
-	table.sort(parts)
-	return table.concat(parts, "   ")
+	return out
 end
 
-function Menus.shop(tab: string?, selected: string?)
+-- One row of the ItemParameterScrollItem kind: the attribute's icon, then its value
+local function statRow(parent: Instance, row: any, y: number)
+	local icon = STAT_ICON[row.name]
+	if icon then W.image(parent, "Attributes." .. icon, UDim2.new(0, 80, 0, y), Vector2.new(90, 90)) end
+	W.label(parent, (row.name:gsub("(%l)(%u)", "%1 %2")), UDim2.new(0, 145, 0, y), Vector2.new(280, 56), 34, W.GOLD, Enum.TextXAlignment.Left)
+		.AnchorPoint = Vector2.new(0, 0.5)
+	W.label(parent, tostring(row.value), UDim2.new(1, -40, 0, y), Vector2.new(150, 56), 42, Color3.new(1, 1, 1), Enum.TextXAlignment.Right)
+		.AnchorPoint = Vector2.new(1, 0.5)
+end
+
+-- One item row, built from the game's own ShopTableViewCell. The prefab stacks its bands with Unity layout
+-- groups the port does not run, so the art and the icon strip are placed here; the sprites, fonts, colours
+-- and the equipped/owned marks are the prefab's own.
+local function shopCell(parent: Instance, it: any, owned: boolean, equipped: boolean, locked: boolean, selected: boolean, pick: () -> ()): any
+	local b = UI.build("ShopTableViewCell", parent)
+	if not b then return nil end
+	local cell = b.root :: any
+	cell.AnchorPoint = Vector2.new(0.5, 0)
+	cell.Position = UDim2.new()
+	-- the prefab row is 800 wide, a little wider than the scroll's 750: fit the width, keep the height
+	cell.Size = UDim2.new(1, -16, 0, 400)
+	if selected then
+		cell.BackgroundColor3 = Color3.fromRGB(120, 80, 40)
+		cell.BackgroundTransparency = 0.45
+	end
+	local art = b:find("Content/Image")
+	if art then
+		art.AnchorPoint = Vector2.new(0.5, 0)
+		art.Position = UDim2.new(0.5, 0, 0, 24)
+		art.Size = UDim2.new(1, -80, 0, 240)
+		art.ScaleType = Enum.ScaleType.Fit
+		W.setImage(art, Xml.attr(it, "Image"))
+	end
+	-- CompositeImage layers a multi-part item's pieces, AddPercentImage and TicketLabel belong to the money
+	-- packs, DiscountIcon to a sale and PerksPanel to item perks; none of them applies to an equipment row
+	for _, n in { "Content/CompositeImage", "Content/AddPercentImage", "Content/TicketLabel",
+		"Content/IconPanel/DiscountIcon", "Content/IconPanel/PerksPanel" } do
+		local o = b:find(n)
+		if o then o.Visible = false end
+	end
+	-- the padlock the original puts over an item the warrior is not high enough level for
+	local lock = b:find("LockIcon")
+	if lock then lock.Visible = locked end
+	local icons = b:find("Content/IconPanel")
+	if icons then
+		icons.AnchorPoint = Vector2.new(0.5, 1)
+		icons.Position = UDim2.new(0.5, 0, 1, -12)
+		icons.Size = UDim2.fromOffset(800, 120)
+	end
+	local eq = b:find("Content/IconPanel/EquippedIcon")
+	if eq then eq.Visible = equipped end
+	local jack = b:find("Content/IconPanel/JackdawIcon")
+	if jack then jack.Visible = owned and not equipped end
+	-- LevelLabel is "<quad name=MiscSprites.star ...> N" in the original; a quad is a sprite the text can't
+	-- carry here, so the star sits beside the number as its own image
+	local lvl = b:find("Content/IconPanel/LevelLabel")
+	if lvl then
+		local t = lvl:FindFirstChild("Text") :: any
+		if t then
+			t.Text = "      " .. (Xml.num(it, "Level", 0) :: number)
+			t.TextXAlignment = Enum.TextXAlignment.Left
+			t.TextColor3 = locked and Color3.fromRGB(255, 90, 90) or W.GOLD
+		end
+		W.image(lvl, "MiscSprites.star", UDim2.new(0, 52, 0.5, 0), Vector2.new(84, 76))
+	end
+	-- the original's row carries no name: the art identifies the item and ItemInfoPanel names the one picked
+	local hit = Instance.new("TextButton")
+	hit.Text = ""
+	hit.BackgroundTransparency = 1
+	hit.Size = UDim2.fromScale(1, 1)
+	hit.ZIndex = 50
+	hit.Parent = cell
+	hit.Activated:Connect(function()
+		Sound.play("snd_click_1")
+		pick()
+	end)
+	return cell
+end
+
+-- The shop, laid out as the original: scene_level4_Shop gives the parchment scroll in the middle, the side
+-- panels and the left-hand buttons; ShopBottomPanel the category tabs along the bottom; ShopTableViewCell
+-- each 800x400 item row. The three side panels sit on top of each other in the scene because SidePanel
+-- slides them in and out at runtime and only one is ever on screen -- the port places them statically, so
+-- the parameters panel waits behind its flag button instead. ItemPropertiesPanel (item perks) and
+-- ForgePanel (forging) have nothing behind them here and stay hidden.
+function Menus.shop(tab: string?, selected: string?, showParams: boolean?)
 	tab = tab or "Weapon"
 	local d = Profile.get()
 	local s = clear()
@@ -483,98 +608,244 @@ function Menus.shop(tab: string?, selected: string?)
 		preview.items[tab :: string] = selected
 	end
 	setScene("dojo", true, preview)
-	-- tabs
-	for i, t in SHOP_TABS do
-		local active = t[1] == tab
-		W.button(s, t[2] .. (active and "_active" or ""), t[2] .. "_pushed", UDim2.new(0, 140, 0, 230 + (i - 1) * 190), Vector2.new(200, 170), function()
-			Menus.shop(t[1])
-		end)
+
+	local shop = UI.build("scene_level4_Shop", s)
+	local function node(name: string): any
+		return shop and shop:find(name)
 	end
-	-- item list
-	local list = Instance.new("ScrollingFrame")
-	list.BackgroundTransparency = 1
-	list.Position = UDim2.new(1, -40, 0, 170)
-	list.AnchorPoint = Vector2.new(1, 0)
-	list.Size = UDim2.new(0, 760, 1, -420)
-	list.ScrollBarThickness = 14
-	list.AutomaticCanvasSize = Enum.AutomaticSize.Y
-	list.CanvasSize = UDim2.new()
-	list.Parent = s
-	local grid = Instance.new("UIGridLayout")
-	grid.CellSize = UDim2.fromOffset(240, 300)
-	grid.CellPadding = UDim2.fromOffset(10, 10)
-	grid.Parent = list
-	for _, it in shopItems(tab :: string) do
-		local name = Xml.attr(it, "Name") :: string
-		local cell = Instance.new("ImageButton")
-		cell.BackgroundColor3 = name == selected and Color3.fromRGB(120, 80, 40) or Color3.fromRGB(60, 40, 25)
-		cell.BackgroundTransparency = 0.25
-		cell.AutoButtonColor = true
-		cell.Parent = list
-		local icon = W.image(cell, Xml.attr(it, "Image"), UDim2.new(0.5, 0, 0, 110), Vector2.new(200, 190))
-		icon.ScaleType = Enum.ScaleType.Fit
-		local lvl = Xml.num(it, "Level", 0) :: number
-		local owned = Profile.owns(name)
-		local equipped = d.equipped[tab :: string] == name
-		local tag = equipped and "EQUIPPED" or (owned and "OWNED" or ((Xml.attr(it, "Price") and (Xml.attr(it, "Price") .. " coins")) or ((Xml.attr(it, "BonusPrice") or "?") .. " gems")))
-		W.label(cell, Items.title(it), UDim2.new(0.5, 0, 0, 230), Vector2.new(230, 50), 30)
-		W.label(cell, (lvl > d.level and ("Lvl " .. lvl .. "  ") or "") .. tag, UDim2.new(0.5, 0, 0, 275), Vector2.new(230, 40), 26,
-			lvl > d.level and Color3.fromRGB(255, 90, 90) or Color3.new(1, 1, 1))
-		cell.Activated:Connect(function() Menus.shop(tab, name) end)
+	for _, n in { "ItemPropertiesPanel", "ForgePanel", "BorderLeft", "BorderRight" } do
+		local o = node(n)
+		if o then o.Visible = false end
 	end
-	-- selected item details
-	if selected then
-		local it = Items.get(selected)
-		local panel = W.panel(s, UDim2.new(0, 760, 1, -330), Vector2.new(860, 330))
-		W.label(panel, Items.title(it), UDim2.new(0.5, 0, 0, 60), Vector2.new(800, 70), 54, W.DARK)
-		local up = d.items[selected] and d.items[selected].upgrade or 0
-		W.label(panel, statLine(it, up), UDim2.new(0.5, 0, 0, 140), Vector2.new(800, 80), 34, W.DARK)
-		local lvl = Xml.num(it, "Level", 0) :: number
-		if Profile.owns(selected) then
-			if d.equipped[tab :: string] ~= selected then
-				W.textButton(panel, "BtnGreen", "EQUIP", UDim2.new(0.3, 0, 1, -70), Vector2.new(300, 100), function()
-					Profile.equip(selected)
-					Profile.save()
-					Sound.play("snd_click_2")
-					Menus.shop(tab, selected)
+	-- ShopBackground is the scene's 2D backdrop sprite; the port shows the dojo in 3D behind the canvas
+	local bg = node("ShopBackground")
+	if bg then bg.Visible = false end
+
+	-- A SidePanel sits centred in the scene and is slid into place at runtime, through a Panel child that
+	-- carries most of the offset. With nothing sliding them they would stack over the item scroll, so each
+	-- is given a place clear of it (the scroll is 850 wide and centred). The original slides both out on
+	-- the left one at a time; with both on screen at once here the attribute panel takes the right.
+	local PANEL_X = 425 + 304 + 40
+	local function placePanel(panel: any, side: number)
+		if not panel then return nil end
+		panel.AnchorPoint = Vector2.new(0.5, 0.5)
+		panel.Position = UDim2.new(0.5, PANEL_X * side, 0.5, -40)
+		panel.Size = UDim2.fromOffset(608, 866)
+		local inner = panel:FindFirstChild("Panel")
+		if not inner then return nil end
+		inner.AnchorPoint = Vector2.new(0.5, 0.5)
+		inner.Position = UDim2.fromScale(0.5, 0.5)
+		inner.Size = UDim2.fromScale(1, 1)
+		local art = inner:FindFirstChild("InfoPanel")
+		if art then
+			art.AnchorPoint = Vector2.new(0.5, 0.5)
+			art.Position = UDim2.fromScale(0.5, 0.5)
+			art.Size = UDim2.fromScale(1, 1)
+		end
+		-- the flag tab rides the edge facing the scroll, as it does in the original
+		local flag = inner:FindFirstChild("MoveButton")
+		if flag then
+			flag.AnchorPoint = Vector2.new(side < 0 and 0 or 1, 0.5)
+			flag.Position = UDim2.new(side < 0 and 1 or 0, -4 * side, 0.5, 0)
+		end
+		return art
+	end
+
+	-- the chrome is built before the item rows: its atlases are small and shared, and whatever is decoded
+	-- first wins the EditableImage budget
+	local tabs = UI.build("ShopBottomPanel", s)
+	if tabs then
+		local strip = tabs:find("SimpleScroll")
+		if strip then strip.Visible = false end -- the scrolling copy; the fixed row below is the one shown
+		for i, t in SHOP_TABS do
+			local btn = tabs:find("HorizontalLayout/" .. t[2]) or tabs:find(t[2])
+			if btn then
+				local active = t[1] == tab
+				btn.AnchorPoint = Vector2.new(0.5, 0.5)
+				btn.Position = UDim2.new(0.5, (i - (#SHOP_TABS + 1) / 2) * 252, 0.5, 0)
+				btn.Size = UDim2.fromOffset(247, 235)
+				UI.setSprite(btn, "ShopButtons1." .. t[3] .. (active and "_active" or ""))
+				-- Indicator is the "new item here" dot, driven by data the port has no counterpart for
+				local dot = btn:FindFirstChild("Indicator")
+				if dot then (dot :: any).Visible = false end
+				clickable(btn).Activated:Connect(function()
+					Sound.play("snd_click_1")
+					Menus.shop(t[1])
 				end)
 			end
-			local steps = Items.upgrades(it)
-			local nextStep = steps[up + 1]
-			if nextStep then
-				local price = Xml.num(nextStep, "Price")
-				local gems = Xml.num(nextStep, "BonusPrice")
-				local label = price and (price .. " coins") or ((gems or 0) .. " gems")
-				W.textButton(panel, "BtnGold", "UPGRADE " .. label, UDim2.new(0.72, 0, 1, -70), Vector2.new(420, 100), function()
-					if price and d.money >= price then d.money -= price
-					elseif gems and d.bonus >= gems then d.bonus -= gems
-					else return end
-					d.items[selected].upgrade = up + 1
-					Profile.save()
-					Sound.play("snd_upgrade")
-					Menus.shop(tab, selected)
-				end)
-			end
-		elseif lvl <= d.level then
-			local price = Xml.num(it, "Price")
-			local gems = Xml.num(it, "BonusPrice")
-			local afford = (price and d.money >= price) or (not price and gems and d.bonus >= gems)
-			W.textButton(panel, afford and "BtnGreen" or "BtnDark", "BUY  " .. (price and (price .. " coins") or ((gems or 0) .. " gems")),
-				UDim2.new(0.5, 0, 1, -70), Vector2.new(460, 100), function()
-					if not afford then return end
-					if price then d.money -= price else d.bonus -= gems :: number end
-					Profile.give(selected)
-					Profile.equip(selected)
-					Profile.save()
-					Sound.play("snd_buy")
-					Menus.shop(tab, selected)
-				end)
-		else
-			W.label(panel, "Requires level " .. lvl, UDim2.new(0.5, 0, 1, -70), Vector2.new(600, 80), 44, Color3.fromRGB(150, 20, 20))
+		end
+		for _, n in SHOP_DEAD_TABS do
+			local btn = tabs:find("HorizontalLayout/" .. n) or tabs:find(n)
+			if btn then btn.Visible = false end
 		end
 	end
 	topBar(s)
-	bottomMenu(s, "Shop")
+	-- the tab row takes the bottom, so the way out is the original's quit button in the corner
+	W.button(s, "CommonButtons.ButtonQuit", nil, UDim2.new(0, 110, 0, 230), Vector2.new(130, 130), function()
+		Menus.dojo()
+	end)
+
+	---------------- item rows
+	local items = shopItems(tab :: string)
+	local view = node("TableView")
+	local list = Instance.new("ScrollingFrame")
+	list.BackgroundTransparency = 1
+	list.BorderSizePixel = 0
+	list.ScrollBarThickness = 0
+	list.Size = UDim2.fromScale(1, 1)
+	list.CanvasSize = UDim2.fromOffset(0, #items * CELL_STEP)
+	list.Parent = view or s
+	-- The original's TableView keeps only the rows near the viewport alive, and here that is not just a
+	-- speed question: a tab's art spans up to 28 textures, each decoded into an EditableImage, and the
+	-- device's budget for those is finite. Building all 80-odd rows at once exhausted it, which left every
+	-- atlas asked for afterwards -- the category tabs among them -- silently blank. So rows outside the
+	-- window are destroyed and their art released once no live row still needs it.
+	local live: { [number]: any } = {}
+	local liveTex: { [number]: string } = {}
+	local shopTextures: { string } = {}
+	local function window()
+		local scale = math.max(UI.scaleOf(canvas :: Frame), 1e-3)
+		local top = list.CanvasPosition.Y
+		local height = list.AbsoluteWindowSize.Y / scale
+		local first = math.max(1, math.floor(top / CELL_STEP))
+		local last = math.min(#items, math.ceil((top + height) / CELL_STEP) + 1)
+		for i, cell in live do
+			if i < first or i > last then
+				cell:Destroy()
+				live[i], liveTex[i] = nil, nil
+			end
+		end
+		for i = first, last do
+			if not live[i] then
+				local it = items[i]
+				local name = Xml.attr(it, "Name") :: string
+				local lvl = Xml.num(it, "Level", 0) :: number
+				local cell = shopCell(list, it, Profile.owns(name), d.equipped[tab :: string] == name,
+					lvl > d.level, name == selected, function()
+						Menus.shop(tab, name, showParams)
+					end)
+				if cell then
+					cell.Position = UDim2.new(0.5, 0, 0, (i - 1) * CELL_STEP)
+					live[i] = cell
+					local sp = Images.sprite(Xml.attr(it, "Image"))
+					if sp then liveTex[i] = sp.texture end
+				end
+			end
+		end
+		-- free the art of every texture no row on screen is still using
+		local keep: { [string]: boolean } = {}
+		for _, t in liveTex do keep[t] = true end
+		for _, t in shopTextures do
+			if not keep[t] then Images.release(t) end
+		end
+		table.clear(shopTextures)
+		for _, t in liveTex do table.insert(shopTextures, t) end
+	end
+	window()
+	list:GetPropertyChangedSignal("CanvasPosition"):Connect(window)
+	local none = node("NoItemsMessage")
+	if none then none.Visible = #items == 0 end
+
+	---------------- the selected item: name, price and what you can do with it
+	local info = node("ItemInfoPanel")
+	local panel = info and info:FindFirstChild("Panel")
+	local face = placePanel(info, -1)
+	if face then
+		if not selected then
+			info.Visible = false
+		else
+			local it = Items.get(selected)
+			local up = d.items[selected] and d.items[selected].upgrade or 0
+			local lvl = Xml.num(it, "Level", 0) :: number
+			W.label(face, Items.title(it), UDim2.new(0.5, 0, 0, 90), Vector2.new(520, 120), 52, W.GOLD)
+			local art = W.image(face, Xml.attr(it, "Image"), UDim2.new(0.5, 0, 0, 300), Vector2.new(440, 300))
+			art.ScaleType = Enum.ScaleType.Fit
+			local desc = Xml.attr(it, "Description")
+			if desc then
+				W.label(face, Xml.text(desc), UDim2.new(0.5, 0, 0, 500), Vector2.new(520, 140), 32, Color3.new(1, 1, 1))
+			end
+			local y = 600
+			for _, row in statRows(it, up) do
+				statRow(face, row, y)
+				y += 70
+			end
+			-- the flag button on the panel's edge pulls out the full attribute list, as in the original
+			local flag = panel:FindFirstChild("MoveButton") :: any
+			if flag then
+				clickable(flag).Activated:Connect(function()
+					Sound.play("snd_click_1")
+					Menus.shop(tab, selected, not showParams)
+				end)
+			end
+
+			local price, gems = Xml.num(it, "Price"), Xml.num(it, "BonusPrice")
+			if Profile.owns(selected) then
+				if d.equipped[tab :: string] ~= selected then
+					W.textButton(face, "BtnGreen", "EQUIP", UDim2.new(0.5, 0, 1, -200), Vector2.new(420, 110), function()
+						Profile.equip(selected)
+						Profile.save()
+						Sound.play("snd_click_2")
+						Menus.shop(tab, selected, showParams)
+					end)
+				end
+				local nextStep = Items.upgrades(it)[up + 1]
+				if nextStep then
+					local p, g = Xml.num(nextStep, "Price"), Xml.num(nextStep, "BonusPrice")
+					W.textButton(face, "BtnGold", "UPGRADE " .. (p and (p .. " coins") or ((g or 0) .. " gems")),
+						UDim2.new(0.5, 0, 1, -80), Vector2.new(520, 110), function()
+							if p and d.money >= p then d.money -= p
+							elseif g and d.bonus >= g then d.bonus -= g
+							else return end
+							d.items[selected].upgrade = up + 1
+							Profile.save()
+							Sound.play("snd_upgrade")
+							Menus.shop(tab, selected, showParams)
+						end)
+				end
+			elseif lvl <= d.level then
+				local afford = (price and d.money >= price) or (not price and gems and d.bonus >= gems)
+				W.textButton(face, afford and "BtnGreen" or "BtnDark",
+					"BUY  " .. (price and (price .. " coins") or ((gems or 0) .. " gems")),
+					UDim2.new(0.5, 0, 1, -110), Vector2.new(520, 120), function()
+						if not afford then return end
+						if price then d.money -= price else d.bonus -= gems :: number end
+						Profile.give(selected)
+						Profile.equip(selected)
+						Profile.save()
+						Sound.play("snd_buy")
+						Menus.shop(tab, selected, showParams)
+					end)
+			else
+				W.label(face, "Requires level " .. lvl, UDim2.new(0.5, 0, 1, -110), Vector2.new(520, 100), 44,
+					Color3.fromRGB(255, 90, 90))
+			end
+		end
+	end
+
+	---------------- the attribute panel behind the flag
+	local params = node("ItemParametersPanel")
+	if params then
+		params.Visible = showParams == true and selected ~= nil
+		local pface = placePanel(params, 1)
+		if pface and params.Visible then
+			local sel = selected :: string
+			local it = Items.get(sel)
+			local up = d.items[sel] and d.items[sel].upgrade or 0
+			W.label(pface, "ATTRIBUTES", UDim2.new(0.5, 0, 0, 90), Vector2.new(520, 100), 48, W.GOLD)
+			local y = 220
+			for _, row in statRows(it, up) do
+				statRow(pface, row, y)
+				y += 90
+			end
+		end
+	end
+
+	-- ButtonsContainer: "try on" puts the item on the warrior for a look, which selecting it already does
+	-- here, and the forge is not ported -- so the container has nothing left to show. It also sits under
+	-- ItemInfoPanel, which only clears it in the original because SidePanel slides the panel off-screen.
+	local buttons = node("ButtonsContainer")
+	if buttons then buttons.Visible = false end
+
 end
 
 ---------------------------------------------------------------- profile

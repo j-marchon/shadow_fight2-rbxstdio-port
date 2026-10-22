@@ -31,6 +31,10 @@ def node(n):
         if comp.get('type') != 'MonoBehaviour':
             if comp.get('type') == 'CanvasGroup':
                 out['g'] = r4(comp.get('alpha', 1))
+            elif comp.get('type') == 'Canvas':
+                # a Canvas keeps a zero rect in the scene -- the CanvasScaler sizes it to the screen at
+                # runtime -- so SF2.UI has to recognise one and fill the screen itself
+                classes.append('Canvas')
             continue
         classes.append(comp.get('class'))
         ui = comp.get('ui') or {}

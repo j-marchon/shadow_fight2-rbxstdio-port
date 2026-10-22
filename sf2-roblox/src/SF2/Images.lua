@@ -52,7 +52,9 @@ function Images.texture(name: string): any
 		return AssetService:CreateEditableImage({ Size = Vector2.new(w, h) })
 	end)
 	if not ok or not ed then
-		images[name] = false
+		-- the device EditableImage budget is full. Don't remember that as a missing texture: `false` is
+		-- permanent, so the atlas would stay blank for the rest of the session even once a screen change
+		-- frees the memory. Leaving the slot empty lets the next screen decode it.
 		return nil
 	end
 	ed:WritePixelsBuffer(Vector2.zero, Vector2.new(w, h), out)

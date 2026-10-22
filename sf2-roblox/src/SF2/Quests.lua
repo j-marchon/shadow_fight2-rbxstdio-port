@@ -128,6 +128,7 @@ local dialogGui: ScreenGui? = nil
 local function dialog(el: any)
 	local gui = Instance.new("ScreenGui")
 	gui.Name = "SF2Dialog"
+	gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling -- UI.build stacks by sibling index, as Unity does
 	gui.IgnoreGuiInset = true
 	gui.DisplayOrder = 50
 	gui.ResetOnSpawn = false

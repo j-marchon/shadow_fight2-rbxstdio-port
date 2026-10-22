@@ -147,6 +147,16 @@ local function build(node: any, parent: Instance, order: number, paths: { [strin
 	end
 	inst.Name = node.n
 	applyRect(inst, node.r, mirror)
+	-- A Unity Canvas keeps a zero rect and a ~1e-7 localScale in the scene: the CanvasScaler gives it the
+	-- screen's size at runtime, and the tiny scale is the world-units-per-pixel it draws at. Taken
+	-- literally the pair collapses the whole screen into a corner, so a canvas node fills its parent at 1:1.
+	if node.k and table.find(node.k, "Canvas") then
+		inst.AnchorPoint = Vector2.zero
+		inst.Position = UDim2.new()
+		inst.Size = UDim2.fromScale(1, 1)
+		local s = inst:FindFirstChildOfClass("UIScale")
+		if s then s:Destroy() end
+	end
 	inst.ZIndex = order
 	inst.Visible = node.a ~= 0
 	if node.g then inst:SetAttribute("groupAlpha", node.g) end
