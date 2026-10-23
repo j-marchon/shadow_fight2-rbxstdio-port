@@ -326,6 +326,10 @@ shows the dialog's difficulty bar and label and moves the text up as `StrangerDi
 band is the map's (approximated, see the UI section). The Trickster comes when you answer LATER to a level-up
 at `_StrangerTriggerLevel` (quests.xml `LevelUp` -> `LevelUpPostpone`).
 
+**`NoAvatar` dialogs** (68 in the scripts, all one line) are `SimpleDialog` (dialog type `Simple`,
+`DialogsOpener.JNDPLPKDPCP`): the title and the text across the scroll, no portrait. `Regular`,
+`Multiline` and the rest still use `StoryDialog`.
+
 **Notifications don't hold the quest** (`PFOMHOLCODE`, the Dialog action): a `Type="Notification"` dialog
 completes as soon as it opens unless `WaitNotificationClose` evaluates to 1; its button's actions still run
 when pressed. NotificationsGame shows one at a time, so a new one replaces the one on screen. This is why the

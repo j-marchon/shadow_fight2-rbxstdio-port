@@ -20,7 +20,7 @@ ModuleScript	ReplicatedStorage/SF2/Moves	src/SF2/Moves.lua	d4979357cbde549f
 ModuleScript	ReplicatedStorage/SF2/Pack	src/SF2/Pack.lua	af5e2db5af52a24a
 ModuleScript	ReplicatedStorage/SF2/Perks	src/SF2/Perks.lua	bd5c5963d3be9e46
 ModuleScript	ReplicatedStorage/SF2/Profile	src/SF2/Profile.lua	b854c7cdb7e8dddb
-ModuleScript	ReplicatedStorage/SF2/Quests	src/SF2/Quests.lua	b4e4024e2d30318a
+ModuleScript	ReplicatedStorage/SF2/Quests	src/SF2/Quests.lua	33f9e0e0f74c91a9
 ModuleScript	ReplicatedStorage/SF2/Renderer	src/SF2/Renderer.lua	5f773a775ddf1743
 ModuleScript	ReplicatedStorage/SF2/Rigs	src/SF2/Rigs.lua	78d3c6ec9fb375a8
 ModuleScript	ReplicatedStorage/SF2/Rules	src/SF2/Rules.lua	1f064d4bacec8d99

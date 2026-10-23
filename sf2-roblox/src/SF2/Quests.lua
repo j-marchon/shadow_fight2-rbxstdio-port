@@ -613,7 +613,10 @@ local function dialog(el: any)
 		-- Type="Stranger": StrangerDialog, whose three buttons are Left = reject, Middle = accept (fight),
 		-- Right = store (PFOMHOLCODE.DNOIPCGIBIB), each flashing if its Button says Flashing="1"
 		local stranger = typ == "Stranger"
-		local built = UI.build(stranger and "StrangerDialog" or "StoryDialog", canvas)
+		-- Type="NoAvatar": SimpleDialog (dialog type Simple, DialogsOpener.JNDPLPKDPCP): title, the first
+		-- line's text across the whole scroll, no portrait
+		if typ == "NoAvatar" then lines = { lines[1] } end
+		local built = UI.build(stranger and "StrangerDialog" or (typ == "NoAvatar" and "SimpleDialog") or "StoryDialog", canvas)
 		if not built then gui:Destroy() return end
 		local index = 1
 		local okBtn, cancelBtn = built:find("btnOk"), built:find("btnCancel")
