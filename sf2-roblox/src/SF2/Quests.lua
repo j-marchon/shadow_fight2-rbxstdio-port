@@ -17,8 +17,9 @@
 --    ?UniformIntRandom[]; + - * / % and Or / And between them
 --  * ?SysInfo[]: this is the free Android build (F2P, AnyF2P = 1); not a Switch, Steam or China build
 -- Port deviations (see the README's "Quests" section): offers, promotions, payments, ads, raids and
--- server calls do nothing; Place is not used to switch scenes; tutorial hand-holding (arrows, flashing
--- buttons, touch blocking) is skipped; ShowVideo plays nothing.
+-- server calls do nothing; Place is not used to switch scenes; ShowVideo plays nothing. The tutorial's
+-- hand-holding is in (MenuBtnFlashing, ClickButton: arrow, flashing button, touch blocking), but the
+-- console-only ClickHint/SceneMenuScroll and the forge tutorial's ShowArrow/ShowHint/BlockTouches are not.
 
 local Xml = require(script.Parent.Xml)
 local UI = require(script.Parent.UI)
@@ -41,6 +42,9 @@ export type Host = {
 	setZone: (zone: string) -> (),
 	actScreen: (text: string) -> (),
 	tutorial: (step: string) -> (),
+	menuFlash: (scene: string) -> (),
+	clickButton: (target: string, opts: { arrow: boolean, offset: Vector2, rotation: number, flashing: boolean,
+		ignoreCallback: boolean }) -> (),
 	refresh: () -> (),
 }
 Quests.host = nil :: Host?
@@ -528,6 +532,12 @@ local function setLabel(o: Instance?, text: string)
 end
 
 local run: (actions: { any }) -> ()
+local notification: (() -> ())? = nil -- closes the notification on screen (NotificationsGame)
+
+-- NotificationsGame.CloseNotifications
+function Quests.closeNotifications()
+	if notification then notification() end
+end
 
 -- Dialog Type="Regular" / "Multiline": StoryDialog (portrait, title, the lines one after another, then
 -- the buttons; a button's children run when it is pressed). Type="Notification": NotificationGame, the
@@ -555,9 +565,20 @@ local function dialog(el: any)
 	local pressed: any = nil
 	local gui, canvas = layerGui(50)
 	if typ == "Notification" then
+		-- NotificationsGame shows one notification at a time: a new one replaces the one on screen
+		if notification then notification() end
 		local built = UI.build("NotificationGame", canvas)
 		local content = built and built:find("RenderRoot/Scroll/Content")
 		local host = content or canvas
+		local closed = false
+		local function close()
+			if closed then return end
+			closed = true
+			if notification == close then notification = nil end
+			gui:Destroy()
+			done:Fire()
+		end
+		notification = close
 		local img = evaluate(Xml.attr(el, "Image"))
 		if Images.has(img) then
 			local av = W.image(host, img, UDim2.fromOffset(-330, 0), Vector2.new(300, 300))
@@ -570,12 +591,20 @@ local function dialog(el: any)
 			string.upper(textOf(buttons[#buttons] and Xml.attr(buttons[#buttons], "Text") or "OK")),
 			UDim2.fromOffset(170, 250), Vector2.new(360, 100), function()
 				pressed = buttons[#buttons]
-				done:Fire()
+				close()
 			end)
 		ok.ZIndex += 10
 		local t = tonumber(Xml.attr(el, "ReadTime") or "")
-		if t then task.delay(t, function() done:Fire() end) end
-		done.Event:Wait()
+		if t then task.delay(t, close) end
+		-- the quest goes on at once: PFOMHOLCODE completes a Notification straight after opening it unless
+		-- WaitNotificationClose holds (so the tutorial counts your moves while its hint is still up). The
+		-- button's own actions run whenever it is pressed.
+		local function finish()
+			if not closed then done.Event:Wait() end
+			if pressed then run(pressed.c or {}) end
+		end
+		if evaluate(Xml.attr(el, "WaitNotificationClose") or "0") == "1" then finish() else task.spawn(finish) end
+		return
 	else
 		W.shade(canvas, 0.45)
 		local built = UI.build("StoryDialog", canvas)
@@ -834,6 +863,25 @@ run = function(actions: { any })
 		elseif t == "StoryTutorialMove" or t == "StoryTutorialPunchbag" or t == "StoryTutorialDoubleSweep"
 			or t == "StoryTutorialShowBlock" or t == "StoryTutorialLearnPerk" or t == "StoryTutorialBuyItem" then
 			if host then host.tutorial(t) end
+		elseif t == "MenuBtnFlashing" then
+			-- NGCEHDLJOMI: the menu closes, touches are blocked, an arrow points at the MENU roll; once it is
+			-- open the section's button flashes, and the action ends when that button is pressed
+			if host then host.menuFlash(evaluate(Xml.attr(a, "BtnName"))) end
+		elseif t == "ClickButton" then
+			-- PHGCJKBCONG: touches blocked but for the target button (optionally pointed at and flashing);
+			-- the action ends when it is pressed. IgnoreCallback: the press does only that.
+			local function flag(n: string): boolean
+				local v = Xml.attr(a, n)
+				return v ~= nil and evaluate(v) == "1"
+			end
+			if host then
+				host.clickButton(evaluate(Xml.attr(a, "Target")), {
+					arrow = flag("UseArrow"), flashing = flag("UseFlashing"), ignoreCallback = flag("IgnoreCallback"),
+					offset = Vector2.new(tonumber(evaluate(Xml.attr(a, "ArrowOffsetX") or "0")) or 0,
+						tonumber(evaluate(Xml.attr(a, "ArrowOffsetY") or "0")) or 0),
+					rotation = tonumber(evaluate(Xml.attr(a, "ArrowRotation") or "0")) or 0,
+				})
+			end
 		elseif t == "ChangePlayerAvatar" then
 			Profile.get().avatar = evaluate(Xml.attr(a, "Avatar"))
 		elseif t == "ResetDuelTimer" or t == "Checkpoint" or t == "SetDataVersion" then

@@ -3,7 +3,7 @@
 > **For any agent picking this up (Claude Code, Antigravity, Codex, ...):** this is the only file you need to read before working. Read the other docs only when a task needs that detail (the "Deep reference" table says which one).
 > **Update this file with every change, in the same commit, not only at session end** (the rules are in [`AGENTS.md`](AGENTS.md); `CLAUDE.md` and `GEMINI.md` point there). Rewrite sections 3 and 4 and the "Last updated" line, keep one line per session in section 6, update `sf2-roblox\README.md` for any system that changed, and keep the same headings and format. Don't create new status files. Docs under `docs\` are history; leave them alone.
 
-Last updated: **2026-10-22** (act screen matched to the user's screenshots; the shop shows only reached acts' items and locks Ranged/Magic; docs made agent-neutral)
+Last updated: **2026-10-23** (polish pass on the new-game flow: tutorial hand-holding, notifications that don't hold the quest)
 
 ---
 
@@ -46,6 +46,10 @@ Then (same day, later session) the user asked to finish the whole port, section 
 **Section 3 (economy) is in progress:** energy, deliveries and shop item visibility are in (README "Economy"); the forge/enchantments, item sets and the reward currencies are next. The user stopped the session here on purpose, to continue with another agent.
 
 **The user's answers (2026-10-22), now in the code:** the game opens on the dojo (unchanged); the shop shows the acts reached so far and none later, and Ranged/Magic stay empty with "Defeat Lynx/Hermit to unlock ..." until then; items stay usable while being upgraded; the act screen is a dark brown grainy screen with the title in pale gold (matched to their two screenshots).
+
+**2026-10-23 (cloud session, no Studio): a polish pass on a new game, from the tutorial into Act 1.** This session ran in a container with no Studio and no Luau, so its changes are read against the decompile but **not run**. The user should install and play a new game (Settings → advanced → RESET PROGRESS) to check them:
+- tutorial hand-holding (README "Quests and story" → "Tutorial hand-holding"): `MenuBtnFlashing` (arrow at the MENU roll, then the flashing section button, touches blocked meanwhile) and `ClickButton` (the flashing FIGHT on Lynx);
+- `Notification` dialogs no longer hold the quest unless `WaitNotificationClose` (so the tutorial counts moves while its hint is up).
 
 **Section 2 is done: the dojo** is the original's live punching-bag fight under the menu, with the disciple toggle and the tutorial's dojo steps (README "The dojo").
 
@@ -108,7 +112,7 @@ All of it is committed and installed in the Studio place. **The place has not be
   - The perk value expressions `?CurrentFight`, `?CoordX/Y`, `?PlayerAttribute`, `?Aspect`, `?MovesVariable` and `?Abs`, which read 0.
 
 **Known gaps:**
-- Dojo: the tutorial's flashing highlights aren't drawn; the new-game tutorial has not been played through by hand in Studio (only headless).
+- Dojo: the stick and punch/kick flashes inside the tutorial's dojo steps aren't drawn (the menu and FIGHT flashes are); the new-game tutorial has not been played through by hand in Studio (only headless).
 - Quest deviations (README "Quests and story"): `Place` doesn't switch scenes, offers/payments/raids/hand-holding do nothing, the act screen's backdrop texture is approximated (the look matches the user's screenshots).
 - UI deviations listed above (README UI section).
 - The shock state's effects (`FrameReduction`, `LooseningDelay`, `Impulse Y`, the `Weapon Fists` + `WeaponDamage 0` pair in `internalSettings <Shock>`).
@@ -124,26 +128,27 @@ All of it is committed and installed in the Studio place. **The place has not be
 
 The user's standing priority, in their words: the UI was "the biggest problem", a "full rework completely based on the original, especially in the shop" (now done, pending their playtest). Then the dojo. Then "all the small details (events, dialogue, lore, cutscenes, special stuff)".
 
-1. **Ask the user to re-check the menus against their phone** in Studio Play:
+1. **Install and run the 2026-10-23 changes** (written without Studio): re-run `tools\tests\story_test.luau`, then play a new game's tutorial by hand: the arrow under MENU, the flashing Shop/Map/Profile/Dojo buttons, the flashing FIGHT on Lynx, and that other buttons don't respond meanwhile. Fix whatever doesn't run.
+2. **Ask the user to re-check the menus against their phone** in Studio Play:
    - the latest round (shop snapping and panels, map names and Eclipse sun, profile, settings, end screen lines);
    - then the list under "Not verified yet".
 
    Fix what they report, then ask them to save the place (Ctrl+S).
-2. **Rest of section 3, economy** (energy and deliveries are done):
+3. **Rest of section 3, economy** (energy and deliveries are done):
    - The forge: `forge.xml` has 3 recipes (Simple/Medium/Complex, unlocked by `forge_quests.xml` GIVE_RECIPE_*), each with per-type `Variations` (random perk sets, `?RandomAspect[min,max]` deviation around the `AspectScale` value for the item's level) and `Prices` blocks (ForgeMaterial1/2/3 by item level, DeliveryTime 1200 s, BonusDeliveryPrice). Its UI is the shop's `ForgePanel` (decompile `Nekki.SF2.GUI.Shop.Forge`).
    - Reward currencies: challenge/Eclipse rewards carry `<Currency Drop Name="ForgeMaterialN" ExpectedValue DeviationCoefficient DecayCoefficient>`; find the drop formula in the decompile before paying them.
    - Item sets (`list.xml <ItemSets>`), real-money items priced in gems. (Shop item visibility is done.)
    Then modes (hard mode, raids as solo bosses), then the UI deviations below.
    Ask the user to play a new game's tutorial (Settings → advanced → RESET PROGRESS) and the act transitions on the phone side by side.
-3. **Close the UI deviations worth closing**:
+4. **Close the UI deviations worth closing**:
    - The real difficulty rating (decompile `Nekki.SF2.GUI.Map\DifficultyPanel__1117.c` / `InfoBattle__2796.c`).
    - The fight HUD's style bar (`StylePanel` / `StyleBar`, `internalSettings <StyleLevels>`) and the real style meter rules from the decompile.
    - The fight money multiplier for the end-screen bonuses.
    - The end screen's count-up (`EndFightContent`).
    - Moving the shop and fight HUD onto the real layout groups.
    - The Achievements tab (`AchievementCell`, `Achievements.xml` is in `out\Xml`).
-4. The small details: events, dialogue, lore, cutscenes.
-5. Then the older gaps: projectiles, boss abilities, the shock state. For anything left from `docs\FULL_GAME_PLAN.md` steps 9–12 (economy and forge, all modes, story coverage, polish), compare it against the commits first.
+5. The small details: events, dialogue, lore, cutscenes.
+6. Then the older gaps: projectiles, boss abilities, the shock state. For anything left from `docs\FULL_GAME_PLAN.md` steps 9–12 (economy and forge, all modes, story coverage, polish), compare it against the commits first.
 
 **How to work on a UI screen** (the method this port's screens follow):
 1. Find what the original scene mounts. Each `sf2-assets\ui\scene__levelN_X.json` root's scene component has a `_MountOnStart` list of prefab names.
@@ -231,3 +236,4 @@ The user's standing priority, in their words: the UI was "the biggest problem", 
   - Settings and advanced settings as the original, with volume sliders and controller scale.
   - End screen: the bonus lines, backed by new `Fight.stats` counters and coins paid in `Game`.
 - 2026-10-22 (full port, section by section): section 1, the quest scripts. Found the 6 missing act stories in the APK (same-named TextAssets the old extraction overwrote; a CDN `CONFIGS` pack was fetched with the user's OK but didn't have them), ported the QuestsManager from the decompile, moved the map, act unlocks and the tutorial onto it, save v2 with migration, `story_test.luau` plays the whole campaign. Section 2, the dojo: the live punching-bag fight under the menu (`DojoScene`), the disciple toggle, the tutorial's dojo steps from their decompiled classes; keyboard injection now reaches the game. Section 3 started: energy (5 points, 600 s each, per-fight Power, energy.xml dialogs) and deliveries (DeliveryTime, finish-now gems, Delivery notifications). Then the user's answers: act screen matched to their screenshots, shop shows only reached acts' items with locked Ranged/Magic tabs, AGENTS.md made the docs agent-neutral; stopped there on the user's request.
+- 2026-10-23 (cloud session, no Studio or Luau; nothing run): polish pass on the new-game flow. Ported the tutorial's `MenuBtnFlashing` and `ClickButton` (arrow, flashing buttons, touch block) from their decompiled classes; `Notification` dialogs no longer hold the quest unless `WaitNotificationClose`.

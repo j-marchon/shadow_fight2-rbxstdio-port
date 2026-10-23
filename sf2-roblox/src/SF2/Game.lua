@@ -373,6 +373,17 @@ Quests.host = {
 			end
 		end
 	end,
+	-- MenuBtnFlashing: once the flashing button is pressed, its scene change happens as the press would
+	-- have made it (through ChangeTab), after the quest that flashed it is done
+	menuFlash = function(scene: string)
+		Menus.menuFlash(scene, Quests.closeNotifications)
+		Quests.run(function() Game.go(scene) end)
+	end,
+	-- ClickButton: the pressed button does its usual job afterwards, unless IgnoreCallback
+	clickButton = function(target: string, opts: any)
+		local press = Menus.clickButton(target, opts)
+		if press then Quests.run(press) end
+	end,
 	refresh = function()
 		if refreshQueued then return end
 		refreshQueued = true

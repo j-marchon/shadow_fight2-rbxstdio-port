@@ -67,10 +67,15 @@ function Menus.hide()
 	end
 end
 
+-- buttons a quest's ClickButton can name ("InfoBattle.FightButton"): the button, its FlashingImg and what
+-- pressing it normally does; filled by the screen on show
+local targets: { [string]: { btn: GuiObject, flash: GuiObject?, press: (() -> ())? } } = {}
+
 local function clear(): Frame
 	local _, c = root()
 	;(gui :: ScreenGui).Enabled = true
 	if layer then layer:Destroy() end
+	table.clear(targets)
 	Images.releaseScreen()
 	local f = Instance.new("Frame")
 	f.Name = "Screen"
@@ -337,6 +342,7 @@ local function mainMenu(parent: Instance, section: string): any
 		open = not open
 		setLength(open and SCROLL_LENGTH or 0, SCROLL_TIME)
 	end
+	local sectionButtons = {}
 	if back then
 		onClick(back, function()
 			if open then toggle() end
@@ -379,9 +385,22 @@ local function mainMenu(parent: Instance, section: string): any
 				-- "Additional TouchZone" widens the tap target past the icon
 				local zone = btn:FindFirstChild("Additional TouchZone")
 				if zone then onClick(zone, go) end
+				-- SectionButton.FlashingImage: the "<Name>Flashing" highlight beside it
+				sectionButtons[name] = { btn = btn, flash = m:find("Content/ScrollParent/Scroll/ClippingSprite/Toggles/" .. name .. "Flashing") }
 			end
 		end
 	end
+	-- what the tutorial's MenuBtnFlashing drives (MainMenu.GetScrollBtn / GetButtonFromScreen / CloseMenu)
+	m.ctl = {
+		scrollBtn = m:find("Content/ScrollParent/Scroll/MenuWheel/MenuButton") or wheel,
+		toggle = toggle,
+		isOpen = function() return open end,
+		close = function()
+			open = false
+			setLength(0, 0)
+		end,
+		buttons = sectionButtons,
+	}
 
 	-- the dojo's corner toggle (MainMenu.btnDojoDisciple, Dojo_PunchbagOrDisciple): the punching bag or the
 	-- disciple to spar with. It shows once the disciple has joined (quests.xml DojoDiscipleGreetings sets
@@ -426,6 +445,247 @@ function Menus.setMenuEnabled(on: boolean)
 		local content = m:find("Content/ScrollParent")
 		if content then content.Visible = on end
 	end
+end
+
+---------------------------------------------------------------- tutorial hand-holding
+-- TutorialCanvas.BlockOn: a layer over the menus takes every touch, except on the buttons the tutorial
+-- lets through (TutorialExtension). A touch can't fall through one ScreenGui to another, so each of those
+-- buttons gets a transparent stand-in on the blocking layer that follows it and presses it.
+-- ArrowCanvas: MiscSprites.Arrow pointing at a button. SFButton.IsFlashing: the button's FlashingImage
+-- pulses.
+
+local RunService = game:GetService("RunService")
+local tutGui: ScreenGui? = nil
+local tutCanvas: Frame? = nil
+
+local function tutorialLayer(): Frame
+	if not tutGui then
+		local g = Instance.new("ScreenGui")
+		g.Name = "SF2Tutorial"
+		g.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+		g.ResetOnSpawn = false
+		g.IgnoreGuiInset = true
+		g.DisplayOrder = 40 -- over the menus (5), under the quests' dialogs (50)
+		g.Parent = Players.LocalPlayer:WaitForChild("PlayerGui")
+		tutGui = g
+		tutCanvas = UI.canvas(g)
+	end
+	return tutCanvas :: Frame
+end
+
+-- a point on screen in the tutorial layer's canvas units
+local function toLayer(c: Frame, abs: Vector2): Vector2
+	return (abs - c.AbsolutePosition) / math.max(UI.scaleOf(c), 1e-3)
+end
+
+local blocker: GuiObject? = nil
+function Menus.blockTouches(on: boolean)
+	local c = tutorialLayer()
+	if on and not blocker then
+		local b = Instance.new("TextButton")
+		b.Name = "Blocker"
+		b.Text = ""
+		b.AutoButtonColor = false
+		b.BackgroundTransparency = 1
+		b.Size = UDim2.fromScale(1, 1)
+		b.ZIndex = 1
+		b.Parent = c
+		blocker = b
+	elseif not on and blocker then
+		blocker:Destroy()
+		blocker = nil
+	end
+end
+
+-- Let one button through the block: fn runs when it is pressed. Returns the undo.
+function Menus.allowTouch(o: GuiObject, fn: () -> ()): () -> ()
+	local c = tutorialLayer()
+	local hit = Instance.new("TextButton")
+	hit.Name = "Allowed"
+	hit.Text = ""
+	hit.AutoButtonColor = false
+	hit.BackgroundTransparency = 1
+	hit.ZIndex = 3
+	hit.Parent = c
+	local function follow()
+		local alive = o.Parent ~= nil and o.AbsoluteSize.X > 0
+		hit.Visible = alive
+		if not alive then return end
+		local p = toLayer(c, o.AbsolutePosition)
+		local sz = o.AbsoluteSize / math.max(UI.scaleOf(c), 1e-3)
+		hit.Position = UDim2.fromOffset(p.X, p.Y)
+		hit.Size = UDim2.fromOffset(sz.X, sz.Y)
+	end
+	follow()
+	local conn = RunService.RenderStepped:Connect(follow)
+	hit.Activated:Connect(function()
+		Sound.play("snd_click_1")
+		fn()
+	end)
+	return function()
+		conn:Disconnect()
+		hit:Destroy()
+	end
+end
+
+-- ArrowCanvas.ShowArrow(target, offset, rotation): the Arrow (130x202, pivot top centre) goes to the target's
+-- pivot plus the offset (canvas units, y up), turned by rotation (degrees, anticlockwise) about that pivot.
+-- Its ArrowImg is the left-pointing MiscSprites.Arrow turned -90, so unturned it points up. Arrow.Update
+-- bobs the image 0.8 units a frame, 30 frames down and back.
+local arrow: { holder: Frame, conn: RBXScriptConnection }? = nil
+function Menus.hideArrow()
+	if arrow then
+		arrow.conn:Disconnect()
+		arrow.holder:Destroy()
+		arrow = nil
+	end
+end
+
+function Menus.showArrow(target: GuiObject, offset: Vector2, rotation: number)
+	Menus.hideArrow()
+	local c = tutorialLayer()
+	local holder = Instance.new("Frame")
+	holder.Name = "Arrow"
+	holder.BackgroundTransparency = 1
+	holder.AnchorPoint = Vector2.new(0.5, 0.5)
+	holder.Size = UDim2.fromOffset(130, 202)
+	holder.Rotation = -rotation
+	holder.ZIndex = 4
+	holder.Parent = c
+	local img = W.image(holder, "MiscSprites.Arrow", UDim2.fromScale(0.5, 0.5), Vector2.new(202, 130), Vector2.new(0.5, 0.5))
+	img.Rotation = 90
+	-- the holder turns about its centre in Roblox, the original about its top: place the centre accordingly
+	local th = math.rad(-rotation)
+	local toCentre = Vector2.new(-101 * math.sin(th), 101 * math.cos(th))
+	local y, count, down = 0, 0, false
+	local conn = RunService.RenderStepped:Connect(function()
+		if not target.Parent then
+			holder.Visible = false
+			return
+		end
+		holder.Visible = true
+		local pivot = toLayer(c, target.AbsolutePosition + target.AbsoluteSize * target.AnchorPoint)
+		local p = pivot + Vector2.new(offset.X, -offset.Y) + toCentre
+		holder.Position = UDim2.fromOffset(p.X, p.Y)
+		-- Arrow.Update, in Unity units (y up)
+		y -= down and 0.8 or -0.8
+		if not down then
+			if count < 1 then down = true else count -= 1 end
+		else
+			if count >= 30 then down = false else count += 1 end
+		end
+		img.Position = UDim2.new(0.5, 0, 0.5, -y)
+	end)
+	arrow = { holder = holder, conn = conn }
+end
+
+-- SFButton.IsFlashing: FlashingImage shows and its alpha runs 250 -> 0 at 10 a frame, then back up to 250 at
+-- 10 x 60 a second, and over (Update). The alpha is taken as out of 255.
+local flashing: { [GuiObject]: { v: number, up: boolean } } = {}
+local flashConn: RBXScriptConnection? = nil
+function Menus.setFlashing(img: GuiObject?, on: boolean)
+	if not img then return end
+	img.Visible = on
+	if on then
+		flashing[img] = { v = 0, up = false }
+	else
+		flashing[img] = nil
+	end
+	if next(flashing) and not flashConn then
+		flashConn = RunService.RenderStepped:Connect(function(dt)
+			for o, st in flashing do
+				if not o.Parent then
+					flashing[o] = nil
+					continue
+				end
+				if not st.up then
+					st.v -= 10
+					if st.v <= 0 then
+						st.up = true
+						st.v = 0
+					end
+				else
+					st.v += 10 * 60 * dt
+					if st.v >= 250 then
+						st.v = 250
+						st.up = false
+					end
+				end
+				if o:IsA("ImageLabel") or o:IsA("ImageButton") then
+					(o :: any).ImageTransparency = 1 - st.v / 255
+				end
+			end
+			if not next(flashing) and flashConn then
+				flashConn:Disconnect()
+				flashConn = nil
+			end
+		end)
+	end
+end
+
+-- MenuBtnFlashing (NGCEHDLJOMI): the menu closes and touches are blocked but for the MENU roll, which an
+-- arrow points at (offset 0,-125). Once the roll is open (MenuScroll.OnOpen) the notifications close, the
+-- arrow goes, and the scene's button flashes and is let through. Returns when it is pressed; the caller
+-- then makes the scene change the button stands for.
+function Menus.menuFlash(sceneName: string, closeNotifications: (() -> ())?)
+	-- the action waits for MainMenu to exist
+	while not (menuRoot and menuRoot.root and menuRoot.root.Parent and menuRoot.ctl) do task.wait() end
+	local ctl = menuRoot.ctl
+	local entry = ctl.buttons[sceneName]
+	if not entry then return end -- the scene on screen: its button is not a button
+	ctl.close()
+	Menus.blockTouches(true)
+	local done = Instance.new("BindableEvent")
+	local releaseScroll: (() -> ())? = nil
+	local releaseBtn: (() -> ())? = nil
+	local opened = false
+	local function onOpen()
+		if opened or not ctl.isOpen() then return end
+		opened = true
+		if closeNotifications then closeNotifications() end
+		Menus.hideArrow()
+		if releaseScroll then releaseScroll() end
+		Menus.setFlashing(entry.flash, true)
+		releaseBtn = Menus.allowTouch(entry.btn, function() done:Fire() end)
+	end
+	if ctl.scrollBtn then
+		Menus.showArrow(ctl.scrollBtn, Vector2.new(0, -125), 0)
+		releaseScroll = Menus.allowTouch(ctl.scrollBtn, function()
+			ctl.toggle()
+			task.delay(SCROLL_TIME, onOpen)
+		end)
+	else
+		onOpen()
+	end
+	done.Event:Wait()
+	Menus.setFlashing(entry.flash, false)
+	if releaseBtn then releaseBtn() end
+	Menus.hideArrow()
+	Menus.blockTouches(false)
+	if entry.btn.Parent then ctl.close() end
+end
+
+-- ClickButton (PHGCJKBCONG): touches blocked but for the target, optionally pointed at and flashing; returns
+-- once it is pressed, with what the press normally does (nil with IgnoreCallback, or an unknown target,
+-- which the original logs and skips)
+function Menus.clickButton(target: string, opts: any): (() -> ())?
+	local t = targets[target]
+	if not t or not t.btn.Parent then
+		warn("SF2 ClickButton: no button " .. target)
+		return nil
+	end
+	Menus.blockTouches(true)
+	if opts.arrow then Menus.showArrow(t.btn, opts.offset, opts.rotation) end
+	if opts.flashing then Menus.setFlashing(t.flash, true) end
+	local done = Instance.new("BindableEvent")
+	local release = Menus.allowTouch(t.btn, function() done:Fire() end)
+	done.Event:Wait()
+	release()
+	if opts.flashing then Menus.setFlashing(t.flash, false) end
+	if opts.arrow then Menus.hideArrow() end
+	Menus.blockTouches(false)
+	if opts.ignoreCallback then return nil end
+	return t.press
 end
 
 ---------------------------------------------------------------- training (arsenal)
@@ -863,12 +1123,17 @@ function Menus.map(zoneName: string?)
 	end
 	refresh()
 	if info then
-		onClick(info:find("Panel/btnFight"), function()
+		local function fight()
 			if not pick then return end
 			local _, locked = stateOf(pick)
 			if locked then return end
 			if Menus.onPlay then Menus.onPlay(zn, pick) end
-		end, "snd_click_2")
+		end
+		local btn = info:find("Panel/btnFight")
+		onClick(btn, fight, "snd_click_2")
+		if btn then
+			targets["InfoBattle.FightButton"] = { btn = btn, flash = info:find("Panel/btnFight/Image/FlashingImg"), press = fight }
+		end
 	end
 
 	---------------- lamps: one bulb per act (LampsPanel.AddLamps), the lit one marks this act

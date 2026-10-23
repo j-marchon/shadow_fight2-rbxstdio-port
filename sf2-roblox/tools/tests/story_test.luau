@@ -48,6 +48,9 @@ task.spawn(function()
 					Profile.equip("WEAPON_KNIVES")
 				end
 			end,
+			-- the hand-holding waits for a press; the loop below navigates by itself
+			menuFlash = function() end,
+			clickButton = function() end,
 			refresh = function() end,
 		}
 		local function idle()

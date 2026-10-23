@@ -307,9 +307,10 @@ opening when the previous boss falls, and the fixed list of visible battles.
 **Deviations:**
 - `Place` (an action list's scene, default Map) does not switch scenes; FightEnd quests run once the end
   screen returns to the map, which is where they belong anyway.
-- Offers, promotions, payments, ads, raids, server calls, video replays and the tutorial's hand-holding
-  (arrows, flashing buttons, touch blocking, `ClickButton`) do nothing. `Checkpoint`/`ResumeQuests` (resuming
-  after a restart) and `SetDataVersion` (save migrations) are skipped.
+- Offers, promotions, payments, ads, raids, server calls and video replays do nothing. `Checkpoint`/`ResumeQuests`
+  (resuming after a restart) and `SetDataVersion` (save migrations) are skipped. Of the hand-holding actions,
+  only the forge tutorial's `ShowArrow`/`ShowHint`/`BlockTouches` and the console-only `ClickHint`/
+  `SceneMenuScroll` are missing (the story tutorial's are in, below).
 - `ActScreen` matches the user's screenshots (dark brown grainy screen, darker edges, the title in pale
   gold, one line per `{br}`); its backdrop texture isn't in the extracted art, so it is the dialog paper
   darkened with edge gradients.
@@ -317,6 +318,29 @@ opening when the previous boss falls, and the fixed list of visible battles.
   scroll; its layout is built at runtime in the original.
 - `?Fight[id].Helm` (a challenge's required item) reads the fight's `EquipItem` rule for that slot.
 - `StoryTutorialShowBlock`'s profile highlight is skipped; the step passes at once.
+
+**Notifications don't hold the quest** (`PFOMHOLCODE`, the Dialog action): a `Type="Notification"` dialog
+completes as soon as it opens unless `WaitNotificationClose` evaluates to 1; its button's actions still run
+when pressed. NotificationsGame shows one at a time, so a new one replaces the one on screen. This is why the
+tutorial counts your moves while "use the stick to move" is still up.
+
+**Tutorial hand-holding** (2026-10-23, from the decompile):
+- `MenuBtnFlashing` (`NGCEHDLJOMI`): closes the MENU scroll (`MainMenu.CloseMenu`), blocks every touch
+  (`TutorialCanvas.BlockOn`) but the roll's `MenuButton`, which an arrow points at (`ArrowCanvas.ShowArrow`,
+  offset 0,-125). When the scroll has opened (`MenuScroll.OnOpen`) the notifications close, the arrow goes,
+  and the section's button flashes (`SFButton.IsFlashing` on its `<Name>Flashing` image) and is let
+  through. The action ends when it is pressed; the press then changes scene through ChangeTab as usual,
+  once the quest that flashed it has finished (that is how `StoryTutorialBuyItem` gets its ChangeTab).
+- `ClickButton` (`PHGCJKBCONG`): the same block with only the target let through, optionally an arrow
+  (`UseArrow`, `ArrowOffsetX/Y`, `ArrowRotation`) and flashing (`UseFlashing`); `IgnoreCallback` makes the
+  press only end the action. The map registers `InfoBattle.FightButton` (the tutorial's flashing FIGHT on
+  Lynx).
+- The flash (`SFButton.Update`): alpha 250 -> 0 at 10 a frame, then back up at 10 x 60 a second. The arrow
+  (`Arrow.Update`): `MiscSprites.Arrow` (pointing left, turned -90 so it points up) bobs 0.8 units a frame,
+  30 frames each way.
+- Port mechanics: a touch can't fall through one ScreenGui to another, so the block is a full-screen layer
+  (`SF2Tutorial`, DisplayOrder 40, under the dialogs) and each allowed button gets a transparent stand-in
+  on it that follows the button. Port approximation: the flash alpha is read as value/255.
 
 ### The dojo (`Game` startDojo, `FightScreen` `dojo` mode)
 `DojoScene` builds zone 0, battle 0, fight 0 of stages.xml -- `Punchbag|Training|1`, the punching bag
@@ -334,7 +358,8 @@ away (`MainMenu.IsEnabled`) until the player has done
 - `StoryTutorialPunchbag` (`JIALPJBDBEE`): 3 moves of `Type="ATTACK"` (punch and kick flash);
 - `StoryTutorialDoubleSweep` (`JHJLHLANACF`): the move named `DoubleSweep`.
 `StoryTutorialBuyItem` waits for the knives to be bought, `StoryTutorialLearnPerk` for a perk to be learned.
-Port deviation: the flashing highlights are not drawn. The port's own arsenal training (every weapon against
+The menu and FIGHT flashes, the arrow and the touch block between steps are drawn (see "Tutorial
+hand-holding" above); the stick and punch/kick flashes inside the dojo steps are not. The port's own arsenal training (every weapon against
 a dummy) moved from the corner toggle to an `ARSENAL (DEV)` button in the advanced settings.
 
 **Verified in Studio** (2026-10-22, Play): the dojo opens with the bag and your warrior, the menu over the
