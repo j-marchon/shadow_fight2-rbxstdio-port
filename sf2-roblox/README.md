@@ -319,6 +319,13 @@ opening when the previous boss falls, and the fixed list of visible battles.
 - `?Fight[id].Helm` (a challenge's required item) reads the fight's `EquipItem` rule for that slot.
 - `StoryTutorialShowBlock`'s profile highlight is skipped; the step passes at once.
 
+**Strangers** (`Dialog Type="Stranger"`, the Act 1 Trickster and the later challengers): built from
+`StrangerDialog`, with the script's Left / Middle / Right buttons on its reject / accept / store buttons
+(`PFOMHOLCODE.DNOIPCGIBIB`), each pulsing when its `Button` has `Flashing="1"`. `DifficultyOf Fight=...`
+shows the dialog's difficulty bar and label and moves the text up as `StrangerDialog.GBHBDMMKPLO` does; the
+band is the map's (approximated, see the UI section). The Trickster comes when you answer LATER to a level-up
+at `_StrangerTriggerLevel` (quests.xml `LevelUp` -> `LevelUpPostpone`).
+
 **Notifications don't hold the quest** (`PFOMHOLCODE`, the Dialog action): a `Type="Notification"` dialog
 completes as soon as it opens unless `WaitNotificationClose` evaluates to 1; its button's actions still run
 when pressed. NotificationsGame shows one at a time, so a new one replaces the one on screen. This is why the

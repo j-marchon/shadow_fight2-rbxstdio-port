@@ -388,6 +388,10 @@ Quests.host = {
 		Menus.menuFlash(scene, Quests.closeNotifications)
 		Quests.run(function() Game.go(scene) end)
 	end,
+	difficulty = function(id: string): number?
+		local fight = Quests.fightOf(id)
+		return fight and Menus.difficulty(fight) or nil
+	end,
 	-- ClickButton: the pressed button does its usual job afterwards, unless IgnoreCallback
 	clickButton = function(target: string, opts: any)
 		local press = Menus.clickButton(target, opts)

@@ -791,6 +791,8 @@ local function difficulty(fight: any): number
 	return 4
 end
 
+Menus.difficulty = difficulty
+
 local function fillDifficulty(panel: Instance?, fight: any)
 	if not panel then return end
 	local k = difficulty(fight)

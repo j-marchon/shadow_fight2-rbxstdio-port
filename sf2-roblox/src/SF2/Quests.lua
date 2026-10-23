@@ -43,6 +43,7 @@ export type Host = {
 	actScreen: (text: string) -> (),
 	tutorial: (step: string) -> (),
 	menuFlash: (scene: string) -> (),
+	difficulty: (fight: string) -> number?, -- 0..4, the map's difficulty band for a fight id
 	clickButton: (target: string, opts: { arrow: boolean, offset: Vector2, rotation: number, flashing: boolean,
 		ignoreCallback: boolean }) -> (),
 	refresh: () -> (),
@@ -509,6 +510,8 @@ end
 
 ---------------------------------------------------------------- dialogs
 
+local DIFF_BARS = { "very_easy", "easy", "middle", "hard", "very_hard" } -- DifficultyBars.*, diff0..4
+
 local BUTTON_SPRITE = { Red = "CommonButtons.BtnDark", Green = "CommonButtons.BtnGreen", Gold = "CommonButtons.BtnGold" }
 local function buttonSprite(color: string?): string
 	return BUTTON_SPRITE[color or ""] or "CommonButtons.BtnWhite" -- LabelButton.GetBtnColor: White/Beige/other
@@ -607,11 +610,37 @@ local function dialog(el: any)
 		return
 	else
 		W.shade(canvas, 0.45)
-		local built = UI.build("StoryDialog", canvas)
+		-- Type="Stranger": StrangerDialog, whose three buttons are Left = reject, Middle = accept (fight),
+		-- Right = store (PFOMHOLCODE.DNOIPCGIBIB), each flashing if its Button says Flashing="1"
+		local stranger = typ == "Stranger"
+		local built = UI.build(stranger and "StrangerDialog" or "StoryDialog", canvas)
 		if not built then gui:Destroy() return end
 		local index = 1
 		local okBtn, cancelBtn = built:find("btnOk"), built:find("btnCancel")
+		local sides: { [string]: any } = stranger
+			and { Left = built:find("btnReject"), Middle = built:find("btnAccept"), Right = built:find("btnStore") }
+			or { Left = cancelBtn, Right = okBtn }
 		local extra: { GuiObject } = {}
+		-- DifficultyOf Fight="...": the bar and label above the buttons, with the text moved up to make room
+		-- (StrangerDialog.GBHBDMMKPLO: text y = label height / 4 + 70, bar 80 + half the text's height
+		-- below it, label 60 + a quarter of its height below the bar; both at x 280)
+		local diffOf = Xml.first(el, "DifficultyOf")
+		local host = Quests.host :: any
+		local k = diffOf and host and host.difficulty and host.difficulty(evaluate(Xml.attr(diffOf, "Fight")))
+		local bar, barLabel = built:find("Content/DifficultyBar"), built:find("Content/DifficultyLabel")
+		if k and bar and barLabel then
+			local text = built:find("Content/Text") :: any
+			local stripe = bar:FindFirstChild("BarStripe")
+			if stripe then UI.setSprite(stripe, "DifficultyBars." .. DIFF_BARS[k + 1]) end
+			setLabel(barLabel, Xml.text("diff" .. k))
+			bar.Visible, barLabel.Visible = true, true
+			local lh = (barLabel :: any).Size.Y.Offset
+			local ty = lh / 4 + 70
+			local by = ty - 80 - text.Size.Y.Offset / 2
+			text.Position = UDim2.new(text.Position.X.Scale, text.Position.X.Offset, 0.5, -ty)
+			bar.Position = UDim2.new(0.5, 280, 0.5, -by)
+			barLabel.Position = UDim2.new(0.5, 280, 0.5, -(by - 60 - lh / 4))
+		end
 		local function show()
 			setLabel(built:find("Header"), string.upper(textOf(Xml.attr(el, "Title"))))
 			local line = lines[index]
@@ -646,6 +675,10 @@ local function dialog(el: any)
 			end
 			if okBtn then okBtn.Visible = false end
 			if cancelBtn then cancelBtn.Visible = false end
+			for _, btn in sides do
+				btn.Visible = false
+				UI.setFlashing(btn:FindFirstChild("FlashingImg"), false)
+			end
 			if not last then
 				-- a line's own button carries on to the next line
 				place(okBtn, nil, Xml.attr(lines[index], "ButtonText") or "dlgStoryBtnMore", "White")
@@ -654,11 +687,10 @@ local function dialog(el: any)
 			for _, b in buttons do
 				local side = Xml.attr(b, "Type") or "Right"
 				local text = Xml.attr(b, "Text") or (side == "Right" and Xml.attr(lines[index], "ButtonText")) or "OK"
-				if side == "Right" then
-					place(okBtn, b, text, Xml.attr(b, "Color"))
-				elseif side == "Left" then
-					place(cancelBtn, b, text, Xml.attr(b, "Color"))
-				elseif okBtn then
+				if sides[side] then
+					place(sides[side], b, text, Xml.attr(b, "Color"))
+					if Xml.attr(b, "Flashing") == "1" then UI.setFlashing(sides[side]:FindFirstChild("FlashingImg"), true) end
+				elseif side == "Middle" and okBtn then
 					-- Middle: a third button between the two
 					local m = (okBtn :: any):Clone()
 					m.Parent = okBtn.Parent
@@ -687,6 +719,11 @@ local function dialog(el: any)
 		end
 		if okBtn and okBtn:IsA("GuiButton") then okBtn.Activated:Connect(function() onButton("Right") end) end
 		if cancelBtn and cancelBtn:IsA("GuiButton") then cancelBtn.Activated:Connect(function() onButton("Left") end) end
+		if stranger then
+			for side, btn in sides do
+				if btn:IsA("GuiButton") then btn.Activated:Connect(function() onButton(side) end) end
+			end
+		end
 		-- the "don't show again" box (MultiLineScrollDialog's Checkbox)
 		if checkBox then
 			local on = evaluate(Xml.attr(checkBox, "InitialValue")) == "1"
