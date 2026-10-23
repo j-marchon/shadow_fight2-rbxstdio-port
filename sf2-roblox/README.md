@@ -358,8 +358,11 @@ away (`MainMenu.IsEnabled`) until the player has done
 - `StoryTutorialPunchbag` (`JIALPJBDBEE`): 3 moves of `Type="ATTACK"` (punch and kick flash);
 - `StoryTutorialDoubleSweep` (`JHJLHLANACF`): the move named `DoubleSweep`.
 `StoryTutorialBuyItem` waits for the knives to be bought, `StoryTutorialLearnPerk` for a perk to be learned.
-The menu and FIGHT flashes, the arrow and the touch block between steps are drawn (see "Tutorial
-hand-holding" above); the stick and punch/kick flashes inside the dojo steps are not. The port's own arsenal training (every weapon against
+While a step waits, its controls flash: the stick's `BackgroundFlashing` for Move (`Stick.SetIsFlashing`; alpha
+0 -> 250 -> 0 at 10 a frame), a `FightButtons.Kick_Highlight` at its own size x1.33 over Punch and Kick for
+Punchbag, the stick and Kick for DoubleSweep (`SFButton.AddFlashImage` + `IsFlashing`). The touch controls
+only show on touch screens, so on a desktop these flashes aren't seen. The menu and FIGHT flashes, the arrow
+and the touch block between steps are under "Tutorial hand-holding" above. The port's own arsenal training (every weapon against
 a dummy) moved from the corner toggle to an `ARSENAL (DEV)` button in the advanced settings.
 
 **Verified in Studio** (2026-10-22, Play): the dojo opens with the bag and your warrior, the menu over the

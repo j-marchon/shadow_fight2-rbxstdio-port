@@ -628,6 +628,53 @@ function UI.setFill(label: any, amount: number)
 	end
 end
 
+-- A pulsing highlight: the image shows and its alpha runs between 0 and 250 (read as out of 255).
+--  * "button" (SFButton.Update, the default): from where it is down to 0 at 10 a frame, then up to 250 at
+--    10 x 60 a second, and over
+--  * "stick" (Stick.Update): up from 0 to 250 and back down, 10 a frame each way
+local flashing: { [GuiObject]: { v: number, up: boolean, stick: boolean } } = {}
+local flashConn: RBXScriptConnection? = nil
+function UI.setFlashing(img: GuiObject?, on: boolean, style: string?)
+	if not img then return end
+	img.Visible = on
+	if on then
+		local stick = style == "stick"
+		flashing[img] = { v = 0, up = stick, stick = stick }
+	else
+		flashing[img] = nil
+	end
+	if next(flashing) and not flashConn then
+		flashConn = game:GetService("RunService").RenderStepped:Connect(function(dt)
+			for o, st in flashing do
+				if not o.Parent then
+					flashing[o] = nil
+					continue
+				end
+				if not st.up then
+					st.v -= 10
+					if st.v <= 0 then
+						st.up = true
+						st.v = 0
+					end
+				else
+					st.v += st.stick and 10 or 10 * 60 * dt
+					if st.v >= 250 then
+						st.v = 250
+						st.up = false
+					end
+				end
+				if o:IsA("ImageLabel") or o:IsA("ImageButton") then
+					(o :: any).ImageTransparency = 1 - st.v / 255
+				end
+			end
+			if not next(flashing) and flashConn then
+				flashConn:Disconnect()
+				flashConn = nil
+			end
+		end)
+	end
+end
+
 -- The pixel scale of a canvas (canvas units -> screen pixels)
 function UI.scaleOf(canvas: Frame): number
 	local s = canvas:FindFirstChildOfClass("UIScale")

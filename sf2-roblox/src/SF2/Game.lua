@@ -94,8 +94,9 @@ local function startDojo()
 	dojo = screen
 end
 
--- Wait in the dojo until n of the player's moves pass test (StoryTutorialMove/Punchbag/DoubleSweep)
-local function waitMoves(n: number, test: (m: any) -> boolean)
+-- Wait in the dojo until n of the player's moves pass test (StoryTutorialMove/Punchbag/DoubleSweep), with
+-- the step's controls flashing meanwhile
+local function waitMoves(n: number, test: (m: any) -> boolean, flash: { string })
 	local count = 0
 	local done = Instance.new("BindableEvent")
 	local function f(m: any)
@@ -106,7 +107,15 @@ local function waitMoves(n: number, test: (m: any) -> boolean)
 	end
 	table.insert(moveListeners, f)
 	Menus.setMenuEnabled(false)
+	local screen = dojo
+	local function setFlash(on: boolean)
+		if screen and screen.flash then
+			for _, what in flash do screen.flash(what, on) end
+		end
+	end
+	setFlash(true)
 	done.Event:Wait()
+	setFlash(false)
 	Menus.setMenuEnabled(true)
 	local i = table.find(moveListeners, f)
 	if i then table.remove(moveListeners, i) end
@@ -354,11 +363,11 @@ Quests.host = {
 	-- the story tutorial's own steps (decompiled action classes in the README's "Dojo" section)
 	tutorial = function(step: string)
 		if step == "StoryTutorialMove" then
-			waitMoves(3, function(m) return m.type == "MOVE" end)
+			waitMoves(3, function(m) return m.type == "MOVE" end, { "Stick" })
 		elseif step == "StoryTutorialPunchbag" then
-			waitMoves(3, function(m) return m.type == "ATTACK" end)
+			waitMoves(3, function(m) return m.type == "ATTACK" end, { "Punch", "Kick" })
 		elseif step == "StoryTutorialDoubleSweep" then
-			waitMoves(1, function(m) return m.name == "DoubleSweep" end)
+			waitMoves(1, function(m) return m.name == "DoubleSweep" end, { "Stick", "Kick" })
 		elseif step == "StoryTutorialBuyItem" then
 			-- the shop points at the knives (OpenShop before it); the step ends once they are bought
 			while not Profile.owns("WEAPON_KNIVES") do task.wait(0.25) end

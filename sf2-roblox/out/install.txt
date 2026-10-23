@@ -7,14 +7,14 @@ ModuleScript	ReplicatedStorage/SF2/Base64	src/SF2/Base64.lua	85a7c1517dd45aff
 ModuleScript	ReplicatedStorage/SF2/Combat	src/SF2/Combat.lua	86cd6ded4a300519
 ModuleScript	ReplicatedStorage/SF2/Effects	src/SF2/Effects.lua	6cac12b96a7e90d4
 ModuleScript	ReplicatedStorage/SF2/Fight	src/SF2/Fight.lua	18b640a92697627e
-ModuleScript	ReplicatedStorage/SF2/FightScreen	src/SF2/FightScreen.lua	52d02a57a7093a02
+ModuleScript	ReplicatedStorage/SF2/FightScreen	src/SF2/FightScreen.lua	5c5bf15c5f5a9fc9
 ModuleScript	ReplicatedStorage/SF2/Fighter	src/SF2/Fighter.lua	831f87a043512a46
-ModuleScript	ReplicatedStorage/SF2/Game	src/SF2/Game.lua	0fc6292926fa737b
+ModuleScript	ReplicatedStorage/SF2/Game	src/SF2/Game.lua	fe1718c828cf9b14
 ModuleScript	ReplicatedStorage/SF2/Images	src/SF2/Images.lua	1ac22099e24bace2
 ModuleScript	ReplicatedStorage/SF2/Items	src/SF2/Items.lua	06d2659bf3cd2b5a
 ModuleScript	ReplicatedStorage/SF2/KeyBuffer	src/SF2/KeyBuffer.lua	218a8611d8870d94
 ModuleScript	ReplicatedStorage/SF2/Location	src/SF2/Location.lua	1c82c4a8c11e6a87
-ModuleScript	ReplicatedStorage/SF2/Menus	src/SF2/Menus.lua	741a3f7e67799c8e
+ModuleScript	ReplicatedStorage/SF2/Menus	src/SF2/Menus.lua	ff3cf97dbd9e317b
 ModuleScript	ReplicatedStorage/SF2/MoveEngine	src/SF2/MoveEngine.lua	41d2619ccd3b45fb
 ModuleScript	ReplicatedStorage/SF2/Moves	src/SF2/Moves.lua	d4979357cbde549f
 ModuleScript	ReplicatedStorage/SF2/Pack	src/SF2/Pack.lua	af5e2db5af52a24a
@@ -28,7 +28,7 @@ ModuleScript	ReplicatedStorage/SF2/Showcase	src/SF2/Showcase.lua	74c2cb8f03aaca7
 ModuleScript	ReplicatedStorage/SF2/Sound	src/SF2/Sound.lua	513323501020f647
 ModuleScript	ReplicatedStorage/SF2/Stages	src/SF2/Stages.lua	5675bd4378e2c8d0
 ModuleScript	ReplicatedStorage/SF2/Text	src/SF2/Text.lua	8eb04f34d5d5946f
-ModuleScript	ReplicatedStorage/SF2/UI	src/SF2/UI.lua	194b3fe1ab742376
+ModuleScript	ReplicatedStorage/SF2/UI	src/SF2/UI.lua	7c21ad1cad2a94b0
 ModuleScript	ReplicatedStorage/SF2/Warrior	src/SF2/Warrior.lua	5af875395759762d
 ModuleScript	ReplicatedStorage/SF2/Widgets	src/SF2/Widgets.lua	c161b76f836c5d03
 ModuleScript	ReplicatedStorage/SF2/Xml	src/SF2/Xml.lua	cc2f7e69f1284e52

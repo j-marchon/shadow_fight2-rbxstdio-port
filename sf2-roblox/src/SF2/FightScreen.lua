@@ -22,6 +22,7 @@ local Location = require(script.Parent.Location)
 local Effects = require(script.Parent.Effects)
 local Sound = require(script.Parent.Sound)
 local UI = require(script.Parent.UI)
+local W = require(script.Parent.Widgets)
 local Images = require(script.Parent.Images)
 local Xml = require(script.Parent.Xml)
 
@@ -577,6 +578,28 @@ function FightScreen.run(config: any): any
 			if full then full.Visible = (me.rangedLeft or 0) > 0 end
 		end
 	end))
+
+	-- The story tutorial's dojo steps flash the controls: the stick's BackgroundFlashing (Stick.SetIsFlashing,
+	-- StoryTutorialMove), or a FightButtons.Kick_Highlight over Punch and Kick at its own size x1.33
+	-- (SFButton.AddFlashImage + IsFlashing, StoryTutorialPunchbag)
+	local highlights: { [string]: GuiObject } = {}
+	self.flash = function(what: string, on: boolean)
+		if what == "Stick" then
+			UI.setFlashing(find(controls, "LeftContainer/Stick/BackgroundFlashing"), on, "stick")
+			return
+		end
+		local btn = find(controls, "ActionButtons/Btn" .. what)
+		if not btn then return end
+		local h = highlights[what]
+		if not h and on then
+			local img = W.image(btn, "FightButtons.Kick_Highlight", UDim2.fromScale(0.5, 0.5), Vector2.new(253, 253) * 1.33)
+			img.Name = "FlashingImage"
+			img.ZIndex = btn.ZIndex + 1
+			highlights[what] = img
+			h = img
+		end
+		if h then UI.setFlashing(h, on) end
+	end
 
 	function self.quit(_)
 		if self.ended then return end

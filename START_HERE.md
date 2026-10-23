@@ -48,7 +48,7 @@ Then (same day, later session) the user asked to finish the whole port, section 
 **The user's answers (2026-10-22), now in the code:** the game opens on the dojo (unchanged); the shop shows the acts reached so far and none later, and Ranged/Magic stay empty with "Defeat Lynx/Hermit to unlock ..." until then; items stay usable while being upgraded; the act screen is a dark brown grainy screen with the title in pale gold (matched to their two screenshots).
 
 **2026-10-23 (cloud session, no Studio): a polish pass on a new game, from the tutorial into Act 1.** This session ran in a container with no Studio and no Luau, so its changes are read against the decompile but **not run**. The user should install and play a new game (Settings → advanced → RESET PROGRESS) to check them:
-- tutorial hand-holding (README "Quests and story" → "Tutorial hand-holding"): `MenuBtnFlashing` (arrow at the MENU roll, then the flashing section button, touches blocked meanwhile) and `ClickButton` (the flashing FIGHT on Lynx);
+- tutorial hand-holding (README "Quests and story" → "Tutorial hand-holding"): `MenuBtnFlashing` (arrow at the MENU roll, then the flashing section button, touches blocked meanwhile) and `ClickButton` (the flashing FIGHT on Lynx); the dojo steps flash the stick / Punch / Kick (touch screens only);
 - `Notification` dialogs no longer hold the quest unless `WaitNotificationClose` (so the tutorial counts moves while its hint is up).
 
 **Section 2 is done: the dojo** is the original's live punching-bag fight under the menu, with the disciple toggle and the tutorial's dojo steps (README "The dojo").
@@ -112,7 +112,7 @@ All of it is committed and installed in the Studio place. **The place has not be
   - The perk value expressions `?CurrentFight`, `?CoordX/Y`, `?PlayerAttribute`, `?Aspect`, `?MovesVariable` and `?Abs`, which read 0.
 
 **Known gaps:**
-- Dojo: the stick and punch/kick flashes inside the tutorial's dojo steps aren't drawn (the menu and FIGHT flashes are); the new-game tutorial has not been played through by hand in Studio (only headless).
+- Dojo: the new-game tutorial has not been played through by hand in Studio (only headless).
 - Quest deviations (README "Quests and story"): `Place` doesn't switch scenes, offers/payments/raids/hand-holding do nothing, the act screen's backdrop texture is approximated (the look matches the user's screenshots).
 - UI deviations listed above (README UI section).
 - The shock state's effects (`FrameReduction`, `LooseningDelay`, `Impulse Y`, the `Weapon Fists` + `WeaponDamage 0` pair in `internalSettings <Shock>`).
@@ -236,4 +236,4 @@ The user's standing priority, in their words: the UI was "the biggest problem", 
   - Settings and advanced settings as the original, with volume sliders and controller scale.
   - End screen: the bonus lines, backed by new `Fight.stats` counters and coins paid in `Game`.
 - 2026-10-22 (full port, section by section): section 1, the quest scripts. Found the 6 missing act stories in the APK (same-named TextAssets the old extraction overwrote; a CDN `CONFIGS` pack was fetched with the user's OK but didn't have them), ported the QuestsManager from the decompile, moved the map, act unlocks and the tutorial onto it, save v2 with migration, `story_test.luau` plays the whole campaign. Section 2, the dojo: the live punching-bag fight under the menu (`DojoScene`), the disciple toggle, the tutorial's dojo steps from their decompiled classes; keyboard injection now reaches the game. Section 3 started: energy (5 points, 600 s each, per-fight Power, energy.xml dialogs) and deliveries (DeliveryTime, finish-now gems, Delivery notifications). Then the user's answers: act screen matched to their screenshots, shop shows only reached acts' items with locked Ranged/Magic tabs, AGENTS.md made the docs agent-neutral; stopped there on the user's request.
-- 2026-10-23 (cloud session, no Studio or Luau; nothing run): polish pass on the new-game flow. Ported the tutorial's `MenuBtnFlashing` and `ClickButton` (arrow, flashing buttons, touch block) from their decompiled classes; `Notification` dialogs no longer hold the quest unless `WaitNotificationClose`.
+- 2026-10-23 (cloud session, no Studio or Luau; nothing run): polish pass on the new-game flow. Ported the tutorial's `MenuBtnFlashing` and `ClickButton` (arrow, flashing buttons, touch block) and the dojo steps' control flashes from their decompiled classes; `Notification` dialogs no longer hold the quest unless `WaitNotificationClose`.

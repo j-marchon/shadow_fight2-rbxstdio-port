@@ -452,7 +452,7 @@ end
 -- lets through (TutorialExtension). A touch can't fall through one ScreenGui to another, so each of those
 -- buttons gets a transparent stand-in on the blocking layer that follows it and presses it.
 -- ArrowCanvas: MiscSprites.Arrow pointing at a button. SFButton.IsFlashing: the button's FlashingImage
--- pulses.
+-- pulses (UI.setFlashing).
 
 local RunService = game:GetService("RunService")
 local tutGui: ScreenGui? = nil
@@ -579,48 +579,9 @@ function Menus.showArrow(target: GuiObject, offset: Vector2, rotation: number)
 	arrow = { holder = holder, conn = conn }
 end
 
--- SFButton.IsFlashing: FlashingImage shows and its alpha runs 250 -> 0 at 10 a frame, then back up to 250 at
--- 10 x 60 a second, and over (Update). The alpha is taken as out of 255.
-local flashing: { [GuiObject]: { v: number, up: boolean } } = {}
-local flashConn: RBXScriptConnection? = nil
+-- SFButton.IsFlashing (UI.setFlashing)
 function Menus.setFlashing(img: GuiObject?, on: boolean)
-	if not img then return end
-	img.Visible = on
-	if on then
-		flashing[img] = { v = 0, up = false }
-	else
-		flashing[img] = nil
-	end
-	if next(flashing) and not flashConn then
-		flashConn = RunService.RenderStepped:Connect(function(dt)
-			for o, st in flashing do
-				if not o.Parent then
-					flashing[o] = nil
-					continue
-				end
-				if not st.up then
-					st.v -= 10
-					if st.v <= 0 then
-						st.up = true
-						st.v = 0
-					end
-				else
-					st.v += 10 * 60 * dt
-					if st.v >= 250 then
-						st.v = 250
-						st.up = false
-					end
-				end
-				if o:IsA("ImageLabel") or o:IsA("ImageButton") then
-					(o :: any).ImageTransparency = 1 - st.v / 255
-				end
-			end
-			if not next(flashing) and flashConn then
-				flashConn:Disconnect()
-				flashConn = nil
-			end
-		end)
-	end
+	UI.setFlashing(img, on)
 end
 
 -- MenuBtnFlashing (NGCEHDLJOMI): the menu closes and touches are blocked but for the MENU roll, which an
